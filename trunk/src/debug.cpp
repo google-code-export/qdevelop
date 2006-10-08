@@ -208,7 +208,7 @@ void Debug::slotMessagesDebug()
 					}
 					else if( s.contains(" = ") && ( s.at(0).isLetterOrNumber() || s.at(0) == '_' ))
 					{
-emit message ( "Add var :"+s);
+//emit message ( "Add var :"+s);
 						QString name = s.section(" = ", 0, 0).simplified();
 						if( !name.isEmpty() )
 						{

@@ -179,6 +179,7 @@ MainImpl::~MainImpl()
 		m_completion->terminate();
 		m_completion->wait();
 		delete m_completion;
+		m_completion = 0;
 	}
 }
 //
@@ -938,6 +939,10 @@ bool MainImpl::slotCloseProject()
 		return false;
 	logBuild->clear();
 	logDebug->clear();
+	//
+	delete m_completion;
+	m_completion = 0;
+	//
 	if( m_projectManager && !m_projectManager->close() )
 		return false;
 	delete m_projectManager;
