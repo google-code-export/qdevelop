@@ -1116,43 +1116,43 @@
     </message>
     <message>
         <source>Please designe qmake path</source>
-        <translation type="unfinished">请设置qmake的路径</translation>
+        <translation>请设置qmake的路径</translation>
     </message>
     <message>
         <source>perhaps not correctly installed or configured.</source>
-        <translation type="unfinished">可能安装不正确或没有正确配置。</translation>
+        <translation>可能安装不正确或没有正确配置。</translation>
     </message>
     <message>
         <source>Verify your Environment Variables.</source>
-        <translation type="unfinished">请检查你的环境变量。</translation>
+        <translation>请检查你的环境变量。</translation>
     </message>
     <message>
         <source>not found.</source>
-        <translation type="unfinished">未发现。</translation>
+        <translation>未发现。</translation>
     </message>
     <message>
         <source>To use debugging you must install gdb.
 Downloadable for MinGW on http://www.mingw.org/download.shtml.</source>
-        <translation type="unfinished">你必须安装gdb以调试程序。
+        <translation>你必须安装gdb以调试程序。
 可以从http://www.mingw.org/download.shtml 下载 MinGW。</translation>
     </message>
     <message>
         <source>To have code completion, you must install ctags.
 Downloadable for Windows on http://ctags.sourceforge.net/.</source>
-        <translation type="unfinished">你必须安装ctags才能使用代码补全。
+        <translation>你必须安装ctags才能使用代码补全。
 可以从 http://ctags.sourceforge.net 下载。</translation>
     </message>
     <message>
         <source>New Variable:</source>
-        <translation type="unfinished">新变量：</translation>
+        <translation>新变量：</translation>
     </message>
     <message>
         <source>The variable</source>
-        <translation type="unfinished">变量</translation>
+        <translation>变量</translation>
     </message>
     <message>
         <source>already exist.</source>
-        <translation type="unfinished">已经存在。</translation>
+        <translation>已经存在。</translation>
     </message>
 </context>
 <context>
@@ -1274,11 +1274,11 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>sources:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">源文件：</translation>
     </message>
     <message>
         <source>Objects:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">对象：</translation>
     </message>
     <message>
         <source>src</source>
@@ -1302,7 +1302,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>Object name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">对象名：</translation>
     </message>
     <message>
         <source>dialog</source>
@@ -1314,7 +1314,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">文件名：</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Dialog:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1387,7 +1387,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>Prompt before quit</source>
-        <translation>推出时提示</translation>
+        <translation type="unfinished">退出时提示</translation>
     </message>
     <message>
         <source>Show classes explorer</source>
@@ -1463,7 +1463,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>Selection border</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">突出边框</translation>
     </message>
     <message>
         <source>Complete Code</source>
@@ -1751,7 +1751,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>Warnings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <source>warn_off</source>
@@ -1763,7 +1763,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>Qt Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Qt库</translation>
     </message>
     <message>
         <source>core</source>
@@ -1799,7 +1799,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>Advanced Options</source>
-        <translation type="unfinished">高级选项</translation>
+        <translation>高级选项</translation>
     </message>
     <message>
         <source>app_bundle</source>
@@ -1901,7 +1901,8 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     <message>
         <source>Free CONFIG
 variables :</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">自定义CONFIG
+变量:</translation>
     </message>
     <message>
         <source>Variables</source>
@@ -2352,7 +2353,7 @@ variables :</source>
     </message>
     <message>
         <source>Dialog Subclassing...</source>
-        <translation type="unfinished"></translation>
+        <translation>对话框子类化...</translation>
     </message>
     <message>
         <source>Dialog Preview</source>
@@ -2399,7 +2400,7 @@ variables :</source>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">确定</translation>
+        <translation>确定</translation>
     </message>
     <message>
         <source>Don&apos;t show anymore</source>
