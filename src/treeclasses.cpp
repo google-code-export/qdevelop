@@ -110,8 +110,8 @@ void TreeClasses::slotParseCtags()
 	{
 		if( !s.isEmpty() && s.simplified().at(0) == '!' )
 			continue;
-		if( s.contains("typeref:") )
-			continue;
+		//if( s.contains("typeref:") )
+			//continue;
 		s += '\t';
 //qDebug()<<s;
 		ParsedItem parsedItem;
@@ -142,6 +142,7 @@ void TreeClasses::slotParseCtags()
 	//m_parsedItemsList.clear();
 	if( topLevelItem(0) )
 	{
+		m_listDeletion.clear();
 		deleteMarked( topLevelItem(0) );
 		for(int i=0; i<m_listDeletion.count(); i++)
 			delete m_listDeletion.at(i);
@@ -161,22 +162,27 @@ void TreeClasses::parse(ParsedItem parsedItem)
 		int level = 0;
 		foreach(QString s, parsedItem.parents)
 		{
+//qDebug()<<"Find item parent :"+s;
 			itemParent = findAndCreate(itemParent, "", s, "parent:"+QString::number(level++)+":"+s, false, false, ParsedItem());
 		}
 		if( parsedItem.classname.count() || parsedItem.structname.count() )
 		{
 			QString text;
+			QString pixname;
 			if( parsedItem.classname.count() )
 			{
 				text = parsedItem.classname;
+				pixname = "class";
 			}
 			else
 			{
 				text = parsedItem.structname;
+				pixname = "struct";
 			}
 			foreach(QString classname, text.split("::", QString::SkipEmptyParts) )
 			{
-				itemParent = findAndCreate(itemParent, QString(),  parsedItem.classname, "class:"+classname, true, false, ParsedItem());
+				//itemParent = findAndCreate(itemParent, QString(),  parsedItem.classname, "class:"+classname, true, false, ParsedItem());
+				itemParent = findAndCreate(itemParent, pixname,  classname, "class:"+classname, true, false, ParsedItem());
 			}
 		}
 		if( parsedItem.kind == "c" ) // class
@@ -208,6 +214,8 @@ void TreeClasses::parse(ParsedItem parsedItem)
 			QString pixname;
 			if( parsedItem.classname.isEmpty() )
 				pixname = "global_var";
+//qDebug()<< "kind=v" << parsedItem.name;
+//QString tmp = parsedItem.name;
 			findAndCreate(itemParent, pixname, parsedItem.name, "variable:"+parsedItem.name, false, true, parsedItem);
 		}
 		else if( parsedItem.kind == "s" ) // struct 
@@ -220,6 +228,12 @@ void TreeClasses::parse(ParsedItem parsedItem)
 		{
 			QString pixname;
 			pixname = "typedef";
+			findAndCreate(itemParent, pixname, parsedItem.name, "class:"+parsedItem.name, false, true, parsedItem);
+		}
+		else if( parsedItem.kind == "n" ) // namespace
+		{
+			QString pixname;
+			pixname = "namespace";
 			findAndCreate(itemParent, pixname, parsedItem.name, "class:"+parsedItem.name, false, true, parsedItem);
 		}
 		else
