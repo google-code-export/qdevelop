@@ -42,6 +42,7 @@ typedef struct ParsedItem
 	QString language;
 	QString classname;
 	QString structname;
+	QString enumname;
 	QString access;
 	QString signature;
 	QString kind;
@@ -88,6 +89,7 @@ private:
 	QString markForSorting(QString kind, QString text);
 	void setSortingSymbols( QTreeWidgetItem *it, bool active, QString filename, QString ext, QStringList parents);
 	void setTooltip(QTreeWidgetItem *item, ParsedItem parsedItem);
+	QString signature(QString line);
 private slots:
 	void slotParseCtags();
 	void slotOpenImplementation();

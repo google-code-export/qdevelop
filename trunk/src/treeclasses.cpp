@@ -131,6 +131,10 @@ void TreeClasses::slotParseCtags()
 			parsedItem.classname = s.section("class:", -1, -1).section("\t", 0, 0).simplified();
 		if( s.contains("struct:") )
 			parsedItem.structname = s.section("struct:", -1, -1).section("\t", 0, 0).simplified();
+		if( s.contains("namespace:") )
+			parsedItem.structname = s.section("namespace:", -1, -1).section("\t", 0, 0).simplified();
+		if( s.contains("enum:") )
+			parsedItem.enumname = s.section("enum:", -1, -1).section("\t", 0, 0).simplified();
 		if( s.contains("access:") )
 			parsedItem.access = s.section("access:", -1, -1).section("\t", 0, 0).simplified();
 		parsedItem.signature = s.section("signature:", -1, -1).section("\t", 0, 0).simplified();
@@ -165,7 +169,7 @@ void TreeClasses::parse(ParsedItem parsedItem)
 //qDebug()<<"Find item parent :"+s;
 			itemParent = findAndCreate(itemParent, "", s, "parent:"+QString::number(level++)+":"+s, false, false, ParsedItem());
 		}
-		if( parsedItem.classname.count() || parsedItem.structname.count() )
+		if( parsedItem.classname.count() || parsedItem.structname.count() || parsedItem.enumname.count() )
 		{
 			QString text;
 			QString pixname;
@@ -174,10 +178,15 @@ void TreeClasses::parse(ParsedItem parsedItem)
 				text = parsedItem.classname;
 				pixname = "class";
 			}
-			else
+			else if( parsedItem.structname.count() )
 			{
 				text = parsedItem.structname;
 				pixname = "struct";
+			}
+			else if( parsedItem.enumname.count() )
+			{
+				text = parsedItem.enumname;
+				pixname = "enum";
 			}
 			foreach(QString classname, text.split("::", QString::SkipEmptyParts) )
 			{
@@ -194,7 +203,7 @@ void TreeClasses::parse(ParsedItem parsedItem)
 			QString pixname;
 			if( !parsedItem.access.isEmpty() )
 				pixname = parsedItem.access+"_meth";
-			findAndCreate(itemParent, pixname, parsedItem.name+parsedItem.signature, "function:"+parsedItem.name+parsedItem.signature, false, true, parsedItem);
+			findAndCreate(itemParent, pixname, parsedItem.name+parsedItem.signature, "function:"+parsedItem.name+signature(parsedItem.signature), false, true, parsedItem);
 		}
 		else if( parsedItem.kind == "f" ) // function in implementation (sources)
 		{
@@ -203,7 +212,7 @@ void TreeClasses::parse(ParsedItem parsedItem)
 				pixname = parsedItem.access+"_meth";
 			else if( parsedItem.classname.isEmpty() )
 				pixname = "global_meth";
-			findAndCreate(itemParent, pixname, parsedItem.name+parsedItem.signature, "function:"+parsedItem.name+parsedItem.signature, false, true, parsedItem);
+			findAndCreate(itemParent, pixname, parsedItem.name+parsedItem.signature, "function:"+parsedItem.name+signature(parsedItem.signature), false, true, parsedItem);
 		}
 		else if( parsedItem.kind == "m" ) // member
 		{
@@ -223,6 +232,21 @@ void TreeClasses::parse(ParsedItem parsedItem)
 			QString pixname;
 			pixname = "struct";
 			findAndCreate(itemParent, pixname, parsedItem.name, "class:"+parsedItem.name, false, true, parsedItem);
+		}
+		else if( parsedItem.kind == "g" ) // enum name
+		{
+			QString pixname;
+			pixname = "public_enum";
+			if( !parsedItem.access.isEmpty() )
+				pixname = parsedItem.access+"_enum";
+			findAndCreate(itemParent, pixname, parsedItem.name, "class:"+parsedItem.name, false, true, parsedItem);
+		}
+		else if( parsedItem.kind == "e" ) // enum value
+		{
+			QString pixname;
+			if( parsedItem.classname.isEmpty() )
+				pixname = "public_var";
+			findAndCreate(itemParent, pixname, parsedItem.name, "enum:"+parsedItem.name, false, true, parsedItem);
 		}
 		else if( parsedItem.kind == "t" ) // typedef
 		{
@@ -387,10 +411,12 @@ QString TreeClasses::markForSorting(QString kind, QString text )
 		text = "B|"+text;
 	else if( kind == "s" )
 		text = "C|"+text;
-	else if( kind == "t" )
+	else if( kind == "g" )
 		text = "D|"+text;
-	else if( kind == "m" || kind == "v" )
+	else if( kind == "t" )
 		text = "E|"+text;
+	else if( kind == "m" || kind == "v" || kind == "e" )
+		text = "F|"+text;
 	return text;
 }
 //
@@ -481,3 +507,18 @@ void TreeClasses::mouseDoubleClickEvent ( QMouseEvent * event )
 	else
 		setItemExpanded( m_itemClicked, !isItemExpanded(m_itemClicked) );
 }
+//
+QString TreeClasses::signature(QString line)
+{
+	QString params = line.section("(", 1).section(")", 0, 0).simplified();
+	QString formattedParams;
+	foreach(QString param, params.split(",") )
+	{
+		param = param.section(" ", 0, 0);
+		formattedParams += param + ",";
+	}
+	formattedParams = formattedParams.simplified().left( formattedParams.lastIndexOf(",") );
+	QString s ="(" + formattedParams + ")";
+	return s;
+}
+//

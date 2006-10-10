@@ -247,6 +247,13 @@ bool Editor::open(bool silentMode)
 	bool ret = m_textEdit->open(silentMode, m_filename, m_lastModified);
 	if( ret && (suffixe( m_filename ).toLower() == "cpp" || suffixe( m_filename ).toLower() == "cc"))
 		slotClassesMethodsList();
+	QByteArray array( m_textEdit->toPlainText().toLocal8Bit() );
+	if( array.count() )
+	{
+		char *ptr = array.data();
+		quint16 check = qChecksum(ptr, array.length());
+		m_checksum = check;
+	}
 	m_timerCheckLastModified.start( 5000 );
 	return ret;
 }
