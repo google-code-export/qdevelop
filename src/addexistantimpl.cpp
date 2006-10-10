@@ -27,13 +27,77 @@
 #include <QLineEdit>
 #include <QFileDialog>
 #include <QComboBox>
+#include <QMessageBox>
 //
 AddExistantImpl::AddExistantImpl(ProjectManager * parent) 
 	: QDialog(0), m_projectManager(parent)
 {
 	setupUi(this); 
+	connect(okButton, SIGNAL(clicked()), this, SLOT(slotAccept()) );
 	connect(fileButton, SIGNAL(clicked()), this, SLOT(slotFilesChoice()) );
+	connect(locationButton, SIGNAL(clicked()), this, SLOT(slotLocationChoice()) );
 	connect(comboProjects, SIGNAL(activated(QString)), this, SLOT(slotComboProjects(QString)) );
+}
+//
+void AddExistantImpl::slotAccept()
+{
+	if( filename->text().isEmpty() )
+	{
+		QMessageBox::warning(0, 
+			"QDevelop", tr("Enter a filename."),	tr("Cancel") );
+		return;
+	}
+	if( copy->isChecked() )
+	{
+		if( location->text().isEmpty() )
+		{
+			QMessageBox::warning(0, 
+				"QDevelop", tr("Enter a location destination."),	tr("Cancel") );
+			return;
+		}
+		location->setText( location->text().replace("\\", "/") );
+		if( location->text().right(1) != "/" )
+			location->setText( location->text()+"/" );
+		QString newList;
+		foreach(QString filename, filename->text().split(","))
+		{
+			filename = filename.remove("\"").simplified();
+			filename.replace("\\", "/");
+			if( !QFile::exists( filename ) )
+			{
+				QMessageBox::warning(0, 
+					"QDevelop", tr("The file")+ " " + filename + " " + tr("doesn't exist."),
+					tr("Cancel") );
+				return;
+			}
+			QString f = filename.section("/", -1, -1);
+			if( !QFile::copy(filename, location->text()+f) )
+			{
+				QMessageBox::warning(0, 
+					"QDevelop", tr("Unable to copy")+ " " + filename,
+					tr("Cancel") );
+				return;
+			}
+			newList += "\"" + location->text()+f + "\",";
+		}
+		filename->setText( newList );
+	}
+	accept();
+}
+//
+void AddExistantImpl::slotLocationChoice()
+{
+	QString s = QFileDialog::getExistingDirectory(
+		this,
+		tr("Choose a directory"),
+		m_projectDirectory,
+		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+	if( s.isEmpty() )
+	{
+		// Cancel is clicked
+		return;
+	}
+	location->setText( s );
 }
 //
 void AddExistantImpl::slotFilesChoice()

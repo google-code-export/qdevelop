@@ -38,7 +38,9 @@ private:
 	ProjectManager *m_projectManager;
 	QString m_projectDirectory;
 private slots:
+	void slotAccept();
 	void slotFilesChoice();
+	void slotLocationChoice();
 };
 
 #endif

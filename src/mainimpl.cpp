@@ -685,55 +685,55 @@ void MainImpl::slotNewProject()
 					uiFile.close();
 					s+= "FORMS = "+uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui" + "\n";
 				}
+				// Create subclassing header
+				QFile file(":/templates/templates/impl.h");
+				file.open(QIODevice::ReadOnly);
+				QByteArray data = file.readAll();
+				file.close();
+				data.replace("$IMPL_H", QString( subclassFilename.section(".h", 0, 0).toUpper()+"_H" ).toAscii());
+				data.replace("$UIHEADERNAME", QString( "\"ui_"+uiFilename.section(".ui", 0, 0)+".h\"").toAscii());
+				data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
+				if( window->dialog->isChecked() )
+					data.replace("$PARENTNAME", QString( "QDialog" ).toAscii());
+				else
+					data.replace("$PARENTNAME", QString( "QMainWindow" ).toAscii());
+				data.replace("$OBJECTNAME", QString( uiObjectName ).toAscii());
+				QFile headerFile(projectDirectory + "/" + srcDirectory + "/" + subclassFilename + ".h");
+				headerFile.open(QIODevice::WriteOnly);
+				headerFile.write( data );
+				headerFile.close();
+				s += "HEADERS = "+ srcDirectory + "/" + subclassFilename + ".h" + "\n";
+				
+				// Create subclassing sources
+				QFile file2(":/templates/templates/impl.cpp");
+				file2.open(QIODevice::ReadOnly);
+				data = file2.readAll();
+				file2.close();
+				QFile sourceFile(projectDirectory + "/" + srcDirectory + "/" + subclassFilename + ".cpp");
+				data.replace("$HEADERNAME", QString( "\""+subclassFilename+".h\"" ).toAscii());
+				data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
+				if( window->dialog->isChecked() )
+					data.replace("$PARENTNAME", QString( "QDialog" ).toAscii());
+				else
+					data.replace("$PARENTNAME", QString( "QMainWindow" ).toAscii());
+				sourceFile.open(QIODevice::WriteOnly);
+				sourceFile.write( data );
+				sourceFile.close();
+				s += "SOURCES = "+ srcDirectory + "/" + subclassFilename + ".cpp \\" + "\n";
+				
+				// Create main.cpp
+				QFile file3(":/templates/templates/main.cpp");
+				file3.open(QIODevice::ReadOnly);
+				data = file3.readAll();
+				file3.close();
+				QFile mainFile(projectDirectory + "/" + srcDirectory + "/" + "main.cpp");
+				data.replace("$HEADERNAME", QString( "\""+subclassFilename+".h\"" ).toAscii());
+				data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
+				mainFile.open(QIODevice::WriteOnly);
+				mainFile.write( data );
+				mainFile.close();
+				s += "\t"+ srcDirectory + "/" + "main.cpp" + "\n";
 			}
-			// Create subclassing header
-			QFile file(":/templates/templates/impl.h");
-			file.open(QIODevice::ReadOnly);
-			QByteArray data = file.readAll();
-			file.close();
-			data.replace("$IMPL_H", QString( subclassFilename.section(".h", 0, 0).toUpper()+"_H" ).toAscii());
-			data.replace("$UIHEADERNAME", QString( "\"ui_"+uiFilename.section(".ui", 0, 0)+".h\"").toAscii());
-			data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
-			if( window->dialog->isChecked() )
-				data.replace("$PARENTNAME", QString( "QDialog" ).toAscii());
-			else
-				data.replace("$PARENTNAME", QString( "QMainWindow" ).toAscii());
-			data.replace("$OBJECTNAME", QString( uiObjectName ).toAscii());
-			QFile headerFile(projectDirectory + "/" + srcDirectory + "/" + subclassFilename + ".h");
-			headerFile.open(QIODevice::WriteOnly);
-			headerFile.write( data );
-			headerFile.close();
-			s += "HEADERS = "+ srcDirectory + "/" + subclassFilename + ".h" + "\n";
-			
-			// Create subclassing sources
-			QFile file2(":/templates/templates/impl.cpp");
-			file2.open(QIODevice::ReadOnly);
-			data = file2.readAll();
-			file2.close();
-			QFile sourceFile(projectDirectory + "/" + srcDirectory + "/" + subclassFilename + ".cpp");
-			data.replace("$HEADERNAME", QString( "\""+subclassFilename+".h\"" ).toAscii());
-			data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
-			if( window->dialog->isChecked() )
-				data.replace("$PARENTNAME", QString( "QDialog" ).toAscii());
-			else
-				data.replace("$PARENTNAME", QString( "QMainWindow" ).toAscii());
-			sourceFile.open(QIODevice::WriteOnly);
-			sourceFile.write( data );
-			sourceFile.close();
-			s += "SOURCES = "+ srcDirectory + "/" + subclassFilename + ".cpp \\" + "\n";
-			
-			// Create main.cpp
-			QFile file3(":/templates/templates/main.cpp");
-			file3.open(QIODevice::ReadOnly);
-			data = file3.readAll();
-			file3.close();
-			QFile mainFile(projectDirectory + "/" + srcDirectory + "/" + "main.cpp");
-			data.replace("$HEADERNAME", QString( "\""+subclassFilename+".h\"" ).toAscii());
-			data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
-			mainFile.open(QIODevice::WriteOnly);
-			mainFile.write( data );
-			mainFile.close();
-			s += "\t"+ srcDirectory + "/" + "main.cpp" + "\n";
 			//
 			projectFile.write( s );
 			projectFile.close();
