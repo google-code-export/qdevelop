@@ -455,27 +455,8 @@ void Debug::slotPauseDebug()
 //
 void Debug::configureGdb()
 {
-	/*slotDebugCommand("define pqstring\n");
-	slotDebugCommand("set $i=0\n");
-	slotDebugCommand("set $s = $arg0\n");
-	slotDebugCommand("printf \"pqstring=\"\n");
-	slotDebugCommand("while $i < $s.d->size\n");
-	slotDebugCommand("set $uc = (unsigned short) $s.d->data[$i++]\n");
-	slotDebugCommand("if ( $uc < 0x80 )\n");
-	slotDebugCommand("printf \"%c\", (unsigned char)($uc & 0x7f)\n");
-	slotDebugCommand("else\n");
-	slotDebugCommand("if ( $uc < 0x0800 )\n");
-	slotDebugCommand("printf \"%c\", (unsigned char)(0xc0 | ($uc >> 6))\n");
-	slotDebugCommand("else\n");
-	slotDebugCommand("printf \"%c\", (unsigned char)(0xe0 | ($uc >> 12)\n");
-	slotDebugCommand("printf \"%c\", (unsigned char)(0x80 | (($uc > 6) &0x3f)\n");
-	slotDebugCommand("end\n");
-	slotDebugCommand("printf \"%c\", (unsigned char)(0x80 | ((uchar) $uc & 0x3f))\n");
-	slotDebugCommand("end\n");
-	slotDebugCommand("end\n");
-	slotDebugCommand("printf \"\\n\"\n");
-	slotDebugCommand("end\n");*/
-	//
 	slotDebugCommand("set pagination off\n");
+	slotDebugCommand("set width 0\n");
+	slotDebugCommand("set height 0\n");
 	//
 }
