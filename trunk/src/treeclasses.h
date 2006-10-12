@@ -27,6 +27,7 @@
 #include <QPointer>
 #include <QFile>
 #include <QMap>
+#include <QSqlDatabase>
 
 //
 class QProcess;
@@ -47,6 +48,7 @@ typedef struct ParsedItem
 	QString signature;
 	QString kind;
 	bool markedForDelete;
+	QString icon;
 };
 Q_DECLARE_METATYPE(ParsedItem)
 //
@@ -71,6 +73,8 @@ public:
 	void setCtagsIsPresent( bool b ) { m_ctagsPresent = b; };
 	void setMainImpl(MainImpl *m) { m_mainImpl=m; };
 	void clear();
+	void toDB(QString projectDirectory);
+	void fromDB(QString projectDirectory);
 	//void clearFile(QString filename);
 protected:
 	void mousePressEvent( QMouseEvent * event );
@@ -90,6 +94,11 @@ private:
 	void setSortingSymbols( QTreeWidgetItem *it, bool active, QString filename, QString ext, QStringList parents);
 	void setTooltip(QTreeWidgetItem *item, ParsedItem parsedItem);
 	QString signature(QString line);
+	bool connectDB(QString const& dbName);
+	void writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query);
+	void createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem);
+	QString getPathHash(QString const& pathName);
+	QSqlDatabase db;
 private slots:
 	void slotParseCtags();
 	void slotOpenImplementation();

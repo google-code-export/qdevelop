@@ -76,6 +76,8 @@ ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeCl
 //
 ProjectManager::~ProjectManager()
 {
+	if( m_treeFiles->topLevelItem ( 0 ) )
+		m_treeClasses->toDB( projectDirectory( m_treeFiles->topLevelItem ( 0 ) ) );
 	m_treeFiles->clear();
 	m_treeClasses->clear();
 	if( m_previewForm )
@@ -103,27 +105,36 @@ void ProjectManager::parseTreeClasses()
 {
 	if( !m_parent->showTreeClasses() )
 		return;
-	QList<QTreeWidgetItem *> projectsList;
-	childsList(0, "PROJECT", projectsList);
-	for(int nbProjects=0; nbProjects < projectsList.count(); nbProjects++)
+	QString directory = projectDirectory( m_treeFiles->topLevelItem( 0 ) );
+	if( QFile::exists( directory+"/symbols.db" ) )
 	{
-		QString projectName = projectsList.at(nbProjects)->text(0);
-		QString projectDir = findData(projectName, "projectDirectory");
-		QStringList files;
-		//sources( itemProject(projectName), files );
-		//headers( itemProject(projectName), files );
-		sources(projectsList.at(nbProjects), files );
-		headers(projectsList.at(nbProjects), files );
-		files.sort();
-		foreach(QString s, files)
+		m_treeClasses->fromDB( directory );
+	}
+	else
+	{
+	 	//
+		QList<QTreeWidgetItem *> projectsList;
+		childsList(0, "PROJECT", projectsList);
+		for(int nbProjects=0; nbProjects < projectsList.count(); nbProjects++)
 		{
-			QStringList parentsList = parents(projectsList.at(nbProjects));
-			QFile file(s);
-		    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-		        continue;
-			QString buffer = file.readAll();
-			file.close();
-			m_treeClasses->updateClasses(s, buffer, parentsList, "."+s.section(".", -1, -1));
+			QString projectName = projectsList.at(nbProjects)->text(0);
+			QString projectDir = findData(projectName, "projectDirectory");
+			QStringList files;
+			//sources( itemProject(projectName), files );
+			//headers( itemProject(projectName), files );
+			sources(projectsList.at(nbProjects), files );
+			headers(projectsList.at(nbProjects), files );
+			files.sort();
+			foreach(QString s, files)
+			{
+				QStringList parentsList = parents(projectsList.at(nbProjects));
+				QFile file(s);
+			    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+			        continue;
+				QString buffer = file.readAll();
+				file.close();
+				m_treeClasses->updateClasses(s, buffer, parentsList, "."+s.section(".", -1, -1));
+			}
 		}
 	}
 }

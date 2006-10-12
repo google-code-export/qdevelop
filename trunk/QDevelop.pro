@@ -62,7 +62,8 @@ INCLUDEPATH =   . \
 MOC_DIR =   build/moc
 QT +=   core \
   gui \
-  network
+  network \
+  sql
 RCC_DIR =   build/rcc
 RC_FILE =   QDevelop.rc
 RESOURCES =   resources/resources.qrc

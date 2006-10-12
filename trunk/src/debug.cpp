@@ -33,18 +33,18 @@
 #endif
 //
 Debug::Debug(QObject * parent, Parameters p, QString exe, bool exeOnly)
-	: QThread(parent), executableName(exe), m_executeWithoutDebug(exeOnly), m_parameters(p)
+	: QThread(parent), m_parent(parent), executableName(exe), m_executeWithoutDebug(exeOnly), m_parameters(p)
 {
-	connect(parent, SIGNAL(debugCommand(QString)), this, SLOT(slotDebugCommand(QString)) );
-	connect(parent, SIGNAL(stopDebug()), this, SLOT(slotStopDebug()) );
-	connect(parent, SIGNAL(pauseDebug()), this, SLOT(slotPauseDebug()) );
-	connect(parent, SIGNAL(otherVariables(QStringList)), this, SLOT(slotOtherVariables(QStringList)) );
-	m_pid = 0;
-	m_request = None;
 }
 //
 void Debug::run()
 {
+	m_pid = 0;
+	m_request = None;
+	connect(m_parent, SIGNAL(debugCommand(QString)), this, SLOT(slotDebugCommand(QString)) );
+	connect(m_parent, SIGNAL(stopDebug()), this, SLOT(slotStopDebug()) );
+	connect(m_parent, SIGNAL(pauseDebug()), this, SLOT(slotPauseDebug()) );
+	connect(m_parent, SIGNAL(otherVariables(QStringList)), this, SLOT(slotOtherVariables(QStringList)) );
 	if( m_executeWithoutDebug )
 		executeWithoutDebug();
 	else
@@ -175,11 +175,6 @@ void Debug::slotMessagesDebug()
 							m_request = InfoArgs;
 							messagesToDebugger << "info args\n";
 						}
-//emit message("InfoLocals ");
-//foreach(Variable v, listVariables)
-	//emit message("Var:"+QString::number(v.kind)+":"+v.name);
-//emit message("InfoLocals fin");
-//emit message("Demande whatis :"+variable.name);
 					}
 					if( s.contains( "No locals" ) )
 					{
@@ -208,14 +203,12 @@ void Debug::slotMessagesDebug()
 					}
 					else if( s.contains(" = ") && ( s.at(0).isLetterOrNumber() || s.at(0) == '_' ))
 					{
-//emit message ( "Add var :"+s);
 						QString name = s.section(" = ", 0, 0).simplified();
 						if( !name.isEmpty() )
 						{
 							Variable variable;
 							variable.name = name;
 							variable.kind = m_request;
-//emit message("Add var :"+variable.name+":"+QString::number(variable.kind));
 							listVariables.append( variable );
 						}
 					}
@@ -457,6 +450,8 @@ void Debug::configureGdb()
 {
 	slotDebugCommand("set pagination off\n");
 	slotDebugCommand("set width 0\n");
-	slotDebugCommand("set height 0\n");
+	slotDebugCommand("set height 0\n");	
+	slotDebugCommand("set complaints 0\n");
+
 	//
 }

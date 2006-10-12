@@ -56,6 +56,7 @@ private:
 	Request m_request;
 	QList<Variable> listVariables, listVariablesToSend;
 	QStringList m_otherVariables;
+	QObject * m_parent;
 signals:
 	void message(QString);
 	void endDebug();
