@@ -32,6 +32,8 @@
 #include <QVariant>
 #include <QHeaderView>
 #include <QTreeWidgetItemIterator>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlError>
 
 
 #include <QDebug>
@@ -102,6 +104,10 @@ void TreeClasses::slotParseCtags()
 	QString ext = tempProcessMap[process].ext;
 	tempProcessMap.remove( process );
 	process->deleteLater();
+    QDir dir(filename);
+    dir.makeAbsolute();
+    QString absolutePath = dir.path();
+    QString pathHash = getPathHash(absolutePath);
 	if( read.isEmpty() )
 		return;
 	if( topLevelItem(0) )
@@ -113,6 +119,7 @@ void TreeClasses::slotParseCtags()
 		//if( s.contains("typeref:") )
 			//continue;
 		s += '\t';
+		s.replace("__anon", pathHash);
 //qDebug()<<s;
 		ParsedItem parsedItem;
 		parsedItem.parents = parents;
@@ -355,7 +362,10 @@ QTreeWidgetItem *TreeClasses::findAndCreate(QTreeWidgetItem *begin, QString pixn
 		setTooltip(newItem, parsedItem);
 		newItem->setData(0, Qt::UserRole, v );
 		if( !pixname.isEmpty() )
+		{
 			newItem->setIcon(0, QIcon(":/CV/images/CV"+pixname+".png"));
+			parsedItem.icon = ":/CV/images/CV"+pixname+".png";
+		}
 	}
 	if( update )
 	{
@@ -366,12 +376,16 @@ QTreeWidgetItem *TreeClasses::findAndCreate(QTreeWidgetItem *begin, QString pixn
 			parsedItem.implementation = oldParsedItem.implementation;
 		if( parsedItem.access.isEmpty()  && !oldParsedItem.access.isEmpty() )
 			parsedItem.access = oldParsedItem.access;
+		parsedItem.icon = oldParsedItem.icon;
 		text = markForSorting(parsedItem.kind, text);
 		setTooltip(newItem, parsedItem);
 		newItem->setText(0, text);
 		parsedItem.key = key;
 		if( !pixname.isEmpty() )
+		{
 			newItem->setIcon(0, QIcon(":/CV/images/CV"+pixname+".png"));
+			parsedItem.icon = ":/CV/images/CV"+pixname+".png";
+		}
 		parsedItem.markedForDelete = false;
 		QVariant v;
 		v.setValue( parsedItem );
@@ -491,6 +505,178 @@ void TreeClasses::slotOpenDeclaration()
 	m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
 }
 //
+void TreeClasses::toDB(QString projectDirectory)
+{
+//qDebug() << "toDB" << projectDirectory+"/symbols.db";
+	if( !topLevelItem(0) )
+		return;
+	QApplication::setOverrideCursor(Qt::WaitCursor);
+    connectDB(projectDirectory+"/symbols.db");
+    //TagToDB tagToDB;
+    QSqlQuery query;
+	QString queryString = "delete from classesbrowser where 1";
+    if (!query.exec(queryString))
+    {
+		qDebug() << "Failed to execute" << queryString;
+    	return;
+   	}
+    query.exec("BEGIN TRANSACTION;");
+	writeItemsInDB(topLevelItem(0), QString(), query);
+    query.exec("END TRANSACTION;");
+	db.close();
+    QApplication::restoreOverrideCursor();
+//qDebug() << "Fin toDB";
+}
+//
+void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query)
+{
+	//
+	ParsedItem parsedItem = it->data(0, Qt::UserRole).value<ParsedItem>();
+    QString queryString = "insert into classesbrowser values(";
+    queryString = queryString
+        + "'" + it->text(0) + "', "
+        + "'" + it->toolTip(0) + "', "
+        + "'" + parsedItem.icon + "', "
+        + "'" + parsedItem.key + "', "
+        + "'" + parents + "', "
+        + "'" + parsedItem.name + "', "
+        + "'" + parsedItem.implementation + "', "
+        + "'" + parsedItem.declaration + "', "
+        + "'" + parsedItem.ex_cmd + "', "
+        + "'" + parsedItem.language + "', "
+        + "'" + parsedItem.classname + "', "
+        + "'" + parsedItem.structname + "', "
+        + "'" + parsedItem.enumname + "', "
+        + "'" + parsedItem.access + "', "
+        + "'" + parsedItem.signature + "', "
+        + "'" + parsedItem.kind + "')";
+    bool rc = query.exec(queryString);
+//qDebug() << "writeItemToDB" << it->text(0) << parsedItem.icon;
+    if (rc == false)
+    {
+        qDebug() << "Failed to insert record to db" << query.lastError();
+        qDebug() << queryString;
+        exit(0);
+    }
+	//
+	for(int i=0; i<it->childCount(); i++)
+	{
+		writeItemsInDB( it->child( i ), parents+":"+it->text(0), query);
+	}
+}
+//
+void TreeClasses::fromDB(QString projectDirectory)
+{
+//qDebug()<<"fromDB :"+projectDirectory+"/symbols.db";
+    connectDB(projectDirectory+"/symbols.db");
+	QSqlQuery query;
+    query.exec("BEGIN TRANSACTION;");
+    QString queryString = QString()
+                + "select * from classesbrowser where 1";
+    query.exec(queryString);
+    while (query.next())
+    {
+    	ParsedItem parsedItem;
+        QString text = query.value(0).toString();
+        QString tooltip = query.value(1).toString();
+        parsedItem.icon = query.value(2).toString();
+        parsedItem.key = query.value(3).toString();
+        QString parents = query.value(4).toString();
+        parsedItem.name = query.value(5).toString();
+        parsedItem.implementation = query.value(6).toString();
+        parsedItem.declaration = query.value(7).toString();
+        parsedItem.ex_cmd = query.value(8).toString();
+        parsedItem.language = query.value(9).toString();
+        parsedItem.classname = query.value(10).toString();
+        parsedItem.structname = query.value(11).toString();
+        parsedItem.enumname = query.value(12).toString();
+        parsedItem.access = query.value(13).toString();
+        parsedItem.signature = query.value(14).toString();
+        parsedItem.kind = query.value(15).toString();
+        createItemFromDB(topLevelItem(0), text, tooltip, parents, parsedItem);
+    }
+    query.exec("END TRANSACTION;");
+	db.close();
+}
+//
+void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem)
+{
+	if( !parent )
+	{
+		QTreeWidgetItem *it = new QTreeWidgetItem( this );
+		it->setText(0, text);
+		setTooltip(it, parsedItem);
+		it->setIcon(0, QIcon(parsedItem.icon));
+//qDebug()<<"createItemFromDB" << text << parsedItem.icon;
+		QVariant v;
+		v.setValue( parsedItem );
+		it->setData(0, Qt::UserRole, v );
+		setItemExpanded( it, true );
+		return;
+	}
+	parents = parents.section(":", 2);
+	if( !parents.isEmpty() )
+	{
+		foreach( QString p, parents.split(":", QString::SkipEmptyParts) )
+		{
+			QTreeWidgetItem *find;
+			for(int i=0; i<parent->childCount(); i++)
+			{
+				if( parent->child( i )->text( 0 ) == p )
+					parent = parent->child( i );
+			}
+		}
+	}
+	QTreeWidgetItem *it = new QTreeWidgetItem( parent );
+	it->setText(0, text);
+	setTooltip(it, parsedItem);
+	it->setIcon(0, QIcon(parsedItem.icon));
+	QVariant v;
+	v.setValue( parsedItem );
+	it->setData(0, Qt::UserRole, v );
+//qDebug() << text << parent->text(0) << parents;
+}
+//
+bool TreeClasses::connectDB(QString const& dbName)
+{
+    static bool initialized = false;
+
+    //if (!initialized)
+    {
+        db = QSqlDatabase::addDatabase("QSQLITE");
+        db.setDatabaseName(dbName);
+
+        if (db.open())
+        {
+            // create table anyway, it doesn't harm
+            QSqlQuery query;
+            QString queryString = "create table classesbrowser ("
+                "text string,"
+                "tooltip string,"
+                "icon string,"
+                "key string,"
+                "parents string,"
+                "name string,"
+                "implementation int,"
+                "declaration string,"
+                "ex_cmd string,"
+                "language string,"
+                "classname string,"
+                "structname string,"
+                "enumname string,"
+                "access string,"
+                "signature string,"
+                "kind string"
+                ")";
+
+            query.exec(queryString);
+            // we don't care the result, maybe the table is already there
+            initialized = 1;
+        }
+    }
+    return initialized;
+}
+//
 void TreeClasses::mouseDoubleClickEvent ( QMouseEvent * event )
 {
 	m_itemClicked = itemAt( event->pos() );
@@ -520,5 +706,11 @@ QString TreeClasses::signature(QString line)
 	formattedParams = formattedParams.simplified().left( formattedParams.lastIndexOf(",") );
 	QString s ="(" + formattedParams + ")";
 	return s;
+}
+//
+QString TreeClasses::getPathHash(QString const& pathName)
+{
+    unsigned intHash = qHash(pathName);
+    return QString().sprintf("_%x_", intHash);
 }
 //
