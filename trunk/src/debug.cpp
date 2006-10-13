@@ -129,8 +129,9 @@ void Debug::slotMessagesDebug()
 					emit message( QString::fromUtf8(s.toLocal8Bit()) );
 					listVariables.clear();
 					listVariablesToSend.clear();
-					m_request = InfoLocals;
-					messagesToDebugger << "info locals\n";
+					m_request = InfoScope;
+					QString numLine = s.section(":", -4, -4);
+					messagesToDebugger << "info scope "+numLine+"\n";
 				}
 				//
 				if( s.indexOf("Program exited normally.") == 0 )
@@ -153,35 +154,22 @@ void Debug::slotMessagesDebug()
 						s = "InfoSources:"+s;
 					emit message( QString::fromUtf8(s.toLocal8Bit()) ); 
 				}
-				else if( m_request == InfoLocals || m_request == InfoArgs )
+				else if( m_request == InfoScope  )
 				{
 					if( s.indexOf("(gdb)") == 0 && listVariables.count() != 0 )
 					{
-						if( m_request == InfoArgs )
+						foreach(QString s, m_otherVariables)
 						{
-							foreach(QString s, m_otherVariables)
-							{
-								Variable v;
-								v.name = s;
-								v.kind = Debug::OtherArgs;
-								listVariables.append( v );
-							}
-							m_request = Whatis;
-							Variable variable = listVariables.at(0);
-							messagesToDebugger << "whatis "+variable.name+"\n";
+							Variable v;
+							v.name = s;
+							v.kind = Debug::OtherArgs;
+							listVariables.append( v );
 						}
-						else
-						{
-							m_request = InfoArgs;
-							messagesToDebugger << "info args\n";
-						}
+						m_request = Whatis;
+						Variable variable = listVariables.at(0);
+						messagesToDebugger << "whatis "+variable.name+"\n";
 					}
-					if( s.contains( "No locals" ) )
-					{
-						m_request = InfoArgs;
-						messagesToDebugger << "info args\n";
-					}
-					else if( s.contains( "No arguments" ) )
+					if( s.contains( "No arguments" ) )
 					{
 						if( listVariables.count() )
 						{
@@ -201,14 +189,17 @@ void Debug::slotMessagesDebug()
 							m_request = None;
 						}
 					}
-					else if( s.contains(" = ") && ( s.at(0).isLetterOrNumber() || s.at(0) == '_' ))
+					else if( s.contains("Symbol ") && ( s.at(0).isLetterOrNumber() || s.at(0) == '_' ))
 					{
-						QString name = s.section(" = ", 0, 0).simplified();
+						QString name = s.section("Symbol ", 1).section(" ", 0, 0).simplified();
 						if( !name.isEmpty() )
 						{
 							Variable variable;
 							variable.name = name;
-							variable.kind = m_request;
+							if( s.contains("is a local") )
+								variable.kind = Local;
+							else if( s.contains("is an argument") )
+								variable.kind = Arg;
 							listVariables.append( variable );
 						}
 					}
