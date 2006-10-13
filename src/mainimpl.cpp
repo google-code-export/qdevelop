@@ -1607,7 +1607,7 @@ void MainImpl::slotDebugVariables( QList<Variable> list)
         QTableWidgetItem *newItem4 = new QTableWidgetItem(var.content);
 		newItem4->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled );
         //
-        if( var.kind == Debug::InfoLocals )
+        if( var.kind == Debug::Local )
         {
 			int row = tableLocalVariables->rowCount();
 	        tableLocalVariables->setRowCount(row+1);
@@ -1616,7 +1616,7 @@ void MainImpl::slotDebugVariables( QList<Variable> list)
 	        tableLocalVariables->setItem(row, 2, newItem3);
 	        tableLocalVariables->setItem(row, 3, newItem4);
        	}
-        else if( var.kind == Debug::InfoArgs )
+        else if( var.kind == Debug::Arg )
         {
 			int row = tableArgVariables->rowCount();
 	        tableArgVariables->setRowCount(row+1);
