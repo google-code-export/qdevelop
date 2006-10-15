@@ -24,6 +24,7 @@
 #include "treeclasses.h"
 #include "projectmanager.h"
 #include "mainimpl.h"
+#include "misc.h"
 
 #include <QMenu>
 #include <QMouseEvent>
@@ -31,6 +32,7 @@
 #include <QProcess>
 #include <QVariant>
 #include <QHeaderView>
+#include <QMessageBox>
 #include <QTreeWidgetItemIterator>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlError>
@@ -477,9 +479,11 @@ void TreeClasses::mousePressEvent( QMouseEvent * event )
 		if( parsedItem.key.left(10) != "parent:" )
 		{
 			if( !parsedItem.declaration.isEmpty() )
-				connect(menu->addAction(QIcon(), tr("Open Declaration")), SIGNAL(triggered()), this, SLOT(slotOpenDeclaration()) );
+				connect(menu->addAction(QIcon(":/treeview/images/h.png"), tr("Open Declaration")), SIGNAL(triggered()), this, SLOT(slotOpenDeclaration()) );
 			if( !parsedItem.implementation.isEmpty() )
-				connect(menu->addAction(QIcon(), tr("Open Implementation")), SIGNAL(triggered()), this, SLOT(slotOpenImplementation()) );
+				connect(menu->addAction(QIcon(":/treeview/images/cpp.png"), tr("Open Implementation")), SIGNAL(triggered()), this, SLOT(slotOpenImplementation()) );
+			menu->addSeparator();
+			connect(menu->addAction(QIcon(":/toolbar/images/refresh.png"), tr("Refresh contents")), SIGNAL(triggered()), this, SLOT(slotRefresh()) );
 			menu->exec(event->globalPos());
 		}
 		delete menu;
@@ -505,13 +509,18 @@ void TreeClasses::slotOpenDeclaration()
 	m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
 }
 //
+void TreeClasses::slotRefresh()
+{
+	m_projectManager->parseTreeClasses(true);
+}
+//
 void TreeClasses::toDB(QString projectDirectory)
 {
-//qDebug() << "toDB" << projectDirectory+"/symbols.db";
+//qDebug() << "toDB" << projectDirectory+"/project.db";
 	if( !topLevelItem(0) )
 		return;
 	QApplication::setOverrideCursor(Qt::WaitCursor);
-    connectDB(projectDirectory+"/symbols.db");
+    //db = connectDB(projectDirectory+"/project.db");
     //TagToDB tagToDB;
     QSqlQuery query;
 	QString queryString = "delete from classesbrowser where 1";
@@ -523,7 +532,7 @@ void TreeClasses::toDB(QString projectDirectory)
     query.exec("BEGIN TRANSACTION;");
 	writeItemsInDB(topLevelItem(0), QString(), query);
     query.exec("END TRANSACTION;");
-	db.close();
+	//db.close();
     QApplication::restoreOverrideCursor();
 //qDebug() << "Fin toDB";
 }
@@ -567,8 +576,8 @@ void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSq
 //
 void TreeClasses::fromDB(QString projectDirectory)
 {
-//qDebug()<<"fromDB :"+projectDirectory+"/symbols.db";
-    connectDB(projectDirectory+"/symbols.db");
+//qDebug()<<"fromDB :"+projectDirectory+"/project.db";
+    connectDB(projectDirectory+"/project.db");
 	QSqlQuery query;
     query.exec("BEGIN TRANSACTION;");
     QString queryString = QString()
@@ -596,7 +605,7 @@ void TreeClasses::fromDB(QString projectDirectory)
         createItemFromDB(topLevelItem(0), text, tooltip, parents, parsedItem);
     }
     query.exec("END TRANSACTION;");
-	db.close();
+	//db.close();
 }
 //
 void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem)
@@ -637,46 +646,6 @@ void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QStrin
 //qDebug() << text << parent->text(0) << parents;
 }
 //
-bool TreeClasses::connectDB(QString const& dbName)
-{
-    static bool initialized = false;
-
-    //if (!initialized)
-    {
-        db = QSqlDatabase::addDatabase("QSQLITE");
-        db.setDatabaseName(dbName);
-
-        if (db.open())
-        {
-            // create table anyway, it doesn't harm
-            QSqlQuery query;
-            QString queryString = "create table classesbrowser ("
-                "text string,"
-                "tooltip string,"
-                "icon string,"
-                "key string,"
-                "parents string,"
-                "name string,"
-                "implementation int,"
-                "declaration string,"
-                "ex_cmd string,"
-                "language string,"
-                "classname string,"
-                "structname string,"
-                "enumname string,"
-                "access string,"
-                "signature string,"
-                "kind string"
-                ")";
-
-            query.exec(queryString);
-            // we don't care the result, maybe the table is already there
-            initialized = 1;
-        }
-    }
-    return initialized;
-}
-//
 void TreeClasses::mouseDoubleClickEvent ( QMouseEvent * event )
 {
 	m_itemClicked = itemAt( event->pos() );
@@ -700,11 +669,19 @@ QString TreeClasses::signature(QString line)
 	QString formattedParams;
 	foreach(QString param, params.split(",") )
 	{
-		param = param.section(" ", 0, 0);
+		if( param.contains("&") )
+			param = param.simplified().left( param.simplified().lastIndexOf("&")+1 );
+		else if( param.contains("*") )
+			param = param.simplified().left( param.simplified().lastIndexOf("*")+1 );
+		else if( param.simplified().contains(" ") )
+			param = param.simplified().left( param.simplified().lastIndexOf(" ")+1 );
+		//param = param.section(" ", 0, 0);
 		formattedParams += param + ",";
 	}
 	formattedParams = formattedParams.simplified().left( formattedParams.lastIndexOf(",") );
+	formattedParams.remove( " " );
 	QString s ="(" + formattedParams + ")";
+//qDebug()<<s;
 	return s;
 }
 //

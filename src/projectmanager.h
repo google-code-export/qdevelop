@@ -68,6 +68,7 @@ public:
 	bool isModifiedProject() { return m_isModifiedProject; };
 	QString executableName(QString preferedVersion);
 	bool isReleaseVersion() { return m_releaseVersion; };
+	void saveProjectSettings();
 	bool close();
 	void childsList(QTreeWidgetItem *begin, QString key, QList<QTreeWidgetItem *> &list);
 	Parameters parameters();
@@ -76,6 +77,7 @@ public:
 	QString findData(QString projectName, QString key);
 	QTreeWidgetItem *itemProject(QString projectName);
 	QStringList parents(QTreeWidgetItem *it);
+	void parseTreeClasses(bool force=false );
 private:
 	enum findMode { Key, Data };
 	// Methods
@@ -89,7 +91,7 @@ private:
 	bool saveDataOfProject(QTreeWidgetItem *item, QTextStream *s, int nbSpace=-1, bool aSuivre=false);
 	QTreeWidgetItem * insertItem(QTreeWidgetItem *parent, QString key, QString data);
 	bool listContains(QList<QTreeWidgetItem *>, QString name, findMode type);
-	void parseTreeClasses();
+	void loadProjectSettings();
 	bool m_isModifiedProject;
 	// Variables
 	MainImpl *m_parent;

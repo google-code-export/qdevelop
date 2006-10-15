@@ -1017,6 +1017,37 @@ bool TextEdit::slotToggleBreakpoint(int line)
 	return activate;
 }
 //
+void TextEdit::clearAllBookmarks()
+{
+	foreach(int line, m_bookmarks)
+		slotToggleBookmark( line );
+}
+//
+bool TextEdit::slotToggleBookmark(int line) 
+{ 
+	if( !line )
+	{
+		QTextCursor cursor = textCursor();
+		line = lineNumber( cursorForPosition( QPoint(mousePosition.x(), mousePosition.y() ) ) );
+		setTextCursor( cursor );
+	}
+	bool activate;
+	if( m_bookmarks.indexOf(line) == -1 ) 
+	{
+		m_bookmarks.append( line );
+		activate = true;
+	}
+	else
+	{
+		m_bookmarks.removeAll( line );
+		activate = false;
+	}
+	((Editor*)parent())->toggleBookmark(activate, line);
+	if( m_lineNumbers) 
+		m_lineNumbers->update();
+	return activate;
+}
+//
 void TextEdit::setExecutedLine(int line) 
 { 
 	if( m_lineNumbers) 
@@ -1045,7 +1076,8 @@ void TextEdit::contextMenuEvent(QContextMenuEvent * e)
 	menu->addSeparator();
 	connect(menu->addAction(QIcon(":/toolbar/images/find.png"), tr("Find...")), SIGNAL(triggered()), this, SLOT(slotFind()) );
 	menu->addSeparator();
-	connect(menu->addAction(QIcon(), tr("Toggle breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
+	connect(menu->addAction(QIcon(":/divers/images/bookmark.png"), tr("Toggle Bookmark")), SIGNAL(triggered()), this, SLOT(slotToggleBookmark()) );
+	connect(menu->addAction(QIcon(":/divers/images/pointArret.png"), tr("Toggle Breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
 	//
 	menu->exec(e->globalPos());
 	delete menu;

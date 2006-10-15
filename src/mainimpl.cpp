@@ -100,7 +100,6 @@ MainImpl::MainImpl(QWidget * parent)
 	m_formatKeywords.setForeground(Qt::blue);
 
     tableLocalVariables->verticalHeader()->hide();    
-    tableArgVariables->verticalHeader()->hide();
     tableOtherVariables->verticalHeader()->hide();
 
 #ifdef WIN32
@@ -218,7 +217,8 @@ void MainImpl::configureCompletion()
     << "/usr/include";
 #endif
 //qDebug()<<includes;
-    m_completion->setTempFilePath( includes.at(1) );
+    //m_completion->setTempFilePath( includes.at(1) );
+    m_completion->setTempFilePath( QDir::tempPath() );
     m_completion->setCtagsCmdPath("ctags");
     m_completion->addIncludes( includes );
     m_completion->initParse("", true, false);
@@ -298,6 +298,8 @@ void MainImpl::createConnections()
 	connect(findLines, SIGNAL(itemDoubleClicked ( QListWidgetItem *)), this, SLOT(slotDoubleClickFindLines( QListWidgetItem *)) );
 	connect(actionHelpQtWord, SIGNAL(triggered()), this, SLOT(slotHelpQtWord()) );
 	connect(actionSwitchHeaderSources, SIGNAL(triggered()), this, SLOT(slotOtherFile()) );
+	connect(actionToggleBookmark, SIGNAL(triggered()), this, SLOT(slotToggleBookmark()) );
+	connect(actionClearAllBookmarks, SIGNAL(triggered()), this, SLOT(slotClearAllBookmarks()) );
 	//
 	m_projectGroup = new QActionGroup( this );	
 	m_projectGroup->addAction( actionCloseProject );
@@ -371,6 +373,14 @@ void MainImpl::slotToggleBreakpoint()
 	Editor *editor = ((Editor*)m_tabEditors->widget( i ));
 	if( editor  )
 		editor->slotToggleBreakpoint();
+}
+//
+void MainImpl::slotToggleBookmark()
+{
+	int i = m_tabEditors->currentIndex();
+	Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+	if( editor  )
+		editor->toggleBookmark();
 }
 //
 void MainImpl::slotToggleComment()
@@ -557,25 +567,33 @@ void MainImpl::saveINI()
 	settings.endGroup();
 	if( m_restoreOnStart )
 	{
-		settings.beginGroup("Files");
+		settings.beginGroup("Project");
 		QString projectDirectory = m_projectManager->absoluteNameProjectFile(treeFiles->topLevelItem(0));
 		settings.setValue("absoluteNameProjectFile", projectDirectory);
-		QStringList OpenFiles;
-		for(int i=0; i<m_tabEditors->count(); i++)
-		{
-			Editor *editor = ((Editor *)m_tabEditors->widget( i ));
-			if( editor )
-			{
-				OpenFiles << editor->filename()
-					+"|"
-					+QString::number(editor->verticalScrollBar());
-			}
-		}
-		settings.setValue("OpenFiles", OpenFiles);
-		if( m_tabEditors->count() )
-			settings.setValue("currentIndex", m_tabEditors->currentIndex());
 		settings.endGroup();
 	}
+	// Save opened files
+	//if( m_restoreOnStart )
+	//{
+		//settings.beginGroup("Files");
+		//QString projectDirectory = m_projectManager->absoluteNameProjectFile(treeFiles->topLevelItem(0));
+		//settings.setValue("absoluteNameProjectFile", projectDirectory);
+		//QStringList OpenFiles;
+		//for(int i=0; i<m_tabEditors->count(); i++)
+		//{
+			//Editor *editor = ((Editor *)m_tabEditors->widget( i ));
+			//if( editor )
+			//{
+				//OpenFiles << editor->filename()
+					//+"|"
+					//+QString::number(editor->verticalScrollBar());
+			//}
+		//}
+		//settings.setValue("OpenFiles", OpenFiles);
+		//if( m_tabEditors->count() )
+			//settings.setValue("currentIndex", m_tabEditors->currentIndex());
+		//settings.endGroup();
+	//}
 }
 //
 void MainImpl::slotNewProject()
@@ -810,6 +828,19 @@ void MainImpl::loadINI()
 	settings.endGroup();
 	if( m_restoreOnStart )
 	{
+		settings.beginGroup("Project");
+		QString projectName = settings.value("absoluteNameProjectFile").toString();
+		if( !projectName.isEmpty() )
+		{
+			if( !openProject( projectName ) )
+			{
+				return;
+			}
+		}
+		settings.endGroup();
+	}
+	/*if( m_restoreOnStart )
+	{
 		settings.beginGroup("Files");
 		QString projectName = settings.value("absoluteNameProjectFile").toString();
 		QStringList OpenFiles = settings.value("OpenFiles").toStringList();
@@ -832,7 +863,7 @@ void MainImpl::loadINI()
 		if( m_tabEditors->count() && editeurCourant < m_tabEditors->count() )
 			m_tabEditors->setCurrentIndex( editeurCourant );
 		settings.endGroup();
-	}
+	}*/
 }
 void MainImpl::closeEvent( QCloseEvent * event )
 {
@@ -916,6 +947,7 @@ bool MainImpl::openProject(QString s)
 	}
 	if( !slotCloseProject() )
 		return false;
+	configureCompletion();
 	m_projectManager = new ProjectManager(this, treeFiles, treeClasses, s);
 	treeFiles->setProjectManager( m_projectManager );
 	treeClasses->setProjectManager( m_projectManager );
@@ -929,12 +961,14 @@ bool MainImpl::openProject(QString s)
 	setCurrentProject( s );
 	m_projectGroup->setEnabled( true );
 	slotClickTreeFiles( treeFiles->topLevelItem ( 0 ), 0);
-	configureCompletion();
     return true;
 }
 //
 bool MainImpl::slotCloseProject()
 {
+	if( m_projectManager )
+		m_projectManager->saveProjectSettings();
+	slotClearAllBookmarks();
 	if( !slotCloseAllFiles() )
 		return false;
 	logBuild->clear();
@@ -1050,6 +1084,17 @@ void MainImpl::closeOtherTab(int numTab)
 	}
 }
 //
+void MainImpl::slotClearAllBookmarks()
+{
+	for(int i=0; i<m_tabEditors->count(); i++)
+	{
+		Editor *editor = ((Editor *)m_tabEditors->widget( i ));
+		if( editor )
+		{
+			editor->clearAllBookmarks();
+		}
+	}
+}
 //
 bool MainImpl::slotSaveAll()
 {
@@ -1148,6 +1193,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 		editor->gotoLine(numLine, moveTop);
 	connect(editor, SIGNAL(editorModified(Editor *, bool)), this, SLOT(slotModifiedEditor( Editor *, bool)) );
 	connect(editor, SIGNAL(updateClasses(QString, QString)), this, SLOT(slotUpdateClasses(QString, QString)) );
+	connect(editor, SIGNAL(bookmark(QString, QString, QPair<bool,unsigned int>)), this, SLOT(slotToggleBookmark(QString, QString, QPair<bool,unsigned int>)) );
 	if( m_debug )
 		connect(editor, SIGNAL(breakpoint(QString, QPair<bool,unsigned int>)), m_debug, SLOT(slotBreakpoint(QString, QPair<bool,unsigned int>)) );
 	setCurrentFile(s);
@@ -1155,6 +1201,45 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 
 	QApplication::restoreOverrideCursor();
 	return editor;
+}
+//
+
+void MainImpl::slotToggleBookmark(QString filename, QString text, QPair<bool,unsigned int> bookmarkLine)
+{
+	Bookmark bookmark;
+	bookmark.first = filename;
+	bookmark.second = bookmarkLine.second;
+	bool add = bookmarkLine.first;
+	if( add )
+	{
+		QAction *action = menuBookmarks->addAction(QString::number(bookmarkLine.second)+": "+text, this, SLOT(slotActivateBookmark()));
+		action->setToolTip( filename+":"+QString::number(bookmarkLine.second));
+		QVariant v;
+		v.setValue( bookmark );
+		action->setData( v );
+	}
+	else
+	{
+		QList<QAction *> actionsList = menuBookmarks->actions();
+		foreach(QAction *action, actionsList)
+		{
+			Bookmark bookmarkAction = action->data().value<Bookmark>();
+			if( bookmarkAction.first == bookmark.first && bookmarkAction.second == bookmark.second )
+			{
+				delete action;
+				break;
+			}
+		}
+	}
+}
+//
+void MainImpl::slotActivateBookmark()
+{
+	QAction *action = (QAction *)sender();
+	Bookmark bookmark = action->data().value<Bookmark>();
+	QString filename = bookmark.first;
+	int line = bookmark.second;
+	openFile(QStringList(filename), line);
 }
 //
 void MainImpl::slotUpdateClasses(QString filename, QString buffer)
@@ -1594,8 +1679,6 @@ void MainImpl::slotDebugVariables( QList<Variable> list)
 	//qDebug()<<"slotDebugVariables"<<list.count();
 	while( tableLocalVariables->rowCount() )
 		tableLocalVariables->removeRow(0);
-	while( tableArgVariables->rowCount() )
-		tableArgVariables->removeRow(0);
 	foreach(Variable var, list )
 	{
         QTableWidgetItem *newItem1 = new QTableWidgetItem(var.name);
@@ -1615,15 +1698,6 @@ void MainImpl::slotDebugVariables( QList<Variable> list)
 	        tableLocalVariables->setItem(row, 1, newItem2);
 	        tableLocalVariables->setItem(row, 2, newItem3);
 	        tableLocalVariables->setItem(row, 3, newItem4);
-       	}
-        else if( var.kind == Debug::Arg )
-        {
-			int row = tableArgVariables->rowCount();
-	        tableArgVariables->setRowCount(row+1);
-	        tableArgVariables->setItem(row, 0, newItem1);
-	        tableArgVariables->setItem(row, 1, newItem2);
-	        tableArgVariables->setItem(row, 2, newItem3);
-	        tableArgVariables->setItem(row, 3, newItem4);
        	}
         else if( var.kind == Debug::OtherArgs )
         {
@@ -1655,8 +1729,6 @@ void MainImpl::slotEndDebug()
 	actionStopDebug->setToolTip( tr("Abort") );
 	while( tableLocalVariables->rowCount() )
 		tableLocalVariables->removeRow(0);
-	while( tableArgVariables->rowCount() )
-		tableArgVariables->removeRow(0);
 	emit resetExecutedLine();
 	if( m_buildAfterDebug )
 		slotBuild();

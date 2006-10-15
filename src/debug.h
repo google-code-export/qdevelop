@@ -37,7 +37,7 @@ Q_OBJECT
 public:
 	Debug(QObject * parent, Parameters p, QString exe, bool exeOnly=false);
     void run();
-	enum Request { None, InfoSources, InfoScope, Local, Arg, OtherArgs, Whatis, Address, Length, Value};
+	enum Request { None, InfoSources, InfoScope, Local, OtherArgs, Whatis, Address, Length, Value};
 private:
 	// Méthodes
 	void writeMessagesToDebugger();

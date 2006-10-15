@@ -228,6 +228,26 @@ void Editor::updateNumLines(int currentLine, int numLines)
 			m_textEdit->slotToggleBreakpoint(num+numLines);
 		}
 	}
+	//
+	points = m_textEdit->bookmarks();
+	foreach(unsigned int num, points )
+	{
+		//qDebug()<<"num:"<<num<<" currentLine :"<<currentLine<<"currentLine+numLines :"<<currentLine+numLines;
+		if( numLines < 0 ) 
+		{
+			if( num >= currentLine+numLines )
+			{
+				m_textEdit->slotToggleBookmark(num);
+				if( currentLine <= num)
+					m_textEdit->slotToggleBookmark(num+numLines);
+			}
+		}
+		else if( numLines > 0 && ( currentLine <= num) )
+		{
+			m_textEdit->slotToggleBookmark(num);
+			m_textEdit->slotToggleBookmark(num+numLines);
+		}
+	}
 }
 //
 Editor::~Editor()
@@ -512,6 +532,19 @@ bool Editor::inQuotations(int position, QString text)
 void Editor::toggleBreakpoint(bool activate, int line) 
 { 
 	emit breakpoint(shortFilename(), QPair<bool,unsigned int>(activate, line));
+}
+//
+void Editor::toggleBookmark(bool activate, int line) 
+{ 
+	QTextCursor save = m_textEdit->textCursor();
+	int scroll = verticalScrollBar();
+	gotoLine( line, false );
+	m_textEdit->textCursor().movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
+	m_textEdit->textCursor().movePosition(QTextCursor::EndOfLine, QTextCursor::KeepAnchor);
+	QString s = m_textEdit->textCursor().block().text().simplified();
+	emit bookmark(filename(), s, QPair<bool,unsigned int>(activate, line));
+	m_textEdit->setTextCursor( save );
+	setVerticalScrollBar( scroll );
 }
 //
 void Editor::slotToggleBreakpoint() 

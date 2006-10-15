@@ -62,6 +62,7 @@ private:
 	QColor mTextColor;
 	QColor mBackgroundColor;
 	int m_executedLine;
+	int m_currentLine;
 	//
 signals:	
 	void digitNumbersChanged();
@@ -70,6 +71,9 @@ signals:
 	//
 protected slots:
 	void slotResetExecutedLine();
+private slots:
+	void slotToggleBreakpoint();
+	void slotToggleBookmark();
 public slots:
 	void setDefaultProperties();
 };
