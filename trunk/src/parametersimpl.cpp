@@ -128,5 +128,8 @@ void ParametersImpl::on_edit_clicked()
 void ParametersImpl::on_tableVariables_itemDoubleClicked(QTableWidgetItem* item)
 {
 	on_edit_clicked();
+
+	// TODO remove gcc warnings
+	item = NULL;
 }
 //

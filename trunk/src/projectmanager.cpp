@@ -585,7 +585,7 @@ void ProjectManager::insertFile(QTreeWidgetItem *it, QString filename, bool sile
 			parentKey = "RESOURCES";
 		else if( kindFile == "ts" )
 			parentKey = "TRANSLATIONS";
-		// Le file de type "DATA" doit être contenu dans une clé correspondant au type de file
+		// Le file de type "DATA" doit ï¿½re contenu dans une clï¿½correspondant au type de file
 		QTreeWidgetItem *parent = 0;
 		for(int i=0; i<it->childCount(); i++)
 		{
@@ -1404,7 +1404,7 @@ QString ProjectManager::projectDirectory(QString projectName)
 //
 QString ProjectManager::fileDirectory(QString absoluteFilename)
 {
-	// Renvoie le repertoire du projet auquel appartient le file nommé absoluteFilename
+	// Renvoie le repertoire du projet auquel appartient le file nommï¿½absoluteFilename
 	QList<QTreeWidgetItem *> projectsList;
 	childsList(0, "PROJECT", projectsList);
 	for(int nbProjects=0; nbProjects < projectsList.count(); nbProjects++)
@@ -1429,7 +1429,7 @@ QString ProjectManager::fileDirectory(QString absoluteFilename)
 //
 QString ProjectManager::projectName(QString location)
 {
-	// Renvoie le name du projet présent dans location
+	// Renvoie le name du projet prï¿½ent dans location
 	QList<QTreeWidgetItem *> projectsList;
 	childsList(0, "PROJECT", projectsList);
 	for(int nbProjects=0; nbProjects < projectsList.count(); nbProjects++)
@@ -1443,7 +1443,7 @@ QString ProjectManager::projectName(QString location)
 //
 QString ProjectManager::absoluteNameProjectFile(QTreeWidgetItem *it)
 {
-	// Renvoie le name absolu du file projet auquel appartient le file sélectionné dans le treeview
+	// Renvoie le name absolu du file projet auquel appartient le file sï¿½ectionnï¿½dans le treeview
 	// Nom au format /home/jl/monprojet/monprojet.pro ou C:/jl/monprojet/monprojet.pro
 	QTreeWidgetItem *tmp = item(it, "PROJECT", Key);
 	if( !tmp )
@@ -1466,7 +1466,7 @@ QString ProjectManager::findData(QString projectName, QString key)
 //
 QString ProjectManager::projectFilename(QTreeWidgetItem *it)
 {
-	// Renvoie le name court du file projet auquel appartient le file sélectionné dans le treeview
+	// Renvoie le name court du file projet auquel appartient le file sï¿½ectionnï¿½dans le treeview
 	// Nom au format monprojet.pro
 	QTreeWidgetItem *tmp = it;
 	do
@@ -1481,7 +1481,7 @@ QString ProjectManager::projectFilename(QTreeWidgetItem *it)
 //
 QTreeWidgetItem *ProjectManager::item(QTreeWidgetItem *begin, QString name, findMode type)
 {
-	// Renvoie le premier item correspondant à la recherche
+	// Renvoie le premier item correspondant ï¿½la recherche
 	if( begin == 0 )
 		begin = m_treeFiles->topLevelItem( 0 );
 	if( (type==Data && begin->text(0)==name) )
@@ -1523,7 +1523,7 @@ QTreeWidgetItem *ProjectManager::itemProject(QString projectName)
 //
 void ProjectManager::childsList(QTreeWidgetItem *begin, QString key, QList<QTreeWidgetItem *> &list)
 {
-	// Renvoie la list enfants correspondants à la clé
+	// Renvoie la list enfants correspondants ï¿½la clï¿½
 	if( begin == 0 )
 		begin = m_treeFiles->topLevelItem( 0 );
 	if( begin->data(0, Qt::UserRole) == key )
@@ -1569,6 +1569,8 @@ QStringList ProjectManager::buildableProjectsDirectories()
 //
 void ProjectManager::parseFile(QString file)
 {
+	// TODO remove gcc warnings
+	file.isNull();
 }
 //
 QString ProjectManager::projectVersion(QTreeWidgetItem *it)
@@ -1764,7 +1766,7 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
 			cible = QString();
 			continue;
 		}
-		// Partie commune à Win et Linux 
+		// Partie commune ï¿½Win et Linux 
 		// TARGET is the good variable to find exe on Linux 
 		if( line.contains("=") && line.section("=", 0, 0).simplified() == "TARGET" )
 		{

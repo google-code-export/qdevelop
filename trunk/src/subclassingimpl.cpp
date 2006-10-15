@@ -32,8 +32,13 @@
 
 //
 SubclassingImpl::SubclassingImpl(ProjectManager * parent, QString dirProject, QString uiName, QStringList headers) 
-	: QDialog(0), m_projectDirectory(dirProject), m_parent(parent), m_uiName(uiName)
+// 	: QDialog(0), m_projectDirectory(dirProject), m_parent(parent), m_uiName(uiName)
+	: QDialog(0)
 {
+	m_projectDirectory = dirProject;
+	m_parent = parent;
+	m_uiName = uiName;
+			
 	QApplication::setOverrideCursor(Qt::WaitCursor);
 	setupUi(this); 
 	connect(okButton, SIGNAL(clicked()), this, SLOT(slotAccept()) );

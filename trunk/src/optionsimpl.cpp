@@ -111,6 +111,9 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	connect(lineColor, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(defaults, SIGNAL(clicked()), this, SLOT(slotDefault()));
 	textEdit->setPlainText( textEdit->toPlainText() );
+
+	// TODO remove gcc warnings
+	autoMask = false;
 }
 //
 QFont OptionsImpl::font() 

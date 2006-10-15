@@ -390,6 +390,10 @@ void ProjectPropertieImpl::slotCurrentItemChanged ( QListWidgetItem * current, Q
 		//valuesList->item( valuesList->count()-1 )->setData(Qt::UserRole, QVariant(reinterpret_cast<uint>(item->child( nb )) ) );
 		valuesList->item( valuesList->count()-1 )->setData(Qt::UserRole, addressToVariant(item->child( nb ) ) );
 	}
+
+	// TODO remove gcc warnings
+	previous = NULL;
+
 }
 //
 void ProjectPropertieImpl::slotAddVariable()

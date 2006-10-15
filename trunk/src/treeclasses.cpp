@@ -535,6 +535,9 @@ void TreeClasses::toDB(QString projectDirectory)
 	//db.close();
     QApplication::restoreOverrideCursor();
 //qDebug() << "Fin toDB";
+
+	// TODO remove gcc warnings
+	projectDirectory.isNull();
 }
 //
 void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query)
@@ -628,7 +631,7 @@ void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QStrin
 	{
 		foreach( QString p, parents.split(":", QString::SkipEmptyParts) )
 		{
-			QTreeWidgetItem *find;
+// 			QTreeWidgetItem *find;
 			for(int i=0; i<parent->childCount(); i++)
 			{
 				if( parent->child( i )->text( 0 ) == p )
@@ -644,6 +647,9 @@ void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QStrin
 	v.setValue( parsedItem );
 	it->setData(0, Qt::UserRole, v );
 //qDebug() << text << parent->text(0) << parents;
+
+	// TODO remove gcc warnings
+	tooltip.isNull();
 }
 //
 void TreeClasses::mouseDoubleClickEvent ( QMouseEvent * event )
