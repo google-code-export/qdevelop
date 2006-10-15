@@ -42,6 +42,9 @@ class FindFileImpl;
 class StackImpl;
 class InitCompletion;
 //
+typedef QPair<QString, int> Bookmark;
+Q_DECLARE_METATYPE(Bookmark)
+//
 class MainImpl : public QMainWindow, Ui::Main
 {
 Q_OBJECT
@@ -185,6 +188,10 @@ private slots:
 	void slotDebugVariables( QList<Variable> list);
 	void slotAddDebugVariable();
 	void slotRemoveDebugVariable();
+	void slotToggleBookmark(QString filename, QString text, QPair<bool,unsigned int> bookmarkLine);
+	void slotToggleBookmark();	
+	void slotActivateBookmark();
+	void slotClearAllBookmarks();
 public slots:
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);
 	bool slotCloseAllFiles();

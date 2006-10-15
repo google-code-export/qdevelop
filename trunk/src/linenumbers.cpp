@@ -89,6 +89,10 @@ void LineNumbers::paintEvent( QPaintEvent* )
 		{
 			p.drawPixmap( 1, qRound( position.y() ) -contentsY-4,QPixmap(":/divers/images/pointArret.png")/*.scaled(20,20)*/);
 		}
+		if( m_textEdit->bookmarks().indexOf( m_lineNumber ) != -1 )
+		{
+			p.drawPixmap( 3, qRound( position.y() ) -contentsY-1,QPixmap(":/divers/images/bookmark.png")/*.scaled(20,20)*/);
+		}
 
 	}
 }
@@ -157,10 +161,30 @@ void LineNumbers::mousePressEvent ( QMouseEvent * event )
 	QTextCursor cursor = m_textEdit->cursorForPosition( event->pos() );
 	if( cursor.isNull() )
 		return;
-	int num = 1;
-	for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid() && block != cursor.block(); block = block.next(), num++ )
+	m_currentLine = 1;
+	for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid() && block != cursor.block(); block = block.next(), m_currentLine++ )
 		;
-	m_textEdit->slotToggleBreakpoint( num );
+	if( event->button() == Qt::RightButton )
+	{
+		QMenu *menu = new QMenu(this);
+		connect(menu->addAction(QIcon(":/divers/images/bookmark.png"), tr("Toogle Bookmark")), SIGNAL(triggered()), this, SLOT(slotToggleBookmark()) );
+		connect(menu->addAction(QIcon(":/divers/images/pointArret.png"), tr("Toogle Breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
+		menu->exec(event->globalPos());
+		delete menu;
+	}
+	else
+		slotToggleBookmark();
+}
+//
+void LineNumbers::slotToggleBreakpoint() 
+{ 
+	m_textEdit->slotToggleBreakpoint( m_currentLine );
+	repaint();
+}
+//
+void LineNumbers::slotToggleBookmark() 
+{ 
+	m_textEdit->slotToggleBookmark( m_currentLine );
 	repaint();
 }
 //

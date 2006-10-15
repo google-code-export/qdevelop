@@ -54,36 +54,6 @@
     <addaction name="actionAbout" />
     <addaction name="actionAboutQt" />
    </widget>
-   <widget class="QMenu" name="menuProject" >
-    <property name="enabled" >
-     <bool>true</bool>
-    </property>
-    <property name="title" >
-     <string>&amp;Project</string>
-    </property>
-    <addaction name="actionNewProject" />
-    <addaction name="actionAddNewItem" />
-    <addaction name="actionAddScope" />
-    <addaction name="actionAddExistingFiles" />
-    <addaction name="separator" />
-    <addaction name="actionProjectPropertie" />
-   </widget>
-   <widget class="QMenu" name="menuView" >
-    <property name="title" >
-     <string>&amp;View</string>
-    </property>
-    <widget class="QMenu" name="menuToolbar" >
-     <property name="title" >
-      <string>Toolbar</string>
-     </property>
-    </widget>
-    <widget class="QMenu" name="menuDocks" >
-     <property name="title" >
-      <string>Docks</string>
-     </property>
-    </widget>
-    <addaction name="menuToolbar" />
-   </widget>
    <widget class="QMenu" name="menuEditors" >
     <property name="title" >
      <string>Editors</string>
@@ -176,6 +146,14 @@
     <addaction name="separator" />
     <addaction name="actionQuit" />
    </widget>
+   <widget class="QMenu" name="menuBookmarks" >
+    <property name="title" >
+     <string>Bookmarks</string>
+    </property>
+    <addaction name="actionToggleBookmark" />
+    <addaction name="actionClearAllBookmarks" />
+    <addaction name="separator" />
+   </widget>
    <widget class="QMenu" name="menu_Edit" >
     <property name="title" >
      <string>&amp;Edit</string>
@@ -204,10 +182,41 @@
     <addaction name="separator" />
     <addaction name="actionCompleteCode" />
    </widget>
+   <widget class="QMenu" name="menuView" >
+    <property name="title" >
+     <string>&amp;View</string>
+    </property>
+    <widget class="QMenu" name="menuToolbar" >
+     <property name="title" >
+      <string>Toolbar</string>
+     </property>
+    </widget>
+    <widget class="QMenu" name="menuDocks" >
+     <property name="title" >
+      <string>Docks</string>
+     </property>
+    </widget>
+    <addaction name="menuToolbar" />
+   </widget>
+   <widget class="QMenu" name="menuProject" >
+    <property name="enabled" >
+     <bool>true</bool>
+    </property>
+    <property name="title" >
+     <string>&amp;Project</string>
+    </property>
+    <addaction name="actionNewProject" />
+    <addaction name="actionAddNewItem" />
+    <addaction name="actionAddScope" />
+    <addaction name="actionAddExistingFiles" />
+    <addaction name="separator" />
+    <addaction name="actionProjectPropertie" />
+   </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
    <addaction name="menuView" />
    <addaction name="menuProject" />
+   <addaction name="menuBookmarks" />
    <addaction name="menuBuild" />
    <addaction name="menuDebug" />
    <addaction name="menuEditors" />
@@ -252,7 +261,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex" >
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tabBuild" >
         <attribute name="title" >
@@ -351,49 +360,6 @@
              </property>
              <item row="0" column="0" >
               <widget class="QTableWidget" name="tableLocalVariables" >
-               <property name="alternatingRowColors" >
-                <bool>true</bool>
-               </property>
-               <property name="selectionBehavior" >
-                <enum>QAbstractItemView::SelectRows</enum>
-               </property>
-               <column>
-                <property name="text" >
-                 <string>Name</string>
-                </property>
-               </column>
-               <column>
-                <property name="text" >
-                 <string>Type</string>
-                </property>
-               </column>
-               <column>
-                <property name="text" >
-                 <string>Address</string>
-                </property>
-               </column>
-               <column>
-                <property name="text" >
-                 <string>Value</string>
-                </property>
-               </column>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="Arguments" >
-            <attribute name="title" >
-             <string>Argument Variables</string>
-            </attribute>
-            <layout class="QGridLayout" >
-             <property name="margin" >
-              <number>0</number>
-             </property>
-             <property name="spacing" >
-              <number>0</number>
-             </property>
-             <item row="0" column="0" >
-              <widget class="QTableWidget" name="tableArgVariables" >
                <property name="alternatingRowColors" >
                 <bool>true</bool>
                </property>
@@ -1399,21 +1365,43 @@
     <string>Ctrl+Space</string>
    </property>
   </action>
+  <action name="actionToggleBookmark" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/divers/images/bookmark.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Toggle &amp;Bookmark</string>
+   </property>
+   <property name="iconText" >
+    <string>Toggle Bookmark</string>
+   </property>
+   <property name="toolTip" >
+    <string>Toggle Bookmark</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionClearAllBookmarks" >
+   <property name="text" >
+    <string>Clear &amp;All Bookmarks</string>
+   </property>
+  </action>
  </widget>
  <pixmapfunction></pixmapfunction>
  <customwidgets>
-  <customwidget>
-   <class>TreeClasses</class>
-   <extends>QTreeWidget</extends>
-   <header>treeclasses.h</header>
-   <container>0</container>
-   <pixmap></pixmap>
-  </customwidget>
   <customwidget>
    <class>TreeProject</class>
    <extends>QWidget</extends>
    <header>treeproject.h</header>
    <container>1</container>
+   <pixmap></pixmap>
+  </customwidget>
+  <customwidget>
+   <class>TreeClasses</class>
+   <extends>QTreeWidget</extends>
+   <header>treeclasses.h</header>
+   <container>0</container>
    <pixmap></pixmap>
   </customwidget>
  </customwidgets>

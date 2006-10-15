@@ -71,9 +71,13 @@ public:
 	QStringList methodes(QString classe);
 	QList<int> breakpoints() { return m_textEdit->breakpoints(); };
 	void toggleBreakpoint(bool activate, int line);
+	void toggleBookmark(bool activate, int line);
+	void toggleBookmark() { m_textEdit->slotToggleBookmark( m_textEdit->currentLineNumber() ); };
+	void clearAllBookmarks() { m_textEdit->clearAllBookmarks(); };
 	void deleteBreakpoint(int line) { m_textEdit->deleteBreakpoint(line); };
 	void setBackgroundColor( QColor c ){ m_textEdit->setBackgroundColor(c); };
 	void setCurrentLineColor( QColor c ){ m_textEdit->setCurrentLineColor(c); };
+	int currentLineNumber(){ return m_textEdit->currentLineNumber(); };
 	void slotToggleBreakpoint();
 	void setExecutedLine(int line);
 	void emitListBreakpoints();
@@ -159,6 +163,7 @@ signals:
 	void editorModified(Editor *, bool);
 	void refreshClasses(QString);
 	void breakpoint(QString, QPair<bool,unsigned int>); 
+	void bookmark(QString, QString, QPair<bool,unsigned int>); 
 	void updateClasses(QString, QString);
 };
 

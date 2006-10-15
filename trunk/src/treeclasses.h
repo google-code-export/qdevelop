@@ -94,15 +94,15 @@ private:
 	void setSortingSymbols( QTreeWidgetItem *it, bool active, QString filename, QString ext, QStringList parents);
 	void setTooltip(QTreeWidgetItem *item, ParsedItem parsedItem);
 	QString signature(QString line);
-	bool connectDB(QString const& dbName);
 	void writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query);
 	void createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem);
 	QString getPathHash(QString const& pathName);
-	QSqlDatabase db;
+	//QSqlDatabase db;
 private slots:
 	void slotParseCtags();
 	void slotOpenImplementation();
 	void slotOpenDeclaration();
+	void slotRefresh();
 	void parse(ParsedItem parsedItem);
 public slots:
 	void updateClasses( QString filename, QString buffer, QStringList parents, QString ext);

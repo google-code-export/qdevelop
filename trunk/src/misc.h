@@ -31,6 +31,7 @@
 QVariant addressToVariant(void *it );
 QTreeWidgetItem *variantToItem( QVariant variant );
 QAction *variantToAction( QVariant variant );
+bool connectDB(QString const& dbName);
 
 
 #endif

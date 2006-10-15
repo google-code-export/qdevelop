@@ -31,6 +31,8 @@
 #include "projectpropertieimpl.h"
 #include "subclassingimpl.h"
 #include "parametersimpl.h"
+#include "tabwidget.h"
+#include "editor.h"
 //
 #include <QTreeWidget>
 #include <QFile>
@@ -45,6 +47,8 @@
 #include <QScrollArea>
 #include <QDesktopWidget>
 #include <QMetaMethod>
+#include <QSqlQuery>
+#include <QSqlError>
 //
 ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeClasses *treeClasses, QString name)
 	: m_parent(parent), m_treeFiles(treeFiles), m_treeClasses(treeClasses)
@@ -71,17 +75,22 @@ ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeCl
 	m_previewForm = 0;
 	m_parameters.isEmpty = true;
 	loadProject(name, newProjectItem);
+	//QString projectDirectory = absoluteNameProjectFile(m_treeFiles->topLevelItem(0));
+	//TreeClasses::connectDB( projectDirectory + "/project.db" );
 	parseTreeClasses();
+	loadProjectSettings();
 }
 //
 ProjectManager::~ProjectManager()
 {
+	QString projectDirectory = absoluteNameProjectFile(m_treeFiles->topLevelItem(0));
 	if( m_treeFiles->topLevelItem ( 0 ) )
-		m_treeClasses->toDB( projectDirectory( m_treeFiles->topLevelItem ( 0 ) ) );
+		m_treeClasses->toDB( projectDirectory );
 	m_treeFiles->clear();
 	m_treeClasses->clear();
 	if( m_previewForm )
 		delete m_previewForm;
+	QSqlDatabase::removeDatabase ( "QSQLITE" );
 }
 //
 QStringList ProjectManager::parents(QTreeWidgetItem *it)
@@ -101,12 +110,13 @@ QStringList ProjectManager::parents(QTreeWidgetItem *it)
 	return parentsList;
 }
 //
-void ProjectManager::parseTreeClasses()
+void ProjectManager::parseTreeClasses(bool force)
 {
 	if( !m_parent->showTreeClasses() )
 		return;
+	m_treeClasses->clear();
 	QString directory = projectDirectory( m_treeFiles->topLevelItem( 0 ) );
-	if( QFile::exists( directory+"/symbols.db" ) )
+	if( QFile::exists( directory+"/project.db" ) && !force)
 	{
 		m_treeClasses->fromDB( directory );
 	}
@@ -120,8 +130,6 @@ void ProjectManager::parseTreeClasses()
 			QString projectName = projectsList.at(nbProjects)->text(0);
 			QString projectDir = findData(projectName, "projectDirectory");
 			QStringList files;
-			//sources( itemProject(projectName), files );
-			//headers( itemProject(projectName), files );
 			sources(projectsList.at(nbProjects), files );
 			headers(projectsList.at(nbProjects), files );
 			files.sort();
@@ -201,6 +209,80 @@ bool ProjectManager::close()
 		}
 	}
 	return true;
+}
+//
+void ProjectManager::saveProjectSettings()
+{
+	// Save opened files
+	QString directory = projectDirectory(m_treeFiles->topLevelItem(0));
+	if( !connectDB( directory + "/project.db" ) )
+		return;
+	QSqlQuery query;
+	QString queryString = "delete from editors where 1";
+    if (!query.exec(queryString))
+    {
+		qDebug() << "Failed to execute" << queryString;
+    	return;
+   	}
+	for(int i=0; i<m_parent->tabEditors()->count(); i++)
+	{
+		Editor *editor = ((Editor *)m_parent->tabEditors()->widget( i ));
+		if( editor )
+		{
+			QSqlQuery query;
+			query.prepare("INSERT INTO editors (filename, scrollbar, numline) "
+			           "VALUES (:filename, :scrollbar, :numline)");
+			query.bindValue(":filename", editor->filename());
+			query.bindValue(":scrollbar", editor->verticalScrollBar());
+			query.bindValue(":numline", editor->currentLineNumber());
+			if( !query.exec() )
+				qDebug() << query.lastError();
+		}
+	}
+	if( m_parent->tabEditors()->count() )
+	{
+		//settings.setValue("currentIndex", m_tabEditors->currentIndex());
+	    QSqlQuery query;
+	    query.prepare("update config set currentEditor = ? where 1");
+	    query.addBindValue(m_parent->tabEditors()->currentIndex());
+		query.exec();
+		if( !query.exec() )
+			qDebug() << query.lastError();
+		
+	}
+	//db.close();
+}
+//
+void ProjectManager::loadProjectSettings()
+{
+	// Save opened files
+	QString directory = projectDirectory(m_treeFiles->topLevelItem(0));
+	if( !connectDB( directory + "/project.db" ) )
+		return;
+	QSqlQuery query;
+	query.prepare("select * from editors where 1");
+    query.exec();
+    while (query.next())
+    {
+    	QString filename = query.value(0).toString();
+    	int scrollbar = query.value(1).toInt();
+    	int numline = query.value(2).toInt();
+		m_parent->openFile( QStringList( filename ) );
+		if( m_parent->tabEditors()->count() && numline )
+		{
+			((Editor *)m_parent->tabEditors()->widget( m_parent->tabEditors()->count()-1 ))->setVerticalScrollBar( scrollbar );
+			((Editor *)m_parent->tabEditors()->widget( m_parent->tabEditors()->count()-1 ))->gotoLine( numline,false );
+		}
+    }
+	query.prepare("select * from config where 1");
+    query.exec();
+    while (query.next())
+    {
+    	int currentEditor = query.value( 0 ).toInt();
+qDebug()<<"currentEditor"<<currentEditor;
+		m_parent->tabEditors()->setCurrentIndex( currentEditor );
+    }
+    //db.close();
 }
 //
 void ProjectManager::slotAddExistingFiles(QTreeWidgetItem *it)

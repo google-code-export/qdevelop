@@ -228,7 +228,7 @@ void OptionsImpl::slotDefault()
 	//
 	saveAll->setChecked( true );
 	restore->setChecked( true );
-	promptBeforeQuit->setChecked( true );
+	promptBeforeQuit->setChecked( false );
 	groupHighlightCurrentLine->setChecked( true );
 	numbers->setChecked( true );
 	selectionBorder->setChecked( true );

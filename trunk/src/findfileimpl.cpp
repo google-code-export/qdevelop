@@ -36,6 +36,7 @@ void FindFileImpl::on_findButton_clicked()
 	if( findButton->text() == tr("&Find") )
 	{
 		findButton->setText(tr("&Stop"));
+		closeButton->setEnabled( false );
 		m_stop = false;
 		m_listResult->clear();
 		m_listLines->clear();
@@ -43,6 +44,7 @@ void FindFileImpl::on_findButton_clicked()
 	else
 	{
 		findButton->setText(tr("&Find"));
+		closeButton->setEnabled( true );
 		m_stop = true;
 	}
 	find( comboFindIn->currentText() );
@@ -52,6 +54,7 @@ void FindFileImpl::on_findButton_clicked()
 		m_listLines->addItems( m_listResult->item(0)->data(Qt::UserRole).toStringList() );		
 	}
 	findButton->setText(tr("&Find"));
+	closeButton->setEnabled( true );
 }
 //
 void FindFileImpl::find( QString directory )

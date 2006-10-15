@@ -196,10 +196,10 @@ void Debug::slotMessagesDebug()
 						{
 							Variable variable;
 							variable.name = name;
-							if( s.contains("is a local") )
-								variable.kind = Local;
-							else if( s.contains("is an argument") )
-								variable.kind = Arg;
+							//if( s.contains("is a") )
+							variable.kind = Local;
+							//else if( s.contains("is an argument") )
+								//variable.kind = Arg;
 							listVariables.append( variable );
 						}
 					}
@@ -314,7 +314,7 @@ void Debug::slotMessagesDebug()
 						}
 						else
 						{
-							variable.content = content;
+							variable.content = QString::fromUtf8(content.toLocal8Bit());
 							listVariablesToSend.append( variable );
 						}
 						if( listVariables.count() )
