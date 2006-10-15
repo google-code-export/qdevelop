@@ -57,16 +57,16 @@ int main(int argc, char *argv[])
 	translationFile = ":/translations/translations/QDevelop_"+translationFile+".qm";
     qApp->processEvents();
 	//
-	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Interface translation"), Qt::AlignRight | Qt::AlignTop);
+	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Interface translation"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
     qApp->processEvents();
 	translator.load( translationFile );
 	app.installTranslator( &translator );
 	//
 	MainImpl main;// = new MainImpl;
-	splash->showMessage(QObject::tr("Environment control"), Qt::AlignRight | Qt::AlignTop);
+	splash->showMessage(QObject::tr("Environment control"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
     qApp->processEvents();
 	main.toolsControl();
-	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Files on editor"), Qt::AlignRight | Qt::AlignTop);
+	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Files on editor"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
     qApp->processEvents();
 	main.loadINI();
 	//
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 			main.openFile( QStringList( s ) );
 	}
 	//
-	splash->showMessage(QObject::tr("Main Window creation"), Qt::AlignRight | Qt::AlignTop);
+	splash->showMessage(QObject::tr("Main Window creation"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
     qApp->processEvents();
 	main.setGeometry(50,50, 800, 550);
 	main.showMaximized();
