@@ -52,7 +52,7 @@ void AddNewImpl::slotDirectoryChoice()
 		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
 	if( s.isEmpty() )
 	{
-		// Le bouton Annuler a été cliqué
+		// Le bouton Annuler a ï¿½ï¿½cliquï¿½
 		return;
 	}
 	location->setText( s );	
@@ -64,6 +64,9 @@ void AddNewImpl::slotComboProjects(QString projectName)
 	QTreeWidgetItem *item = (QTreeWidgetItem*)(variantToItem( variant ) );
 	m_projectDirectory = m_projectManager->projectDirectory( item );
 	location->setText( m_projectDirectory );
+
+	// TODO remove gcc warnings
+	projectName.isNull();
 }
 //
 void AddNewImpl::slotFileType()

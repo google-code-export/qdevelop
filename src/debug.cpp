@@ -33,8 +33,13 @@
 #endif
 //
 Debug::Debug(QObject * parent, Parameters p, QString exe, bool exeOnly)
-	: QThread(parent), m_parent(parent), executableName(exe), m_executeWithoutDebug(exeOnly), m_parameters(p)
+// 	: QThread(parent), m_parent(parent), executableName(exe), m_executeWithoutDebug(exeOnly), m_parameters(p)
+	: QThread(parent)
 {
+	m_parent = parent;
+	executableName = exe;
+	m_executeWithoutDebug = exeOnly;
+	m_parameters = p;
 }
 //
 void Debug::run()
@@ -62,7 +67,7 @@ void Debug::executeWithoutDebug()
 
 	//processDebug->start("\""+executableName+"\"",  QStringList() << m_parameters.arguments);
 	processDebug->start(executableName,  QStringList() << m_parameters.arguments);
-    processDebug->waitForFinished(500); // On attend un peu pour passer en état Running
+    processDebug->waitForFinished(500); // On attend un peu pour passer en ï¿½at Running
 	while( processDebug->state() == QProcess::Running )
 	{
      	processDebug->waitForFinished(5);
@@ -82,7 +87,7 @@ void Debug::launchDebug()
 	configureGdb();
 	writeMessagesToDebugger();
 	processDebug->write("run "+m_parameters.arguments.toLatin1()+"\n");
-    processDebug->waitForFinished(500); // On attend un peu pour passer en état Running
+    processDebug->waitForFinished(500); // On attend un peu pour passer en ï¿½at Running
 	while( processDebug->state() == QProcess::Running )
 	{
      	processDebug->waitForFinished(5);

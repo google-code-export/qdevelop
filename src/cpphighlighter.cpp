@@ -101,7 +101,7 @@ void CppHighlighter::highlightBlock(const QString &t)
 		}
 		else
 		{
-			endIndex == -1;
+			endIndex = -1;
 			setCurrentBlockState(Closed);
 		}
 	} while( endIndex != -1 );

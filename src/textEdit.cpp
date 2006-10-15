@@ -101,15 +101,15 @@ void TextEdit::paste()
 		if( toPlainText().length() > textCursor().position() )
 			linesDeleted = toPlainText().at( textCursor().position() ) == '\n';
 	}
-	if( linesDeleted )
+	if ( linesDeleted )
 		m_editor->updateNumLines(currentLineNumber(), linesDeleted*-1);
 	//
 	QClipboard *clipboard = QApplication::clipboard ();
 	QString newText = clipboard->text();
-	int linesAdded;
+	int linesAdded = 0;
 	if ( newText.length() )
 		linesAdded = newText.count( QChar('\n') );
-	if( linesAdded )
+	if ( linesAdded )
 		m_editor->updateNumLines(currentLineNumber(), linesAdded);
 	QTextEdit::paste();
 }
@@ -141,6 +141,11 @@ void TextEdit::setBackgroundColor( QColor c )
 void TextEdit::slotContentsChange ( int position, int charsRemoved, int charsAdded )
 {
 	//qDebug()<<"slotContentsChange"<<position<<charsRemoved<<charsAdded;
+
+	// TODO remove gcc warnings
+	position = 0;
+	charsRemoved = 0;
+	charsAdded = 0;
 }
 //
 void TextEdit::setCurrentLineColor( QColor c )
@@ -854,7 +859,7 @@ void TextEdit::dropEvent( QDropEvent * event )
 		QTextCursor save = textCursor();
 		setTextCursor( cursorForPosition( QPoint( event->pos().x(),  event->pos().y() ) ) );
 		text = event->mimeData()->text();
-		int linesAdded;
+		int linesAdded = 0;
 		if ( text.length() )
 			linesAdded = text.count( QChar('\n') );
 		if( linesAdded )

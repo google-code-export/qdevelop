@@ -75,6 +75,8 @@ void SelectionBorder::mouseMoveEvent ( QMouseEvent * event )
 //
 void SelectionBorder::mouseReleaseEvent ( QMouseEvent * event )
 {
+	// TODO remove gcc warnings
+	event = NULL;
 }
 //
 //

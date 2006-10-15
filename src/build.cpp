@@ -29,10 +29,17 @@
 #include <QDir>
 //
 Build::Build(QObject * parent, QString qmakeName, QString rep, bool qmake, bool n, bool g, QString compileFile)
-	: QThread(parent), m_qmakeName(qmakeName), m_qmake(qmake), projectDirectory(rep), m_clean(n), m_build(g), m_compileFile(compileFile)
+// 	: QThread(parent), m_qmakeName(qmakeName), m_qmake(qmake), projectDirectory(rep), m_clean(n), m_build(g), m_compileFile(compileFile)
+	: QThread(parent)
 {
 	connect(parent, SIGNAL(stopBuild()), this, SLOT(slotStopBuild()) );
 	m_isStopped = false;
+	m_qmakeName = qmakeName;
+	m_qmake = qmake;
+	projectDirectory = rep;
+	m_clean = n;
+	m_build = g;
+	m_compileFile = compileFile;
 }
 //
 void Build::run()
@@ -146,7 +153,7 @@ QString Build::buildOnly( QString sourceFile )
 			target = QString();
 			continue;
 		}
-		// Partie commune à Win et Linux 
+		// Partie commune ï¿½Win et Linux 
 		if( line.section("=", 0, 0).simplified() == "CXX" )
 			CXX = line.section("=", 1, 1).simplified();
 		if( line.section("=", 0, 0).simplified() == "DEFINES" )

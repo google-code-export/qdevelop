@@ -84,22 +84,16 @@ SET( qdevelop_SRCS
 
 SET( qdevelop_MOC_HDRS	
 	src/InitCompletion.h
-	src/QIComplete/parse.h
-	src/QIComplete/readtags.h
-	src/QIComplete/tree.h
 	src/addexistantimpl.h
 	src/addnewimpl.h
 	src/addscopeimpl.h
-	src/assistant.h
 	src/build.h
 	src/cpphighlighter.h
 	src/debug.h
 	src/editor.h
 	src/findfileimpl.h
-	src/lineedit.h
 	src/linenumbers.h
 	src/mainimpl.h
-	src/misc.h
 	src/newprojectimpl.h
 	src/optionsimpl.h
 	src/parametersimpl.h
@@ -107,7 +101,6 @@ SET( qdevelop_MOC_HDRS
 	src/projectpropertieimpl.h
 	src/promptreplaceimpl.h
 	src/replaceimpl.h
-	src/selectionborder.h
 	src/shortcutsimpl.h
 	src/stackimpl.h
 	src/subclassingimpl.h

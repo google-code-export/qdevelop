@@ -988,7 +988,7 @@ bool MainImpl::slotCloseProject()
 //
 void MainImpl::slotDoubleClickTreeFiles(QTreeWidgetItem *item, int)
 {
-	if( item->childCount() > 0 ) // Pas éditable
+	if( item->childCount() > 0 ) // Pas ï¿½itable
 		return;
 	QString filename = item->text(0);
 	QString projectName = m_projectManager->projectFilename( item );
@@ -1028,7 +1028,7 @@ void MainImpl::slotSaveFileAs()
 		tr("Files (*.cpp *.h *.txt *.* *)") );
 	if( s.isEmpty() )
 	{
-		// Le bouton Annuler a été cliqué
+		// Le bouton Annuler a ï¿½ï¿½cliquï¿½
 		return;
 	}
 	editor->setFilename( s );
@@ -1136,7 +1136,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 		QApplication::restoreOverrideCursor();
 		return 0;
 	}
-	// Le file est peut-être déjà ouvert. On parcours les onglets à la recherche du nom de file.
+	// Le file est peut-ï¿½re dï¿½ï¿½ouvert. On parcours les onglets ï¿½la recherche du nom de file.
 	for(int i=0; i<m_tabEditors->count(); i++)
 	{
 		if( ((Editor *)m_tabEditors->widget(i))->filename() == s)
@@ -1154,7 +1154,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 	}
     //
     //
-	// Pas trouvé dans les onglets, on ouvre vraiment.
+	// Pas trouvï¿½dans les onglets, on ouvre vraiment.
 	Editor *editor = new Editor(m_tabEditors, this, m_completion ,s);
 	editor->setShowTreeClasses( m_showTreeClasses );
 	editor->setIntervalUpdatingTreeClasses( m_intervalUpdatingClasses );

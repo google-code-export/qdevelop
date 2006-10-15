@@ -47,8 +47,14 @@
 
 
 Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completion, QString name)
-	: QWidget(parent), m_parent(parent), m_mainimpl(mainimpl), m_completion(completion), m_filename( name )
+// 	: QWidget(parent), m_parent(parent), m_mainimpl(mainimpl), m_completion(completion), m_filename( name )
+	: QWidget(parent)
 {
+	m_parent = parent;
+	m_mainimpl = mainimpl;
+	m_completion = completion;
+	m_filename =  name;
+			
 	int vposLayout = 0;
 	m_comboClasses = m_comboMethods = 0;
 	m_textEdit = new TextEdit(this, mainimpl, completion);
@@ -210,7 +216,7 @@ void Editor::slotTimerCheckIfModifiedOutside()
 void Editor::updateNumLines(int currentLine, int numLines)
 {
 	QList<int> points = m_textEdit->breakpoints();
-	foreach(unsigned int num, points )
+	foreach( int num, points )
 	{
 		//qDebug()<<"num:"<<num<<" currentLine :"<<currentLine<<"currentLine+numLines :"<<currentLine+numLines;
 		if( numLines < 0 ) 
@@ -230,7 +236,7 @@ void Editor::updateNumLines(int currentLine, int numLines)
 	}
 	//
 	points = m_textEdit->bookmarks();
-	foreach(unsigned int num, points )
+	foreach( int num, points )
 	{
 		//qDebug()<<"num:"<<num<<" currentLine :"<<currentLine<<"currentLine+numLines :"<<currentLine+numLines;
 		if( numLines < 0 ) 
@@ -478,7 +484,7 @@ bool Editor::inQuotations(int position, QString text)
 		debutQuote = finQuote+1;
 	} while( debutQuote!=-1 && finQuote!=-1 );
 	// Idem with "'"
-	debutQuote = 0, finQuote;
+	debutQuote = 0, finQuote=0;
 	realBegin = false;
 	do
 	{

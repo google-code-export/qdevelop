@@ -11,6 +11,8 @@ StackImpl::StackImpl( MainImpl * parent, Qt::WFlags f)
 //
 void StackImpl::closeEvent( QCloseEvent * event )
 {
+	// TODO remove gcc warnings
+	event = NULL;
 }
 //
 void StackImpl::addLine( const QString line )

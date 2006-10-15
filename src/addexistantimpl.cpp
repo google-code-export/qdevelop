@@ -126,6 +126,9 @@ void AddExistantImpl::slotComboProjects(QString projectName)
 	//QTreeWidgetItem *item = reinterpret_cast<QTreeWidgetItem*>(variant.toUInt());
 	QTreeWidgetItem *item = (QTreeWidgetItem*)variantToItem(variant);
 	m_projectDirectory = m_projectManager->projectDirectory( item );
+
+	// TODO remove gcc warnings
+	projectName.isNull();
 }
 //
 
