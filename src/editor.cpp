@@ -91,6 +91,8 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
 			hboxLayout->addWidget(m_refreshButton);
 			//
 			m_comboClasses = new QComboBox(this);
+			m_comboClasses->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+			m_comboClasses->setSizeAdjustPolicy(QComboBox::AdjustToContents);
 			m_comboClasses->setLineEdit( new LineEdit(m_comboClasses) );
 			m_comboClasses->setEditable( true );
 			m_comboClasses->setAutoCompletion( true );
@@ -99,6 +101,9 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
 			hboxLayout->addWidget(m_comboClasses);
 			//
 			m_comboMethods = new QComboBox(this);
+			m_comboMethods->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+			m_comboMethods->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+
 			m_comboMethods->setMaximumSize( 500, m_comboMethods->height());
 			m_comboMethods->setLineEdit( new LineEdit(m_comboClasses) );
 			m_comboMethods->setEditable( true );
