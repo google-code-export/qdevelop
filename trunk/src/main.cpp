@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 	MainImpl main;// = new MainImpl;
 	splash->showMessage(QObject::tr("Environment control"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
     qApp->processEvents();
-	main.toolsControl();
+	main.slotToolsControl(false);
 	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Files on editor"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
     qApp->processEvents();
 	main.loadINI();

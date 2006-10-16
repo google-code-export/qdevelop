@@ -33,7 +33,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat pre, QTextCharFormat qt, QTextCharFormat commSimples, 
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
-    QColor back, bool prompt, QColor lc, bool bk, QString qmake, bool tc, int in)
+    QColor back, bool prompt, QColor lc, bool bk, bool tc, int in)
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -53,7 +53,6 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
     completion->setChecked( complete );
     promptBeforeQuit->setChecked( prompt );
     brackets->setChecked( bk );
-    qmakePath->setText( qmake );
     showTreeClasses->setChecked( tc );
     interval->setValue( in );
 	//

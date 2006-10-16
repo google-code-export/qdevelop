@@ -17,7 +17,7 @@
 * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 *
 * Contact e-mail: Jean-Luc Biord <jlbiord@qtfr.org>
-* Program URL   : http://qtfr.org
+* Program URL   : http://qdevelop.org
 *
 */
 #include "editor.h"
@@ -47,7 +47,6 @@
 
 
 Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completion, QString name)
-// 	: QWidget(parent), m_parent(parent), m_mainimpl(mainimpl), m_completion(completion), m_filename( name )
 	: QWidget(parent)
 {
 	m_parent = parent;
@@ -213,46 +212,14 @@ void Editor::slotTimerCheckIfModifiedOutside()
 	}
 }
 //
-void Editor::updateNumLines(int currentLine, int numLines)
+void Editor::clearAllBookmarks()
 {
-	QList<int> points = m_textEdit->breakpoints();
-	foreach( int num, points )
+	int line = 1;
+	for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next(), line++ )
 	{
-		//qDebug()<<"num:"<<num<<" currentLine :"<<currentLine<<"currentLine+numLines :"<<currentLine+numLines;
-		if( numLines < 0 ) 
-		{
-			if( num >= currentLine+numLines )
-			{
-				m_textEdit->slotToggleBreakpoint(num);
-				if( currentLine <= num)
-					m_textEdit->slotToggleBreakpoint(num+numLines);
-			}
-		}
-		else if( numLines > 0 && ( currentLine <= num) )
-		{
-			m_textEdit->slotToggleBreakpoint(num);
-			m_textEdit->slotToggleBreakpoint(num+numLines);
-		}
-	}
-	//
-	points = m_textEdit->bookmarks();
-	foreach( int num, points )
-	{
-		//qDebug()<<"num:"<<num<<" currentLine :"<<currentLine<<"currentLine+numLines :"<<currentLine+numLines;
-		if( numLines < 0 ) 
-		{
-			if( num >= currentLine+numLines )
-			{
-				m_textEdit->slotToggleBookmark(num);
-				if( currentLine <= num)
-					m_textEdit->slotToggleBookmark(num+numLines);
-			}
-		}
-		else if( numLines > 0 && ( currentLine <= num) )
-		{
-			m_textEdit->slotToggleBookmark(num);
-			m_textEdit->slotToggleBookmark(num+numLines);
-		}
+		BlockUserData *blockUserData = (BlockUserData*)block.userData();
+		if( blockUserData && blockUserData->bookmark )
+			toggleBookmark( line );
 	}
 }
 //
@@ -391,9 +358,8 @@ void Editor::slotClassesMethodsList()
 	if( m_mainimpl->ctagsIsPresent() )
 	{
 		testCtags = new QProcess();
-        //connect(testCtags, SIGNAL(readyReadStandardOutput()), this, SLOT(slotParseCtags()) );
         connect(testCtags, SIGNAL(finished(int , QProcess::ExitStatus)), this, SLOT(slotParseCtags()) );
-		testCtags->start("ctags", QStringList()<<"-f-" << "--fields=+S+K+n" << filename());
+		testCtags->start(m_mainimpl->ctagsName(), QStringList()<<"-f-" << "--fields=+S+K+n" << filename());
 	}
 }
 //
@@ -526,7 +492,6 @@ bool Editor::inQuotations(int position, QString text)
 		{
 			if( position > debutQuote && position < finQuote )
 			{
-//qDebug()<<text<<debutQuote<<position<<finQuote;
 				return true;
 			}
 		}
@@ -535,12 +500,7 @@ bool Editor::inQuotations(int position, QString text)
 	return false;
 }
 //
-void Editor::toggleBreakpoint(bool activate, int line) 
-{ 
-	emit breakpoint(shortFilename(), QPair<bool,unsigned int>(activate, line));
-}
-//
-void Editor::toggleBookmark(bool activate, int line) 
+void Editor::toggleBookmark(int line) 
 { 
 	QTextCursor save = m_textEdit->textCursor();
 	int scroll = verticalScrollBar();
@@ -548,20 +508,56 @@ void Editor::toggleBookmark(bool activate, int line)
 	m_textEdit->textCursor().movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
 	m_textEdit->textCursor().movePosition(QTextCursor::EndOfLine, QTextCursor::KeepAnchor);
 	QString s = m_textEdit->textCursor().block().text().simplified();
+	//
+	QTextCursor cursor = m_textEdit->textCursor();
+	bool activate;
+	BlockUserData *blockUserData = (BlockUserData*)cursor.block().userData();
+	if( !blockUserData )
+	{
+		blockUserData = new BlockUserData();
+		blockUserData->breakpoint = false;
+		blockUserData->bookmark = false;
+	}
+	blockUserData->bookmark = !blockUserData->bookmark;
+	cursor.block().setUserData( blockUserData );
+	activate = blockUserData->bookmark;
+	m_textEdit->setTextCursor( cursor );
+	//
 	emit bookmark(filename(), s, QPair<bool,unsigned int>(activate, line));
 	m_textEdit->setTextCursor( save );
 	setVerticalScrollBar( scroll );
 }
 //
-void Editor::slotToggleBreakpoint() 
+void Editor::toggleBreakpoint(int line) 
 { 
-	m_textEdit->slotToggleBreakpoint( m_textEdit->currentLineNumber() ); 
+	QTextCursor save = m_textEdit->textCursor();
+	int scroll = verticalScrollBar();
+	gotoLine( line, false );
+	QTextCursor cursor = m_textEdit->textCursor();
+	BlockUserData *blockUserData = (BlockUserData*)cursor.block().userData();
+	if( !blockUserData )
+	{
+		blockUserData = new BlockUserData();
+		blockUserData->breakpoint = false;
+		blockUserData->bookmark = false;
+	}
+	blockUserData->breakpoint = !blockUserData->breakpoint;
+	cursor.block().setUserData( blockUserData );
+	m_textEdit->setTextCursor( cursor );
+	m_textEdit->setTextCursor( save );
+	setVerticalScrollBar( scroll );
+	emit breakpoint(shortFilename(), QPair<bool,unsigned int>(blockUserData->breakpoint, line));
 }
 //
 void Editor::emitListBreakpoints()
 {
-	foreach(unsigned int num, m_textEdit->breakpoints() )
-		emit breakpoint(shortFilename(), QPair<bool,unsigned int>(true, num));
+	int line = 1;
+	for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next(), line++ )
+	{
+		BlockUserData *blockUserData = (BlockUserData*)block.userData();
+		if( blockUserData && blockUserData->breakpoint )
+			emit breakpoint(shortFilename(), QPair<bool,unsigned int>(true, line));
+	}
 }
 //
 QString Editor::shortFilename()

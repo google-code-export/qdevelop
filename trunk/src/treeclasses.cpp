@@ -40,7 +40,8 @@
 
 #include <QDebug>
 //
-TreeClasses::TreeClasses(QWidget * parent) : QTreeWidget(parent)
+TreeClasses::TreeClasses(QWidget * parent) 
+	: QTreeWidget(parent)
 {
 	header()->hide();
 }
@@ -80,7 +81,7 @@ void TreeClasses::updateClasses(QString filename, QString buffer, QStringList pa
 	tempProcessMap[process].parents = parents;
 	tempFileRead.close();
 	//
-	process->start("ctags", QStringList()<<"-f " + QDir::tempPath()+"/qdevelop_ctags"+ext+"."+QString::number(tempProcessMap[process].numTempFile) << "--fields=+z+k+a+S+l+n" << "--c++-kinds=+p"<< QDir::tempPath()+"/qdevelop_"+QString::number( tempProcessMap[process].numTempFile )+tempProcessMap[process].ext);
+	process->start(m_ctagsName, QStringList()<<"-f " + QDir::tempPath()+"/qdevelop_ctags"+ext+"."+QString::number(tempProcessMap[process].numTempFile) << "--fields=+z+k+a+S+l+n" << "--c++-kinds=+p"<< QDir::tempPath()+"/qdevelop_"+QString::number( tempProcessMap[process].numTempFile )+tempProcessMap[process].ext);
 	//
 }
 //

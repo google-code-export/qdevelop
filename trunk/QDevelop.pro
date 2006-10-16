@@ -1,7 +1,7 @@
 CONFIG +=   qt \
+  release \
   uitools \
-  warn_on \
-  release
+  warn_on
 DESTDIR =   bin
 FORMS =   ui/about.ui \
   ui/addexistant.ui \
@@ -23,6 +23,7 @@ FORMS =   ui/about.ui \
   ui/shortcuts.ui \
   ui/stack.ui \
   ui/subclassing.ui \
+  ui/toolsControl.ui \
   ui/warning.ui
 HEADERS =   src/InitCompletion.h \
   src/QIComplete/parse.h \
@@ -54,6 +55,7 @@ HEADERS =   src/InitCompletion.h \
   src/subclassingimpl.h \
   src/tabwidget.h \
   src/textEdit.h \
+  src/toolscontrolimpl.h \
   src/treeclasses.h \
   src/treeproject.h
 INCLUDEPATH =   . \
@@ -98,16 +100,17 @@ SOURCES =   src/InitCompletion.cpp \
   src/subclassingimpl.cpp \
   src/tabwidget.cpp \
   src/textEdit.cpp \
+  src/toolscontrolimpl.cpp \
   src/treeclasses.cpp \
   src/treeproject.cpp
 TARGET =   QDevelop
 TEMPLATE =   app
-TRANSLATIONS =   resources/translations/QDevelop_Dutch.ts \
+TRANSLATIONS =   resources/translations/QDevelop_Chinese.ts \
+  resources/translations/QDevelop_Dutch.ts \
   resources/translations/QDevelop_French.ts \
   resources/translations/QDevelop_German.ts \
   resources/translations/QDevelop_Polish.ts \
-  resources/translations/QDevelop_Spanish.ts \
-  resources/translations/QDevelop_Chinese.ts
+  resources/translations/QDevelop_Spanish.ts
 UI_DIR =   build/ui
 mac {
   OBJECTS_DIR =     build/o/mac

@@ -65,15 +65,6 @@
     <addaction name="actionSwitchHeaderSources" />
     <addaction name="actionToggleBreakpoint" />
    </widget>
-   <widget class="QMenu" name="menuTools" >
-    <property name="title" >
-     <string>Tools</string>
-    </property>
-    <addaction name="actionFindInFiles" />
-    <addaction name="separator" />
-    <addaction name="actionOptions" />
-    <addaction name="actionConfigureShortcuts" />
-   </widget>
    <widget class="QMenu" name="menuDebug" >
     <property name="title" >
      <string>&amp;Debug</string>
@@ -211,6 +202,16 @@
     <addaction name="actionAddExistingFiles" />
     <addaction name="separator" />
     <addaction name="actionProjectPropertie" />
+   </widget>
+   <widget class="QMenu" name="menuTools" >
+    <property name="title" >
+     <string>Tools</string>
+    </property>
+    <addaction name="actionFindInFiles" />
+    <addaction name="separator" />
+    <addaction name="actionOptions" />
+    <addaction name="actionExternalTools" />
+    <addaction name="actionConfigureShortcuts" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -1385,6 +1386,11 @@
   <action name="actionClearAllBookmarks" >
    <property name="text" >
     <string>Clear &amp;All Bookmarks</string>
+   </property>
+  </action>
+  <action name="actionExternalTools" >
+   <property name="text" >
+    <string>External Tools...</string>
    </property>
   </action>
  </widget>

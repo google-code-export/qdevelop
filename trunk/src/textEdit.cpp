@@ -61,9 +61,9 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
 	connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));	
 	connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
 	connect( document(), SIGNAL( contentsChange(int, int, int) ), this, SLOT( slotContentsChange(int, int, int) ));
-	actionToggleBreakpoint = new QAction(this);
+	QAction *actionToggleBreakpoint = new QAction(this);
 	actionToggleBreakpoint->setShortcut( Qt::Key_F9 );
-	connect(actionToggleBreakpoint, SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
+	connect(actionToggleBreakpoint, SIGNAL(triggered()), m_editor, SLOT(toggleBreakpoint()) );
     //
     m_completionList = new QListWidget(this);
     m_completionList->setSelectionMode( QAbstractItemView::SingleSelection );
@@ -71,59 +71,6 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_completionList->setFont( QFont(m_completionList->font().family(), 8) );
 	connect(m_completionList, SIGNAL(itemActivated(QListWidgetItem *)), this, SLOT(slotWordCompletion(QListWidgetItem *)) );
     setBackgroundColor( m_backgroundColor );
-}
-//
-void TextEdit::cut()
-{
-	int linesDeleted = false;
-	QString s = textCursor().selection().toPlainText();
-	if ( s.length() )
-		linesDeleted = s.count( QChar('\n') );
-	else
-	{
-		if( toPlainText().length() > textCursor().position() )
-			linesDeleted = toPlainText().at( textCursor().position() ) == '\n';
-	}
-	if( linesDeleted )
-		m_editor->updateNumLines(currentLineNumber(), linesDeleted*-1);
-	QTextEdit::cut();
-}
-//
-void TextEdit::paste()
-{
-	//qDebug()<<"paste";
-	int linesDeleted = false;
-	QString s = textCursor().selection().toPlainText();
-	if ( s.length() )
-		linesDeleted = s.count( QChar('\n') );
-	else
-	{
-		if( toPlainText().length() > textCursor().position() )
-			linesDeleted = toPlainText().at( textCursor().position() ) == '\n';
-	}
-	if ( linesDeleted )
-		m_editor->updateNumLines(currentLineNumber(), linesDeleted*-1);
-	//
-	QClipboard *clipboard = QApplication::clipboard ();
-	QString newText = clipboard->text();
-	int linesAdded = 0;
-	if ( newText.length() )
-		linesAdded = newText.count( QChar('\n') );
-	if ( linesAdded )
-		m_editor->updateNumLines(currentLineNumber(), linesAdded);
-	QTextEdit::paste();
-}
-//
-void TextEdit::undo()
-{
-	qDebug()<<"undo";
-	document()->undo();
-}
-//
-void TextEdit::redo()
-{
-	qDebug()<<"redo";
-	document()->redo();
 }
 //
 
@@ -279,7 +226,7 @@ bool TextEdit::open(bool silentMode, QString filename, QDateTime &lastModified)
 void TextEdit::activateLineNumbers(bool activate) 
 { 
 	if( activate && m_lineNumbers==0 )
-		setLineNumbers( new LineNumbers(this) );
+		setLineNumbers( new LineNumbers(this, m_editor) );
 	else if( !activate && m_lineNumbers )
 		setLineNumbers( 0 );
 }
@@ -811,7 +758,7 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 		}
 		else
 			QTextEdit::keyPressEvent ( event );
-		m_editor->updateNumLines(currentLineNumber(), 1);
+		//m_editor->updateNumLines(currentLineNumber(), 1);
 	}
 	else if( m_autoindent && event->key() == '{' || event->key() == '}' )
 	{
@@ -833,8 +780,8 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 			else
 				linesDeleted = toPlainText().at( textCursor().position()-1 ) == '\n';
 		}
-		if( linesDeleted )
-			m_editor->updateNumLines(currentLineNumber(), linesDeleted*-1);
+		//if( linesDeleted )
+			//m_editor->updateNumLines(currentLineNumber(), linesDeleted*-1);
 		QTextEdit::keyPressEvent ( event );
 	}
 	else if( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutCut() )
@@ -862,8 +809,8 @@ void TextEdit::dropEvent( QDropEvent * event )
 		int linesAdded = 0;
 		if ( text.length() )
 			linesAdded = text.count( QChar('\n') );
-		if( linesAdded )
-			m_editor->updateNumLines(currentLineNumber(), linesAdded);
+		//if( linesAdded )
+			//m_editor->updateNumLines(currentLineNumber(), linesAdded);
 		setTextCursor( save );
 	}
 	QTextEdit::dropEvent( event );
@@ -993,64 +940,6 @@ void TextEdit::mouseDoubleClickEvent( QMouseEvent * event )
     	pos++;
 	cursor.setPosition(pos, QTextCursor::KeepAnchor);
 	setTextCursor( cursor );
-}
-//
-bool TextEdit::slotToggleBreakpoint(int line) 
-{ 
-	//int posScrollbar = verticalScrollBar()->value();
-	if( !line )
-	{
-		QTextCursor cursor = textCursor();
-		line = lineNumber( cursorForPosition( QPoint(mousePosition.x(), mousePosition.y() ) ) );
-		setTextCursor( cursor );
-	}
-	bool activate;
-	if( m_breakpoints.indexOf(line) == -1 ) 
-	{
-		m_breakpoints.append( line );
-		activate = true;
-	}
-	else
-	{
-		m_breakpoints.removeAll( line );
-		activate = false;
-	}
-	((Editor*)parent())->toggleBreakpoint(activate, line);
-	if( m_lineNumbers) 
-		m_lineNumbers->update();
-	//verticalScrollBar()->setValue( posScrollbar );
-	return activate;
-}
-//
-void TextEdit::clearAllBookmarks()
-{
-	foreach(int line, m_bookmarks)
-		slotToggleBookmark( line );
-}
-//
-bool TextEdit::slotToggleBookmark(int line) 
-{ 
-	if( !line )
-	{
-		QTextCursor cursor = textCursor();
-		line = lineNumber( cursorForPosition( QPoint(mousePosition.x(), mousePosition.y() ) ) );
-		setTextCursor( cursor );
-	}
-	bool activate;
-	if( m_bookmarks.indexOf(line) == -1 ) 
-	{
-		m_bookmarks.append( line );
-		activate = true;
-	}
-	else
-	{
-		m_bookmarks.removeAll( line );
-		activate = false;
-	}
-	((Editor*)parent())->toggleBookmark(activate, line);
-	if( m_lineNumbers) 
-		m_lineNumbers->update();
-	return activate;
 }
 //
 void TextEdit::setExecutedLine(int line) 

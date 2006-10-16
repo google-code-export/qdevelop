@@ -31,6 +31,7 @@
 #include <QTextCursor>
 #include <QScrollBar>
 #include <QTimer>
+#include <QTextBlockUserData>
 //
 typedef struct ReplaceOptions
 {
@@ -49,11 +50,17 @@ class TabWidget;
 class QComboBox;
 class QTimer;
 //
+class BlockUserData : public QTextBlockUserData
+{
+public:
+	bool bookmark;
+	bool breakpoint;
+};
+//
 class Editor : public QWidget
 {
 Q_OBJECT
 public:
-	//enum Sauvegarde { Impossible, Ok, NonRequise };
 	Editor(TabWidget *parent, MainImpl *mainimpl, InitCompletion *completion, QString name="");
 	~Editor();
 	bool open(bool silentMode);
@@ -69,16 +76,16 @@ public:
 	void findContinue();
 	QStringList classes();
 	QStringList methodes(QString classe);
-	QList<int> breakpoints() { return m_textEdit->breakpoints(); };
-	void toggleBreakpoint(bool activate, int line);
-	void toggleBookmark(bool activate, int line);
-	void toggleBookmark() { m_textEdit->slotToggleBookmark( m_textEdit->currentLineNumber() ); };
-	void clearAllBookmarks() { m_textEdit->clearAllBookmarks(); };
-	void deleteBreakpoint(int line) { m_textEdit->deleteBreakpoint(line); };
+	QList<int> breakpoints();
+	void toggleBookmark(int line);
+	void toggleBookmark() { toggleBookmark( m_textEdit->currentLineNumber() ); };
+	void clearAllBookmarks();
+	void deleteBreakpoint(int line);
 	void setBackgroundColor( QColor c ){ m_textEdit->setBackgroundColor(c); };
 	void setCurrentLineColor( QColor c ){ m_textEdit->setCurrentLineColor(c); };
 	int currentLineNumber(){ return m_textEdit->currentLineNumber(); };
-	void slotToggleBreakpoint();
+	void toggleBreakpoint(int line);
+	void toggleBreakpoint() { toggleBreakpoint( m_textEdit->currentLineNumber() ); };
 	void setExecutedLine(int line);
 	void emitListBreakpoints();
 	void copy() { m_textEdit->copy(); };
@@ -100,7 +107,6 @@ public:
 	bool isModified() { return m_textEdit->document()->isModified(); };
 	void setFocus();
 	void replace();
-	void updateNumLines(int currentLine, int numLines);
 	void setActiveEditor(bool b);
 	void setIntervalUpdatingTreeClasses(int i) { m_intervalUpdatingClasses = i*1000;};
 	void setShowTreeClasses(bool s);

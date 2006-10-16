@@ -53,26 +53,6 @@
           <number>6</number>
          </property>
          <item>
-          <layout class="QHBoxLayout" >
-           <property name="margin" >
-            <number>0</number>
-           </property>
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="label_12" >
-             <property name="text" >
-              <string>qmake path:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="qmakePath" />
-           </item>
-          </layout>
-         </item>
-         <item>
           <widget class="QCheckBox" name="saveAll" >
            <property name="text" >
             <string>Save All before Build</string>

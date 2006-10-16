@@ -53,11 +53,7 @@ public:
 	void setSelectionBorder( SelectionBorder* );
 	SelectionBorder* selectionBorder();
 	void findText();
-	QList<int> breakpoints() { return m_breakpoints; };
-	QList<int> bookmarks() { return m_bookmarks; };
-	void deleteBreakpoint(int line) { m_breakpoints.removeAll( line ); };
 	void setExecutedLine(int line);
-	void emitBreakpointsList();
 	void selectLines(int debut, int fin);
 	QString wordUnderCursor(const QPoint & pos=QPoint(), bool select=false);
 	QString classNameUnderCursor();
@@ -74,7 +70,6 @@ public:
 	void setAutobrackets(bool b) { m_autobrackets = b; };
 	void setBackgroundColor( QColor c );
 	void setCurrentLineColor( QColor c );
-	void clearAllBookmarks();
 	int currentLineNumber();
 	int linesCount();
     void dialogGotoLine();
@@ -82,16 +77,10 @@ public:
     void setFocus(Qt::FocusReason reason);
     enum ActionComment {Toggle, Comment, Uncomment};
 public slots:
-	bool slotToggleBreakpoint(int line=0);
-	bool slotToggleBookmark(int line=0);
 	void gotoLine( int line, bool moveTop );
 	void slotFind(Ui::FindWidget ui, QString ttf=0,  QTextDocument::FindFlags options=0, bool fromButton=false);
 	void slotIndent(bool indent=true);
 	void slotUnindent();
-	void paste();
-	void undo();
-	void redo();
-	void cut();
 	void comment(ActionComment action);
 private slots:	
 	void slotAdjustSize();
@@ -103,11 +92,8 @@ private:
 	QPointer<LineNumbers> m_lineNumbers;
 	QPointer<SelectionBorder> m_selectionBorder;
 	CppHighlighter *cpphighlighter;
-	//QTextCursor previousCursor;
 	QString m_findExp;
 	int m_findOptions;
-	QList<int> m_breakpoints;
-	QList<int> m_bookmarks;
 	FindImpl *m_findImpl;
 	int lineNumber(QTextCursor cursor);
 	int lineNumber(QPoint point);
@@ -118,7 +104,6 @@ private:
 	void autoIndent();
 	void autobrackets();
 	void autoUnindent();
-	QAction *actionToggleBreakpoint;
 	MainImpl::EndLine m_endLine;
 	bool m_tabSpaces;
     InitCompletion *m_completion;

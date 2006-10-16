@@ -36,7 +36,7 @@ public:
 		QTextCharFormat pre, QTextCharFormat qt, QTextCharFormat commSimples, 
 		QTextCharFormat commMulti, QTextCharFormat guillemets, QTextCharFormat meth, 
 		QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
-		QColor back, bool prompt, QColor colorLine, bool bk, QString qmake,
+		QColor back, bool prompt, QColor colorLine, bool bk, 
 		bool tc, int in);
 	QFont font();
 	CppHighlighter *syntaxe() { return cppHighLighter; };

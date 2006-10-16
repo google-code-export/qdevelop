@@ -28,7 +28,7 @@
 #include <QString>
 #include <QDir>
 //
-Build::Build(QObject * parent, QString qmakeName, QString rep, bool qmake, bool n, bool g, QString compileFile)
+Build::Build(QObject * parent, QString qmakeName, QString makeName, QString rep, bool qmake, bool n, bool g, QString compileFile)
 // 	: QThread(parent), m_qmakeName(qmakeName), m_qmake(qmake), projectDirectory(rep), m_clean(n), m_build(g), m_compileFile(compileFile)
 	: QThread(parent)
 {
@@ -36,6 +36,7 @@ Build::Build(QObject * parent, QString qmakeName, QString rep, bool qmake, bool 
 	m_isStopped = false;
 	m_qmakeName = qmakeName;
 	m_qmake = qmake;
+	m_makeName = makeName;
 	projectDirectory = rep;
 	m_clean = n;
 	m_build = g;
@@ -64,11 +65,12 @@ void Build::run()
 	{
 
 		emit message( QString("\n"+tr("Clean Project")+" (make clean)...\n") );
-#ifdef WIN32
-		m_buildProcess->start("mingw32-make", QStringList("clean"));
-#else
-		m_buildProcess->start("make", QStringList("clean"));
-#endif
+//#ifdef WIN32
+		//m_buildProcess->start("mingw32-make", QStringList("clean"));
+//#else
+		//m_buildProcess->start("make", QStringList("clean"));
+//#endif
+		m_buildProcess->start(m_makeName, QStringList("clean"));
     		if (!m_buildProcess->waitForFinished(800000))
 		{
 			m_buildProcess->deleteLater();
@@ -87,11 +89,12 @@ void Build::run()
 		else
 		{
 			emit message( QString("\n"+tr("Build")+" (make)...\n") );
-#ifdef WIN32
-			m_buildProcess->start("mingw32-make");
-#else
-			m_buildProcess->start("make");
-#endif
+//#ifdef WIN32
+			//m_buildProcess->start("mingw32-make");
+//#else
+			//m_buildProcess->start("make");
+//#endif
+		m_buildProcess->start(m_makeName);
 		}
     		if (!m_buildProcess->waitForFinished(800000))
 		{
@@ -124,7 +127,7 @@ QString Build::buildOnly( QString sourceFile )
 	QString objectFile = sourceFile.mid(0, sourceFile.lastIndexOf("."))+".o";
 #ifndef WIN32
 	QString name = QDir( projectDirectory ).relativeFilePath( sourceFile ); 
-	return "make "+ name.mid(0, name.lastIndexOf("."))+".o";
+	return m_makeName+" "+ name.mid(0, name.lastIndexOf("."))+".o";
 #endif
 	QString shortObjectFile = objectFile;
 	if( !objectFile.section("/", -1, -1).isEmpty() )

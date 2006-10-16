@@ -32,11 +32,12 @@
 #include <sys/types.h>
 #endif
 //
-Debug::Debug(QObject * parent, Parameters p, QString exe, bool exeOnly)
+Debug::Debug(QObject * parent, QString gdbName, Parameters p, QString exe, bool exeOnly)
 // 	: QThread(parent), m_parent(parent), executableName(exe), m_executeWithoutDebug(exeOnly), m_parameters(p)
 	: QThread(parent)
 {
 	m_parent = parent;
+	m_gdbName = gdbName;
 	executableName = exe;
 	m_executeWithoutDebug = exeOnly;
 	m_parameters = p;
@@ -83,7 +84,7 @@ void Debug::launchDebug()
 	connect(processDebug, SIGNAL(readyReadStandardOutput()), this, SLOT(slotMessagesDebug()) );
 	connect(processDebug, SIGNAL(readyReadStandardError()), this, SLOT(slotMessagesDebug()) );
 	setEnvironment( processDebug );
-	processDebug->start("gdb", QStringList() << "--silent" << "--fullname" << executableName );
+	processDebug->start(m_gdbName, QStringList() << "--silent" << "--fullname" << executableName );
 	configureGdb();
 	writeMessagesToDebugger();
 	processDebug->write("run "+m_parameters.arguments.toLatin1()+"\n");
