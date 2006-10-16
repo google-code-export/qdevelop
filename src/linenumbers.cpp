@@ -26,6 +26,7 @@
  ********************************************************************************************************/
 #include "linenumbers.h"
 #include "textEdit.h"
+#include "editor.h"
 //
 #include <QTextEdit>
 #include <QGridLayout>
@@ -35,8 +36,8 @@
 #include <QTextBlock>
 #include <QDebug>
 //
-LineNumbers::LineNumbers( TextEdit* edit )
-	: QWidget( (QWidget *)edit ), m_textEdit( edit )
+LineNumbers::LineNumbers( TextEdit* edit, Editor *editor)
+	: QWidget( (QWidget *)edit ), m_textEdit( edit ), m_editor( editor )
 {
 	setObjectName( "editorZone" );
 	setAutoFillBackground( true );
@@ -85,11 +86,13 @@ void LineNumbers::paintEvent( QPaintEvent* )
 		}
 		else
 			p.drawText( width() -fm.width( txt ) - 2, qRound( position.y() ) -contentsY +ascent, txt ); // -fm.width( "0" ) is an ampty place/indent 
-		if( m_textEdit->breakpoints().indexOf( m_lineNumber ) != -1 )
+		BlockUserData *blockUserData = (BlockUserData*)block.userData();
+
+		if( blockUserData && blockUserData->breakpoint )
 		{
 			p.drawPixmap( 1, qRound( position.y() ) -contentsY-4,QPixmap(":/divers/images/pointArret.png")/*.scaled(20,20)*/);
 		}
-		if( m_textEdit->bookmarks().indexOf( m_lineNumber ) != -1 )
+		if( blockUserData && blockUserData->bookmark )
 		{
 			p.drawPixmap( 3, qRound( position.y() ) -contentsY-1,QPixmap(":/divers/images/bookmark.png")/*.scaled(20,20)*/);
 		}
@@ -178,13 +181,13 @@ void LineNumbers::mousePressEvent ( QMouseEvent * event )
 //
 void LineNumbers::slotToggleBreakpoint() 
 { 
-	m_textEdit->slotToggleBreakpoint( m_currentLine );
+	m_editor->toggleBreakpoint( m_currentLine );
 	repaint();
 }
 //
 void LineNumbers::slotToggleBookmark() 
 { 
-	m_textEdit->slotToggleBookmark( m_currentLine );
+	m_editor->toggleBookmark( m_currentLine );
 	repaint();
 }
 //

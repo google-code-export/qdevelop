@@ -67,7 +67,7 @@ class TreeClasses : public QTreeWidget
 {
 Q_OBJECT
 public:
-	TreeClasses(QWidget * parent = 0);
+	TreeClasses(QWidget * parent);
 	~TreeClasses();
 	void setProjectManager( QPointer<ProjectManager> g ) { m_projectManager = g; };
 	void setCtagsIsPresent( bool b ) { m_ctagsPresent = b; };
@@ -75,6 +75,7 @@ public:
 	void clear();
 	void toDB(QString projectDirectory);
 	void fromDB(QString projectDirectory);
+	void setCtagsName(QString s) { m_ctagsName=s;};
 	//void clearFile(QString filename);
 protected:
 	void mousePressEvent( QMouseEvent * event );
@@ -97,6 +98,7 @@ private:
 	void writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query);
 	void createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem);
 	QString getPathHash(QString const& pathName);
+	QString m_ctagsName;
 	//QSqlDatabase db;
 private slots:
 	void slotParseCtags();

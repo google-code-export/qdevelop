@@ -35,11 +35,11 @@ class Debug : public QThread
 {
 Q_OBJECT
 public:
-	Debug(QObject * parent, Parameters p, QString exe, bool exeOnly=false);
+	Debug(QObject * parent, QString gdbName, Parameters p, QString exe, bool exeOnly=false);
     void run();
 	enum Request { None, InfoSources, InfoScope, Local, OtherArgs, Whatis, Address, Length, Value};
 private:
-	// Méthodes
+	// Methods
 	void writeMessagesToDebugger();
 	void launchDebug();
 	void executeWithoutDebug();
@@ -47,6 +47,7 @@ private:
 	void setEnvironment(QProcess *process);
 	// Variables
 	QString executableName;
+	QString m_gdbName;
 	QStringList messagesToDebugger;
 	QProcess *processDebug;
 	int m_pid;

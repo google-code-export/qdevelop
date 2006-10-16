@@ -11,8 +11,8 @@ class Build : public QThread
 {
 Q_OBJECT
 public:
-	Build(QObject * parent, QString qmakeName, QString rep, bool qmake, bool n, bool g, QString compileFile=0);
-      void run();
+	Build(QObject * parent, QString qmakeName, QString makename, QString rep, bool qmake, bool n, bool g, QString compileFile=0);
+    void run();
 private:
 	bool m_qmake;
 	QString projectDirectory;
@@ -25,6 +25,7 @@ private:
 	//QDateTime derniereModifProjet;
 	QString buildOnly( QString sourceFile );
 	QString m_qmakeName;
+	QString m_makeName;
 signals:
 	void message(QString, QString=0);
 protected slots:

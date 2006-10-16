@@ -36,6 +36,7 @@
 #include "cpphighlighter.h"
 #include "tabwidget.h"
 #include "stackimpl.h"
+#include "toolscontrolimpl.h"
 #include "InitCompletion.h"
 //
 #include <QFileDialog>
@@ -169,6 +170,7 @@ MainImpl::MainImpl(QWidget * parent)
 	m_stack = new StackImpl( this );
 	m_stack->hide();
 	//
+	treeClasses->setCtagsName( m_ctagsName );
 }
 //
 MainImpl::~MainImpl() 
@@ -216,10 +218,8 @@ void MainImpl::configureCompletion()
 #else
     << "/usr/include";
 #endif
-//qDebug()<<includes;
-    //m_completion->setTempFilePath( includes.at(1) );
     m_completion->setTempFilePath( QDir::tempPath() );
-    m_completion->setCtagsCmdPath("ctags");
+    m_completion->setCtagsCmdPath( ctagsName() );
     m_completion->addIncludes( includes );
     m_completion->initParse("", true, false);
     m_completion->start();
@@ -274,6 +274,7 @@ void MainImpl::createConnections()
 	connect(addDebugVariable, SIGNAL(clicked()), this, SLOT(slotAddDebugVariable()) );
 	connect(removeDebugVariable, SIGNAL(clicked()), this, SLOT(slotRemoveDebugVariable()) );
 	//
+	connect(actionExternalTools, SIGNAL(triggered()), this, SLOT(slotToolsControl()) );
 	connect(actionCloseCurrentEditor, SIGNAL(triggered()), this, SLOT(slotCloseCurrentTab()) );
 	actionCloseCurrentEditor->setShortcutContext( Qt::ApplicationShortcut );
 	connect(actionPreviousTab, SIGNAL(triggered()), this, SLOT(slotPreviousTab()) );
@@ -290,7 +291,6 @@ void MainImpl::createConnections()
 	connect(actionStepOver, SIGNAL(triggered()), this, SLOT(slotStepOver()) );
 	connect(actionStepOut, SIGNAL(triggered()), this, SLOT(slotStepOut()) );
 	connect(actionQuit, SIGNAL(triggered()), this, SLOT(close()) );
-	//connect(editGdb, SIGNAL( newText( QString )), this, SLOT(slotEditToGdb(QString)) );
 	connect(treeFiles, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), this, SLOT(slotDoubleClickTreeFiles(QTreeWidgetItem *, int)) );
 	connect(treeFiles, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(slotClickTreeFiles(QTreeWidgetItem *, int)) );
 	connect(logBuild, SIGNAL(itemDoubleClicked ( QListWidgetItem *)), this, SLOT(slotDoubleClickLogBuild( QListWidgetItem *)) );
@@ -372,7 +372,7 @@ void MainImpl::slotToggleBreakpoint()
 	int i = m_tabEditors->currentIndex();
 	Editor *editor = ((Editor*)m_tabEditors->widget( i ));
 	if( editor  )
-		editor->slotToggleBreakpoint();
+		editor->toggleBreakpoint();
 }
 //
 void MainImpl::slotToggleBookmark()
@@ -442,7 +442,7 @@ void MainImpl::slotOptions()
 		m_formatPreprocessorText, m_formatQtText, m_formatSingleComments, 
 		m_formatMultilineComments, m_formatQuotationText, m_formatMethods, 
         m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion, 
-        m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets, m_qmakeName,
+        m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets, 
         m_showTreeClasses, m_intervalUpdatingClasses);
 	if( options->exec() == QDialog::Accepted )
 	{
@@ -462,7 +462,6 @@ void MainImpl::slotOptions()
 		m_autoCompletion = options->completion->isChecked();
 		m_autobrackets = options->brackets->isChecked();
 		m_promptBeforeQuit = options->promptBeforeQuit->isChecked();
-		m_qmakeName = options->qmakePath->text();
 		//
 		m_formatPreprocessorText = options->syntaxe()->preprocessorFormat();
 		m_formatQtText = options->syntaxe()->classFormat();
@@ -532,7 +531,6 @@ void MainImpl::saveINI()
 	settings.setValue("m_tabSpaces", m_tabSpaces);
 	settings.setValue("m_backgroundColor", m_backgroundColor.name());	
 	settings.setValue("m_currentLineColor", m_currentLineColor.name());
-	settings.setValue("m_qmakeName", m_qmakeName);
 	//
 	settings.setValue("m_formatPreprocessorText", m_formatPreprocessorText.foreground().color().name());
 	settings.setValue("m_formatQtText", m_formatQtText.foreground().color().name());
@@ -572,28 +570,6 @@ void MainImpl::saveINI()
 		settings.setValue("absoluteNameProjectFile", projectDirectory);
 		settings.endGroup();
 	}
-	// Save opened files
-	//if( m_restoreOnStart )
-	//{
-		//settings.beginGroup("Files");
-		//QString projectDirectory = m_projectManager->absoluteNameProjectFile(treeFiles->topLevelItem(0));
-		//settings.setValue("absoluteNameProjectFile", projectDirectory);
-		//QStringList OpenFiles;
-		//for(int i=0; i<m_tabEditors->count(); i++)
-		//{
-			//Editor *editor = ((Editor *)m_tabEditors->widget( i ));
-			//if( editor )
-			//{
-				//OpenFiles << editor->filename()
-					//+"|"
-					//+QString::number(editor->verticalScrollBar());
-			//}
-		//}
-		//settings.setValue("OpenFiles", OpenFiles);
-		//if( m_tabEditors->count() )
-			//settings.setValue("currentIndex", m_tabEditors->currentIndex());
-		//settings.endGroup();
-	//}
 }
 //
 void MainImpl::slotNewProject()
@@ -786,10 +762,6 @@ void MainImpl::loadINI()
 	m_backgroundColor = QColor(settings.value("m_backgroundColor", m_backgroundColor).toString());
 	m_currentLineColor = QColor(settings.value("m_currentLineColor", m_currentLineColor).toString());
 	m_showTreeClasses = settings.value("m_showTreeClasses", m_showTreeClasses).toBool();
-	//if( !m_showTreeClasses )
-		//tabExplorer->widget( 1 )->hide();
-	//else
-		//tabExplorer->widget( 1 )->show();
 	m_intervalUpdatingClasses = settings.value("m_intervalUpdatingClasses", m_intervalUpdatingClasses).toInt();
 	if( m_currentLineColor == Qt::black )
 		m_currentLineColor = QColor();
@@ -839,31 +811,6 @@ void MainImpl::loadINI()
 		}
 		settings.endGroup();
 	}
-	/*if( m_restoreOnStart )
-	{
-		settings.beginGroup("Files");
-		QString projectName = settings.value("absoluteNameProjectFile").toString();
-		QStringList OpenFiles = settings.value("OpenFiles").toStringList();
-		if( !projectName.isEmpty() )
-		{
-			if( !openProject( projectName ) )
-			{
-				settings.endGroup();
-				return;
-			}
-		}
-		foreach(QString nom, OpenFiles)
-		{
-			openFile(QStringList( nom.section("|", 0, 0) ));
-			int pos = nom.section("|", 1, 1).toInt();
-			if( m_tabEditors->count() && pos )
-				((Editor *)m_tabEditors->widget( m_tabEditors->count()-1 ))->setVerticalScrollBar( pos );
-		}
-		int editeurCourant = settings.value("currentIndex", 0).toInt();
-		if( m_tabEditors->count() && editeurCourant < m_tabEditors->count() )
-			m_tabEditors->setCurrentIndex( editeurCourant );
-		settings.endGroup();
-	}*/
 }
 void MainImpl::closeEvent( QCloseEvent * event )
 {
@@ -883,7 +830,6 @@ void MainImpl::closeEvent( QCloseEvent * event )
 	if( slotCloseProject() )
 	{
 		delete m_assistant;
-		//QMainWindow::closeEvent( event );
 		event->accept();
 	}
 	else
@@ -1315,7 +1261,7 @@ void MainImpl::slotCompile()
 		tabOutputs->setCurrentIndex( 0 ); 
 		m_projectsDirectoriesList << editor->directory();
 		QString projectDirectory = m_projectManager->fileDirectory(editor->filename() );
-		m_builder = new Build(this, m_qmakeName, projectDirectory, false, false, true, editor->filename());
+		m_builder = new Build(this, m_qmakeName, m_makeName, projectDirectory, false, false, true, editor->filename());
 	
 		connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
 		connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
@@ -1353,7 +1299,7 @@ void MainImpl::slotBuild(bool clean, bool build)
 	QString repProjet = m_projectsDirectoriesList.first();
 	QString projectName = m_projectManager->projectName( repProjet );
 	bool qmake = m_projectManager->qmake( projectName );
-	m_builder = new Build(this, m_qmakeName, repProjet, qmake|m_clean, m_clean, m_build);
+	m_builder = new Build(this, m_qmakeName, m_makeName, repProjet, qmake|m_clean, m_clean, m_build);
 
 	connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
 	connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
@@ -1614,13 +1560,6 @@ bool MainImpl::slotDebug(bool executeOnly)
 		exeName = m_projectManager->executableName( executeOnly ? "release" : "debug");
 	executeOnly = m_projectManager->isReleaseVersion();
 	m_debugAfterBuild = false;
-	//QString dir;
-	//QString name = exeName;
-	//if( exeName.indexOf("/") != -1 )
-	//{
-		//dir = exeName.section("/", 0, -2);
-		//name = exeName.section("/", -1, -1);
-	//}
 	if( exeName.isEmpty() && actionDebug->text() != tr("Stop"))
 	{
 		QMessageBox::critical(0, "QDevelop", 
@@ -1650,7 +1589,7 @@ bool MainImpl::slotDebug(bool executeOnly)
 	if( parameters.workingDirectory.isEmpty() )
 		parameters.workingDirectory = m_projectManager->projectDirectoryOfExecutable();
 	m_stack->setDirectory( m_projectManager->projectDirectoryOfExecutable() );
-	m_debug = new Debug(this, parameters, exeName, executeOnly);
+	m_debug = new Debug(this, m_gdbName, parameters, exeName, executeOnly);
 	if( !executeOnly )
 	{
 		for(int i=0; i<m_tabEditors->count(); i++)
@@ -1934,119 +1873,23 @@ void MainImpl::slotFindInFiles()
 	// Not delete dialog to save options, location and pattern on next showing.
 }
 //
-void MainImpl::toolsControl()
+void MainImpl::slotToolsControl(bool show)
 {
-	QSettings settings("QDevelop");
-	settings.beginGroup("Options");
-	QString defaultQmakeName = QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/qmake";
-	m_qmakeName = settings.value("m_qmakeName", defaultQmakeName).toString();
-	settings.endGroup();
-	// Control external tools
-	QString lu;
-	QProcess *testqmake = new QProcess(this);
-	testqmake->start(m_qmakeName, QStringList("-v"));
-	testqmake->waitForFinished(5000);
-	lu = testqmake->readAll();
-	if( lu.remove(":").left(15) != "QMake version 2" )
-	{
-		QMessageBox::information(this, "QDevelop", QObject::tr("Unable to find qmake")+",\n"+tr("please design his location.") );
-		QString s = QFileDialog::getOpenFileName(
-			this,
-			tr("Please designe qmake path"),
-			"/",
-			"*" );
-		if( !s.isEmpty() ) // Ok clicked
-		{
-			m_qmakeName = s;
-		}
-	}
-	testqmake->waitForFinished(5000);
-	testqmake->terminate();
-	delete testqmake;
-	//
-	if( m_checkEnvironment && lu.remove(":").left(15) != "QMake version 2" )
-	{
-		QDialog *warning = new QDialog;
-		Ui::Warning ui;
-		ui.setupUi(warning);
-		warning->setWindowTitle("QDevelop");
-		ui.message->setText( "Qt 4 "+tr("perhaps not correctly installed or configured.")+"\n"+
-			tr("Verify your Environment Variables.") );
-		warning->adjustSize();
-		warning->exec();
-		m_checkEnvironment = ui.dontShowAnymore->isChecked();
-		delete warning;
-	}
-	m_qtInstallHeaders = QLibraryInfo::location( QLibraryInfo::HeadersPath );
-	// make control
-	QProcess *testMake = new QProcess(this);
-#ifdef WIN32
-		testMake->start("mingw32-make", QStringList("-v"));
-#else
-		testMake->start("make", QStringList("-v"));
-#endif
-	testMake->waitForFinished(5000);
-	lu = testMake->readAll();
-	if( m_checkEnvironment && lu.left(8) != "GNU Make" )
-	{
-		QDialog *warning = new QDialog;
-		Ui::Warning ui;
-		ui.setupUi(warning);
-		warning->setWindowTitle("QDevelop");
-		ui.message->setText( "make "+tr("not found.")+"\n"+
-			tr("Verify your Environment Variables.") );
-		warning->adjustSize();
-		warning->exec();
-		m_checkEnvironment = ui.dontShowAnymore->isChecked();
-		delete warning;
-	}
-	testMake->waitForFinished(5000);
-	testMake->terminate();
-	delete testMake;
-	// gdb control
-	QProcess *testGdb = new QProcess(this);
-	testGdb->start("gdb -v");
-	testGdb->waitForFinished(5000);
-	lu = testGdb->readAll();
-	if( m_checkEnvironment && lu.left(7) != "GNU gdb" )
-	{
-		QDialog *warning = new QDialog;
-		Ui::Warning ui;
-		ui.setupUi(warning);
-		warning->setWindowTitle("QDevelop");
-		ui.message->setText( tr("To use debugging you must install gdb.\nDownloadable for MinGW on http://www.mingw.org/download.shtml.") );
-		warning->adjustSize();
-		warning->exec();
-		m_checkEnvironment = ui.dontShowAnymore->isChecked();
-		delete warning;
-	}
-	testGdb->waitForFinished(5000);
-	testGdb->terminate();
-	delete testGdb;
-	// ctags control
-	QProcess *testCtags = new QProcess(this);
-	testCtags->start("ctags --version");
-	testCtags->waitForFinished(5000);
-	lu = testCtags->readAll();
-	m_ctagsIsPresent = true;
-	if( m_checkEnvironment && lu.isEmpty() )
-	{
-		m_ctagsIsPresent = false;
-		QDialog *warning = new QDialog;
-		Ui::Warning ui;
-		ui.setupUi(warning);
-		warning->setWindowTitle("QDevelop");
-		ui.message->setText( tr("To have code completion, you must install ctags.\nDownloadable for Windows on http://ctags.sourceforge.net/.") );
-		warning->adjustSize();
-		warning->exec();
-		m_checkEnvironment = ui.dontShowAnymore->isChecked();
-		delete warning;
-	}
-	testCtags->waitForFinished(5000);
-	testCtags->terminate();
-	delete testCtags;
+	if( !m_checkEnvironment && !show)
+		return;
+	ToolsControlImpl *toolsControlImpl = new ToolsControlImpl( this );
+	if( !toolsControlImpl->toolsControl() || show )
+		toolsControlImpl->exec();
+	m_qmakeName = toolsControlImpl->qmakeName();
+	m_makeName = toolsControlImpl->makeName();
+	m_gdbName = toolsControlImpl->gdbName();
+	m_ctagsName = toolsControlImpl->ctagsName();
+	m_qtInstallHeaders = toolsControlImpl->qtInstallHeaders();
+	m_ctagsIsPresent = toolsControlImpl->ctagsIsPresent();
+	m_checkEnvironment = toolsControlImpl->checkEnvironment();
+	delete toolsControlImpl;
 	treeClasses->setCtagsIsPresent( m_ctagsIsPresent );
-	//
+	treeClasses->setCtagsName( m_ctagsName );
 }
 //
 void MainImpl::slotAbout()

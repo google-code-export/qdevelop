@@ -52,11 +52,11 @@ public:
 	MainImpl(QWidget * parent = 0);
 	~MainImpl();
 	Editor * openFile(QStringList locationsList, int numLine=-1, bool silentMode=false, bool moveTop=false);
-	void toolsControl();
 	void loadINI();
 	bool saveBeforeBuild() { return m_saveBeforeBuild; };
 	bool openProject(QString s);
 	QString qmakeName() { return m_qmakeName; };
+	QString ctagsName() { return m_ctagsName; };
 	enum EndLine { Default, Unix, Windows };
 	TabWidget *tabEditors() const { return m_tabEditors; };
 	bool ctagsIsPresent() { return m_ctagsIsPresent; };
@@ -95,6 +95,9 @@ private:
 	//QTimer *m_timer;
 	int m_tabStopWidth;
 	QString m_qmakeName;
+	QString m_makeName;
+	QString m_gdbName;
+	QString m_ctagsName;
 	QString m_qtInstallHeaders;
 	bool m_lineNumbers, m_selectionBorder, m_autoIndent, m_cppHighlighter;
 	bool m_saveBeforeBuild;
@@ -195,6 +198,7 @@ private slots:
 public slots:
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);
 	bool slotCloseAllFiles();
+	void slotToolsControl(bool show=true);
 signals:
 	void debugCommand(QString);
 	void stopBuild();
