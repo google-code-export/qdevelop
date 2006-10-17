@@ -789,9 +789,9 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 	else if( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutPaste() )
 		paste();
 	else if( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutUndo() )
-		undo();
+		document()->undo();
 	else if( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutRedo() )
-		redo();
+		document()->redo();
     else
 		QTextEdit::keyPressEvent ( event );
 	event->accept();
@@ -1083,6 +1083,19 @@ QString TextEdit::methodeMotSousCurseur()
 int TextEdit::currentLineNumber()
 {
 	return lineNumber( textCursor() );
+}
+//
+int TextEdit::currentLineNumber(QTextBlock block)
+{
+	int lineNumber = 1;
+	for ( QTextBlock b =document()->begin(); b.isValid(); b = b.next(), lineNumber++)
+	{
+		if( b == block )
+		{
+			return lineNumber;
+		}
+	}
+	return -1;
 }
 //
 int TextEdit::lineNumber(QTextCursor cursor)

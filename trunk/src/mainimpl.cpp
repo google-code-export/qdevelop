@@ -212,7 +212,8 @@ void MainImpl::configureCompletion()
 	if( treeFiles->topLevelItem(0) )
 		projectDirectory = m_projectManager->projectDirectory(treeFiles->topLevelItem(0));
     QStringList includes;
-    includes << m_qtInstallHeaders << projectDirectory 
+    includes << QLibraryInfo::location( QLibraryInfo::HeadersPath ) << projectDirectory 
+    //includes << m_qtInstallHeaders << projectDirectory 
 #ifdef WIN32
     << compilerInclude;
 #else
@@ -1072,13 +1073,13 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 	}
 	if( Editor::shortFilename(s).section(".", -1, -1).toLower() == "ui" )
 	{
-		QProcess::startDetached ("designer", QStringList(s)); 
+		QProcess::startDetached (m_designerName, QStringList(s)); 
 		QApplication::restoreOverrideCursor();
 		return 0;
 	}
 	else if( Editor::shortFilename(s).section(".", -1, -1).toLower() == "ts" )
 	{
-		QProcess::startDetached ("linguist", QStringList(s)); 
+		QProcess::startDetached (m_linguistName, QStringList(s)); 
 		QApplication::restoreOverrideCursor();
 		return 0;
 	}
@@ -1139,7 +1140,6 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 		editor->gotoLine(numLine, moveTop);
 	connect(editor, SIGNAL(editorModified(Editor *, bool)), this, SLOT(slotModifiedEditor( Editor *, bool)) );
 	connect(editor, SIGNAL(updateClasses(QString, QString)), this, SLOT(slotUpdateClasses(QString, QString)) );
-	connect(editor, SIGNAL(bookmark(QString, QString, QPair<bool,unsigned int>)), this, SLOT(slotToggleBookmark(QString, QString, QPair<bool,unsigned int>)) );
 	if( m_debug )
 		connect(editor, SIGNAL(breakpoint(QString, QPair<bool,unsigned int>)), m_debug, SLOT(slotBreakpoint(QString, QPair<bool,unsigned int>)) );
 	setCurrentFile(s);
@@ -1150,16 +1150,17 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 }
 //
 
-void MainImpl::slotToggleBookmark(QString filename, QString text, QPair<bool,unsigned int> bookmarkLine)
+void MainImpl::toggleBookmark(Editor *editor, QString text, bool activate, QTextBlock block)
 {
 	Bookmark bookmark;
-	bookmark.first = filename;
-	bookmark.second = bookmarkLine.second;
-	bool add = bookmarkLine.first;
-	if( add )
+	bookmark.first = editor;
+	bookmark.second = block;
+	if( activate )
 	{
-		QAction *action = menuBookmarks->addAction(QString::number(bookmarkLine.second)+": "+text, this, SLOT(slotActivateBookmark()));
-		action->setToolTip( filename+":"+QString::number(bookmarkLine.second));
+		QString s = text;
+		if( s.length() > 50 )
+			s = s.left(50)+" ...";
+		QAction *action = menuBookmarks->addAction(s, this, SLOT(slotActivateBookmark()));
 		QVariant v;
 		v.setValue( bookmark );
 		action->setData( v );
@@ -1170,7 +1171,7 @@ void MainImpl::slotToggleBookmark(QString filename, QString text, QPair<bool,uns
 		foreach(QAction *action, actionsList)
 		{
 			Bookmark bookmarkAction = action->data().value<Bookmark>();
-			if( bookmarkAction.first == bookmark.first && bookmarkAction.second == bookmark.second )
+			if( bookmarkAction.first == editor && bookmarkAction.second == block )
 			{
 				delete action;
 				break;
@@ -1183,9 +1184,24 @@ void MainImpl::slotActivateBookmark()
 {
 	QAction *action = (QAction *)sender();
 	Bookmark bookmark = action->data().value<Bookmark>();
-	QString filename = bookmark.first;
-	int line = bookmark.second;
-	openFile(QStringList(filename), line);
+	Editor *editor = 0;
+	Editor *bookmarkEditor = bookmark.first;
+	QTextBlock block = bookmark.second;
+	for(int i=0; i<m_tabEditors->count(); i++)
+	{
+		Editor *edit = ((Editor *)m_tabEditors->widget( i ));
+		if( edit == bookmarkEditor )
+		{
+			editor = edit;
+			break;
+		}
+	}
+	if( editor )
+	{
+		QString filename = editor->filename();
+		int line = editor->currentLineNumber( block );
+		openFile(QStringList(filename), line);
+	}
 }
 //
 void MainImpl::slotUpdateClasses(QString filename, QString buffer)
@@ -1884,7 +1900,11 @@ void MainImpl::slotToolsControl(bool show)
 	m_makeName = toolsControlImpl->makeName();
 	m_gdbName = toolsControlImpl->gdbName();
 	m_ctagsName = toolsControlImpl->ctagsName();
-	m_qtInstallHeaders = toolsControlImpl->qtInstallHeaders();
+	m_linguistName = toolsControlImpl->linguistName();
+	m_lupdateName = toolsControlImpl->lupdateName();
+	m_lreleaseName = toolsControlImpl->lreleaseName();
+	m_designerName = toolsControlImpl->designerName();
+	//
 	m_ctagsIsPresent = toolsControlImpl->ctagsIsPresent();
 	m_checkEnvironment = toolsControlImpl->checkEnvironment();
 	delete toolsControlImpl;

@@ -215,6 +215,31 @@ void Editor::slotTimerCheckIfModifiedOutside()
 		}
 		m_timerCheckLastModified.start( 5000 );
 	}
+	checkBookmarks();
+}
+//
+void Editor::checkBookmarks()
+{
+	QMenu *menu = m_mainimpl->bookmarksMenu();
+	QList<QAction *> actions = menu->actions();
+	foreach(QAction *action, actions)
+	{
+		Bookmark bookmark = action->data().value<Bookmark>();
+		QTextBlock block = bookmark.second;
+		bool found = false;
+		for ( QTextBlock b = m_textEdit->document()->begin(); b.isValid(); b = b.next() )
+		{
+			BlockUserData *blockUserData = (BlockUserData*)block.userData();
+			if( block==b && blockUserData && blockUserData->bookmark )
+			{
+				found = true;
+			}
+		}
+		if( !found  )
+		{
+			m_mainimpl->toggleBookmark(this, "", false, block);
+		}
+	}
 }
 //
 void Editor::clearAllBookmarks()
@@ -522,13 +547,16 @@ void Editor::toggleBookmark(int line)
 		blockUserData = new BlockUserData();
 		blockUserData->breakpoint = false;
 		blockUserData->bookmark = false;
+		blockUserData->block = cursor.block();
+		
 	}
 	blockUserData->bookmark = !blockUserData->bookmark;
 	cursor.block().setUserData( blockUserData );
 	activate = blockUserData->bookmark;
 	m_textEdit->setTextCursor( cursor );
 	//
-	emit bookmark(filename(), s, QPair<bool,unsigned int>(activate, line));
+	//emit bookmark(this, s, QPair<bool,QTextBlock>(activate, cursor.block()));
+	m_mainimpl->toggleBookmark(this, s, activate, cursor.block());
 	m_textEdit->setTextCursor( save );
 	setVerticalScrollBar( scroll );
 }

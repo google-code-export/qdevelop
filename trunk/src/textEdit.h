@@ -71,6 +71,7 @@ public:
 	void setBackgroundColor( QColor c );
 	void setCurrentLineColor( QColor c );
 	int currentLineNumber();
+	int currentLineNumber(QTextBlock block);
 	int linesCount();
     void dialogGotoLine();
     void completeCode();

@@ -676,19 +676,22 @@ QString TreeClasses::signature(QString line)
 	QString formattedParams;
 	foreach(QString param, params.split(",") )
 	{
+		param = param.simplified();
 		if( param.contains("&") )
 			param = param.simplified().left( param.simplified().lastIndexOf("&")+1 );
 		else if( param.contains("*") )
 			param = param.simplified().left( param.simplified().lastIndexOf("*")+1 );
 		else if( param.simplified().contains(" ") )
-			param = param.simplified().left( param.simplified().lastIndexOf(" ")+1 );
+			param = param.simplified().left( param.simplified().indexOf(" ") );
+		else if( param.simplified().contains("=") )
+			param = param.simplified().left( param.simplified().lastIndexOf("=") );
 		//param = param.section(" ", 0, 0);
 		formattedParams += param + ",";
 	}
 	formattedParams = formattedParams.simplified().left( formattedParams.lastIndexOf(",") );
 	formattedParams.remove( " " );
 	QString s ="(" + formattedParams + ")";
-//qDebug()<<s;
+qDebug()<<s;
 	return s;
 }
 //
