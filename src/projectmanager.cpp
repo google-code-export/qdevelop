@@ -888,7 +888,7 @@ void ProjectManager::slotlupdate(QTreeWidgetItem *it)
 	QString name = projectName( projectDir );
 	QProcess process;
 	process.setWorkingDirectory( projectDir );
-	process.start("lupdate", QStringList() << "-noobsolete" << name); 
+	process.start(m_parent->lupdateName(), QStringList() << "-noobsolete" << name); 
 	process.waitForFinished();
     QApplication::restoreOverrideCursor();
 }
@@ -914,7 +914,7 @@ void ProjectManager::slotlrelease(QTreeWidgetItem *it)
 	QString name = projectName( projectDir );
 	QProcess process;
 	process.setWorkingDirectory( projectDir );
-	process.start("lrelease", QStringList(name)); 
+	process.start(m_parent->lreleaseName(), QStringList(name)); 
 	process.waitForFinished();
 	setQmake( projectFilename(it) );
     QApplication::restoreOverrideCursor();

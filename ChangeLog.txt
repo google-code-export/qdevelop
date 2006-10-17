@@ -6,6 +6,7 @@ Corrections:
 - Bug in classes explorer when a sub-project have a name identical of the main project.
 - Deletion of Auto-Hide docks, not working with Qt 4.2
 Adds:
+- New dialog to control and configure all external tools.
 - Bookmarks. Bookmarks can be toggled on menu bar and by right-click in margin number or editor. 
 - Modification of the class browser to understand functions overloading.
 - When a project is closed, the content of class browser is saved in database project.db. With this database, the content is reloaded very quickly during the loading of the project. This feature require to have the SQL driver sqlite enable. On build enter the option -qt-sql-sqlite after the configure command.

@@ -28,6 +28,7 @@
 #include <QDateTime>
 #include <QFont>
 #include <QTextCharFormat>
+#include <QTextBlock>
 #include "treeproject.h"
 
 class QProcess;
@@ -42,7 +43,7 @@ class FindFileImpl;
 class StackImpl;
 class InitCompletion;
 //
-typedef QPair<QString, int> Bookmark;
+typedef QPair<Editor *, QTextBlock> Bookmark;
 Q_DECLARE_METATYPE(Bookmark)
 //
 class MainImpl : public QMainWindow, Ui::Main
@@ -57,6 +58,8 @@ public:
 	bool openProject(QString s);
 	QString qmakeName() { return m_qmakeName; };
 	QString ctagsName() { return m_ctagsName; };
+	QString lupdateName() { return m_lupdateName; };
+	QString lreleaseName() { return m_lreleaseName; };
 	enum EndLine { Default, Unix, Windows };
 	TabWidget *tabEditors() const { return m_tabEditors; };
 	bool ctagsIsPresent() { return m_ctagsIsPresent; };
@@ -68,6 +71,8 @@ public:
 	void closeOtherTab(int numTab);
 	//void closeAllTab();
 	bool showTreeClasses() { return m_showTreeClasses; };
+	void toggleBookmark(Editor *editor, QString text, bool activate, QTextBlock block);
+	QMenu *bookmarksMenu() { return menuBookmarks; };
 private:
 	// Functions
 	void createConnections();
@@ -98,6 +103,10 @@ private:
 	QString m_makeName;
 	QString m_gdbName;
 	QString m_ctagsName;
+	QString m_linguistName;
+	QString m_lupdateName;
+	QString m_lreleaseName;
+	QString m_designerName;
 	QString m_qtInstallHeaders;
 	bool m_lineNumbers, m_selectionBorder, m_autoIndent, m_cppHighlighter;
 	bool m_saveBeforeBuild;
@@ -191,7 +200,6 @@ private slots:
 	void slotDebugVariables( QList<Variable> list);
 	void slotAddDebugVariable();
 	void slotRemoveDebugVariable();
-	void slotToggleBookmark(QString filename, QString text, QPair<bool,unsigned int> bookmarkLine);
 	void slotToggleBookmark();	
 	void slotActivateBookmark();
 	void slotClearAllBookmarks();

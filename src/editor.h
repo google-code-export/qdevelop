@@ -26,6 +26,7 @@
 #include "textEdit.h"
 #include "mainimpl.h"
 #include "ui_findwidget.h"
+#include <QTextDocument>
 #include <QTextEdit>
 #include <QPointer>
 #include <QTextCursor>
@@ -55,6 +56,7 @@ class BlockUserData : public QTextBlockUserData
 public:
 	bool bookmark;
 	bool breakpoint;
+	QTextBlock block;
 };
 //
 class Editor : public QWidget
@@ -84,15 +86,15 @@ public:
 	void setBackgroundColor( QColor c ){ m_textEdit->setBackgroundColor(c); };
 	void setCurrentLineColor( QColor c ){ m_textEdit->setCurrentLineColor(c); };
 	int currentLineNumber(){ return m_textEdit->currentLineNumber(); };
+	int currentLineNumber(QTextBlock block){ return m_textEdit->currentLineNumber(block); };
 	void toggleBreakpoint(int line);
-	void toggleBreakpoint() { toggleBreakpoint( m_textEdit->currentLineNumber() ); };
 	void setExecutedLine(int line);
 	void emitListBreakpoints();
 	void copy() { m_textEdit->copy(); };
 	void cut() { m_textEdit->cut(); };
 	void paste() { m_textEdit->paste(); };
-	void undo() { m_textEdit->undo(); };
-	void redo() { m_textEdit->redo(); };
+	void undo() { m_textEdit->document()->undo(); };
+	void redo() { m_textEdit->document()->redo(); };
 	void comment(TextEdit::ActionComment action) { m_textEdit->comment(action); };
 	void selectAll() { m_textEdit->selectAll(); };
 	void slotIndent() { m_textEdit->slotIndent(); };
@@ -127,6 +129,7 @@ public slots:
 	void setSyntaxColors(QTextCharFormat a, QTextCharFormat b, QTextCharFormat c, QTextCharFormat d, QTextCharFormat e, QTextCharFormat f, QTextCharFormat g);
 	void slotClassesMethodsList();	
 	void slotOtherFile();
+	void toggleBreakpoint() { toggleBreakpoint( m_textEdit->currentLineNumber() ); };
 private slots:	
 	void slotComboMethods(int index);
 	void slotFindWidget_textChanged(QString text="", bool fromButton=false);
@@ -164,12 +167,13 @@ private:
     quint16 m_checksum;
     InitCompletion *m_completion;
     QDateTime m_lastModified;
+    void checkBookmarks();
 protected:
 signals:
 	void editorModified(Editor *, bool);
 	void refreshClasses(QString);
 	void breakpoint(QString, QPair<bool,unsigned int>); 
-	void bookmark(QString, QString, QPair<bool,unsigned int>); 
+	//void bookmark(Editor *, QString, QPair<bool,QTextBlock>); 
 	void updateClasses(QString, QString);
 };
 

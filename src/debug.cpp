@@ -109,6 +109,7 @@ void Debug::writeMessagesToDebugger()
 	while( it.hasNext() )
 	{
 		QString msg = it.next();
+//emit message( "writeMessagesToDebugger :" +  msg.toLatin1() );
 		processDebug->write( msg.toLatin1() );
 	}
 	messagesToDebugger.clear();
@@ -138,6 +139,7 @@ void Debug::slotMessagesDebug()
 					m_request = InfoScope;
 					QString numLine = s.section(":", -4, -4);
 					messagesToDebugger << "info scope "+numLine+"\n";
+					return;
 				}
 				//
 				if( s.indexOf("Program exited normally.") == 0 )
@@ -175,7 +177,7 @@ void Debug::slotMessagesDebug()
 						Variable variable = listVariables.at(0);
 						messagesToDebugger << "whatis "+variable.name+"\n";
 					}
-					if( s.contains( "No arguments" ) )
+					else if( s.contains( "No arguments" ) )
 					{
 						if( listVariables.count() )
 						{
@@ -195,7 +197,8 @@ void Debug::slotMessagesDebug()
 							m_request = None;
 						}
 					}
-					else if( s.contains("Symbol ") && ( s.at(0).isLetterOrNumber() || s.at(0) == '_' ))
+					//else if( s.contains("Symbol ") && ( s.at(0).isLetterOrNumber() || s.at(0) == '_' ))
+					else if( s.indexOf("Symbol ") == 0 )
 					{
 						QString name = s.section("Symbol ", 1).section(" ", 0, 0).simplified();
 						if( !name.isEmpty() )
@@ -366,7 +369,9 @@ void Debug::slotMessagesDebug()
 				s.indexOf("No symbol" )==0
 				
 				)*/
-			if( m_request != None )
+//emit message( "Error request :"+s );
+
+			if( m_request != None  )
 			{
 //emit message( "Error request :"+s );
 				if( listVariables.count() )
