@@ -975,8 +975,7 @@ void MainImpl::slotSaveFileAs()
 		tr("Files (*.cpp *.h *.txt *.* *)") );
 	if( s.isEmpty() )
 	{
-		// Le bouton Annuler a ï¿½ï¿½cliquï¿½
-		return;
+		// Le bouton Annuler a ï¿½ï¿½cliquï¿?		return;
 	}
 	editor->setFilename( s );
 	editor->save();
@@ -1792,6 +1791,18 @@ void MainImpl::updateActionsRecentsFiles()
     QSettings settings("QDevelop", "Files recents");
     QStringList files = settings.value("ListeFichiersRecents").toStringList();
 
+    QStringList existingFiles;
+    foreach (QString fileName, files)
+    {
+        if (QFile(fileName).exists())
+            existingFiles.push_back(fileName);
+    }
+    if (existingFiles.size() < files.size())
+    {
+       	settings.setValue("ListeFichiersRecents", files);
+        files = existingFiles;
+    }
+    
     int numRecentFiles = qMin(files.size(), (int)maxRecentsFiles);
 
     for (int i = 0; i < numRecentFiles; ++i) {
@@ -1808,8 +1819,20 @@ void MainImpl::updateActionsRecentsProjects()
 {
     QSettings settings("QDevelop", "Projets recents");
     QStringList files = settings.value("ListeProjetsRecents").toStringList();
+    
+    QStringList existingFiles;
+    foreach (QString fileName, files)
+    {
+        if (QFile(fileName).exists())
+            existingFiles.push_back(fileName);
+    }
+    if (existingFiles.size() < files.size())
+    {
+       	settings.setValue("ListeProjetsRecents", files);
+        files = existingFiles;
+    }
 
-    int numRecentFiles = qMin(files.size(), (int)maxRecentsProjects);
+    int numRecentFiles = qMin(existingFiles.size(), (int)maxRecentsProjects);
 
     for (int i = 0; i < numRecentFiles; ++i) {
         QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
