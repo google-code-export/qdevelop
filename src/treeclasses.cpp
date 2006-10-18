@@ -691,7 +691,7 @@ QString TreeClasses::signature(QString line)
 	formattedParams = formattedParams.simplified().left( formattedParams.lastIndexOf(",") );
 	formattedParams.remove( " " );
 	QString s ="(" + formattedParams + ")";
-qDebug()<<s;
+//qDebug()<<s;
 	return s;
 }
 //

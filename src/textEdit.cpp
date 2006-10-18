@@ -61,9 +61,9 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
 	connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));	
 	connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
 	connect( document(), SIGNAL( contentsChange(int, int, int) ), this, SLOT( slotContentsChange(int, int, int) ));
-	QAction *actionToggleBreakpoint = new QAction(this);
+	actionToggleBreakpoint = new QAction(this);
 	actionToggleBreakpoint->setShortcut( Qt::Key_F9 );
-	connect(actionToggleBreakpoint, SIGNAL(triggered()), m_editor, SLOT(toggleBreakpoint()) );
+	connect(actionToggleBreakpoint, SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
     //
     m_completionList = new QListWidget(this);
     m_completionList->setSelectionMode( QAbstractItemView::SingleSelection );
@@ -953,6 +953,7 @@ void TextEdit::setExecutedLine(int line)
 void TextEdit::contextMenuEvent(QContextMenuEvent * e) 
 {	
 	mousePosition = e->pos();
+	m_lineNumber = lineNumber( e->pos() );
 	QMenu *menu = createStandardContextMenu();
 	menu->clear();
 	connect(menu->addAction(QIcon(":/toolbar/images/undo.png"), tr("Undo")), SIGNAL(triggered()), this, SLOT(undo()) );
@@ -968,7 +969,7 @@ void TextEdit::contextMenuEvent(QContextMenuEvent * e)
 	menu->addSeparator();
 	connect(menu->addAction(tr("Select All")), SIGNAL(triggered()), this, SLOT(selectAll()) );
 	menu->addSeparator();
-	connect(menu->addAction(QIcon(":/toolbar/images/find.png"), tr("Find...")), SIGNAL(triggered()), this, SLOT(slotFind()) );
+	connect(menu->addAction(QIcon(":/toolbar/images/find.png"), tr("Find...")), SIGNAL(triggered()), m_editor, SLOT(find()) );
 	menu->addSeparator();
 	connect(menu->addAction(QIcon(":/divers/images/bookmark.png"), tr("Toggle Bookmark")), SIGNAL(triggered()), this, SLOT(slotToggleBookmark()) );
 	connect(menu->addAction(QIcon(":/divers/images/pointArret.png"), tr("Toggle Breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
@@ -1120,3 +1121,16 @@ int TextEdit::lineNumber(QPoint point)
 	return lineNumber( cursorForPosition( point ) );
 }
 //
+//
+void TextEdit::slotToggleBookmark() 
+{
+	m_editor->toggleBookmark( m_lineNumber );
+	m_lineNumbers->update();
+}
+//
+//
+void TextEdit::slotToggleBreakpoint() 
+{ 
+	m_editor->toggleBreakpoint( m_lineNumber );
+	m_lineNumbers->update();
+}

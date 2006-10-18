@@ -25,6 +25,7 @@
 #include "lineedit.h"
 #include "replaceimpl.h"
 #include "tabwidget.h"
+#include "linenumbers.h"
 
 #include <QComboBox>
 #include <QTextCursor>
@@ -559,6 +560,7 @@ void Editor::toggleBookmark(int line)
 	m_mainimpl->toggleBookmark(this, s, activate, cursor.block());
 	m_textEdit->setTextCursor( save );
 	setVerticalScrollBar( scroll );
+	m_textEdit->lineNumbers()->update();
 }
 //
 void Editor::toggleBreakpoint(int line) 
@@ -580,6 +582,7 @@ void Editor::toggleBreakpoint(int line)
 	m_textEdit->setTextCursor( save );
 	setVerticalScrollBar( scroll );
 	emit breakpoint(shortFilename(), QPair<bool,unsigned int>(blockUserData->breakpoint, line));
+	m_textEdit->lineNumbers()->update();
 }
 //
 void Editor::emitListBreakpoints()

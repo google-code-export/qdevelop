@@ -89,6 +89,8 @@ private slots:
 	void slotCursorPositionChanged();
 	void slotContentsChange ( int position, int charsRemoved, int charsAdded );
 	void slotCompletionList(TagList TagList);
+	void slotToggleBreakpoint();
+	void slotToggleBookmark();
 private:
 	QPointer<LineNumbers> m_lineNumbers;
 	QPointer<SelectionBorder> m_selectionBorder;
@@ -113,6 +115,8 @@ private:
     bool m_autobrackets;
     QColor m_backgroundColor;
     QColor m_currentLineColor;
+    QAction *actionToggleBreakpoint;
+    int m_lineNumber;
 protected:
 	void resizeEvent( QResizeEvent* );
 	void keyPressEvent ( QKeyEvent * event );
