@@ -74,13 +74,11 @@ public:
 	QString directory();
 	static QString shortFilename(QString nomLong);
 	static QString suffixe(QString filename);
-	void find();
 	void findContinue();
 	QStringList classes();
 	QStringList methodes(QString classe);
 	QList<int> breakpoints();
 	void toggleBookmark(int line);
-	void toggleBookmark() { toggleBookmark( m_textEdit->currentLineNumber() ); };
 	void clearAllBookmarks();
 	void deleteBreakpoint(int line);
 	void setBackgroundColor( QColor c ){ m_textEdit->setBackgroundColor(c); };
@@ -112,6 +110,8 @@ public:
 	void setActiveEditor(bool b);
 	void setIntervalUpdatingTreeClasses(int i) { m_intervalUpdatingClasses = i*1000;};
 	void setShowTreeClasses(bool s);
+	void toggleBreakpoint() { toggleBreakpoint( m_textEdit->currentLineNumber() ); };
+	void toggleBookmark() { toggleBookmark( m_textEdit->currentLineNumber() ); };
 	//
 public slots:
 	void gotoLine( int line, bool moveTop);
@@ -129,7 +129,7 @@ public slots:
 	void setSyntaxColors(QTextCharFormat a, QTextCharFormat b, QTextCharFormat c, QTextCharFormat d, QTextCharFormat e, QTextCharFormat f, QTextCharFormat g);
 	void slotClassesMethodsList();	
 	void slotOtherFile();
-	void toggleBreakpoint() { toggleBreakpoint( m_textEdit->currentLineNumber() ); };
+	void find();
 private slots:	
 	void slotComboMethods(int index);
 	void slotFindWidget_textChanged(QString text="", bool fromButton=false);
