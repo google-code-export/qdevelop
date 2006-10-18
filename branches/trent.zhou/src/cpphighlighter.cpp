@@ -66,47 +66,6 @@ void CppHighlighter::highlightBlock(const QString &t)
 	QString text = t;
 //qDebug()<<text;
 	setCurrentBlockState(Closed);
-
-	// Comments between /* and */ 
-	int startIndex = 0, endIndex = -1;
-	int commentLength = 0;
-	do
-	{
-		if (previousBlockState() != Opened || endIndex != -1)
-		{
-			startIndex = text.indexOf(commentStartExpression, startIndex + commentLength);
-		}
-		endIndex = -1;
-		if (startIndex >= 0) 
-		{
-			endIndex = text.indexOf(commentEndExpression, startIndex);
-			if (endIndex == -1) 
-			{
-				setCurrentBlockState(Opened);
-				commentLength = text.length() - startIndex;
-			} 
-			else 
-			{
-				setCurrentBlockState(Closed);
-				commentLength = endIndex - startIndex + commentEndExpression.matchedLength();
-			}
-			if( !inQuotations(startIndex, text) && !inQuotations(startIndex+commentLength, text) )
-			{
-				setFormat(startIndex, commentLength, m_multiLineCommentFormat);
-				for(int i = startIndex; i<startIndex+commentLength; i++)
-					text[i] = QChar(255);
-			}
-			else
-				setCurrentBlockState(Closed);
-		}
-		else
-		{
-			endIndex = -1;
-			setCurrentBlockState(Closed);
-		}
-	} while( endIndex != -1 );
-	if( currentBlockState() == Opened )
-		return;
 		
 	// Simple quotation
 	int debutQuote = 0, finQuote;
@@ -159,7 +118,7 @@ void CppHighlighter::highlightBlock(const QString &t)
 			debutQuote = finQuote+2;
 		}
 	} while( debutQuote!=-1 && finQuote!=-1 );
-	
+
 	// Single line comment
 	QRegExp single("//[^\n]*");
 	int indexSingle = text.indexOf(single);
@@ -170,6 +129,47 @@ void CppHighlighter::highlightBlock(const QString &t)
 		for(int i=indexSingle; i<indexSingle+length; i++)
 			text[i] = QChar(255);
 	}
+	// Comments between /* and */ 
+	int startIndex = 0, endIndex = -1;
+	int commentLength = 0;
+	do
+	{
+		if (previousBlockState() != Opened || endIndex != -1)
+		{
+			startIndex = text.indexOf(commentStartExpression, startIndex + commentLength);
+		}
+		endIndex = -1;
+		if (startIndex >= 0) 
+		{
+			endIndex = text.indexOf(commentEndExpression, startIndex);
+			if (endIndex == -1) 
+			{
+				setCurrentBlockState(Opened);
+				commentLength = text.length() - startIndex;
+			} 
+			else 
+			{
+				setCurrentBlockState(Closed);
+				commentLength = endIndex - startIndex + commentEndExpression.matchedLength();
+			}
+			if( !inQuotations(startIndex, text) && !inQuotations(startIndex+commentLength, text) )
+			{
+				setFormat(startIndex, commentLength, m_multiLineCommentFormat);
+				for(int i = startIndex; i<startIndex+commentLength; i++)
+					text[i] = QChar(255);
+			}
+			else
+				setCurrentBlockState(Closed);
+		}
+		else
+		{
+			endIndex = -1;
+			setCurrentBlockState(Closed);
+		}
+	} while( endIndex != -1 );
+	if( currentBlockState() == Opened )
+		return;
+	
 	// #
 	int indexSharp = text.indexOf("#");
 	int indexEndSharp = text.lastIndexOf('"', indexSharp);
