@@ -1,7 +1,4 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>NewProject</class>
  <widget class="QDialog" name="NewProject" >
   <property name="geometry" >
@@ -215,7 +212,7 @@
          <string>Debug Version</string>
         </property>
         <property name="checked" >
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -223,6 +220,9 @@
        <widget class="QRadioButton" name="release" >
         <property name="text" >
          <string>Release Version</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -567,7 +567,6 @@
    </item>
   </layout>
  </widget>
- <pixmapfunction></pixmapfunction>
  <tabstops>
   <tabstop>projectName</tabstop>
   <tabstop>location</tabstop>

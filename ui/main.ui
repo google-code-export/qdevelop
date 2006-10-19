@@ -1,7 +1,4 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>Main</class>
  <widget class="QMainWindow" name="Main" >
   <property name="geometry" >
@@ -42,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>795</width>
-     <height>28</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu" >
@@ -99,11 +96,6 @@
     <property name="title" >
      <string>&amp;File</string>
     </property>
-    <widget class="QMenu" name="menu_Open" >
-     <property name="title" >
-      <string>&amp;Open</string>
-     </property>
-    </widget>
     <widget class="QMenu" name="menuLastsProjects" >
      <property name="title" >
       <string>Last Projects</string>
@@ -112,11 +104,6 @@
     <widget class="QMenu" name="menuLastsFiles" >
      <property name="title" >
       <string>Last Files</string>
-     </property>
-    </widget>
-    <widget class="QMenu" name="menu_New" >
-     <property name="title" >
-      <string>&amp;New</string>
      </property>
     </widget>
     <addaction name="actionNewFile" />
@@ -136,14 +123,6 @@
     <addaction name="menuLastsFiles" />
     <addaction name="separator" />
     <addaction name="actionQuit" />
-   </widget>
-   <widget class="QMenu" name="menuBookmarks" >
-    <property name="title" >
-     <string>Bookmarks</string>
-    </property>
-    <addaction name="actionToggleBookmark" />
-    <addaction name="actionClearAllBookmarks" />
-    <addaction name="separator" />
    </widget>
    <widget class="QMenu" name="menu_Edit" >
     <property name="title" >
@@ -182,11 +161,6 @@
       <string>Toolbar</string>
      </property>
     </widget>
-    <widget class="QMenu" name="menuDocks" >
-     <property name="title" >
-      <string>Docks</string>
-     </property>
-    </widget>
     <addaction name="menuToolbar" />
    </widget>
    <widget class="QMenu" name="menuProject" >
@@ -212,6 +186,17 @@
     <addaction name="actionOptions" />
     <addaction name="actionExternalTools" />
     <addaction name="actionConfigureShortcuts" />
+   </widget>
+   <widget class="QMenu" name="menuBookmarks" >
+    <property name="title" >
+     <string>Bookmarks</string>
+    </property>
+    <addaction name="actionToggleBookmark" />
+    <addaction name="actionNextBookmark" />
+    <addaction name="actionPreviousBookmark" />
+    <addaction name="separator" />
+    <addaction name="actionClearAllBookmarks" />
+    <addaction name="separator" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -600,7 +585,7 @@
           <number>0</number>
          </property>
          <item row="0" column="0" >
-          <widget class="TreeProject" name="treeFiles" >
+          <widget class="TreeProject" native="1" name="treeFiles" >
            <property name="sizePolicy" >
             <sizepolicy>
              <hsizetype>5</hsizetype>
@@ -685,6 +670,18 @@
    <addaction name="separator" />
    <addaction name="actionIndent" />
    <addaction name="actionUnindent" />
+  </widget>
+  <widget class="QToolBar" name="toolBarBookmarks" >
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <attribute name="toolBarArea" >
+    <number>4</number>
+   </attribute>
+   <addaction name="actionToggleBookmark" />
+   <addaction name="actionNextBookmark" />
+   <addaction name="actionPreviousBookmark" />
+   <addaction name="actionClearAllBookmarks" />
   </widget>
   <widget class="QToolBar" name="toolBarBuild" >
    <property name="windowTitle" >
@@ -1384,6 +1381,9 @@
    </property>
   </action>
   <action name="actionClearAllBookmarks" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/divers/images/clearallbookmarks.png</iconset>
+   </property>
    <property name="text" >
     <string>Clear &amp;All Bookmarks</string>
    </property>
@@ -1393,22 +1393,34 @@
     <string>External Tools...</string>
    </property>
   </action>
+  <action name="actionNextBookmark" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/divers/images/bookmarknext.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Next Bookmark</string>
+   </property>
+  </action>
+  <action name="actionPreviousBookmark" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/divers/images/bookmarkprevious.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Previous Bookmark</string>
+   </property>
+  </action>
  </widget>
- <pixmapfunction></pixmapfunction>
  <customwidgets>
+  <customwidget>
+   <class>TreeClasses</class>
+   <extends>QTreeWidget</extends>
+   <header>treeclasses.h</header>
+  </customwidget>
   <customwidget>
    <class>TreeProject</class>
    <extends>QWidget</extends>
    <header>treeproject.h</header>
    <container>1</container>
-   <pixmap></pixmap>
-  </customwidget>
-  <customwidget>
-   <class>TreeClasses</class>
-   <extends>QTreeWidget</extends>
-   <header>treeclasses.h</header>
-   <container>0</container>
-   <pixmap></pixmap>
   </customwidget>
  </customwidgets>
  <resources>

@@ -112,6 +112,8 @@ public:
 	void setShowTreeClasses(bool s);
 	void toggleBreakpoint() { toggleBreakpoint( m_textEdit->currentLineNumber() ); };
 	void toggleBookmark() { toggleBookmark( m_textEdit->currentLineNumber() ); };
+	QList<int> bookmarksList();
+	QList<int> breakpointsList();
 	//
 public slots:
 	void gotoLine( int line, bool moveTop);

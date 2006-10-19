@@ -17,7 +17,6 @@ public:
 	QString lupdateName() { return lupdate->text(); };
 	QString lreleaseName() { return lrelease->text(); };
 	QString designerName() { return designer->text(); };
-	//QString qtInstallHeaders() { return m_qtInstallHeaders; };
 	bool ctagsIsPresent()  { return m_ctagsIsPresent; };
 	bool checkEnvironment()  { return m_checkEnvironment; };
 private slots:
@@ -33,11 +32,6 @@ private slots:
 	void on_test_clicked();
 	void chooseLocation(QLineEdit *dest);
 private:
-	//QString m_qmakeName;
-	//QString m_makeName;
-	//QString m_gdbName;
-	//QString m_ctagsName;
-	//QString m_qtInstallHeaders;
 	bool m_ctagsIsPresent;
 	bool m_checkEnvironment;
 };

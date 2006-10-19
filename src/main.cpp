@@ -28,6 +28,8 @@
 #include <QTranslator>
 #include <QLocale>
 #include <QSplashScreen>
+#include <QSettings>
+#include <QDir>
 #include <QDebug>
 #include "mainimpl.h"
 //

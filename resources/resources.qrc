@@ -1,22 +1,55 @@
 <RCC>
+    <qresource prefix="/CV" >
+        <file>images/CVclass.png</file>
+        <file>images/CVglobal_meth.png</file>
+        <file>images/CVglobal_var.png</file>
+        <file>images/CVnamespace.png</file>
+        <file>images/CVpackage_meth.png</file>
+        <file>images/CVpackage_var.png</file>
+        <file>images/CVprivate_meth.png</file>
+        <file>images/CVprivate_signal.png</file>
+        <file>images/CVprivate_slot.png</file>
+        <file>images/CVprivate_var.png</file>
+        <file>images/CVprotected_meth.png</file>
+        <file>images/CVprotected_signal.png</file>
+        <file>images/CVprotected_slot.png</file>
+        <file>images/CVprotected_var.png</file>
+        <file>images/CVpublic_meth.png</file>
+        <file>images/CVpublic_signal.png</file>
+        <file>images/CVpublic_slot.png</file>
+        <file>images/CVpublic_var.png</file>
+        <file>images/CVstruct.png</file>
+        <file>images/CVtypedef.png</file>
+    </qresource>
     <qresource prefix="/divers" >
         <file>images/QDevelop.png</file>
         <file>images/SplashQDevelop.png</file>
         <file>images/ajouter.png</file>
+        <file>images/bookmark.png</file>
+        <file>images/bookmarknext.png</file>
+        <file>images/bookmarkprevious.png</file>
+        <file>images/clearallbookmarks.png</file>
         <file>images/curseurDroit.png</file>
+        <file>images/good.png</file>
         <file>images/hide1.png</file>
         <file>images/hide2.png</file>
         <file>images/libre.png</file>
         <file>images/logo.png</file>
         <file>images/next.png</file>
+        <file>images/nogood.png</file>
         <file>images/pointArret.png</file>
-        <file>images/bookmark.png</file>
         <file>images/previous.png</file>
         <file>images/qmessagebox-warn.png</file>
         <file>images/supprimer.png</file>
         <file>images/wrap.png</file>
-        <file>images/good.png</file>
-        <file>images/nogood.png</file>
+    </qresource>
+    <qresource prefix="/templates" >
+        <file>templates/dialog.ui</file>
+        <file>templates/impl.cpp</file>
+        <file>templates/impl.h</file>
+        <file>templates/main.cpp</file>
+        <file>templates/mainwindow.ui</file>
+        <file>templates/widget.ui</file>
     </qresource>
     <qresource prefix="/toolbar" >
         <file>images/build.png</file>
@@ -65,20 +98,13 @@
         <file>images/view_tree.png</file>
     </qresource>
     <qresource prefix="/translations" >
+        <file>translations/QDevelop_Chinese.qm</file>
+        <file>translations/QDevelop_Dutch.qm</file>
         <file>translations/QDevelop_French.qm</file>
         <file>translations/QDevelop_German.qm</file>
-        <file>translations/QDevelop_Dutch.qm</file>
         <file>translations/QDevelop_Polish.qm</file>
         <file>translations/QDevelop_Spanish.qm</file>
-        <file>translations/QDevelop_Chinese.qm</file>
-    </qresource>
-    <qresource prefix="/templates" >
-        <file>templates/dialog.ui</file>
-        <file>templates/mainwindow.ui</file>
-        <file>templates/widget.ui</file>
-        <file>templates/main.cpp</file>
-        <file>templates/impl.h</file>
-        <file>templates/impl.cpp</file>
+        <file>translations/QDevelop_Russian.qm</file>
     </qresource>
     <qresource prefix="/treeview" >
         <file>images/cpp.png</file>
@@ -88,27 +114,5 @@
         <file>images/h.png</file>
         <file>images/linguist.png</file>
         <file>images/qrc.png</file>
-    </qresource>
-    <qresource prefix="/CV" >
-        <file>images/CVclass.png</file>
-        <file>images/CVglobal_meth.png</file>
-        <file>images/CVglobal_var.png</file>
-        <file>images/CVnamespace.png</file>
-        <file>images/CVpackage_meth.png</file>
-        <file>images/CVpackage_var.png</file>
-        <file>images/CVprivate_meth.png</file>
-        <file>images/CVprivate_signal.png</file>
-        <file>images/CVprivate_slot.png</file>
-        <file>images/CVprivate_var.png</file>
-        <file>images/CVprotected_meth.png</file>
-        <file>images/CVprotected_signal.png</file>
-        <file>images/CVprotected_slot.png</file>
-        <file>images/CVprotected_var.png</file>
-        <file>images/CVpublic_meth.png</file>
-        <file>images/CVpublic_signal.png</file>
-        <file>images/CVpublic_slot.png</file>
-        <file>images/CVpublic_var.png</file>
-        <file>images/CVstruct.png</file>
-        <file>images/CVtypedef.png</file>
     </qresource>
 </RCC>

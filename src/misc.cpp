@@ -35,13 +35,20 @@ QAction* variantToAction( QVariant variant )
 bool connectDB(QString const& dbName)
 {
 	QSqlDatabase database;
-	//if( QSqlDatabase::database().databaseName().isEmpty() )
-		database = QSqlDatabase::addDatabase("QSQLITE");
-	//database.close();
-	database.setDatabaseName(dbName);
 	
+	if( QSqlDatabase::database().databaseName() != dbName )
+	{
+		database = QSqlDatabase::addDatabase("QSQLITE");
+		database.setDatabaseName(dbName);
+	}
+	else
+	{
+		database = QSqlDatabase::database();
+		if ( database.isOpen() )
+			return true;
+	}
+	//
     if (!database.open()) {
-    	//qDebug()<<database.lastError()<<dbName;
         QMessageBox::critical(0, "QDevelop",
             QObject::tr("Unable to establish a database connection.")+"\n"+
                      QObject::tr("QDevelop needs SQLite support. Please read "
@@ -52,7 +59,6 @@ bool connectDB(QString const& dbName)
     }
 	else
 	{
-		// create table anyway, it doesn't harm
 		QSqlQuery query;
 		QString queryString = "create table classesbrowser ("
 		    "text string,"
@@ -74,13 +80,25 @@ bool connectDB(QString const& dbName)
 		    ")";
 		
 		query.exec(queryString);
-		// we don't care the result, maybe the table is already there
 		queryString = "create table editors ("
 		    "filename string,"
 		    "scrollbar int,"
 		    "numline int"
 		    ")";
 		query.exec(queryString);
+		//
+		queryString = "create table bookmarks ("
+		    "filename string,"
+		    "numline int"
+		    ")";
+		query.exec(queryString);
+		//
+		queryString = "create table breakpoints ("
+		    "filename string,"
+		    "numline int"
+		    ")";
+		query.exec(queryString);
+		//
 		queryString = "select * from config",
 		//
 		queryString = "create table config ("

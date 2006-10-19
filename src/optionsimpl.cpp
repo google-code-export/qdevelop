@@ -26,6 +26,7 @@
 #include <QComboBox>
 #include <QPalette>
 #include <QColorDialog>
+#include <QFileDialog>
 #include <QDebug>
 //
 OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool ind, 
@@ -33,7 +34,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat pre, QTextCharFormat qt, QTextCharFormat commSimples, 
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
-    QColor back, bool prompt, QColor lc, bool bk, bool tc, int in)
+    QColor back, bool prompt, QColor lc, bool bk, bool tc, int in, QString directory)
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -55,6 +56,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
     brackets->setChecked( bk );
     showTreeClasses->setChecked( tc );
     interval->setValue( in );
+    projectsDirectory->setText( directory );
 	//
 	cppHighLighter = new CppHighlighter( 0 );
 	cppHighLighter->setPreprocessorFormat( pre );
@@ -109,6 +111,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	connect(background, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(lineColor, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(defaults, SIGNAL(clicked()), this, SLOT(slotDefault()));
+	connect(chooseProjectsDirectory, SIGNAL(clicked()), this, SLOT(slotChooseProjectsDirectory()));
 	textEdit->setPlainText( textEdit->toPlainText() );
 
 	// TODO remove gcc warnings
@@ -238,5 +241,20 @@ void OptionsImpl::slotDefault()
 	indent->setChecked( true );
 	brackets->setChecked( true );
 	highlight->setChecked( true );
+}
+//
+void OptionsImpl::slotChooseProjectsDirectory()
+{
+	QString s = QFileDialog::getExistingDirectory(
+		this,
+		tr("Choose the project directory"),
+		QDir::homePath(),
+		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
+	if( s.isEmpty() )
+	{
+		// Cancel clicked
+		return;
+	}
+	projectsDirectory->setText( s );
 }
 //

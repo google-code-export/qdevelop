@@ -13,17 +13,21 @@
 ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
 {
+	QString suffix;
+#ifdef Q_OS_WIN32
+	suffix = ".exe";
+#endif
 	setupUi(this);
-	QSettings settings("QDevelop");
+	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 	settings.beginGroup("Options");
-	qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/qmake").toString() );
+	qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/qmake"+suffix).toString() );
 	make->setText( settings.value("m_makeName").toString() );
 	gdb->setText( settings.value("m_gdbName").toString() );
 	ctags->setText( settings.value("m_ctagsName").toString() );
-	linguist->setText( settings.value("m_linguistName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/linguist").toString() );
-	lupdate->setText( settings.value("m_lupdateName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/lupdate").toString() );
-	lrelease->setText( settings.value("m_lreleaseName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/lrelease").toString() );
-	designer->setText( settings.value("m_designerName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/designer").toString() );
+	linguist->setText( settings.value("m_linguistName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/linguist"+suffix).toString() );
+	lupdate->setText( settings.value("m_lupdateName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/lupdate"+suffix).toString() );
+	lrelease->setText( settings.value("m_lreleaseName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/lrelease"+suffix).toString() );
+	designer->setText( settings.value("m_designerName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/designer"+suffix).toString() );
 	settings.endGroup();
 }
 //
@@ -168,7 +172,7 @@ bool ToolsControlImpl::toolsControl()
 
 void ToolsControlImpl::on_okButton_clicked()
 {
-	QSettings settings("QDevelop");
+	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 	settings.beginGroup("Options");
 	settings.setValue("m_qmakeName", qmake->text());
 	settings.setValue("m_makeName", make->text());
