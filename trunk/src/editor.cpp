@@ -563,6 +563,32 @@ void Editor::toggleBookmark(int line)
 	m_textEdit->lineNumbers()->update();
 }
 //
+QList<int> Editor::bookmarksList()
+{
+	QList<int> list;
+	int line = 1;
+	for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next(), line++ )
+	{
+		BlockUserData *blockUserData = (BlockUserData*)block.userData();
+		if( blockUserData && blockUserData->bookmark )
+			list << line;
+	}
+	return list;
+}
+//
+QList<int> Editor::breakpointsList()
+{
+	QList<int> list;
+	int line = 1;
+	for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next(), line++ )
+	{
+		BlockUserData *blockUserData = (BlockUserData*)block.userData();
+		if( blockUserData && blockUserData->breakpoint )
+			list << line;
+	}
+	return list;
+}
+//
 void Editor::toggleBreakpoint(int line) 
 { 
 	QTextCursor save = m_textEdit->textCursor();

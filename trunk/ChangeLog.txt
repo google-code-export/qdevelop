@@ -5,17 +5,24 @@ Corrections:
 - A crash if a file is opened without project
 - Bug in classes explorer when a sub-project have a name identical of the main project.
 - Deletion of Auto-Hide docks, not working with Qt 4.2
+- The settings are now written in qdevelop.ini file in the user home directory.
+- The database of project is named "qdevelop-settings.db" in project directory.
+- Add "Next Bookmark" and "Previous Bookmark" to menu Bookmark.
+- Add Bookmarks toolbar.
+- Save bookmarks and breakpoints in project settings
+- Add "console" to CONFIG variable in (.pro) file for new projects to have qDebug() written on debug console under Windows. 
 Adds:
+- The Default projects directory can be set in options dialog.
 - Bookmarks. Bookmarks can be toggled on menu bar and by right-click in margin number or editor. 
 - Modification of the class browser to understand functions overloading.
 - When a project is closed, the content of class browser is saved in database project.db. With this database, the content is reloaded very quickly during the loading of the project. This feature require to have the SQL driver sqlite enable. On build enter the option -qt-sql-sqlite after the configure command.
 - Moving tabs with mouse to switch between us
 - Detection when a file was modified by another program and ask for save or reload.
-- Three tabs to show debugged variables program. Deletion of line edit "Debug command", obsolete with new tabs.
+- Two tabs to show debugged variables program. Deletion of line edit "Debug command", obsolete with new tabs.
 - Templates to create a project (based on dialog or main window).
 - The code completion list contains the name and signature of functions.
 - Entries "Close Other Tabs" and "Close All Tabs" in popup menu showed by right-click on editor Tab.
-- Add Polish, Spanish and Chinese translations
+- Add Polish, Spanish, Chinese and Russian translations
 
 September 25 2006 Version 0.19
 Corrections:

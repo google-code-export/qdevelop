@@ -94,7 +94,7 @@ void LineNumbers::paintEvent( QPaintEvent* )
 		}
 		if( blockUserData && blockUserData->bookmark )
 		{
-			p.drawPixmap( 3, qRound( position.y() ) -contentsY-1,QPixmap(":/divers/images/bookmark.png")/*.scaled(20,20)*/);
+			p.drawPixmap( 3, qRound( position.y() ) -contentsY-6,QPixmap(":/divers/images/bookmark.png")/*.scaled(20,20)*/);
 		}
 
 	}

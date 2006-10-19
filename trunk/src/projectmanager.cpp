@@ -75,8 +75,6 @@ ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeCl
 	m_previewForm = 0;
 	m_parameters.isEmpty = true;
 	loadProject(name, newProjectItem);
-	//QString projectDirectory = absoluteNameProjectFile(m_treeFiles->topLevelItem(0));
-	//TreeClasses::connectDB( projectDirectory + "/project.db" );
 	parseTreeClasses();
 	loadProjectSettings();
 }
@@ -90,7 +88,7 @@ ProjectManager::~ProjectManager()
 	m_treeClasses->clear();
 	if( m_previewForm )
 		delete m_previewForm;
-	QSqlDatabase::removeDatabase ( "QSQLITE" );
+	QSqlDatabase::database().close();
 }
 //
 QStringList ProjectManager::parents(QTreeWidgetItem *it)
@@ -116,7 +114,7 @@ void ProjectManager::parseTreeClasses(bool force)
 		return;
 	m_treeClasses->clear();
 	QString directory = projectDirectory( m_treeFiles->topLevelItem( 0 ) );
-	if( QFile::exists( directory+"/project.db" ) && !force)
+	if( QFile::exists( directory+"/qdevelop-settings.db" ) && !force)
 	{
 		m_treeClasses->fromDB( directory );
 	}
@@ -215,10 +213,22 @@ void ProjectManager::saveProjectSettings()
 {
 	// Save opened files
 	QString directory = projectDirectory(m_treeFiles->topLevelItem(0));
-	if( !connectDB( directory + "/project.db" ) )
+	if( !connectDB( directory + "/qdevelop-settings.db" ) )
 		return;
 	QSqlQuery query;
 	QString queryString = "delete from editors where 1";
+    if (!query.exec(queryString))
+    {
+		qDebug() << "Failed to execute" << queryString;
+    	return;
+   	}
+	queryString = "delete from bookmarks where 1";
+    if (!query.exec(queryString))
+    {
+		qDebug() << "Failed to execute" << queryString;
+    	return;
+   	}
+	queryString = "delete from breakpoints where 1";
     if (!query.exec(queryString))
     {
 		qDebug() << "Failed to execute" << queryString;
@@ -237,8 +247,29 @@ void ProjectManager::saveProjectSettings()
 			query.bindValue(":numline", editor->currentLineNumber());
 			if( !query.exec() )
 				qDebug() << query.lastError();
+			foreach(int line, editor->bookmarksList())
+			{
+				QSqlQuery query;
+				query.prepare("INSERT INTO bookmarks (filename, numline) "
+				           "VALUES (:filename, :numline)");
+				query.bindValue(":filename", editor->filename());
+				query.bindValue(":numline", line);
+				if( !query.exec() )
+					qDebug() << query.lastError();
+			}
+			foreach(int line, editor->breakpointsList())
+			{
+				QSqlQuery query;
+				query.prepare("INSERT INTO breakpoints (filename, numline) "
+				           "VALUES (:filename, :numline)");
+				query.bindValue(":filename", editor->filename());
+				query.bindValue(":numline", line);
+				if( !query.exec() )
+					qDebug() << query.lastError();
+			}
 		}
 	}
+	//
 	if( m_parent->tabEditors()->count() )
 	{
 		//settings.setValue("currentIndex", m_tabEditors->currentIndex());
@@ -257,7 +288,7 @@ void ProjectManager::loadProjectSettings()
 {
 	// Save opened files
 	QString directory = projectDirectory(m_treeFiles->topLevelItem(0));
-	if( !connectDB( directory + "/project.db" ) )
+	if( !connectDB( directory + "/qdevelop-settings.db" ) )
 		return;
 	QSqlQuery query;
 	query.prepare("select * from editors where 1");
@@ -274,6 +305,29 @@ void ProjectManager::loadProjectSettings()
 			((Editor *)m_parent->tabEditors()->widget( m_parent->tabEditors()->count()-1 ))->gotoLine( numline,false );
 		}
     }
+    //
+	query.prepare("select * from bookmarks where 1");
+    query.exec();
+    while (query.next())
+    {
+    	QString filename = query.value(0).toString();
+    	int line = query.value(1).toInt();
+    	Editor *editor = m_parent->openFile( QStringList(filename) );
+    	if ( editor )
+    		editor->toggleBookmark( line );
+    }
+    //
+	query.prepare("select * from breakpoints where 1");
+    query.exec();
+    while (query.next())
+    {
+    	QString filename = query.value(0).toString();
+    	int line = query.value(1).toInt();
+    	Editor *editor = m_parent->openFile( QStringList(filename) );
+    	if ( editor )
+    		editor->toggleBreakpoint( line );
+    }
+    //
 	query.prepare("select * from config where 1");
     query.exec();
     while (query.next())
@@ -282,7 +336,6 @@ void ProjectManager::loadProjectSettings()
 qDebug()<<"currentEditor"<<currentEditor;
 		m_parent->tabEditors()->setCurrentIndex( currentEditor );
     }
-    //db.close();
 }
 //
 void ProjectManager::slotAddExistingFiles(QTreeWidgetItem *it)

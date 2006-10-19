@@ -84,13 +84,14 @@ MainImpl::MainImpl(QWidget * parent)
     m_autoCompletion = true;
     m_autobrackets = true;
 	m_backgroundColor = Qt::white;
-	m_promptBeforeQuit = true;
-	m_currentLineColor = QColor(238,246,255);
+	m_promptBeforeQuit = false;
+	m_currentLineColor = QColor(215,252,255);
 	m_findInFiles = 0;
 	m_stack = 0;
     m_intervalUpdatingClasses = 5;
     m_showTreeClasses = true;
     m_completion = 0;
+    m_projectsDirectory = QDir::homePath();
 	//
 	m_formatPreprocessorText.setForeground(QColor(0,128,0));
 	m_formatQtText.setForeground(Qt::blue);
@@ -300,6 +301,8 @@ void MainImpl::createConnections()
 	connect(actionHelpQtWord, SIGNAL(triggered()), this, SLOT(slotHelpQtWord()) );
 	connect(actionSwitchHeaderSources, SIGNAL(triggered()), this, SLOT(slotOtherFile()) );
 	connect(actionToggleBookmark, SIGNAL(triggered()), this, SLOT(slotToggleBookmark()) );
+	connect(actionNextBookmark, SIGNAL(triggered()), this, SLOT(slotNextBookmark()) );
+	connect(actionPreviousBookmark, SIGNAL(triggered()), this, SLOT(slotPreviousBookmark()) );
 	connect(actionClearAllBookmarks, SIGNAL(triggered()), this, SLOT(slotClearAllBookmarks()) );
 	//
 	m_projectGroup = new QActionGroup( this );	
@@ -376,6 +379,47 @@ void MainImpl::slotToggleBreakpoint()
 		editor->toggleBreakpoint();
 }
 //
+void MainImpl::slotPreviousBookmark()
+{
+	QList<QAction *> actionsList = menuBookmarks->actions();
+	int pos = actionsList.indexOf( actionActiveBookmark );
+	int posFirstBookmark = actionsList.indexOf( actionClearAllBookmarks ) + 2;
+	if( posFirstBookmark > actionsList.count() )
+		posFirstBookmark = -1;
+	int posLastBookmark = actionsList.count()-1;
+	if( pos != -1 && posFirstBookmark < pos )
+	{
+		QAction *newAction = actionsList.at( pos - 1 );
+		slotActivateBookmark( newAction );
+	}
+	else if( posFirstBookmark != -1 )
+	{
+		QAction *newAction = actionsList.at( posLastBookmark );
+		slotActivateBookmark( newAction );
+	}
+}
+//
+void MainImpl::slotNextBookmark()
+{
+	QList<QAction *> actionsList = menuBookmarks->actions();
+	int count = actionsList.count();
+	int pos = actionsList.indexOf( actionActiveBookmark );
+	if( pos != 1 && pos+1 < count )
+	{
+		QAction *newAction = actionsList.at( pos + 1 );
+		slotActivateBookmark( newAction );
+	}
+	else
+	{
+		int posFirstBookmark = actionsList.indexOf( actionClearAllBookmarks ) + 2;
+		if( posFirstBookmark < count )
+		{
+			QAction *newAction = actionsList.at( posFirstBookmark );
+			slotActivateBookmark( newAction );
+		}
+	}
+}
+//
 void MainImpl::slotToggleBookmark()
 {
 	int i = m_tabEditors->currentIndex();
@@ -444,7 +488,7 @@ void MainImpl::slotOptions()
 		m_formatMultilineComments, m_formatQuotationText, m_formatMethods, 
         m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion, 
         m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets, 
-        m_showTreeClasses, m_intervalUpdatingClasses);
+        m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory);
 	if( options->exec() == QDialog::Accepted )
 	{
 		QApplication::setOverrideCursor(Qt::WaitCursor);
@@ -463,6 +507,7 @@ void MainImpl::slotOptions()
 		m_autoCompletion = options->completion->isChecked();
 		m_autobrackets = options->brackets->isChecked();
 		m_promptBeforeQuit = options->promptBeforeQuit->isChecked();
+		m_projectsDirectory = options->projectsDirectory->text();
 		//
 		m_formatPreprocessorText = options->syntaxe()->preprocessorFormat();
 		m_formatQtText = options->syntaxe()->classFormat();
@@ -512,7 +557,7 @@ void MainImpl::slotOptions()
 void MainImpl::saveINI()
 {
 	// Save options in INI file
-	QSettings settings("QDevelop");
+	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 	settings.beginGroup("Options");
 	settings.setValue("m_showTreeClasses", m_showTreeClasses);
 	settings.setValue("m_intervalUpdatingClasses", m_intervalUpdatingClasses);
@@ -532,6 +577,7 @@ void MainImpl::saveINI()
 	settings.setValue("m_tabSpaces", m_tabSpaces);
 	settings.setValue("m_backgroundColor", m_backgroundColor.name());	
 	settings.setValue("m_currentLineColor", m_currentLineColor.name());
+	settings.setValue("m_projectsDirectory", m_projectsDirectory);
 	//
 	settings.setValue("m_formatPreprocessorText", m_formatPreprocessorText.foreground().color().name());
 	settings.setValue("m_formatQtText", m_formatQtText.foreground().color().name());
@@ -575,7 +621,7 @@ void MainImpl::saveINI()
 //
 void MainImpl::slotNewProject()
 {
-	NewProjectImpl *window = new NewProjectImpl(this, QDir::homePath());
+	NewProjectImpl *window = new NewProjectImpl(this, m_projectsDirectory);
 	window->labelProjetParent->setHidden( true );
 	window->parentProjectName->setHidden( true );
 	if( window->exec() == QDialog::Accepted )
@@ -630,7 +676,8 @@ void MainImpl::slotNewProject()
 					s += "release \\\n";
 				else
 					s += "debug \\\n";
-				s += "warn_on\n";
+				s += "warn_on \\\n";
+				s += "console\n";
 			}
 			if( window->dialog->isChecked() || window->mainwindow->isChecked() )
 			{
@@ -742,7 +789,7 @@ void MainImpl::slotNewProject()
 //
 void MainImpl::loadINI()
 {
-	QSettings settings("QDevelop");
+	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 	settings.beginGroup("Options");
 	QString s = settings.value("m_font", m_font.toString()).toString();
 	m_font.fromString(s);
@@ -762,6 +809,7 @@ void MainImpl::loadINI()
 	m_tabSpaces = settings.value("m_tabSpaces", m_tabSpaces).toBool();
 	m_backgroundColor = QColor(settings.value("m_backgroundColor", m_backgroundColor).toString());
 	m_currentLineColor = QColor(settings.value("m_currentLineColor", m_currentLineColor).toString());
+	m_projectsDirectory = settings.value("m_projectsDirectory", m_projectsDirectory).toString();
 	m_showTreeClasses = settings.value("m_showTreeClasses", m_showTreeClasses).toBool();
 	m_intervalUpdatingClasses = settings.value("m_intervalUpdatingClasses", m_intervalUpdatingClasses).toInt();
 	if( m_currentLineColor == Qt::black )
@@ -856,7 +904,7 @@ bool MainImpl::slotCloseAllFiles()
 //
 void MainImpl::slotOpen()
 {
-	static QString dir;
+	static QString dir = m_projectsDirectory;
 	if( dir.isEmpty() && m_projectManager )
         dir = m_projectManager->projectDirectory( treeFiles->topLevelItem ( 0 ) );
 	QString s = QFileDialog::getOpenFileName(
@@ -1163,6 +1211,7 @@ void MainImpl::toggleBookmark(Editor *editor, QString text, bool activate, QText
 		QVariant v;
 		v.setValue( bookmark );
 		action->setData( v );
+		actionActiveBookmark = action;
 	}
 	else
 	{
@@ -1179,10 +1228,13 @@ void MainImpl::toggleBookmark(Editor *editor, QString text, bool activate, QText
 	}
 }
 //
-void MainImpl::slotActivateBookmark()
+void MainImpl::slotActivateBookmark(QAction *action)
 {
-	QAction *action = (QAction *)sender();
-	Bookmark bookmark = action->data().value<Bookmark>();
+	if( action )
+		actionActiveBookmark = action;
+	else
+		actionActiveBookmark = (QAction *)sender();
+	Bookmark bookmark = actionActiveBookmark->data().value<Bookmark>();
 	Editor *editor = 0;
 	Editor *bookmarkEditor = bookmark.first;
 	QTextBlock block = bookmark.second;
@@ -1788,8 +1840,9 @@ void MainImpl::slotOnPause()
 //
 void MainImpl::updateActionsRecentsFiles()
 {
-    QSettings settings("QDevelop", "Files recents");
-    QStringList files = settings.value("ListeFichiersRecents").toStringList();
+	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
+	settings.beginGroup("RecentFiles");
+    QStringList files = settings.value("RecentFilesList").toStringList();
 
     QStringList existingFiles;
     foreach (QString fileName, files)
@@ -1799,7 +1852,7 @@ void MainImpl::updateActionsRecentsFiles()
     }
     if (existingFiles.size() < files.size())
     {
-       	settings.setValue("ListeFichiersRecents", files);
+       	settings.setValue("RecentFilesList", files);
         files = existingFiles;
     }
     
@@ -1817,8 +1870,9 @@ void MainImpl::updateActionsRecentsFiles()
 //
 void MainImpl::updateActionsRecentsProjects()
 {
-    QSettings settings("QDevelop", "Projets recents");
-    QStringList files = settings.value("ListeProjetsRecents").toStringList();
+	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
+	settings.beginGroup("RecentProjects");
+    QStringList files = settings.value("RecentProjectsList").toStringList();
     
     QStringList existingFiles;
     foreach (QString fileName, files)
@@ -1828,7 +1882,7 @@ void MainImpl::updateActionsRecentsProjects()
     }
     if (existingFiles.size() < files.size())
     {
-       	settings.setValue("ListeProjetsRecents", files);
+       	settings.setValue("RecentProjectsList", files);
         files = existingFiles;
     }
 
@@ -1866,27 +1920,29 @@ QString MainImpl::strippedName(const QString &fullFileName)
 //
 void MainImpl::setCurrentFile(const QString &file)
 {
-	QSettings settings("QDevelop", "Files recents");
-	QStringList files = settings.value("ListeFichiersRecents").toStringList();
+	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
+	settings.beginGroup("RecentFiles");
+	QStringList files = settings.value("RecentFilesList").toStringList();
 	files.removeAll(file);
 	files.prepend(file);
 	while (files.size() > maxRecentsFiles)
 		files.removeLast();
 	
-	settings.setValue("ListeFichiersRecents", files);
+	settings.setValue("RecentFilesList", files);
 	updateActionsRecentsFiles();
 }
 //
 void MainImpl::setCurrentProject(const QString &file)
 {
-	QSettings settings("QDevelop", "Projets recents");
-	QStringList files = settings.value("ListeProjetsRecents").toStringList();
+	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
+	settings.beginGroup("RecentProjects");
+	QStringList files = settings.value("RecentProjectsList").toStringList();
 	files.removeAll(file);
 	files.prepend(file);
 	while (files.size() > maxRecentsProjects)
 		files.removeLast();
 	
-	settings.setValue("ListeProjetsRecents", files);
+	settings.setValue("RecentProjectsList", files);
 	updateActionsRecentsProjects();
 }
 //

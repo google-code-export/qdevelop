@@ -108,6 +108,7 @@ private:
 	QString m_lreleaseName;
 	QString m_designerName;
 	QString m_qtInstallHeaders;
+	QString m_projectsDirectory;
 	bool m_lineNumbers, m_selectionBorder, m_autoIndent, m_cppHighlighter;
 	bool m_saveBeforeBuild;
 	bool m_restoreOnStart;
@@ -132,6 +133,7 @@ private:
     int m_intervalUpdatingClasses;
     bool m_showTreeClasses;
     InitCompletion *m_completion;
+    QAction *actionActiveBookmark;
 protected:
 	void closeEvent( QCloseEvent * event );
 private slots:
@@ -201,7 +203,9 @@ private slots:
 	void slotAddDebugVariable();
 	void slotRemoveDebugVariable();
 	void slotToggleBookmark();	
-	void slotActivateBookmark();
+	void slotActivateBookmark(QAction *action=0);
+	void slotPreviousBookmark();
+	void slotNextBookmark();
 	void slotClearAllBookmarks();
 public slots:
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);

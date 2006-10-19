@@ -68,7 +68,11 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_completionList = new QListWidget(this);
     m_completionList->setSelectionMode( QAbstractItemView::SingleSelection );
     m_completionList->hide();
-    m_completionList->setFont( QFont(m_completionList->font().family(), 8) );
+#ifdef Q_WS_MAC
+	m_completionList->setFont(QFont(m_completionList->font().family(), 12) );
+#else
+	m_completionList->setFont( QFont(m_completionList->font().family(), 8) );
+#endif
 	connect(m_completionList, SIGNAL(itemActivated(QListWidgetItem *)), this, SLOT(slotWordCompletion(QListWidgetItem *)) );
     setBackgroundColor( m_backgroundColor );
 }

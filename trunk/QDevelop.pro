@@ -110,6 +110,7 @@ TRANSLATIONS =   resources/translations/QDevelop_Chinese.ts \
   resources/translations/QDevelop_French.ts \
   resources/translations/QDevelop_German.ts \
   resources/translations/QDevelop_Polish.ts \
+  resources/translations/QDevelop_Russian.ts \
   resources/translations/QDevelop_Spanish.ts
 UI_DIR =   build/ui
 mac {

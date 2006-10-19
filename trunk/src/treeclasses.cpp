@@ -517,11 +517,11 @@ void TreeClasses::slotRefresh()
 //
 void TreeClasses::toDB(QString projectDirectory)
 {
-//qDebug() << "toDB" << projectDirectory+"/project.db";
+//qDebug() << "toDB" << projectDirectory+"/qdevelop-settings.db";
 	if( !topLevelItem(0) )
 		return;
 	QApplication::setOverrideCursor(Qt::WaitCursor);
-    //db = connectDB(projectDirectory+"/project.db");
+    //db = connectDB(projectDirectory+"/qdevelop-settings.db");
     //TagToDB tagToDB;
     QSqlQuery query;
 	QString queryString = "delete from classesbrowser where 1";
@@ -580,8 +580,8 @@ void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSq
 //
 void TreeClasses::fromDB(QString projectDirectory)
 {
-//qDebug()<<"fromDB :"+projectDirectory+"/project.db";
-    connectDB(projectDirectory+"/project.db");
+//qDebug()<<"fromDB :"+projectDirectory+"/qdevelop-settings.db";
+    connectDB(projectDirectory+"/qdevelop-settings.db");
 	QSqlQuery query;
     query.exec("BEGIN TRANSACTION;");
     QString queryString = QString()
