@@ -87,12 +87,12 @@ QTextCharFormat const& CppHighlighter::formatFor(SyntaxType type)
 }
 
 //
-void CppHighlighter::doRegexMatch(QString const& str)
+void CppHighlighter::doRegexMatch(QString const& str, int startPos)
 {
     foreach (RegexItem item, m_regexItems)
     {
         int index = 0;
-        int start = 0;
+        int start = startPos;
 
         for (;;)
         {
@@ -292,7 +292,7 @@ void CppHighlighter::highlightBlock(QString const& text)
     if (handlePreprocessor(text))
     {
         // 3. Highlight keywords
-        doRegexMatch(text);
+        doRegexMatch(text, startPos);
     }
 
     // 4. Highlight strings, comments...

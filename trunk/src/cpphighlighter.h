@@ -58,7 +58,7 @@ private:
     };
 
     QTextCharFormat const& formatFor(SyntaxType type);
-    void doRegexMatch(QString const& str);
+    void doRegexMatch(QString const& str, int startPos = 0);
     bool handleState(QString const& text, int& startPos, int& endPos);
     int searchStringEnd(QString const& text, int startPos = 0, QChar strChar = '"');
     int searchMultilineCommentEnd(QString const& text, int startPos = 0);
