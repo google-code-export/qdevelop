@@ -11,250 +11,437 @@
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 * GNU General Public License for more details.
+* GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
 * along with this program; if not, write to the Free Software
 * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 *
-* Contact e-mail: Jean-Luc Biord <jlbiord@qtfr.org>
+* Contact e-mail: Trent Zhou <trent.zhou@gmail.com>
 * Program URL   : http://qdevelop.org
 *
 */
-#include <QtGui>
-#include <QCursor>
-
 #include "cpphighlighter.h"
+#include <QtCore/QString>
+#include <QtCore/QMap>
+#include <QtCore/QRegExp>
+#include <QtGui/QTextCharFormat>
+#include <QtCore/QStringList>
+#include <QtCore/QDebug>
 
-CppHighlighter::CppHighlighter(QTextDocument *parent)
-    : QSyntaxHighlighter(parent)
-{
-    m_functionFormat.setForeground(Qt::black);
-    m_keywordFormat.setForeground(Qt::blue);
-    m_preprocessorFormat.setForeground(Qt::blue);
-    m_classFormat.setForeground(Qt::blue);
-    m_singleLineCommentFormat.setForeground(Qt::red);
-    m_multiLineCommentFormat.setForeground(Qt::red);
-    m_quotationFormat.setForeground(Qt::darkGreen);
-    //
-    keywordPatterns 
-	<< "bool" << "break" << "case" << "catch" << "char" << "class"
-	<< "compl" << "const" << "const_cast" << "continue" << "default" << "delete"
-	<< "do" << "double" << "dynamic_cast" << "else"
-	<< "export" << "rxtern" << "false" << "float" << "for" << "friend"
-	<< "goto" << "if" << "inline" << "int" << "long" 
-	<< "namespace" << "new"<< "operator" << "or"
-	<< "private" << "protected" << "public" << "register" << "reinterpret_cast"
-	<< "return" << "short" << "signed" << "sizeof" << "static" << "static_cast"
-	<< "struct" << "switch" << "template" << "this" << "throw" << "true"
-	<< "try" << "typedef" << "typeid" << "typename" << "union" << "unsigned"
-	<< "using" << "virtual" << "void" << "volatile"<< "while"
-	<< "xor" << "xor_eq" 
-	<< "foreach" << "qint8" << "qint16" << "qint32" << "qint64" << "qlonglong" << "qreal" << "quint8"
-	<< "quint16" << "quint32" << "quint64" << "qulonglong" << "uchar" << "uint" << "ulong" << "ushort"
-	<< "qAbs" << "qBound" << "qCritical" << "qDebug" << "qFatal" << "qInstallMsgHandler" << "qMacVersion"
-	<< "qMax" << "qMin" << "qRound64" << "qRound" << "qVersion" << "qWarning" << "qPrintable"
-	<< "SLOT" << "SIGNAL" << "signals" << "slots" << "connect" << "disconnect"
-	<< "and" << "and_eq" << "asm" << "auto" << "bitand" << "bitor" << "mutable" << "not" << "not_eq" 
-	<< "or_eq" << "or_eq"  << "wchar_t";
-}
 //
-void CppHighlighter::highlightBlock(const QString &t)
+CppHighlighter::CppHighlighter(QTextDocument* document):
+    QSyntaxHighlighter(document), 
+    m_reInclude("^\\s*#\\s*include\\s*(<.+>|\\\".+\\\")"),
+    m_reMacro("^\\s*#.*$"),
+    m_reMultilineMacro("^\\s*#\\s*(define|if|elif|pragma|warning|error)"),
+    m_reSpecial("//|\\\"|'|/\\*")
 {
-	enum { Undefined=-1, Closed=0, Opened};
-	QRegExp commentStartExpression = QRegExp("/\\*");
-	QRegExp commentEndExpression = QRegExp("\\*/");
-	QString text = t;
-//qDebug()<<text;
-	setCurrentBlockState(Closed);
-		
-	// Simple quotation
-	int debutQuote = 0, finQuote;
-	bool realBegin = false;
-	do
-	{
-		do
-		{
+    setupRegexTable();
 
-			debutQuote = text.indexOf("\"", debutQuote); 
-			if( debutQuote > 0 && text.at(debutQuote-1) == '\\' && text.at(debutQuote-1) == '\'' 
-				&& (debutQuote > 1 && text.at(debutQuote-2) != '\\') )
-			{
-				realBegin = false;
-			}
-			else
-			{
-				realBegin = true;
-			}
-			debutQuote++;
-		} while(!realBegin);
-		
-		finQuote = -1;
-		if( debutQuote )
-		{
-			finQuote = debutQuote;
-			bool realEnd = false;
-			do
-			{
-				finQuote = text.indexOf("\"", finQuote); 
-				if( finQuote > 0 && text.at(finQuote-1) == '\\' 
-					&& (finQuote > 1 && text.at(finQuote-2) != '\\') )
-				{
-					finQuote++;
-					realEnd = false;
-				}
-				else 
-				{
-					if( finQuote != -1 )
-						finQuote--;
-					realEnd = true;
-				}
-			} while(!realEnd);
-		}
-		if( debutQuote!=-1 && finQuote!=-1 )
-		{
-			setFormat(debutQuote, (finQuote+1)-debutQuote, m_quotationFormat);
-			for(int i=debutQuote; i<finQuote+1; i++)
-				text[i] = QChar(255);
-			debutQuote = finQuote+2;
-		}
-	} while( debutQuote!=-1 && finQuote!=-1 );
-
-	// Single line comment
-	QRegExp single("//[^\n]*");
-	int indexSingle = text.indexOf(single);
-	int length = single.matchedLength();
-	if( indexSingle != -1 )
-	{
-		setFormat(indexSingle, length, m_singleLineCommentFormat);
-		for(int i=indexSingle; i<indexSingle+length; i++)
-			text[i] = QChar(255);
-	}
-	// Comments between /* and */ 
-	int startIndex = 0, endIndex = -1;
-	int commentLength = 0;
-	do
-	{
-		if (previousBlockState() != Opened || endIndex != -1)
-		{
-			startIndex = text.indexOf(commentStartExpression, startIndex + commentLength);
-		}
-		endIndex = -1;
-		if (startIndex >= 0) 
-		{
-			endIndex = text.indexOf(commentEndExpression, startIndex);
-			if (endIndex == -1) 
-			{
-				setCurrentBlockState(Opened);
-				commentLength = text.length() - startIndex;
-			} 
-			else 
-			{
-				setCurrentBlockState(Closed);
-				commentLength = endIndex - startIndex + commentEndExpression.matchedLength();
-			}
-			if( !inQuotations(startIndex, text) && !inQuotations(startIndex+commentLength, text) )
-			{
-				setFormat(startIndex, commentLength, m_multiLineCommentFormat);
-				for(int i = startIndex; i<startIndex+commentLength; i++)
-					text[i] = QChar(255);
-			}
-			else
-				setCurrentBlockState(Closed);
-		}
-		else
-		{
-			endIndex = -1;
-			setCurrentBlockState(Closed);
-		}
-	} while( endIndex != -1 );
-	if( currentBlockState() == Opened )
-		return;
-	
-	// #
-	int indexSharp = text.indexOf("#");
-	int indexEndSharp = text.lastIndexOf('"', indexSharp);
-	if ( indexEndSharp == -1 )
-		indexEndSharp = text.indexOf(QChar(255), indexSharp);
-	if ( indexEndSharp == -1 )
-		indexEndSharp = text.length();
-	if( indexSharp != -1 )
-	{
-		setFormat(indexSharp, indexEndSharp-indexSharp, m_preprocessorFormat);
-		for(int i=indexSharp; i<indexEndSharp; i++)
-			text[i] = QChar(255);
-	}
-	// Words
-	QRegExp expression( "\\b(\\w+)\\b" );
-	int index = -1;
-	do
-	{
-		index = text.indexOf(expression, index+1);
-	} while( index >= 0 && text.at( index ) == QChar(255) );
-	while (index >= 0) 
-	{
-		//if( (index < debutQuote && index > finQuote) || debutQuote==-1 || finQuote==-1 )
-		//{
-			length = expression.matchedLength();
-			QString word = expression.cap();
-			if( word.at(0) == 'Q' )
-				setFormat(index, length, m_classFormat);
-			else if( keywordPatterns.contains( word ) )
-					setFormat(index, length, m_keywordFormat);
-			else if( index+length+1<text.length() && text.mid(index+length).simplified().count() && text.mid(index+length).simplified().at(0) == '(' )
-				setFormat(index, length, m_functionFormat);
-		//}
-		index = text.indexOf(expression, index + length);
-	}
+    m_formatSingleLineComment.setForeground(Qt::red);
+    m_formatKeyword.setForeground(Qt::blue);
+    m_formatUserKeyword.setForeground(Qt::darkBlue);
+    m_formatOperator.setForeground(Qt::black);
+    m_formatNumber.setForeground(Qt::darkMagenta);
+    m_formatEscapeChar.setForeground(Qt::darkBlue);
+    m_formatMacro.setForeground(Qt::darkGreen);
+    m_formatMultiLineComment.setForeground(Qt::red);
+    m_formatString.setForeground(Qt::darkCyan);
 }
+
 //
-bool CppHighlighter::inQuotations(int position, QString text)
+CppHighlighter::~CppHighlighter()
 {
-	int debutQuote = 0, finQuote;
-	bool realBegin = false;
-	do
-	{
-		do
-		{
-
-			debutQuote = text.indexOf("\"", debutQuote); 
-			if( debutQuote > 0 && text.at(debutQuote-1) == '\\' && text.at(debutQuote-1) == '\'' )
-			{
-				realBegin = false;
-			}
-			else
-			{
-				realBegin = true;
-			}
-		} while(!realBegin);
-		
-		finQuote = -1;
-		if( debutQuote != -1 )
-		{
-			finQuote = debutQuote+1;
-			bool realEnd = false;
-			do
-			{
-				finQuote = text.indexOf("\"", finQuote); 
-				if( finQuote > 0 && text.at(finQuote-1) == '\\' )
-				{
-					finQuote++;
-					realEnd = false;
-				}
-				else 
-				{
-					realEnd = true;
-				}
-			} while(!realEnd);
-		}
-		if( debutQuote!=-1 && finQuote!=-1 )
-		{
-			if( position > debutQuote && position < finQuote )
-			{
-				return true;
-			}
-			debutQuote = finQuote+1;
-		}
-	} while( debutQuote!=-1 && finQuote!=-1 );
-	return false;
 }
+
 //
+QTextCharFormat const& CppHighlighter::formatFor(SyntaxType type)
+{
+    switch (type)
+    {
+        case TEXT:
+        default:
+            break;
+        case SINGLE_LINE_COMMENT:
+            return m_formatSingleLineComment;
+        case KEYWORD:
+            return m_formatKeyword;
+        case USER_KEYWORD:
+            return m_formatUserKeyword;
+        case OPERATOR:
+            return m_formatOperator;
+        case NUMBER:
+            return m_formatNumber;
+        case ESCAPE_CHAR:
+            return m_formatEscapeChar;
+        case MACRO:
+            return m_formatMacro;
+        case MULTI_LINE_COMMENT:
+            return m_formatMultiLineComment;
+        case STRING:
+            return m_formatString;
+    }
+    static QTextCharFormat format;
+    return format;
+}
+
+//
+void CppHighlighter::doRegexMatch(QString const& str)
+{
+    foreach (RegexItem item, m_regexItems)
+    {
+        int index = 0;
+        int start = 0;
+
+        for (;;)
+        {
+            index = str.indexOf(item.regex, start);
+            if (index == -1)
+                break;
+            int length = item.regex.matchedLength();
+            setFormat(index, length, formatFor(item.type));
+            start = index + length;
+        }
+    }
+}
+
+//
+void CppHighlighter::addUserKeyword(QString const& regex)
+{
+    RegexItem item;
+
+    item.regex = QRegExp(regex);
+    item.type = USER_KEYWORD;
+
+    m_regexItems.push_back(item);
+}
+
+//
+bool CppHighlighter::removeUserKeyword(QString const& regex)
+{
+    QVector<RegexItem>::iterator iter = m_regexItems.begin();
+
+    while (m_regexItems.end() != iter)
+    {
+        if ((iter->regex.pattern() == regex) &&
+            (iter->type == USER_KEYWORD))
+        {
+            m_regexItems.erase(iter);
+            return true;
+        }
+        ++iter;
+    }
+    return false;
+}
+
+//
+void CppHighlighter::setupRegexTable()
+{
+    RegexItem item;
+
+    m_regexItems.clear();
+
+    // number
+    item.regex = QRegExp("\\b([0-9]+|0[xX][0-9a-fA-F]+|0[0-7]+)(\\.[0-9]+)?([eE][0-9]+)?\\b");
+    item.type = NUMBER;
+    m_regexItems.push_back(item);
+
+    // keywords
+    QStringList keywords;
+    keywords << "asm" << "auto" << "bool" << "break" << "case"
+             << "catch" << "char" << "class" << "const" << "const_cast"
+             << "continue" << "default" << "delete" << "do" << "double"
+             << "dynamic_cast" << "else" << "enum" << "explicit" << "export"
+             << "extern" << "false" << "float" << "for" << "friend"
+             << "goto" << "if" << "inline" << "int" << "long"
+             << "mutable" << "namespace" << "new" << "operator" << "private"
+             << "protected" << "public" << "register" << "reinterpret_cast" << "return"
+             << "short" << "signed" << "sizeof" << "static" << "static_cast"
+             << "struct" << "switch" << "template" << "this" << "throw"
+             << "true" << "try" << "typedef" << "typeid" << "typename"
+             << "union" << "unsigned" << "using" << "virtual" << "void"
+             << "volatile" << "wchar_t" << "while";
+
+    foreach (QString str, keywords)
+    {
+        item.regex = QRegExp(QString("\\b") + str + "\\b");
+        item.type = KEYWORD;
+        m_regexItems.push_back(item);
+    }
+
+    // user keywords
+    QStringList userKeywords;
+    userKeywords << "\\bQ\\w+\\b" << "\\bforeach\\b";
+
+    foreach (QString str, userKeywords)
+    {
+        item.regex = QRegExp(str);
+        item.type = USER_KEYWORD;
+        m_regexItems.push_back(item);
+    }
+
+    // operators
+    QStringList operators;
+    operators << "\\b<<\\b" << "\\b==\\b";
+
+    foreach (QString str, operators)
+    {
+        item.regex = QRegExp(str);
+        item.type = OPERATOR;
+        m_regexItems.push_back(item);
+    }
+}
+
+// state
+enum 
+{
+    IN_MACRO = 0x01,
+    IN_MULTILINE_COMMENT = 0x02,
+    IN_SINGLELINE_COMMENT = 0x04,
+    IN_STRING = 0x08,
+    IN_SINGLE_STRING = 0x10
+};
+
+//
+bool CppHighlighter::handleState(QString const& text, int& startPos, int& endPos)
+{
+    int prevState = previousBlockState();
+    startPos = 0;
+    endPos = text.length();
+
+    if (prevState == -1)
+        prevState = 0;
+
+    if ((prevState & IN_STRING) || (prevState & IN_SINGLE_STRING))
+    {
+        // this line is in a string, find for end of the string
+        endPos = searchStringEnd(text, startPos, 
+                (prevState & IN_SINGLE_STRING)? '\'':'"');
+        if (endPos == -1)
+        {
+            // this is still in string
+            setFormat(0, text.length(), formatFor(STRING));
+            setCurrentBlockState(IN_STRING);
+            return true;
+        }
+        else
+        {
+            endPos += 1; // strlen("\"");
+            setFormat(0, endPos - startPos, formatFor(STRING));
+            startPos = endPos;
+        }
+    }
+    else if (prevState & IN_MULTILINE_COMMENT)
+    {
+        // this line is in a multiline comment, find for the end
+        endPos = searchMultilineCommentEnd(text, startPos);
+        if (endPos == -1)
+        {
+            // this is still in comment
+            setFormat(0, text.length(), formatFor(MULTI_LINE_COMMENT));
+            // maybe previous line is in a macro...
+            setCurrentBlockState(previousBlockState());
+            return true;
+        }
+        else
+        {
+            endPos += 2; // strlen("*/");
+            setFormat(0, endPos - startPos, formatFor(MULTI_LINE_COMMENT));
+            startPos = endPos;
+        }
+    }
+    else if (prevState & IN_SINGLELINE_COMMENT)
+    {
+        setFormat(0, text.length(), formatFor(SINGLE_LINE_COMMENT));
+        if (text.endsWith("\\"))
+        {
+            setCurrentBlockState(IN_SINGLELINE_COMMENT);
+        }
+        return true;
+    }
+    else if (prevState & IN_MACRO)
+    {
+        setFormat(0, text.length(), formatFor(MACRO));
+        if (text.endsWith("\\"))
+        {
+            setCurrentBlockState(IN_MACRO);
+        }
+        // we can't just return...
+        // consider the following code:
+        // #define a /*
+        //             multiline comment
+        //           */ something
+    }
+    return false;
+}
+
+//
+void CppHighlighter::highlightBlock(QString const& text)
+{
+    int startPos;
+    int endPos;
+    setCurrentBlockState(0);
+
+    // 1. handle state specific highlighting
+    if (handleState(text, startPos, endPos))
+        return;
+
+    endPos = startPos; // backup startPos
+    // 2. Highlight macro
+    if (handlePreprocessor(text))
+    {
+        // 3. Highlight keywords
+        doRegexMatch(text);
+    }
+
+    // 4. Highlight strings, comments...
+    // a. search for first occurrences of ", //, /*
+    startPos = endPos;
+    while (true)
+    {
+        startPos = text.indexOf(m_reSpecial, startPos);
+        if (startPos == -1)
+            break;
+
+        QString cap = m_reSpecial.cap();
+        if (cap == "//")
+        {
+            setFormat(startPos, text.length() - startPos, formatFor(SINGLE_LINE_COMMENT));
+            if (text.endsWith("\\"))
+                setCurrentBlockState(IN_SINGLELINE_COMMENT);
+            return;
+        }
+        else if ((cap == "\"") || (cap == "'"))
+        {
+            endPos = searchStringEnd(text, startPos + 1, cap.at(0));
+            // handle unix string
+            if ((startPos > 0) && text.at(startPos - 1) == QChar('L'))
+                --startPos;
+            if (endPos == -1)
+            {
+                // this is a multiline string
+                setFormat(startPos, text.length() - startPos, formatFor(STRING));
+                handleEscapeChar(text, startPos, text.length() - startPos);
+                setCurrentBlockState(cap.at(0) == QChar('"')? IN_STRING: IN_SINGLE_STRING);
+                return;
+            }
+            else
+            {
+                endPos += 1;
+                setFormat(startPos, endPos - startPos, formatFor(STRING));
+                handleEscapeChar(text, startPos, endPos - startPos);
+                startPos = endPos;
+            }
+        }
+        else if (cap == "/*")
+        {
+            endPos = searchMultilineCommentEnd(text, startPos + 2);
+            if (endPos == -1)
+            {
+                // this comment covers multi line
+                setFormat(startPos, text.length() - startPos, formatFor(MULTI_LINE_COMMENT));
+                setCurrentBlockState(IN_MULTILINE_COMMENT);
+                return;
+            }
+            else
+            {
+                endPos += 2;
+                setFormat(startPos, endPos - startPos, formatFor(MULTI_LINE_COMMENT));
+                startPos = endPos;
+            }
+        }
+    }
+}
+
+//
+// Return true if we still need to highlight keywords
+bool CppHighlighter::handlePreprocessor(QString const& text)
+{
+    if (text.indexOf(m_reMultilineMacro) != -1)
+    {
+        setFormat(0, text.length(), formatFor(MACRO));
+        // FIXME: This can't handle the following code:
+        //  #define some this is  /*
+        //    blabla... */ a macro definition...
+        //
+        if (text.endsWith("\\"))
+            setCurrentBlockState(IN_MACRO);
+    }
+    else if (text.indexOf(m_reInclude) != -1)
+    {
+        // TODO: we can highlight it in a different format
+        setFormat(0, text.length(), formatFor(MACRO));
+        int pos = m_reInclude.pos(1);
+        if (pos > 0)
+        {
+            QString cap = m_reInclude.cap(1);
+            setFormat(pos, cap.length(), formatFor(STRING));
+        }
+    }
+    else if (text.indexOf(m_reMacro) != -1)
+    {
+        setFormat(0, text.length(), formatFor(MACRO));
+        return false;
+    }
+    return true;
+}
+
+//
+int CppHighlighter::searchStringEnd(QString const& text, int startPos, QChar strChar)
+{
+    for (int pos = startPos; pos < text.length(); pos++)
+    {
+        if (text.at(pos) == QChar('\\'))
+            ++pos;
+        else if (text.at(pos) == strChar)
+            return pos;
+    }
+    return -1;
+}
+
+//
+int CppHighlighter::searchMultilineCommentEnd(QString const& text, int startPos)
+{
+    return text.indexOf("*/", startPos);
+}
+
+//
+void CppHighlighter::handleEscapeChar(QString const& text, int start, int len)
+{
+    for (int pos = start; pos < start + len; pos++)
+    {
+        if (text.at(pos) == QChar('\\'))
+        {
+            int endPos = pos;
+            for (int i = 1; i <= 3; i++)
+            {
+                if ((pos + i < text.length()) && 
+                        (text.at(pos + i) >= QChar('0')) &&
+                        (text.at(pos + i) <= QChar('7')) )
+                    endPos = pos + i;
+                else
+                    break;
+            }
+            if (endPos == pos)
+            {
+                endPos = pos + 1;
+                if ((endPos < start + len) && (text.at(endPos).toLower() == QChar('x')))
+                {
+                    while (++endPos < start + len)
+                    {
+                        QChar c = text.at(endPos).toLower();
+                        if (c.isNumber() || ((c >= QChar('a')) && (c <= QChar('f'))))
+                            continue;
+                        else
+                            break;
+                    }
+                    --endPos;
+                }
+            }
+            setFormat(pos, endPos - pos + 1, formatFor(ESCAPE_CHAR));
+            pos = endPos;
+        }
+    }
+}
+
