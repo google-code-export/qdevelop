@@ -23,6 +23,7 @@ Adds:
 - The code completion list contains the name and signature of functions.
 - Entries "Close Other Tabs" and "Close All Tabs" in popup menu showed by right-click on editor Tab.
 - Add Polish, Spanish, Chinese and Russian translations
+- The application can be build using cmake (experimental!)
 
 September 25 2006 Version 0.19
 Corrections:

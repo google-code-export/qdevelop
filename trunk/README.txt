@@ -1,11 +1,11 @@
-    QIde - A Development Environment for Qt4
+    QDevelop - A Development Environment for Qt4
 
     (C) 2006 Jean-Luc Biord <jlbiord@qtfr.org>
 
 Installation
 ~~~~~~~~~~~~
 
-Download is available from http://qide.free.fr, the official website.
+Download is available from http://qdevelop.org, the official website.
 
 You need Qt (from Trolltech) at least version 4.0 to be able to compile
 QIde. Most Linux distributions normally already package the latest
@@ -13,7 +13,7 @@ version of Qt, so it is likely that you need to worry about this. However,
 you need the development package as well (sometimes named as qt-devel or
 qt4-devel, it varies depends on the distributions).
 
-The simplest way to compile QIde package is:
+The simplest way to compile QDevelop package is:
 
 1. Extract the source zip.
 2.`cd' to the directory containing the package's source code and type
@@ -26,12 +26,15 @@ ctags is normally installed with development packages. For Windows, ctags is acc
 If you want to have debugging functionalities, you must install gdb. Like ctags, gdb is normally installed 
 with development packages under Linux. gdb for Windows is available here : http://www.mingw.org/download.shtml/
 
+You can also compile QDevelop using cmake, but this is not fully supported yet. For more information read the documentation
+found in README.cmake.
+
 Command line options
 ~~~~~~~~~~~~~~~~~~~~
 
-QIde may be launched with some parameters:
+QDevelop may be launched with some parameters:
 
-QIde [-l translation] [file(s)] [project]
+QDevelop [-l translation] [file(s)] [project]
 
 -l translation
 	When QIde starts, it detect automatically the language of installed system. If you want to use another language, use this option.
@@ -45,7 +48,7 @@ Documentation
 ~~~~~~~~~~~~~
 
 Up to date documentation can be found at:
-http://qide.free.fr
+http://develop.org
 
 License
 ~~~~~~~~~~~~~
