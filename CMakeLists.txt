@@ -43,10 +43,11 @@ SET( qdevelop_UIS
 	ui/shortcuts.ui
 	ui/stack.ui
 	ui/subclassing.ui
+	ui/toolsControl.ui
 	ui/warning.ui
 )
 
-SET( qdevelop_SRCS		
+SET( qdevelop_SRCS
 	src/InitCompletion.cpp
 	src/QIComplete/parse.cpp
 	src/QIComplete/readtags.cpp
@@ -80,6 +81,7 @@ SET( qdevelop_SRCS
 	src/textEdit.cpp
 	src/treeclasses.cpp
 	src/treeproject.cpp
+	src/toolscontrolimpl.cpp
 )
 
 SET( qdevelop_MOC_HDRS	
@@ -88,7 +90,6 @@ SET( qdevelop_MOC_HDRS
 	src/addnewimpl.h
 	src/addscopeimpl.h
 	src/build.h
-	src/cpphighlighter.h
 	src/debug.h
 	src/editor.h
 	src/findfileimpl.h
@@ -108,6 +109,7 @@ SET( qdevelop_MOC_HDRS
 	src/textEdit.h
 	src/treeclasses.h
 	src/treeproject.h
+	src/toolscontrolimpl.h
 )
 
 SET( qdevelop_RCS
