@@ -1672,7 +1672,6 @@ QString ProjectManager::projectVersion(QTreeWidgetItem *it)
 //
 QString ProjectManager::executableName(QString preferedVersion)
 {
-	QStringList m_projectDirectoryOfExecutableList;
 	if( !m_executablesList.count() )
 	{
 		QList<QTreeWidgetItem *> projectsList;
