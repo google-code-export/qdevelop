@@ -11,60 +11,118 @@
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 * GNU General Public License for more details.
+* GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
 * along with this program; if not, write to the Free Software
 * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 *
-* Contact e-mail: Jean-Luc Biord <jlbiord@qtfr.org>
+* Contact e-mail: Trent Zhou <trent.zhou@gmail.com>
 * Program URL   : http://qdevelop.org
 *
 */
-#ifndef CPPHIGHLIGHTER_H
-#define CPPHIGHLIGHTER_H
+#ifndef CPP_HIGHLIGHTER_H
+#define CPP_HIGHLIGHTER_H
 
-#include <QSyntaxHighlighter>
-
-#include <QHash>
-#include <QTextCharFormat>
+#include <QtGui/QSyntaxHighlighter>
+#include <QtGui/QTextCharFormat>
+#include <QtCore/QVector>
 
 class QTextDocument;
 
-class CppHighlighter : public QSyntaxHighlighter
+class CppHighlighter: public QSyntaxHighlighter
 {
-    Q_OBJECT
-
 public:
-	CppHighlighter(QTextDocument *parent = 0);
-	QTextCharFormat keywordFormat() { return m_keywordFormat;};
-	void setKeywordFormat (QTextCharFormat f) { m_keywordFormat = f;};
-	QTextCharFormat classFormat() { return m_classFormat;};
-	void setClassFormat (QTextCharFormat f) { m_classFormat = f;};
-	QTextCharFormat singleLineCommentFormat() { return m_singleLineCommentFormat;};
-	void setSingleLineCommentFormat (QTextCharFormat f) { m_singleLineCommentFormat = f;};
-	QTextCharFormat multiLineCommentFormat() { return m_multiLineCommentFormat;};
-	void setMultiLineCommentFormat (QTextCharFormat f) { m_multiLineCommentFormat = f;};
-	QTextCharFormat quotationFormat() { return m_quotationFormat;};
-	void setQuotationFormat (QTextCharFormat f) { m_quotationFormat = f;};
-	QTextCharFormat functionFormat() { return m_functionFormat;};
-	void setFunctionFormat (QTextCharFormat f) { m_functionFormat = f;};
-	QTextCharFormat preprocessorFormat() { return m_preprocessorFormat;};
-	void setPreprocessorFormat (QTextCharFormat f) { m_preprocessorFormat = f;};
-
+    CppHighlighter(QTextDocument* document = NULL);
+    ~CppHighlighter();
+    void addUserKeyword(QString const& regex);
+    bool removeUserKeyword(QString const& regex);
+    void setupRegexTable();
 protected:
-	void highlightBlock(const QString &t);
-
+    void highlightBlock(QString const& text);
 private:
-    QTextCharFormat m_keywordFormat;
-    QTextCharFormat m_classFormat;
-    QTextCharFormat m_singleLineCommentFormat;
-    QTextCharFormat m_multiLineCommentFormat;
-    QTextCharFormat m_quotationFormat;
-    QTextCharFormat m_functionFormat;
-    QTextCharFormat m_preprocessorFormat;
-    QStringList keywordPatterns;
-    //
-	bool inQuotations(int position, QString text);
+    enum SyntaxType
+    {
+        TEXT, // normal text
+
+        // following items can be fetched by a simple pattern matching
+        SINGLE_LINE_COMMENT,
+        KEYWORD, 
+        USER_KEYWORD,
+        OPERATOR,
+        NUMBER,
+        ESCAPE_CHAR,
+
+        // following items need states on lines
+        MACRO, MULTI_LINE_COMMENT, STRING, 
+    };
+
+    QTextCharFormat const& formatFor(SyntaxType type);
+    void doRegexMatch(QString const& str);
+    bool handleState(QString const& text, int& startPos, int& endPos);
+    int searchStringEnd(QString const& text, int startPos = 0, QChar strChar = '"');
+    int searchMultilineCommentEnd(QString const& text, int startPos = 0);
+    bool handlePreprocessor(QString const& text);
+    void handleEscapeChar(QString const& text, int start = 0, int len = 0);
+private:
+    QRegExp m_reInclude;
+    QRegExp m_reMacro;
+    QRegExp m_reMultilineMacro;
+    QRegExp m_reSpecial;
+
+    struct RegexItem
+    {
+        RegexItem() {}
+        RegexItem(RegexItem const& other):regex(other.regex), type(other.type) {}
+        QRegExp regex;
+        SyntaxType type;
+    };
+    QVector<RegexItem> m_regexItems;
+
+    // formats
+    QTextCharFormat m_formatSingleLineComment;
+    QTextCharFormat m_formatMultiLineComment;
+    QTextCharFormat m_formatKeyword;
+    QTextCharFormat m_formatUserKeyword;
+    QTextCharFormat m_formatOperator;
+    QTextCharFormat m_formatNumber;
+    QTextCharFormat m_formatEscapeChar;
+    QTextCharFormat m_formatMacro;
+    QTextCharFormat m_formatString;
+public:
+    QTextCharFormat keywordFormat() { return m_formatKeyword; }
+    void setKeywordFormat(QTextCharFormat const& f) { m_formatKeyword = f; }
+
+    // class format? I guess you mean user keyword...
+    QTextCharFormat classFormat() { return m_formatUserKeyword; }
+    void setClassFormat(QTextCharFormat const& f) { m_formatUserKeyword = f; }
+
+    QTextCharFormat singleLineCommentFormat() { return m_formatSingleLineComment; };
+    void setSingleLineCommentFormat(QTextCharFormat const& f) { m_formatSingleLineComment = f; }
+
+    QTextCharFormat multiLineCommentFormat() { return m_formatMultiLineComment; };
+    void setMultiLineCommentFormat(QTextCharFormat const& f) { m_formatMultiLineComment = f; }
+
+    QTextCharFormat quotationFormat() { return m_formatString; }
+    void setQuotationFormat(QTextCharFormat const& f) { m_formatString = f; }
+
+    // Function format? Ignore it...
+    QTextCharFormat functionFormat() { return QTextCharFormat(); }
+    void setFunctionFormat(QTextCharFormat const& f) {  }
+
+    QTextCharFormat preprocessorFormat() { return m_formatMacro; }
+    void setPreprocessorFormat(QTextCharFormat const& f) { m_formatMacro = f; }
+
+    QTextCharFormat userKeywordFormat() { return m_formatUserKeyword; }
+    void setUserKeywordFormat(QTextCharFormat const& f) { m_formatUserKeyword = f; }
+
+    QTextCharFormat operatorFormat() { return m_formatOperator; }
+    void setOperatorFormat(QTextCharFormat const& f) { m_formatOperator = f; }
+
+    QTextCharFormat escapeCharFormat() { return m_formatEscapeChar; }
+    void setEscapeCharFormat(QTextCharFormat const& f) { m_formatEscapeChar = f; }
 };
 
+
 #endif
+
