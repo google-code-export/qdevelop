@@ -2,23 +2,37 @@
 <context>
     <name>APropos</name>
     <message>
-        <source>QIde</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QIde&lt;/title&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Edition&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;Jean-Luc Biord jlbiord@qtfr.org - 2006&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;http://qide.free.fr&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;&lt;title&gt;QIde&lt;/title&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Open Source Edition&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;Jean-Luc Biord jlbiord@qtfr.org - 2006&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;http://qide.free.fr&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Version&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-style:italic;&quot;&gt;Version&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-style:italic;&quot;&gt;Version&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+</context>
+<context>
+    <name>About</name>
     <message>
-        <source>OK</source>
+        <source>QDevelop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QIde&lt;/title&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;Jean-Luc Biord jlbiord@qtfr.org - 2006&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;http://qide.free.fr&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;Mixolap    m1x014p@gmail.ru - 2006&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:29pt; font-weight:600;&quot;&gt;QDevelop&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C) 2006&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;Main Developper: Jean-Luc Biord &amp;lt;jlbiord@qtfr.org&amp;gt; &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;Code completion: Frederic Julian &amp;lt;fred.julian@gmail.com&amp;gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:10pt;&quot;&gt;http://qdevelop.org&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Version&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-style:italic;&quot;&gt;Version&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -26,124 +40,46 @@
     <name>AddClassDlg</name>
     <message>
         <source>Add new class</source>
-        <translation>Добавить новый класс</translation>
+        <translation type="obsolete">Добавить новый класс</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Parent Class:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Родительский класс:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;Родительский класс:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="obsolete">Отмена</translation>
     </message>
     <message>
         <source>Class name:</source>
-        <translation>Имя класса:</translation>
-    </message>
-    <message>
-        <source>UI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Q_OBJECT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>create slotOK</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Имя класса:</translation>
     </message>
     <message>
         <source>Header file:</source>
-        <translation>Файл заголовка:</translation>
+        <translation type="obsolete">Файл заголовка:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Source file:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Файл исходника:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Файл исходника:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
-    <name>AjouterExistant</name>
+    <name>AddExistant</name>
     <message>
         <source>Add Existing Files</source>
-        <translation>Добавить существующие файлы</translation>
-    </message>
-    <message>
-        <source>OK</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Отмена</translation>
     </message>
     <message>
         <source>Project or Scope :</source>
-        <translation>Проект или папка:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File :</source>
-        <translation>Файл:</translation>
+        <translation type="unfinished">Файл:</translation>
     </message>
     <message>
-        <source>...</source>
+        <source>Copy files here:</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>AjouterExistantImpl</name>
-    <message>
-        <source>Choose the file to add</source>
-        <translation>Укажите файл для добавления</translation>
-    </message>
-    <message>
-        <source>Files (*.cpp *.h *.ui *.qrc *.ts)</source>
-        <translation>Файлы (*.cpp *.h *.ui *.qrc *.ts)</translation>
-    </message>
-</context>
-<context>
-    <name>AjouterNouveau</name>
-    <message>
-        <source>Add New Item</source>
-        <translation>Добавить новый элемент</translation>
-    </message>
-    <message>
-        <source>Files</source>
-        <translation>Файлы</translation>
-    </message>
-    <message>
-        <source>Translation</source>
-        <translation>Переводы</translation>
-    </message>
-    <message>
-        <source>Resources</source>
-        <translation>Ресурсы</translation>
-    </message>
-    <message>
-        <source>Dialog</source>
-        <translation>Диалог</translation>
-    </message>
-    <message>
-        <source>Header</source>
-        <translation>Заголовок</translation>
-    </message>
-    <message>
-        <source>Sources</source>
-        <translation>Исходники</translation>
-    </message>
-    <message>
-        <source>Project or Scope:</source>
-        <translation>Проект или Папка:</translation>
-    </message>
-    <message>
-        <source>File Name :</source>
-        <translation>Имя файла:</translation>
-    </message>
-    <message>
-        <source>Location :</source>
-        <translation>Путь:</translation>
     </message>
     <message>
         <source>...</source>
@@ -155,53 +91,147 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="unfinished">Отмена</translation>
     </message>
 </context>
 <context>
-    <name>AjouterNouveauImpl</name>
+    <name>AddExistantImpl</name>
     <message>
-        <source>Choose the file location</source>
-        <translation>Укажите расположение файла</translation>
-    </message>
-    <message>
-        <source>The suffix of the file is not correct.</source>
-        <translation>Некорректное расширение файла.</translation>
+        <source>Enter a filename.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="unfinished">Отмена</translation>
     </message>
     <message>
-        <source>header</source>
-        <translation>заголовка</translation>
+        <source>Enter a location destination.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Also create the file</source>
-        <translation>Создать также и файл</translation>
+        <source>The file</source>
+        <translation type="unfinished">Файл</translation>
     </message>
     <message>
-        <source>in same location ?</source>
-        <translation>в том же месте?</translation>
+        <source>doesn&apos;t exist.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Yes</source>
-        <translation>Да</translation>
+        <source>Unable to copy</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No</source>
-        <translation>Нет</translation>
+        <source>Choose a directory</source>
+        <translation type="unfinished">Укажите папку</translation>
+    </message>
+    <message>
+        <source>Choose the file to add</source>
+        <translation type="unfinished">Укажите файл для добавления</translation>
+    </message>
+    <message>
+        <source>Files (*.cpp *.h *.ui *.qrc *.ts)</source>
+        <translation type="unfinished">Файлы (*.cpp *.h *.ui *.qrc *.ts)</translation>
     </message>
 </context>
 <context>
-    <name>AjouterPortee</name>
+    <name>AddNew</name>
+    <message>
+        <source>Add New Item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation type="unfinished">Файлы</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation type="unfinished">Переводы</translation>
+    </message>
+    <message>
+        <source>Resources</source>
+        <translation type="unfinished">Ресурсы</translation>
+    </message>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Диалог</translation>
+    </message>
+    <message>
+        <source>Header</source>
+        <translation type="unfinished">Заголовок</translation>
+    </message>
+    <message>
+        <source>Sources</source>
+        <translation type="unfinished">Исходники</translation>
+    </message>
+    <message>
+        <source>Project or Scope:</source>
+        <translation type="unfinished">Проект или Папка:</translation>
+    </message>
+    <message>
+        <source>File Name :</source>
+        <translation type="unfinished">Имя файла:</translation>
+    </message>
+    <message>
+        <source>Location :</source>
+        <translation type="unfinished">Путь:</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+</context>
+<context>
+    <name>AddNewImpl</name>
+    <message>
+        <source>Choose the file location</source>
+        <translation type="unfinished">Укажите расположение файла</translation>
+    </message>
+    <message>
+        <source>The suffix of the file is not correct.</source>
+        <translation type="unfinished">Некорректное расширение файла.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+    <message>
+        <source>header</source>
+        <translation type="unfinished">заголовка</translation>
+    </message>
+    <message>
+        <source>Also create the file</source>
+        <translation type="unfinished">Создать также и файл</translation>
+    </message>
+    <message>
+        <source>in same location ?</source>
+        <translation type="unfinished">в том же месте?</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished">Да</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddScope</name>
     <message>
         <source>Add New Scope</source>
-        <translation>Добавить новую папку</translation>
+        <translation type="unfinished">Добавить новую папку</translation>
     </message>
     <message>
         <source>New Scope</source>
-        <translation>Новая папка</translation>
+        <translation type="unfinished">Новая папка</translation>
     </message>
     <message>
         <source>win32</source>
@@ -229,7 +259,7 @@
     </message>
     <message>
         <source>Project or Scope :</source>
-        <translation>Проект или Папка:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>OK</source>
@@ -237,24 +267,316 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+</context>
+<context>
+    <name>AjouterExistant</name>
+    <message>
+        <source>Add Existing Files</source>
+        <translation type="obsolete">Добавить существующие файлы</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="obsolete">Отмена</translation>
+    </message>
+    <message>
+        <source>Project or Scope :</source>
+        <translation type="obsolete">Проект или папка:</translation>
+    </message>
+    <message>
+        <source>File :</source>
+        <translation type="obsolete">Файл:</translation>
+    </message>
+</context>
+<context>
+    <name>AjouterExistantImpl</name>
+    <message>
+        <source>Choose the file to add</source>
+        <translation type="obsolete">Укажите файл для добавления</translation>
+    </message>
+    <message>
+        <source>Files (*.cpp *.h *.ui *.qrc *.ts)</source>
+        <translation type="obsolete">Файлы (*.cpp *.h *.ui *.qrc *.ts)</translation>
+    </message>
+</context>
+<context>
+    <name>AjouterNouveau</name>
+    <message>
+        <source>Add New Item</source>
+        <translation type="obsolete">Добавить новый элемент</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation type="obsolete">Файлы</translation>
+    </message>
+    <message>
+        <source>Translation</source>
+        <translation type="obsolete">Переводы</translation>
+    </message>
+    <message>
+        <source>Resources</source>
+        <translation type="obsolete">Ресурсы</translation>
+    </message>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Диалог</translation>
+    </message>
+    <message>
+        <source>Header</source>
+        <translation type="obsolete">Заголовок</translation>
+    </message>
+    <message>
+        <source>Sources</source>
+        <translation type="obsolete">Исходники</translation>
+    </message>
+    <message>
+        <source>Project or Scope:</source>
+        <translation type="obsolete">Проект или Папка:</translation>
+    </message>
+    <message>
+        <source>File Name :</source>
+        <translation type="obsolete">Имя файла:</translation>
+    </message>
+    <message>
+        <source>Location :</source>
+        <translation type="obsolete">Путь:</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="obsolete">Отмена</translation>
+    </message>
+</context>
+<context>
+    <name>AjouterNouveauImpl</name>
+    <message>
+        <source>Choose the file location</source>
+        <translation type="obsolete">Укажите расположение файла</translation>
+    </message>
+    <message>
+        <source>The suffix of the file is not correct.</source>
+        <translation type="obsolete">Некорректное расширение файла.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="obsolete">Отмена</translation>
+    </message>
+    <message>
+        <source>header</source>
+        <translation type="obsolete">заголовка</translation>
+    </message>
+    <message>
+        <source>Also create the file</source>
+        <translation type="obsolete">Создать также и файл</translation>
+    </message>
+    <message>
+        <source>in same location ?</source>
+        <translation type="obsolete">в том же месте?</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="obsolete">Да</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="obsolete">Нет</translation>
+    </message>
+</context>
+<context>
+    <name>AjouterPortee</name>
+    <message>
+        <source>Add New Scope</source>
+        <translation type="obsolete">Добавить новую папку</translation>
+    </message>
+    <message>
+        <source>New Scope</source>
+        <translation type="obsolete">Новая папка</translation>
+    </message>
+    <message>
+        <source>Project or Scope :</source>
+        <translation type="obsolete">Проект или Папка:</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="obsolete">Отмена</translation>
+    </message>
+</context>
+<context>
+    <name>Build</name>
+    <message>
+        <source>Update project</source>
+        <translation type="unfinished">Обновить проект</translation>
+    </message>
+    <message>
+        <source>Clean Project</source>
+        <translation type="unfinished">Очистить проект</translation>
+    </message>
+    <message>
+        <source>Compilation of </source>
+        <translation type="unfinished">Компиляция</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation type="unfinished">Сборка</translation>
+    </message>
+    <message>
+        <source>Build stopped</source>
+        <translation type="unfinished">Сборка остановлена</translation>
     </message>
 </context>
 <context>
     <name>CAddNewClassDlg</name>
     <message>
         <source>Error</source>
-        <translation>Ошибка</translation>
+        <translation type="obsolete">Ошибка</translation>
     </message>
     <message>
         <source>File not opened </source>
-        <translation>Файл не открыт </translation>
+        <translation type="obsolete">Файл не открыт </translation>
     </message>
 </context>
 <context>
     <name>ChoixExe</name>
     <message>
-        <source>QIde</source>
+        <source>Cancel</source>
+        <translation type="obsolete">Отмена</translation>
+    </message>
+    <message>
+        <source>Choose program to Debug :</source>
+        <translation type="obsolete">Укажите программу для отладки:</translation>
+    </message>
+    <message>
+        <source>Don&apos;t ask question anymore</source>
+        <translation type="obsolete">Больше не задавать вопросов</translation>
+    </message>
+</context>
+<context>
+    <name>Debogage</name>
+    <message>
+        <source>Running...</source>
+        <translation type="obsolete">Запуск...</translation>
+    </message>
+    <message>
+        <source>Exited normally</source>
+        <translation type="obsolete">Нормальное завершение</translation>
+    </message>
+    <message>
+        <source>Debug...</source>
+        <translation type="obsolete">Отладка...</translation>
+    </message>
+    <message>
+        <source>Debug exited</source>
+        <translation type="obsolete">Отладка завершена</translation>
+    </message>
+</context>
+<context>
+    <name>Debug</name>
+    <message>
+        <source>Running...</source>
+        <translation type="unfinished">Запуск...</translation>
+    </message>
+    <message>
+        <source>Exited normally</source>
+        <translation type="unfinished">Нормальное завершение</translation>
+    </message>
+    <message>
+        <source>Debug...</source>
+        <translation type="unfinished">Отладка...</translation>
+    </message>
+    <message>
+        <source>Debug exited</source>
+        <translation type="unfinished">Отладка завершена</translation>
+    </message>
+    <message>
+        <source>Error: Unable to evaluate value</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Dock</name>
+    <message>
+        <source>Auto hide</source>
+        <translation type="obsolete">Автоскрытие</translation>
+    </message>
+</context>
+<context>
+    <name>Editeur</name>
+    <message>
+        <source>Open </source>
+        <translation type="obsolete">Открыть</translation>
+    </message>
+    <message>
+        <source>Refresh classes and methods lists</source>
+        <translation type="obsolete">Обновить списки классов и методов</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="obsolete">Сохранить</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="obsolete">Да</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="obsolete">Нет</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="obsolete">Отмена</translation>
+    </message>
+</context>
+<context>
+    <name>Editor</name>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Открыть</translation>
+    </message>
+    <message>
+        <source>Refresh classes and methods lists</source>
+        <translation type="unfinished">Обновить списки классов и методов</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation type="unfinished">Файл</translation>
+    </message>
+    <message>
+        <source>was modified outside editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What do you want to do?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Сохранить</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished">Да</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+</context>
+<context>
+    <name>ExeChoice</name>
+    <message>
+        <source>QDevelop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -263,68 +585,15 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="unfinished">Отмена</translation>
     </message>
     <message>
         <source>Choose program to Debug :</source>
-        <translation>Укажите программу для отладки:</translation>
+        <translation type="unfinished">Укажите программу для отладки:</translation>
     </message>
     <message>
         <source>Don&apos;t ask question anymore</source>
-        <translation>Больше не задавать вопросов</translation>
-    </message>
-</context>
-<context>
-    <name>Debogage</name>
-    <message>
-        <source>Running...</source>
-        <translation>Запуск...</translation>
-    </message>
-    <message>
-        <source>Exited normally</source>
-        <translation>Нормальное завершение</translation>
-    </message>
-    <message>
-        <source>Debug...</source>
-        <translation>Отладка...</translation>
-    </message>
-    <message>
-        <source>Debug exited</source>
-        <translation>Отладка завершена</translation>
-    </message>
-</context>
-<context>
-    <name>Dock</name>
-    <message>
-        <source>Auto hide</source>
-        <translation>Автоскрытие</translation>
-    </message>
-</context>
-<context>
-    <name>Editeur</name>
-    <message>
-        <source>Open </source>
-        <translation>Открыть</translation>
-    </message>
-    <message>
-        <source>Refresh classes and methods lists</source>
-        <translation>Обновить списки классов и методов</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Сохранить</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>Да</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>Нет</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="unfinished">Больше не задавать вопросов</translation>
     </message>
 </context>
 <context>
@@ -432,94 +701,90 @@
     <name>Generation</name>
     <message>
         <source>Update project</source>
-        <translation>Обновить проект</translation>
+        <translation type="obsolete">Обновить проект</translation>
     </message>
     <message>
         <source>Clean Project</source>
-        <translation>Очистить проект</translation>
+        <translation type="obsolete">Очистить проект</translation>
     </message>
     <message>
         <source>Compilation of </source>
-        <translation>Компиляция</translation>
+        <translation type="obsolete">Компиляция</translation>
     </message>
     <message>
         <source>Build</source>
-        <translation>Сборка</translation>
+        <translation type="obsolete">Сборка</translation>
     </message>
     <message>
         <source>Build stopped</source>
-        <translation>Сборка остановлена</translation>
+        <translation type="obsolete">Сборка остановлена</translation>
     </message>
 </context>
 <context>
     <name>GestionProjet</name>
     <message>
         <source>Save project changes ?</source>
-        <translation>Сохранить изменения в проекте?</translation>
+        <translation type="obsolete">Сохранить изменения в проекте?</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>Да</translation>
+        <translation type="obsolete">Да</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Но</translation>
+        <translation type="obsolete">Но</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="obsolete">Отмена</translation>
     </message>
     <message>
         <source>The file already exist on directory.</source>
-        <translation>Такой файл уже существует в данной папке.</translation>
+        <translation type="obsolete">Такой файл уже существует в данной папке.</translation>
     </message>
     <message>
         <source>Forms:</source>
-        <translation>Формы:</translation>
+        <translation type="obsolete">Формы:</translation>
     </message>
     <message>
         <source>Unable to create file.</source>
-        <translation>Не могу создать файл.</translation>
+        <translation type="obsolete">Не могу создать файл.</translation>
     </message>
     <message>
         <source>The file already exist.</source>
-        <translation>Такой файл уже существует.</translation>
+        <translation type="obsolete">Такой файл уже существует.</translation>
     </message>
     <message>
         <source>This file is not permit.</source>
-        <translation>Этот файл неприменим.</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Этот файл неприменим.</translation>
     </message>
     <message>
         <source>Sub-project creation</source>
-        <translation>Создание подпроекта</translation>
+        <translation type="obsolete">Создание подпроекта</translation>
     </message>
     <message>
         <source>Unable to create directory</source>
-        <translation>Не могу создать папку</translation>
+        <translation type="obsolete">Не могу создать папку</translation>
     </message>
     <message>
         <source>The project</source>
-        <translation>Проект</translation>
+        <translation type="obsolete">Проект</translation>
     </message>
     <message>
         <source>already exist on directory.</source>
-        <translation>уже существует в таекущей папке.</translation>
+        <translation type="obsolete">уже существует в таекущей папке.</translation>
     </message>
     <message>
         <source>Unable to create project.</source>
-        <translation>Не могу создать проект.</translation>
+        <translation type="obsolete">Не могу создать проект.</translation>
     </message>
     <message>
         <source>Sub-Projects</source>
-        <translation>Подпроект</translation>
+        <translation type="obsolete">Подпроект</translation>
     </message>
     <message>
         <source>The file</source>
-        <translation>Файл</translation>
+        <translation type="obsolete">Файл</translation>
     </message>
     <message>
         <source></source>
@@ -527,51 +792,51 @@
     </message>
     <message>
         <source>Unable to delete the main project.</source>
-        <translation>Не могу удалить главный проект.</translation>
+        <translation type="obsolete">Не могу удалить главный проект.</translation>
     </message>
     <message>
         <source>Do you want to delete</source>
-        <translation>Вы действительно хотите удалить</translation>
+        <translation type="obsolete">Вы действительно хотите удалить</translation>
     </message>
     <message>
         <source>on project ?</source>
-        <translation>из проекта?</translation>
+        <translation type="obsolete">из проекта?</translation>
     </message>
     <message>
         <source>Sub-projects</source>
-        <translation>Подпроекты</translation>
+        <translation type="obsolete">Подпроекты</translation>
     </message>
     <message>
         <source>Headers</source>
-        <translation>Заголовки</translation>
+        <translation type="obsolete">Заголовки</translation>
     </message>
     <message>
         <source>Sources</source>
-        <translation>Исходники</translation>
+        <translation type="obsolete">Исходники</translation>
     </message>
     <message>
         <source>Dialogs</source>
-        <translation>Диалоги</translation>
+        <translation type="obsolete">Диалоги</translation>
     </message>
     <message>
         <source>Translations</source>
-        <translation>Переводы</translation>
+        <translation type="obsolete">Переводы</translation>
     </message>
     <message>
         <source>Resources</source>
-        <translation>Ресурсы</translation>
+        <translation type="obsolete">Ресурсы</translation>
     </message>
     <message>
         <source>The only available version for</source>
-        <translation>Существует версия только для</translation>
+        <translation type="obsolete">Существует версия только для</translation>
     </message>
     <message>
         <source>is</source>
-        <translation>-</translation>
+        <translation type="obsolete">-</translation>
     </message>
     <message>
         <source>Run on</source>
-        <translation>Запуск в</translation>
+        <translation type="obsolete">Запуск в</translation>
     </message>
 </context>
 <context>
@@ -594,10 +859,21 @@
     </message>
 </context>
 <context>
+    <name>LineNumbers</name>
+    <message>
+        <source>Toogle Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toogle Breakpoint</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Main</name>
     <message>
         <source>QIde</source>
-        <translation>QIde - интегрированная среда Qt-разработки</translation>
+        <translation type="obsolete">QIde - интегрированная среда Qt-разработки</translation>
     </message>
     <message>
         <source>&amp;?</source>
@@ -609,7 +885,7 @@
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;Открыть</translation>
+        <translation type="obsolete">&amp;Открыть</translation>
     </message>
     <message>
         <source>Last Projects</source>
@@ -621,7 +897,7 @@
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;Новый</translation>
+        <translation type="obsolete">&amp;Новый</translation>
     </message>
     <message>
         <source>&amp;Project</source>
@@ -653,7 +929,7 @@
     </message>
     <message>
         <source>Docks</source>
-        <translation>Панели</translation>
+        <translation type="obsolete">Панели</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -673,7 +949,7 @@
     </message>
     <message>
         <source>gdb command :</source>
-        <translation>команда gdb:</translation>
+        <translation type="obsolete">команда gdb:</translation>
     </message>
     <message>
         <source>Find in Files</source>
@@ -682,10 +958,6 @@
     <message>
         <source>Project Explorer</source>
         <translation>Состав проекта</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Files toolbar</source>
@@ -865,7 +1137,7 @@
     </message>
     <message>
         <source>Configurations...</source>
-        <translation>Конфигурации...</translation>
+        <translation type="obsolete">Конфигурации...</translation>
     </message>
     <message>
         <source>Compile File</source>
@@ -909,7 +1181,7 @@
     </message>
     <message>
         <source>Clean All Breakpoints</source>
-        <translation>Очистить все брейкпойнты</translation>
+        <translation type="obsolete">Очистить все брейкпойнты</translation>
     </message>
     <message>
         <source>Options...</source>
@@ -1095,6 +1367,82 @@
         <source>Ctrl+Space</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>QDevelop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local Variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other Variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calls Stack</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parameters...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle &amp;Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+B</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear &amp;All Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>External Tools...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainImpl</name>
@@ -1104,19 +1452,19 @@
     </message>
     <message>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Файлы</translation>
     </message>
     <message>
         <source>The file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Файл</translation>
     </message>
     <message>
         <source>already exist on directory.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">уже существует в таекущей папке.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Отмена</translation>
     </message>
     <message>
         <source>Unable to create</source>
@@ -1128,11 +1476,11 @@
     </message>
     <message>
         <source>The project</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Проект</translation>
     </message>
     <message>
         <source>Do you want to quit QIde ?</source>
-        <translation>Вы действительно хотите выйти из QIde?</translation>
+        <translation type="obsolete">Вы действительно хотите выйти из QIde?</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -1148,7 +1496,7 @@
     </message>
     <message>
         <source>Sources</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Исходники</translation>
     </message>
     <message>
         <source>Projects</source>
@@ -1244,75 +1592,83 @@
     </message>
     <message>
         <source>please design his location.</source>
-        <translation>исправьте его местоположение.</translation>
+        <translation type="obsolete">исправьте его местоположение.</translation>
     </message>
     <message>
         <source>Please designe qmake path</source>
-        <translation>Исправьте путь до qmake</translation>
+        <translation type="obsolete">Исправьте путь до qmake</translation>
     </message>
     <message>
         <source>perhaps not correctly installed or configured.</source>
-        <translation>в связи с некорректной установкой или конфигурацией.</translation>
+        <translation type="obsolete">в связи с некорректной установкой или конфигурацией.</translation>
     </message>
     <message>
         <source>Verify your Environment Variables.</source>
-        <translation>Проверьте переменные окружения.</translation>
+        <translation type="obsolete">Проверьте переменные окружения.</translation>
     </message>
     <message>
         <source>not found.</source>
-        <translation>не найден.</translation>
+        <translation type="obsolete">не найден.</translation>
     </message>
     <message>
         <source>To use debugging you must install gdb.
 Downloadable for MinGW on http://www.mingw.org/download.shtml.</source>
-        <translation>Для использования отладки Вы должны установить gdb.
+        <translation type="obsolete">Для использования отладки Вы должны установить gdb.
 Например, для MinGW: http://www.mingw.org/download.shtml.</translation>
     </message>
     <message>
         <source>To have code completion, you must install ctags.
 Downloadable for Windows on http://ctags.sourceforge.net/.</source>
-        <translation>Для использования автодополнения кода Вы должны установить ctags.
+        <translation type="obsolete">Для использования автодополнения кода Вы должны установить ctags.
 Например, отсюда: http://ctags.sourceforge.net/</translation>
     </message>
     <message>
         <source>&amp;Bookmark</source>
-        <translation>&amp;Закладка</translation>
-    </message>
-    <message>
-        <source>Ctrl+F2</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">&amp;Закладка</translation>
     </message>
     <message>
         <source>Bookmark this place</source>
-        <translation>Установить закладку</translation>
+        <translation type="obsolete">Установить закладку</translation>
     </message>
     <message>
         <source>&amp;Next Bookmark</source>
-        <translation>&amp;Следующая закладка</translation>
-    </message>
-    <message>
-        <source>F2</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">&amp;Следующая закладка</translation>
     </message>
     <message>
         <source>Go to next bookmark</source>
-        <translation>Перейти к следующей закладке</translation>
+        <translation type="obsolete">Перейти к следующей закладке</translation>
     </message>
     <message>
         <source>&amp;Previous Bookmark</source>
-        <translation>&amp;Предыдущая закладка</translation>
-    </message>
-    <message>
-        <source>Shift+F2</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">&amp;Предыдущая закладка</translation>
     </message>
     <message>
         <source>Go to prev bookmark</source>
-        <translation>Перейти к предыдущей закладке</translation>
+        <translation type="obsolete">Перейти к предыдущей закладке</translation>
     </message>
     <message>
         <source>Oberon sources</source>
-        <translation>Исходники Оберона</translation>
+        <translation type="obsolete">Исходники Оберона</translation>
+    </message>
+    <message>
+        <source>The project cannot be created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to quit QDevelop ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Variable:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The variable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>already exist.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1344,6 +1700,152 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     <message>
         <source>C&amp;ancel</source>
         <translation>&amp;Отмена</translation>
+    </message>
+</context>
+<context>
+    <name>NewProject</name>
+    <message>
+        <source>New project creation</source>
+        <translation type="unfinished">Создание нового проекта</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Application with Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Application with Main Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parent project :</source>
+        <translation type="unfinished">Родительский проект:</translation>
+    </message>
+    <message>
+        <source>Project name :</source>
+        <translation type="unfinished">Имя проекта:</translation>
+    </message>
+    <message>
+        <source>Location :</source>
+        <translation type="unfinished">Путь:</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project creation on : </source>
+        <translation type="unfinished">Создать проект в:</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished">Версия</translation>
+    </message>
+    <message>
+        <source>Debug Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Release Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+    <message>
+        <source>Sub-directories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dialogs:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Executable:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ui</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sources:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>src</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>build</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inheritance subclassing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Диалог</translation>
+    </message>
+    <message>
+        <source>DialogImpl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dialogimpl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Dialog:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Subclass:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewProjectImpl</name>
+    <message>
+        <source>Choose the project directory</source>
+        <translation type="unfinished">Укажите папку проекта</translation>
     </message>
 </context>
 <context>
@@ -1381,42 +1883,34 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     <name>NouveauProjet</name>
     <message>
         <source>New project creation</source>
-        <translation>Создание нового проекта</translation>
+        <translation type="obsolete">Создание нового проекта</translation>
     </message>
     <message>
         <source>Parent project :</source>
-        <translation>Родительский проект:</translation>
+        <translation type="obsolete">Родительский проект:</translation>
     </message>
     <message>
         <source>Project name :</source>
-        <translation>Имя проекта:</translation>
+        <translation type="obsolete">Имя проекта:</translation>
     </message>
     <message>
         <source>Location :</source>
-        <translation>Путь:</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Путь:</translation>
     </message>
     <message>
         <source>Project creation on : </source>
-        <translation>Создать проект в:</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Создать проект в:</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="obsolete">Отмена</translation>
     </message>
 </context>
 <context>
     <name>NouveauProjetImpl</name>
     <message>
         <source>Choose the project directory</source>
-        <translation>Укажите папку проекта</translation>
+        <translation type="obsolete">Укажите папку проекта</translation>
     </message>
 </context>
 <context>
@@ -1431,7 +1925,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>qmake path:</source>
-        <translation>Путь до qmake</translation>
+        <translation type="obsolete">Путь до qmake</translation>
     </message>
     <message>
         <source>Save All before Build</source>
@@ -1547,7 +2041,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg 2; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;// Commentaire sur une ligne&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;/*&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;* Puis sur&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;* plusieurs &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;*/&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;{&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;       QApplication app(argc, argv);&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;       QString chaine = &quot;entre guillemets&quot;;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;       QDialog *main = new QDialog;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>                                   &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg 2; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;// Однострочный комментарий&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;/*&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;* Многострочный&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;* комментарий &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;*/&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;{&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;QApplication app(argc, argv);&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;QString perem = &quot;строка&quot;;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;QDialog *main = new QDialog;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;main-&amp;gt;show();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;return app.exec();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">                                   &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg 2; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;// Однострочный комментарий&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;/*&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;* Многострочный&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;* комментарий &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;*/&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;{&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;QApplication app(argc, argv);&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;QString perem = &quot;строка&quot;;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;QDialog *main = new QDialog;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;main-&amp;gt;show();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;return app.exec();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>OK</source>
@@ -1559,61 +2053,275 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Default projects path:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Путь к папке с проектами:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Путь к папке с проектами:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>$HOME</source>
+        <source>Show classes explorer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interval between updates:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default projects directory: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;/*&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* Multi-lines&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* comments &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;*/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;// Single line comments &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;{&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QApplication app(argc, argv);&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QString chaine = &quot;between quotations&quot;;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QDialog *main = new QDialog;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>PromptReplace</name>
+    <name>OptionsImpl</name>
     <message>
-        <source>Confirmation</source>
-        <translation>Подтверждение</translation>
-    </message>
-    <message>
-        <source>Found an occurence of your search term. What do you want to do?</source>
-        <translation>Найдено вхождение указанного терма. Что Вы собираетесь выполнить?</translation>
-    </message>
-    <message>
-        <source>&amp;Replace</source>
-        <translation>&amp;Заменить</translation>
-    </message>
-    <message>
-        <source>Replace &amp;All</source>
-        <translation>Заменить &amp;все</translation>
-    </message>
-    <message>
-        <source>&amp;Find Next</source>
-        <translation>&amp;Найти далее</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation>&amp;Закрыть</translation>
+        <source>Choose the project directory</source>
+        <translation type="unfinished">Укажите папку проекта</translation>
     </message>
 </context>
 <context>
-    <name>ProprieteProjet</name>
+    <name>Param</name>
+    <message>
+        <source>Program parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run with these arguments:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Working directory (leave empty to use project directory):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Environment variables (NAME=value):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation type="unfinished">&amp;Править</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ParametersImpl</name>
+    <message>
+        <source>Choose the project location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The variable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>already exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectManager</name>
+    <message>
+        <source>Save project changes ?</source>
+        <translation type="unfinished">Сохранить изменения в проекте?</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished">Да</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+    <message>
+        <source>The file already exist on directory.</source>
+        <translation type="unfinished">Такой файл уже существует в данной папке.</translation>
+    </message>
+    <message>
+        <source>Forms:</source>
+        <translation type="unfinished">Формы:</translation>
+    </message>
+    <message>
+        <source>Unable to create file.</source>
+        <translation type="unfinished">Не могу создать файл.</translation>
+    </message>
+    <message>
+        <source>The file already exist.</source>
+        <translation type="unfinished">Такой файл уже существует.</translation>
+    </message>
+    <message>
+        <source>This file is not permit.</source>
+        <translation type="unfinished">Этот файл неприменим.</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub-project creation</source>
+        <translation type="unfinished">Создание подпроекта</translation>
+    </message>
+    <message>
+        <source>Unable to create directory</source>
+        <translation type="unfinished">Не могу создать папку</translation>
+    </message>
+    <message>
+        <source>The project</source>
+        <translation type="unfinished">Проект</translation>
+    </message>
+    <message>
+        <source>already exist on directory.</source>
+        <translation type="unfinished">уже существует в таекущей папке.</translation>
+    </message>
+    <message>
+        <source>Unable to create project.</source>
+        <translation type="unfinished">Не могу создать проект.</translation>
+    </message>
+    <message>
+        <source>Sub-Projects</source>
+        <translation type="unfinished">Подпроект</translation>
+    </message>
+    <message>
+        <source>The file</source>
+        <translation type="unfinished">Файл</translation>
+    </message>
+    <message>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to delete the main project.</source>
+        <translation type="unfinished">Не могу удалить главный проект.</translation>
+    </message>
+    <message>
+        <source>Do you want to delete</source>
+        <translation type="unfinished">Вы действительно хотите удалить</translation>
+    </message>
+    <message>
+        <source>on project ?</source>
+        <translation type="unfinished">из проекта?</translation>
+    </message>
+    <message>
+        <source>Sub-projects</source>
+        <translation type="unfinished">Подпроекты</translation>
+    </message>
+    <message>
+        <source>Headers</source>
+        <translation type="unfinished">Заголовки</translation>
+    </message>
+    <message>
+        <source>Sources</source>
+        <translation type="unfinished">Исходники</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation type="unfinished">Диалоги</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation type="unfinished">Переводы</translation>
+    </message>
+    <message>
+        <source>Resources</source>
+        <translation type="unfinished">Ресурсы</translation>
+    </message>
+    <message>
+        <source>The only available version for</source>
+        <translation type="unfinished">Существует версия только для</translation>
+    </message>
+    <message>
+        <source>is</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <source>Run on</source>
+        <translation type="unfinished">Запуск в</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectPropertie</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="unfinished">Диалог</translation>
     </message>
     <message>
         <source>Configuration</source>
-        <translation>Конфигурация</translation>
+        <translation type="unfinished">Конфигурация</translation>
     </message>
     <message>
         <source>General :</source>
-        <translation>Главное:</translation>
+        <translation type="unfinished">Главное:</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation>Версия</translation>
+        <translation type="unfinished">Версия</translation>
     </message>
     <message>
         <source>build_all</source>
-        <translation>собрать все</translation>
+        <translation type="unfinished">собрать все</translation>
     </message>
     <message>
         <source>debug</source>
@@ -1629,7 +2337,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>Warnings</source>
-        <translation>Предупреждения</translation>
+        <translation type="unfinished">Предупреждения</translation>
     </message>
     <message>
         <source>warn_off</source>
@@ -1641,7 +2349,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>Qt Libraries</source>
-        <translation>Библиотеки Qt</translation>
+        <translation type="unfinished">Библиотеки Qt</translation>
     </message>
     <message>
         <source>core</source>
@@ -1649,7 +2357,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>network</source>
-        <translation>network</translation>
+        <translation type="unfinished">network</translation>
     </message>
     <message>
         <source>sql</source>
@@ -1677,7 +2385,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>Advanced Options</source>
-        <translation>Дополнительные опции</translation>
+        <translation type="unfinished">Дополнительные опции</translation>
     </message>
     <message>
         <source>app_bundle</source>
@@ -1689,7 +2397,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>console</source>
-        <translation>console</translation>
+        <translation type="unfinished">console</translation>
     </message>
     <message>
         <source>designer</source>
@@ -1738,7 +2446,7 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     </message>
     <message>
         <source>resources</source>
-        <translation>ресурсы</translation>
+        <translation type="unfinished">ресурсы</translation>
     </message>
     <message>
         <source>rtti</source>
@@ -1779,15 +2487,15 @@ Downloadable for Windows on http://ctags.sourceforge.net/.</source>
     <message>
         <source>Free CONFIG
 variables :</source>
-        <translation>Прочие переменные CONFIG:</translation>
+        <translation type="unfinished">Прочие переменные CONFIG:</translation>
     </message>
     <message>
         <source>Variables</source>
-        <translation>Переменные</translation>
+        <translation type="unfinished">Переменные</translation>
     </message>
     <message>
         <source>Variable :</source>
-        <translation>Переменная:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>...</source>
@@ -1795,15 +2503,15 @@ variables :</source>
     </message>
     <message>
         <source>Values :</source>
-        <translation>Значения:</translation>
+        <translation type="unfinished">Значения:</translation>
     </message>
     <message>
         <source>Project Template</source>
-        <translation>Шаблон проекта</translation>
+        <translation type="unfinished">Шаблон проекта</translation>
     </message>
     <message>
         <source>subdirs</source>
-        <translation>подпапки</translation>
+        <translation type="unfinished">подпапки</translation>
     </message>
     <message>
         <source>lib</source>
@@ -1815,11 +2523,11 @@ variables :</source>
     </message>
     <message>
         <source>Project or Scope :</source>
-        <translation>Проект или папка:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Advanced mode</source>
-        <translation>Расширенный режим</translation>
+        <translation type="unfinished">Расширенный режим</translation>
     </message>
     <message>
         <source>OK</source>
@@ -1827,34 +2535,172 @@ variables :</source>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectPropertieImpl</name>
+    <message>
+        <source>Properties of</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Value:</source>
+        <translation type="unfinished">Новое значение:</translation>
+    </message>
+    <message>
+        <source>The spaces are don&apos;t correctly parsed by qmake</source>
+        <translation type="unfinished">Пробелы некорректно обрабатываются в qmake</translation>
+    </message>
+    <message>
+        <source>delete spaces or put quotes.</source>
+        <translation type="unfinished">уберите пробелы или замените кавычками.</translation>
+    </message>
+    <message>
+        <source>Modify</source>
+        <translation type="unfinished">Изменить</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+</context>
+<context>
+    <name>PromptReplace</name>
+    <message>
+        <source>Confirmation</source>
+        <translation>Подтверждение</translation>
+    </message>
+    <message>
+        <source>Found an occurence of your search term. What do you want to do?</source>
+        <translation>Найдено вхождение указанного терма. Что Вы собираетесь выполнить?</translation>
+    </message>
+    <message>
+        <source>&amp;Replace</source>
+        <translation>&amp;Заменить</translation>
+    </message>
+    <message>
+        <source>Replace &amp;All</source>
+        <translation>Заменить &amp;все</translation>
+    </message>
+    <message>
+        <source>&amp;Find Next</source>
+        <translation>&amp;Найти далее</translation>
+    </message>
+    <message>
+        <source>&amp;Close</source>
+        <translation>&amp;Закрыть</translation>
+    </message>
+</context>
+<context>
+    <name>ProprieteProjet</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Диалог</translation>
+    </message>
+    <message>
+        <source>Configuration</source>
+        <translation type="obsolete">Конфигурация</translation>
+    </message>
+    <message>
+        <source>General :</source>
+        <translation type="obsolete">Главное:</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="obsolete">Версия</translation>
+    </message>
+    <message>
+        <source>build_all</source>
+        <translation type="obsolete">собрать все</translation>
+    </message>
+    <message>
+        <source>Warnings</source>
+        <translation type="obsolete">Предупреждения</translation>
+    </message>
+    <message>
+        <source>Qt Libraries</source>
+        <translation type="obsolete">Библиотеки Qt</translation>
+    </message>
+    <message>
+        <source>network</source>
+        <translation type="obsolete">network</translation>
+    </message>
+    <message>
+        <source>Advanced Options</source>
+        <translation type="obsolete">Дополнительные опции</translation>
+    </message>
+    <message>
+        <source>console</source>
+        <translation type="obsolete">console</translation>
+    </message>
+    <message>
+        <source>resources</source>
+        <translation type="obsolete">ресурсы</translation>
+    </message>
+    <message>
+        <source>Free CONFIG
+variables :</source>
+        <translation type="obsolete">Прочие переменные CONFIG:</translation>
+    </message>
+    <message>
+        <source>Variables</source>
+        <translation type="obsolete">Переменные</translation>
+    </message>
+    <message>
+        <source>Variable :</source>
+        <translation type="obsolete">Переменная:</translation>
+    </message>
+    <message>
+        <source>Values :</source>
+        <translation type="obsolete">Значения:</translation>
+    </message>
+    <message>
+        <source>Project Template</source>
+        <translation type="obsolete">Шаблон проекта</translation>
+    </message>
+    <message>
+        <source>subdirs</source>
+        <translation type="obsolete">подпапки</translation>
+    </message>
+    <message>
+        <source>Project or Scope :</source>
+        <translation type="obsolete">Проект или папка:</translation>
+    </message>
+    <message>
+        <source>Advanced mode</source>
+        <translation type="obsolete">Расширенный режим</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="obsolete">Отмена</translation>
     </message>
 </context>
 <context>
     <name>ProprieteProjetImpl</name>
     <message>
         <source>Properties of</source>
-        <translation>Свойство</translation>
+        <translation type="obsolete">Свойство</translation>
     </message>
     <message>
         <source>New Value:</source>
-        <translation>Новое значение:</translation>
+        <translation type="obsolete">Новое значение:</translation>
     </message>
     <message>
         <source>The spaces are don&apos;t correctly parsed by qmake</source>
-        <translation>Пробелы некорректно обрабатываются в qmake</translation>
+        <translation type="obsolete">Пробелы некорректно обрабатываются в qmake</translation>
     </message>
     <message>
         <source>delete spaces or put quotes.</source>
-        <translation>уберите пробелы или замените кавычками.</translation>
+        <translation type="obsolete">уберите пробелы или замените кавычками.</translation>
     </message>
     <message>
         <source>Modify</source>
-        <translation>Изменить</translation>
+        <translation type="obsolete">Изменить</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="obsolete">Отмена</translation>
     </message>
 </context>
 <context>
@@ -1881,11 +2727,19 @@ variables :</source>
     </message>
     <message>
         <source>Unable to find qmake</source>
-        <translation>Не могу найти qmake</translation>
+        <translation type="obsolete">Не могу найти qmake</translation>
     </message>
     <message>
         <source>Unable to start Assistant !</source>
-        <translation type="obsolete">Не могу запустить Assistant!</translation>
+        <translation type="unfinished">Не могу запустить Assistant!</translation>
+    </message>
+    <message>
+        <source>Unable to establish a database connection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>QDevelop needs SQLite support. Please read the Qt SQL driver documentation for information how to build it.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1998,6 +2852,13 @@ variables :</source>
     </message>
 </context>
 <context>
+    <name>Stack</name>
+    <message>
+        <source>Backtraces</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Subclassing</name>
     <message>
         <source>Qt Designer Form Subclassing</source>
@@ -2069,6 +2930,14 @@ variables :</source>
         <source>Close Tab</source>
         <translation>Закрыть вкладку</translation>
     </message>
+    <message>
+        <source>Close Other Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close All Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TextEdit</name>
@@ -2138,82 +3007,238 @@ variables :</source>
     </message>
     <message>
         <source>Toggle breakpoint</source>
-        <translation>Вкл/Выкл брейкпойнт</translation>
+        <translation type="obsolete">Вкл/Выкл брейкпойнт</translation>
+    </message>
+    <message>
+        <source>Toggle Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle Breakpoint</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ToolsControl</name>
+    <message>
+        <source>External Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отмена</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lrelease:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>make:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>qmake:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>designer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ctags:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lupdate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>gdb:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>linguist:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter the path to the external programs:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ToolsControlImpl</name>
+    <message>
+        <source>Please designe the program</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TreeClasses</name>
+    <message>
+        <source>Open Declaration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Implementation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh contents</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TreeProject</name>
+    <message>
+        <source>Add sub-project...</source>
+        <translation type="unfinished">Добавить под-проект...</translation>
+    </message>
+    <message>
+        <source>Add New Item...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Scope...</source>
+        <translation type="unfinished">Добавить папку...</translation>
+    </message>
+    <message>
+        <source>Add Existing Files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in Linguist</source>
+        <translation type="unfinished">Открыть в Лингвисте</translation>
+    </message>
+    <message>
+        <source>Refresh translation files</source>
+        <translation type="unfinished">Обновить файлы перевода</translation>
+    </message>
+    <message>
+        <source>Build release translation files</source>
+        <translation type="unfinished">Собрать файлы перевода</translation>
+    </message>
+    <message>
+        <source>Open in Designer</source>
+        <translation type="unfinished">Открыть в Designer</translation>
+    </message>
+    <message>
+        <source>Dialog Subclassing...</source>
+        <translation type="unfinished">Объекты диалога...</translation>
+    </message>
+    <message>
+        <source>Dialog Preview</source>
+        <translation type="unfinished">Предварительный вид Диалога</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Открыть</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation type="unfinished">Сортировать</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Удалить</translation>
+    </message>
+    <message>
+        <source>Propertie of</source>
+        <translation type="unfinished">Свойство</translation>
+    </message>
+    <message>
+        <source>Show As</source>
+        <translation type="unfinished">Показать как</translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <translation type="unfinished">Нормальный</translation>
+    </message>
+    <message>
+        <source>Krawek</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TreeProjet</name>
     <message>
         <source>Add sub-project...</source>
-        <translation>Добавить под-проект...</translation>
+        <translation type="obsolete">Добавить под-проект...</translation>
     </message>
     <message>
         <source>Add New Item...</source>
-        <translation>Добавить новый файл...</translation>
+        <translation type="obsolete">Добавить новый файл...</translation>
     </message>
     <message>
         <source>Add Scope...</source>
-        <translation>Добавить папку...</translation>
+        <translation type="obsolete">Добавить папку...</translation>
     </message>
     <message>
         <source>Add Existing Files...</source>
-        <translation>Добавить существующий файл...</translation>
+        <translation type="obsolete">Добавить существующий файл...</translation>
     </message>
     <message>
         <source>Open in Linguist</source>
-        <translation>Открыть в Лингвисте</translation>
+        <translation type="obsolete">Открыть в Лингвисте</translation>
     </message>
     <message>
         <source>Refresh translation files</source>
-        <translation>Обновить файлы перевода</translation>
+        <translation type="obsolete">Обновить файлы перевода</translation>
     </message>
     <message>
         <source>Build release translation files</source>
-        <translation>Собрать файлы перевода</translation>
+        <translation type="obsolete">Собрать файлы перевода</translation>
     </message>
     <message>
         <source>Open in Designer</source>
-        <translation>Открыть в Designer</translation>
+        <translation type="obsolete">Открыть в Designer</translation>
     </message>
     <message>
         <source>Dialog Subclassing...</source>
-        <translation>Объекты диалога...</translation>
+        <translation type="obsolete">Объекты диалога...</translation>
     </message>
     <message>
         <source>Dialog Preview</source>
-        <translation>Предварительный вид Диалога</translation>
+        <translation type="obsolete">Предварительный вид Диалога</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Открыть</translation>
+        <translation type="obsolete">Открыть</translation>
     </message>
     <message>
         <source>Sort</source>
-        <translation>Сортировать</translation>
+        <translation type="obsolete">Сортировать</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation type="obsolete">Удалить</translation>
     </message>
     <message>
         <source>Propertie of</source>
-        <translation>Свойство</translation>
+        <translation type="obsolete">Свойство</translation>
     </message>
     <message>
         <source>Show As</source>
-        <translation>Показать как</translation>
+        <translation type="obsolete">Показать как</translation>
     </message>
     <message>
         <source>Normal</source>
-        <translation>Нормальный</translation>
-    </message>
-    <message>
-        <source>Krawek</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Нормальный</translation>
     </message>
     <message>
         <source>Add Class...</source>
-        <translation>Добавить класс...</translation>
+        <translation type="obsolete">Добавить класс...</translation>
     </message>
 </context>
 <context>
