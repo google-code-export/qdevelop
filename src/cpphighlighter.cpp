@@ -21,13 +21,13 @@
 * Program URL   : http://qdevelop.org
 *
 */
-#include "CppHighlighter.h"
 #include <QtCore/QString>
 #include <QtCore/QMap>
 #include <QtCore/QRegExp>
 #include <QtGui/QTextCharFormat>
 #include <QtCore/QStringList>
 #include <QtCore/QDebug>
+#include "cpphighlighter.h"
 
 //
 CppHighlighter::CppHighlighter(QTextDocument* document):
