@@ -21,7 +21,7 @@
 * Program URL   : http://qdevelop.org
 *
 */
-#include "cpphighlighter.h"
+#include "CppHighlighter.h"
 #include <QtCore/QString>
 #include <QtCore/QMap>
 #include <QtCore/QRegExp>
@@ -100,37 +100,34 @@ void CppHighlighter::doRegexMatch(QString const& str, int startPos)
             if (index == -1)
                 break;
             int length = item.regex.matchedLength();
-            setFormat(index, length, formatFor(item.type));
             start = index + length;
+            QString cap = item.regex.cap();
+            if (item.type == TEXT)
+            {
+                if ((cap.at(0) == 'Q') || m_userKeywords.contains(cap))
+                    setFormat(index, length, formatFor(USER_KEYWORD));
+                else if (m_keywords.contains(cap))
+                    setFormat(index, length, formatFor(KEYWORD));
+                continue;
+            }
+            setFormat(index, length, formatFor(item.type));
         }
     }
 }
 
 //
-void CppHighlighter::addUserKeyword(QString const& regex)
+void CppHighlighter::addUserKeyword(QString const& keyword)
 {
-    RegexItem item;
-
-    item.regex = QRegExp(regex);
-    item.type = USER_KEYWORD;
-
-    m_regexItems.push_back(item);
+    m_userKeywords.insert(keyword);
 }
 
 //
-bool CppHighlighter::removeUserKeyword(QString const& regex)
+bool CppHighlighter::removeUserKeyword(QString const& keyword)
 {
-    QVector<RegexItem>::iterator iter = m_regexItems.begin();
-
-    while (m_regexItems.end() != iter)
+    if (m_userKeywords.contains(keyword))
     {
-        if ((iter->regex.pattern() == regex) &&
-            (iter->type == USER_KEYWORD))
-        {
-            m_regexItems.erase(iter);
-            return true;
-        }
-        ++iter;
+        m_userKeywords.remove(keyword);
+        return true;
     }
     return false;
 }
@@ -163,34 +160,17 @@ void CppHighlighter::setupRegexTable()
              << "union" << "unsigned" << "using" << "virtual" << "void"
              << "volatile" << "wchar_t" << "while";
 
-    foreach (QString str, keywords)
-    {
-        item.regex = QRegExp(QString("\\b") + str + "\\b");
-        item.type = KEYWORD;
-        m_regexItems.push_back(item);
-    }
+    item.regex = QRegExp("\\b[a-zA-Z_][a-zA-Z0-9_]+\\b");
+    item.type = TEXT;
+    m_regexItems.push_back(item);
 
+    m_keywords = QSet<QString>::fromList(keywords);
+    
     // user keywords
     QStringList userKeywords;
-    userKeywords << "\\bQ\\w+\\b" << "\\bforeach\\b";
-
-    foreach (QString str, userKeywords)
-    {
-        item.regex = QRegExp(str);
-        item.type = USER_KEYWORD;
-        m_regexItems.push_back(item);
-    }
-
-    // operators
-    QStringList operators;
-    operators << "\\b<<\\b" << "\\b==\\b";
-
-    foreach (QString str, operators)
-    {
-        item.regex = QRegExp(str);
-        item.type = OPERATOR;
-        m_regexItems.push_back(item);
-    }
+    userKeywords << "foreach";
+    
+    m_userKeywords = QSet<QString>::fromList(userKeywords);
 }
 
 // state
@@ -315,7 +295,7 @@ void CppHighlighter::highlightBlock(QString const& text)
         else if ((cap == "\"") || (cap == "'"))
         {
             endPos = searchStringEnd(text, startPos + 1, cap.at(0));
-            // handle unix string
+            // handle unicode string
             if ((startPos > 0) && text.at(startPos - 1) == QChar('L'))
                 --startPos;
             if (endPos == -1)
