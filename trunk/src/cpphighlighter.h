@@ -27,6 +27,7 @@
 #include <QtGui/QSyntaxHighlighter>
 #include <QtGui/QTextCharFormat>
 #include <QtCore/QVector>
+#include <QtCore/QSet>
 
 class QTextDocument;
 
@@ -69,6 +70,7 @@ private:
     QRegExp m_reMacro;
     QRegExp m_reMultilineMacro;
     QRegExp m_reSpecial;
+    QRegExp m_reWord;
 
     struct RegexItem
     {
@@ -77,6 +79,8 @@ private:
         QRegExp regex;
         SyntaxType type;
     };
+    QSet<QString> m_keywords;
+    QSet<QString> m_userKeywords;
     QVector<RegexItem> m_regexItems;
 
     // formats
