@@ -73,6 +73,7 @@ public:
 	bool showTreeClasses() { return m_showTreeClasses; };
 	void toggleBookmark(Editor *editor, QString text, bool activate, QTextBlock block);
 	QMenu *bookmarksMenu() { return menuBookmarks; };
+	bool shouldCheckEnvOnStartup(){ return m_checkEnvironmentOnStartup; };
 private:
 	// Functions
 	void createConnections();
@@ -116,24 +117,25 @@ private:
 	bool m_debugAfterBuild;
 	bool m_buildAfterDebug;
 	bool m_checkEnvironment;
+	bool m_checkEnvironmentOnStartup;
 	bool m_autoMaskDocks;
-    bool m_autoCompletion;
-    bool m_autobrackets;
-    bool m_ctagsIsPresent;
-    QColor m_backgroundColor;
-    QColor m_currentLineColor;
+	bool m_autoCompletion;
+	bool m_autobrackets;
+	bool m_ctagsIsPresent;
+	QColor m_backgroundColor;
+	QColor m_currentLineColor;
 	EndLine m_endLine;
 	bool m_tabSpaces;
 	QPointer<QActionGroup> m_projectGroup;
 	QTextCharFormat m_formatPreprocessorText, m_formatQtText, m_formatSingleComments;
 	QTextCharFormat m_formatMultilineComments, m_formatQuotationText, m_formatMethods, m_formatKeywords;
-    TabWidget *m_tabEditors;
-    FindFileImpl *m_findInFiles;
-    StackImpl *m_stack;
-    int m_intervalUpdatingClasses;
-    bool m_showTreeClasses;
-    InitCompletion *m_completion;
-    QAction *actionActiveBookmark;
+	TabWidget *m_tabEditors;
+	FindFileImpl *m_findInFiles;
+	StackImpl *m_stack;
+	int m_intervalUpdatingClasses;
+	bool m_showTreeClasses;
+	InitCompletion *m_completion;
+	QAction *actionActiveBookmark;
 protected:
 	void closeEvent( QCloseEvent * event );
 private slots:

@@ -19,6 +19,7 @@ public:
 	QString designerName() { return designer->text(); };
 	bool ctagsIsPresent()  { return m_ctagsIsPresent; };
 	bool checkEnvironment()  { return m_checkEnvironment; };
+	bool  checkEnvOnStartup() { return checkEnvironmentOnStartup->isChecked(); };
 private slots:
 	void on_linguistLocation_clicked();
 	void on_lupdateLocation_clicked();

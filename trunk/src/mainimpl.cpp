@@ -79,19 +79,20 @@ MainImpl::MainImpl(QWidget * parent)
 	m_debugAfterBuild = false;
 	m_buildAfterDebug = false;
 	m_checkEnvironment = true;
+	m_checkEnvironmentOnStartup = true;
 	m_endLine = Default;
 	m_tabSpaces = false;
-    m_autoCompletion = true;
-    m_autobrackets = true;
+	m_autoCompletion = true;
+	m_autobrackets = true;
 	m_backgroundColor = Qt::white;
 	m_promptBeforeQuit = false;
 	m_currentLineColor = QColor(215,252,255);
 	m_findInFiles = 0;
 	m_stack = 0;
-    m_intervalUpdatingClasses = 5;
-    m_showTreeClasses = true;
-    m_completion = 0;
-    m_projectsDirectory = QDir::homePath();
+	m_intervalUpdatingClasses = 5;
+	m_showTreeClasses = true;
+	m_completion = 0;
+	m_projectsDirectory = QDir::homePath();
 	//
 	m_formatPreprocessorText.setForeground(QColor(0,128,0));
 	m_formatQtText.setForeground(Qt::blue);
@@ -101,8 +102,8 @@ MainImpl::MainImpl(QWidget * parent)
 	m_formatMethods.setForeground(Qt::black);
 	m_formatKeywords.setForeground(Qt::blue);
 
-    tableLocalVariables->verticalHeader()->hide();    
-    tableOtherVariables->verticalHeader()->hide();
+	tableLocalVariables->verticalHeader()->hide();
+	tableOtherVariables->verticalHeader()->hide();
 
 #ifdef WIN32
 	m_font = QFont("Courier New", 10);
@@ -112,7 +113,7 @@ MainImpl::MainImpl(QWidget * parent)
 	m_tabStopWidth = 4;
 	m_lineNumbers = m_selectionBorder = m_autoIndent = m_cppHighlighter = true;
 	//
-    m_tabEditors = new TabWidget( this );
+	m_tabEditors = new TabWidget( this );
 	connect(m_tabEditors, SIGNAL(currentChanged(int)), this, SLOT(slotCurrentTabChanged(int)) );
 	//
 	QToolButton *cross = new QToolButton(m_tabEditors);
@@ -165,8 +166,8 @@ MainImpl::MainImpl(QWidget * parent)
 	dockExplorer->setFloating( false );
 	dockOutputs->setFloating( false );
 	//
-    dockExplorer->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
-    addDockWidget(Qt::LeftDockWidgetArea, dockExplorer);
+	dockExplorer->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+	addDockWidget(Qt::LeftDockWidgetArea, dockExplorer);
 	//
 	m_stack = new StackImpl( this );
 	m_stack->hide();
@@ -574,6 +575,7 @@ void MainImpl::saveINI()
 	settings.setValue("m_autoCompletion", m_autoCompletion);
 	settings.setValue("m_autobrackets", m_autobrackets);
 	settings.setValue("m_checkEnvironment", m_checkEnvironment);
+	settings.setValue("m_checkEnvironmentOnStartup", m_checkEnvironmentOnStartup);
 	settings.setValue("m_endLine", m_endLine);
 	settings.setValue("m_tabSpaces", m_tabSpaces);
 	settings.setValue("m_backgroundColor", m_backgroundColor.name());	
@@ -798,13 +800,14 @@ void MainImpl::loadINI()
 	m_cppHighlighter = settings.value("m_cppHighlighter", m_cppHighlighter).toBool();
 	m_lineNumbers = settings.value("m_lineNumbers", m_lineNumbers).toBool();
 	m_autoIndent = settings.value("m_autoIndent", m_autoIndent).toBool();	
-    m_autoCompletion = settings.value("m_autoCompletion", m_autoCompletion).toBool();
-    m_autobrackets = settings.value("m_autobrackets", m_autobrackets).toBool();
+	m_autoCompletion = settings.value("m_autoCompletion", m_autoCompletion).toBool();
+	m_autobrackets = settings.value("m_autobrackets", m_autobrackets).toBool();
 	m_selectionBorder = settings.value("m_selectionBorder", m_selectionBorder).toBool();
 	m_saveBeforeBuild = settings.value("m_saveBeforeBuild", m_saveBeforeBuild).toBool();
 	m_restoreOnStart = settings.value("m_restoreOnStart", m_restoreOnStart).toBool();
 	m_promptBeforeQuit = settings.value("m_promptBeforeQuit", m_promptBeforeQuit).toBool();
 	m_checkEnvironment = settings.value("m_checkEnvironment", m_checkEnvironment).toBool();
+	m_checkEnvironmentOnStartup = settings.value("m_checkEnvironmentOnStartup", m_checkEnvironmentOnStartup).toBool();
 	m_autoMaskDocks = settings.value("m_autoMaskDocks", m_autoMaskDocks).toBool();
 	m_endLine = (EndLine)settings.value("m_endLine", m_endLine).toInt();
 	m_tabSpaces = settings.value("m_tabSpaces", m_tabSpaces).toBool();
@@ -827,7 +830,7 @@ void MainImpl::loadINI()
 	// Load shortcuts
 	QList<QObject*> childrens;
 	childrens = children();
-    QListIterator<QObject*> iterator(childrens);
+	QListIterator<QObject*> iterator(childrens);
 	while( iterator.hasNext() )
 	{
 		QObject *object = iterator.next();
@@ -940,7 +943,7 @@ void MainImpl::slotOpen()
 	}
 	else
 		openFile( QStringList( s ) );
-    dir = QDir().absoluteFilePath( s );
+	dir = QDir().absoluteFilePath( s );
 }
 
 void MainImpl::slotOpenProject()
@@ -952,7 +955,7 @@ void MainImpl::slotOpenProject()
 		this,
 		tr("Choose a project to open"),
 		dir,
-		tr("Projects")+" (*.pro);;"
+		tr("Projects")+" (*.pro)"
 	);
 	if( s.isEmpty() )
 	{
@@ -2006,11 +2009,13 @@ void MainImpl::slotFindInFiles()
 //
 void MainImpl::slotToolsControl(bool show)
 {
-	if( !m_checkEnvironment && !show)
+	if (!show)
 		return;
+	
 	ToolsControlImpl *toolsControlImpl = new ToolsControlImpl( this );
 	if( !toolsControlImpl->toolsControl() || show )
 		toolsControlImpl->exec();
+	
 	m_qmakeName = toolsControlImpl->qmakeName();
 	m_makeName = toolsControlImpl->makeName();
 	m_gdbName = toolsControlImpl->gdbName();
@@ -2022,6 +2027,7 @@ void MainImpl::slotToolsControl(bool show)
 	//
 	m_ctagsIsPresent = toolsControlImpl->ctagsIsPresent();
 	m_checkEnvironment = toolsControlImpl->checkEnvironment();
+	m_checkEnvironmentOnStartup = toolsControlImpl->checkEnvOnStartup();
 	delete toolsControlImpl;
 	treeClasses->setCtagsIsPresent( m_ctagsIsPresent );
 	treeClasses->setCtagsName( m_ctagsName );
