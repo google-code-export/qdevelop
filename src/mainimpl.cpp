@@ -241,6 +241,7 @@ void MainImpl::createConnections()
 	connect(actionAbout, SIGNAL(triggered()), this, SLOT(slotAbout()) );
 	connect(actionNewProject, SIGNAL(triggered()), this, SLOT(slotNewProject()) );
 	connect(actionOpen, SIGNAL(triggered()), this, SLOT(slotOpen()) );
+	connect(actionOpenProject, SIGNAL(triggered()), this, SLOT(slotOpenProject()) );
 	connect(actionSaveFile, SIGNAL(triggered()), this, SLOT(slotSaveFile()) );
 	connect(actionSaveAll, SIGNAL(triggered()), this, SLOT(slotSaveAll()) );
 	connect(actionSaveFileAs, SIGNAL(triggered()), this, SLOT(slotSaveFileAs()) );
@@ -861,6 +862,7 @@ void MainImpl::loadINI()
 		settings.endGroup();
 	}
 }
+
 void MainImpl::closeEvent( QCloseEvent * event )
 {
 	int response = 0;
@@ -876,14 +878,22 @@ void MainImpl::closeEvent( QCloseEvent * event )
 		return;
 	}
 	saveINI();
-	if( slotCloseProject() )
+	
+	if( slotCloseAllFiles() )
 	{
-		delete m_assistant;
-		event->accept();
+		this->hide();
+		if( slotCloseProject() )
+		{
+			delete m_assistant;
+			event->accept();
+		}
+		else
+			event->ignore();
 	}
 	else
 		event->ignore();
 }
+
 //
 bool MainImpl::slotCloseAllFiles()
 {
@@ -901,12 +911,15 @@ bool MainImpl::slotCloseAllFiles()
 	}
 	return ok;
 }
+
 //
+static QString dir;
+
 void MainImpl::slotOpen()
 {
-	static QString dir = m_projectsDirectory;
 	if( dir.isEmpty() && m_projectManager )
-        dir = m_projectManager->projectDirectory( treeFiles->topLevelItem ( 0 ) );
+        	dir = m_projectManager->projectDirectory( treeFiles->topLevelItem ( 0 ) );
+	
 	QString s = QFileDialog::getOpenFileName(
 		this,
 		tr("Choose a file to open"),
@@ -929,6 +942,29 @@ void MainImpl::slotOpen()
 		openFile( QStringList( s ) );
     dir = QDir().absoluteFilePath( s );
 }
+
+void MainImpl::slotOpenProject()
+{
+	if( dir.isEmpty() && m_projectManager )
+		dir = m_projectManager->projectDirectory( treeFiles->topLevelItem ( 0 ) );
+	
+	QString s = QFileDialog::getOpenFileName(
+		this,
+		tr("Choose a project to open"),
+		dir,
+		tr("Projects")+" (*.pro);;"
+	);
+	if( s.isEmpty() )
+	{
+		// Cancel is clicked
+		return;
+	}
+	
+	openProject(s);
+	dir = QDir().absoluteFilePath( s );
+}
+
+
 //
 bool MainImpl::openProject(QString s)
 {
@@ -1023,7 +1059,7 @@ void MainImpl::slotSaveFileAs()
 		tr("Files (*.cpp *.h *.txt *.* *)") );
 	if( s.isEmpty() )
 	{
-		// Le bouton Annuler a ï¿½ï¿½cliquï¿?		return;
+		// Le bouton Annuler a ï¿½ï¿½cliquï¿½		return;
 	}
 	editor->setFilename( s );
 	editor->save();
