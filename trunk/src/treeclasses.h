@@ -99,6 +99,8 @@ private:
 	void createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem);
 	QString getPathHash(QString const& pathName);
 	QString m_ctagsName;
+	QString toHexa(QString line);
+	QString fromHexa(QString line);
 	//QSqlDatabase db;
 private slots:
 	void slotParseCtags();

@@ -468,25 +468,24 @@ QTreeWidgetItem *TreeClasses::findItem(const QTreeWidgetItem *begin, const QStri
 void TreeClasses::mousePressEvent( QMouseEvent * event )
 {
 	m_itemClicked = itemAt( event->pos() );
-	if( !m_itemClicked )
-		return;
 	if( event->button() == Qt::RightButton )
 	{
-		setCurrentItem( m_itemClicked );
-		if( !m_itemClicked )
-			return;
-		ParsedItem parsedItem = m_itemClicked->data(0, Qt::UserRole).value<ParsedItem>();
 		QMenu *menu = new QMenu(this);
-		if( parsedItem.key.left(10) != "parent:" )
+		if( m_itemClicked )
 		{
-			if( !parsedItem.declaration.isEmpty() )
-				connect(menu->addAction(QIcon(":/treeview/images/h.png"), tr("Open Declaration")), SIGNAL(triggered()), this, SLOT(slotOpenDeclaration()) );
-			if( !parsedItem.implementation.isEmpty() )
-				connect(menu->addAction(QIcon(":/treeview/images/cpp.png"), tr("Open Implementation")), SIGNAL(triggered()), this, SLOT(slotOpenImplementation()) );
-			menu->addSeparator();
-			connect(menu->addAction(QIcon(":/toolbar/images/refresh.png"), tr("Refresh contents")), SIGNAL(triggered()), this, SLOT(slotRefresh()) );
-			menu->exec(event->globalPos());
+			setCurrentItem( m_itemClicked );
+			ParsedItem parsedItem = m_itemClicked->data(0, Qt::UserRole).value<ParsedItem>();
+			if( parsedItem.key.left(10) != "parent:" )
+			{
+				if( !parsedItem.declaration.isEmpty() )
+					connect(menu->addAction(QIcon(":/treeview/images/h.png"), tr("Open Declaration")), SIGNAL(triggered()), this, SLOT(slotOpenDeclaration()) );
+				if( !parsedItem.implementation.isEmpty() )
+					connect(menu->addAction(QIcon(":/treeview/images/cpp.png"), tr("Open Implementation")), SIGNAL(triggered()), this, SLOT(slotOpenImplementation()) );
+				menu->addSeparator();
+			}
 		}
+		connect(menu->addAction(QIcon(":/toolbar/images/refresh.png"), tr("Refresh contents")), SIGNAL(triggered()), this, SLOT(slotRefresh()) );
+		menu->exec(event->globalPos());
 		delete menu;
 	}
 	QTreeWidget::mousePressEvent(event);
@@ -547,22 +546,22 @@ void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSq
 	ParsedItem parsedItem = it->data(0, Qt::UserRole).value<ParsedItem>();
     QString queryString = "insert into classesbrowser values(";
     queryString = queryString
-        + "'" + it->text(0) + "', "
-        + "'" + it->toolTip(0) + "', "
-        + "'" + parsedItem.icon + "', "
-        + "'" + parsedItem.key + "', "
-        + "'" + parents + "', "
-        + "'" + parsedItem.name + "', "
-        + "'" + parsedItem.implementation + "', "
-        + "'" + parsedItem.declaration + "', "
-        + "'" + parsedItem.ex_cmd + "', "
-        + "'" + parsedItem.language + "', "
-        + "'" + parsedItem.classname + "', "
-        + "'" + parsedItem.structname + "', "
-        + "'" + parsedItem.enumname + "', "
-        + "'" + parsedItem.access + "', "
-        + "'" + parsedItem.signature + "', "
-        + "'" + parsedItem.kind + "')";
+        + "'" + toHexa( it->text(0) ) + "', "
+        + "'" + toHexa( it->toolTip(0) ) + "', "
+        + "'" + toHexa( parsedItem.icon ) + "', "
+        + "'" + toHexa( parsedItem.key ) + "', "
+        + "'" + toHexa( parents ) + "', "
+        + "'" + toHexa( parsedItem.name ) + "', "
+        + "'" + toHexa( parsedItem.implementation ) + "', "
+        + "'" + toHexa( parsedItem.declaration ) + "', "
+        + "'" + toHexa( parsedItem.ex_cmd ) + "', "
+        + "'" + toHexa( parsedItem.language ) + "', "
+        + "'" + toHexa( parsedItem.classname ) + "', "
+        + "'" + toHexa( parsedItem.structname ) + "', "
+        + "'" + toHexa( parsedItem.enumname ) + "', "
+        + "'" + toHexa( parsedItem.access ) + "', "
+        + "'" + toHexa( parsedItem.signature ) + "', "
+        + "'" + toHexa( parsedItem.kind ) + "')";
     bool rc = query.exec(queryString);
 //qDebug() << "writeItemToDB" << it->text(0) << parsedItem.icon;
     if (rc == false)
@@ -590,26 +589,49 @@ void TreeClasses::fromDB(QString projectDirectory)
     while (query.next())
     {
     	ParsedItem parsedItem;
-        QString text = query.value(0).toString();
-        QString tooltip = query.value(1).toString();
-        parsedItem.icon = query.value(2).toString();
-        parsedItem.key = query.value(3).toString();
-        QString parents = query.value(4).toString();
-        parsedItem.name = query.value(5).toString();
-        parsedItem.implementation = query.value(6).toString();
-        parsedItem.declaration = query.value(7).toString();
-        parsedItem.ex_cmd = query.value(8).toString();
-        parsedItem.language = query.value(9).toString();
-        parsedItem.classname = query.value(10).toString();
-        parsedItem.structname = query.value(11).toString();
-        parsedItem.enumname = query.value(12).toString();
-        parsedItem.access = query.value(13).toString();
-        parsedItem.signature = query.value(14).toString();
-        parsedItem.kind = query.value(15).toString();
+        QString text = fromHexa( query.value(0).toString() );
+        QString tooltip = fromHexa( query.value(1).toString() );
+        parsedItem.icon = fromHexa( query.value(2).toString() );
+        parsedItem.key = fromHexa( query.value(3).toString() );
+        QString parents = fromHexa( query.value(4).toString() );
+        parsedItem.name = fromHexa( query.value(5).toString() );
+        parsedItem.implementation = fromHexa( query.value(6).toString() );
+        parsedItem.declaration = fromHexa( query.value(7).toString() );
+        parsedItem.ex_cmd = fromHexa( query.value(8).toString() );
+        parsedItem.language = fromHexa( query.value(9).toString() );
+        parsedItem.classname = fromHexa( query.value(10).toString() );
+        parsedItem.structname = fromHexa( query.value(11).toString() );
+        parsedItem.enumname = fromHexa( query.value(12).toString() );
+        parsedItem.access = fromHexa( query.value(13).toString() );
+        parsedItem.signature = fromHexa( query.value(14).toString() );
+        parsedItem.kind = fromHexa( query.value(15).toString() );
         createItemFromDB(topLevelItem(0), text, tooltip, parents, parsedItem);
     }
     query.exec("END TRANSACTION;");
 	//db.close();
+}
+//
+QString TreeClasses::toHexa(QString line)
+{
+	QString hexa;
+	for(int i=0; i<line.length(); i++)
+	{
+		ushort character = line.at(i).unicode();
+		hexa += QString().sprintf("%02X", character);
+	}
+	return hexa;
+}
+//
+QString TreeClasses::fromHexa(QString line)
+{
+	QString s;
+	bool ok;
+	for(int i=0; i<line.length(); i+=2)
+	{
+		QChar character( line.mid(i, 2).toUInt(&ok, 16) );
+		s += character;
+	}
+	return s;
 }
 //
 void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem)
@@ -672,7 +694,8 @@ void TreeClasses::mouseDoubleClickEvent ( QMouseEvent * event )
 //
 QString TreeClasses::signature(QString line)
 {
-	QString params = line.section("(", 1).section(")", 0, 0).simplified();
+	QString params = line.mid( line.indexOf("(")+1 );
+	params = params.left( params.lastIndexOf(")") ) .simplified();
 	QString formattedParams;
 	foreach(QString param, params.split(",") )
 	{
@@ -685,13 +708,11 @@ QString TreeClasses::signature(QString line)
 			param = param.simplified().left( param.simplified().indexOf(" ") );
 		else if( param.simplified().contains("=") )
 			param = param.simplified().left( param.simplified().lastIndexOf("=") );
-		//param = param.section(" ", 0, 0);
 		formattedParams += param + ",";
 	}
 	formattedParams = formattedParams.simplified().left( formattedParams.lastIndexOf(",") );
 	formattedParams.remove( " " );
 	QString s ="(" + formattedParams + ")";
-//qDebug()<<s;
 	return s;
 }
 //
