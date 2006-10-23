@@ -379,7 +379,17 @@ void TextEdit::autoUnindent()
 			break;
 	}
 	if( blancs.length() && caractere=="}" && blocAvant.text().simplified()!="{")
-		blancs.remove(0, 1);
+	{
+		if( m_tabSpaces )
+		{
+			int nbSpaces = tabStopWidth() / fontMetrics().width( " " );
+			for(int i = 0; i<nbSpaces; i++)
+				if( blancs.at(0) == ' ' )
+					blancs.remove(0, 1);
+		}
+		else
+			blancs.remove(0, 1);
+	}
 	QTextCursor cursor = textCursor();
 	cursor.movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor );
 	cursor.movePosition(QTextCursor::EndOfLine, QTextCursor::KeepAnchor );
