@@ -16,18 +16,23 @@ ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
 	QString suffix;
 #ifdef Q_OS_WIN32
 	suffix = ".exe";
+	QChar dirDelimiter = '\\';
+#else	
+	QChar dirDelimiter = '/';
 #endif
+
 	setupUi(this);
 	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 	settings.beginGroup("Options");
-	qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/qmake"+suffix).toString() );
+	qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"qmake"+suffix).toString() );
 	make->setText( settings.value("m_makeName").toString() );
 	gdb->setText( settings.value("m_gdbName").toString() );
 	ctags->setText( settings.value("m_ctagsName").toString() );
-	linguist->setText( settings.value("m_linguistName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/linguist"+suffix).toString() );
-	lupdate->setText( settings.value("m_lupdateName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/lupdate"+suffix).toString() );
-	lrelease->setText( settings.value("m_lreleaseName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/lrelease"+suffix).toString() );
-	designer->setText( settings.value("m_designerName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/designer"+suffix).toString() );
+	linguist->setText( settings.value("m_linguistName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"linguist"+suffix).toString() );
+	lupdate->setText ( settings.value("m_lupdateName" , QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lupdate" +suffix).toString() );
+	lrelease->setText( settings.value("m_lreleaseName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lrelease"+suffix).toString() );
+	designer->setText( settings.value("m_designerName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"designer"+suffix).toString() );
+	checkEnvironmentOnStartup->setChecked( settings.value("m_checkEnvironmentOnStartup", true).toBool() );
 	settings.endGroup();
 }
 //
