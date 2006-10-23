@@ -25,13 +25,20 @@ ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
 	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 	settings.beginGroup("Options");
 	qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"qmake"+suffix).toString() );
-	make->setText( settings.value("m_makeName").toString() );
-	gdb->setText( settings.value("m_gdbName").toString() );
-	ctags->setText( settings.value("m_ctagsName").toString() );
 	linguist->setText( settings.value("m_linguistName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"linguist"+suffix).toString() );
 	lupdate->setText ( settings.value("m_lupdateName" , QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lupdate" +suffix).toString() );
 	lrelease->setText( settings.value("m_lreleaseName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lrelease"+suffix).toString() );
 	designer->setText( settings.value("m_designerName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"designer"+suffix).toString() );
+	
+#ifdef Q_OS_WIN32
+	make->setText( settings.value("m_makeName").toString() );
+	gdb->setText( settings.value("m_gdbName").toString() );
+	ctags->setText( settings.value("m_ctagsName").toString() );
+#else
+	make->setText( settings.value("m_makeName", "/usr/bin/make").toString() );
+	gdb->setText( settings.value("m_gdbName", "/usr/bin/gdb").toString() );
+	ctags->setText( settings.value("m_ctagsName", "/usr/bin/ctags").toString() );
+#endif
 	checkEnvironmentOnStartup->setChecked( settings.value("m_checkEnvironmentOnStartup", true).toBool() );
 	settings.endGroup();
 }
