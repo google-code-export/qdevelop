@@ -39,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>795</width>
-     <height>21</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu" >
@@ -92,38 +92,6 @@
     <addaction name="separator" />
     <addaction name="actionCompile" />
    </widget>
-   <widget class="QMenu" name="menu_File" >
-    <property name="title" >
-     <string>&amp;File</string>
-    </property>
-    <widget class="QMenu" name="menuLastsProjects" >
-     <property name="title" >
-      <string>Last Projects</string>
-     </property>
-    </widget>
-    <widget class="QMenu" name="menuLastsFiles" >
-     <property name="title" >
-      <string>Last Files</string>
-     </property>
-    </widget>
-    <addaction name="actionNewFile" />
-    <addaction name="actionOpen" />
-    <addaction name="separator" />
-    <addaction name="actionSaveFile" />
-    <addaction name="actionSaveFileAs" />
-    <addaction name="actionCloseAllFiles" />
-    <addaction name="separator" />
-    <addaction name="actionSaveProject" />
-    <addaction name="actionCloseProject" />
-    <addaction name="separator" />
-    <addaction name="actionSaveAll" />
-    <addaction name="separator" />
-    <addaction name="actionPrint" />
-    <addaction name="menuLastsProjects" />
-    <addaction name="menuLastsFiles" />
-    <addaction name="separator" />
-    <addaction name="actionQuit" />
-   </widget>
    <widget class="QMenu" name="menu_Edit" >
     <property name="title" >
      <string>&amp;Edit</string>
@@ -163,20 +131,6 @@
     </widget>
     <addaction name="menuToolbar" />
    </widget>
-   <widget class="QMenu" name="menuProject" >
-    <property name="enabled" >
-     <bool>true</bool>
-    </property>
-    <property name="title" >
-     <string>&amp;Project</string>
-    </property>
-    <addaction name="actionNewProject" />
-    <addaction name="actionAddNewItem" />
-    <addaction name="actionAddScope" />
-    <addaction name="actionAddExistingFiles" />
-    <addaction name="separator" />
-    <addaction name="actionProjectPropertie" />
-   </widget>
    <widget class="QMenu" name="menuTools" >
     <property name="title" >
      <string>Tools</string>
@@ -186,6 +140,29 @@
     <addaction name="actionOptions" />
     <addaction name="actionExternalTools" />
     <addaction name="actionConfigureShortcuts" />
+   </widget>
+   <widget class="QMenu" name="menu_File" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <widget class="QMenu" name="menuLastsFiles" >
+     <property name="title" >
+      <string>Last Files</string>
+     </property>
+    </widget>
+    <addaction name="actionNewFile" />
+    <addaction name="actionOpen" />
+    <addaction name="separator" />
+    <addaction name="actionSaveFile" />
+    <addaction name="actionSaveFileAs" />
+    <addaction name="separator" />
+    <addaction name="actionSaveAll" />
+    <addaction name="actionCloseAllFiles" />
+    <addaction name="separator" />
+    <addaction name="actionPrint" />
+    <addaction name="menuLastsFiles" />
+    <addaction name="separator" />
+    <addaction name="actionQuit" />
    </widget>
    <widget class="QMenu" name="menuBookmarks" >
     <property name="title" >
@@ -198,11 +175,36 @@
     <addaction name="actionClearAllBookmarks" />
     <addaction name="separator" />
    </widget>
+   <widget class="QMenu" name="menuProject" >
+    <property name="enabled" >
+     <bool>true</bool>
+    </property>
+    <property name="title" >
+     <string>&amp;Project</string>
+    </property>
+    <widget class="QMenu" name="menuLastsProjects" >
+     <property name="title" >
+      <string>Last Projects</string>
+     </property>
+    </widget>
+    <addaction name="actionNewProject" />
+    <addaction name="actionOpenProject" />
+    <addaction name="actionSaveProject" />
+    <addaction name="actionCloseProject" />
+    <addaction name="separator" />
+    <addaction name="menuLastsProjects" />
+    <addaction name="separator" />
+    <addaction name="actionAddNewItem" />
+    <addaction name="actionAddScope" />
+    <addaction name="actionAddExistingFiles" />
+    <addaction name="separator" />
+    <addaction name="actionProjectPropertie" />
+   </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
    <addaction name="menuView" />
-   <addaction name="menuProject" />
    <addaction name="menuBookmarks" />
+   <addaction name="menuProject" />
    <addaction name="menuBuild" />
    <addaction name="menuDebug" />
    <addaction name="menuEditors" />
@@ -717,6 +719,9 @@
    <addaction name="actionStepOut" />
   </widget>
   <action name="actionNewProject" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/toolbar/images/filenew.png</iconset>
+   </property>
    <property name="text" >
     <string>&amp;New Project...</string>
    </property>
@@ -741,8 +746,11 @@
    </property>
   </action>
   <action name="actionOpenProject" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/toolbar/images/fileopen.png</iconset>
+   </property>
    <property name="text" >
-    <string>&amp;Project...</string>
+    <string>&amp;Open Project...</string>
    </property>
   </action>
   <action name="actionCloseAllFiles" >
@@ -1231,6 +1239,9 @@
    </property>
   </action>
   <action name="actionSaveProject" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/toolbar/images/filesave.png</iconset>
+   </property>
    <property name="text" >
     <string>Save Project</string>
    </property>

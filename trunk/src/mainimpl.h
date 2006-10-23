@@ -138,6 +138,7 @@ protected:
 	void closeEvent( QCloseEvent * event );
 private slots:
 	void slotOpen();
+	void slotOpenProject();
 	void slotSaveFile();
 	void slotCompleteCode();
 	void slotSaveFileAs();
