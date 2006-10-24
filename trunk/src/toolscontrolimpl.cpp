@@ -22,7 +22,12 @@ ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
 #endif
 
 	setupUi(this);
-	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
+	//QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
+#ifdef Q_OS_WIN32
+	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
+#else
+	QSettings settings ();
+#endif	
 	settings.beginGroup("Options");
 	qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"qmake"+suffix).toString() );
 	linguist->setText( settings.value("m_linguistName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"linguist"+suffix).toString() );
@@ -183,7 +188,12 @@ bool ToolsControlImpl::toolsControl()
 
 void ToolsControlImpl::on_okButton_clicked()
 {
-	QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
+	//QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
+#ifdef Q_OS_WIN32
+	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
+#else
+	QSettings settings ();
+#endif	
 	settings.beginGroup("Options");
 	settings.setValue("m_qmakeName", qmake->text());
 	settings.setValue("m_makeName", make->text());
