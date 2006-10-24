@@ -114,7 +114,9 @@ void TreeClasses::slotParseCtags()
 	if( read.isEmpty() )
 		return;
 	if( topLevelItem(0) )
+	{
 		setSortingSymbols(topLevelItem(0), true, filename, ext, parents);
+	}
 	foreach(QString s, read.split("\n", QString::SkipEmptyParts) )
 	{
 		if( !s.isEmpty() && s.simplified().at(0) == '!' )
@@ -163,6 +165,7 @@ void TreeClasses::slotParseCtags()
 		m_listDeletion.clear();
 		setItemExpanded(topLevelItem(0), true );
 		sortItems(0, Qt::AscendingOrder);
+		m_treeClassesItems.clear();
 		setSortingSymbols(topLevelItem(0), false, QString(), QString(), QStringList());
 	}
 }
@@ -281,6 +284,7 @@ void TreeClasses::parse(ParsedItem parsedItem)
 void TreeClasses::setSortingSymbols(QTreeWidgetItem *it, bool active, QString filename, QString ext, QStringList parents)
 {
 	ParsedItem parsedItem = it->data(0, Qt::UserRole).value<ParsedItem>();
+	m_treeClassesItems.append( parsedItem );
 	if( active )
 	{
 		it->setText(0, markForSorting(parsedItem.kind, it->text(0)) );
@@ -546,22 +550,22 @@ void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSq
 	ParsedItem parsedItem = it->data(0, Qt::UserRole).value<ParsedItem>();
     QString queryString = "insert into classesbrowser values(";
     queryString = queryString
-        + "'" + toHexa( it->text(0) ) + "', "
-        + "'" + toHexa( it->toolTip(0) ) + "', "
-        + "'" + toHexa( parsedItem.icon ) + "', "
-        + "'" + toHexa( parsedItem.key ) + "', "
-        + "'" + toHexa( parents ) + "', "
-        + "'" + toHexa( parsedItem.name ) + "', "
-        + "'" + toHexa( parsedItem.implementation ) + "', "
-        + "'" + toHexa( parsedItem.declaration ) + "', "
-        + "'" + toHexa( parsedItem.ex_cmd ) + "', "
-        + "'" + toHexa( parsedItem.language ) + "', "
-        + "'" + toHexa( parsedItem.classname ) + "', "
-        + "'" + toHexa( parsedItem.structname ) + "', "
-        + "'" + toHexa( parsedItem.enumname ) + "', "
-        + "'" + toHexa( parsedItem.access ) + "', "
-        + "'" + toHexa( parsedItem.signature ) + "', "
-        + "'" + toHexa( parsedItem.kind ) + "')";
+        + "'" + it->text(0).replace("'", "$") + "', "
+        + "'" + it->toolTip(0).replace("'", "$") + "', "
+        + "'" + parsedItem.icon.replace("'", "$") + "', "
+        + "'" + parsedItem.key.replace("'", "$") + "', "
+        + "'" + parents.replace("'", "$") + "', "
+        + "'" + parsedItem.name.replace("'", "$") + "', "
+        + "'" + parsedItem.implementation.replace("'", "$") + "', "
+        + "'" + parsedItem.declaration.replace("'", "$") + "', "
+        + "'" + parsedItem.ex_cmd.replace("'", "$") + "', "
+        + "'" + parsedItem.language.replace("'", "$") + "', "
+        + "'" + parsedItem.classname.replace("'", "$") + "', "
+        + "'" + parsedItem.structname.replace("'", "$") + "', "
+        + "'" + parsedItem.enumname.replace("'", "$") + "', "
+        + "'" + parsedItem.access.replace("'", "$") + "', "
+        + "'" + parsedItem.signature.replace("'", "$") + "', "
+        + "'" + parsedItem.kind.replace("'", "$") + "')";
     bool rc = query.exec(queryString);
 //qDebug() << "writeItemToDB" << it->text(0) << parsedItem.icon;
     if (rc == false)
@@ -580,6 +584,7 @@ void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSq
 void TreeClasses::fromDB(QString projectDirectory)
 {
 //qDebug()<<"fromDB :"+projectDirectory+"/qdevelop-settings.db";
+	m_treeClassesItems.clear();
     connectDB(projectDirectory+"/qdevelop-settings.db");
 	QSqlQuery query;
     query.exec("BEGIN TRANSACTION;");
@@ -589,50 +594,29 @@ void TreeClasses::fromDB(QString projectDirectory)
     while (query.next())
     {
     	ParsedItem parsedItem;
-        QString text = fromHexa( query.value(0).toString() );
-        QString tooltip = fromHexa( query.value(1).toString() );
-        parsedItem.icon = fromHexa( query.value(2).toString() );
-        parsedItem.key = fromHexa( query.value(3).toString() );
-        QString parents = fromHexa( query.value(4).toString() );
-        parsedItem.name = fromHexa( query.value(5).toString() );
-        parsedItem.implementation = fromHexa( query.value(6).toString() );
-        parsedItem.declaration = fromHexa( query.value(7).toString() );
-        parsedItem.ex_cmd = fromHexa( query.value(8).toString() );
-        parsedItem.language = fromHexa( query.value(9).toString() );
-        parsedItem.classname = fromHexa( query.value(10).toString() );
-        parsedItem.structname = fromHexa( query.value(11).toString() );
-        parsedItem.enumname = fromHexa( query.value(12).toString() );
-        parsedItem.access = fromHexa( query.value(13).toString() );
-        parsedItem.signature = fromHexa( query.value(14).toString() );
-        parsedItem.kind = fromHexa( query.value(15).toString() );
+        QString text = query.value(0).toString().replace("$", "'");
+        QString tooltip = query.value(1).toString().replace("$", "'");
+        parsedItem.icon = query.value(2).toString().replace("$", "'");
+        parsedItem.key = query.value(3).toString().replace("$", "'");
+        QString parents = query.value(4).toString().replace("$", "'");
+        parsedItem.name = query.value(5).toString().replace("$", "'");
+        parsedItem.implementation = query.value(6).toString().replace("$", "'");
+        parsedItem.declaration = query.value(7).toString().replace("$", "'");
+        parsedItem.ex_cmd = query.value(8).toString().replace("$", "'");
+        parsedItem.language = query.value(9).toString().replace("$", "'");
+        parsedItem.classname = query.value(10).toString().replace("$", "'");
+        parsedItem.structname = query.value(11).toString().replace("$", "'");
+        parsedItem.enumname = query.value(12).toString().replace("$", "'");
+        parsedItem.access = query.value(13).toString().replace("$", "'");
+        parsedItem.signature = query.value(14).toString().replace("$", "'");
+        parsedItem.kind = query.value(15).toString().replace("$", "'");
         createItemFromDB(topLevelItem(0), text, tooltip, parents, parsedItem);
+		m_treeClassesItems.append( parsedItem );
     }
     query.exec("END TRANSACTION;");
 	//db.close();
 }
 //
-QString TreeClasses::toHexa(QString line)
-{
-	QString hexa;
-	for(int i=0; i<line.length(); i++)
-	{
-		ushort character = line.at(i).unicode();
-		hexa += QString().sprintf("%02X", character);
-	}
-	return hexa;
-}
-//
-QString TreeClasses::fromHexa(QString line)
-{
-	QString s;
-	bool ok;
-	for(int i=0; i<line.length(); i+=2)
-	{
-		QChar character( line.mid(i, 2).toUInt(&ok, 16) );
-		s += character;
-	}
-	return s;
-}
 //
 void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem)
 {

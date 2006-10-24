@@ -65,11 +65,6 @@ void Build::run()
 	{
 
 		emit message( QString("\n"+tr("Clean Project")+" (make clean)...\n") );
-//#ifdef WIN32
-		//m_buildProcess->start("mingw32-make", QStringList("clean"));
-//#else
-		//m_buildProcess->start("make", QStringList("clean"));
-//#endif
 		m_buildProcess->start(m_makeName, QStringList("clean"));
     		if (!m_buildProcess->waitForFinished(800000))
 		{
@@ -89,11 +84,6 @@ void Build::run()
 		else
 		{
 			emit message( QString("\n"+tr("Build")+" (make)...\n") );
-//#ifdef WIN32
-			//m_buildProcess->start("mingw32-make");
-//#else
-			//m_buildProcess->start("make");
-//#endif
 		m_buildProcess->start(m_makeName);
 		}
     		if (!m_buildProcess->waitForFinished(800000))

@@ -76,11 +76,12 @@ public:
 	void toDB(QString projectDirectory);
 	void fromDB(QString projectDirectory);
 	void setCtagsName(QString s) { m_ctagsName=s;};
-	//void clearFile(QString filename);
+	QList<ParsedItem> treeClassesItems() { return m_treeClassesItems; };
 protected:
 	void mousePressEvent( QMouseEvent * event );
 	void mouseDoubleClickEvent ( QMouseEvent * event );
 private:
+	QList<ParsedItem> m_treeClassesItems;
 	QTreeWidgetItem *m_itemClicked;
 	QList<QTreeWidgetItem *> m_listDeletion;
 	QTreeWidgetItem *findItem(const QTreeWidgetItem *begin, const QString text, const QString key, const bool recursive);
@@ -99,9 +100,6 @@ private:
 	void createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem);
 	QString getPathHash(QString const& pathName);
 	QString m_ctagsName;
-	QString toHexa(QString line);
-	QString fromHexa(QString line);
-	//QSqlDatabase db;
 private slots:
 	void slotParseCtags();
 	void slotOpenImplementation();

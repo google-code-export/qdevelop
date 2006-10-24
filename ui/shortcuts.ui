@@ -1,7 +1,4 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>Shortcuts</class>
  <widget class="QDialog" name="Shortcuts" >
   <property name="geometry" >
@@ -15,6 +12,9 @@
   <property name="windowTitle" >
    <string>Configure Shortcuts</string>
   </property>
+  <property name="sizeGripEnabled" >
+   <bool>true</bool>
+  </property>
   <layout class="QGridLayout" >
    <property name="margin" >
     <number>9</number>
@@ -27,11 +27,11 @@
      <property name="alternatingRowColors" >
       <bool>true</bool>
      </property>
-     <property name="rowCount" >
-      <number>0</number>
-     </property>
      <property name="sortingEnabled" >
       <bool>false</bool>
+     </property>
+     <property name="rowCount" >
+      <number>0</number>
      </property>
      <column>
       <property name="text" >
@@ -91,7 +91,6 @@
    </item>
   </layout>
  </widget>
- <pixmapfunction></pixmapfunction>
  <resources/>
  <connections>
   <connection>
