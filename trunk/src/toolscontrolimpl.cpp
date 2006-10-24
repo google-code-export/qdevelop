@@ -177,7 +177,6 @@ bool ToolsControlImpl::toolsControl()
 		designerIcon->setPixmap( QPixmap(":/divers/images/nogood.png") );
 		result = false;
 	}
-		
 	return result;
 }
 //

@@ -373,64 +373,40 @@ QStringList Editor::methodes(QString classe)
 //
 void Editor::slotClassesMethodsList()
 {
-	if( m_textEdit->document()->isModified() )
-	{
-		// Proposer sauvegarde
-		int rep = QMessageBox::question(this, "QDevelop", 
-			tr("Save")+" \""+m_filename+"\"", tr("Yes"), tr("No"), tr("Cancel"), 0, 2 );
-		if( rep == 2 )
-			return;
-		if( rep == 0 )
-		{
-			m_textEdit->save(m_filename, m_lastModified);
-		}
-	}
+	int width = 0;
+	QList<ParsedItem> list;
+	list = m_mainimpl->treeClassesItems();
+	if( list.isEmpty() )
+		return;
+	m_comboClasses->clear();
 	m_classesMethodsList.clear();
-	if( m_mainimpl->ctagsIsPresent() )
+	foreach( ParsedItem parsedItem, list )
 	{
-		testCtags = new QProcess();
-        connect(testCtags, SIGNAL(finished(int , QProcess::ExitStatus)), this, SLOT(slotParseCtags()) );
-		testCtags->start(m_mainimpl->ctagsName(), QStringList()<<"-f-" << "--fields=+S+K+n" << filename());
-	}
-}
-//
-void Editor::slotParseCtags()
-{
-	QString read = ((QProcess*)sender())->readAll();
-	if( !read.isEmpty() )
-	{
-		int width = 0;
-		foreach(QString s, read.split("\n") )
+		if( ( parsedItem.kind == "p" || parsedItem.kind == "f" )
+			&& parsedItem.implementation.section("|", 0, 0) == filename() )
 		{
-			if( !s.contains("function") )
-				continue;
-			QString className = s.section("class:", -1, -1).section("\t", 0, 0);
-			QString methodName = s.section("\t", 0, 0);
-			QString signature = s.section("signature:", -1, -1);
-			QString returnName = s.mid(s.indexOf("/^")+2);
-			QString numLine = s.mid(s.indexOf("line:")+5).section("\t", 0, 0);
-			returnName = returnName.left(returnName.indexOf(" $/;"));
+			QString numLine = parsedItem.implementation.section("|", -1, -1);
+			QString returnName = parsedItem.ex_cmd;
 			if( returnName.left( returnName.indexOf("::") ).indexOf("\t") != -1 )
 				returnName = returnName.left( returnName.indexOf("::") ).section("\t", 0, 0);
 			else if( returnName.left( returnName.indexOf("::") ).indexOf(" ") != -1 )
 				returnName = returnName.left( returnName.indexOf("::") ).section(" ", 0, 0);
 			else
 				returnName = "";
-			QString add = returnName+" " +className+"::"+methodName+signature+QChar(255)+numLine;
-			QStringList methodes = m_classesMethodsList.value(className);
+			QString add = returnName+" " +parsedItem.classname+"::"+parsedItem.name+parsedItem.signature+QChar(255)+numLine;
+			QStringList methodes = m_classesMethodsList.value(parsedItem.classname);
 			methodes << add;
-			if( !className.isEmpty() )
+			if( !parsedItem.classname.simplified().isEmpty() )
 			{
-				width = qMax(width, fontMetrics().width( className ) );
-				m_classesMethodsList[className] = methodes;
+				width = qMax(width, fontMetrics().width( parsedItem.classname ) );
 			}
+			m_classesMethodsList[parsedItem.classname] = methodes;
 		}
-		m_comboClasses->setGeometry(m_comboClasses->x(), m_comboClasses->y(), qMin(350, width+30), m_comboClasses->height());
 	}
-	((QProcess*)sender())->deleteLater();
+	m_comboClasses->setGeometry(m_comboClasses->x(), m_comboClasses->y(), qMin(350, width+30), m_comboClasses->height());
 	slotComboClasses();
+	return;
 }
-
 //
 bool Editor::inQuotations(int position, QString text)
 {
@@ -664,8 +640,6 @@ void Editor::slotComboClasses(QString text)
 {
 	if( m_comboClasses == 0 )
 		return;
-	m_comboClasses->setHidden( !classes().count() );
-	m_comboMethods->setHidden( !classes().count() );
 	if( text.isEmpty() )
 	{
 		m_comboClasses->clear();
@@ -673,6 +647,11 @@ void Editor::slotComboClasses(QString text)
 		m_comboClasses->setCurrentIndex(0);
 		text = m_comboClasses->currentText();
 	}
+	if( !classes().count() || (m_comboClasses->count() == 1 && m_comboClasses->itemText(0).simplified().isEmpty() ) )
+		m_comboClasses->setHidden( true );
+	else
+		m_comboClasses->setHidden( false );
+	m_comboMethods->setHidden( !classes().count() );
 	m_comboMethods->clear();
 	int width = 0;
 	foreach(QString line, methodes(text) )

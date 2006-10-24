@@ -44,7 +44,7 @@ typedef struct ReplaceOptions
 	bool prompt;
 };
 //
-//typedef QMap<QString, QStringList> classesMethodsList; 
+typedef QMap<QString, QStringList> classesMethodsList; 
 //
 class QToolButton;
 class TabWidget;
@@ -137,7 +137,6 @@ private slots:
 	void slotFindWidget_textChanged(QString text="", bool fromButton=false);
     void slotFindPrevious();
     void slotFindNext();
-    void slotParseCtags();
     void slotTimerUpdateClasses();
     void slotTimerCheckIfModifiedOutside();
 private:
@@ -160,7 +159,6 @@ private:
     bool m_backward;
 	bool inQuotations(int position, QString text);
 	ReplaceOptions m_replaceOptions;
-    QProcess *testCtags;
     bool m_activeEditor;
     QTimer m_timerUpdateClasses;
     QTimer m_timerCheckLastModified;
@@ -175,7 +173,6 @@ signals:
 	void editorModified(Editor *, bool);
 	void refreshClasses(QString);
 	void breakpoint(QString, QPair<bool,unsigned int>); 
-	//void bookmark(Editor *, QString, QPair<bool,QTextBlock>); 
 	void updateClasses(QString, QString);
 };
 

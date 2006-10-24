@@ -69,11 +69,10 @@ public:
 	QKeySequence shortcutRedo() { return actionRedo->shortcut(); };
 	void closeTab(int numTab);
 	void closeOtherTab(int numTab);
-	//void closeAllTab();
 	bool showTreeClasses() { return m_showTreeClasses; };
 	void toggleBookmark(Editor *editor, QString text, bool activate, QTextBlock block);
 	QMenu *bookmarksMenu() { return menuBookmarks; };
-	bool shouldCheckEnvOnStartup(){ return m_checkEnvironmentOnStartup; };
+	QList<ParsedItem> treeClassesItems() { return treeClasses->treeClassesItems(); };
 private:
 	// Functions
 	void createConnections();
@@ -160,7 +159,7 @@ private slots:
 	void slotSelectAll();
 	void slotUnindent();
 	void slotIndent();
-	bool slotCloseProject();
+	bool slotCloseProject(bool hide=false);
 	void slotFind();
 	void slotReplace();
 	void slotFindContinue();

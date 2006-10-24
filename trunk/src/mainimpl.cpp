@@ -882,16 +882,10 @@ void MainImpl::closeEvent( QCloseEvent * event )
 	}
 	saveINI();
 	
-	if( slotCloseAllFiles() )
+	if( slotCloseProject(true) )
 	{
-		this->hide();
-		if( slotCloseProject() )
-		{
-			delete m_assistant;
-			event->accept();
-		}
-		else
-			event->ignore();
+		delete m_assistant;
+		event->accept();
 	}
 	else
 		event->ignore();
@@ -998,13 +992,15 @@ bool MainImpl::openProject(QString s)
     return true;
 }
 //
-bool MainImpl::slotCloseProject()
+bool MainImpl::slotCloseProject(bool hide)
 {
 	if( m_projectManager )
 		m_projectManager->saveProjectSettings();
 	slotClearAllBookmarks();
 	if( !slotCloseAllFiles() )
 		return false;
+	if( hide )
+		this->hide();
 	logBuild->clear();
 	logDebug->clear();
 	//
@@ -1381,6 +1377,11 @@ void MainImpl::slotBuild(bool clean, bool build)
 	if(!m_projectManager)
 	{
 		return; 
+	}
+	if( m_qmakeName.isEmpty() || m_makeName.isEmpty() )
+	{
+		slotToolsControl();
+		return;
 	}
 	if( actionDebug->text() == tr("Stop") && !slotDebug())
 		return;
@@ -2009,11 +2010,8 @@ void MainImpl::slotFindInFiles()
 //
 void MainImpl::slotToolsControl(bool show)
 {
-	if (!show)
-		return;
-	
 	ToolsControlImpl *toolsControlImpl = new ToolsControlImpl( this );
-	if( !toolsControlImpl->toolsControl() || show )
+	if( (!toolsControlImpl->toolsControl() && m_checkEnvironmentOnStartup ) || show )
 		toolsControlImpl->exec();
 	
 	m_qmakeName = toolsControlImpl->qmakeName();
