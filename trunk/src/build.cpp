@@ -84,12 +84,12 @@ void Build::run()
 		else
 		{
 			emit message( QString("\n"+tr("Build")+" (make)...\n") );
-		m_buildProcess->start(m_makeName);
+			m_buildProcess->start(m_makeName);
 		}
     		if (!m_buildProcess->waitForFinished(800000))
 		{
 			m_buildProcess->deleteLater();
-        		return;
+        	return;
 		}
 	}
 	emit message( QString(m_buildProcess->readAll()), projectDirectory);
@@ -146,7 +146,7 @@ QString Build::buildOnly( QString sourceFile )
 			target = QString();
 			continue;
 		}
-		// Partie commune �Win et Linux 
+		// Common block for Windows and Linux 
 		if( line.section("=", 0, 0).simplified() == "CXX" )
 			CXX = line.section("=", 1, 1).simplified();
 		if( line.section("=", 0, 0).simplified() == "DEFINES" )

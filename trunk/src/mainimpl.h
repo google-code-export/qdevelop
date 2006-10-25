@@ -85,6 +85,7 @@ private:
 	bool modifiedEditors();
 	void configureCompletion();
 	// Objects and Variables
+	enum ExecuteVersion { ExecuteNone, ExecuteRelease, ExecuteDebug};
 	Build *m_builder;
 	Debug *m_debug;
 	ProjectManager *m_projectManager;
@@ -113,7 +114,7 @@ private:
 	bool m_saveBeforeBuild;
 	bool m_restoreOnStart;
 	bool m_promptBeforeQuit;
-	bool m_debugAfterBuild;
+	ExecuteVersion m_debugAfterBuild;
 	bool m_buildAfterDebug;
 	bool m_checkEnvironment;
 	bool m_checkEnvironmentOnStartup;

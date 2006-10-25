@@ -76,7 +76,7 @@ MainImpl::MainImpl(QWidget * parent)
 	m_projectManager = 0;
 	m_debug = 0;
 	//m_timer = 0;
-	m_debugAfterBuild = false;
+	m_debugAfterBuild = ExecuteNone;
 	m_buildAfterDebug = false;
 	m_checkEnvironment = true;
 	m_checkEnvironmentOnStartup = true;
@@ -1431,7 +1431,7 @@ void MainImpl::slotBuild(bool clean, bool build)
 void MainImpl::slotStopBuild()
 {
 	m_projectsDirectoriesList = QStringList(QString());
-	m_debugAfterBuild = false;
+	m_debugAfterBuild = ExecuteNone;
 	emit stopBuild();
 }
 //
@@ -1449,7 +1449,7 @@ void MainImpl::slotEndBuild()
 		actionExecuteWithoutDebug->setEnabled( true );	
 		toolBarDebug->setEnabled( true );
 		if( m_debugAfterBuild )
-			slotDebug();
+			slotDebug( (int)m_debugAfterBuild-1 );
 	}
 }
 //
@@ -1468,7 +1468,7 @@ void MainImpl::slotMessagesBuild(QString list, QString directory)
 				item->setTextColor( Qt::red );
 				item->setData(Qt::UserRole, QVariant(directory) );
 				m_projectsDirectoriesList = QStringList(QString());
-				m_debugAfterBuild = false;
+				m_debugAfterBuild = ExecuteNone;
 			}
 			// Modify the two strings below "error:" and "warning:" to adapt in your language.
 			else if( message.toLower().contains( "warning:") || message.toLower().contains( tr("warning:").toLower() ) )
@@ -1670,7 +1670,7 @@ bool MainImpl::slotDebug(bool executeOnly)
 			return false;
 		if( choice == 0 )
 		{
-			m_debugAfterBuild = true;
+			m_debugAfterBuild = (ExecuteVersion)(executeOnly+1);
 			slotBuild();
 			return true;
 		}
@@ -1687,7 +1687,7 @@ bool MainImpl::slotDebug(bool executeOnly)
 	else
 		exeName = m_projectManager->executableName( executeOnly ? "release" : "debug");
 	executeOnly = m_projectManager->isReleaseVersion();
-	m_debugAfterBuild = false;
+	m_debugAfterBuild = ExecuteNone;
 	if( exeName.isEmpty() && actionDebug->text() != tr("Stop"))
 	{
 		QMessageBox::critical(0, "QDevelop", 
