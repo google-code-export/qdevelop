@@ -263,6 +263,7 @@ void MainImpl::createConnections()
 	connect(actionReplace, SIGNAL(triggered()), this, SLOT(slotReplace()) );
 	connect(actionGotoLine, SIGNAL(triggered()), this, SLOT(slotGotoLine()) );
 	connect(actionFindContinue, SIGNAL(triggered()), this, SLOT(slotFindContinue()) );
+	connect(actionFindPrevious, SIGNAL(triggered()), this, SLOT(slotFindPrevious()) );
 	connect(actionCloseAllFiles, SIGNAL(triggered()), this, SLOT(slotCloseAllFiles()) );
 	connect(actionCloseProject, SIGNAL(triggered()), this, SLOT(slotCloseProject()) );
 	connect(actionOptions, SIGNAL(triggered()), this, SLOT(slotOptions()) );
@@ -1068,7 +1069,7 @@ void MainImpl::slotSaveFileAs()
 		tr("Files (*.cpp *.h *.txt *.* *)") );
 	if( s.isEmpty() )
 	{
-		// Le bouton Annuler a ï¿½ï¿½cliquï¿½		return;
+		// Le bouton Annuler a ï¿½ï¿½cliquï¿?	return;
 	}
 	editor->setFilename( s );
 	editor->save();
@@ -1415,8 +1416,11 @@ void MainImpl::slotBuild(bool clean, bool build)
 	}
 	QString repProjet = m_projectsDirectoriesList.first();
 	QString projectName = m_projectManager->projectName( repProjet );
-	bool qmake = m_projectManager->qmake( projectName );
-	m_builder = new Build(this, m_qmakeName, m_makeName, repProjet, qmake|m_clean, m_clean, m_build);
+
+	QString makefilePath = repProjet + "/Makefile";
+	bool qmakeNeeded = !QFile::exists(makefilePath);
+
+	m_builder = new Build(this, m_qmakeName, m_makeName, repProjet, qmakeNeeded|m_clean, m_clean, m_build);
 
 	connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
 	connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
@@ -1618,6 +1622,13 @@ void MainImpl::slotFindContinue()
 	if( editor )
 		editor->findContinue();
 }
+//
+void MainImpl::slotFindPrevious()
+{
+	Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+	if ( editor )
+		editor->findPrevious();
+	}
 //
 void MainImpl::slotExecuteWithoutDebug()
 {

@@ -307,56 +307,41 @@ void TextEdit::autoIndent()
 //
 void TextEdit::comment(ActionComment action)
 {
-	int debut, fin;
+	// Trent's implementation
 	QTextCursor cursor = textCursor();
-	if( textCursor().hasSelection() )
+	
+	int startPos = cursor.selectionStart();
+	int endPos = cursor.selectionEnd();
+	QTextBlock startBlock = document()->findBlock(startPos);
+	QTextBlock endBlock = document()->findBlock(endPos);
+	
+	QTextBlock block = startBlock;
+	cursor.setPosition(startPos);
+	
+	while (!(endBlock < block))
 	{
-		debut = textCursor().selectionStart();
-		fin = textCursor().selectionEnd();
-		cursor.clearSelection();
+		QString text = block.text();
+		if (text.isEmpty())
+			continue;
+		int i = 0;
+		while (i < text.length() && text.at(i).isSpace())
+			i++;
+		if (action == Comment)
+		{
+			if (text.mid(i, 2) != "//")
+				text.insert(i, "//");
+		}
+		else if (action == Uncomment)
+		{
+			if (text.mid(i, 2) == "//")
+				text.remove(i, 2);
+		}
+		cursor.movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
+		cursor.movePosition(QTextCursor::EndOfLine, QTextCursor::KeepAnchor);
+		cursor.insertText(text);
+		cursor.movePosition(QTextCursor::NextBlock);
+		block = cursor.block();
 	}
-	else
-		debut = fin = textCursor().position();
-	//
-	cursor.setPosition(debut, QTextCursor::MoveAnchor);
-	cursor.movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
-	setTextCursor(cursor);
-	int ligneDebut = currentLineNumber();
-	QTextBlock blocDebut = cursor.block();
-	//
-	cursor.setPosition(fin, QTextCursor::MoveAnchor);
-	cursor.movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
-	setTextCursor(cursor);
-	int ligneFin = currentLineNumber()-1;
-	QTextBlock blocFin = cursor.block();
-	//
-	QTextBlock block = blocDebut;
-	do
-	{
-		QTextCursor cursor = textCursor();
-		cursor.setPosition( block.position() );
-    	setTextCursor(cursor);
-		while( toPlainText().at(textCursor().position()) == ' ' || toPlainText().at(textCursor().position()) == '\t')
-		{
-	    	cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::MoveAnchor);
-	    	setTextCursor(cursor);
-		}
-		if( toPlainText().mid(textCursor().position()).length()>1 && toPlainText().mid(textCursor().position(), 2) == "//" )
-		{
-			if ( action != Comment )
-			{
-				cursor.deleteChar();
-				cursor.deleteChar();
-				fin -= 2;
-			}
-		}
-		else if( action != Uncomment )
-			cursor.insertText( "//" );
-		setTextCursor( cursor );
-		block = block.next();
-	} while( block < blocFin );
-	if( ligneDebut <= ligneFin )
-		selectLines(ligneDebut, ligneFin);
 }
 //
 void TextEdit::autoUnindent()

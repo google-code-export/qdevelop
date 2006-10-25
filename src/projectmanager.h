@@ -101,7 +101,7 @@ private:
 	QString m_projectDirectoryOfExecutable;
 	QStringList m_classes;
 	QStringList m_executablesList;
-        QStringList m_projectDirectoryOfExecutableList;
+	QStringList m_projectDirectoryOfExecutableList;
 	QWidget *m_previewForm;
     Parameters m_parameters;
     bool m_releaseVersion;
