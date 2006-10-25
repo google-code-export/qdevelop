@@ -564,7 +564,7 @@ void MainImpl::saveINI()
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings ();
+	QSettings settings;
 #endif	
 	settings.beginGroup("Options");
 	settings.setValue("m_showTreeClasses", m_showTreeClasses);
@@ -802,7 +802,7 @@ void MainImpl::loadINI()
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings ();
+	QSettings settings;
 #endif	
 	settings.beginGroup("Options");
 	QString s = settings.value("m_font", m_font.toString()).toString();
@@ -1904,7 +1904,7 @@ void MainImpl::updateActionsRecentsFiles()
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings ();
+	QSettings settings;
 #endif	
 	//QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 	settings.beginGroup("RecentFiles");
@@ -1940,7 +1940,7 @@ void MainImpl::updateActionsRecentsProjects()
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings ();
+	QSettings settings;
 #endif	
 	settings.beginGroup("RecentProjects");
     QStringList files = settings.value("RecentProjectsList").toStringList();
@@ -1995,7 +1995,7 @@ void MainImpl::setCurrentFile(const QString &file)
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings ();
+	QSettings settings;
 #endif	
 	settings.beginGroup("RecentFiles");
 	QStringList files = settings.value("RecentFilesList").toStringList();
@@ -2014,7 +2014,7 @@ void MainImpl::setCurrentProject(const QString &file)
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings ();
+	QSettings settings;
 #endif	
 	settings.beginGroup("RecentProjects");
 	QStringList files = settings.value("RecentProjectsList").toStringList();

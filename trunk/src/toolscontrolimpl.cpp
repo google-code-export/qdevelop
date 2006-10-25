@@ -26,7 +26,7 @@ ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings ();
+	QSettings settings;
 #endif	
 	settings.beginGroup("Options");
 	qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"qmake"+suffix).toString() );
@@ -192,7 +192,7 @@ void ToolsControlImpl::on_okButton_clicked()
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings ();
+	QSettings settings;
 #endif	
 	settings.beginGroup("Options");
 	settings.setValue("m_qmakeName", qmake->text());
