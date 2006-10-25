@@ -336,7 +336,13 @@ void Editor::setFocus()
 //
 void Editor::findContinue()
 {
-    slotFindWidget_textChanged(uiFind.editFind->text(), true);
+    //slotFindWidget_textChanged(uiFind.editFind->text(), true);
+    slotFindNext();
+}
+//
+void Editor::findPrevious()
+{
+    slotFindPrevious();
 }
 //
 void Editor::slotFindWidget_textChanged(QString text, bool fromButton)

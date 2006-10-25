@@ -310,19 +310,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save</source>
-        <translation>保存</translation>
+        <translation type="obsolete">保存</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>是</translation>
+        <translation type="obsolete">是</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>否</translation>
+        <translation type="obsolete">否</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation type="obsolete">取消</translation>
     </message>
 </context>
 <context>
@@ -623,7 +623,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Project...</source>
-        <translation>工程(&amp;P)...</translation>
+        <translation type="obsolete">工程(&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Close All Files</source>
@@ -1025,6 +1025,30 @@ p, li { white-space: pre-wrap; }
         <source>Previous Bookmark</source>
         <translation>前一个书签</translation>
     </message>
+    <message>
+        <source>&amp;Open Project...</source>
+        <translation>打开工程(&amp;O)...</translation>
+    </message>
+    <message>
+        <source>Ctrl+F2</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>F2</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Shift+F2</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Find Previous</source>
+        <translation>寻找上一个</translation>
+    </message>
+    <message>
+        <source>Shift+F3</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>MainImpl</name>
@@ -1187,6 +1211,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>already exist.</source>
         <translation>已经存在。</translation>
+    </message>
+    <message>
+        <source>Choose a project to open</source>
+        <translation>选择要打开的工程</translation>
     </message>
 </context>
 <context>
@@ -2429,6 +2457,10 @@ variables :</source>
     <message>
         <source>Please enter the path to the external programs:</source>
         <translation>请输入外部工具的路径：</translation>
+    </message>
+    <message>
+        <source>Check environment on start</source>
+        <translation type="unfinished">启动时检查环境</translation>
     </message>
 </context>
 <context>

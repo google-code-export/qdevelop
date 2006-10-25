@@ -75,6 +75,7 @@ public:
 	static QString shortFilename(QString nomLong);
 	static QString suffixe(QString filename);
 	void findContinue();
+	void findPrevious();
 	QStringList classes();
 	QStringList methodes(QString classe);
 	QList<int> breakpoints();

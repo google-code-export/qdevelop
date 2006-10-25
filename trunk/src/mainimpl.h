@@ -163,6 +163,7 @@ private slots:
 	void slotFind();
 	void slotReplace();
 	void slotFindContinue();
+	void slotFindPrevious();
 	void slotEndBuild();
 	bool slotDebug(bool executeOnly=false);
 	void slotExecuteWithoutDebug();
