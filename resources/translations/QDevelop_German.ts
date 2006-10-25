@@ -299,17 +299,17 @@ p, li { white-space: pre-wrap; }
         <translation>Projekt aufräumen</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="87"/>
+        <location filename="../../src/build.cpp" line="82"/>
         <source>Compilation of </source>
         <translation>Kompilieren von</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="91"/>
+        <location filename="../../src/build.cpp" line="86"/>
         <source>Build</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="118"/>
+        <location filename="../../src/build.cpp" line="108"/>
         <source>Build stopped</source>
         <translation>Build gestoppt</translation>
     </message>
@@ -354,26 +354,6 @@ Debug ...</translation>
         <location filename="../../src/editor.cpp" line="90"/>
         <source>Refresh classes and methods lists</source>
         <translation>Klassen- und Methodenlisten aktualisieren</translation>
-    </message>
-    <message>
-        <location filename="../../src/editor.cpp" line="380"/>
-        <source>Save</source>
-        <translation>Speichern</translation>
-    </message>
-    <message>
-        <location filename="../../src/editor.cpp" line="380"/>
-        <source>Yes</source>
-        <translation>Ja</translation>
-    </message>
-    <message>
-        <location filename="../../src/editor.cpp" line="380"/>
-        <source>No</source>
-        <translation>Nein</translation>
-    </message>
-    <message>
-        <location filename="../../src/editor.cpp" line="380"/>
-        <source>Cancel</source>
-        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../../src/editor.cpp" line="205"/>
@@ -592,887 +572,917 @@ Debug ...</translation>
 <context>
     <name>Main</name>
     <message>
-        <location filename="../../ui/main.ui" line="21"/>
+        <location filename="../../ui/main.ui" line="24"/>
         <source>QDevelop</source>
         <translation>QDevelop</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="47"/>
+        <location filename="../../ui/main.ui" line="50"/>
         <source>&amp;?</source>
         <translation>&amp;?</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="161"/>
+        <location filename="../../ui/main.ui" line="173"/>
         <source>Toolbar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="182"/>
+        <location filename="../../ui/main.ui" line="100"/>
         <source>Tools</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1222"/>
+        <location filename="../../ui/main.ui" line="1243"/>
         <source>Debug</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1230"/>
+        <location filename="../../ui/main.ui" line="1251"/>
         <source>Build</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="129"/>
+        <location filename="../../ui/main.ui" line="180"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="97"/>
+        <location filename="../../ui/main.ui" line="110"/>
         <source>&amp;File</source>
         <translation>&amp;Datei</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="101"/>
+        <location filename="../../ui/main.ui" line="151"/>
         <source>Last Projects</source>
         <translation>Letzte Projekte</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="106"/>
+        <location filename="../../ui/main.ui" line="114"/>
         <source>Last Files</source>
         <translation>Letzte Dateien</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1209"/>
+        <location filename="../../ui/main.ui" line="1230"/>
         <source>Outputs</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1214"/>
+        <location filename="../../ui/main.ui" line="1235"/>
         <source>Files</source>
         <translation>Dateien</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="612"/>
+        <location filename="../../ui/main.ui" line="627"/>
         <source>Classes</source>
         <translation>Klassen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="633"/>
+        <location filename="../../ui/main.ui" line="648"/>
         <source>Files toolbar</source>
         <translation>Dateien toolbar</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="656"/>
+        <location filename="../../ui/main.ui" line="671"/>
         <source>Edit Toolbar</source>
         <translation>Bearbeiten Toolbar</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="688"/>
+        <location filename="../../ui/main.ui" line="703"/>
         <source>Build Toolbar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="705"/>
+        <location filename="../../ui/main.ui" line="720"/>
         <source>Debug Toolbar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="721"/>
+        <location filename="../../ui/main.ui" line="739"/>
         <source>&amp;New Project...</source>
         <translation>&amp;Neues Projekt...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="740"/>
+        <location filename="../../ui/main.ui" line="758"/>
         <source>&amp;File...</source>
         <translation>&amp;Datei...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="745"/>
-        <source>&amp;Project...</source>
-        <translation>&amp;Projekt...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="753"/>
+        <location filename="../../ui/main.ui" line="774"/>
         <source>&amp;Close All Files</source>
         <translation>&amp;Alle Dateien schließen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="761"/>
+        <location filename="../../ui/main.ui" line="782"/>
         <source>&amp;Save File</source>
         <translation>&amp;Speichern</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="764"/>
+        <location filename="../../ui/main.ui" line="785"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="772"/>
+        <location filename="../../ui/main.ui" line="793"/>
         <source>&amp;Save File As...</source>
         <translation>&amp;Speichern als...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="783"/>
+        <location filename="../../ui/main.ui" line="804"/>
         <source>Save All</source>
         <translation>Alle speichern</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="791"/>
+        <location filename="../../ui/main.ui" line="812"/>
         <source>&amp;Quit</source>
         <translation>&amp;Beenden</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="808"/>
+        <location filename="../../ui/main.ui" line="829"/>
         <source>Ctrl+Z</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="825"/>
+        <location filename="../../ui/main.ui" line="846"/>
         <source>Ctrl+Shift+Z</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="833"/>
+        <location filename="../../ui/main.ui" line="854"/>
         <source>Cut</source>
         <translation>Ausschneiden</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="836"/>
+        <location filename="../../ui/main.ui" line="857"/>
         <source>Ctrl+X</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="844"/>
+        <location filename="../../ui/main.ui" line="865"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="847"/>
+        <location filename="../../ui/main.ui" line="868"/>
         <source>Ctrl+C</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="855"/>
+        <location filename="../../ui/main.ui" line="876"/>
         <source>Paste</source>
         <translation>Einfügen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="858"/>
+        <location filename="../../ui/main.ui" line="879"/>
         <source>Ctrl+V</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="863"/>
+        <location filename="../../ui/main.ui" line="884"/>
         <source>Select All</source>
         <translation>Alles markieren</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="874"/>
+        <location filename="../../ui/main.ui" line="895"/>
         <source>Find...</source>
         <translation>Suchen...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="877"/>
+        <location filename="../../ui/main.ui" line="898"/>
         <source>Ctrl+F</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="882"/>
+        <location filename="../../ui/main.ui" line="903"/>
         <source>Replace...</source>
         <translation>Ersetzen...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="901"/>
+        <location filename="../../ui/main.ui" line="922"/>
         <source>Print</source>
         <translation>Drucken</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="909"/>
+        <location filename="../../ui/main.ui" line="930"/>
         <source>Add New Item...</source>
         <translation>Neues Item hinzufügen...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="915"/>
+        <location filename="../../ui/main.ui" line="936"/>
         <source>Add New Item</source>
         <translation>Neues Item hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="920"/>
+        <location filename="../../ui/main.ui" line="941"/>
         <source>Add Existing Files...</source>
         <translation>Bestehende Datei hinzufügen...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="926"/>
+        <location filename="../../ui/main.ui" line="947"/>
         <source>Add Existing Files</source>
         <translation>Bestehende Datei hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="931"/>
+        <location filename="../../ui/main.ui" line="952"/>
         <source>New Folder</source>
         <translation>Neuer Ordner</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="939"/>
+        <location filename="../../ui/main.ui" line="960"/>
         <source>Project Properties...</source>
         <translation>Projekteigentschaften...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="945"/>
+        <location filename="../../ui/main.ui" line="966"/>
         <source>Project Properties</source>
         <translation>Projekteigentschaften</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="962"/>
+        <location filename="../../ui/main.ui" line="983"/>
         <source>F7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="973"/>
+        <location filename="../../ui/main.ui" line="994"/>
         <source>Clean</source>
         <translation>Säubern</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="987"/>
+        <location filename="../../ui/main.ui" line="1008"/>
         <source>Rebuild</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1001"/>
+        <location filename="../../ui/main.ui" line="1022"/>
         <source>Compile File</source>
         <translation>Datei kompilieren</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1004"/>
+        <location filename="../../ui/main.ui" line="1025"/>
         <source>Shift+F7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1018"/>
+        <location filename="../../ui/main.ui" line="1039"/>
         <source>Start On Debugger</source>
         <translation>Im Debugger starten</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1021"/>
+        <location filename="../../ui/main.ui" line="1042"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1035"/>
+        <location filename="../../ui/main.ui" line="1056"/>
         <source>Start Program</source>
         <translation>Programm starten</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1038"/>
+        <location filename="../../ui/main.ui" line="1059"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1052"/>
+        <location filename="../../ui/main.ui" line="1073"/>
         <source>Step Into</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1055"/>
+        <location filename="../../ui/main.ui" line="1076"/>
         <source>F11</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1069"/>
+        <location filename="../../ui/main.ui" line="1090"/>
         <source>Step Over</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1072"/>
+        <location filename="../../ui/main.ui" line="1093"/>
         <source>F10</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1088"/>
+        <location filename="../../ui/main.ui" line="1109"/>
         <source>Options...</source>
         <translation>Optionen...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1098"/>
+        <location filename="../../ui/main.ui" line="1119"/>
         <source>About...</source>
         <translation>Über...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1103"/>
+        <location filename="../../ui/main.ui" line="1124"/>
         <source>About Qt...</source>
         <translation>Über Qt...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1111"/>
+        <location filename="../../ui/main.ui" line="1132"/>
         <source>&amp;Open...</source>
         <translation>&amp;Öffnen...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1119"/>
+        <location filename="../../ui/main.ui" line="1140"/>
         <source>Find Next</source>
         <translation>Nächsten suchen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1122"/>
+        <location filename="../../ui/main.ui" line="1143"/>
         <source>F3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1139"/>
+        <location filename="../../ui/main.ui" line="1160"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1142"/>
+        <location filename="../../ui/main.ui" line="1163"/>
         <source>F6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1147"/>
+        <location filename="../../ui/main.ui" line="1168"/>
         <source>Breakpoints...</source>
         <translation>Breakpoints...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1155"/>
+        <location filename="../../ui/main.ui" line="1176"/>
         <source>Stop Build</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1163"/>
+        <location filename="../../ui/main.ui" line="1184"/>
         <source>Indent selection</source>
         <translation>Markierten Bereich einrücken</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1166"/>
+        <location filename="../../ui/main.ui" line="1187"/>
         <source>Tab</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1174"/>
+        <location filename="../../ui/main.ui" line="1195"/>
         <source>Unindent selection</source>
         <translation>Markierten Teil zurückrücken</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1177"/>
+        <location filename="../../ui/main.ui" line="1198"/>
         <source>Shift+Tab</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1185"/>
+        <location filename="../../ui/main.ui" line="1206"/>
         <source>Help Current Qt Word</source>
         <translation>Hilfe momentanes Qt Wort</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1188"/>
+        <location filename="../../ui/main.ui" line="1209"/>
         <source>F1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1193"/>
+        <location filename="../../ui/main.ui" line="1214"/>
         <source>Reset Executables List</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1204"/>
+        <location filename="../../ui/main.ui" line="1225"/>
         <source>Project Explorer</source>
         <translation>Projekt Explorer</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1235"/>
+        <location filename="../../ui/main.ui" line="1259"/>
         <source>Save Project</source>
         <translation>Projekt speichern</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1240"/>
+        <location filename="../../ui/main.ui" line="1264"/>
         <source>Save Project As...</source>
         <translation>Projekt speichern als...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1248"/>
+        <location filename="../../ui/main.ui" line="1272"/>
         <source>Close Project</source>
         <translation>Projekt schließen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1253"/>
+        <location filename="../../ui/main.ui" line="1277"/>
         <source>Add Scope...</source>
         <translation>Scope hinzufügen...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1261"/>
+        <location filename="../../ui/main.ui" line="1285"/>
         <source>Step Out</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="56"/>
+        <location filename="../../ui/main.ui" line="59"/>
         <source>Editors</source>
         <translation>Editoren</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1269"/>
+        <location filename="../../ui/main.ui" line="1293"/>
         <source>Close Current Editor</source>
         <translation>Aktiven Editor schließen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1272"/>
+        <location filename="../../ui/main.ui" line="1296"/>
         <source>Ctrl+W</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1280"/>
+        <location filename="../../ui/main.ui" line="1304"/>
         <source>Next Tab</source>
         <translation>Nächster Tab</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1283"/>
+        <location filename="../../ui/main.ui" line="1307"/>
         <source>Alt+Right</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1291"/>
+        <location filename="../../ui/main.ui" line="1315"/>
         <source>Previous Tab</source>
         <translation>Vorheriger Tab</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1294"/>
+        <location filename="../../ui/main.ui" line="1318"/>
         <source>Alt+Left</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1302"/>
+        <location filename="../../ui/main.ui" line="1326"/>
         <source>Switch to Header/Sources</source>
         <translation>Zu Header/Sources wechseln</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1305"/>
+        <location filename="../../ui/main.ui" line="1329"/>
         <source>Shift+F12</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1264"/>
+        <location filename="../../ui/main.ui" line="1288"/>
         <source>Shift+F11</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1310"/>
+        <location filename="../../ui/main.ui" line="1334"/>
         <source>Set Focus to Editor</source>
         <translation>Focus auf Editor setzen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1313"/>
+        <location filename="../../ui/main.ui" line="1337"/>
         <source>Esc</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="805"/>
+        <location filename="../../ui/main.ui" line="826"/>
         <source>Undo</source>
         <translation>Rückgängig</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="822"/>
+        <location filename="../../ui/main.ui" line="843"/>
         <source>Redo</source>
         <translation>Wiederholen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1321"/>
+        <location filename="../../ui/main.ui" line="1345"/>
         <source>Toggle breakpoint</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1324"/>
+        <location filename="../../ui/main.ui" line="1348"/>
         <source>F9</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1329"/>
+        <location filename="../../ui/main.ui" line="1353"/>
         <source>Configure Shortcuts...</source>
         <translation>Shortcuts konfigurieren...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="157"/>
+        <location filename="../../ui/main.ui" line="169"/>
         <source>&amp;View</source>
         <translation>&amp;Ansicht</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="171"/>
+        <location filename="../../ui/main.ui" line="147"/>
         <source>&amp;Project</source>
         <translation>&amp;Projekt</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="85"/>
+        <location filename="../../ui/main.ui" line="88"/>
         <source>&amp;Build</source>
         <translation>&amp;Build</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="67"/>
+        <location filename="../../ui/main.ui" line="70"/>
         <source>&amp;Debug</source>
         <translation>&amp;Debug</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="866"/>
+        <location filename="../../ui/main.ui" line="887"/>
         <source>Ctrl+A</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1114"/>
+        <location filename="../../ui/main.ui" line="1135"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1334"/>
+        <location filename="../../ui/main.ui" line="1358"/>
         <source>Goto Line...</source>
         <translation>Zur Zeile gehen...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1337"/>
+        <location filename="../../ui/main.ui" line="1361"/>
         <source>Ctrl+G</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="885"/>
+        <location filename="../../ui/main.ui" line="906"/>
         <source>Ctrl+R</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1360"/>
+        <location filename="../../ui/main.ui" line="1384"/>
         <source>Complete Code</source>
         <translation>Code vervollständigen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1363"/>
+        <location filename="../../ui/main.ui" line="1387"/>
         <source>Ctrl+Space</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="497"/>
+        <location filename="../../ui/main.ui" line="512"/>
         <source>Find in Files</source>
         <translation>In Dateien suchen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="890"/>
+        <location filename="../../ui/main.ui" line="911"/>
         <source>Find in Files...</source>
         <translation>In Dateien suchen...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="893"/>
+        <location filename="../../ui/main.ui" line="914"/>
         <source>Ctrl+Alt+F</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1345"/>
+        <location filename="../../ui/main.ui" line="1369"/>
         <source>Ctrl+D</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="729"/>
+        <location filename="../../ui/main.ui" line="747"/>
         <source>&amp;New File...</source>
         <translation>&amp;Neue Datei...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="735"/>
+        <location filename="../../ui/main.ui" line="753"/>
         <source>New File</source>
         <translation>Neue Datei</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1342"/>
+        <location filename="../../ui/main.ui" line="1366"/>
         <source>Toggle Comments</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1350"/>
+        <location filename="../../ui/main.ui" line="1374"/>
         <source>Comment</source>
         <translation>Kommentieren</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1355"/>
+        <location filename="../../ui/main.ui" line="1379"/>
         <source>Uncomment</source>
         <translation>Auskommentieren</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1083"/>
+        <location filename="../../ui/main.ui" line="1104"/>
         <source>Calls Stack</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1093"/>
+        <location filename="../../ui/main.ui" line="1114"/>
         <source>Parameters...</source>
         <translation>Parameter...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="338"/>
+        <location filename="../../ui/main.ui" line="353"/>
         <source>Local Variables</source>
         <translation>Lokale Variablen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="467"/>
+        <location filename="../../ui/main.ui" line="482"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="472"/>
+        <location filename="../../ui/main.ui" line="487"/>
         <source>Type</source>
         <translation>Typ</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="477"/>
+        <location filename="../../ui/main.ui" line="492"/>
         <source>Address</source>
         <translation>Adresse</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="482"/>
+        <location filename="../../ui/main.ui" line="497"/>
         <source>Value</source>
         <translation>Eigenschaft</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="381"/>
+        <location filename="../../ui/main.ui" line="396"/>
         <source>Other Variables</source>
         <translation>Andere Variablen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="435"/>
+        <location filename="../../ui/main.ui" line="450"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="192"/>
+        <location filename="../../ui/main.ui" line="133"/>
         <source>Bookmarks</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1371"/>
+        <location filename="../../ui/main.ui" line="1395"/>
         <source>Toggle &amp;Bookmark</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1377"/>
+        <location filename="../../ui/main.ui" line="1401"/>
         <source>Toggle Bookmark</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1380"/>
+        <location filename="../../ui/main.ui" line="1404"/>
         <source>Ctrl+B</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1388"/>
+        <location filename="../../ui/main.ui" line="1412"/>
         <source>Clear &amp;All Bookmarks</source>
         <translation>&amp;Alle Bookmarks löschen</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1393"/>
+        <location filename="../../ui/main.ui" line="1420"/>
         <source>External Tools...</source>
         <translation>Externe Tools</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1401"/>
+        <location filename="../../ui/main.ui" line="1428"/>
         <source>Next Bookmark</source>
         <translation>Nächster Bookmark</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1409"/>
+        <location filename="../../ui/main.ui" line="1439"/>
         <source>Previous Bookmark</source>
         <translation>Vorheriger Bookmark</translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="766"/>
+        <source>&amp;Open Project...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1415"/>
+        <source>Ctrl+F2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1431"/>
+        <source>F2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1442"/>
+        <source>Shift+F2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1447"/>
+        <source>Find Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1450"/>
+        <source>Shift+F3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="652"/>
+        <location filename="../../src/mainimpl.cpp" line="661"/>
         <source>The directory cannot be created</source>
         <translation>Verzeichnis kann nicht erzeugt werden</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2017"/>
+        <location filename="../../src/mainimpl.cpp" line="2098"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="939"/>
+        <location filename="../../src/mainimpl.cpp" line="983"/>
         <source>The project</source>
         <translation>Das Projekt</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="353"/>
+        <location filename="../../src/mainimpl.cpp" line="356"/>
         <source>already exist on directory.</source>
         <translation>gibt es schon in diesem Verzeichnis.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="912"/>
+        <location filename="../../src/mainimpl.cpp" line="933"/>
         <source>Choose a file to open</source>
         <translation>Zu öffnende Datei auswählen</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1002"/>
+        <location filename="../../src/mainimpl.cpp" line="1048"/>
         <source>Properties of</source>
         <translation>Eigenschaften von</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1021"/>
+        <location filename="../../src/mainimpl.cpp" line="1067"/>
         <source>Choose the file to create</source>
         <translation>Zu erstellende Datei auswählen</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1023"/>
+        <location filename="../../src/mainimpl.cpp" line="1069"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>Datien (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1647"/>
+        <location filename="../../src/mainimpl.cpp" line="1708"/>
         <source>Stop</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1391"/>
+        <location filename="../../src/mainimpl.cpp" line="1445"/>
         <source>Build normaly exited</source>
         <translation>Build normal beendet</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1730"/>
+        <location filename="../../src/mainimpl.cpp" line="1791"/>
         <source>Start</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1605"/>
+        <location filename="../../src/mainimpl.cpp" line="1666"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Das Projekt wurde verändert, möchtest du die Änderungen speichern ?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1622"/>
+        <location filename="../../src/mainimpl.cpp" line="1683"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1622"/>
+        <location filename="../../src/mainimpl.cpp" line="1683"/>
         <source>No</source>
         <translation>Nein</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1633"/>
+        <location filename="../../src/mainimpl.cpp" line="1694"/>
         <source>The program don&apos;t exist,</source>
         <translation>Das Programm gibt es nicht,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1634"/>
+        <location filename="../../src/mainimpl.cpp" line="1695"/>
         <source>run Build.</source>
         <translation>starte Build.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1634"/>
+        <location filename="../../src/mainimpl.cpp" line="1695"/>
         <source>Ok</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1621"/>
+        <location filename="../../src/mainimpl.cpp" line="1682"/>
         <source>Stop debugging ?</source>
         <translation>Debugging beenden ?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1796"/>
+        <location filename="../../src/mainimpl.cpp" line="1857"/>
         <source>Abort</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1838"/>
+        <location filename="../../src/mainimpl.cpp" line="1899"/>
         <source>Continue</source>
         <translation>Fortsetzen</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1892"/>
+        <location filename="../../src/mainimpl.cpp" line="1963"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="870"/>
+        <location filename="../../src/mainimpl.cpp" line="886"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>Möchtest du QDevelop beenden ?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1649"/>
+        <location filename="../../src/mainimpl.cpp" line="1710"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1731"/>
+        <location filename="../../src/mainimpl.cpp" line="1792"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1465"/>
+        <location filename="../../src/mainimpl.cpp" line="1519"/>
         <source>File</source>
         <translation>Datei</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="939"/>
+        <location filename="../../src/mainimpl.cpp" line="983"/>
         <source>doesn&apos;t exist.</source>
         <translation>existiert nicht.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="343"/>
+        <location filename="../../src/mainimpl.cpp" line="346"/>
         <source>Files</source>
         <translation>Dateien</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="353"/>
+        <location filename="../../src/mainimpl.cpp" line="356"/>
         <source>The file</source>
         <translation>Die Datei</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="359"/>
+        <location filename="../../src/mainimpl.cpp" line="362"/>
         <source>Unable to create</source>
         <translation>Kann nicht erzeugen</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="914"/>
+        <location filename="../../src/mainimpl.cpp" line="935"/>
         <source>Sources</source>
         <translation>Sources</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="915"/>
+        <location filename="../../src/mainimpl.cpp" line="963"/>
         <source>Projects</source>
         <translation>Projekte</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="916"/>
+        <location filename="../../src/mainimpl.cpp" line="937"/>
         <source>Texts</source>
         <translation>Texte</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="917"/>
+        <location filename="../../src/mainimpl.cpp" line="938"/>
         <source>All Files</source>
         <translation>Alle Dateien</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1436"/>
+        <location filename="../../src/mainimpl.cpp" line="1490"/>
         <source>error:</source>
         <translation>Fehler:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1436"/>
+        <location filename="../../src/mainimpl.cpp" line="1490"/>
         <source>warning:</source>
         <translation>Warnung:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1789"/>
+        <location filename="../../src/mainimpl.cpp" line="1850"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Stoppen ist unter Windows nicht möglich. Setze breakpoints.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="660"/>
+        <location filename="../../src/mainimpl.cpp" line="669"/>
         <source>The project cannot be created</source>
         <translation>Projekt kann nicht erzeugt werden.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2007"/>
+        <location filename="../../src/mainimpl.cpp" line="2088"/>
         <source>New Variable:</source>
         <translation>Neue Variable:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2016"/>
+        <location filename="../../src/mainimpl.cpp" line="2097"/>
         <source>The variable</source>
         <translation>Die Variable</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2016"/>
+        <location filename="../../src/mainimpl.cpp" line="2097"/>
         <source>already exist.</source>
         <translation>gibt es bereits.</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="961"/>
+        <source>Choose a project to open</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2174,24 +2184,19 @@ p, li { white-space: pre-wrap; }
         <translation>Ressourcen</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1691"/>
+        <location filename="../../src/projectmanager.cpp" line="1690"/>
         <source>The only available version for</source>
         <translation>Die einzige verfügbare Version für</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1691"/>
+        <location filename="../../src/projectmanager.cpp" line="1690"/>
         <source>is</source>
         <translation>ist</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1692"/>
+        <location filename="../../src/projectmanager.cpp" line="1691"/>
         <source>Run on</source>
         <translation>Läuft auf</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="1031"/>
-        <source></source>
-        <translation></translation>
     </message>
 </context>
 <context>
@@ -2564,7 +2569,7 @@ variables :</translation>
         <translation>Kann den Assistenten nicht starten !</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="71"/>
+        <location filename="../../src/main.cpp" line="73"/>
         <source>Loading:</source>
         <translation>Lade:</translation>
     </message>
@@ -2579,12 +2584,12 @@ variables :</translation>
         <translation>Umgebungskontrolle</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="71"/>
+        <location filename="../../src/main.cpp" line="73"/>
         <source>Files on editor</source>
         <translation>Deiten im Editor</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="86"/>
+        <location filename="../../src/main.cpp" line="87"/>
         <source>Main Window creation</source>
         <translation>Main Windows Erstellung</translation>
     </message>
@@ -2703,7 +2708,7 @@ variables :</translation>
 <context>
     <name>Shortcuts</name>
     <message>
-        <location filename="../../ui/shortcuts.ui" line="16"/>
+        <location filename="../../ui/shortcuts.ui" line="13"/>
         <source>Configure Shortcuts</source>
         <translation>Shortcuts konfigurieren</translation>
     </message>
@@ -2853,82 +2858,82 @@ variables :</translation>
         <translation>konnte nicht geladen werden.</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="422"/>
+        <location filename="../../src/textEdit.cpp" line="417"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="422"/>
+        <location filename="../../src/textEdit.cpp" line="417"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="422"/>
+        <location filename="../../src/textEdit.cpp" line="417"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="422"/>
+        <location filename="../../src/textEdit.cpp" line="417"/>
         <source>No</source>
         <translation>Nein</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="441"/>
+        <location filename="../../src/textEdit.cpp" line="436"/>
         <source>Unable to save</source>
         <translation>Kann nicht gespeichert werden</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="964"/>
+        <location filename="../../src/textEdit.cpp" line="959"/>
         <source>Redo</source>
         <translation>Rückgängig</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="966"/>
+        <location filename="../../src/textEdit.cpp" line="961"/>
         <source>Cut</source>
         <translation>Ausschneiden</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="967"/>
+        <location filename="../../src/textEdit.cpp" line="962"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="968"/>
+        <location filename="../../src/textEdit.cpp" line="963"/>
         <source>Paste</source>
         <translation>Einfügen</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="970"/>
+        <location filename="../../src/textEdit.cpp" line="965"/>
         <source>Selection Indent</source>
         <translation>Markierten Bereich einrücken</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="971"/>
+        <location filename="../../src/textEdit.cpp" line="966"/>
         <source>Selection Unindent</source>
         <translation>Markierten Bereich zurückrücken</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="974"/>
+        <location filename="../../src/textEdit.cpp" line="969"/>
         <source>Select All</source>
         <translation>Alles markieren</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="976"/>
+        <location filename="../../src/textEdit.cpp" line="971"/>
         <source>Find...</source>
         <translation>Suchen...</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="963"/>
+        <location filename="../../src/textEdit.cpp" line="958"/>
         <source>Undo</source>
         <translation>RückRückgängig</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="978"/>
+        <location filename="../../src/textEdit.cpp" line="973"/>
         <source>Toggle Bookmark</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="979"/>
+        <location filename="../../src/textEdit.cpp" line="974"/>
         <source>Toggle Breakpoint</source>
         <translation></translation>
     </message>
@@ -3005,11 +3010,16 @@ variables :</translation>
         <source>Please enter the path to the external programs:</source>
         <translation>Bitte geben Sie den Pfad zu den externen Programmen an:</translation>
     </message>
+    <message>
+        <location filename="../../ui/toolsControl.ui" line="350"/>
+        <source>Check environment on start</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ToolsControlImpl</name>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="59"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="76"/>
         <source>Please designe the program</source>
         <translation>Bitte designen sie das Programm</translation>
     </message>
@@ -3017,17 +3027,17 @@ variables :</translation>
 <context>
     <name>TreeClasses</name>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="483"/>
+        <location filename="../../src/treeclasses.cpp" line="485"/>
         <source>Open Declaration</source>
         <translation>Deklaration öffnen</translation>
     </message>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="485"/>
+        <location filename="../../src/treeclasses.cpp" line="487"/>
         <source>Open Implementation</source>
         <translation>Implementierung öffnen</translation>
     </message>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="487"/>
+        <location filename="../../src/treeclasses.cpp" line="491"/>
         <source>Refresh contents</source>
         <translation>Inhalte neuladen</translation>
     </message>
