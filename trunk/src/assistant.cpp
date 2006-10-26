@@ -46,7 +46,11 @@ Assistant::~Assistant()
 void Assistant::showQtWord(QString className, QString word)
 {
 	QString lu;
+#ifdef Q_WS_MAC
+    QString assistant = QLibraryInfo::location( QLibraryInfo::BinariesPath )+ "/assistant.app";
+#else
     QString assistant = QLibraryInfo::location( QLibraryInfo::BinariesPath )+ "/assistant";
+#endif
     QString doc = QLibraryInfo::location( QLibraryInfo::DocumentationPath )+ "/html/";
 	if ( process->state() == QProcess::NotRunning )
 	{
