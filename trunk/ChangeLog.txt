@@ -1,4 +1,4 @@
-Version 0.20
+October 26 2006 Version 0.20
 Name:
 - QIde becomes QDevelop at October 4, 2006
 Corrections:
@@ -7,13 +7,14 @@ Corrections:
 - Deletion of Auto-Hide docks, not working with Qt 4.2
 - The settings are now written in qdevelop.ini file in the user home directory.
 - The database of project is named "qdevelop-settings.db" in project directory.
+- New C++ highlighter
+Adds:
+- The Default projects directory can be set in options dialog.
+- Bookmarks. Bookmarks can be toggled on menu bar and by right-click in margin number or editor. 
 - Add "Next Bookmark" and "Previous Bookmark" to menu Bookmark.
 - Add Bookmarks toolbar.
 - Save bookmarks and breakpoints in project settings
 - Add "console" to CONFIG variable in (.pro) file for new projects to have qDebug() written on debug console under Windows. 
-Adds:
-- The Default projects directory can be set in options dialog.
-- Bookmarks. Bookmarks can be toggled on menu bar and by right-click in margin number or editor. 
 - Modification of the class browser to understand functions overloading.
 - When a project is closed, the content of class browser is saved in database project.db. With this database, the content is reloaded very quickly during the loading of the project. This feature require to have the SQL driver sqlite enable. On build enter the option -qt-sql-sqlite after the configure command.
 - Moving tabs with mouse to switch between us
