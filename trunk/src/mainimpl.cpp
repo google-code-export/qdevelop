@@ -64,7 +64,9 @@
 #include <QHeaderView>
 #include <QInputDialog>
 //
-#define VERSION "0.20"
+
+#define PROJECT_NAME "QDevelop"
+#define VERSION "0.21-svn"
 
 MainImpl::MainImpl(QWidget * parent) 
 	: QMainWindow(parent)
@@ -486,12 +488,13 @@ void MainImpl::slotParameters()
 void MainImpl::slotOptions()
 {
 	OptionsImpl *options = new OptionsImpl(this, m_font, m_lineNumbers, m_selectionBorder, 
-		m_autoIndent, m_cppHighlighter, m_tabStopWidth, m_saveBeforeBuild, m_restoreOnStart,
-		m_formatPreprocessorText, m_formatQtText, m_formatSingleComments, 
-		m_formatMultilineComments, m_formatQuotationText, m_formatMethods, 
-        m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion, 
-        m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets, 
-        m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory);
+	m_autoIndent, m_cppHighlighter, m_tabStopWidth, m_saveBeforeBuild, m_restoreOnStart,
+	m_formatPreprocessorText, m_formatQtText, m_formatSingleComments, 
+	m_formatMultilineComments, m_formatQuotationText, m_formatMethods, 
+	m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion, 
+	m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets, 
+	m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory);
+	
 	if( options->exec() == QDialog::Accepted )
 	{
 		QApplication::setOverrideCursor(Qt::WaitCursor);
@@ -542,7 +545,7 @@ void MainImpl::slotOptions()
 			((Editor *)m_tabEditors->widget( i ))->setCurrentLineColor( m_currentLineColor );
 			((Editor *)m_tabEditors->widget( i ))->setAutobrackets( m_autobrackets );
 			((Editor *)m_tabEditors->widget( i ))->setSyntaxColors
-				(  
+				(
 					m_formatPreprocessorText,
 					m_formatQtText,
 					m_formatSingleComments,
@@ -552,20 +555,20 @@ void MainImpl::slotOptions()
 					m_formatKeywords
 				);
 		}
-    	QApplication::restoreOverrideCursor();
+		QApplication::restoreOverrideCursor();
 	}
 	delete options;
 }
+
 //
 void MainImpl::saveINI()
 {
-	// Save options in INI file
-	//QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings;
-#endif	
+	QSettings settings(PROJECT_NAME);
+#endif
+
 	settings.beginGroup("Options");
 	settings.setValue("m_showTreeClasses", m_showTreeClasses);
 	settings.setValue("m_intervalUpdatingClasses", m_intervalUpdatingClasses);
@@ -595,30 +598,34 @@ void MainImpl::saveINI()
 	settings.setValue("m_formatQuotationText", m_formatQuotationText.foreground().color().name());
 	settings.setValue("m_formatMethods", m_formatMethods.foreground().color().name());
 	settings.setValue("m_formatKeywords", m_formatKeywords.foreground().color().name());
+	settings.endGroup();
+	
 	// Save shortcuts
+	settings.beginGroup("Shortcuts");
 	QList<QObject*> childrens;
 	childrens = children();
-    QListIterator<QObject*> iterator(childrens);
+	QListIterator<QObject*> iterator(childrens);
 	while( iterator.hasNext() )
 	{
 		QObject *object = iterator.next();
-		QString classe = object->metaObject()->className();
-		if( classe == "QAction" )
+		QAction *action = qobject_cast<QAction*>(object);
+		
+		if ( (action) && (!(action->data().toString().contains( "Recent|" ))))
 		{
-			if( !((QAction *)object)->data().toString().contains( "Recent|" ) )
+			QString text = action->objectName();		
+			if (!text.isEmpty())
 			{
-				QString text = object->objectName();
-				QString shortcut = ((QAction *)object)->shortcut();
-				if( !shortcut.isEmpty() )
-					settings.setValue(text, shortcut);
+				QString shortcut = action->shortcut();
+				settings.setValue( text, shortcut );
 			}
 		}
 	}
+	settings.endGroup();
+	
 	//
 	if( !m_projectManager )
 		return;
-	//
-	settings.endGroup();
+	
 	if( m_restoreOnStart )
 	{
 		settings.beginGroup("Project");
@@ -798,12 +805,12 @@ void MainImpl::slotNewProject()
 //
 void MainImpl::loadINI()
 {
-	//QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings;
+	QSettings settings(PROJECT_NAME);
 #endif	
+
 	settings.beginGroup("Options");
 	QString s = settings.value("m_font", m_font.toString()).toString();
 	m_font.fromString(s);
@@ -837,31 +844,32 @@ void MainImpl::loadINI()
 	m_formatQuotationText.setForeground( QColor(settings.value("m_formatQuotationText", m_formatQuotationText.foreground().color().name()).toString() ) );
 	m_formatMethods.setForeground( QColor(settings.value("m_formatMethods", m_formatMethods.foreground().color().name()).toString() ) );
 	m_formatKeywords.setForeground( QColor(settings.value("m_formatKeywords", m_formatKeywords.foreground().color().name()).toString() ) );
-	//
+	settings.endGroup();
+	
 	// Load shortcuts
+	settings.beginGroup("Shortcuts");
 	QList<QObject*> childrens;
 	childrens = children();
 	QListIterator<QObject*> iterator(childrens);
 	while( iterator.hasNext() )
 	{
 		QObject *object = iterator.next();
-		QString classe = object->metaObject()->className();
-		if( classe == "QAction" )
+		QAction *action = qobject_cast<QAction*>(object);
+		
+		if ( (action) && (!(action->data().toString().contains( "Recent|" ))) && (!action->objectName().isEmpty()) )
 		{
-			if( !((QAction *)object)->data().toString().contains( "Recent|" ) )
+			QString text = object->objectName();
+			
+			if( !text.isEmpty() )
 			{
-				QString text = object->objectName();
-				QString shortcut = ((QAction *)object)->shortcut();
-				if( !text.isEmpty() )
-				{
-					shortcut = settings.value(text, shortcut).toString();
-					((QAction *)object)->setShortcut( shortcut );
-				}
+				QString shortcut = action->shortcut();
+				shortcut = settings.value(text, shortcut).toString();
+				action->setShortcut( shortcut );
 			}
 		}
 	}
-	//
 	settings.endGroup();
+	
 	if( m_restoreOnStart )
 	{
 		settings.beginGroup("Project");
@@ -1067,9 +1075,11 @@ void MainImpl::slotSaveFileAs()
 		tr("Choose the file to create"),
 		editor->filename(),
 		tr("Files (*.cpp *.h *.txt *.* *)") );
+	
 	if( s.isEmpty() )
 	{
-		// Le bouton Annuler a ï¿½ï¿½cliquï¿?	return;
+		// Le bouton Annuler a ï¿½ï¿½cliquï¿½	
+		return;
 	}
 	editor->setFilename( s );
 	editor->save();
@@ -1904,70 +1914,70 @@ void MainImpl::updateActionsRecentsFiles()
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings;
-#endif	
-	//QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
+	QSettings settings(PROJECT_NAME);
+#endif
+
 	settings.beginGroup("RecentFiles");
-    QStringList files = settings.value("RecentFilesList").toStringList();
-
-    QStringList existingFiles;
-    foreach (QString fileName, files)
-    {
-        if (QFile(fileName).exists())
-            existingFiles.push_back(fileName);
-    }
-    if (existingFiles.size() < files.size())
-    {
-       	settings.setValue("RecentFilesList", files);
-        files = existingFiles;
-    }
-    
-    int numRecentFiles = qMin(files.size(), (int)maxRecentsFiles);
-
-    for (int i = 0; i < numRecentFiles; ++i) {
-        QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
-        actionsRecentsFiles[i]->setText(text);
-        actionsRecentsFiles[i]->setData("Recent|"+files[i]);
-        actionsRecentsFiles[i]->setVisible(true);
-    }
-    for (int j = numRecentFiles; j < maxRecentsFiles; ++j)
-        actionsRecentsFiles[j]->setVisible(false);
+	QStringList files = settings.value("RecentFilesList").toStringList();
+	
+	QStringList existingFiles;
+	foreach (QString fileName, files)
+	{
+		if (QFile(fileName).exists())
+		existingFiles.push_back(fileName);
+	}
+	if (existingFiles.size() < files.size())
+	{
+		settings.setValue("RecentFilesList", files);
+		files = existingFiles;
+	}
+	
+	int numRecentFiles = qMin(files.size(), (int)maxRecentsFiles);
+	
+	for (int i = 0; i < numRecentFiles; ++i) 
+	{
+		QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
+		actionsRecentsFiles[i]->setText(text);
+		actionsRecentsFiles[i]->setData("Recent|"+files[i]);
+		actionsRecentsFiles[i]->setVisible(true);
+	}
+	for (int j = numRecentFiles; j < maxRecentsFiles; ++j)
+		actionsRecentsFiles[j]->setVisible(false);
 }
 //
 void MainImpl::updateActionsRecentsProjects()
 {
-	//QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings;
+	QSettings settings(PROJECT_NAME);
 #endif	
+
 	settings.beginGroup("RecentProjects");
-    QStringList files = settings.value("RecentProjectsList").toStringList();
-    
-    QStringList existingFiles;
-    foreach (QString fileName, files)
-    {
-        if (QFile(fileName).exists())
-            existingFiles.push_back(fileName);
-    }
-    if (existingFiles.size() < files.size())
-    {
-       	settings.setValue("RecentProjectsList", files);
-        files = existingFiles;
-    }
-
-    int numRecentFiles = qMin(existingFiles.size(), (int)maxRecentsProjects);
-
-    for (int i = 0; i < numRecentFiles; ++i) {
-        QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
-        actionsProjetsRecents[i]->setText(text);
-        actionsProjetsRecents[i]->setData("Recent|"+files[i]);
-        actionsProjetsRecents[i]->setVisible(true);
-    }
-    for (int j = numRecentFiles; j < maxRecentsProjects; ++j)
-        actionsProjetsRecents[j]->setVisible(false);
-
+	QStringList files = settings.value("RecentProjectsList").toStringList();
+	
+	QStringList existingFiles;
+	foreach (QString fileName, files)
+	{
+		if (QFile(fileName).exists())
+		existingFiles.push_back(fileName);
+	}
+	if (existingFiles.size() < files.size())
+	{
+		settings.setValue("RecentProjectsList", files);
+		files = existingFiles;
+	}
+	
+	int numRecentFiles = qMin(existingFiles.size(), (int)maxRecentsProjects);
+	
+	for (int i = 0; i < numRecentFiles; ++i) {
+		QString text = tr("&%1 %2").arg(i + 1).arg(strippedName(files[i]));
+		actionsProjetsRecents[i]->setText(text);
+		actionsProjetsRecents[i]->setData("Recent|"+files[i]);
+		actionsProjetsRecents[i]->setVisible(true);
+	}
+	for (int j = numRecentFiles; j < maxRecentsProjects; ++j)
+		actionsProjetsRecents[j]->setVisible(false);
 }
 //
 void MainImpl::slotOpenRecentFile()
@@ -1991,12 +2001,12 @@ QString MainImpl::strippedName(const QString &fullFileName)
 //
 void MainImpl::setCurrentFile(const QString &file)
 {
-	//QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings;
-#endif	
+	QSettings settings(PROJECT_NAME);
+#endif
+
 	settings.beginGroup("RecentFiles");
 	QStringList files = settings.value("RecentFilesList").toStringList();
 	files.removeAll(file);
@@ -2010,12 +2020,12 @@ void MainImpl::setCurrentFile(const QString &file)
 //
 void MainImpl::setCurrentProject(const QString &file)
 {
-	//QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
-	QSettings settings;
-#endif	
+	QSettings settings(PROJECT_NAME);
+#endif
+
 	settings.beginGroup("RecentProjects");
 	QStringList files = settings.value("RecentProjectsList").toStringList();
 	files.removeAll(file);
