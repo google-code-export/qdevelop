@@ -20,11 +20,12 @@
 * Program URL   : http://qdevelop.org
 *
 */
+#include <QHeaderView>
 #include "shortcutsimpl.h"
 #include "ui_main.h"
 #include "mainimpl.h"
 #include "misc.h"
-#include <QHeaderView>
+
 //
 ShortcutsImpl::ShortcutsImpl(QWidget * parent) 
 	: QDialog(parent), m_mainImpl((MainImpl *)parent)
@@ -34,73 +35,80 @@ ShortcutsImpl::ShortcutsImpl(QWidget * parent)
 	connect(okButton, SIGNAL(clicked()), this, SLOT(slotAccept()) );
 	connect(defaultButton, SIGNAL(clicked()), this, SLOT(slotDefault()) );
 }
+
 //
 void ShortcutsImpl::initTable(MainImpl *main)
 {
-	QList<QObject*> childrens;
-	childrens = main->children();
-    QListIterator<QObject*> iterator(childrens);
-    int row = 0;
+	QList<QObject*> childrens = main->children();
+	QListIterator<QObject*> iterator(childrens);
+	int row = 0;
+	
 	while( iterator.hasNext() )
 	{
 		QObject *object = iterator.next();
-		QString classe = object->metaObject()->className();
-		if( classe == "QAction" )
+		QAction *action = qobject_cast<QAction*>(object);
+		
+		if (action)
 		{
-			QString text = ((QAction *)object)->text().remove("&");
-			if( !text.isEmpty() && !((QAction *)object)->data().toString().contains( "Recent|" ) )
+			QString text = action->text().remove("&");
+			
+			if ( !text.isEmpty() && !(action->data().toString().contains("Recent|")) )
 			{
-				QString shortcut = ((QAction *)object)->shortcut();
-			    table->setRowCount(row+1);
+				QString shortcut = action->shortcut();
 				QTableWidgetItem *newItem = new QTableWidgetItem(text);
+				
 				newItem->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled );
 				newItem->setData(Qt::UserRole, addressToVariant(object));
-		        newItem->setIcon(((QAction *)object)->icon());
-		        table->setItem(row, 0, newItem);
-		        table->setItem(row++, 1, new QTableWidgetItem(shortcut));
+				newItem->setIcon(action->icon());
+				table->setRowCount(row+1);
+				table->setItem(row, 0, newItem);
+				table->setItem(row++, 1, new QTableWidgetItem(shortcut));
 			}
 		}
 		table->sortItems( 0 );
 	}
-    QHeaderView *header = table->horizontalHeader();
-    header->resizeSection( 0, 230 );
-    table->verticalHeader()->hide();
-	//
+	
+	QHeaderView *header = table->horizontalHeader();
+	header->resizeSection( 0, 230 );
+	table->verticalHeader()->hide();
 }
+
 //
 void ShortcutsImpl::slotAccept()
 {
 	for(int row=0; row<table->rowCount(); row++ )
 	{
 		QTableWidgetItem *item = table->item(row, 0);
-		//QAction *action = (QAction *)item->data(Qt::UserRole).toInt();
 		QAction *action = (QAction *)variantToAction( item->data(Qt::UserRole) );
 		QString shortcut = table->item(row, 1)->text();
 		action->setShortcut( shortcut );
 	}
 }
+
 //
 void ShortcutsImpl::slotDefault()
 {
-	QMainWindow * dial = new QMainWindow;
+	QMainWindow *dial = new QMainWindow;
 	Ui::Main ui;
 	ui.setupUi(dial);
-	QList<QObject*> childrens;
-	childrens = dial->children();
-    QListIterator<QObject*> iterator(childrens);
+	
+	QList<QObject*> childrens = dial->children();
+	QListIterator<QObject*> iterator(childrens);
+	
 	while( iterator.hasNext() )
 	{
 		QObject *object = iterator.next();
-		QString classe = object->metaObject()->className();
-		if( classe == "QAction" )
+		QAction *action = qobject_cast<QAction*>(object);
+		
+		if (action)
 		{
-			QString text = ((QAction *)object)->text().remove("&");
-			QString shortcut = ((QAction *)object)->shortcut();
+			QString text = action->text().remove("&");
+			QString shortcut = action->shortcut();
 			QList<QTableWidgetItem *> listFind = table->findItems(text , Qt::MatchExactly);
 			if( listFind.count() )
 				table->item(table->row(listFind.first()), 1)->setText(shortcut);
-				
 		}
 	}
+	
 	delete dial;
 }

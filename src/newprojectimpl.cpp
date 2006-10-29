@@ -34,7 +34,7 @@ NewProjectImpl::NewProjectImpl(QWidget * parent, QString s)
 	connect(projectName, SIGNAL(textChanged(QString)), this, SLOT(slotLabel()) );
 	connect(location, SIGNAL(textChanged(QString)), this, SLOT(slotLabel()) );
 	location->setText( s );
-
+	
 	// TODO remove gcc warnings
 	parent = NULL;
 }
