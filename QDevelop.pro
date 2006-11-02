@@ -113,9 +113,10 @@ TRANSLATIONS =   resources/translations/QDevelop_Chinese.ts \
   resources/translations/QDevelop_Russian.ts \
   resources/translations/QDevelop_Spanish.ts
 UI_DIR =   build/ui
-mac {
+macx {
   OBJECTS_DIR =     build/o/mac
-}
+  ICON =	    resources/images/qdevelop.icns
+}  
 unix {
   OBJECTS_DIR =     build/o/unix
 }
