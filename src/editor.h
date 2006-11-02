@@ -84,6 +84,8 @@ public:
 	void deleteBreakpoint(int line);
 	void setBackgroundColor( QColor c ){ m_textEdit->setBackgroundColor(c); };
 	void setCurrentLineColor( QColor c ){ m_textEdit->setCurrentLineColor(c); };
+	void setMatchingColor( QColor c ){ m_textEdit->setMatchingColor(c); };
+	void gotoMatchingBracket(){ m_textEdit->gotoMatchingBracket(); };
 	int currentLineNumber(){ return m_textEdit->currentLineNumber(); };
 	int currentLineNumber(QTextBlock block){ return m_textEdit->currentLineNumber(block); };
 	void toggleBreakpoint(int line);

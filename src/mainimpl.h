@@ -125,6 +125,7 @@ private:
 	bool m_ctagsIsPresent;
 	QColor m_backgroundColor;
 	QColor m_currentLineColor;
+	QColor m_matchingColor;
 	EndLine m_endLine;
 	bool m_tabSpaces;
 	QPointer<QActionGroup> m_projectGroup;
@@ -212,6 +213,7 @@ private slots:
 	void slotPreviousBookmark();
 	void slotNextBookmark();
 	void slotClearAllBookmarks();
+	void slotGotoMatchingBracket();
 public slots:
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);
 	bool slotCloseAllFiles();

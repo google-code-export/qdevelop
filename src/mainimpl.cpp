@@ -90,6 +90,7 @@ MainImpl::MainImpl(QWidget * parent)
 	m_backgroundColor = Qt::white;
 	m_promptBeforeQuit = false;
 	m_currentLineColor = QColor(215,252,255);
+	m_matchingColor = Qt::red;
 	m_findInFiles = 0;
 	m_stack = 0;
 	m_intervalUpdatingClasses = 5;
@@ -278,6 +279,7 @@ void MainImpl::createConnections()
 	connect(actionComment, SIGNAL(triggered()), this, SLOT(slotComment()) );
 	connect(actionUncomment, SIGNAL(triggered()), this, SLOT(slotUncomment()) );
 	connect(actionParameters, SIGNAL(triggered()), this, SLOT(slotParameters()) );
+	connect(actionGotoMatchingBracket, SIGNAL(triggered()), this, SLOT(slotGotoMatchingBracket()) );
 	connect(actionBacktraces, SIGNAL(triggered()), this, SLOT(slotBacktraces()) );
 	connect(addDebugVariable, SIGNAL(clicked()), this, SLOT(slotAddDebugVariable()) );
 	connect(removeDebugVariable, SIGNAL(clicked()), this, SLOT(slotRemoveDebugVariable()) );
@@ -450,6 +452,14 @@ void MainImpl::slotComment()
 		editor->comment( TextEdit::Comment );
 }
 //
+void MainImpl::slotGotoMatchingBracket()
+{
+	int i = m_tabEditors->currentIndex();
+	Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+	if( editor  )
+		editor->gotoMatchingBracket();
+}
+//
 void MainImpl::slotUncomment()
 {
 	int i = m_tabEditors->currentIndex();
@@ -494,7 +504,7 @@ void MainImpl::slotOptions()
 	m_formatMultilineComments, m_formatQuotationText, m_formatMethods, 
 	m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion, 
 	m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets, 
-	m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match);
+	m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor);
 	
 	if( options->exec() == QDialog::Accepted )
 	{
@@ -529,6 +539,10 @@ void MainImpl::slotOptions()
 			m_currentLineColor = options->currentLineColor();
 		else
 			m_currentLineColor = QColor();
+		if( options->match->isChecked() )
+			m_matchingColor = options->matchingColor();
+		else
+			m_matchingColor = QColor();
 		//
 		for(int i=0; i<m_tabEditors->count(); i++)
 		{
@@ -546,6 +560,7 @@ void MainImpl::slotOptions()
 			((Editor *)m_tabEditors->widget( i ))->setTabSpaces( m_tabSpaces );
 			((Editor *)m_tabEditors->widget( i ))->setBackgroundColor( m_backgroundColor );
 			((Editor *)m_tabEditors->widget( i ))->setCurrentLineColor( m_currentLineColor );
+			((Editor *)m_tabEditors->widget( i ))->setMatchingColor( m_matchingColor );
 			((Editor *)m_tabEditors->widget( i ))->setAutobrackets( m_autobrackets );
 			((Editor *)m_tabEditors->widget( i ))->setSyntaxColors
 				(
@@ -593,6 +608,7 @@ void MainImpl::saveINI()
 	settings.setValue("m_tabSpaces", m_tabSpaces);
 	settings.setValue("m_backgroundColor", m_backgroundColor.name());	
 	settings.setValue("m_currentLineColor", m_currentLineColor.name());
+	settings.setValue("m_matchingColor", m_matchingColor.name());
 	settings.setValue("m_projectsDirectory", m_projectsDirectory);
 	//
 	settings.setValue("m_formatPreprocessorText", m_formatPreprocessorText.foreground().color().name());
@@ -836,6 +852,7 @@ void MainImpl::loadINI()
 	m_match = settings.value("m_match", m_match).toBool();
 	m_backgroundColor = QColor(settings.value("m_backgroundColor", m_backgroundColor).toString());
 	m_currentLineColor = QColor(settings.value("m_currentLineColor", m_currentLineColor).toString());
+	m_matchingColor = QColor(settings.value("m_matchingColor", m_matchingColor).toString());
 	m_projectsDirectory = settings.value("m_projectsDirectory", m_projectsDirectory).toString();
 	m_showTreeClasses = settings.value("m_showTreeClasses", m_showTreeClasses).toBool();
 	m_intervalUpdatingClasses = settings.value("m_intervalUpdatingClasses", m_intervalUpdatingClasses).toInt();
@@ -1191,7 +1208,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 		QApplication::restoreOverrideCursor();
 		return 0;
 	}
-	// Le file est peut-�re d��ouvert. On parcours les onglets �la recherche du nom de file.
+	// The file is perhaps already opened. Find filename in tabs.
 	for(int i=0; i<m_tabEditors->count(); i++)
 	{
 		if( ((Editor *)m_tabEditors->widget(i))->filename() == s)
@@ -1209,7 +1226,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 	}
     //
     //
-	// Pas trouv�dans les onglets, on ouvre vraiment.
+	// Not found in tabs, opens really.
 	Editor *editor = new Editor(m_tabEditors, this, m_completion ,s);
 	editor->setShowTreeClasses( m_showTreeClasses );
 	editor->setIntervalUpdatingTreeClasses( m_intervalUpdatingClasses );
@@ -1223,6 +1240,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 	editor->setAutoCompletion( m_autoCompletion );
 	editor->setAutobrackets( m_autobrackets );
 	editor->setBackgroundColor( m_backgroundColor );
+	editor->setMatchingColor( m_matchingColor );
 	editor->setCurrentLineColor( m_currentLineColor );
 	editor->setSyntaxColors
 		(  
