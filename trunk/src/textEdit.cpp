@@ -620,6 +620,21 @@ void TextEdit::findText()
     m_editor->find();
 }
 //
+void TextEdit::gotoMatchingBracket()
+{
+	int pos;
+	QTextCursor cursor = textCursor();
+	if( cursor.position() == m_matchingBegin )
+		pos = m_matchingEnd;
+	else
+		pos = m_matchingBegin;
+    if( pos != -1 )
+    {
+		cursor.setPosition(pos, QTextCursor::MoveAnchor);
+		setTextCursor( cursor );
+	}
+}
+//
 void TextEdit::slotFind(Ui::FindWidget ui, QString ttf,QTextDocument::FindFlags options, bool fromButton)
 {
 	QTextDocument *doc = document();
@@ -736,7 +751,7 @@ void TextEdit::match()
     	QFont font = format.font();
     	font.setBold( true );
     	format.setFont( font );
-    	format.setForeground(Qt::red);
+    	format.setForeground(m_matchingColor);
     	cursor.setCharFormat( format );
     	m_matchingBegin = pos;
     	// Second match
@@ -758,7 +773,7 @@ void TextEdit::match()
 			    	QFont font = format.font();
 			    	font.setBold( true );
 			    	format.setFont( font );
-			    	format.setForeground(Qt::red);
+			    	format.setForeground(m_matchingColor);
 					cursor.setPosition(i+1, QTextCursor::MoveAnchor);
 					cursor.setPosition(i, QTextCursor::KeepAnchor);
 			    	cursor.setCharFormat( format );
@@ -779,7 +794,7 @@ void TextEdit::match()
     	QFont font = format.font();
     	font.setBold( true );
     	format.setFont( font );
-    	format.setForeground(Qt::red);
+    	format.setForeground(m_matchingColor);
 		cursor.setPosition(pos+1, QTextCursor::MoveAnchor);
 		cursor.setPosition(pos, QTextCursor::KeepAnchor);
     	cursor.setCharFormat( format );
@@ -803,7 +818,7 @@ void TextEdit::match()
 			    	QFont font = format.font();
 			    	font.setBold( true );
 			    	format.setFont( font );
-			    	format.setForeground(Qt::red);
+			    	format.setForeground(m_matchingColor);
 					cursor.setPosition(i+1, QTextCursor::MoveAnchor);
 					cursor.setPosition(i, QTextCursor::KeepAnchor);
 			    	cursor.setCharFormat( format );

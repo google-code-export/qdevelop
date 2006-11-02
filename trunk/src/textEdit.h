@@ -71,12 +71,14 @@ public:
 	void setMatch(bool b) { m_match = b; };
 	void setBackgroundColor( QColor c );
 	void setCurrentLineColor( QColor c );
+	void setMatchingColor( QColor c ) { m_matchingColor = c; };
 	int currentLineNumber();
 	int currentLineNumber(QTextBlock block);
 	int linesCount();
     void dialogGotoLine();
     void completeCode();
     void setFocus(Qt::FocusReason reason);
+    void gotoMatchingBracket();
     enum ActionComment {Toggle, Comment, Uncomment};
 public slots:
 	void gotoLine( int line, bool moveTop );
@@ -122,6 +124,7 @@ private:
     bool m_match;
     QColor m_backgroundColor;
     QColor m_currentLineColor;
+    QColor m_matchingColor;
     QAction *actionToggleBreakpoint;
     int m_lineNumber;
 protected:

@@ -35,7 +35,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
     QColor back, bool prompt, QColor lc, bool bk, bool tc, int in, QString directory,
-    bool m)
+    bool m, QColor mc)
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -89,6 +89,9 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	pix.fill( back );
 	background->setIcon( pix );
 	m_backgroundColor = back;
+	pix.fill( mc );
+	matching->setIcon( pix );
+	m_matchingColor = mc;
 	if( lc.isValid() )
 	{
 		pix.fill( lc );
@@ -112,6 +115,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	connect(keywords, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(background, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(lineColor, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
+	connect(matching, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(defaults, SIGNAL(clicked()), this, SLOT(slotDefault()));
 	connect(chooseProjectsDirectory, SIGNAL(clicked()), this, SLOT(slotChooseProjectsDirectory()));
 	textEdit->setPlainText( textEdit->toPlainText() );
@@ -133,6 +137,11 @@ QColor OptionsImpl::backgroundColor()
 QColor OptionsImpl::currentLineColor() 
 {
 	return m_colorCurrentLine;
+}
+//
+QColor OptionsImpl::matchingColor() 
+{
+	return m_matchingColor;
 }
 //
 void OptionsImpl::slotChangeColor()
@@ -158,6 +167,8 @@ void OptionsImpl::slotChangeColor()
 		color = m_backgroundColor;
 	else if( button == lineColor )
 		color = m_colorCurrentLine;
+	else if( button == matching )
+		color = m_matchingColor;
 	color = QColorDialog::getColor(color);
 	if( color.isValid() )
 	{
@@ -183,6 +194,8 @@ void OptionsImpl::slotChangeColor()
 			m_backgroundColor = color;
 		else if( button == lineColor )
 			m_colorCurrentLine = color;
+		else if( button == matching )
+			m_matchingColor = color;
 		cppHighLighter->setDocument( textEdit->document() );
 	}
 }
@@ -228,6 +241,10 @@ void OptionsImpl::slotDefault()
 	pix.fill( Qt::white );
 	m_backgroundColor = Qt::white;
 	background->setIcon( pix );
+	//
+	pix.fill( Qt::red );
+	m_matchingColor = Qt::red;
+	matching->setIcon( pix );
 	//
 	pix.fill( QColor(238,246,255) );
 	m_colorCurrentLine = QColor(238,246,255);

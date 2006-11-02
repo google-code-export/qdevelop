@@ -37,15 +37,17 @@ public:
 		QTextCharFormat commMulti, QTextCharFormat guillemets, QTextCharFormat meth, 
 		QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
 		QColor back, bool prompt, QColor colorLine, bool bk, 
-		bool tc, int in, QString directory, bool m);
+		bool tc, int in, QString directory, bool m, QColor mc);
 	QFont font();
 	CppHighlighter *syntaxe() { return cppHighLighter; };
 	QColor backgroundColor();
 	QColor currentLineColor();
+	QColor matchingColor();
 private:
 	CppHighlighter *cppHighLighter;
 	QColor m_backgroundColor;
     QColor m_colorCurrentLine;
+    QColor m_matchingColor;
 private slots:
 	void slotChangeColor();
 	void slotDefault();
