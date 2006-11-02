@@ -86,6 +86,7 @@ MainImpl::MainImpl(QWidget * parent)
 	m_tabSpaces = false;
 	m_autoCompletion = true;
 	m_autobrackets = true;
+	m_match = true;
 	m_backgroundColor = Qt::white;
 	m_promptBeforeQuit = false;
 	m_currentLineColor = QColor(215,252,255);
@@ -493,7 +494,7 @@ void MainImpl::slotOptions()
 	m_formatMultilineComments, m_formatQuotationText, m_formatMethods, 
 	m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion, 
 	m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets, 
-	m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory);
+	m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match);
 	
 	if( options->exec() == QDialog::Accepted )
 	{
@@ -512,6 +513,7 @@ void MainImpl::slotOptions()
 		m_tabSpaces = options->tabSpaces->isChecked();
 		m_autoCompletion = options->completion->isChecked();
 		m_autobrackets = options->brackets->isChecked();
+		m_match = options->match->isChecked();
 		m_promptBeforeQuit = options->promptBeforeQuit->isChecked();
 		m_projectsDirectory = options->projectsDirectory->text();
 		//
@@ -537,6 +539,7 @@ void MainImpl::slotOptions()
 			((Editor *)m_tabEditors->widget( i ))->setSyntaxHighlight( m_cppHighlighter );
 			((Editor *)m_tabEditors->widget( i ))->setLineNumbers( m_lineNumbers );
 			((Editor *)m_tabEditors->widget( i ))->setAutoIndent( m_autoIndent );	
+			((Editor *)m_tabEditors->widget( i ))->setMatch( m_match );	
 			((Editor *)m_tabEditors->widget( i ))->setSelectionBorder( m_selectionBorder );
 			((Editor *)m_tabEditors->widget( i ))->setAutoCompletion( m_autoCompletion );
 			((Editor *)m_tabEditors->widget( i ))->setEndLine( m_endLine );
@@ -583,6 +586,7 @@ void MainImpl::saveINI()
 	settings.setValue("m_promptBeforeQuit", m_promptBeforeQuit);
 	settings.setValue("m_autoCompletion", m_autoCompletion);
 	settings.setValue("m_autobrackets", m_autobrackets);
+	settings.setValue("m_match", m_match);
 	settings.setValue("m_checkEnvironment", m_checkEnvironment);
 	settings.setValue("m_checkEnvironmentOnStartup", m_checkEnvironmentOnStartup);
 	settings.setValue("m_endLine", m_endLine);
@@ -829,6 +833,7 @@ void MainImpl::loadINI()
 	m_autoMaskDocks = settings.value("m_autoMaskDocks", m_autoMaskDocks).toBool();
 	m_endLine = (EndLine)settings.value("m_endLine", m_endLine).toInt();
 	m_tabSpaces = settings.value("m_tabSpaces", m_tabSpaces).toBool();
+	m_match = settings.value("m_match", m_match).toBool();
 	m_backgroundColor = QColor(settings.value("m_backgroundColor", m_backgroundColor).toString());
 	m_currentLineColor = QColor(settings.value("m_currentLineColor", m_currentLineColor).toString());
 	m_projectsDirectory = settings.value("m_projectsDirectory", m_projectsDirectory).toString();

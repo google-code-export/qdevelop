@@ -1,3 +1,7 @@
+Version 0.21-svn
+Adds:
+- Colorized matching for ( and {
+
 October 26 2006 Version 0.20
 Name:
 - QIde becomes QDevelop at October 4, 2006

@@ -34,7 +34,8 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat pre, QTextCharFormat qt, QTextCharFormat commSimples, 
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
-    QColor back, bool prompt, QColor lc, bool bk, bool tc, int in, QString directory)
+    QColor back, bool prompt, QColor lc, bool bk, bool tc, int in, QString directory,
+    bool m)
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -56,6 +57,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
     brackets->setChecked( bk );
     showTreeClasses->setChecked( tc );
     interval->setValue( in );
+    match->setChecked( m );
     projectsDirectory->setText( directory );
 	//
 	cppHighLighter = new CppHighlighter( 0 );

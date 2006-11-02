@@ -57,6 +57,9 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
 	m_findOptions = 0;
 	m_findExp = "";
 	m_findImpl = 0;
+	m_match = true;
+	m_matchingBegin = -1;
+	m_matchingEnd = -1;
 	m_endLine = MainImpl::Default;
 	connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));	
 	connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
@@ -114,7 +117,7 @@ void TextEdit::completeCode()
 		m_completion->setEmitResults( false );
 		m_completion->wait();
 	}
-    QString c = toPlainText().left(textCursor().position());
+    QString c = m_plainText.left(textCursor().position());
     m_completion->initParse(c, true);
     m_completion->start();
 }
@@ -217,10 +220,9 @@ bool TextEdit::open(bool silentMode, QString filename, QDateTime &lastModified)
 	file.close();
 	if( m_lineNumbers )
 		m_lineNumbers->setDigitNumbers( QString::number(linesCount()).length() );
-    QString c = toPlainText();
     if( m_completion )
     {
-	    m_completion->initParse(c, true, false);
+	    m_completion->initParse(toPlainText(), true, false);
 	    m_completion->start();
    	}
 	QApplication::restoreOverrideCursor();
@@ -678,6 +680,145 @@ void TextEdit::slotCursorPositionChanged()
 {
 	if ( m_currentLineColor.isValid() )
 		viewport()->update();
+	m_plainText = toPlainText();
+	if( m_match )
+	{
+		clearMatch();
+		match();
+	}
+}
+//
+void TextEdit::clearMatch()
+{
+	bool m = document()->isModified();
+	QTextCursor cursor = textCursor();
+    if( m_matchingBegin != -1 )
+    {
+		cursor.setPosition(m_matchingBegin+1, QTextCursor::MoveAnchor);
+		cursor.setPosition(m_matchingBegin, QTextCursor::KeepAnchor);
+    	QTextCharFormat format = cursor.block().charFormat();
+    	QFont font = format.font();
+    	font.setBold( false );
+    	format.setFont( font );
+    	format.setForeground(Qt::black);
+    	cursor.setCharFormat( format );
+    	m_matchingBegin = -1;
+   	}
+    if( m_matchingEnd != -1 )
+    {
+		cursor.setPosition(m_matchingEnd+1, QTextCursor::MoveAnchor);
+		cursor.setPosition(m_matchingEnd, QTextCursor::KeepAnchor);
+    	QTextCharFormat format = cursor.block().charFormat();
+    	QFont font = format.font();
+    	font.setBold( false );
+    	format.setFont( font );
+    	format.setForeground(Qt::black);
+    	cursor.setCharFormat( format );
+    	m_matchingEnd = -1;
+   	}
+	document()->setModified( m );
+}
+//
+void TextEdit::match()
+{
+	bool m = document()->isModified();
+	QTextCursor cursor = textCursor();
+	int pos = textCursor().position();
+    QChar car;
+    if( pos != -1 )
+    	car = m_plainText.at( pos );
+    if( QString("({").contains( car ) && !m_editor->inQuotations(pos, m_plainText) )
+    {
+    	// First match
+		cursor.setPosition(pos+1, QTextCursor::MoveAnchor);
+		cursor.setPosition(pos, QTextCursor::KeepAnchor);
+    	QTextCharFormat format = cursor.block().charFormat();
+    	QFont font = format.font();
+    	font.setBold( true );
+    	format.setFont( font );
+    	format.setForeground(Qt::red);
+    	cursor.setCharFormat( format );
+    	m_matchingBegin = pos;
+    	// Second match
+    	QChar match = ')';
+    	if( car == '{' )
+    		match = '}';
+    	int nb = 0;
+    	for(int i = pos+1;  i < m_plainText.length(); i++)
+    	{
+    		if( m_plainText.at(i) ==  car && !m_editor->inQuotations(i, m_plainText) )
+    		{
+    			nb++;
+   			}
+    		else if( m_plainText.at(i) == match && !m_editor->inQuotations(i, m_plainText) )
+    		{
+    			if( nb == 0 )
+    			{
+			    	QTextCharFormat format = cursor.block().charFormat();
+			    	QFont font = format.font();
+			    	font.setBold( true );
+			    	format.setFont( font );
+			    	format.setForeground(Qt::red);
+					cursor.setPosition(i+1, QTextCursor::MoveAnchor);
+					cursor.setPosition(i, QTextCursor::KeepAnchor);
+			    	cursor.setCharFormat( format );
+			    	m_matchingEnd = i;
+			    	break;
+   				}
+   				else
+   				{
+   					nb--;
+  				}
+   			}
+   		}
+   	}
+    else if( QString(")}").contains( car ) && !m_editor->inQuotations(pos, m_plainText) )
+    {
+    	// First match
+    	QTextCharFormat format = cursor.block().charFormat();
+    	QFont font = format.font();
+    	font.setBold( true );
+    	format.setFont( font );
+    	format.setForeground(Qt::red);
+		cursor.setPosition(pos+1, QTextCursor::MoveAnchor);
+		cursor.setPosition(pos, QTextCursor::KeepAnchor);
+    	cursor.setCharFormat( format );
+    	m_matchingEnd = pos;
+    	// Second match
+    	QChar match = '(';
+    	if( car == '}' )
+    		match = '{';
+    	int nb = 0;
+    	for(int i = pos-1;  i > 0; i--)
+    	{
+    		if( m_plainText.at(i) ==  car && !m_editor->inQuotations(i, m_plainText)  )
+    		{
+    			nb++;
+   			}
+    		else if( m_plainText.at(i) == match && !m_editor->inQuotations(i, m_plainText) )
+    		{
+    			if( nb == 0 )
+    			{
+			    	QTextCharFormat format = cursor.block().charFormat();
+			    	QFont font = format.font();
+			    	font.setBold( true );
+			    	format.setFont( font );
+			    	format.setForeground(Qt::red);
+					cursor.setPosition(i+1, QTextCursor::MoveAnchor);
+					cursor.setPosition(i, QTextCursor::KeepAnchor);
+			    	cursor.setCharFormat( format );
+			    	m_matchingBegin = i;
+			    	break;
+   				}
+   				else
+   				{
+   					nb--;
+  				}
+   			}
+   		}
+    	
+   	}
+	document()->setModified( m );
 }
 //
 void TextEdit::slotWordCompletion(QListWidgetItem *item)
@@ -695,15 +836,16 @@ void TextEdit::slotWordCompletion(QListWidgetItem *item)
 void TextEdit::keyPressEvent ( QKeyEvent * event )
 {
 	QTextCursor cursor = textCursor();
+	clearMatch();
 	if( event->key() == Qt::Key_Tab )
 	{
 		slotIndent( !(event->modifiers() == Qt::ControlModifier) );
 	}
     else if( m_completionList->isVisible() )
     {
-        if(event->key() == Qt::Key_Backspace && (toPlainText().left(textCursor().position()).right(1) == "." 
-            || toPlainText().left(textCursor().position()).right(1) == ">" 
-            || toPlainText().left(textCursor().position()).right(1) == ":"))
+        if(event->key() == Qt::Key_Backspace && (m_plainText.left(textCursor().position()).right(1) == "." 
+            || m_plainText.left(textCursor().position()).right(1) == ">" 
+            || m_plainText.left(textCursor().position()).right(1) == ":"))
             m_completionList->hide();
         else if( event->key() == Qt::Key_Up )
         {
@@ -741,8 +883,8 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 	else if( m_autoCompletion && 
 		(
 			event->key() == '.' 
-        || ( event->key() == '>' && toPlainText().left(textCursor().position()).right(1) == "-"  ) 
-        || ( event->key() == ':' && toPlainText().left(textCursor().position()).right(1) == ":"  ) ) 
+        || ( event->key() == '>' && m_plainText.left(textCursor().position()).right(1) == "-"  ) 
+        || ( event->key() == ':' && m_plainText.left(textCursor().position()).right(1) == ":"  ) ) 
     	)
 	{
 		QTextEdit::keyPressEvent ( event );
@@ -768,19 +910,6 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 	}
 	else if( event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace )
 	{
-		int linesDeleted;
-		QString s = textCursor().selection().toPlainText();
-		if ( s.length() )
-			linesDeleted = s.count( QChar('\n') );
-		else
-		{
-			if( event->key() == Qt::Key_Delete )
-				linesDeleted = toPlainText().at( textCursor().position() ) == '\n';
-			else
-				linesDeleted = toPlainText().at( textCursor().position()-1 ) == '\n';
-		}
-		//if( linesDeleted )
-			//m_editor->updateNumLines(currentLineNumber(), linesDeleted*-1);
 		QTextEdit::keyPressEvent ( event );
 	}
 	else if( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutCut() )
@@ -808,8 +937,6 @@ void TextEdit::dropEvent( QDropEvent * event )
 		int linesAdded = 0;
 		if ( text.length() )
 			linesAdded = text.count( QChar('\n') );
-		//if( linesAdded )
-			//m_editor->updateNumLines(currentLineNumber(), linesAdded);
 		setTextCursor( save );
 	}
 	QTextEdit::dropEvent( event );
@@ -930,12 +1057,12 @@ void TextEdit::mouseDoubleClickEvent( QMouseEvent * event )
 	mousePosition = event->pos();
 	QTextCursor cursor = textCursor();
 	int pos = cursor.position();
-    while( pos>0  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( toPlainText().at( pos-1 ).toUpper()  ) )
+    while( pos>0  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( m_plainText.at( pos-1 ).toUpper()  ) )
     	pos--;
 	cursor.setPosition(pos, QTextCursor::MoveAnchor);
 	setTextCursor( cursor );
 	//
-    while( pos < toPlainText().length()  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( toPlainText().at( pos ).toUpper()  ) )
+    while( pos < m_plainText.length()  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( m_plainText.at( pos ).toUpper()  ) )
     	pos++;
 	cursor.setPosition(pos, QTextCursor::KeepAnchor);
 	setTextCursor( cursor );
@@ -999,21 +1126,13 @@ QString TextEdit::wordUnderCursor(const QPoint & pos, bool select)
 		cursor = cursorForPosition ( pos );
 	QTextCursor save(cursor);
 	//
-	/*QTextCursor curTravail = cursor;
-	curTravail.movePosition(QTextCursor::StartOfWord, QTextCursor::MoveAnchor);
-	curTravail.movePosition(QTextCursor::EndOfWord, QTextCursor::KeepAnchor);
-	setTextCursor( curTravail );
-	QString word = textCursor().selectedText().simplified();
-	//
-	setTextCursor( cursor );*/
-	//QTextCursor cursor = textCursor();
 	int curpos = cursor.position();
-    while( curpos>0  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( toPlainText().at( curpos-1 ).toUpper()  ) )
+    while( curpos>0  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( m_plainText.at( curpos-1 ).toUpper()  ) )
     	curpos--;
 	cursor.setPosition(curpos, QTextCursor::MoveAnchor);
 	setTextCursor( cursor );
 	//
-    while( curpos < toPlainText().length()  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( toPlainText().at( curpos ).toUpper()  ) )
+    while( curpos < m_plainText.length()  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( m_plainText.at( curpos ).toUpper()  ) )
     	curpos++;
 	cursor.setPosition(curpos, QTextCursor::KeepAnchor);
 	QString word = cursor.selectedText().simplified();
@@ -1027,7 +1146,7 @@ QString TextEdit::wordUnderCursor(const QPoint & pos, bool select)
 //
 QString TextEdit::classNameUnderCursor()
 {
-    QString c = toPlainText().left(textCursor().position());
+    QString c = m_plainText.left(textCursor().position());
 	return m_completion->className(c);
 }
 //

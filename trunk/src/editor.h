@@ -105,6 +105,7 @@ public:
 	int verticalScrollBar() { return m_textEdit->verticalScrollBar()->value(); };
 	void setVerticalScrollBar(int s) { m_textEdit->verticalScrollBar()->setValue(s); };
 	void setAutobrackets(bool b) { m_textEdit->setAutobrackets(b); };
+	void setMatch(bool b) { m_textEdit->setMatch(b); };
 	bool isModified() { return m_textEdit->document()->isModified(); };
 	void setFocus();
 	void replace();
@@ -115,6 +116,7 @@ public:
 	void toggleBookmark() { toggleBookmark( m_textEdit->currentLineNumber() ); };
 	QList<int> bookmarksList();
 	QList<int> breakpointsList();
+	bool inQuotations(int position, QString text);
 	//
 public slots:
 	void gotoLine( int line, bool moveTop);
@@ -158,7 +160,6 @@ private:
 	Ui::FindWidget uiFind;
     QTimer *autoHideTimer;
     bool m_backward;
-	bool inQuotations(int position, QString text);
 	ReplaceOptions m_replaceOptions;
     bool m_activeEditor;
     QTimer m_timerUpdateClasses;

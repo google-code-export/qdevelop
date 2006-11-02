@@ -121,6 +121,7 @@ private:
 	bool m_autoMaskDocks;
 	bool m_autoCompletion;
 	bool m_autobrackets;
+	bool m_match;
 	bool m_ctagsIsPresent;
 	QColor m_backgroundColor;
 	QColor m_currentLineColor;
