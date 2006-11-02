@@ -68,6 +68,7 @@ public:
 	void setEndLine(MainImpl::EndLine end) { m_endLine = end; };
 	void setTabSpaces(bool t) { m_tabSpaces = t; };
 	void setAutobrackets(bool b) { m_autobrackets = b; };
+	void setMatch(bool b) { m_match = b; };
 	void setBackgroundColor( QColor c );
 	void setCurrentLineColor( QColor c );
 	int currentLineNumber();
@@ -92,6 +93,9 @@ private slots:
 	void slotToggleBreakpoint();
 	void slotToggleBookmark();
 private:
+	QString m_plainText;
+	long m_matchingBegin;
+	long m_matchingEnd;
 	QPointer<LineNumbers> m_lineNumbers;
 	QPointer<SelectionBorder> m_selectionBorder;
 	CppHighlighter *cpphighlighter;
@@ -107,12 +111,15 @@ private:
 	void autoIndent();
 	void autobrackets();
 	void autoUnindent();
+	void match();
+	void clearMatch();
 	MainImpl::EndLine m_endLine;
 	bool m_tabSpaces;
     InitCompletion *m_completion;
     QListWidget *m_completionList;
     bool m_autoCompletion;
     bool m_autobrackets;
+    bool m_match;
     QColor m_backgroundColor;
     QColor m_currentLineColor;
     QAction *actionToggleBreakpoint;
