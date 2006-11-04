@@ -136,31 +136,6 @@
     <addaction name="actionClearAllBookmarks" />
     <addaction name="separator" />
    </widget>
-   <widget class="QMenu" name="menuProject" >
-    <property name="enabled" >
-     <bool>true</bool>
-    </property>
-    <property name="title" >
-     <string>&amp;Project</string>
-    </property>
-    <widget class="QMenu" name="menuLastsProjects" >
-     <property name="title" >
-      <string>Last Projects</string>
-     </property>
-    </widget>
-    <addaction name="actionNewProject" />
-    <addaction name="actionOpenProject" />
-    <addaction name="actionSaveProject" />
-    <addaction name="actionCloseProject" />
-    <addaction name="separator" />
-    <addaction name="menuLastsProjects" />
-    <addaction name="separator" />
-    <addaction name="actionAddNewItem" />
-    <addaction name="actionAddScope" />
-    <addaction name="actionAddExistingFiles" />
-    <addaction name="separator" />
-    <addaction name="actionProjectPropertie" />
-   </widget>
    <widget class="QMenu" name="menuView" >
     <property name="title" >
      <string>&amp;View</string>
@@ -201,6 +176,31 @@
     <addaction name="actionUncomment" />
     <addaction name="separator" />
     <addaction name="actionCompleteCode" />
+   </widget>
+   <widget class="QMenu" name="menuProject" >
+    <property name="enabled" >
+     <bool>true</bool>
+    </property>
+    <property name="title" >
+     <string>&amp;Project</string>
+    </property>
+    <widget class="QMenu" name="menuLastsProjects" >
+     <property name="title" >
+      <string>Last Projects</string>
+     </property>
+    </widget>
+    <addaction name="actionNewProject" />
+    <addaction name="actionOpenProject" />
+    <addaction name="actionSaveProject" />
+    <addaction name="actionCloseProject" />
+    <addaction name="separator" />
+    <addaction name="menuLastsProjects" />
+    <addaction name="separator" />
+    <addaction name="actionAddNewItem" />
+    <addaction name="actionAddScope" />
+    <addaction name="actionAddExistingFiles" />
+    <addaction name="separator" />
+    <addaction name="actionProjectPropertie" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -923,6 +923,9 @@
    </property>
    <property name="toolTip" >
     <string>Add New Item</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+N</string>
    </property>
   </action>
   <action name="actionAddExistingFiles" >

@@ -542,9 +542,12 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
 				tr("Cancel") );
 			return;
 		}
-		QByteArray templateData;;
+		
+		QByteArray templateData;
+		
 		if( absoluteFilename.section(".", -1, -1) == "ui" )
 		{
+			// set a default content for UI files
 			QStringList items;
 			items << "QDialog" << "QMainWindow" << "QWidget";
 			bool ok;
@@ -566,6 +569,42 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
 			else
 				return;
 		}
+		else if( filename.section(".", -1, -1) == "h" )
+		{
+			// add a default content for *.h files
+			QString defString = filename.toUpper();
+			
+			// filter out bad chars
+			int j = defString.length();
+			for( int i=0; i < j; i++ )
+			{
+				if (!defString[i].isLetterOrNumber())
+					defString[i] = '_';
+			}
+			
+			// leading _ are because the file name can start with a digit, 
+			// while an identifier on C/C++ can not
+			// trailing _ are for fun
+			templateData.append( QString("#ifndef __%1__\n").arg( defString ) );
+			templateData.append( QString("#define __%1__\n").arg( defString ) );
+			templateData.append( QString("\n// place your code here\n\n") );
+			templateData.append( QString("#endif // __%1__\n").arg( defString ) );
+		}
+		else if ((filename.section(".", -1, -1) == "c" ) ||
+			 (filename.section(".", -1, -1) == "cpp" ) )
+		{
+			// user added 2 files to the project, which means
+			// source + header
+			// lets assume users do not put "," in the file name
+			if (filesList.count() != 1)
+			{
+				QString includeFile = filename.left( filename.lastIndexOf(".") ) + ".h";	
+				templateData.append( QString("#include \"%1\"\n\n").arg( includeFile ) );
+			}
+			
+			templateData.append( QString("// place your code here\n") );
+		}
+		
 		if( !file.open(QIODevice::WriteOnly | QIODevice::Text) )
 		{
 			QMessageBox::warning(0, 
@@ -573,10 +612,12 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
 				tr("Cancel") );
 			return;
 		}
-		if( absoluteFilename.section(".", -1, -1) == "ui" )
+		
+		if (!templateData.isEmpty ())
 		{
 			file.write( templateData );
 		}
+		
 		file.close();
 		insertFile(item, filename);
 	}
