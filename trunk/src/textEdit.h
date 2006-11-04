@@ -105,6 +105,7 @@ private:
 	int m_findOptions;
 	FindImpl *m_findImpl;
 	int lineNumber(QTextCursor cursor);
+	int lineNumber(QTextBlock b);
 	int lineNumber(QPoint point);
 	QPoint mousePosition;
 	Editor *m_editor;
