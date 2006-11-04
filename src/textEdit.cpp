@@ -311,15 +311,16 @@ void TextEdit::comment(ActionComment action)
 {
 	// Trent's implementation
 	QTextCursor cursor = textCursor();
-	
+	if( cursor.selectedText().isEmpty() )
+		return;
 	int startPos = cursor.selectionStart();
 	int endPos = cursor.selectionEnd();
 	QTextBlock startBlock = document()->findBlock(startPos);
-	QTextBlock endBlock = document()->findBlock(endPos);
-	
+	QTextBlock endBlock = document()->findBlock(endPos).previous();
+	int firstLine = lineNumber( startBlock );
+	int lastLine = lineNumber( endBlock );
 	QTextBlock block = startBlock;
 	cursor.setPosition(startPos);
-	
 	while (!(endBlock < block))
 	{
 		QString text = block.text();
@@ -338,12 +339,21 @@ void TextEdit::comment(ActionComment action)
 			if (text.mid(i, 2) == "//")
 				text.remove(i, 2);
 		}
+		else if (action == Toggle)
+		{
+			if (text.mid(i, 2) == "//")
+				text.remove(i, 2);
+			else
+				text.insert(i, "//");
+		}
 		cursor.movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
 		cursor.movePosition(QTextCursor::EndOfLine, QTextCursor::KeepAnchor);
 		cursor.insertText(text);
 		cursor.movePosition(QTextCursor::NextBlock);
 		block = cursor.block();
 	}
+	// Reselect blocks
+	selectLines(firstLine, lastLine);
 }
 //
 void TextEdit::autoUnindent()
@@ -1237,6 +1247,14 @@ int TextEdit::lineNumber(QTextCursor cursor)
 	QTextBlock blocCurseur = cursor.block();
 	int m_lineNumber = 1;
 	for ( QTextBlock block =document()->begin(); block.isValid() && block != blocCurseur; block = block.next() )
+		m_lineNumber++;
+	return m_lineNumber++;
+}
+//
+int TextEdit::lineNumber(QTextBlock b)
+{
+	int m_lineNumber = 1;
+	for ( QTextBlock block =document()->begin(); block.isValid() && block != b; block = block.next() )
 		m_lineNumber++;
 	return m_lineNumber++;
 }
