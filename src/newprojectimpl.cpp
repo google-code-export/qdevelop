@@ -68,3 +68,25 @@ void NewProjectImpl::slotLabel()
 		label->setText( label->text().section(":", 0, 0) + ": "	+ location->text() + "/" + projectName->text() );
 	}
 }
+
+void NewProjectImpl::on_dialog_clicked(bool checked)
+{
+	if (!checked)
+		return;
+	
+	uiFilename->setText( "dialog" );
+	subclassFilename->setText( "dialogimpl" );
+	uiObjectName->setText( "Dialog" );
+	subclassObjectName->setText( "DialogImpl" );
+}
+
+void NewProjectImpl::on_mainwindow_clicked(bool checked)
+{
+	if (!checked)
+		return;
+
+	uiFilename->setText( "mainwindow" );
+	subclassFilename->setText( "mainwindowimpl" );
+	uiObjectName->setText( "MainWindow" );
+	subclassObjectName->setText( "MainWindowImpl" );
+}

@@ -37,6 +37,8 @@ public slots:
 private:
     QString m_projectLocation;
 private slots:
+	void on_dialog_clicked(bool checked);
+	void on_mainwindow_clicked(bool checked);
 	void slotChooseDirectory();
 	void slotLabel();
 };
