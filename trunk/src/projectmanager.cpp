@@ -535,6 +535,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
 		absoluteFilename = repCreation+"/"+filename.remove("\"").simplified();
 		filename = QDir(projectDir).relativeFilePath(absoluteFilename).replace("\\", "/");
 		QFile file ( absoluteFilename );
+				
 		if( file.exists() )
 		{
 			QMessageBox::warning(0, 
@@ -572,7 +573,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
 		else if( filename.section(".", -1, -1) == "h" )
 		{
 			// add a default content for *.h files
-			QString defString = filename.toUpper();
+			QString defString = filename.toUpper().section("/", -1, -1);
 			
 			// filter out bad chars
 			int j = defString.length();
@@ -599,6 +600,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
 			if (filesList.count() != 1)
 			{
 				QString includeFile = filename.left( filename.lastIndexOf(".") ) + ".h";	
+				includeFile = includeFile.section("/", -1, -1);
 				templateData.append( QString("#include \"%1\"\n\n").arg( includeFile ) );
 			}
 			
