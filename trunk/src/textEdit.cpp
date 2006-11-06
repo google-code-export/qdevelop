@@ -1114,7 +1114,7 @@ void TextEdit::contextMenuEvent(QContextMenuEvent * e)
 	connect(menu->addAction(QIcon(":/toolbar/images/editcopy.png"), tr("Copy")), SIGNAL(triggered()), this, SLOT(copy()) );
 	connect(menu->addAction(QIcon(":/toolbar/images/editpaste.png"), tr("Paste")), SIGNAL(triggered()), this, SLOT(paste()) );
 	menu->addSeparator();
-	connect(menu->addAction(QIcon(":/toolbar/images/indent.png"), tr("Selection Indent")), SIGNAL(triggered()), this, SLOT(slotIndent()) );
+	connect(menu->addAction(QIcon(":/toolbar/images/indente.png"), tr("Selection Indent")), SIGNAL(triggered()), this, SLOT(slotIndent()) );
 	connect(menu->addAction(QIcon(":/toolbar/images/desindente.png"), tr("Selection Unindent")), SIGNAL(triggered()), this, SLOT(slotUnindent()) );
 	QTextCursor cursor = textCursor();
 	menu->addSeparator();
