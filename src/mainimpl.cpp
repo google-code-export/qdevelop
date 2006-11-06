@@ -1281,12 +1281,28 @@ void MainImpl::toggleBookmark(Editor *editor, QString text, bool activate, QText
 	Bookmark bookmark;
 	bookmark.first = editor;
 	bookmark.second = block;
+	int line = editor->currentLineNumber( block );
 	if( activate )
 	{
 		QString s = text;
 		if( s.length() > 50 )
 			s = s.left(50)+" ...";
-		QAction *action = menuBookmarks->addAction(s, this, SLOT(slotActivateBookmark()));
+		QAction *action = new QAction(s, menuBookmarks);
+		connect(action, SIGNAL(triggered()), this, SLOT(slotActivateBookmark()));
+		//
+		QAction *before = 0;
+		QList<QAction *> actionsList = menuBookmarks->actions();
+		foreach(QAction *actionBefore, actionsList)
+		{
+			Bookmark bookmarkAction = actionBefore->data().value<Bookmark>();
+			if( bookmarkAction.first == editor && editor->currentLineNumber( bookmarkAction.second ) > line )
+			{
+				before = actionBefore;
+				break;
+			}
+		}
+		//
+		menuBookmarks->insertAction(before, action);
 		QVariant v;
 		v.setValue( bookmark );
 		action->setData( v );
