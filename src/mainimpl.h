@@ -84,6 +84,7 @@ private:
 	void saveINI();
 	bool modifiedEditors();
 	void configureCompletion();
+	void loadPlugins();
 	// Objects and Variables
 	enum ExecuteVersion { ExecuteNone, ExecuteRelease, ExecuteDebug};
 	Build *m_builder;
@@ -214,6 +215,7 @@ private slots:
 	void slotNextBookmark();
 	void slotClearAllBookmarks();
 	void slotGotoMatchingBracket();
+	void slotTextEditPlugin();
 public slots:
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);
 	bool slotCloseAllFiles();

@@ -39,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>686</width>
-     <height>27</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu" >
@@ -202,6 +202,11 @@
     <addaction name="separator" />
     <addaction name="actionProjectPropertie" />
    </widget>
+   <widget class="QMenu" name="menuPlugins" >
+    <property name="title" >
+     <string>Plugins</string>
+    </property>
+   </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
    <addaction name="menuView" />
@@ -211,6 +216,7 @@
    <addaction name="menuDebug" />
    <addaction name="menuEditors" />
    <addaction name="menuTools" />
+   <addaction name="menuPlugins" />
    <addaction name="menu" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />

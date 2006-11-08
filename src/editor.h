@@ -50,6 +50,7 @@ class QToolButton;
 class TabWidget;
 class QComboBox;
 class QTimer;
+class TextEditInterface;
 //
 class BlockUserData : public QTextBlockUserData
 {
@@ -103,6 +104,7 @@ public:
 	void dialogGotoLine() { m_textEdit->dialogGotoLine(); };
 	void completeCode() { m_textEdit->completeCode(); };
 	QString wordUnderCursor() { return m_textEdit->wordUnderCursor(); };
+	void textPlugin(TextEditInterface *iTextEdit) { m_textEdit->textPlugin(iTextEdit); };
 	QString classNameUnderCursor() { return m_textEdit->classNameUnderCursor(); };
 	int verticalScrollBar() { return m_textEdit->verticalScrollBar()->value(); };
 	void setVerticalScrollBar(int s) { m_textEdit->verticalScrollBar()->setValue(s); };

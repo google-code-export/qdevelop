@@ -26,6 +26,7 @@
 #include "selectionborder.h"
 #include "cpphighlighter.h"
 #include "ui_gotoline.h"
+#include "pluginsinterfaces.h"
 //
 #include <QTextCursor>
 #include <QDialog>
@@ -948,6 +949,17 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
     else
 		QTextEdit::keyPressEvent ( event );
 	event->accept();
+}
+//
+void TextEdit::textPlugin(TextEditInterface *iTextEdit) 
+{ 
+	QTextCursor cursor = textCursor();
+    QString s = iTextEdit->text(m_plainText, cursor.selectedText());
+    if (!s.isEmpty())
+    {
+		cursor.insertText( s );
+		setTextCursor( cursor );
+   	}
 }
 //
 void TextEdit::dropEvent( QDropEvent * event ) 
