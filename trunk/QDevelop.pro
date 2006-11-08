@@ -1,7 +1,7 @@
 CONFIG +=   qt \
+  release \
   uitools \
-  warn_on \
-  release
+  warn_on
 DESTDIR =   bin
 FORMS =   ui/about.ui \
   ui/addexistant.ui \
@@ -45,6 +45,7 @@ HEADERS =   src/InitCompletion.h \
   src/newprojectimpl.h \
   src/optionsimpl.h \
   src/parametersimpl.h \
+  src/pluginsinterfaces.h \
   src/projectmanager.h \
   src/projectpropertieimpl.h \
   src/promptreplaceimpl.h \
@@ -114,9 +115,9 @@ TRANSLATIONS =   resources/translations/QDevelop_Chinese.ts \
   resources/translations/QDevelop_Spanish.ts
 UI_DIR =   build/ui
 macx {
+  ICON =     resources/images/qdevelop.icns
   OBJECTS_DIR =     build/o/mac
-  ICON =	    resources/images/qdevelop.icns
-}  
+}
 unix {
   OBJECTS_DIR =     build/o/unix
 }

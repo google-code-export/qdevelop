@@ -38,6 +38,7 @@
 #include "stackimpl.h"
 #include "toolscontrolimpl.h"
 #include "InitCompletion.h"
+#include "pluginsinterfaces.h"
 //
 #include <QFileDialog>
 #include <QGridLayout>
@@ -63,6 +64,7 @@
 #include <QLibraryInfo>
 #include <QHeaderView>
 #include <QInputDialog>
+#include <QPluginLoader>
 //
 
 #define PROJECT_NAME "QDevelop"
@@ -177,6 +179,7 @@ MainImpl::MainImpl(QWidget * parent)
 	m_stack->hide();
 	//
 	treeClasses->setCtagsName( m_ctagsName );
+	loadPlugins();
 }
 //
 MainImpl::~MainImpl() 
@@ -2178,5 +2181,50 @@ void MainImpl::slotRemoveDebugVariable()
 	for(int i=0; i < tableOtherVariables->rowCount(); i++)
 		list << tableOtherVariables->item(i, 0)->text();
 	emit otherVariables(list);
+}
+//
+void MainImpl::loadPlugins()
+{
+    QDir pluginsDir = QDir(qApp->applicationDirPath());
+
+#if defined(Q_OS_WIN)
+    if (pluginsDir.dirName().toLower() == "bin" )
+        pluginsDir.cdUp();
+#elif defined(Q_OS_MAC)
+    if (pluginsDir.dirName() == "MacOS") {
+        pluginsDir.cdUp();
+        pluginsDir.cdUp();
+        pluginsDir.cdUp();
+    }
+#endif
+    pluginsDir.cd("plugins");
+
+    foreach (QString fileName, pluginsDir.entryList(QDir::Files)) 
+    {
+        QPluginLoader loader(pluginsDir.absoluteFilePath(fileName));
+        QObject *plugin = loader.instance();
+        if (plugin) 
+        {
+		    TextEditInterface *iTextEdit = qobject_cast<TextEditInterface *>(plugin);
+		    if (iTextEdit)
+		    {
+		        QAction *action = new QAction(iTextEdit->menuName(), plugin);
+		        connect(action, SIGNAL(triggered()), this, SLOT(slotTextEditPlugin()));
+		        menuPlugins->addAction(action);
+	    	}
+        }
+    }
+    if( menuPlugins->actions().isEmpty() )
+    	delete menuPlugins;
+}
+//
+void MainImpl::slotTextEditPlugin()
+{
+	Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+	if ( !editor )
+		return;
+    QAction *action = qobject_cast<QAction *>(sender());
+    TextEditInterface *iTextEdit = qobject_cast<TextEditInterface *>(action->parent());
+	editor->textPlugin( iTextEdit );
 }
 //

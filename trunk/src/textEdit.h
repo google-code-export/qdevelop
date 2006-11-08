@@ -37,6 +37,7 @@ class SelectionBorder;
 class Editor;
 class FindImpl;
 class CppHighlighter;
+class TextEditInterface;
 //
 class TextEdit : public QTextEdit
 {
@@ -79,6 +80,7 @@ public:
     void completeCode();
     void setFocus(Qt::FocusReason reason);
     void gotoMatchingBracket();
+ 	void textPlugin(TextEditInterface *iTextEdit);
     enum ActionComment {Toggle, Comment, Uncomment};
 public slots:
 	void gotoLine( int line, bool moveTop );
