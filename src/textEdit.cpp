@@ -954,12 +954,16 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 void TextEdit::textPlugin(TextEditInterface *iTextEdit) 
 { 
 	QTextCursor cursor = textCursor();
-    QString s = iTextEdit->text(m_plainText, cursor.selectedText());
-    if (!s.isEmpty())
+    QString s = iTextEdit->text(m_plainText, cursor.selection().toPlainText());
+    if (s.isEmpty())
+    	return;
+    if( iTextEdit->action() == TextEditInterface::ReplaceAll )
     {
-		cursor.insertText( s );
-		setTextCursor( cursor );
+    	cursor.movePosition(QTextCursor::Start, QTextCursor::MoveAnchor);
+    	cursor.movePosition(QTextCursor::End, QTextCursor::KeepAnchor);
    	}
+	cursor.insertText( s );
+	setTextCursor( cursor );
 }
 //
 void TextEdit::dropEvent( QDropEvent * event ) 
