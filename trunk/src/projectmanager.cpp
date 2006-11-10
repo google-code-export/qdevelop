@@ -49,6 +49,8 @@
 #include <QMetaMethod>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QProgressBar>
+#include <QPlastiqueStyle>
 //
 ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeClasses *treeClasses, QString name)
 	: m_parent(parent), m_treeFiles(treeFiles), m_treeClasses(treeClasses)
@@ -131,6 +133,21 @@ void ProjectManager::parseTreeClasses(bool force)
 			sources(projectsList.at(nbProjects), files );
 			headers(projectsList.at(nbProjects), files );
 			files.sort();
+			QProgressBar *bar = new QProgressBar( 0 );
+			bar->setStyle( new QPlastiqueStyle() );
+			QRect screenGeometry = QDesktopWidget().screenGeometry();
+			bar->setGeometry(
+				(screenGeometry.width()-(screenGeometry.width()/8))/2,
+				(screenGeometry.height()-30)/2,
+				screenGeometry.width()/8,
+				30
+			);
+			bar->setWindowFlags( Qt::Tool | Qt::WindowStaysOnTopHint );
+			bar->setAlignment( Qt::AlignHCenter );
+			bar->setMaximum( files.count() );
+			bar->setFormat( tr("Project parsing")+" %p%" );
+			bar->show();
+			int value = 0;
 			foreach(QString s, files)
 			{
 				QStringList parentsList = parents(projectsList.at(nbProjects));
@@ -140,7 +157,9 @@ void ProjectManager::parseTreeClasses(bool force)
 				QString buffer = file.readAll();
 				file.close();
 				m_treeClasses->updateClasses(s, buffer, parentsList, "."+s.section(".", -1, -1));
+				bar->setValue( value++ );
 			}
+			delete bar;
 		}
 	}
 }
