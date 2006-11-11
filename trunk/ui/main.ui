@@ -1214,6 +1214,9 @@
    <property name="text" >
     <string>Build</string>
    </property>
+   <property name="shortcut" >
+    <string>F7</string>
+   </property>
   </action>
   <action name="actionSaveProject" >
    <property name="icon" >
@@ -1431,15 +1434,15 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>TreeClasses</class>
+   <extends>QTreeWidget</extends>
+   <header>treeclasses.h</header>
+  </customwidget>
+  <customwidget>
    <class>TreeProject</class>
    <extends>QWidget</extends>
    <header>treeproject.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>TreeClasses</class>
-   <extends>QTreeWidget</extends>
-   <header>treeclasses.h</header>
   </customwidget>
  </customwidgets>
  <resources>
