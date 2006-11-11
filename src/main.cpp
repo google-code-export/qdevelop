@@ -30,14 +30,16 @@
 #include <QSplashScreen>
 #include <QSettings>
 #include <QDir>
+#include <QProgressBar>
 #include <QDebug>
 #include "mainimpl.h"
 //
-
+QSplashScreen *splash = 0;
+//
 int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv);
-	QSplashScreen *splash = new QSplashScreen(QPixmap(":/divers/images/SplashQDevelop.png"));
+	splash = new QSplashScreen(QPixmap(":/divers/images/SplashQDevelop.png"));
 	splash->setFont( QFont("Helvetica", 10) );
 	splash->show();
 	QTranslator translator;
@@ -90,6 +92,7 @@ int main(int argc, char *argv[])
 	main.showMaximized();
 	splash->finish(&main);
 	delete splash;
+	splash = 0;
 	//
 	app.connect( &app, SIGNAL( lastWindowClosed() ), &app, SLOT( quit() ) );
 	return app.exec();
