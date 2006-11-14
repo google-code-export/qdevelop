@@ -1248,32 +1248,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/main.ui" line="766"/>
         <source>&amp;Open Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abrir Proyecto...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1415"/>
         <source>Ctrl+F2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1431"/>
         <source>F2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1442"/>
         <source>Shift+F2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1447"/>
         <source>Find Previous</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1450"/>
         <source>Shift+F3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1481,7 +1481,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/mainimpl.cpp" line="961"/>
         <source>Choose a project to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Elija un proyecto para abrir</translation>
     </message>
 </context>
 <context>
@@ -1489,7 +1489,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/newimplementation.ui" line="16"/>
         <source>New Implementation</source>
-        <translation>Nueva implementación</translation>
+        <translation>Nueva implementacion</translation>
     </message>
     <message>
         <location filename="../../ui/newimplementation.ui" line="47"/>
@@ -1657,12 +1657,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/newproject.ui" line="438"/>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="445"/>
         <source>DialogImpl</source>
-        <translation>Implementación del Diálogo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="472"/>
@@ -1672,12 +1672,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/newproject.ui" line="492"/>
         <source>dialog</source>
-        <translation>diálogo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="499"/>
         <source>dialogimpl</source>
-        <translation>implementacióndiálogo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="526"/>
@@ -3012,7 +3012,7 @@ libres :</translation>
     <message>
         <location filename="../../ui/toolsControl.ui" line="350"/>
         <source>Check environment on start</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobar entorno al iniciar</translation>
     </message>
 </context>
 <context>

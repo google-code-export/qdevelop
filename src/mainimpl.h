@@ -216,6 +216,7 @@ private slots:
 	void slotClearAllBookmarks();
 	void slotGotoMatchingBracket();
 	void slotTextEditPlugin();
+	void slotConfigPlugin();
 public slots:
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);
 	bool slotCloseAllFiles();
