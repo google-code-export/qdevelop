@@ -9,6 +9,8 @@ public:
 	virtual QString menuName() const = 0;
     virtual QString text(QString text, QString selectedText) = 0;
     virtual TextEditInterface::Action action() const = 0;
+    virtual bool hasConfigDialog() const = 0;
+    virtual void config() = 0;
 };
 
 Q_DECLARE_INTERFACE(TextEditInterface,

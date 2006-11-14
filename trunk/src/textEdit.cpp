@@ -953,17 +953,29 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 //
 void TextEdit::textPlugin(TextEditInterface *iTextEdit) 
 { 
+	QApplication::setOverrideCursor(Qt::WaitCursor);
 	QTextCursor cursor = textCursor();
     QString s = iTextEdit->text(m_plainText, cursor.selection().toPlainText());
     if (s.isEmpty())
+    {
+		QApplication::restoreOverrideCursor();
     	return;
+   	}
     if( iTextEdit->action() == TextEditInterface::ReplaceAll )
     {
-    	cursor.movePosition(QTextCursor::Start, QTextCursor::MoveAnchor);
-    	cursor.movePosition(QTextCursor::End, QTextCursor::KeepAnchor);
+		int posScrollbar = verticalScrollBar()->value();
+    	int line = currentLineNumber();
+    	setPlainText( s );
+    	document()->setModified( true );
+    	gotoLine(line, false);
+		verticalScrollBar()->setValue( posScrollbar );
    	}
-	cursor.insertText( s );
-	setTextCursor( cursor );
+   	else
+   	{
+		cursor.insertText( s );
+		setTextCursor( cursor );
+  	}
+	QApplication::restoreOverrideCursor();
 }
 //
 void TextEdit::dropEvent( QDropEvent * event ) 

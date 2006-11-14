@@ -92,16 +92,6 @@
     <addaction name="separator" />
     <addaction name="actionCompile" />
    </widget>
-   <widget class="QMenu" name="menuTools" >
-    <property name="title" >
-     <string>Tools</string>
-    </property>
-    <addaction name="actionFindInFiles" />
-    <addaction name="separator" />
-    <addaction name="actionOptions" />
-    <addaction name="actionExternalTools" />
-    <addaction name="actionConfigureShortcuts" />
-   </widget>
    <widget class="QMenu" name="menu_File" >
     <property name="title" >
      <string>&amp;File</string>
@@ -207,6 +197,22 @@
      <string>Plugins</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuTools" >
+    <property name="title" >
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuPluginsSettings" >
+     <property name="title" >
+      <string>Plugins settings</string>
+     </property>
+    </widget>
+    <addaction name="actionFindInFiles" />
+    <addaction name="separator" />
+    <addaction name="actionOptions" />
+    <addaction name="actionExternalTools" />
+    <addaction name="actionConfigureShortcuts" />
+    <addaction name="menuPluginsSettings" />
+   </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
    <addaction name="menuView" />
@@ -215,8 +221,8 @@
    <addaction name="menuBuild" />
    <addaction name="menuDebug" />
    <addaction name="menuEditors" />
-   <addaction name="menuTools" />
    <addaction name="menuPlugins" />
+   <addaction name="menuTools" />
    <addaction name="menu" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
@@ -1431,18 +1437,23 @@
     <string>Ctrl+[</string>
    </property>
   </action>
+  <action name="actionFoo" >
+   <property name="text" >
+    <string>Foo</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>TreeClasses</class>
-   <extends>QTreeWidget</extends>
-   <header>treeclasses.h</header>
-  </customwidget>
   <customwidget>
    <class>TreeProject</class>
    <extends>QWidget</extends>
    <header>treeproject.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TreeClasses</class>
+   <extends>QTreeWidget</extends>
+   <header>treeclasses.h</header>
   </customwidget>
  </customwidgets>
  <resources>

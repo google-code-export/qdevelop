@@ -2211,11 +2211,20 @@ void MainImpl::loadPlugins()
 		        QAction *action = new QAction(iTextEdit->menuName(), plugin);
 		        connect(action, SIGNAL(triggered()), this, SLOT(slotTextEditPlugin()));
 		        menuPlugins->addAction(action);
+		        if( iTextEdit->hasConfigDialog() )
+		        {
+			        QAction *action = new QAction(iTextEdit->menuName(), plugin);
+			        connect(action, SIGNAL(triggered()), this, SLOT(slotConfigPlugin()));
+			        menuPluginsSettings->addAction(action);
+	        	}
 	    	}
         }
     }
     if( menuPlugins->actions().isEmpty() )
+    {
     	delete menuPlugins;
+    	delete menuPluginsSettings;
+   	}
 }
 //
 void MainImpl::slotTextEditPlugin()
@@ -2226,5 +2235,13 @@ void MainImpl::slotTextEditPlugin()
     QAction *action = qobject_cast<QAction *>(sender());
     TextEditInterface *iTextEdit = qobject_cast<TextEditInterface *>(action->parent());
 	editor->textPlugin( iTextEdit );
+}
+//
+void MainImpl::slotConfigPlugin()
+{
+	QAction *action = qobject_cast<QAction *>(sender());
+	TextEditInterface *iTextEdit = qobject_cast<TextEditInterface *>(action->parent());
+	if( iTextEdit )
+		iTextEdit->config();
 }
 //
