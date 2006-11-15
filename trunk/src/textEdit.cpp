@@ -699,7 +699,27 @@ void TextEdit::paintEvent ( QPaintEvent * event )
 		painter.fillRect( r, QBrush( m_currentLineColor ) );
 	}
 	painter.end();
+	//
 	QTextEdit::paintEvent( event );
+	//
+	if( m_matchingBegin != -1 )
+	{
+		painter.begin( viewport() );
+         	QFont f = font();
+         	f.setBold( true );
+		painter.setFont( f );
+		painter.setPen( m_matchingColor );
+		QTextCursor cursor = textCursor();
+		cursor.setPosition(m_matchingBegin+1, QTextCursor::MoveAnchor);
+		QRect r = cursorRect( cursor );
+		painter.drawText(r.x()-2, r.y(), r.width(), r.height(), Qt::AlignLeft | Qt::AlignVCenter, m_plainText.at(m_matchingBegin));
+		//
+		cursor.setPosition(m_matchingEnd+1, QTextCursor::MoveAnchor);
+		r = cursorRect( cursor );
+		painter.drawText(r.x()-2, r.y(), r.width(), r.height(), Qt::AlignLeft | Qt::AlignVCenter, m_plainText.at(m_matchingEnd));
+		painter.end();
+	}
+	//
 }
 //
 void TextEdit::slotCursorPositionChanged()
@@ -716,38 +736,12 @@ void TextEdit::slotCursorPositionChanged()
 //
 void TextEdit::clearMatch()
 {
-	bool m = document()->isModified();
-	QTextCursor cursor = textCursor();
-    if( m_matchingBegin != -1 )
-    {
-		cursor.setPosition(m_matchingBegin+1, QTextCursor::MoveAnchor);
-		cursor.setPosition(m_matchingBegin, QTextCursor::KeepAnchor);
-    	QTextCharFormat format = cursor.block().charFormat();
-    	QFont font = format.font();
-    	font.setBold( false );
-    	format.setFont( font );
-    	format.setForeground(Qt::black);
-    	cursor.setCharFormat( format );
-    	m_matchingBegin = -1;
-   	}
-    if( m_matchingEnd != -1 )
-    {
-		cursor.setPosition(m_matchingEnd+1, QTextCursor::MoveAnchor);
-		cursor.setPosition(m_matchingEnd, QTextCursor::KeepAnchor);
-    	QTextCharFormat format = cursor.block().charFormat();
-    	QFont font = format.font();
-    	font.setBold( false );
-    	format.setFont( font );
-    	format.setForeground(Qt::black);
-    	cursor.setCharFormat( format );
-    	m_matchingEnd = -1;
-   	}
-	document()->setModified( m );
+   	m_matchingBegin = -1;
+    m_matchingEnd = -1;
 }
 //
 void TextEdit::match()
 {
-	bool m = document()->isModified();
 	QTextCursor cursor = textCursor();
 	int pos = textCursor().position();
     QChar car;
@@ -756,14 +750,6 @@ void TextEdit::match()
     if( QString("({").contains( car ) && !m_editor->inQuotations(pos, m_plainText) )
     {
     	// First match
-		cursor.setPosition(pos+1, QTextCursor::MoveAnchor);
-		cursor.setPosition(pos, QTextCursor::KeepAnchor);
-    	QTextCharFormat format = cursor.block().charFormat();
-    	QFont font = format.font();
-    	font.setBold( true );
-    	format.setFont( font );
-    	format.setForeground(m_matchingColor);
-    	cursor.setCharFormat( format );
     	m_matchingBegin = pos;
     	// Second match
     	QChar match = ')';
@@ -780,14 +766,6 @@ void TextEdit::match()
     		{
     			if( nb == 0 )
     			{
-			    	QTextCharFormat format = cursor.block().charFormat();
-			    	QFont font = format.font();
-			    	font.setBold( true );
-			    	format.setFont( font );
-			    	format.setForeground(m_matchingColor);
-					cursor.setPosition(i+1, QTextCursor::MoveAnchor);
-					cursor.setPosition(i, QTextCursor::KeepAnchor);
-			    	cursor.setCharFormat( format );
 			    	m_matchingEnd = i;
 			    	break;
    				}
@@ -801,14 +779,6 @@ void TextEdit::match()
     else if( QString(")}").contains( car ) && !m_editor->inQuotations(pos, m_plainText) )
     {
     	// First match
-    	QTextCharFormat format = cursor.block().charFormat();
-    	QFont font = format.font();
-    	font.setBold( true );
-    	format.setFont( font );
-    	format.setForeground(m_matchingColor);
-		cursor.setPosition(pos+1, QTextCursor::MoveAnchor);
-		cursor.setPosition(pos, QTextCursor::KeepAnchor);
-    	cursor.setCharFormat( format );
     	m_matchingEnd = pos;
     	// Second match
     	QChar match = '(';
@@ -825,14 +795,6 @@ void TextEdit::match()
     		{
     			if( nb == 0 )
     			{
-			    	QTextCharFormat format = cursor.block().charFormat();
-			    	QFont font = format.font();
-			    	font.setBold( true );
-			    	format.setFont( font );
-			    	format.setForeground(m_matchingColor);
-					cursor.setPosition(i+1, QTextCursor::MoveAnchor);
-					cursor.setPosition(i, QTextCursor::KeepAnchor);
-			    	cursor.setCharFormat( format );
 			    	m_matchingBegin = i;
 			    	break;
    				}
@@ -844,7 +806,6 @@ void TextEdit::match()
    		}
     	
    	}
-	document()->setModified( m );
 }
 //
 void TextEdit::slotWordCompletion(QListWidgetItem *item)
