@@ -1,7 +1,7 @@
 CONFIG +=   qt \
-  release \
   uitools \
-  warn_on
+  warn_on \
+  release
 DESTDIR =   bin
 FORMS =   ui/about.ui \
   ui/addexistant.ui \

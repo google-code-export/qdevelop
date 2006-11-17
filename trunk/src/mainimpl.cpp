@@ -122,11 +122,11 @@ MainImpl::MainImpl(QWidget * parent)
 	m_tabEditors = new TabWidget( this );
 	connect(m_tabEditors, SIGNAL(currentChanged(int)), this, SLOT(slotCurrentTabChanged(int)) );
 	//
-	QToolButton *cross = new QToolButton(m_tabEditors);
-	cross->setIcon( QIcon(":/toolbar/images/cross.png") );
-	connect(cross, SIGNAL(clicked()), this, SLOT(slotCloseCurrentTab()) );
-	cross->setGeometry(0,0,32,32);
-	m_tabEditors->setCornerWidget(cross);
+	//QToolButton *cross = new QToolButton(m_tabEditors);
+	//cross->setIcon( QIcon(":/toolbar/images/cross.png") );
+	//connect(cross, SIGNAL(clicked()), this, SLOT(slotCloseCurrentTab()) );
+	//cross->setGeometry(0,0,32,32);
+	//m_tabEditors->setCornerWidget(cross);
 	//
 	setCentralWidget( m_tabEditors );
 	//
@@ -1263,7 +1263,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 		return 0;
 	}
 	editor->setTabStopWidth( m_tabStopWidth );
-	m_tabEditors->setCurrentIndex( m_tabEditors->addTab(editor, editor->shortFilename()) );
+	m_tabEditors->setCurrentIndex( m_tabEditors->addTab(editor, editor->shortFilename()+"   ") );
 	editor->setFocus();
 	if( numLine != -1 )
 		editor->gotoLine(numLine, moveTop);

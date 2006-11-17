@@ -26,26 +26,27 @@
 #include <QTabWidget>
 //
 class MainImpl;
+class QToolButton;
 //
-class TabWidget : public QTabWidget  
+class TabWidget : public QTabWidget
 {
-Q_OBJECT 
+    Q_OBJECT
 public:
-	TabWidget(MainImpl *parent);
-	virtual ~TabWidget();
+    TabWidget(MainImpl *parent);
+    virtual ~TabWidget();
 protected:
-	void mousePressEvent( QMouseEvent * event );
-	void mouseMoveEvent ( QMouseEvent * event );
-	void mouseReleaseEvent ( QMouseEvent * event );
+    //void mousePressEvent( QMouseEvent * event );
     bool eventFilter(QObject *obj, QEvent *event);
 private:
     bool swapTabs(int index1, int index2);
-	int m_clickedItem;
+    int m_clickedItem;
     int m_hoverItem;
-	MainImpl *m_mainImpl;
+    MainImpl *m_mainImpl;
+    QToolButton *cross;
+    QPoint mousePos;
 private slots:
-	void slotCloseTab();
-	void slotCloseOtherTab();
-	void slotCloseAllTab();
+    void slotCloseTab();
+    void slotCloseOtherTab();
+    void slotCloseAllTab();
 };
-#endif 
+#endif
