@@ -25,33 +25,42 @@
 
 #include "ui_subclassing.h"
 #include "ui_newimplementation.h"
-//
+
 class ProjectManager;
-//
+class QSortFilterProxyModel;
+
 class SubclassingImpl : public QDialog, public Ui::Subclassing
 {
 Q_OBJECT
 public:
 	SubclassingImpl(ProjectManager * parent, QString dirProject, QString uiName, QStringList headers);
 	QString newFile();
-private:
-	ProjectManager *m_parent;
-	QString m_uiName;
-	QString m_projectDirectory;
-	void implementations(QStringList);
-	static QStringList signatures(QString header) ;
-	QString objectName();
-	QString className();
-	QStringList templateHeaderImpl();
-	QStringList templateSourceImpl();
-	Ui::NewImplementation uiNewImplementation;
+private:	
+	void		implementations(QStringList);
+	static		QStringList signatures(QString header);
+	QString		objectName();
+	QString		className();
+	QStringList	templateHeaderImpl();
+	QStringList	templateSourceImpl();
+	
 private slots:
-	void slotAccept();
-	void slotNewImplementation();
-	void slotParseForm();
-	void slotLocation();
-	void slotEnableokButton(QString);
-signals:
+	void		on_okButton_clicked();
+	void		on_clearButton_clicked();
+	void		on_newImplementation_clicked();
+	void		on_comboClassName_activated(int i);
+	void		on_filterEdit_textChanged(const QString &text);
+	
+	void		slotParseForm();
+	void		slotLocation();
+	void		slotEnableokButton(QString);
+	
+private:
+	ProjectManager		*m_parent;
+	QSortFilterProxyModel	*proxyModel;
+	QString			m_uiName;
+	QString			m_projectDirectory;
+	Ui::NewImplementation	uiNewImplementation;	
+	
 };
 
 #endif

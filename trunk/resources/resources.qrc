@@ -42,6 +42,8 @@
         <file>images/qmessagebox-warn.png</file>
         <file>images/supprimer.png</file>
         <file>images/wrap.png</file>
+        <file>images/editclear.png</file>
+        <file>images/clear_left.png</file>
     </qresource>
     <qresource prefix="/templates" >
         <file>templates/dialog.ui</file>

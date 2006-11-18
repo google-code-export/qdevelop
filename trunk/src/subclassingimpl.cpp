@@ -29,42 +29,182 @@
 #include <QUiLoader>
 #include <QFileDialog>
 #include <QDebug>
+#include <QSortFilterProxyModel>
 
-//
 SubclassingImpl::SubclassingImpl(ProjectManager * parent, QString dirProject, QString uiName, QStringList headers) 
-// 	: QDialog(0), m_projectDirectory(dirProject), m_parent(parent), m_uiName(uiName)
 	: QDialog(0)
 {
 	m_projectDirectory = dirProject;
 	m_parent = parent;
 	m_uiName = uiName;
-			
+	
 	QApplication::setOverrideCursor(Qt::WaitCursor);
-	setupUi(this); 
-	connect(okButton, SIGNAL(clicked()), this, SLOT(slotAccept()) );
-	connect(newImplementation, SIGNAL(clicked()), this, SLOT(slotNewImplementation()) );
-	connect(comboClassName, SIGNAL(activated(int)), this, SLOT(slotParseForm()) );
+	setupUi(this);
+	treeSlots->hide();
+	
+	proxyModel = new QSortFilterProxyModel;
+	proxyModel->setDynamicSortFilter(true);
+	proxyModel->setSourceModel(treeSlots->model());
+	filterView->setModel(proxyModel);
+	
 	implementations(headers);
 	if( comboClassName->count() )
 	{
 		comboClassName->setCurrentIndex( 0 );
 		slotParseForm();
 	}
-    QApplication::restoreOverrideCursor();
+	QApplication::restoreOverrideCursor();
 }
-//
-//
+
 QString SubclassingImpl::newFile()
 {
 	QString filename = comboClassName->itemData( comboClassName->currentIndex() ).toString();
 	return filename;
 }
-//
-void SubclassingImpl::slotAccept()
+
+QStringList SubclassingImpl::signatures(QString header)
 {
-	QString filename = comboClassName->itemData( comboClassName->currentIndex() ).toString();
-	QStringList headerImpl;
-	QFile file( filename+".h" );
+	QStringList sign;
+	bool slot = false;
+	QString formattedParams, name;
+	foreach(QString line, header.split("\n") )
+	{
+		if( line.simplified().right(1) == ":" )
+		{
+			if( line.simplified().contains("slots") )
+				slot = true;
+			else
+				slot = false;
+			continue;
+		}
+		
+		if( slot )
+		{
+			line = line.simplified();
+			line = line.section(" ", 1).simplified();
+			name = line.section("(", 0, 0).simplified();
+			QString params = line.section("(", 1).section(")", 0, 0).simplified();
+			formattedParams.clear();
+			foreach(QString param, params.split(",") )
+			{
+				if( param.contains("=") )
+					param = param.simplified().left( param.simplified().lastIndexOf("=") );
+				if( param.contains("&") )
+					param = param.simplified().left( param.simplified().lastIndexOf("&")+1 );
+				else if( param.contains("*") )
+					param = param.simplified().left( param.simplified().lastIndexOf("*")+1 );
+				else if( param.simplified().contains(" ") )
+					param = param.simplified().left( param.simplified().lastIndexOf(" ")+1 );
+				formattedParams += param + ",";
+				//qDebug()<<param;
+			}
+			formattedParams = formattedParams.simplified().left( formattedParams.lastIndexOf(",") );
+			QString s = name + "(" + formattedParams + ")";
+			sign << QMetaObject::normalizedSignature( s.toLatin1() );
+		}
+	}
+	return sign;
+}
+
+void SubclassingImpl::implementations(QStringList headers)
+{
+	QString name = objectName();
+	
+	foreach(QString header, headers)
+	{
+		QFile file(header);
+		if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+			return;
+	
+		QTextStream in(&file);
+		QString className;
+		while (!in.atEnd()) 
+		{
+			QString line = in.readLine();
+			if( line.simplified().indexOf("class ") == 0 && !line.contains(";") )
+				className = line.simplified().section("class ", 1, 1).section(":", 0, 0).simplified().section(" ", -1, -1).simplified();
+			if( line.contains("Ui::"+name) )
+			{
+				header = header.left( header.lastIndexOf(".") );
+				comboClassName->addItem(className, QVariant(header));
+				break;
+			}
+		}
+		file.close();
+	}
+}
+
+QString SubclassingImpl::objectName()
+{
+	QUiLoader loader;
+	QFile file(m_uiName);
+	file.open(QFile::ReadOnly);
+	QWidget *dial = loader.load(&file, this);
+	file.close();
+	QString name = dial->objectName();
+	delete dial;
+	return name;
+}
+
+QString SubclassingImpl::className()
+{
+	QUiLoader loader;
+	QFile file(m_uiName);
+	file.open(QFile::ReadOnly);
+	QWidget *dial = loader.load(&file, this);
+	file.close();
+	QString className = dial->metaObject()->className();
+	delete dial;
+	return className;
+}
+
+QStringList SubclassingImpl::templateHeaderImpl()
+{
+	QString filename = comboClassName->itemData( comboClassName->currentIndex() ).toString().section("/", -1).section(".", 0);
+	QString classImpl = comboClassName->currentText();
+	QFile file(":/templates/templates/impl.h");
+	QString data;
+	
+	file.open(QIODevice::ReadOnly);
+	data = file.readAll();
+	file.close();
+	
+	data.replace("$IMPL_H", filename.toUpper()+"_H");
+	data.replace("$UIHEADERNAME", "\"ui_"+m_uiName.section("/", -1, -1).section(".", 0, 0)+".h\"");
+	data.replace("$CLASSNAME", classImpl);
+	data.replace("$PARENTNAME", className());
+	data.replace("$OBJECTNAME", objectName());
+	QStringList impl = data.split("\n");
+	
+	return impl;
+}
+
+QStringList SubclassingImpl::templateSourceImpl()
+{
+	QString	filename  = comboClassName->itemData( comboClassName->currentIndex() ).toString().section("/", -1);
+	QString	classImpl = comboClassName->currentText();
+	QFile	file(":/templates/templates/impl.cpp");
+	QString	data;
+	
+	file.open(QIODevice::ReadOnly);
+	data = file.readAll();
+	file.close();
+	
+	data.replace("$HEADERNAME", "\""+filename+".h\"");
+	data.replace("$CLASSNAME", classImpl);
+	data.replace("$PARENTNAME", className());
+	QStringList impl = data.split("\n");
+	
+	return impl;
+}
+
+void SubclassingImpl::on_okButton_clicked()
+{
+	QString		filename = comboClassName->itemData( comboClassName->currentIndex() ).toString();
+	QFile		file( filename + ".h" );
+	QStringList	headerImpl;
+	QStringList	sourceImpl;
+	
 	if (file.open(QIODevice::ReadOnly | QIODevice::Text))
 	{
 		headerImpl = QString(file.readAll()).split("\n");
@@ -72,6 +212,7 @@ void SubclassingImpl::slotAccept()
 	}
 	else
 		headerImpl = templateHeaderImpl();
+	
 	int index = headerImpl.indexOf( "private slots:" );
 	if( index == -1 )
 	{
@@ -81,8 +222,7 @@ void SubclassingImpl::slotAccept()
 		headerImpl.insert(last, "private slots:" );
 		index = headerImpl.indexOf( "private slots:" );
 	}
-	//
-	QStringList sourceImpl;
+	
 	file.setFileName( filename+".cpp" );
 	if (file.open(QIODevice::ReadOnly | QIODevice::Text))
 	{
@@ -91,7 +231,7 @@ void SubclassingImpl::slotAccept()
 	}
 	else
 		sourceImpl = templateSourceImpl();
-	//
+	
 	for(int i=0; i<treeSlots->topLevelItemCount(); i++)
 	{
 		QTreeWidgetItem *topLevelItem = treeSlots->topLevelItem( i );
@@ -104,13 +244,12 @@ void SubclassingImpl::slotAccept()
 				headerImpl.insert(++index, "\tvoid "+s+";");
 				sourceImpl << "void "+ comboClassName->currentText() + "::" + s;
 				sourceImpl << "{";
-				sourceImpl << "}";				
-				sourceImpl << "//";
-
+				sourceImpl << "\t// TODO";
+				sourceImpl << "}\n";
 			}
 		}
 	}
-	//
+	
 	file.setFileName( filename+".h" );
 	if (file.open(QIODevice::WriteOnly | QIODevice::Text))
 	{
@@ -118,43 +257,32 @@ void SubclassingImpl::slotAccept()
 			file.write( line.toLatin1()+"\n" );
 	}
 	file.close();
-	//
+	
 	file.setFileName( filename+".cpp" );
 	if (file.open(QIODevice::WriteOnly | QIODevice::Text))
 	{
 		foreach(QString line, sourceImpl)
 			file.write( line.toLatin1()+"\n" );
 	}
-	file.close();
 	
-	//qDebug()<<headerImpl;
-	//qDebug()<<sourceImpl;
-	//
+	file.close();
 }
-//
-void SubclassingImpl::slotLocation()
+
+void SubclassingImpl::on_clearButton_clicked()
 {
-	QString s = QFileDialog::getExistingDirectory(
-		this,
-		tr("Choose the file location"),
-		m_projectDirectory,
-		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
-	if( s.isEmpty() )
-	{
-		// Cancel is clicked
-		return;
-	}
-	uiNewImplementation.location->setText( s );	
+	filterEdit->clear();
 }
-//
-void SubclassingImpl::slotNewImplementation()
+
+void SubclassingImpl::on_newImplementation_clicked()
 {
 	QDialog *dial = new QDialog;
 	uiNewImplementation.setupUi(dial);
+	
 	connect(uiNewImplementation.locationButton, SIGNAL(clicked()), this, SLOT(slotLocation()) );
 	connect(uiNewImplementation.className, SIGNAL(textChanged(QString)), this, SLOT(slotEnableokButton(QString)) );
-	connect(uiNewImplementation.location, SIGNAL(textChanged(QString)), this, SLOT(slotEnableokButton(QString)) );
-	connect(uiNewImplementation.filename, SIGNAL(textChanged(QString)), this, SLOT(slotEnableokButton(QString)) );
+	connect(uiNewImplementation.location , SIGNAL(textChanged(QString)), this, SLOT(slotEnableokButton(QString)) );
+	connect(uiNewImplementation.filename , SIGNAL(textChanged(QString)), this, SLOT(slotEnableokButton(QString)) );
+	
 	if( !comboClassName->count() )
 	{
 		uiNewImplementation.className->setText(objectName()+"Impl");
@@ -165,23 +293,30 @@ void SubclassingImpl::slotNewImplementation()
 	{
 		if( uiNewImplementation.filename->text().right(2).toLower() == ".h" || uiNewImplementation.filename->text().right(4).toLower() == ".cpp" )
 			uiNewImplementation.filename->setText( uiNewImplementation.filename->text().left( uiNewImplementation.filename->text().lastIndexOf(".") ) );
-	   	comboClassName->addItem(uiNewImplementation.className->text(), QVariant(uiNewImplementation.location->text()+"/"+uiNewImplementation.filename->text()));
+		comboClassName->addItem(uiNewImplementation.className->text(), QVariant(uiNewImplementation.location->text()+"/"+uiNewImplementation.filename->text()));
 		comboClassName->setCurrentIndex( comboClassName->count()-1 );
 		slotParseForm();
 	}
+	
 	delete dial;
 }
-void SubclassingImpl::slotEnableokButton(QString)
+
+void SubclassingImpl::on_comboClassName_activated(int i)
 {
-	if( uiNewImplementation.location->text().isEmpty() || uiNewImplementation.className->text().isEmpty() || uiNewImplementation.filename->text().isEmpty() )
-		uiNewImplementation.okButton->setDisabled( true );
-	else
-		uiNewImplementation.okButton->setEnabled( true );
+	slotParseForm();
+	
+	// supress gcc warnings
+	i = 0;
 }
-//
+
+void SubclassingImpl::on_filterEdit_textChanged( const QString &text )
+{
+	QRegExp regExp( text, Qt::CaseInsensitive, QRegExp::RegExp2  );
+	proxyModel->setFilterRegExp(regExp);
+}
+
 void SubclassingImpl::slotParseForm()
 {
-	//
 	QString data = comboClassName->itemData( comboClassName->currentIndex() ).toString();
 	if( QFile::exists( data + ".h"  ) )
 	{
@@ -191,10 +326,11 @@ void SubclassingImpl::slotParseForm()
 	{
 		okButton->setText( tr("C&reate") );
 	}
+	
 	okButton->setEnabled( true );
-	filename->setText( data.section("/", -1).section(".", 0, 0) + " "+tr("(.h and .cpp)"));
+	filename->setText( data.section("/", -1).section(".", 0, 0) + " "+tr("(.h and .cpp)") );
 	location->setText( data.left( data.lastIndexOf("/")+1 ) );
-	//
+	
 	QString headerContent;
 	QFile fileHeader( comboClassName->itemData( comboClassName->currentIndex() ).toString() + ".h");
 	if (fileHeader.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -202,25 +338,35 @@ void SubclassingImpl::slotParseForm()
 		headerContent = fileHeader.readAll();
 		fileHeader.close();
 	}
+	
+	QStringList		listeSignatures = signatures(headerContent);
+	QFile			file(m_uiName);
+	QUiLoader		loader;
+	QTreeWidgetItem		*item;
+	QWidget			*dial;
+	
+	file.open(QFile::ReadOnly);
+	dial = loader.load(&file, this);
+	file.close();
+	
+	QList<QWidget *> widgets = dial->findChildren<QWidget *>();
+	QList<QAction *> actions = dial->findChildren<QAction *>();
+	QList<QObject *> objs;
+	
+	// merge the 2 lists into one big one!
+	foreach(QObject *o, actions)
+		objs.append( o );
+	foreach(QObject *o, widgets)
+		objs.append( o );
+	
 	treeSlots->clear();
-	QStringList listeSignatures = signatures(headerContent);
-	//
-	QTreeWidgetItem *item;
-	//
-    QUiLoader loader;
-    QFile file(m_uiName);
-    file.open(QFile::ReadOnly);
-    QWidget *dial = loader.load(&file, this);
-    file.close();
-    //
-	QList<QWidget *> widgets;
-	widgets += dial->findChildren<QWidget *>();
-	foreach(QWidget *w, widgets)
+	foreach(QObject *w, objs)
 	{
-       	QString name = w->objectName();
-       	if( name.isEmpty() )
-       		continue;
-       	QString className = w->metaObject()->className();        	
+		QString name = w->objectName();
+		if( name.isEmpty() )
+			continue;
+		
+		QString className = w->metaObject()->className();
 		item = new QTreeWidgetItem(QStringList(name+" ("+className+")"));
 		treeSlots->addTopLevelItem ( item );
 		for(int i=0; i<w->metaObject()->methodCount(); i++)
@@ -252,154 +398,26 @@ void SubclassingImpl::slotParseForm()
 		treeSlots->expandItem( item );
 	}
 	delete dial;
-	return;
-	//
 }
-// 
-QStringList SubclassingImpl::signatures(QString header)
+
+void SubclassingImpl::slotLocation()
 {
-	QStringList sign;
-	bool slot = false;
-	QString formattedParams, name;
-	foreach(QString line, header.split("\n") )
-	{
-		if( line.simplified().right(1) == ":" )
-		{
-			if( line.simplified().contains("slots") )
-				slot = true;
-			else
-				slot = false;
-			continue;
-		}
-		if( slot )
-		{
-			line = line.simplified();
-			line = line.section(" ", 1).simplified();
-			name = line.section("(", 0, 0).simplified();
-			QString params = line.section("(", 1).section(")", 0, 0).simplified();
-			formattedParams.clear();
-			foreach(QString param, params.split(",") )
-			{
-				if( param.contains("=") )
-					param = param.simplified().left( param.simplified().lastIndexOf("=") );
-				if( param.contains("&") )
-					param = param.simplified().left( param.simplified().lastIndexOf("&")+1 );
-				else if( param.contains("*") )
-					param = param.simplified().left( param.simplified().lastIndexOf("*")+1 );
-				else if( param.simplified().contains(" ") )
-					param = param.simplified().left( param.simplified().lastIndexOf(" ")+1 );
-				formattedParams += param + ",";
-				//qDebug()<<param;
-			}
-			formattedParams = formattedParams.simplified().left( formattedParams.lastIndexOf(",") );
-			QString s = name + "(" + formattedParams + ")";
-			sign << QMetaObject::normalizedSignature( s.toLatin1() );
-		}
-	}
-	return sign;
-}
-//
-void SubclassingImpl::implementations(QStringList headers)
-{
-	QString name = objectName();
-	foreach(QString header, headers)
-	{
-	    QFile file(header);
-	    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-	        return;
+	QString s = QFileDialog::getExistingDirectory(
+		this,
+		tr("Choose the file location"),
+		m_projectDirectory,
+		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
 	
-	    QTextStream in(&file);
-	    QString className;
-	    while (!in.atEnd()) 
-	    {
-	        QString line = in.readLine();
-	        if( line.simplified().indexOf("class ") == 0 && !line.contains(";") )
-	        	className = line.simplified().section("class ", 1, 1).section(":", 0, 0).simplified().section(" ", -1, -1).simplified();
-	        if( line.contains("Ui::"+name) )
-	        {
-	        	header = header.left( header.lastIndexOf(".") );
-	        	comboClassName->addItem(className, QVariant(header));
-	        	break;
-        	}
-	    }
-	    file.close();
-    }
-	return;
+	if( s.isEmpty() )
+		return;
+	uiNewImplementation.location->setText( s );
 }
-//
-QString SubclassingImpl::objectName()
+
+void SubclassingImpl::slotEnableokButton(QString)
 {
-    QUiLoader loader;
-    QFile file(m_uiName);
-    file.open(QFile::ReadOnly);
-    QWidget *dial = loader.load(&file, this);
-    file.close();
-   	QString name = dial->objectName();        	
-    delete dial;
-    return name;
+	uiNewImplementation.okButton->setDisabled(
+		uiNewImplementation.location->text().isEmpty()  ||
+		uiNewImplementation.className->text().isEmpty() ||
+		uiNewImplementation.filename->text().isEmpty()
+	);
 }
-//
-QString SubclassingImpl::className()
-{
-    QUiLoader loader;
-    QFile file(m_uiName);
-    file.open(QFile::ReadOnly);
-    QWidget *dial = loader.load(&file, this);
-    file.close();
-   	QString className = dial->metaObject()->className();        	
-    delete dial;
-    return className;
-}
-//
-QStringList SubclassingImpl::templateHeaderImpl()
-{
-	QString filename = comboClassName->itemData( comboClassName->currentIndex() ).toString().section("/", -1).section(".", 0);
-	QString classImpl = comboClassName->currentText();
-	QFile file(":/templates/templates/impl.h");
-	file.open(QIODevice::ReadOnly);
-	QString data = file.readAll();
-	file.close();
-	data.replace("$IMPL_H", filename.toUpper()+"_H");
-	data.replace("$UIHEADERNAME", "\"ui_"+m_uiName.section("/", -1, -1).section(".", 0, 0)+".h\"");
-	data.replace("$CLASSNAME", classImpl);
-	data.replace("$PARENTNAME", className());
-	data.replace("$OBJECTNAME", objectName());
-	QStringList impl = data.split("\n");
-	/*impl << "#ifndef "+filename.toUpper()+"_H";
-	impl << "#define "+filename.toUpper()+"_H";
-	impl << "//";
-	impl << "#include \"ui_"+m_uiName.section("/", -1, -1).section(".", 0, 0)+".h\"";
-	impl << "//";
-	impl << "class "+classImpl+ " : public "+className()+", public Ui::"+objectName() ;
-	impl << "{";
-	impl << "Q_OBJECT";
-	impl << "public:";
-	impl << "\t"+classImpl+"( QWidget * parent = 0, Qt::WFlags f = 0 );";
-	impl << "private slots:";
-	impl << "};";
-	impl << "#endif";*/
-	return impl;
-}
-//
-QStringList SubclassingImpl::templateSourceImpl()
-{
-	QString filename = comboClassName->itemData( comboClassName->currentIndex() ).toString().section("/", -1);
-	QString classImpl = comboClassName->currentText();
-	QFile file(":/templates/templates/impl.cpp");
-	file.open(QIODevice::ReadOnly);
-	QString data = file.readAll();
-	file.close();
-	data.replace("$HEADERNAME", "\""+filename+".h\"");
-	data.replace("$CLASSNAME", classImpl);
-	data.replace("$PARENTNAME", className());
-	QStringList impl = data.split("\n");
-	/*impl << "#include \""+filename+".h\"";
-	impl << "//";
-	impl << classImpl + "::" + classImpl+"( QWidget * parent, Qt::WFlags f) : "+className()+"(parent, f)";
-	impl << "{";
-	impl << "\tsetupUi(this);";
-	impl << "}";
-	impl << "//";*/
-	return impl;
-}
-//
