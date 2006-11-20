@@ -146,14 +146,21 @@ void TextEdit::slotCompletionList(TagList TagList)
 			//qDebug() << tag.name << tag.longName << tag.parameters << tag.access << tag.kind;
         }
         w = qMin(w+20, 350);
-        h = qMin(h+20, 241);
         int posX = qMax(cursorRect().x(), 80);
         if( posX+w > width() )
         	posX = width()-220;
-        if( cursorRect().y()+h < rect().height() )
-            m_completionList->setGeometry(posX, cursorRect().y()+20, w, h);
-        else
-            m_completionList->setGeometry(posX, cursorRect().y()-h, w, h);
+        if( cursorRect().y() > viewport()->height()/2 )
+        {
+        	h = qMin( qMin(h+20, cursorRect().y()), 250);
+        	m_completionList->setGeometry(posX, cursorRect().y()-h, w, h);
+        	
+       	}
+       	else
+       	{
+        	h = qMin( qMin(h+20, viewport()->height()-22-cursorRect().y()), 250);
+        	m_completionList->setGeometry(posX, cursorRect().y()+fontMetrics().height(), w, h);
+       		
+      	}
         m_completionList->show();
         m_completionList->setCurrentRow( 0 );
         //
