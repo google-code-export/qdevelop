@@ -40,6 +40,7 @@ TabWidget::TabWidget(MainImpl *parent)
     cross->setGeometry(0,0,15,15);
     tabBar()->installEventFilter(this);
     m_clickedItem = -1;
+    m_closeButtonInTabs = true;
 }
 //
 TabWidget::~TabWidget()
@@ -56,7 +57,7 @@ bool TabWidget::eventFilter(QObject *obj, QEvent *event)
             if ( !rect.contains( QCursor::pos() ) )
                 cross->hide();
         }
-        else if (event->type() == QEvent::HoverMove)
+        else if (event->type() == QEvent::HoverMove && m_closeButtonInTabs )
         {
             QHoverEvent *mouseEvent = static_cast<QHoverEvent *>(event);
             mousePos = mouseEvent->pos();
@@ -136,6 +137,13 @@ bool TabWidget::eventFilter(QObject *obj, QEvent *event)
         }
     }
     return QTabWidget::eventFilter( obj, event);
+}
+//
+void TabWidget::setCloseButtonInTabs(bool b) 
+{ 
+	m_closeButtonInTabs = b; 
+	if( !m_closeButtonInTabs )
+		cross->hide();
 }
 //
 bool TabWidget::swapTabs(int index1, int index2)
