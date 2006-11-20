@@ -34,6 +34,7 @@ class TabWidget : public QTabWidget
 public:
     TabWidget(MainImpl *parent);
     virtual ~TabWidget();
+    void setCloseButtonInTabs(bool b);
 protected:
     //void mousePressEvent( QMouseEvent * event );
     bool eventFilter(QObject *obj, QEvent *event);
@@ -44,6 +45,7 @@ private:
     MainImpl *m_mainImpl;
     QToolButton *cross;
     QPoint mousePos;
+    bool m_closeButtonInTabs;
 private slots:
     void slotCloseTab();
     void slotCloseOtherTab();

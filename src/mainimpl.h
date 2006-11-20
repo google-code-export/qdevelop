@@ -82,6 +82,7 @@ private:
 	void setCurrentProject(const QString &file);
 	void setCurrentFile(const QString &file);
 	void saveINI();
+	void setCrossButton(bool activate);
 	bool modifiedEditors();
 	void configureCompletion();
 	void loadPlugins();
@@ -129,6 +130,8 @@ private:
 	QColor m_matchingColor;
 	EndLine m_endLine;
 	bool m_tabSpaces;
+	bool m_closeButtonInTabs;
+	QToolButton *crossButton;
 	QPointer<QActionGroup> m_projectGroup;
 	QTextCharFormat m_formatPreprocessorText, m_formatQtText, m_formatSingleComments;
 	QTextCharFormat m_formatMultilineComments, m_formatQuotationText, m_formatMethods, m_formatKeywords;

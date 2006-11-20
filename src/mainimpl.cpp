@@ -99,6 +99,8 @@ MainImpl::MainImpl(QWidget * parent)
 	m_showTreeClasses = true;
 	m_completion = 0;
 	m_projectsDirectory = QDir::homePath();
+	m_closeButtonInTabs = true;
+	crossButton = 0;
 	//
 	m_formatPreprocessorText.setForeground(QColor(0,128,0));
 	m_formatQtText.setForeground(Qt::blue);
@@ -122,11 +124,6 @@ MainImpl::MainImpl(QWidget * parent)
 	m_tabEditors = new TabWidget( this );
 	connect(m_tabEditors, SIGNAL(currentChanged(int)), this, SLOT(slotCurrentTabChanged(int)) );
 	//
-	//QToolButton *cross = new QToolButton(m_tabEditors);
-	//cross->setIcon( QIcon(":/toolbar/images/cross.png") );
-	//connect(cross, SIGNAL(clicked()), this, SLOT(slotCloseCurrentTab()) );
-	//cross->setGeometry(0,0,32,32);
-	//m_tabEditors->setCornerWidget(cross);
 	//
 	setCentralWidget( m_tabEditors );
 	//
@@ -233,6 +230,27 @@ void MainImpl::configureCompletion()
     m_completion->addIncludes( includes );
     m_completion->initParse("", true, false);
     m_completion->start();
+}
+//
+void MainImpl::setCrossButton(bool activate)
+{
+	if(crossButton && !activate)
+	{
+		crossButton->hide();
+	}
+	else if( activate )
+	{
+		if( !crossButton )
+		{
+			crossButton = new QToolButton(m_tabEditors);
+			crossButton->setIcon( QIcon(":/toolbar/images/cross.png") );
+			connect(crossButton, SIGNAL(clicked()), this, SLOT(slotCloseCurrentTab()) );
+			crossButton->setGeometry(0,0,32,32);
+			m_tabEditors->setCornerWidget(crossButton);
+		}
+		crossButton->show();
+	}
+	m_tabEditors->setCloseButtonInTabs( !activate );
 }
 //
 void MainImpl::slotOtherFile()
@@ -507,7 +525,8 @@ void MainImpl::slotOptions()
 	m_formatMultilineComments, m_formatQuotationText, m_formatMethods, 
 	m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion, 
 	m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets, 
-	m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor);
+	m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
+	m_closeButtonInTabs);
 	
 	if( options->exec() == QDialog::Accepted )
 	{
@@ -529,6 +548,8 @@ void MainImpl::slotOptions()
 		m_match = options->match->isChecked();
 		m_promptBeforeQuit = options->promptBeforeQuit->isChecked();
 		m_projectsDirectory = options->projectsDirectory->text();
+		m_closeButtonInTabs = options->closeButton->isChecked();
+		setCrossButton( !m_closeButtonInTabs );
 		//
 		m_formatPreprocessorText = options->syntaxe()->preprocessorFormat();
 		m_formatQtText = options->syntaxe()->classFormat();
@@ -604,6 +625,7 @@ void MainImpl::saveINI()
 	settings.setValue("m_promptBeforeQuit", m_promptBeforeQuit);
 	settings.setValue("m_autoCompletion", m_autoCompletion);
 	settings.setValue("m_autobrackets", m_autobrackets);
+	settings.setValue("m_closeButtonInTabs", m_closeButtonInTabs);
 	settings.setValue("m_match", m_match);
 	settings.setValue("m_checkEnvironment", m_checkEnvironment);
 	settings.setValue("m_checkEnvironmentOnStartup", m_checkEnvironmentOnStartup);
@@ -858,6 +880,8 @@ void MainImpl::loadINI()
 	m_matchingColor = QColor(settings.value("m_matchingColor", m_matchingColor).toString());
 	m_projectsDirectory = settings.value("m_projectsDirectory", m_projectsDirectory).toString();
 	m_showTreeClasses = settings.value("m_showTreeClasses", m_showTreeClasses).toBool();
+	m_closeButtonInTabs = settings.value("m_closeButtonInTabs", m_closeButtonInTabs).toBool();
+	setCrossButton( !m_closeButtonInTabs );
 	m_intervalUpdatingClasses = settings.value("m_intervalUpdatingClasses", m_intervalUpdatingClasses).toInt();
 	if( m_currentLineColor == Qt::black )
 		m_currentLineColor = QColor();
