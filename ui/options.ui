@@ -79,7 +79,7 @@
          <item>
           <widget class="QCheckBox" name="closeButton" >
            <property name="text" >
-            <string>Close button in each tab</string>
+            <string>Close button in each tab (not work with all styles)</string>
            </property>
           </widget>
          </item>

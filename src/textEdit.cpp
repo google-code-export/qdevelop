@@ -895,6 +895,10 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 			QTextEdit::keyPressEvent ( event );
 		//m_editor->updateNumLines(currentLineNumber(), 1);
 	}
+	else if( event->key() == Qt::Key_Home && !event->modifiers() )
+	{
+		key_home();
+	}
 	else if( m_autoindent && event->key() == '{' || event->key() == '}' )
 	{
 		QTextEdit::keyPressEvent ( event );
@@ -919,6 +923,28 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 	event->accept();
 }
 //
+void TextEdit::key_home()
+{
+	QTextCursor cursor = textCursor();
+	int col = cursor.columnNumber();
+	if( col > 0 )
+	{
+		cursor.movePosition(QTextCursor::StartOfLine);
+	}
+	else
+	{
+		cursor.movePosition(QTextCursor::StartOfLine);
+		QTextBlock b = textCursor().block();
+		int i = 0;
+		while( b.text().at(i) == ' ' || b.text().at(i) == '\t' )
+		{
+			cursor.movePosition(QTextCursor::NextCharacter);
+			i++;
+		}
+	}
+	setTextCursor( cursor );
+}
+
 void TextEdit::textPlugin(TextEditInterface *iTextEdit) 
 { 
 	QApplication::setOverrideCursor(Qt::WaitCursor);

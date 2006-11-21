@@ -99,7 +99,7 @@ MainImpl::MainImpl(QWidget * parent)
 	m_showTreeClasses = true;
 	m_completion = 0;
 	m_projectsDirectory = QDir::homePath();
-	m_closeButtonInTabs = true;
+	m_closeButtonInTabs = false;
 	crossButton = 0;
 	//
 	m_formatPreprocessorText.setForeground(QColor(0,128,0));

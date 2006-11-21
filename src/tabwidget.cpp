@@ -173,7 +173,7 @@ bool TabWidget::swapTabs(int index1, int index2)
 void TabWidget::slotCloseTab()
 {
     cross->hide();
-    m_mainImpl->closeTab( m_hoverItem );
+    m_mainImpl->closeTab( m_clickedItem );
 }
 //
 void TabWidget::slotCloseAllTab()
