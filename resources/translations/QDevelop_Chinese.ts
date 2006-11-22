@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="en_US">
 <context>
     <name>About</name>
     <message>
@@ -23,7 +23,7 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:29pt; font-weight:600;&quot;&gt;QDevelop&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/about.ui" line="133"/>
@@ -75,7 +75,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addexistant.ui" line="64"/>
         <source>Copy files here:</source>
-        <translation>把文件复制到这里：</translation>
+        <translation>把文件复制到这里:</translation>
     </message>
 </context>
 <context>
@@ -1292,22 +1292,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/main.ui" line="197"/>
         <source>Plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>插件</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="206"/>
         <source>Plugins settings</source>
-        <translation type="unfinished"></translation>
+        <translation>插件设置</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1224"/>
         <source>F7</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1442"/>
         <source>Foo</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1656,77 +1656,77 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/newproject.ui" line="333"/>
         <source>ui</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="340"/>
         <source>bin</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="367"/>
         <source>sources:</source>
-        <translation type="unfinished">源文件：</translation>
+        <translation>源文件:</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="377"/>
         <source>Objects:</source>
-        <translation type="unfinished">对象：</translation>
+        <translation>对象:</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="397"/>
         <source>src</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="404"/>
         <source>build</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="418"/>
         <source>Inheritance subclassing</source>
-        <translation type="unfinished"></translation>
+        <translation>继承子类</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="438"/>
         <source>Dialog</source>
-        <translation type="unfinished">对话框</translation>
+        <translation>对话框</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="445"/>
         <source>DialogImpl</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="472"/>
         <source>Object name:</source>
-        <translation type="unfinished">对象名：</translation>
+        <translation>对象名:</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="492"/>
         <source>dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="499"/>
         <source>dialogimpl</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="526"/>
         <source>File name:</source>
-        <translation type="unfinished">文件名：</translation>
+        <translation>文件名:</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="546"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Dialog:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="556"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Subclass:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1810,7 +1810,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/options.ui" line="117"/>
         <source>Interval between updates:</source>
-        <translation>更新周期：</translation>
+        <translation>更新周期:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="131"/>
@@ -1825,7 +1825,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/options.ui" line="344"/>
         <source>Font:</source>
-        <translation>字体：</translation>
+        <translation>字体:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="351"/>
@@ -1986,7 +1986,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../ui/options.ui" line="82"/>
-        <source>Close button in each tab</source>
+        <source>Close button in each tab (not work with all styles)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2244,11 +2244,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="153"/>
         <source>Project parsing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="1103"/>
-        <source></source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2659,7 +2654,7 @@ variables :</source>
     <message>
         <location filename="../../src/projectmanager.cpp" line="169"/>
         <source>Current project parsing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">解析当前工程</translation>
     </message>
 </context>
 <context>
@@ -2931,57 +2926,57 @@ variables :</source>
         <translation>不能保存</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1106"/>
+        <location filename="../../src/textEdit.cpp" line="1132"/>
         <source>Undo</source>
         <translation>撤销</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1107"/>
+        <location filename="../../src/textEdit.cpp" line="1133"/>
         <source>Redo</source>
         <translation>重做</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1109"/>
+        <location filename="../../src/textEdit.cpp" line="1135"/>
         <source>Cut</source>
         <translation>剪切</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1110"/>
+        <location filename="../../src/textEdit.cpp" line="1136"/>
         <source>Copy</source>
         <translation>复制</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1111"/>
+        <location filename="../../src/textEdit.cpp" line="1137"/>
         <source>Paste</source>
         <translation>粘贴</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1113"/>
+        <location filename="../../src/textEdit.cpp" line="1139"/>
         <source>Selection Indent</source>
         <translation>缩进选中的文字</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1114"/>
+        <location filename="../../src/textEdit.cpp" line="1140"/>
         <source>Selection Unindent</source>
         <translation>反缩进选中的文字</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1117"/>
+        <location filename="../../src/textEdit.cpp" line="1143"/>
         <source>Select All</source>
         <translation>选择所有</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1119"/>
+        <location filename="../../src/textEdit.cpp" line="1145"/>
         <source>Find...</source>
         <translation>查找...</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1121"/>
+        <location filename="../../src/textEdit.cpp" line="1147"/>
         <source>Toggle Bookmark</source>
         <translation>添加/去除书签</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1122"/>
+        <location filename="../../src/textEdit.cpp" line="1148"/>
         <source>Toggle Breakpoint</source>
         <translation>添加/去除断点</translation>
     </message>
@@ -2991,7 +2986,7 @@ variables :</source>
     <message>
         <location filename="../../ui/toolsControl.ui" line="13"/>
         <source>External Tools</source>
-        <translation type="unfinished">外部工具</translation>
+        <translation>外部工具</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="197"/>
