@@ -303,29 +303,54 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Build</name>
     <message>
-        <location filename="../../src/build.cpp" line="55"/>
+        <location filename="../../src/build.cpp" line="57"/>
         <source>Update project</source>
         <translation>Mise à jour du projet</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="67"/>
+        <location filename="../../src/build.cpp" line="69"/>
         <source>Clean Project</source>
         <translation>Nettoyage du projet</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="82"/>
+        <location filename="../../src/build.cpp" line="84"/>
         <source>Compilation of </source>
         <translation> Compilation de</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="86"/>
+        <location filename="../../src/build.cpp" line="88"/>
         <source>Build</source>
         <translation>Génération</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="108"/>
+        <location filename="../../src/build.cpp" line="120"/>
         <source>Build stopped</source>
         <translation>Génération interrompue</translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="101"/>
+        <source>Build finished without error</source>
+        <translation>Génération terminée sans erreur</translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="103"/>
+        <source>Build finished with</source>
+        <translation>Génération terminée avec</translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="105"/>
+        <source>error(s)</source>
+        <translation>erreur(s)</translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="105"/>
+        <source>and</source>
+        <translation>et</translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="107"/>
+        <source>warning(s)</source>
+        <translation>avertissement(s)</translation>
     </message>
 </context>
 <context>
@@ -1318,7 +1343,7 @@ p, li { white-space: pre-wrap; }
         <translation>Impossible de créer le répertoire</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2174"/>
+        <location filename="../../src/mainimpl.cpp" line="2176"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
@@ -1353,67 +1378,62 @@ p, li { white-space: pre-wrap; }
         <translation>Fichiers (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1784"/>
+        <location filename="../../src/mainimpl.cpp" line="1786"/>
         <source>Stop</source>
         <translation>Arrêter</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1521"/>
-        <source>Build normaly exited</source>
-        <translation>Génération terminée</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="1867"/>
+        <location filename="../../src/mainimpl.cpp" line="1869"/>
         <source>Start</source>
         <translation>Démarrer</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1742"/>
+        <location filename="../../src/mainimpl.cpp" line="1744"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Le projet a été modifié, voulez-vous le générer ?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1759"/>
+        <location filename="../../src/mainimpl.cpp" line="1761"/>
         <source>Yes</source>
         <translation>Oui</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1759"/>
+        <location filename="../../src/mainimpl.cpp" line="1761"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1770"/>
+        <location filename="../../src/mainimpl.cpp" line="1772"/>
         <source>The program don&apos;t exist,</source>
         <translation>L&apos;exécutable n&apos;est pas présent,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1771"/>
+        <location filename="../../src/mainimpl.cpp" line="1773"/>
         <source>run Build.</source>
         <translation>veuillez relancer la génération.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1771"/>
+        <location filename="../../src/mainimpl.cpp" line="1773"/>
         <source>Ok</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1758"/>
+        <location filename="../../src/mainimpl.cpp" line="1760"/>
         <source>Stop debugging ?</source>
         <translation>Arrêter le débogage ?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1933"/>
+        <location filename="../../src/mainimpl.cpp" line="1935"/>
         <source>Abort</source>
         <translation>Interrompre</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1975"/>
+        <location filename="../../src/mainimpl.cpp" line="1977"/>
         <source>Continue</source>
         <translation>Reprendre</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2040"/>
+        <location filename="../../src/mainimpl.cpp" line="2042"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
@@ -1423,17 +1443,17 @@ p, li { white-space: pre-wrap; }
         <translation>Voulez-vous quitter QDevelop ?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1786"/>
+        <location filename="../../src/mainimpl.cpp" line="1788"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1868"/>
+        <location filename="../../src/mainimpl.cpp" line="1870"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1595"/>
+        <location filename="../../src/mainimpl.cpp" line="1597"/>
         <source>File</source>
         <translation>Fichier</translation>
     </message>
@@ -1478,17 +1498,17 @@ p, li { white-space: pre-wrap; }
         <translation>Tous les fichiers</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1566"/>
+        <location filename="../../src/mainimpl.cpp" line="1568"/>
         <source>error:</source>
         <translation>erreur:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1566"/>
+        <location filename="../../src/mainimpl.cpp" line="1568"/>
         <source>warning:</source>
         <translation>avertissement:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1926"/>
+        <location filename="../../src/mainimpl.cpp" line="1928"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Stopper n&apos;est pas possible sous Windows. Mettez des points d&apos;arrêts.</translation>
     </message>
@@ -1498,17 +1518,17 @@ p, li { white-space: pre-wrap; }
         <translation>Le projet ne peut être créé</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2164"/>
+        <location filename="../../src/mainimpl.cpp" line="2166"/>
         <source>New Variable:</source>
         <translation>Nouvelle Variable:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2173"/>
+        <location filename="../../src/mainimpl.cpp" line="2175"/>
         <source>The variable</source>
         <translation>La variable</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2173"/>
+        <location filename="../../src/mainimpl.cpp" line="2175"/>
         <source>already exist.</source>
         <translation>existe déjà.</translation>
     </message>
@@ -1986,8 +2006,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../ui/options.ui" line="82"/>
-        <source>Close button in each tab</source>
-        <translation>Bouton de fermeture sur chaque onglet</translation>
+        <source>Close button in each tab (not work with all styles)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2245,11 +2265,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/projectmanager.cpp" line="153"/>
         <source>Project parsing</source>
         <translation>Analyse du projet</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="1103"/>
-        <source></source>
-        <translation></translation>
     </message>
 </context>
 <context>
@@ -2926,42 +2941,42 @@ supplémentaires :</translation>
         <translation>Impossible d&apos;enregistrer</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1107"/>
+        <location filename="../../src/textEdit.cpp" line="1133"/>
         <source>Redo</source>
         <translation>Refaire</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1109"/>
+        <location filename="../../src/textEdit.cpp" line="1135"/>
         <source>Cut</source>
         <translation>Couper</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1110"/>
+        <location filename="../../src/textEdit.cpp" line="1136"/>
         <source>Copy</source>
         <translation>Copier</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1111"/>
+        <location filename="../../src/textEdit.cpp" line="1137"/>
         <source>Paste</source>
         <translation>Coller</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1113"/>
+        <location filename="../../src/textEdit.cpp" line="1139"/>
         <source>Selection Indent</source>
         <translation>Indenter la sélection</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1114"/>
+        <location filename="../../src/textEdit.cpp" line="1140"/>
         <source>Selection Unindent</source>
         <translation>Désindenter la sélection</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1117"/>
+        <location filename="../../src/textEdit.cpp" line="1143"/>
         <source>Select All</source>
         <translation>Sélectionner tout</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1119"/>
+        <location filename="../../src/textEdit.cpp" line="1145"/>
         <source>Find...</source>
         <translation>Rechercher...</translation>
     </message>
@@ -2971,17 +2986,17 @@ supplémentaires :</translation>
         <translation>Sauver</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1106"/>
+        <location filename="../../src/textEdit.cpp" line="1132"/>
         <source>Undo</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1121"/>
+        <location filename="../../src/textEdit.cpp" line="1147"/>
         <source>Toggle Bookmark</source>
         <translation>Basculer le signet</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1122"/>
+        <location filename="../../src/textEdit.cpp" line="1148"/>
         <source>Toggle Breakpoint</source>
         <translation>Basculer le point d&apos;arrêt</translation>
     </message>

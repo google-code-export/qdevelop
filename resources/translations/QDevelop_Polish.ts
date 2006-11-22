@@ -303,29 +303,54 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Build</name>
     <message>
-        <location filename="../../src/build.cpp" line="55"/>
+        <location filename="../../src/build.cpp" line="57"/>
         <source>Update project</source>
         <translation>Aktualizuj projekt</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="67"/>
+        <location filename="../../src/build.cpp" line="69"/>
         <source>Clean Project</source>
         <translation>Wyczyść projekt</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="82"/>
+        <location filename="../../src/build.cpp" line="84"/>
         <source>Compilation of </source>
         <translation>Kompilacja</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="86"/>
+        <location filename="../../src/build.cpp" line="88"/>
         <source>Build</source>
         <translation>Buduj</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="108"/>
+        <location filename="../../src/build.cpp" line="120"/>
         <source>Build stopped</source>
         <translation>Budowanie zatrzymane</translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="101"/>
+        <source>Build finished without error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="103"/>
+        <source>Build finished with</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="105"/>
+        <source>error(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="105"/>
+        <source>and</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="107"/>
+        <source>warning(s)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1333,7 +1358,7 @@ p, li { white-space: pre-wrap; }
         <translation>już istnieje w katalogu.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2174"/>
+        <location filename="../../src/mainimpl.cpp" line="2176"/>
         <source>Cancel</source>
         <translation>Anuluj</translation>
     </message>
@@ -1353,12 +1378,12 @@ p, li { white-space: pre-wrap; }
         <translation>Projekt</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1759"/>
+        <location filename="../../src/mainimpl.cpp" line="1761"/>
         <source>Yes</source>
         <translation>Tak</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1759"/>
+        <location filename="../../src/mainimpl.cpp" line="1761"/>
         <source>No</source>
         <translation>Nie</translation>
     </message>
@@ -1403,87 +1428,82 @@ p, li { white-space: pre-wrap; }
         <translation>Pliki (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1784"/>
+        <location filename="../../src/mainimpl.cpp" line="1786"/>
         <source>Stop</source>
         <translation>Zatrzymaj</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1521"/>
-        <source>Build normaly exited</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="1566"/>
+        <location filename="../../src/mainimpl.cpp" line="1568"/>
         <source>error:</source>
         <translation>błąd:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1566"/>
+        <location filename="../../src/mainimpl.cpp" line="1568"/>
         <source>warning:</source>
         <translation>ostrzeżenie:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1595"/>
+        <location filename="../../src/mainimpl.cpp" line="1597"/>
         <source>File</source>
         <translation>Plik</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1867"/>
+        <location filename="../../src/mainimpl.cpp" line="1869"/>
         <source>Start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1742"/>
+        <location filename="../../src/mainimpl.cpp" line="1744"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Projekt został zmodyfikowany, czy chcesz zapisać zmiany ?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1758"/>
+        <location filename="../../src/mainimpl.cpp" line="1760"/>
         <source>Stop debugging ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1770"/>
+        <location filename="../../src/mainimpl.cpp" line="1772"/>
         <source>The program don&apos;t exist,</source>
         <translation>Program nie istnieje, </translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1771"/>
+        <location filename="../../src/mainimpl.cpp" line="1773"/>
         <source>run Build.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1771"/>
+        <location filename="../../src/mainimpl.cpp" line="1773"/>
         <source>Ok</source>
         <translation>Zatwierdź</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1786"/>
+        <location filename="../../src/mainimpl.cpp" line="1788"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1868"/>
+        <location filename="../../src/mainimpl.cpp" line="1870"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1933"/>
+        <location filename="../../src/mainimpl.cpp" line="1935"/>
         <source>Abort</source>
         <translation>Przerwij</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1926"/>
+        <location filename="../../src/mainimpl.cpp" line="1928"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1975"/>
+        <location filename="../../src/mainimpl.cpp" line="1977"/>
         <source>Continue</source>
         <translation>Kontynuuj</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2040"/>
+        <location filename="../../src/mainimpl.cpp" line="2042"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
@@ -1498,17 +1518,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2164"/>
+        <location filename="../../src/mainimpl.cpp" line="2166"/>
         <source>New Variable:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2173"/>
+        <location filename="../../src/mainimpl.cpp" line="2175"/>
         <source>The variable</source>
         <translation type="unfinished">Zmienna</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2173"/>
+        <location filename="../../src/mainimpl.cpp" line="2175"/>
         <source>already exist.</source>
         <translation type="unfinished">już istnieje.</translation>
     </message>
@@ -1986,7 +2006,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../ui/options.ui" line="82"/>
-        <source>Close button in each tab</source>
+        <source>Close button in each tab (not work with all styles)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2244,6 +2264,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="153"/>
         <source>Project parsing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="1103"/>
+        <source></source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2927,57 +2952,57 @@ variables :</translation>
         <translation>Nie można zapisać</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1106"/>
+        <location filename="../../src/textEdit.cpp" line="1132"/>
         <source>Undo</source>
         <translation>Cofnij</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1107"/>
+        <location filename="../../src/textEdit.cpp" line="1133"/>
         <source>Redo</source>
         <translation>Ponów</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1109"/>
+        <location filename="../../src/textEdit.cpp" line="1135"/>
         <source>Cut</source>
         <translation>Wytnij</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1110"/>
+        <location filename="../../src/textEdit.cpp" line="1136"/>
         <source>Copy</source>
         <translation>Kopiuj</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1111"/>
+        <location filename="../../src/textEdit.cpp" line="1137"/>
         <source>Paste</source>
         <translation>Wklej</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1113"/>
+        <location filename="../../src/textEdit.cpp" line="1139"/>
         <source>Selection Indent</source>
         <translation>Wcięcie zaznaczenia</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1114"/>
+        <location filename="../../src/textEdit.cpp" line="1140"/>
         <source>Selection Unindent</source>
         <translation>Cofnij wcięcie zaznaczenia</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1117"/>
+        <location filename="../../src/textEdit.cpp" line="1143"/>
         <source>Select All</source>
         <translation>Zaznacz wszystko</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1119"/>
+        <location filename="../../src/textEdit.cpp" line="1145"/>
         <source>Find...</source>
         <translation>Znajdź...</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1121"/>
+        <location filename="../../src/textEdit.cpp" line="1147"/>
         <source>Toggle Bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1122"/>
+        <location filename="../../src/textEdit.cpp" line="1148"/>
         <source>Toggle Breakpoint</source>
         <translation type="unfinished"></translation>
     </message>

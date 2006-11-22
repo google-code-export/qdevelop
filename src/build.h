@@ -13,6 +13,8 @@ Q_OBJECT
 public:
 	Build(QObject * parent, QString qmakeName, QString makename, QString rep, bool qmake, bool n, bool g, QString compileFile=0);
     void run();
+    void incErrors() { m_errors++; }
+    void incWarnings() { m_warnings++; }
 private:
 	bool m_qmake;
 	QString projectDirectory;
@@ -22,10 +24,11 @@ private:
 	bool m_isStopped;
 	QString m_compileFile;
 	QProcess *m_buildProcess;
-	//QDateTime derniereModifProjet;
 	QString buildOnly( QString sourceFile );
 	QString m_qmakeName;
 	QString m_makeName;
+	int m_errors;
+	int m_warnings;
 signals:
 	void message(QString, QString=0);
 protected slots:
