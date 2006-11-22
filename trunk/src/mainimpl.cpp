@@ -1518,7 +1518,7 @@ void MainImpl::slotEndBuild()
 		slotBuild();
 	else
 	{
-		slotMessagesBuild( QString("\n---------------------- "+tr("Build normaly exited")+"  ----------------------\n"), "");
+		//slotMessagesBuild( QString("\n---------------------- "+tr("Build normaly exited")+"  ----------------------\n"), "");
 		actionBuild->setEnabled( true );
 		actionRebuild->setEnabled( true );	
 		actionCompile->setEnabled( true );	
@@ -1545,12 +1545,14 @@ void MainImpl::slotMessagesBuild(QString list, QString directory)
 				item->setData(Qt::UserRole, QVariant(directory) );
 				m_projectsDirectoriesList = QStringList(QString());
 				m_debugAfterBuild = ExecuteNone;
+				m_builder->incErrors();
 			}
 			// Modify the two strings below "error:" and "warning:" to adapt in your language.
 			else if( message.toLower().contains( "warning:") || message.toLower().contains( tr("warning:").toLower() ) )
 			{
 				item->setTextColor( Qt::blue );
 				item->setData(Qt::UserRole, QVariant(directory) );
+				m_builder->incWarnings();
 			}
 		}
 	}
