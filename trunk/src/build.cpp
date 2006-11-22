@@ -45,6 +45,16 @@ Build::Build(QObject * parent, QString qmakeName, QString makeName, QString rep,
 	m_warnings = 0;
 }
 //
+void Build::incErrors() 
+{ 
+	m_errors++; 
+}
+//
+void Build::incWarnings() 
+{ 
+	m_warnings++; 
+}
+//
 void Build::run()
 {
 	QStringList list;
@@ -96,16 +106,6 @@ void Build::run()
 	}
 	emit message( QString(m_buildProcess->readAll()), projectDirectory);
 	m_buildProcess->deleteLater();
-	QString msg;
-	if( !m_errors && !m_warnings )
-		msg = tr("Build finished without error");
-	else
-		msg = tr("Build finished with")+" ";
-	if ( m_errors )
-		msg += QString::number(m_errors)+" "+tr("error(s)")+ (m_warnings ? " "+tr("and")+ " " : QString(" "));
-	if ( m_warnings )
-		msg += QString::number(m_warnings)+" "+tr("warning(s)")+" ";
-	emit message( QString("\n---------------------- "+msg+"----------------------\n"), "");
 }
 //
 void Build::slotBuildMessages()
