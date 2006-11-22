@@ -123,39 +123,59 @@ SET( qdevelop_RESOUCES
 # verbose - on
 # SET( CMAKE_VERBOSE_MAKEFILE  ON )
 
-# definitions for the project
-ADD_DEFINITIONS( -Wall )
-SET( QT_USE_QTXML TRUE )
-SET( QT_USE_QTGUI TRUE )
-SET( QT_USE_QTSQL TRUE )
-SET( QT_USE_QTDESIGNER TRUE )
-SET( QT_USE_QTNETWORK TRUE )
-
-# SET( QT_USE_QTASSISTANT TRUE )
-# SET( QT_USE_QTMOTIF TRUE )
-# SET( QT_USE_QTMAIN TRUE )
-# SET( QT_USE_QTNSPLUGIN TRUE )
-# SET( QT_USE_QTOPENGL TRUE )
-# SET( QT_USE_QTSQL TRUE )
-# SET( QT_USE_QTXML TRUE )
-
-
 FIND_PACKAGE( Qt4 REQUIRED )
 INCLUDE(${QT_USE_FILE})
 
+SET( QT_USE_QTASSISTANT )
+SET( QT_USE_QTDESIGNER )
+SET( QT_USE_QTNETWORK )
+SET( QT_USE_QTSQL )
+SET( QT_USE_QTXML )
+SET( QT_USE_QTUITOOLS )
+
 # qt4 definitinos
-QT4_WRAP_UI		( qdevelop_UIS_H	${qdevelop_UIS}		)
-QT4_WRAP_CPP		( qdevelop_MOC_SRCS	${qdevelop_MOC_HDRS}	)
-QT4_ADD_RESOURCES	( qtsourceview_RC_SRCS	${qdevelop_RESOUCES}	)
-QT4_AUTOMOC		( ${qdevelop_SRCS}				)
+QT4_WRAP_UI       ( qdevelop_UIS_H        ${qdevelop_UIS}       )
+QT4_WRAP_CPP      ( qdevelop_MOC_SRCS     ${qdevelop_MOC_HDRS}  )
+QT4_ADD_RESOURCES ( qtsourceview_RC_SRCS  ${qdevelop_RESOUCES}  )
+QT4_AUTOMOC       ( ${qdevelop_SRCS}                            )
 
-# build the file
-INCLUDE_DIRECTORIES	( ${QT_INCLUDE_DIR} ${QT_INCLUDE_DIR}/QtUiTools/  ${CMAKE_BINARY_DIR} . src src/ui )
-ADD_EXECUTABLE		( qdevelop	${qdevelop_SRCS} ${qdevelop_UIS_H} ${qdevelop_MOC_SRCS} ${qdevelop_UIS} ${qtsourceview_RC_SRCS} )
-TARGET_LINK_LIBRARIES	( qdevelop	${QT_LIBRARIES} ${QT_QTDESIGNER_LIBRARY} QtUiTools  )
+# definitions for the project
+ADD_DEFINITIONS(
+	-Wall 
+	${QT_DEFINITIONS}
+)
 
-# TODO:
-# the QtUiTools module is linked by hand, and not using CMake tools. Need to find our why.
+# include directories
+INCLUDE_DIRECTORIES( 
+	${QT_INCLUDES} 
+	${QT_INCLUDE_DIR}/QtUiTools
+	${CMAKE_BINARY_DIR}
+	.
+	src 
+	src/ui 
+)
 
-# TARGET_LINK_LIBRARIES	( qdevelop	${QT_LIBRARIES} ${QT_QTUITOOLS_LIBRARY} ${QT_QTDESIGNER_LIBRARY} QtUiTools )
-# INCLUDE_DIRECTORIES	( ${QT_INCLUDE_DIR} ${QT_QTUITOOLS_INCLUDE_DIR} ${CMAKE_BINARY_DIR} . src src/ui )
+# the main build target
+ADD_EXECUTABLE(qdevelop	
+	${qdevelop_SRCS} 
+	${qdevelop_UIS_H} 
+	${qdevelop_MOC_SRCS} 
+	${qdevelop_UIS} 
+	${qtsourceview_RC_SRCS} 
+)
+
+# libraries to be linked to the project
+IF (WIN32)
+	SET( QT_UITOOLSLIB   ${QT_QTUITOOLS_LIBRARY_RELEASE} )
+ELSE (WIN32)
+# 	SET( QT_UITOOLSLIB   QtUiTools )
+	SET( QT_UITOOLSLIB   ${QT_QTUITOOLS_LIBRARY_RELEASE} )
+ENDIF (WIN32)
+
+TARGET_LINK_LIBRARIES(qdevelop
+	${QT_UITOOLSLIB} 
+	${QT_QTSQL_LIBRARY}
+	${QT_LIBRARIES}
+	${QT_QTXML_LIBRARY}
+	${QT_QTNETWORK_LIBRARY}
+)
