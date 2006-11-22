@@ -1518,7 +1518,16 @@ void MainImpl::slotEndBuild()
 		slotBuild();
 	else
 	{
-		//slotMessagesBuild( QString("\n---------------------- "+tr("Build normaly exited")+"  ----------------------\n"), "");
+		QString msg;
+		if( m_builder->nbErrors()==0 && m_builder->nbWarnings()==0 )
+			msg = tr("Build finished without error");
+		else
+			msg = tr("Build finished with")+" ";
+		if ( m_builder->nbErrors() )
+			msg += QString::number(m_builder->nbErrors())+" "+tr("error(s)")+ (m_builder->nbWarnings() ? " "+tr("and")+ " " : QString(" "));
+		if ( m_builder->nbWarnings() )
+			msg += QString::number(m_builder->nbWarnings())+" "+tr("warning(s)")+" ";
+		slotMessagesBuild( QString("\n---------------------- "+msg+"----------------------\n"), "");
 		actionBuild->setEnabled( true );
 		actionRebuild->setEnabled( true );	
 		actionCompile->setEnabled( true );	

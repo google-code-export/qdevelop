@@ -13,8 +13,10 @@ Q_OBJECT
 public:
 	Build(QObject * parent, QString qmakeName, QString makename, QString rep, bool qmake, bool n, bool g, QString compileFile=0);
     void run();
-    void incErrors() { m_errors++; }
-    void incWarnings() { m_warnings++; }
+    void incErrors();
+    void incWarnings();
+    int nbErrors() { return m_errors; }
+    int nbWarnings() { return m_warnings; }
 private:
 	bool m_qmake;
 	QString projectDirectory;
