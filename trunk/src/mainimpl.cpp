@@ -2220,7 +2220,7 @@ void MainImpl::slotRemoveDebugVariable()
 //
 void MainImpl::loadPlugins()
 {
-    QDir pluginsDir = QDir(qApp->applicationDirPath());
+/*    QDir pluginsDir = QDir(qApp->applicationDirPath());
 
 #if defined(Q_OS_WIN)
     if (pluginsDir.dirName().toLower() == "bin" )
@@ -2231,6 +2231,14 @@ void MainImpl::loadPlugins()
         pluginsDir.cdUp();
         pluginsDir.cdUp();
     }
+#endif
+    pluginsDir.cd("plugins");
+*/
+    QDir pluginsDir;
+#if defined(Q_OS_WIN)
+    pluginsDir = QDir(qApp->applicationDirPath());
+#else
+    pluginsDir = QDir("/usr/lib/qdevelop");
 #endif
     pluginsDir.cd("plugins");
 
