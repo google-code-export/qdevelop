@@ -35,7 +35,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
     QColor back, bool prompt, QColor lc, bool bk, bool tc, int in, QString directory,
-    bool m, QColor mc, bool close)
+    bool m, QColor mc, bool close, QString pd)
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -60,6 +60,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
     match->setChecked( m );
     closeButton->setChecked( close );
     projectsDirectory->setText( directory );
+    pluginsDirectory->setText( pd );
 	//
 	cppHighLighter = new CppHighlighter( 0 );
 	cppHighLighter->setPreprocessorFormat( pre );
@@ -119,6 +120,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	connect(matching, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(defaults, SIGNAL(clicked()), this, SLOT(slotDefault()));
 	connect(chooseProjectsDirectory, SIGNAL(clicked()), this, SLOT(slotChooseProjectsDirectory()));
+	connect(choosePluginsDirectory, SIGNAL(clicked()), this, SLOT(slotChoosePluginsDirectory()));
 	textEdit->setPlainText( textEdit->toPlainText() );
 
 	// TODO remove gcc warnings
@@ -276,5 +278,20 @@ void OptionsImpl::slotChooseProjectsDirectory()
 		return;
 	}
 	projectsDirectory->setText( s );
+}
+//
+void OptionsImpl::slotChoosePluginsDirectory()
+{
+	QString s = QFileDialog::getExistingDirectory(
+		this,
+		tr("Choose the project directory"),
+		pluginsDirectory->text(),
+		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
+	if( s.isEmpty() )
+	{
+		// Cancel clicked
+		return;
+	}
+	pluginsDirectory->setText( s );
 }
 //
