@@ -66,12 +66,14 @@ int main(int argc, char *argv[])
 	translator.load( translationFile );
 	app.installTranslator( &translator );
 	//
-	MainImpl main;// = new MainImpl;
+	MainImpl main;
+	//
+	main.loadINI();
+	//
 	splash->showMessage(QObject::tr("Environment control"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
 	qApp->processEvents();
 	main.slotToolsControl(false);
-	
-	main.loadINI();
+	//
 	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Files on editor"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
 	qApp->processEvents();
 	//
