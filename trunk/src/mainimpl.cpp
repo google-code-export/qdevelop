@@ -102,6 +102,12 @@ MainImpl::MainImpl(QWidget * parent)
 	m_closeButtonInTabs = false;
 	crossButton = 0;
 	//
+#if defined(Q_OS_WIN)
+    m_pluginsDirectory = qApp->applicationDirPath()+"/plugins";
+#else
+    m_pluginsDirectory = "/usr/lib/qdevelop/plugins";
+#endif
+	//
 	m_formatPreprocessorText.setForeground(QColor(0,128,0));
 	m_formatQtText.setForeground(Qt::blue);
 	m_formatSingleComments.setForeground(Qt::red);
@@ -176,7 +182,6 @@ MainImpl::MainImpl(QWidget * parent)
 	m_stack->hide();
 	//
 	treeClasses->setCtagsName( m_ctagsName );
-	loadPlugins();
 }
 //
 MainImpl::~MainImpl() 
@@ -526,7 +531,7 @@ void MainImpl::slotOptions()
 	m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion, 
 	m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets, 
 	m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
-	m_closeButtonInTabs);
+	m_closeButtonInTabs, m_pluginsDirectory);
 	
 	if( options->exec() == QDialog::Accepted )
 	{
@@ -548,6 +553,7 @@ void MainImpl::slotOptions()
 		m_match = options->match->isChecked();
 		m_promptBeforeQuit = options->promptBeforeQuit->isChecked();
 		m_projectsDirectory = options->projectsDirectory->text();
+		m_pluginsDirectory = options->pluginsDirectory->text();
 		m_closeButtonInTabs = options->closeButton->isChecked();
 		setCrossButton( !m_closeButtonInTabs );
 		//
@@ -635,6 +641,7 @@ void MainImpl::saveINI()
 	settings.setValue("m_currentLineColor", m_currentLineColor.name());
 	settings.setValue("m_matchingColor", m_matchingColor.name());
 	settings.setValue("m_projectsDirectory", m_projectsDirectory);
+	settings.setValue("m_pluginsDirectory", m_pluginsDirectory);
 	//
 	settings.setValue("m_formatPreprocessorText", m_formatPreprocessorText.foreground().color().name());
 	settings.setValue("m_formatQtText", m_formatQtText.foreground().color().name());
@@ -879,6 +886,7 @@ void MainImpl::loadINI()
 	m_currentLineColor = QColor(settings.value("m_currentLineColor", m_currentLineColor).toString());
 	m_matchingColor = QColor(settings.value("m_matchingColor", m_matchingColor).toString());
 	m_projectsDirectory = settings.value("m_projectsDirectory", m_projectsDirectory).toString();
+	m_pluginsDirectory = settings.value("m_pluginsDirectory", m_pluginsDirectory).toString();
 	m_showTreeClasses = settings.value("m_showTreeClasses", m_showTreeClasses).toBool();
 	m_closeButtonInTabs = settings.value("m_closeButtonInTabs", m_closeButtonInTabs).toBool();
 	setCrossButton( !m_closeButtonInTabs );
@@ -2220,27 +2228,14 @@ void MainImpl::slotRemoveDebugVariable()
 //
 void MainImpl::loadPlugins()
 {
-/*    QDir pluginsDir = QDir(qApp->applicationDirPath());
-
-#if defined(Q_OS_WIN)
-    if (pluginsDir.dirName().toLower() == "bin" )
-        pluginsDir.cdUp();
-#elif defined(Q_OS_MAC)
-    if (pluginsDir.dirName() == "MacOS") {
-        pluginsDir.cdUp();
-        pluginsDir.cdUp();
-        pluginsDir.cdUp();
-    }
-#endif
-    pluginsDir.cd("plugins");
-*/
-    QDir pluginsDir;
-#if defined(Q_OS_WIN)
+    QDir pluginsDir = QDir(m_pluginsDirectory);
+/*#if defined(Q_OS_WIN)
     pluginsDir = QDir(qApp->applicationDirPath());
 #else
     pluginsDir = QDir("/usr/lib/qdevelop");
 #endif
-    pluginsDir.cd("plugins");
+*/
+    //pluginsDir.cd("plugins");
 
     foreach (QString fileName, pluginsDir.entryList(QDir::Files)) 
     {

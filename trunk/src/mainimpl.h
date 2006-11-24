@@ -73,6 +73,7 @@ public:
 	void toggleBookmark(Editor *editor, QString text, bool activate, QTextBlock block);
 	QMenu *bookmarksMenu() { return menuBookmarks; };
 	QList<ParsedItem> treeClassesItems() { return treeClasses->treeClassesItems(); };
+	void loadPlugins();
 private:
 	// Functions
 	void createConnections();
@@ -85,7 +86,6 @@ private:
 	void setCrossButton(bool activate);
 	bool modifiedEditors();
 	void configureCompletion();
-	void loadPlugins();
 	// Objects and Variables
 	enum ExecuteVersion { ExecuteNone, ExecuteRelease, ExecuteDebug};
 	Build *m_builder;
@@ -112,6 +112,7 @@ private:
 	QString m_designerName;
 	QString m_qtInstallHeaders;
 	QString m_projectsDirectory;
+	QString m_pluginsDirectory;
 	bool m_lineNumbers, m_selectionBorder, m_autoIndent, m_cppHighlighter;
 	bool m_saveBeforeBuild;
 	bool m_restoreOnStart;

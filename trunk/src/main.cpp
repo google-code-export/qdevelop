@@ -86,6 +86,10 @@ int main(int argc, char *argv[])
 			main.openFile( QStringList( s ) );
 	}
 	//
+	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Plugins"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
+	qApp->processEvents();
+	main.loadPlugins();
+	//
 	splash->showMessage(QObject::tr("Main Window creation"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
 	qApp->processEvents();
 	main.setGeometry(50,50, 800, 550);
