@@ -173,7 +173,7 @@
              <item>
               <widget class="QLabel" name="label_15" >
                <property name="text" >
-                <string>Default plugins directory: </string>
+                <string>User plugins directory: </string>
                </property>
               </widget>
              </item>
