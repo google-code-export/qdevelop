@@ -126,8 +126,8 @@ void Debug::slotMessagesDebug()
 	{
 		foreach(QString s, list)
 		{
-			if( s.indexOf("(gdb) ") == 0 && s.length() > 6 )
-				s.remove("(gdb) ");
+			//if( s.indexOf("(gdb) ") == 0 && s.length() > 6 )
+				//s.remove("(gdb) ");
 //emit message("s :"+QString::number(m_request)+" :"+s);
 			if( !s.isEmpty() )
 			{
