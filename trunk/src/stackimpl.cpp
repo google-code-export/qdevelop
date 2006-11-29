@@ -33,8 +33,15 @@ void StackImpl::on_list_currentItemChanged ( QListWidgetItem * item, QListWidget
 	QString filename = s.section(":", 0, 0);
 	int numLine = s.section(":", -1, -1).toInt();
 	QStringList filter = m_infoSources.filter( filename );
+	QStringList files;
+	foreach(QString f, filter)
+	{
+		if( !QFile::exists( f ) )
+			f = m_directory + "/" + f;
+		files << f;
+	}
 	if( filter.count() )
-		m_mainImpl->openFile( filter, numLine);
+		m_mainImpl->openFile( files, numLine);
 }
 //
 void StackImpl::infoSources(const QString s )
