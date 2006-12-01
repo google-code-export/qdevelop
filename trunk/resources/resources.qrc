@@ -107,6 +107,7 @@
         <file>translations/QDevelop_Polish.qm</file>
         <file>translations/QDevelop_Spanish.qm</file>
         <file>translations/QDevelop_Russian.qm</file>
+        <file>translations/QDevelop_Italian.qm</file>
     </qresource>
     <qresource prefix="/treeview" >
         <file>images/cpp.png</file>

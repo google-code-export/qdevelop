@@ -303,22 +303,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Build</name>
     <message>
-        <location filename="../../src/build.cpp" line="57"/>
+        <location filename="../../src/build.cpp" line="67"/>
         <source>Update project</source>
         <translation>更新工程</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="69"/>
+        <location filename="../../src/build.cpp" line="79"/>
         <source>Clean Project</source>
         <translation>清理工程</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="84"/>
+        <location filename="../../src/build.cpp" line="94"/>
         <source>Compilation of </source>
         <translation>编译</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="88"/>
+        <location filename="../../src/build.cpp" line="98"/>
         <source>Build</source>
         <translation>编译</translation>
     </message>
@@ -326,31 +326,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/build.cpp" line="120"/>
         <source>Build stopped</source>
         <translation>编译已停止</translation>
-    </message>
-    <message>
-        <location filename="../../src/build.cpp" line="101"/>
-        <source>Build finished without error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/build.cpp" line="103"/>
-        <source>Build finished with</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/build.cpp" line="105"/>
-        <source>error(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/build.cpp" line="105"/>
-        <source>and</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/build.cpp" line="107"/>
-        <source>warning(s)</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1338,7 +1313,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1124"/>
+        <location filename="../../src/mainimpl.cpp" line="1139"/>
         <source>Choose the file to create</source>
         <translation>选择要创建的文件</translation>
     </message>
@@ -1358,7 +1333,7 @@ p, li { white-space: pre-wrap; }
         <translation>在目录里已经存在。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2176"/>
+        <location filename="../../src/mainimpl.cpp" line="2201"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -1368,174 +1343,199 @@ p, li { white-space: pre-wrap; }
         <translation>不能创建</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="713"/>
+        <location filename="../../src/mainimpl.cpp" line="721"/>
         <source>The directory cannot be created</source>
         <translation>目录不能被创建</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="721"/>
+        <location filename="../../src/mainimpl.cpp" line="729"/>
         <source>The project cannot be created</source>
         <translation>工程不能被创建</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="943"/>
+        <location filename="../../src/mainimpl.cpp" line="958"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>你要退出QDevelop吗？</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1761"/>
+        <location filename="../../src/mainimpl.cpp" line="1785"/>
         <source>Yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1761"/>
+        <location filename="../../src/mainimpl.cpp" line="1785"/>
         <source>No</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="990"/>
+        <location filename="../../src/mainimpl.cpp" line="1005"/>
         <source>Choose a file to open</source>
         <translation>选择要打开的文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="992"/>
+        <location filename="../../src/mainimpl.cpp" line="1007"/>
         <source>Sources</source>
         <translation>源文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1020"/>
+        <location filename="../../src/mainimpl.cpp" line="1035"/>
         <source>Projects</source>
         <translation>工程</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="994"/>
+        <location filename="../../src/mainimpl.cpp" line="1009"/>
         <source>Texts</source>
         <translation>文本</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="995"/>
+        <location filename="../../src/mainimpl.cpp" line="1010"/>
         <source>All Files</source>
         <translation>所有文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1040"/>
+        <location filename="../../src/mainimpl.cpp" line="1055"/>
         <source>The project</source>
         <translation>工程</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1040"/>
+        <location filename="../../src/mainimpl.cpp" line="1055"/>
         <source>doesn&apos;t exist.</source>
         <translation>不存在</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1105"/>
+        <location filename="../../src/mainimpl.cpp" line="1120"/>
         <source>Properties of</source>
         <translation>属性</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1126"/>
+        <location filename="../../src/mainimpl.cpp" line="1141"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>文件 (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1786"/>
+        <location filename="../../src/mainimpl.cpp" line="1810"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1568"/>
+        <location filename="../../src/mainimpl.cpp" line="1592"/>
         <source>error:</source>
         <translation>错误：</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1568"/>
+        <location filename="../../src/mainimpl.cpp" line="1592"/>
         <source>warning:</source>
         <translation>警告：</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1597"/>
+        <location filename="../../src/mainimpl.cpp" line="1621"/>
         <source>File</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1869"/>
+        <location filename="../../src/mainimpl.cpp" line="1893"/>
         <source>Start</source>
         <translation>开始</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1744"/>
+        <location filename="../../src/mainimpl.cpp" line="1768"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>工程已经被更改，你愿意保存改动吗？</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1760"/>
+        <location filename="../../src/mainimpl.cpp" line="1784"/>
         <source>Stop debugging ?</source>
         <translation>停止调试?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1772"/>
+        <location filename="../../src/mainimpl.cpp" line="1796"/>
         <source>The program don&apos;t exist,</source>
         <translation>程序不存在</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1773"/>
+        <location filename="../../src/mainimpl.cpp" line="1797"/>
         <source>run Build.</source>
         <translation>运行编译。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1773"/>
+        <location filename="../../src/mainimpl.cpp" line="1797"/>
         <source>Ok</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1788"/>
+        <location filename="../../src/mainimpl.cpp" line="1812"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1870"/>
+        <location filename="../../src/mainimpl.cpp" line="1894"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1935"/>
+        <location filename="../../src/mainimpl.cpp" line="1959"/>
         <source>Abort</source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1928"/>
+        <location filename="../../src/mainimpl.cpp" line="1952"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>窗口中无法停下，请设置断点。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1977"/>
+        <location filename="../../src/mainimpl.cpp" line="2001"/>
         <source>Continue</source>
         <translation>继续</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2042"/>
+        <location filename="../../src/mainimpl.cpp" line="2067"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2166"/>
+        <location filename="../../src/mainimpl.cpp" line="2191"/>
         <source>New Variable:</source>
         <translation>新变量：</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2175"/>
+        <location filename="../../src/mainimpl.cpp" line="2200"/>
         <source>The variable</source>
         <translation>变量</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2175"/>
+        <location filename="../../src/mainimpl.cpp" line="2200"/>
         <source>already exist.</source>
         <translation>已经存在。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1018"/>
+        <location filename="../../src/mainimpl.cpp" line="1033"/>
         <source>Choose a project to open</source>
         <translation>选择要打开的工程</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1538"/>
+        <source>Build finished without error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1540"/>
+        <source>Build finished with</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1542"/>
+        <source>error(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1542"/>
+        <source>and</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1544"/>
+        <source>warning(s)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1838,147 +1838,147 @@ p, li { white-space: pre-wrap; }
         <translation>秒</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="196"/>
+        <location filename="../../ui/options.ui" line="243"/>
         <source>Editor</source>
         <translation>编辑器</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="344"/>
+        <location filename="../../ui/options.ui" line="391"/>
         <source>Font:</source>
         <translation>字体:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="351"/>
+        <location filename="../../ui/options.ui" line="398"/>
         <source>End of line</source>
         <translation>文件尾</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="358"/>
+        <location filename="../../ui/options.ui" line="405"/>
         <source>Tab size</source>
         <translation>Tab键长度</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="365"/>
+        <location filename="../../ui/options.ui" line="412"/>
         <source>Current line background</source>
         <translation>当前行背景色</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="372"/>
+        <location filename="../../ui/options.ui" line="419"/>
         <source>Text background</source>
         <translation>文字背景色</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="724"/>
+        <location filename="../../ui/options.ui" line="771"/>
         <source>Default</source>
         <translation>默认</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="420"/>
+        <location filename="../../ui/options.ui" line="467"/>
         <source>Unix</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="425"/>
+        <location filename="../../ui/options.ui" line="472"/>
         <source>Dos/Windows</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="444"/>
+        <location filename="../../ui/options.ui" line="491"/>
         <source>Replace Tab by spaces</source>
         <translation>把Tab替换成空格</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="660"/>
+        <location filename="../../ui/options.ui" line="707"/>
         <source>...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="208"/>
+        <location filename="../../ui/options.ui" line="255"/>
         <source>options</source>
         <translation>选项</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="281"/>
+        <location filename="../../ui/options.ui" line="328"/>
         <source>Line numbers</source>
         <translation>行号</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="518"/>
+        <location filename="../../ui/options.ui" line="565"/>
         <source>Syntax highlighting</source>
         <translation>代码高亮</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="305"/>
+        <location filename="../../ui/options.ui" line="352"/>
         <source>Auto-Brackets</source>
         <translation>自动加括号</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="274"/>
+        <location filename="../../ui/options.ui" line="321"/>
         <source>Selection border</source>
         <translation>突出边框</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="267"/>
+        <location filename="../../ui/options.ui" line="314"/>
         <source>Complete Code</source>
         <translation>补全代码</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="298"/>
+        <location filename="../../ui/options.ui" line="345"/>
         <source>Autoindent</source>
         <translation>自动缩进</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="559"/>
+        <location filename="../../ui/options.ui" line="606"/>
         <source>Function/method names :</source>
         <translation>函数/方法名：</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="566"/>
+        <location filename="../../ui/options.ui" line="613"/>
         <source>Preprocessor :</source>
         <translation>预处理器：</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="573"/>
+        <location filename="../../ui/options.ui" line="620"/>
         <source>Qt words :</source>
         <translation>Qt关键字：</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="580"/>
+        <location filename="../../ui/options.ui" line="627"/>
         <source>Keywords :</source>
         <translation>关键字：</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="587"/>
+        <location filename="../../ui/options.ui" line="634"/>
         <source>Single comments :</source>
         <translation>单行注释：</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="594"/>
+        <location filename="../../ui/options.ui" line="641"/>
         <source>Multiline comments :</source>
         <translation>多行注释：</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="601"/>
+        <location filename="../../ui/options.ui" line="648"/>
         <source>Quotation strings :</source>
         <translation>引号内字符串：</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="744"/>
+        <location filename="../../ui/options.ui" line="791"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="751"/>
+        <location filename="../../ui/options.ui" line="798"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="161"/>
+        <location filename="../../ui/options.ui" line="169"/>
         <source>Default projects directory: </source>
         <translation> 默认工程目录：</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="688"/>
+        <location filename="../../ui/options.ui" line="735"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2000,7 +2000,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="228"/>
+        <location filename="../../ui/options.ui" line="275"/>
         <source>Matching ( and {</source>
         <translation>匹配括号</translation>
     </message>
@@ -2009,11 +2009,16 @@ p, li { white-space: pre-wrap; }
         <source>Close button in each tab (not work with all styles)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../ui/options.ui" line="176"/>
+        <source>User plugins directory: </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/optionsimpl.cpp" line="270"/>
+        <location filename="../../src/optionsimpl.cpp" line="287"/>
         <source>Choose the project directory</source>
         <translation>选择工程目录</translation>
     </message>
@@ -2642,7 +2647,7 @@ variables :</source>
         <translation>不能启动Assistant！</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="75"/>
+        <location filename="../../src/main.cpp" line="91"/>
         <source>Loading:</source>
         <translation>加载中：</translation>
     </message>
@@ -2652,17 +2657,17 @@ variables :</source>
         <translation>接口翻译</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="70"/>
+        <location filename="../../src/main.cpp" line="73"/>
         <source>Environment control</source>
         <translation>环境控制</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="75"/>
+        <location filename="../../src/main.cpp" line="77"/>
         <source>Files on editor</source>
         <translation>编辑器中的文件</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="89"/>
+        <location filename="../../src/main.cpp" line="95"/>
         <source>Main Window creation</source>
         <translation>创建主窗口</translation>
     </message>
@@ -2680,6 +2685,11 @@ variables :</source>
         <location filename="../../src/projectmanager.cpp" line="169"/>
         <source>Current project parsing</source>
         <translation type="unfinished">解析当前工程</translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="91"/>
+        <source>Plugins</source>
+        <translation type="unfinished">插件</translation>
     </message>
 </context>
 <context>

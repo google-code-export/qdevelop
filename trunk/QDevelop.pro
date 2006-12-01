@@ -112,7 +112,8 @@ TRANSLATIONS =   resources/translations/QDevelop_Chinese.ts \
   resources/translations/QDevelop_German.ts \
   resources/translations/QDevelop_Polish.ts \
   resources/translations/QDevelop_Russian.ts \
-  resources/translations/QDevelop_Spanish.ts
+  resources/translations/QDevelop_Spanish.ts \
+  resources/translations/QDevelop_Italian.ts
 UI_DIR =   build/ui
 macx {
   ICON =     resources/images/qdevelop.icns

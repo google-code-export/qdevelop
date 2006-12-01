@@ -306,22 +306,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Build</name>
     <message>
-        <location filename="../../src/build.cpp" line="57"/>
+        <location filename="../../src/build.cpp" line="67"/>
         <source>Update project</source>
         <translation>Обновить проект</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="69"/>
+        <location filename="../../src/build.cpp" line="79"/>
         <source>Clean Project</source>
         <translation>Очистить проект</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="84"/>
+        <location filename="../../src/build.cpp" line="94"/>
         <source>Compilation of </source>
         <translation>Компиляция</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="88"/>
+        <location filename="../../src/build.cpp" line="98"/>
         <source>Build</source>
         <translation>Сборка</translation>
     </message>
@@ -329,31 +329,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/build.cpp" line="120"/>
         <source>Build stopped</source>
         <translation>Сборка остановлена</translation>
-    </message>
-    <message>
-        <location filename="../../src/build.cpp" line="101"/>
-        <source>Build finished without error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/build.cpp" line="103"/>
-        <source>Build finished with</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/build.cpp" line="105"/>
-        <source>error(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/build.cpp" line="105"/>
-        <source>and</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/build.cpp" line="107"/>
-        <source>warning(s)</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1341,7 +1316,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1124"/>
+        <location filename="../../src/mainimpl.cpp" line="1139"/>
         <source>Choose the file to create</source>
         <translation>Выберите файл для создания</translation>
     </message>
@@ -1361,7 +1336,7 @@ p, li { white-space: pre-wrap; }
         <translation>уже существует в директории.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2176"/>
+        <location filename="../../src/mainimpl.cpp" line="2201"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
@@ -1371,174 +1346,199 @@ p, li { white-space: pre-wrap; }
         <translation>Невозможно создать</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="713"/>
+        <location filename="../../src/mainimpl.cpp" line="721"/>
         <source>The directory cannot be created</source>
         <translation>Директория не может быть создана</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1040"/>
+        <location filename="../../src/mainimpl.cpp" line="1055"/>
         <source>The project</source>
         <translation>Проект</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1761"/>
+        <location filename="../../src/mainimpl.cpp" line="1785"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1761"/>
+        <location filename="../../src/mainimpl.cpp" line="1785"/>
         <source>No</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="990"/>
+        <location filename="../../src/mainimpl.cpp" line="1005"/>
         <source>Choose a file to open</source>
         <translation>Выберите файл для открытия</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="992"/>
+        <location filename="../../src/mainimpl.cpp" line="1007"/>
         <source>Sources</source>
         <translation>Исходники</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1020"/>
+        <location filename="../../src/mainimpl.cpp" line="1035"/>
         <source>Projects</source>
         <translation>Проекты</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="994"/>
+        <location filename="../../src/mainimpl.cpp" line="1009"/>
         <source>Texts</source>
         <translation>Тексты</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="995"/>
+        <location filename="../../src/mainimpl.cpp" line="1010"/>
         <source>All Files</source>
         <translation>Все файлы</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1040"/>
+        <location filename="../../src/mainimpl.cpp" line="1055"/>
         <source>doesn&apos;t exist.</source>
         <translation>не существует.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1105"/>
+        <location filename="../../src/mainimpl.cpp" line="1120"/>
         <source>Properties of</source>
         <translation>Свойства </translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1126"/>
+        <location filename="../../src/mainimpl.cpp" line="1141"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>Файлы (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1786"/>
+        <location filename="../../src/mainimpl.cpp" line="1810"/>
         <source>Stop</source>
         <translation>Стоп</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1568"/>
+        <location filename="../../src/mainimpl.cpp" line="1592"/>
         <source>error:</source>
         <translation>ошибка:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1568"/>
+        <location filename="../../src/mainimpl.cpp" line="1592"/>
         <source>warning:</source>
         <translation>уведомление:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1597"/>
+        <location filename="../../src/mainimpl.cpp" line="1621"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1869"/>
+        <location filename="../../src/mainimpl.cpp" line="1893"/>
         <source>Start</source>
         <translation>Старт</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1744"/>
+        <location filename="../../src/mainimpl.cpp" line="1768"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Проект был изменен, сохранить изменения?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1760"/>
+        <location filename="../../src/mainimpl.cpp" line="1784"/>
         <source>Stop debugging ?</source>
         <translation>Остановить отладку?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1772"/>
+        <location filename="../../src/mainimpl.cpp" line="1796"/>
         <source>The program don&apos;t exist,</source>
         <translation>Программа не существует,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1773"/>
+        <location filename="../../src/mainimpl.cpp" line="1797"/>
         <source>run Build.</source>
         <translation>запустите Сборку.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1773"/>
+        <location filename="../../src/mainimpl.cpp" line="1797"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1788"/>
+        <location filename="../../src/mainimpl.cpp" line="1812"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1870"/>
+        <location filename="../../src/mainimpl.cpp" line="1894"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1935"/>
+        <location filename="../../src/mainimpl.cpp" line="1959"/>
         <source>Abort</source>
         <translation>Прервать</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1928"/>
+        <location filename="../../src/mainimpl.cpp" line="1952"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Останов невозможен из-под Windows. Установите брейкпойнты.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1977"/>
+        <location filename="../../src/mainimpl.cpp" line="2001"/>
         <source>Continue</source>
         <translation>Продолжить</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2042"/>
+        <location filename="../../src/mainimpl.cpp" line="2067"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="721"/>
+        <location filename="../../src/mainimpl.cpp" line="729"/>
         <source>The project cannot be created</source>
         <translation>Проект не может быть создан</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="943"/>
+        <location filename="../../src/mainimpl.cpp" line="958"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>Вы действительно хотите выйти из QDevelop?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2166"/>
+        <location filename="../../src/mainimpl.cpp" line="2191"/>
         <source>New Variable:</source>
         <translation>Новая переменная:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2175"/>
+        <location filename="../../src/mainimpl.cpp" line="2200"/>
         <source>The variable</source>
         <translation>Переменная</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2175"/>
+        <location filename="../../src/mainimpl.cpp" line="2200"/>
         <source>already exist.</source>
         <translation>существует.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1018"/>
+        <location filename="../../src/mainimpl.cpp" line="1033"/>
         <source>Choose a project to open</source>
         <translation>Выберите проект для открытия</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1538"/>
+        <source>Build finished without error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1540"/>
+        <source>Build finished with</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1542"/>
+        <source>error(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1542"/>
+        <source>and</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1544"/>
+        <source>warning(s)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1826,137 +1826,137 @@ p, li { white-space: pre-wrap; }
         <translation>Подтверждение перед выходом</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="196"/>
+        <location filename="../../ui/options.ui" line="243"/>
         <source>Editor</source>
         <translation>Редактор</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="344"/>
+        <location filename="../../ui/options.ui" line="391"/>
         <source>Font:</source>
         <translation>Шрифт:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="351"/>
+        <location filename="../../ui/options.ui" line="398"/>
         <source>End of line</source>
         <translation>Конец строки</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="358"/>
+        <location filename="../../ui/options.ui" line="405"/>
         <source>Tab size</source>
         <translation>Длина отступа</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="365"/>
+        <location filename="../../ui/options.ui" line="412"/>
         <source>Current line background</source>
         <translation>Фон текущей строки</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="372"/>
+        <location filename="../../ui/options.ui" line="419"/>
         <source>Text background</source>
         <translation>Фон текста</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="724"/>
+        <location filename="../../ui/options.ui" line="771"/>
         <source>Default</source>
         <translation>По-умолчанию</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="420"/>
+        <location filename="../../ui/options.ui" line="467"/>
         <source>Unix</source>
         <translation>Unix</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="425"/>
+        <location filename="../../ui/options.ui" line="472"/>
         <source>Dos/Windows</source>
         <translation>Dos/Windows</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="444"/>
+        <location filename="../../ui/options.ui" line="491"/>
         <source>Replace Tab by spaces</source>
         <translation>Заменять отступы пробелами</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="660"/>
+        <location filename="../../ui/options.ui" line="707"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="208"/>
+        <location filename="../../ui/options.ui" line="255"/>
         <source>options</source>
         <translation>опции</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="281"/>
+        <location filename="../../ui/options.ui" line="328"/>
         <source>Line numbers</source>
         <translation>Номера строк</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="518"/>
+        <location filename="../../ui/options.ui" line="565"/>
         <source>Syntax highlighting</source>
         <translation>Подсветка синтаксиса</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="305"/>
+        <location filename="../../ui/options.ui" line="352"/>
         <source>Auto-Brackets</source>
         <translation>Автоскобки</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="274"/>
+        <location filename="../../ui/options.ui" line="321"/>
         <source>Selection border</source>
         <translation>Граница выделения</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="267"/>
+        <location filename="../../ui/options.ui" line="314"/>
         <source>Complete Code</source>
         <translation>Автодополнение кода</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="298"/>
+        <location filename="../../ui/options.ui" line="345"/>
         <source>Autoindent</source>
         <translation>Автовыделение</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="559"/>
+        <location filename="../../ui/options.ui" line="606"/>
         <source>Function/method names :</source>
         <translation>Имена функций/методов:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="566"/>
+        <location filename="../../ui/options.ui" line="613"/>
         <source>Preprocessor :</source>
         <translation>Препроцессор:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="573"/>
+        <location filename="../../ui/options.ui" line="620"/>
         <source>Qt words :</source>
         <translation>Ключевые слова Qt:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="580"/>
+        <location filename="../../ui/options.ui" line="627"/>
         <source>Keywords :</source>
         <translation>Ключевые слова:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="587"/>
+        <location filename="../../ui/options.ui" line="634"/>
         <source>Single comments :</source>
         <translation>Однострочный коммент:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="594"/>
+        <location filename="../../ui/options.ui" line="641"/>
         <source>Multiline comments :</source>
         <translation>Многострочный коммент:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="601"/>
+        <location filename="../../ui/options.ui" line="648"/>
         <source>Quotation strings :</source>
         <translation>Строки в кавычках:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="744"/>
+        <location filename="../../ui/options.ui" line="791"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="751"/>
+        <location filename="../../ui/options.ui" line="798"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
@@ -1976,12 +1976,12 @@ p, li { white-space: pre-wrap; }
         <translation>секунд</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="161"/>
+        <location filename="../../ui/options.ui" line="169"/>
         <source>Default projects directory: </source>
         <translation>Папка проектов по умолчанию: </translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="688"/>
+        <location filename="../../ui/options.ui" line="735"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -2003,7 +2003,7 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;/*&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* Multi-lines&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;*/&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;// Single line comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;{&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QApplication app(argc, argv);&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QString chaine = &quot;between quotations&quot;;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QDialog *main = new QDialog;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="228"/>
+        <location filename="../../ui/options.ui" line="275"/>
         <source>Matching ( and {</source>
         <translation>Поиск ( и {</translation>
     </message>
@@ -2012,11 +2012,16 @@ p, li { white-space: pre-wrap; }
         <source>Close button in each tab (not work with all styles)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../ui/options.ui" line="176"/>
+        <source>User plugins directory: </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/optionsimpl.cpp" line="270"/>
+        <location filename="../../src/optionsimpl.cpp" line="287"/>
         <source>Choose the project directory</source>
         <translation>Укажите папку проекта</translation>
     </message>
@@ -2634,7 +2639,7 @@ variables :</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/main.cpp" line="75"/>
+        <location filename="../../src/main.cpp" line="91"/>
         <source>Loading:</source>
         <translation>Загрузка:</translation>
     </message>
@@ -2644,17 +2649,17 @@ variables :</source>
         <translation>Перевод интерфейса</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="70"/>
+        <location filename="../../src/main.cpp" line="73"/>
         <source>Environment control</source>
         <translation>Управление окружением</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="75"/>
+        <location filename="../../src/main.cpp" line="77"/>
         <source>Files on editor</source>
         <translation>Файлы в редакторе</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="89"/>
+        <location filename="../../src/main.cpp" line="95"/>
         <source>Main Window creation</source>
         <translation>Создание главного окна</translation>
     </message>
@@ -2676,6 +2681,11 @@ variables :</source>
     <message>
         <location filename="../../src/projectmanager.cpp" line="169"/>
         <source>Current project parsing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="91"/>
+        <source>Plugins</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
