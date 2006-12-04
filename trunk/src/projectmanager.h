@@ -117,7 +117,8 @@ public slots:
 	void slotAddSubProject(QTreeWidgetItem *it=0);
 	void slotlupdate(QTreeWidgetItem *);
 	void slotlrelease(QTreeWidgetItem *);
-	void slotDeleteItem(QTreeWidgetItem *it=0);
+	void slotDeleteItem(QTreeWidgetItem *it=0, bool silentMode=false);
+	void slotRenameItem(QTreeWidgetItem *it=0);
 	void slotProjectPropertie(QTreeWidgetItem *it=0);
 	void slotSubclassing(QTreeWidgetItem *it=0);	
 	void slotPreviewForm(QTreeWidgetItem *it=0);

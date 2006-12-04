@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 	//
 	MainImpl main;
 	//
-	main.loadINI();
+	QString projectName = main.loadINI();
 	//
 	splash->showMessage(QObject::tr("Environment control"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
 	qApp->processEvents();
@@ -77,6 +77,10 @@ int main(int argc, char *argv[])
 	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Files on editor"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
 	qApp->processEvents();
 	//
+	if( !projectName.isEmpty() )
+	{
+		main.openProject( projectName );
+	}
 	foreach(QString s, toOpen)
 	{
 		if( s.right(4).toLower() == ".pro" )

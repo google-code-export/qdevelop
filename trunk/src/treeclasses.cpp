@@ -58,8 +58,7 @@ void TreeClasses::clear()
 //
 void TreeClasses::updateClasses(QString filename, QString buffer, QStringList parents, QString ext)
 {
-//qDebug()<<filename;
-	if( !m_ctagsPresent )
+	if( !m_ctagsPresent || !QFile::exists(m_ctagsName) )
 		return;
 	while( tempProcessMap.count() > 10 )
 		qApp->processEvents();

@@ -190,6 +190,21 @@ MainImpl::~MainImpl()
     }
 }
 //
+void MainImpl::renameEditor(QString oldName, QString newName)
+{
+    for (int i=0; i<m_tabEditors->count(); i++)
+    {
+        Editor *editor = ((Editor *)m_tabEditors->widget(i));
+        if ( editor->filename() == oldName)
+        {
+            editor->setFilename( newName );
+            m_tabEditors->setTabText(i, editor->shortFilename()+"   ");
+            editor->save();
+            break;
+        }
+    }
+}
+//
 void MainImpl::configureCompletion()
 {
     if ( m_completion )
@@ -670,13 +685,15 @@ void MainImpl::saveINI()
     settings.endGroup();
 
     //
-    if ( !m_projectManager )
-        return;
+    //if ( !m_projectManager )
+    //return;
 
     if ( m_restoreOnStart )
     {
         settings.beginGroup("Project");
-        QString projectDirectory = m_projectManager->absoluteNameProjectFile(treeFiles->topLevelItem(0));
+        QString projectDirectory;
+        if ( m_projectManager )
+            projectDirectory = m_projectManager->absoluteNameProjectFile(treeFiles->topLevelItem(0));
         settings.setValue("absoluteNameProjectFile", projectDirectory);
         settings.endGroup();
     }
@@ -856,14 +873,14 @@ void MainImpl::slotNewProject()
         delete window;
 }
 //
-void MainImpl::loadINI()
+QString MainImpl::loadINI()
 {
 #ifdef Q_OS_WIN32
     QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
     QSettings settings(PROJECT_NAME);
 #endif
-
+    QString projectName;
     settings.beginGroup("Options");
     QString s = settings.value("m_font", m_font.toString()).toString();
     m_font.fromString(s);
@@ -931,14 +948,7 @@ void MainImpl::loadINI()
     if ( m_restoreOnStart )
     {
         settings.beginGroup("Project");
-        QString projectName = settings.value("absoluteNameProjectFile").toString();
-        if ( !projectName.isEmpty() )
-        {
-            if ( !openProject( projectName ) )
-            {
-                return;
-            }
-        }
+        projectName = settings.value("absoluteNameProjectFile").toString();
         settings.endGroup();
     }
     //
@@ -947,6 +957,7 @@ void MainImpl::loadINI()
     move(settings.value("pos", pos()).toPoint());
     resize(settings.value("size", size()).toSize());
     settings.endGroup();
+    return projectName;
 }
 
 void MainImpl::closeEvent( QCloseEvent * event )
