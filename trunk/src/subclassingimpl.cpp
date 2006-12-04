@@ -30,6 +30,7 @@
 #include <QFileDialog>
 #include <QDebug>
 #include <QSortFilterProxyModel>
+#include <QTreeWidget>
 
 SubclassingImpl::SubclassingImpl(ProjectManager * parent, QString dirProject, QString uiName, QStringList headers) 
 	: QDialog(0)
@@ -40,7 +41,10 @@ SubclassingImpl::SubclassingImpl(ProjectManager * parent, QString dirProject, QS
 	
 	QApplication::setOverrideCursor(Qt::WaitCursor);
 	setupUi(this);
+	
+	treeSlots = new QTreeWidget;
 	treeSlots->hide();
+	treeSlots->setHeaderLabel( tr("") );
 	
 	proxyModel = new QSortFilterProxyModel;
 	proxyModel->setDynamicSortFilter(true);

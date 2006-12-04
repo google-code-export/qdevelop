@@ -28,6 +28,7 @@
 
 class ProjectManager;
 class QSortFilterProxyModel;
+class QTreeWidget;
 
 class SubclassingImpl : public QDialog, public Ui::Subclassing
 {
@@ -59,6 +60,7 @@ private:
 	QSortFilterProxyModel	*proxyModel;
 	QString			m_uiName;
 	QString			m_projectDirectory;
+	QTreeWidget		*treeSlots;
 	Ui::NewImplementation	uiNewImplementation;	
 	
 };

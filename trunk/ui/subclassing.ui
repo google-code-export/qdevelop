@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>536</width>
-    <height>375</height>
+    <height>386</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -147,29 +147,6 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0" colspan="2" >
-    <widget class="QTreeWidget" name="treeSlots" >
-     <property name="enabled" >
-      <bool>false</bool>
-     </property>
-     <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>1</hsizetype>
-       <vsizetype>4</vsizetype>
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="rootIsDecorated" >
-      <bool>false</bool>
-     </property>
-     <column>
-      <property name="text" >
-       <string>Select slots to implement (blue items are already subclassed):</string>
-      </property>
-     </column>
-    </widget>
-   </item>
    <item row="7" column="0" colspan="2" >
     <layout class="QHBoxLayout" >
      <property name="margin" >
@@ -224,7 +201,6 @@
   <tabstop>newImplementation</tabstop>
   <tabstop>okButton</tabstop>
   <tabstop>cancelButton</tabstop>
-  <tabstop>treeSlots</tabstop>
  </tabstops>
  <resources>
   <include location="../resources/resources.qrc" />
