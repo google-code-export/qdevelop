@@ -53,7 +53,7 @@ public:
 	MainImpl(QWidget * parent = 0);
 	~MainImpl();
 	Editor * openFile(QStringList locationsList, int numLine=-1, bool silentMode=false, bool moveTop=false);
-	void loadINI();
+	QString loadINI();
 	bool saveBeforeBuild() { return m_saveBeforeBuild; };
 	bool openProject(QString s);
 	QString qmakeName() { return m_qmakeName; };
@@ -74,6 +74,7 @@ public:
 	QMenu *bookmarksMenu() { return menuBookmarks; };
 	QList<ParsedItem> treeClassesItems() { return treeClasses->treeClassesItems(); };
 	void loadPlugins();
+	void renameEditor(QString oldName, QString newName);
 private:
 	// Functions
 	void createConnections();

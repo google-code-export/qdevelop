@@ -52,6 +52,7 @@ private slots:
 	void slotAddNewItem();
 	void slotAddExistingFiles();
 	void slotAddScope();
+	void slotRenameItem();
 	void slotDeleteItem();
 	void slotAddSubProject();
 	void slotProjectPropertie();
@@ -67,6 +68,7 @@ signals:
 	void addNewItem(QTreeWidgetItem *);
 	void addExistingsFiles(QTreeWidgetItem *);
 	void deleteItem(QTreeWidgetItem *);
+	void renameItem(QTreeWidgetItem *);
 	void addScope(QTreeWidgetItem *);
 	void addSubProject(QTreeWidgetItem *);
 	void projectPropertie(QTreeWidgetItem *);
