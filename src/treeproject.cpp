@@ -212,10 +212,9 @@ void TreeProject::mousePressEvent( QMouseEvent * event )
 			}
 			else
 				connect(menu->addAction(QIcon(":/toolbar/images/edit.png"), tr("Open")), SIGNAL(triggered()), this, SLOT(slotOpen()) );
-			menu->addSeparator();
+            connect(menu->addAction(QIcon(), tr("Rename...")), SIGNAL(triggered()), this, SLOT(slotRenameItem()) );
 		}
 		connect(menu->addAction(QIcon(), tr("Sort")), SIGNAL(triggered()), this, SLOT(slotSort()) );
-		connect(menu->addAction(QIcon(), tr("Rename...")), SIGNAL(triggered()), this, SLOT(slotRenameItem()) );
 		connect(menu->addAction(QIcon(":/toolbar/images/editdelete.png"), tr("Delete")), SIGNAL(triggered()), this, SLOT(slotDeleteItem()) );
 		menu->addSeparator();
 		QTreeWidgetItem *tmp = m_itemClicked;

@@ -60,6 +60,10 @@ public:
 	QString projectDirectory(QString projectName);
 	QString fileDirectory(QString absoluteFilename);
 	QString projectName(QString directoryName);
+    void setUiDirectory(QTreeWidgetItem *it, QString s);
+    QString uiDirectory(QTreeWidgetItem *it);
+    void setSrcDirectory(QTreeWidgetItem *it, QString s);
+    QString srcDirectory(QTreeWidgetItem *it);
 	QStringList buildableProjectsDirectories();
 	QStringList dependpath(QTreeWidgetItem *it);
 	void headers(QTreeWidgetItem *it, QStringList &headerFiles);

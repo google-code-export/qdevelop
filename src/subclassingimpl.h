@@ -34,7 +34,7 @@ class SubclassingImpl : public QDialog, public Ui::Subclassing
 {
 Q_OBJECT
 public:
-	SubclassingImpl(ProjectManager * parent, QString dirProject, QString uiName, QStringList headers);
+	SubclassingImpl(ProjectManager * parent, QString srcDirectory, QString uiName, QStringList headers);
 	QString newFile();
 private:	
 	void		implementations(QStringList);
@@ -59,7 +59,7 @@ private:
 	ProjectManager		*m_parent;
 	QSortFilterProxyModel	*proxyModel;
 	QString			m_uiName;
-	QString			m_projectDirectory;
+	QString			m_srcDirectory;
 	QTreeWidget		*treeSlots;
 	Ui::NewImplementation	uiNewImplementation;	
 	

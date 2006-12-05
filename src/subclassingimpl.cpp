@@ -32,10 +32,10 @@
 #include <QSortFilterProxyModel>
 #include <QTreeWidget>
 
-SubclassingImpl::SubclassingImpl(ProjectManager * parent, QString dirProject, QString uiName, QStringList headers) 
+SubclassingImpl::SubclassingImpl(ProjectManager * parent, QString srcDirectory, QString uiName, QStringList headers) 
 	: QDialog(0)
 {
-	m_projectDirectory = dirProject;
+	m_srcDirectory = srcDirectory;
 	m_parent = parent;
 	m_uiName = uiName;
 	
@@ -290,7 +290,7 @@ void SubclassingImpl::on_newImplementation_clicked()
 	if( !comboClassName->count() )
 	{
 		uiNewImplementation.className->setText(objectName()+"Impl");
-		uiNewImplementation.location->setText(m_projectDirectory+"/");
+		uiNewImplementation.location->setText(m_srcDirectory+"/");
 		uiNewImplementation.filename->setText(QString(objectName()+"Impl").toLower());
 	}
 	if( dial->exec() == QDialog::Accepted )
@@ -409,7 +409,7 @@ void SubclassingImpl::slotLocation()
 	QString s = QFileDialog::getExistingDirectory(
 		this,
 		tr("Choose the file location"),
-		m_projectDirectory,
+		m_srcDirectory,
 		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
 	
 	if( s.isEmpty() )
