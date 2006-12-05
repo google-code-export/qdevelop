@@ -99,14 +99,18 @@ bool connectDB(QString const& dbName)
 		    ")";
 		query.exec(queryString);
 		//
-		queryString = "select * from config",
+		queryString = "create table projectsDirectories ("
+		    "projectName string,"
+		    "srcDirectory string,"
+		    "uiDirectory string"
+		    ")";
+		query.exec(queryString);
 		//
 		queryString = "create table config ("
 		    "currentEditor int"
 		    ")";
 		query.exec(queryString);
 		//
-qDebug()<<"TODO INSERT INTO config";
     }
     return true;
 }

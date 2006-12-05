@@ -264,6 +264,19 @@ void ProjectManager::saveProjectSettings()
         qDebug() << "Failed to execute" << queryString;
         return;
     }
+    queryString = "delete from config where 1";
+    if (!query.exec(queryString))
+    {
+        qDebug() << "Failed to execute" << queryString;
+        return;
+    }    
+    queryString = "delete from projectsDirectories where 1";
+    if (!query.exec(queryString))
+    {
+        qDebug() << "Failed to execute" << queryString;
+        return;
+    }
+
     for (int i=0; i<m_parent->tabEditors()->count(); i++)
     {
         Editor *editor = ((Editor *)m_parent->tabEditors()->widget( i ));
@@ -300,18 +313,32 @@ void ProjectManager::saveProjectSettings()
         }
     }
     //
-    if ( m_parent->tabEditors()->count() )
+    QList<QTreeWidgetItem *> projectsList;
+    childsList(0, "PROJECT", projectsList);
+    for (int nbProjects=0; nbProjects < projectsList.count(); nbProjects++)
     {
-        //settings.setValue("currentIndex", m_tabEditors->currentIndex());
+        QString projectName = projectsList.at(nbProjects)->text(0);
+        QString projectDir = findData(projectName, "projectDirectory");
+        QString srcDir = srcDirectory( itemProject(projectName) );
+        QString uiDir = uiDirectory( itemProject(projectName) );
         QSqlQuery query;
-        query.prepare("update config set currentEditor = ? where 1");
-        query.addBindValue(m_parent->tabEditors()->currentIndex());
-        query.exec();
+        query.prepare("INSERT INTO projectsDirectories (projectName, srcDirectory, uiDirectory) "
+                      "VALUES (:projectName, :srcDirectory, :uiDirectory)");
+        query.bindValue(":projectName", projectName);
+        query.bindValue(":srcDirectory", srcDir);
+        query.bindValue(":uiDirectory", uiDir);
         if ( !query.exec() )
-            qDebug() << query.lastError();
-
+            qDebug()<<"projectsDirectories" << query.lastError();
     }
-    //db.close();
+    //
+    query.prepare("INSERT INTO config (currentEditor) "
+                  "VALUES (:currentEditor)");
+    if ( m_parent->tabEditors()->count() )
+        query.bindValue(":currentEditor", m_parent->tabEditors()->currentIndex());
+    else
+        query.bindValue(":currentEditor", -1);
+    if ( !query.exec() )
+        qDebug()<<"config" << query.lastError();
 }
 //
 void ProjectManager::loadProjectSettings()
@@ -363,8 +390,22 @@ void ProjectManager::loadProjectSettings()
     while (query.next())
     {
         int currentEditor = query.value( 0 ).toInt();
-        qDebug()<<"currentEditor"<<currentEditor;
-        m_parent->tabEditors()->setCurrentIndex( currentEditor );
+        //qDebug()<<"currentEditor"<<currentEditor;
+        if( currentEditor != -1 )
+            m_parent->tabEditors()->setCurrentIndex( currentEditor );
+    }
+    //
+    query.prepare("select * from projectsDirectories where 1");
+    query.exec();
+    while (query.next())
+    {
+        QString projectName = query.value( 0 ).toString();
+        QString srcDir = query.value( 1 ).toString();
+        QString uiDir = query.value( 2 ).toString();
+        QTreeWidgetItem *itProject = itemProject( projectName );
+        setSrcDirectory(itProject, srcDir);
+        //qDebug()<<"loadProjectSettings"<< srcDir<< uiDir;
+        setUiDirectory(itProject, uiDir);
     }
 }
 //
@@ -543,6 +584,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
     QVariant variant;
     QString filename;
     QString repCreation;
+    window->slotFileType();
     if ( window->exec() == QDialog::Accepted )
     {
         QString line = window->filename->text();
@@ -846,6 +888,8 @@ void ProjectManager::slotProjectPropertie(QTreeWidgetItem *it)
 {
     if ( !it )
         it = m_treeFiles->currentItem();
+    while ( it && it->data(0,Qt::UserRole).toString() != "PROJECT" )
+        it = it->parent();
     if ( !it )
         it = m_treeFiles->topLevelItem( 0 );
     QString projectName = projectFilename(it);
@@ -855,6 +899,8 @@ void ProjectManager::slotProjectPropertie(QTreeWidgetItem *it)
     {
         m_isModifiedProject = true;
         setQmake(projectName);
+        setSrcDirectory(itemProject(projectName), window->srcDirectory->text() );
+        setUiDirectory(itemProject(projectName), window->uiDirectory->text() );
     }
     delete window;
 }
@@ -1115,16 +1161,17 @@ void ProjectManager::slotSubclassing(QTreeWidgetItem *it)
 {
     QString projectDir = projectDirectory(it);
     QString projectName = projectFilename( it );
+    QString srcDir = srcDirectory( itemProject(projectName) );
     QString filename = it->text(0);
     QString uiName = QDir(projectDir+"/"+filename).absolutePath();
     QStringList listeHeaders;
     headers( itemProject(projectName), listeHeaders);
-    SubclassingImpl *dialog = new SubclassingImpl(0, projectDir, uiName, listeHeaders);
+    SubclassingImpl *dialog = new SubclassingImpl(0, srcDir, uiName, listeHeaders);
     if ( dialog->exec() == QDialog::Accepted )
     {
         while ( it->data(0, Qt::UserRole).toString() != "PROJECT" )
             it = it->parent();
-        projectDir = projectDirectory( it );
+        projectDir = projectDirectory( itemProject(projectName) );
         setQmake( projectFilename(it) );
         QString filename = QDir(projectDir).relativeFilePath(dialog->newFile()+".h").replace("\\", "/");
         insertFile(it, filename, true);
@@ -1158,7 +1205,11 @@ void ProjectManager::slotRenameItem(QTreeWidgetItem *it)
 
     if (!filename.isEmpty())
     {
-        QString newName = path + "/" + filename;
+        QString newName;
+        if ( !path.isEmpty() )
+            newName  = path + "/" + filename;
+        else
+            newName  = filename;
         QString newAbsolutePath = QDir(projectDir+"/"+newName).absolutePath();
         QFile file( oldAbsolutePath );
         if ( file.rename( newAbsolutePath ) )
@@ -1259,6 +1310,8 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
     //
     //
     insertItem(newProjectItem, "absoluteNameProjectFile", s);
+    insertItem(newProjectItem, "srcDirectory", "");
+    insertItem(newProjectItem, "uiDirectory", "");
     QTreeWidgetItem *it;
 
     QString projectDirectory = QDir().absoluteFilePath(s).left( QDir().absoluteFilePath(s).lastIndexOf("/") );
@@ -1533,12 +1586,12 @@ bool ProjectManager::saveDataOfProject(QTreeWidgetItem *it, QTextStream *s, int 
         else
             *output << "\n";
     }
-    else if ( !QString("absoluteNameProjectFile:projectDirectory:subProjectName:qmake").contains(key) )
+    else if ( !QString("absoluteNameProjectFile:projectDirectory:subProjectName:qmake:uiDirectory:srcDirectory").contains(key) )
     {
-        if ( key == "CONFIG" || key == "QT" )
-            *output << indent+key << " += ";
-        else
+        if ( key == "TARGET" )
             *output << indent+key << " = ";
+        else
+            *output << indent+key << " += ";
         if ( !it->childCount() )
             *output << "\n";
     }
@@ -1562,6 +1615,50 @@ QString ProjectManager::projectDirectory(QTreeWidgetItem *it)
         {
             for (int i=0; i<tmp->childCount(); i++ )
                 if ( tmp->child( i )->data(0, Qt::UserRole).toString() == "projectDirectory" )
+                    return tmp->child( i )->text(0);
+        }
+    }
+    while ( (tmp = tmp->parent()) );
+    return QString();
+}
+//
+void ProjectManager::setUiDirectory(QTreeWidgetItem *it, QString s)
+{
+    QTreeWidgetItem *itModifie = item(it, "uiDirectory", Key);
+    itModifie->setText(0, s);
+}
+//
+QString ProjectManager::uiDirectory(QTreeWidgetItem *it)
+{
+    QTreeWidgetItem *tmp = it;
+    do
+    {
+        if ( tmp->text(0).toLower().right(4) == ".pro" )
+        {
+            for (int i=0; i<tmp->childCount(); i++ )
+                if ( tmp->child( i )->data(0, Qt::UserRole).toString() == "uiDirectory" )
+                    return tmp->child( i )->text(0);
+        }
+    }
+    while ( (tmp = tmp->parent()) );
+    return QString();
+}
+//
+void ProjectManager::setSrcDirectory(QTreeWidgetItem *it, QString s)
+{
+    QTreeWidgetItem *itModifie = item(it, "srcDirectory", Key);
+    itModifie->setText(0, s);
+}
+//
+QString ProjectManager::srcDirectory(QTreeWidgetItem *it)
+{
+    QTreeWidgetItem *tmp = it;
+    do
+    {
+        if ( tmp->text(0).toLower().right(4) == ".pro" )
+        {
+            for (int i=0; i<tmp->childCount(); i++ )
+                if ( tmp->child( i )->data(0, Qt::UserRole).toString() == "srcDirectory" )
                     return tmp->child( i )->text(0);
         }
     }

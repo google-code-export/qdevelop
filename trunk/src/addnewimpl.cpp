@@ -48,11 +48,11 @@ void AddNewImpl::slotDirectoryChoice()
 	QString s = QFileDialog::getExistingDirectory(
 		this,
 		tr("Choose the file location"),
-		m_projectDirectory,
+		location->text(),
 		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
 	if( s.isEmpty() )
 	{
-		// Le bouton Annuler a ��cliqu�
+        // Cancel choosen
 		return;
 	}
 	location->setText( s );	
@@ -71,16 +71,33 @@ void AddNewImpl::slotComboProjects(QString projectName)
 //
 void AddNewImpl::slotFileType()
 {
+	QVariant variant = comboProjects->itemData( comboProjects->currentIndex() );
+	QTreeWidgetItem *item = (QTreeWidgetItem*)(variantToItem( variant ) );
 	if( source->isChecked() )
+    {
 		suffixe = "cpp";
+        location->setText( m_projectManager->srcDirectory( item ) );
+	}
 	else if( header->isChecked() )
+    {
 		suffixe = "h";
+        location->setText( m_projectManager->srcDirectory( item ) );
+	}
 	else if( dialog->isChecked() )
+    {
 		suffixe = "ui";
+        location->setText( m_projectManager->uiDirectory( item ) );
+	}
 	else if( resource->isChecked() )
+    {
 		suffixe = "qrc";
+        location->setText( m_projectManager->projectDirectory( item ) );
+	}
 	else if( translation->isChecked() )
+    {
 		suffixe = "ts";
+        location->setText( m_projectManager->projectDirectory( item ) );
+	}
 	//
 	if( filename->text().lastIndexOf(".") > 0 )
 	{

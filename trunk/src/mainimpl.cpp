@@ -722,8 +722,8 @@ void MainImpl::slotNewProject()
             filename += ".pro";
         QString projectDirectory = window->location->text();
         projectDirectory += "/" + filename.left( filename.lastIndexOf(".") );
-        QString srcDirectory = window->srcDirectory->text();
-        QString uiDirectory = window->uiDirectory->text();
+        QString srcDirectory = projectDirectory+"/"+window->srcDirectory->text();
+        QString uiDirectory = projectDirectory+"/"+window->uiDirectory->text();
         QString buildDirectory = window->buildDirectory->text();
         QString binDirectory = window->binDirectory->text();
         QString uiFilename = window->uiFilename->text();
@@ -769,11 +769,11 @@ void MainImpl::slotNewProject()
             {
                 if ( !srcDirectory.isEmpty() )
                 {
-                    QDir().mkdir( projectDirectory + "/" + srcDirectory );
+                    QDir().mkdir( srcDirectory );
                 }
                 if ( !uiDirectory.isEmpty() )
                 {
-                    QDir().mkdir( projectDirectory + "/" + uiDirectory );
+                    QDir().mkdir( uiDirectory );
                 }
                 if ( !binDirectory.isEmpty() )
                 {
@@ -793,11 +793,11 @@ void MainImpl::slotNewProject()
                     file.close();
                     data.replace("<class>Dialog</class>", "<class>"+uiObjectName.toAscii()+"</class>");
                     data.replace("name=\"Dialog\"", "name=\""+uiObjectName.toAscii()+"\"");
-                    QFile uiFile(projectDirectory + "/" + uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui");
+                    QFile uiFile(uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui");
                     uiFile.open(QIODevice::WriteOnly);
                     uiFile.write( data );
                     uiFile.close();
-                    s+= "FORMS = "+uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui" + "\n";
+                    s+= "FORMS = "+QDir(projectDirectory).relativeFilePath(uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui") + "\n";
                 }
                 else if ( window->mainwindow->isChecked() )
                 {
@@ -807,11 +807,11 @@ void MainImpl::slotNewProject()
                     file.close();
                     data.replace("<class>MainWindow</class>", "<class>"+uiObjectName.toAscii()+"</class>");
                     data.replace("name=\"MainWindow\"", "name=\""+uiObjectName.toAscii()+"\"");
-                    QFile uiFile(projectDirectory + "/" + uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui");
+                    QFile uiFile(uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui");
                     uiFile.open(QIODevice::WriteOnly);
                     uiFile.write( data );
                     uiFile.close();
-                    s+= "FORMS = "+uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui" + "\n";
+                    s+= "FORMS = "+QDir(projectDirectory).relativeFilePath(uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui") + "\n";
                 }
                 // Create subclassing header
                 QFile file(":/templates/templates/impl.h");
@@ -826,18 +826,17 @@ void MainImpl::slotNewProject()
                 else
                     data.replace("$PARENTNAME", QString( "QMainWindow" ).toAscii());
                 data.replace("$OBJECTNAME", QString( uiObjectName ).toAscii());
-                QFile headerFile(projectDirectory + "/" + srcDirectory + "/" + subclassFilename + ".h");
+                QFile headerFile(srcDirectory + "/" + subclassFilename + ".h");
                 headerFile.open(QIODevice::WriteOnly);
                 headerFile.write( data );
                 headerFile.close();
-                s += "HEADERS = "+ srcDirectory + "/" + subclassFilename + ".h" + "\n";
-
+                s += "HEADERS = "+ QDir(projectDirectory).relativeFilePath(srcDirectory + "/" + subclassFilename + ".h") + "\n";
                 // Create subclassing sources
                 QFile file2(":/templates/templates/impl.cpp");
                 file2.open(QIODevice::ReadOnly);
                 data = file2.readAll();
                 file2.close();
-                QFile sourceFile(projectDirectory + "/" + srcDirectory + "/" + subclassFilename + ".cpp");
+                QFile sourceFile(srcDirectory + "/" + subclassFilename + ".cpp");
                 data.replace("$HEADERNAME", QString( "\""+subclassFilename+".h\"" ).toAscii());
                 data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
                 if ( window->dialog->isChecked() )
@@ -847,20 +846,19 @@ void MainImpl::slotNewProject()
                 sourceFile.open(QIODevice::WriteOnly);
                 sourceFile.write( data );
                 sourceFile.close();
-                s += "SOURCES = "+ srcDirectory + "/" + subclassFilename + ".cpp \\" + "\n";
-
+                s += "SOURCES = "+ QDir(projectDirectory).relativeFilePath(srcDirectory + "/" + subclassFilename + ".cpp")+" \\" + "\n";
                 // Create main.cpp
                 QFile file3(":/templates/templates/main.cpp");
                 file3.open(QIODevice::ReadOnly);
                 data = file3.readAll();
                 file3.close();
-                QFile mainFile(projectDirectory + "/" + srcDirectory + "/" + "main.cpp");
+                QFile mainFile(srcDirectory + "/" + "main.cpp");
                 data.replace("$HEADERNAME", QString( "\""+subclassFilename+".h\"" ).toAscii());
                 data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
                 mainFile.open(QIODevice::WriteOnly);
                 mainFile.write( data );
                 mainFile.close();
-                s += "\t"+ srcDirectory + "/" + "main.cpp" + "\n";
+               s += "\t"+ QDir(projectDirectory).relativeFilePath(srcDirectory + "/" + "main.cpp") + "\n";
             }
             //
             projectFile.write( s );
@@ -868,6 +866,9 @@ void MainImpl::slotNewProject()
         }
         delete window;
         openProject( absoluteProjectName );
+        QTreeWidgetItem *itProject = m_projectManager->itemProject( filename );
+        m_projectManager->setSrcDirectory(itProject, srcDirectory);
+        m_projectManager->setUiDirectory(itProject, uiDirectory);
     }
     else
         delete window;

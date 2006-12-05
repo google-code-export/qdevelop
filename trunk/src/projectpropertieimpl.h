@@ -42,6 +42,7 @@ private:
 	QTreeWidgetItem *m_copyItProject;
 	QTreeWidget *m_treeFiles;
 	QTreeWidget *m_copyTreeFiles;
+    QString m_projectName;
 	//
 	void parse(QTreeWidgetItem *it);
 	void parseTemplate(QTreeWidgetItem *it);
@@ -67,6 +68,8 @@ private slots:
 	void slotDeleteValue();
 	void slotModifyValue();
 	void copyTreeWidget(QTreeWidgetItem *source, QTreeWidgetItem *dest);
+    void slotSrcDirectory();
+    void slotUiDirectory();
 };
 
 #endif

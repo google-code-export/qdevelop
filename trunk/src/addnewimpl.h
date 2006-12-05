@@ -35,6 +35,7 @@ public:
 	AddNewImpl(ProjectManager * parent = 0);
 public slots:
 	void slotComboProjects(QString projectName);
+	void slotFileType();
 private:
 	ProjectManager *m_projectManager;
 	QString m_projectDirectory;
@@ -42,7 +43,6 @@ private:
 private slots:
 	void slotAccept();
 	void slotDirectoryChoice();
-	void slotFileType();
 };
 
 #endif
