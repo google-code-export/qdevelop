@@ -126,17 +126,6 @@
     <addaction name="actionClearAllBookmarks" />
     <addaction name="separator" />
    </widget>
-   <widget class="QMenu" name="menuView" >
-    <property name="title" >
-     <string>&amp;View</string>
-    </property>
-    <widget class="QMenu" name="menuToolbar" >
-     <property name="title" >
-      <string>Toolbar</string>
-     </property>
-    </widget>
-    <addaction name="menuToolbar" />
-   </widget>
    <widget class="QMenu" name="menu_Edit" >
     <property name="title" >
      <string>&amp;Edit</string>
@@ -167,6 +156,38 @@
     <addaction name="separator" />
     <addaction name="actionCompleteCode" />
    </widget>
+   <widget class="QMenu" name="menuPlugins" >
+    <property name="title" >
+     <string>Plugins</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuTools" >
+    <property name="title" >
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuPluginsSettings" >
+     <property name="title" >
+      <string>Plugins settings</string>
+     </property>
+    </widget>
+    <addaction name="actionFindInFiles" />
+    <addaction name="separator" />
+    <addaction name="actionOptions" />
+    <addaction name="actionExternalTools" />
+    <addaction name="actionConfigureShortcuts" />
+    <addaction name="menuPluginsSettings" />
+   </widget>
+   <widget class="QMenu" name="menuView" >
+    <property name="title" >
+     <string>&amp;View</string>
+    </property>
+    <widget class="QMenu" name="menuToolbar" >
+     <property name="title" >
+      <string>Toolbar</string>
+     </property>
+    </widget>
+    <addaction name="menuToolbar" />
+   </widget>
    <widget class="QMenu" name="menuProject" >
     <property name="enabled" >
      <bool>true</bool>
@@ -188,30 +209,10 @@
     <addaction name="separator" />
     <addaction name="actionAddNewItem" />
     <addaction name="actionAddScope" />
+    <addaction name="actionAddNewClass" />
     <addaction name="actionAddExistingFiles" />
     <addaction name="separator" />
     <addaction name="actionProjectPropertie" />
-   </widget>
-   <widget class="QMenu" name="menuPlugins" >
-    <property name="title" >
-     <string>Plugins</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuTools" >
-    <property name="title" >
-     <string>Tools</string>
-    </property>
-    <widget class="QMenu" name="menuPluginsSettings" >
-     <property name="title" >
-      <string>Plugins settings</string>
-     </property>
-    </widget>
-    <addaction name="actionFindInFiles" />
-    <addaction name="separator" />
-    <addaction name="actionOptions" />
-    <addaction name="actionExternalTools" />
-    <addaction name="actionConfigureShortcuts" />
-    <addaction name="menuPluginsSettings" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -263,7 +264,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex" >
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tabBuild" >
         <attribute name="title" >
@@ -1442,18 +1443,23 @@
     <string>Foo</string>
    </property>
   </action>
+  <action name="actionAddNewClass" >
+   <property name="text" >
+    <string>Add New Class...</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>TreeClasses</class>
+   <extends>QTreeWidget</extends>
+   <header>treeclasses.h</header>
+  </customwidget>
   <customwidget>
    <class>TreeProject</class>
    <extends>QWidget</extends>
    <header>treeproject.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>TreeClasses</class>
-   <extends>QTreeWidget</extends>
-   <header>treeclasses.h</header>
   </customwidget>
  </customwidgets>
  <resources>

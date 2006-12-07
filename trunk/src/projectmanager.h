@@ -82,6 +82,8 @@ public:
 	QTreeWidgetItem *itemProject(QString projectName);
 	QStringList parents(QTreeWidgetItem *it);
 	void parseTreeClasses(bool force=false );
+	void setQmake(QString projectName);
+	void insertFile(QTreeWidgetItem *it, QString filename, bool silentMode=false);
 private:
 	enum findMode { Key, Data };
 	// Methods
@@ -90,8 +92,6 @@ private:
 	void parseFile(QString file);
 	QString projectVersion(QTreeWidgetItem *it);
 	QTreeWidgetItem *item(QTreeWidgetItem *begin, QString name, findMode type);
-	void insertFile(QTreeWidgetItem *it, QString filename, bool silentMode=false);
-	void setQmake(QString projectName);
 	bool saveDataOfProject(QTreeWidgetItem *item, QTextStream *s, int nbSpace=-1, bool aSuivre=false);
 	QTreeWidgetItem * insertItem(QTreeWidgetItem *parent, QString key, QString data);
 	bool listContains(QList<QTreeWidgetItem *>, QString name, findMode type);
@@ -117,6 +117,7 @@ public slots:
 	bool slotSaveProject();
 	void slotAddExistingFiles(QTreeWidgetItem *it=0);
 	void slotAddNewItem(QTreeWidgetItem *it=0);
+	void slotAddNewClass(QTreeWidgetItem *it=0);
 	void slotAddScope(QTreeWidgetItem *it=0);
 	void slotAddSubProject(QTreeWidgetItem *it=0);
 	void slotlupdate(QTreeWidgetItem *);

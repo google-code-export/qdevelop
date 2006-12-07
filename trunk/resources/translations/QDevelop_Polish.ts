@@ -200,6 +200,137 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>AddNewClass</name>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="49"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="56"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Anuluj</translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="65"/>
+        <source>Inheritance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="89"/>
+        <source>public</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="94"/>
+        <source>protected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="99"/>
+        <source>private</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="122"/>
+        <source>Inherits another class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="129"/>
+        <source>Ancestor:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="150"/>
+        <source>Ancestor&apos;s include filename:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="157"/>
+        <source>Scope:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="167"/>
+        <source>Filenames</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="195"/>
+        <source>Header filename:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="205"/>
+        <source>Implementation filename:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="215"/>
+        <source>Location :</source>
+        <translation type="unfinished">Lokalizacja :</translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="266"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="298"/>
+        <source>Project or Scope:</source>
+        <translation type="unfinished">Projekt lub zakres zastosowania :</translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="308"/>
+        <source>Class name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="315"/>
+        <source>Constructor arguments:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="348"/>
+        <source>Virtual destructor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/addnewclass.ui" line="13"/>
+        <source>Add New Class</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddNewClassImpl</name>
+    <message>
+        <location filename="../../src/addnewclassimpl.cpp" line="30"/>
+        <source>Choose the file location</source>
+        <translation type="unfinished">Wybierz lokalizację pliku</translation>
+    </message>
+    <message>
+        <location filename="../../src/addnewclassimpl.cpp" line="108"/>
+        <source>The file</source>
+        <translation type="unfinished">Plik</translation>
+    </message>
+    <message>
+        <location filename="../../src/addnewclassimpl.cpp" line="108"/>
+        <source>already exist.</source>
+        <translation type="unfinished">już istnieje.</translation>
+    </message>
+    <message>
+        <location filename="../../src/addnewclassimpl.cpp" line="116"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Anuluj</translation>
+    </message>
+    <message>
+        <location filename="../../src/addnewclassimpl.cpp" line="115"/>
+        <source>Unable to create file.</source>
+        <translation type="unfinished">Nie można stworzyć pliku.</translation>
+    </message>
+</context>
+<context>
     <name>AddNewImpl</name>
     <message>
         <location filename="../../src/addnewimpl.cpp" line="50"/>
@@ -207,37 +338,37 @@ p, li { white-space: pre-wrap; }
         <translation>Wybierz lokalizację pliku</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="104"/>
+        <location filename="../../src/addnewimpl.cpp" line="121"/>
         <source>The suffix of the file is not correct.</source>
         <translation>Siffux pliku jest niepoprawny.</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="118"/>
+        <location filename="../../src/addnewimpl.cpp" line="135"/>
         <source>Cancel</source>
         <translation>Anuluj</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="110"/>
+        <location filename="../../src/addnewimpl.cpp" line="127"/>
         <source>header</source>
         <translation>nagłówek</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="118"/>
+        <location filename="../../src/addnewimpl.cpp" line="135"/>
         <source>Also create the file</source>
         <translation>Stwórz również plik</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="118"/>
+        <location filename="../../src/addnewimpl.cpp" line="135"/>
         <source>in same location ?</source>
         <translation>w tej samej lokalizacji ?</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="118"/>
+        <location filename="../../src/addnewimpl.cpp" line="135"/>
         <source>Yes</source>
         <translation>Tak</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="118"/>
+        <location filename="../../src/addnewimpl.cpp" line="135"/>
         <source>No</source>
         <translation>Nie</translation>
     </message>
@@ -595,7 +726,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Plik</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="179"/>
+        <location filename="../../ui/main.ui" line="200"/>
         <source>Last Projects</source>
         <translation>Ostatnie projekty</translation>
     </message>
@@ -605,7 +736,7 @@ p, li { white-space: pre-wrap; }
         <translation>Ostatnie pliki</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="175"/>
+        <location filename="../../ui/main.ui" line="196"/>
         <source>&amp;Project</source>
         <translation>&amp;Projekt</translation>
     </message>
@@ -620,7 +751,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Debug</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="202"/>
+        <location filename="../../ui/main.ui" line="166"/>
         <source>Tools</source>
         <translation>Narzędzia</translation>
     </message>
@@ -630,542 +761,542 @@ p, li { white-space: pre-wrap; }
         <translation>Edytory</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="131"/>
+        <location filename="../../ui/main.ui" line="182"/>
         <source>&amp;View</source>
         <translation>&amp;Widok</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="135"/>
+        <location filename="../../ui/main.ui" line="186"/>
         <source>Toolbar</source>
         <translation>Pasek narzędziowy</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="142"/>
+        <location filename="../../ui/main.ui" line="131"/>
         <source>&amp;Edit</source>
         <translation>&amp;Edcja</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1200"/>
+        <location filename="../../ui/main.ui" line="1201"/>
         <source>Outputs</source>
         <translation>Wyniki</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1221"/>
+        <location filename="../../ui/main.ui" line="1222"/>
         <source>Build</source>
         <translation>Buduj</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1213"/>
+        <location filename="../../ui/main.ui" line="1214"/>
         <source>Debug</source>
         <translation>Debug</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="513"/>
+        <location filename="../../ui/main.ui" line="514"/>
         <source>Find in Files</source>
         <translation>Znajdź w plikach</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1195"/>
+        <location filename="../../ui/main.ui" line="1196"/>
         <source>Project Explorer</source>
         <translation>Przeglądarka projektu</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1205"/>
+        <location filename="../../ui/main.ui" line="1206"/>
         <source>Files</source>
         <translation>Pliki</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="628"/>
+        <location filename="../../ui/main.ui" line="629"/>
         <source>Classes</source>
         <translation>Classy</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="649"/>
+        <location filename="../../ui/main.ui" line="650"/>
         <source>Files toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="672"/>
+        <location filename="../../ui/main.ui" line="673"/>
         <source>Edit Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="704"/>
+        <location filename="../../ui/main.ui" line="705"/>
         <source>Build Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="721"/>
+        <location filename="../../ui/main.ui" line="722"/>
         <source>Debug Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="740"/>
+        <location filename="../../ui/main.ui" line="741"/>
         <source>&amp;New Project...</source>
         <translation>&amp;Nowy projekt...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="748"/>
+        <location filename="../../ui/main.ui" line="749"/>
         <source>&amp;New File...</source>
         <translation>&amp;Nowy plik...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="754"/>
+        <location filename="../../ui/main.ui" line="755"/>
         <source>New File</source>
         <translation>Nowy plik</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="759"/>
+        <location filename="../../ui/main.ui" line="760"/>
         <source>&amp;File...</source>
         <translation>&amp;Plik...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="775"/>
+        <location filename="../../ui/main.ui" line="776"/>
         <source>&amp;Close All Files</source>
         <translation>&amp;Zamknij wszystkie pliki</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="783"/>
+        <location filename="../../ui/main.ui" line="784"/>
         <source>&amp;Save File</source>
         <translation>&amp;Zapisz plik</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="786"/>
+        <location filename="../../ui/main.ui" line="787"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="794"/>
+        <location filename="../../ui/main.ui" line="795"/>
         <source>&amp;Save File As...</source>
         <translation>&amp;Zapisz plik jako...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="805"/>
+        <location filename="../../ui/main.ui" line="806"/>
         <source>Save All</source>
         <translation>Zapisz wszystkie</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="813"/>
+        <location filename="../../ui/main.ui" line="814"/>
         <source>&amp;Quit</source>
         <translation>&amp;Wyjście</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="827"/>
+        <location filename="../../ui/main.ui" line="828"/>
         <source>Undo</source>
         <translation>Cofnij</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="830"/>
+        <location filename="../../ui/main.ui" line="831"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="844"/>
+        <location filename="../../ui/main.ui" line="845"/>
         <source>Redo</source>
         <translation>Ponów</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="847"/>
+        <location filename="../../ui/main.ui" line="848"/>
         <source>Ctrl+Shift+Z</source>
         <translation>Ctrl+Shift+Z</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="855"/>
+        <location filename="../../ui/main.ui" line="856"/>
         <source>Cut</source>
         <translation>Wytnij</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="858"/>
+        <location filename="../../ui/main.ui" line="859"/>
         <source>Ctrl+X</source>
         <translation>Ctrl+X</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="866"/>
+        <location filename="../../ui/main.ui" line="867"/>
         <source>Copy</source>
         <translation>Kopiuj</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="869"/>
+        <location filename="../../ui/main.ui" line="870"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="877"/>
+        <location filename="../../ui/main.ui" line="878"/>
         <source>Paste</source>
         <translation>Wklej</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="880"/>
+        <location filename="../../ui/main.ui" line="881"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="885"/>
+        <location filename="../../ui/main.ui" line="886"/>
         <source>Select All</source>
         <translation>Zaznacz wszystko</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="888"/>
+        <location filename="../../ui/main.ui" line="889"/>
         <source>Ctrl+A</source>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="896"/>
+        <location filename="../../ui/main.ui" line="897"/>
         <source>Find...</source>
         <translation>Znajdź...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="899"/>
+        <location filename="../../ui/main.ui" line="900"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="904"/>
+        <location filename="../../ui/main.ui" line="905"/>
         <source>Replace...</source>
         <translation>Zamień...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="907"/>
+        <location filename="../../ui/main.ui" line="908"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="912"/>
+        <location filename="../../ui/main.ui" line="913"/>
         <source>Find in Files...</source>
         <translation>Znajdź w plikach...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="915"/>
+        <location filename="../../ui/main.ui" line="916"/>
         <source>Ctrl+Alt+F</source>
         <translation>Ctrl+Alt+F</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="923"/>
+        <location filename="../../ui/main.ui" line="924"/>
         <source>Print</source>
         <translation>Drukuj</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="931"/>
+        <location filename="../../ui/main.ui" line="932"/>
         <source>Add New Item...</source>
         <translation>Dodaj nowy element...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="937"/>
+        <location filename="../../ui/main.ui" line="938"/>
         <source>Add New Item</source>
         <translation>Dodaj nowy element</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="945"/>
+        <location filename="../../ui/main.ui" line="946"/>
         <source>Add Existing Files...</source>
         <translation>Dodaj istniejące pliki...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="951"/>
+        <location filename="../../ui/main.ui" line="952"/>
         <source>Add Existing Files</source>
         <translation>Dodaj istniejące pliki</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="956"/>
+        <location filename="../../ui/main.ui" line="957"/>
         <source>New Folder</source>
         <translation>Nowy katalog</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="964"/>
+        <location filename="../../ui/main.ui" line="965"/>
         <source>Project Properties...</source>
         <translation>Właściwości projektu...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="970"/>
+        <location filename="../../ui/main.ui" line="971"/>
         <source>Project Properties</source>
         <translation>Właściwości projektu</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1224"/>
+        <location filename="../../ui/main.ui" line="1225"/>
         <source>F7</source>
         <translation>F7</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="981"/>
+        <location filename="../../ui/main.ui" line="982"/>
         <source>Clean</source>
         <translation>Wyczyść</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="995"/>
+        <location filename="../../ui/main.ui" line="996"/>
         <source>Rebuild</source>
         <translation>Przebuduj</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1009"/>
+        <location filename="../../ui/main.ui" line="1010"/>
         <source>Compile File</source>
         <translation>Kompiluj plik</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1012"/>
+        <location filename="../../ui/main.ui" line="1013"/>
         <source>Shift+F7</source>
         <translation>Shift+F7</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1026"/>
+        <location filename="../../ui/main.ui" line="1027"/>
         <source>Start Program</source>
         <translation>Uruchom program</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1029"/>
+        <location filename="../../ui/main.ui" line="1030"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1043"/>
+        <location filename="../../ui/main.ui" line="1044"/>
         <source>Step Into</source>
         <translation>Krok do</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1046"/>
+        <location filename="../../ui/main.ui" line="1047"/>
         <source>F11</source>
         <translation>F11</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1060"/>
+        <location filename="../../ui/main.ui" line="1061"/>
         <source>Step Over</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1063"/>
+        <location filename="../../ui/main.ui" line="1064"/>
         <source>F10</source>
         <translation>F10</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1074"/>
+        <location filename="../../ui/main.ui" line="1075"/>
         <source>Calls Stack</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1079"/>
+        <location filename="../../ui/main.ui" line="1080"/>
         <source>Options...</source>
         <translation>Opcje...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1084"/>
+        <location filename="../../ui/main.ui" line="1085"/>
         <source>Parameters...</source>
         <translation>Parametry...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1089"/>
+        <location filename="../../ui/main.ui" line="1090"/>
         <source>About...</source>
         <translation>O Programie...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1094"/>
+        <location filename="../../ui/main.ui" line="1095"/>
         <source>About Qt...</source>
         <translation>O Qt...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1102"/>
+        <location filename="../../ui/main.ui" line="1103"/>
         <source>&amp;Open...</source>
         <translation>&amp;Otwórz...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1105"/>
+        <location filename="../../ui/main.ui" line="1106"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1110"/>
+        <location filename="../../ui/main.ui" line="1111"/>
         <source>Find Next</source>
         <translation>Znajdź następny</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1113"/>
+        <location filename="../../ui/main.ui" line="1114"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1130"/>
+        <location filename="../../ui/main.ui" line="1131"/>
         <source>Stop</source>
         <translation>Zatrzymaj</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1133"/>
+        <location filename="../../ui/main.ui" line="1134"/>
         <source>F6</source>
         <translation>F6</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1138"/>
+        <location filename="../../ui/main.ui" line="1139"/>
         <source>Breakpoints...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1146"/>
+        <location filename="../../ui/main.ui" line="1147"/>
         <source>Stop Build</source>
         <translation>Zatrzymaj budowanie</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1154"/>
+        <location filename="../../ui/main.ui" line="1155"/>
         <source>Indent selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1157"/>
+        <location filename="../../ui/main.ui" line="1158"/>
         <source>Tab</source>
         <translation>Tab</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1165"/>
+        <location filename="../../ui/main.ui" line="1166"/>
         <source>Unindent selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1168"/>
+        <location filename="../../ui/main.ui" line="1169"/>
         <source>Shift+Tab</source>
         <translation>Shift+Tab</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1176"/>
+        <location filename="../../ui/main.ui" line="1177"/>
         <source>Help Current Qt Word</source>
         <translation>Pomoc dla bieżącego elementu Qt</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1179"/>
+        <location filename="../../ui/main.ui" line="1180"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1184"/>
+        <location filename="../../ui/main.ui" line="1185"/>
         <source>Reset Executables List</source>
         <translation>Resetuj pliki wykonywalne</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1232"/>
+        <location filename="../../ui/main.ui" line="1233"/>
         <source>Save Project</source>
         <translation>Zapisz projekt</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1237"/>
+        <location filename="../../ui/main.ui" line="1238"/>
         <source>Save Project As...</source>
         <translation>Zapisz projekt jako...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1245"/>
+        <location filename="../../ui/main.ui" line="1246"/>
         <source>Close Project</source>
         <translation>Zamknij projekt</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1250"/>
+        <location filename="../../ui/main.ui" line="1251"/>
         <source>Add Scope...</source>
         <translation type="unfinished">Dodaj zakres...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1258"/>
+        <location filename="../../ui/main.ui" line="1259"/>
         <source>Step Out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1261"/>
+        <location filename="../../ui/main.ui" line="1262"/>
         <source>Shift+F11</source>
         <translation>Shift+F11</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1266"/>
+        <location filename="../../ui/main.ui" line="1267"/>
         <source>Close Current Editor</source>
         <translation>Zamknij bieżący edytor</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1269"/>
+        <location filename="../../ui/main.ui" line="1270"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1277"/>
+        <location filename="../../ui/main.ui" line="1278"/>
         <source>Next Tab</source>
         <translation>Następne wcięcie</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1280"/>
+        <location filename="../../ui/main.ui" line="1281"/>
         <source>Alt+Right</source>
         <translation>Alt+Prawy</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1288"/>
+        <location filename="../../ui/main.ui" line="1289"/>
         <source>Previous Tab</source>
         <translation>Poprzednie wcięcie</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1291"/>
+        <location filename="../../ui/main.ui" line="1292"/>
         <source>Alt+Left</source>
         <translation>Alt+Lewy</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1299"/>
+        <location filename="../../ui/main.ui" line="1300"/>
         <source>Switch to Header/Sources</source>
         <translation>Przełącz nagłówek/zródło</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1302"/>
+        <location filename="../../ui/main.ui" line="1303"/>
         <source>Shift+F12</source>
         <translation>Shift+F12</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1307"/>
+        <location filename="../../ui/main.ui" line="1308"/>
         <source>Set Focus to Editor</source>
         <translation>Ustaw focus na edytor</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1310"/>
+        <location filename="../../ui/main.ui" line="1311"/>
         <source>Esc</source>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1318"/>
+        <location filename="../../ui/main.ui" line="1319"/>
         <source>Toggle breakpoint</source>
         <translation type="unfinished">Przełącz punkt kontrolny</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1321"/>
+        <location filename="../../ui/main.ui" line="1322"/>
         <source>F9</source>
         <translation>F9</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1326"/>
+        <location filename="../../ui/main.ui" line="1327"/>
         <source>Configure Shortcuts...</source>
         <translation>Konfiguruj skróty...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1331"/>
+        <location filename="../../ui/main.ui" line="1332"/>
         <source>Goto Line...</source>
         <translation>Skocz do linii...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1334"/>
+        <location filename="../../ui/main.ui" line="1335"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1339"/>
+        <location filename="../../ui/main.ui" line="1340"/>
         <source>Toggle Comments</source>
         <translation>Przełącz komentarze</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1342"/>
+        <location filename="../../ui/main.ui" line="1343"/>
         <source>Ctrl+D</source>
         <translation>Ctrl+D</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1347"/>
+        <location filename="../../ui/main.ui" line="1348"/>
         <source>Comment</source>
         <translation>Ustaw komentarz</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1352"/>
+        <location filename="../../ui/main.ui" line="1353"/>
         <source>Uncomment</source>
         <translation>Cofnij komentarz</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1357"/>
+        <location filename="../../ui/main.ui" line="1358"/>
         <source>Complete Code</source>
         <translation>Uzupełnij kod</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1360"/>
+        <location filename="../../ui/main.ui" line="1361"/>
         <source>Ctrl+Space</source>
         <translation>Ctrl+Space</translation>
     </message>
@@ -1175,37 +1306,37 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="354"/>
+        <location filename="../../ui/main.ui" line="355"/>
         <source>Local Variables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="483"/>
+        <location filename="../../ui/main.ui" line="484"/>
         <source>Name</source>
         <translation type="unfinished">Nazwa</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="488"/>
+        <location filename="../../ui/main.ui" line="489"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="493"/>
+        <location filename="../../ui/main.ui" line="494"/>
         <source>Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="498"/>
+        <location filename="../../ui/main.ui" line="499"/>
         <source>Value</source>
         <translation type="unfinished">Wartość</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="397"/>
+        <location filename="../../ui/main.ui" line="398"/>
         <source>Other Variables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="451"/>
+        <location filename="../../ui/main.ui" line="452"/>
         <source>...</source>
         <translation type="unfinished">...</translation>
     </message>
@@ -1215,325 +1346,330 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1368"/>
+        <location filename="../../ui/main.ui" line="1369"/>
         <source>Toggle &amp;Bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1374"/>
+        <location filename="../../ui/main.ui" line="1375"/>
         <source>Toggle Bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1377"/>
+        <location filename="../../ui/main.ui" line="1378"/>
         <source>Ctrl+B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1385"/>
+        <location filename="../../ui/main.ui" line="1386"/>
         <source>Clear &amp;All Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1393"/>
+        <location filename="../../ui/main.ui" line="1394"/>
         <source>External Tools...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1401"/>
+        <location filename="../../ui/main.ui" line="1402"/>
         <source>Next Bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1412"/>
+        <location filename="../../ui/main.ui" line="1413"/>
         <source>Previous Bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="767"/>
+        <location filename="../../ui/main.ui" line="768"/>
         <source>&amp;Open Project...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1388"/>
+        <location filename="../../ui/main.ui" line="1389"/>
         <source>Ctrl+F2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1404"/>
+        <location filename="../../ui/main.ui" line="1405"/>
         <source>F2</source>
         <translation type="unfinished">F2</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1415"/>
+        <location filename="../../ui/main.ui" line="1416"/>
         <source>Shift+F2</source>
         <translation type="unfinished">Shift+F2</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1420"/>
+        <location filename="../../ui/main.ui" line="1421"/>
         <source>Find Previous</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1423"/>
+        <location filename="../../ui/main.ui" line="1424"/>
         <source>Shift+F3</source>
         <translation type="unfinished">Shift+F3</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="197"/>
+        <location filename="../../ui/main.ui" line="161"/>
         <source>Plugins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="206"/>
+        <location filename="../../ui/main.ui" line="170"/>
         <source>Plugins settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="940"/>
+        <location filename="../../ui/main.ui" line="941"/>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1434"/>
+        <location filename="../../ui/main.ui" line="1435"/>
         <source>Goto matching bracket</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1437"/>
+        <location filename="../../ui/main.ui" line="1438"/>
         <source>Ctrl+[</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1442"/>
+        <location filename="../../ui/main.ui" line="1443"/>
         <source>Foo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1448"/>
+        <source>Add New Class...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1139"/>
+        <location filename="../../src/mainimpl.cpp" line="1153"/>
         <source>Choose the file to create</source>
         <translation>Wybierz plik do stworzenia</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="372"/>
+        <location filename="../../src/mainimpl.cpp" line="388"/>
         <source>Files</source>
         <translation>Pliki</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="382"/>
+        <location filename="../../src/mainimpl.cpp" line="398"/>
         <source>The file</source>
         <translation>Plik</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="382"/>
+        <location filename="../../src/mainimpl.cpp" line="398"/>
         <source>already exist on directory.</source>
         <translation>już istnieje w katalogu.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2201"/>
+        <location filename="../../src/mainimpl.cpp" line="2215"/>
         <source>Cancel</source>
         <translation>Anuluj</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="388"/>
+        <location filename="../../src/mainimpl.cpp" line="404"/>
         <source>Unable to create</source>
         <translation>Nie można stworzyć</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="721"/>
+        <location filename="../../src/mainimpl.cpp" line="739"/>
         <source>The directory cannot be created</source>
         <translation>Nie można stworzyć katalogu</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1055"/>
+        <location filename="../../src/mainimpl.cpp" line="1068"/>
         <source>The project</source>
         <translation>Projekt</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1785"/>
+        <location filename="../../src/mainimpl.cpp" line="1799"/>
         <source>Yes</source>
         <translation>Tak</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1785"/>
+        <location filename="../../src/mainimpl.cpp" line="1799"/>
         <source>No</source>
         <translation>Nie</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1005"/>
+        <location filename="../../src/mainimpl.cpp" line="1018"/>
         <source>Choose a file to open</source>
         <translation>Wybierz plik do otwarcia</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1007"/>
+        <location filename="../../src/mainimpl.cpp" line="1020"/>
         <source>Sources</source>
         <translation>Źródła</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1035"/>
+        <location filename="../../src/mainimpl.cpp" line="1048"/>
         <source>Projects</source>
         <translation>Projekty</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1009"/>
+        <location filename="../../src/mainimpl.cpp" line="1022"/>
         <source>Texts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1010"/>
+        <location filename="../../src/mainimpl.cpp" line="1023"/>
         <source>All Files</source>
         <translation>Wszystkie pliki</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1055"/>
+        <location filename="../../src/mainimpl.cpp" line="1068"/>
         <source>doesn&apos;t exist.</source>
         <translation>nie istnieje.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1120"/>
+        <location filename="../../src/mainimpl.cpp" line="1134"/>
         <source>Properties of</source>
         <translation>Właściwości</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1141"/>
+        <location filename="../../src/mainimpl.cpp" line="1155"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>Pliki (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1810"/>
+        <location filename="../../src/mainimpl.cpp" line="1824"/>
         <source>Stop</source>
         <translation>Zatrzymaj</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1592"/>
+        <location filename="../../src/mainimpl.cpp" line="1606"/>
         <source>error:</source>
         <translation>błąd:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1592"/>
+        <location filename="../../src/mainimpl.cpp" line="1606"/>
         <source>warning:</source>
         <translation>ostrzeżenie:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1621"/>
+        <location filename="../../src/mainimpl.cpp" line="1635"/>
         <source>File</source>
         <translation>Plik</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1893"/>
+        <location filename="../../src/mainimpl.cpp" line="1907"/>
         <source>Start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1768"/>
+        <location filename="../../src/mainimpl.cpp" line="1782"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Projekt został zmodyfikowany, czy chcesz zapisać zmiany ?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1784"/>
+        <location filename="../../src/mainimpl.cpp" line="1798"/>
         <source>Stop debugging ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1796"/>
+        <location filename="../../src/mainimpl.cpp" line="1810"/>
         <source>The program don&apos;t exist,</source>
         <translation>Program nie istnieje, </translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1797"/>
+        <location filename="../../src/mainimpl.cpp" line="1811"/>
         <source>run Build.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1797"/>
+        <location filename="../../src/mainimpl.cpp" line="1811"/>
         <source>Ok</source>
         <translation>Zatwierdź</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1812"/>
+        <location filename="../../src/mainimpl.cpp" line="1826"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1894"/>
+        <location filename="../../src/mainimpl.cpp" line="1908"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1959"/>
+        <location filename="../../src/mainimpl.cpp" line="1973"/>
         <source>Abort</source>
         <translation>Przerwij</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1952"/>
+        <location filename="../../src/mainimpl.cpp" line="1966"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2001"/>
+        <location filename="../../src/mainimpl.cpp" line="2015"/>
         <source>Continue</source>
         <translation>Kontynuuj</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2067"/>
+        <location filename="../../src/mainimpl.cpp" line="2081"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="729"/>
+        <location filename="../../src/mainimpl.cpp" line="747"/>
         <source>The project cannot be created</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="958"/>
+        <location filename="../../src/mainimpl.cpp" line="971"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2191"/>
+        <location filename="../../src/mainimpl.cpp" line="2205"/>
         <source>New Variable:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2200"/>
+        <location filename="../../src/mainimpl.cpp" line="2214"/>
         <source>The variable</source>
         <translation type="unfinished">Zmienna</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2200"/>
+        <location filename="../../src/mainimpl.cpp" line="2214"/>
         <source>already exist.</source>
         <translation type="unfinished">już istnieje.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1033"/>
+        <location filename="../../src/mainimpl.cpp" line="1046"/>
         <source>Choose a project to open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1538"/>
+        <location filename="../../src/mainimpl.cpp" line="1552"/>
         <source>Build finished without error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1540"/>
+        <location filename="../../src/mainimpl.cpp" line="1554"/>
         <source>Build finished with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1542"/>
+        <location filename="../../src/mainimpl.cpp" line="1556"/>
         <source>error(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1542"/>
+        <location filename="../../src/mainimpl.cpp" line="1556"/>
         <source>and</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1544"/>
+        <location filename="../../src/mainimpl.cpp" line="1558"/>
         <source>warning(s)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2122,489 +2258,529 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1029"/>
+        <location filename="../../src/projectmanager.cpp" line="1174"/>
         <source>Save project changes ?</source>
         <translation>Zapisać zmiany projektu ?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1146"/>
+        <location filename="../../src/projectmanager.cpp" line="1341"/>
         <source>Yes</source>
         <translation>Tak</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1146"/>
+        <location filename="../../src/projectmanager.cpp" line="1341"/>
         <source>No</source>
         <translation>Nie</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1106"/>
+        <location filename="../../src/projectmanager.cpp" line="1319"/>
         <source>Cancel</source>
         <translation>Anuluj</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="571"/>
+        <location filename="../../src/projectmanager.cpp" line="709"/>
         <source>The file already exist on directory.</source>
         <translation>Plik juz istnieje w katalogu.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="584"/>
+        <location filename="../../src/projectmanager.cpp" line="722"/>
         <source>Forms:</source>
         <translation>Formatki:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="642"/>
+        <location filename="../../src/projectmanager.cpp" line="780"/>
         <source>Unable to create file.</source>
         <translation>Nie można stworzyć pliku.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="681"/>
+        <location filename="../../src/projectmanager.cpp" line="819"/>
         <source>The file already exist.</source>
         <translation>Plik już istnieje.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="692"/>
+        <location filename="../../src/projectmanager.cpp" line="830"/>
         <source>This file is not permit.</source>
         <translation>Plik jest niedozwolony.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1141"/>
+        <location filename="../../src/projectmanager.cpp" line="1333"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="753"/>
+        <location filename="../../src/projectmanager.cpp" line="893"/>
         <source>Sub-project creation</source>
         <translation>Tworzenie podprojektu</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="770"/>
+        <location filename="../../src/projectmanager.cpp" line="910"/>
         <source>Unable to create directory</source>
         <translation>Nie można stworzyć katalogu</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="778"/>
+        <location filename="../../src/projectmanager.cpp" line="918"/>
         <source>The project</source>
         <translation>Projekt</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="778"/>
+        <location filename="../../src/projectmanager.cpp" line="918"/>
         <source>already exist on directory.</source>
         <translation>już istnieje w katalogu.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="785"/>
+        <location filename="../../src/projectmanager.cpp" line="925"/>
         <source>Unable to create project.</source>
         <translation>Nie można stworzyć projektu.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="822"/>
+        <location filename="../../src/projectmanager.cpp" line="962"/>
         <source>Sub-Projects</source>
         <translation>Podprojekty</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1103"/>
+        <location filename="../../src/projectmanager.cpp" line="1248"/>
         <source>The file</source>
         <translation>Plik</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1140"/>
+        <location filename="../../src/projectmanager.cpp" line="1332"/>
         <source>Unable to delete the main project.</source>
         <translation>Nie można usunąć głównego projektu.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1145"/>
+        <location filename="../../src/projectmanager.cpp" line="1340"/>
         <source>Do you want to delete</source>
         <translation>Czy chcesz usunąć</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1145"/>
+        <location filename="../../src/projectmanager.cpp" line="1340"/>
         <source>on project ?</source>
         <translation>w projekcie ?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1284"/>
+        <location filename="../../src/projectmanager.cpp" line="1479"/>
         <source>Sub-projects</source>
         <translation>Podprojekty</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1382"/>
+        <location filename="../../src/projectmanager.cpp" line="1577"/>
         <source>Headers</source>
         <translation>Nagłówki</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1387"/>
+        <location filename="../../src/projectmanager.cpp" line="1582"/>
         <source>Sources</source>
         <translation>Źródła</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1392"/>
+        <location filename="../../src/projectmanager.cpp" line="1587"/>
         <source>Dialogs</source>
         <translation>Dialogi</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1397"/>
+        <location filename="../../src/projectmanager.cpp" line="1592"/>
         <source>Translations</source>
         <translation>Tłumaczenia</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1402"/>
+        <location filename="../../src/projectmanager.cpp" line="1597"/>
         <source>Resources</source>
         <translation>Zasoby</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1762"/>
+        <location filename="../../src/projectmanager.cpp" line="2004"/>
         <source>The only available version for</source>
         <translation>Jedyna dostępna wersja dla</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1762"/>
+        <location filename="../../src/projectmanager.cpp" line="2004"/>
         <source>is</source>
         <translation>jest</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1763"/>
+        <location filename="../../src/projectmanager.cpp" line="2005"/>
         <source>Run on</source>
         <translation>Uruchom na</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="153"/>
+        <location filename="../../src/projectmanager.cpp" line="156"/>
         <source>Project parsing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1103"/>
-        <source></source>
+        <location filename="../../src/projectmanager.cpp" line="1289"/>
+        <source>New name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="1295"/>
+        <source>The kind of the new and the old filename is different !</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="1296"/>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="1319"/>
+        <source>Unable to rename the file to</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertie</name>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="24"/>
+        <location filename="../../ui/projectpropertie.ui" line="21"/>
         <source>Dialog</source>
         <translation>Dialog</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="54"/>
+        <location filename="../../ui/projectpropertie.ui" line="196"/>
         <source>Configuration</source>
         <translation>Konfiguracja</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="90"/>
+        <location filename="../../ui/projectpropertie.ui" line="232"/>
         <source>General :</source>
         <translation>Główne :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="113"/>
+        <location filename="../../ui/projectpropertie.ui" line="255"/>
         <source>Version</source>
         <translation>Wersja</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="125"/>
+        <location filename="../../ui/projectpropertie.ui" line="267"/>
         <source>build_all</source>
         <translation>build_all</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="132"/>
+        <location filename="../../ui/projectpropertie.ui" line="274"/>
         <source>debug</source>
         <translation>debug</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="142"/>
+        <location filename="../../ui/projectpropertie.ui" line="284"/>
         <source>release</source>
         <translation>release</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="149"/>
+        <location filename="../../ui/projectpropertie.ui" line="291"/>
         <source>debug_and_release</source>
         <translation>debug_i_release</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="182"/>
+        <location filename="../../ui/projectpropertie.ui" line="324"/>
         <source>Warnings</source>
         <translation>Ostrzeżenia</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="194"/>
+        <location filename="../../ui/projectpropertie.ui" line="336"/>
         <source>warn_off</source>
         <translation>warn_off</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="201"/>
+        <location filename="../../ui/projectpropertie.ui" line="343"/>
         <source>warn_on</source>
         <translation>warn_on</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="237"/>
+        <location filename="../../ui/projectpropertie.ui" line="379"/>
         <source>Qt Libraries</source>
         <translation>Qt Libraries</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="265"/>
+        <location filename="../../ui/projectpropertie.ui" line="407"/>
         <source>core</source>
         <translation>core</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="272"/>
+        <location filename="../../ui/projectpropertie.ui" line="414"/>
         <source>network</source>
         <translation>network</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="279"/>
+        <location filename="../../ui/projectpropertie.ui" line="421"/>
         <source>sql</source>
         <translation>sql</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="286"/>
+        <location filename="../../ui/projectpropertie.ui" line="428"/>
         <source>xml</source>
         <translation>xml</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="303"/>
+        <location filename="../../ui/projectpropertie.ui" line="445"/>
         <source>gui</source>
         <translation>gui</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="474"/>
+        <location filename="../../ui/projectpropertie.ui" line="616"/>
         <source>opengl</source>
         <translation>opengl</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="317"/>
+        <location filename="../../ui/projectpropertie.ui" line="459"/>
         <source>svg</source>
         <translation>svg</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="324"/>
+        <location filename="../../ui/projectpropertie.ui" line="466"/>
         <source>qt3support</source>
         <translation>qt3support</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="372"/>
+        <location filename="../../ui/projectpropertie.ui" line="514"/>
         <source>Advanced Options</source>
         <translation>Opcja zaawansowane</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="408"/>
+        <location filename="../../ui/projectpropertie.ui" line="550"/>
         <source>app_bundle</source>
         <translation>app_bundle</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="415"/>
+        <location filename="../../ui/projectpropertie.ui" line="557"/>
         <source>assistant</source>
         <translation>assistant</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="422"/>
+        <location filename="../../ui/projectpropertie.ui" line="564"/>
         <source>console</source>
         <translation>console</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="429"/>
+        <location filename="../../ui/projectpropertie.ui" line="571"/>
         <source>designer</source>
         <translation>designer</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="436"/>
+        <location filename="../../ui/projectpropertie.ui" line="578"/>
         <source>dll</source>
         <translation>dll</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="453"/>
+        <location filename="../../ui/projectpropertie.ui" line="595"/>
         <source>exceptions</source>
         <translation>exceptions</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="460"/>
+        <location filename="../../ui/projectpropertie.ui" line="602"/>
         <source>lib_bundle</source>
         <translation>lib_bundle</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="467"/>
+        <location filename="../../ui/projectpropertie.ui" line="609"/>
         <source>no_lflags_merge</source>
         <translation>no_lflags_merge</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="481"/>
+        <location filename="../../ui/projectpropertie.ui" line="623"/>
         <source>plugin</source>
         <translation>plugin</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="498"/>
+        <location filename="../../ui/projectpropertie.ui" line="640"/>
         <source>ppc</source>
         <translation>ppc</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="505"/>
+        <location filename="../../ui/projectpropertie.ui" line="647"/>
         <source>qaxcontainer</source>
         <translation>qaxcontainer</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="512"/>
+        <location filename="../../ui/projectpropertie.ui" line="654"/>
         <source>qaxserver</source>
         <translation>qaxserver</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="519"/>
+        <location filename="../../ui/projectpropertie.ui" line="661"/>
         <source>qt</source>
         <translation>qt</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="529"/>
+        <location filename="../../ui/projectpropertie.ui" line="671"/>
         <source>qtestlib
 </source>
         <translation>qtestlib
 </translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="547"/>
+        <location filename="../../ui/projectpropertie.ui" line="689"/>
         <source>resources</source>
         <translation>resources</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="554"/>
+        <location filename="../../ui/projectpropertie.ui" line="696"/>
         <source>rtti</source>
         <translation>rtti</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="561"/>
+        <location filename="../../ui/projectpropertie.ui" line="703"/>
         <source>staticlib</source>
         <translation>staticlib</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="568"/>
+        <location filename="../../ui/projectpropertie.ui" line="710"/>
         <source>stl</source>
         <translation>stl</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="575"/>
+        <location filename="../../ui/projectpropertie.ui" line="717"/>
         <source>thread</source>
         <translation>thread</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="592"/>
+        <location filename="../../ui/projectpropertie.ui" line="734"/>
         <source>uic3</source>
         <translation>uic3</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="599"/>
+        <location filename="../../ui/projectpropertie.ui" line="741"/>
         <source>uitools</source>
         <translation>uitools</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="606"/>
+        <location filename="../../ui/projectpropertie.ui" line="748"/>
         <source>windows</source>
         <translation>windows</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="613"/>
+        <location filename="../../ui/projectpropertie.ui" line="755"/>
         <source>x11</source>
         <translation>x11</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="620"/>
+        <location filename="../../ui/projectpropertie.ui" line="762"/>
         <source>x86</source>
         <translation>x86</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="639"/>
+        <location filename="../../ui/projectpropertie.ui" line="781"/>
         <source>Free CONFIG
 variables :</source>
         <translation>Free CONFIG
 variables :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="660"/>
+        <location filename="../../ui/projectpropertie.ui" line="802"/>
         <source>Variables</source>
         <translation>Zmienne</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="704"/>
+        <location filename="../../ui/projectpropertie.ui" line="846"/>
         <source>Variable :</source>
         <translation>Zmienna :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="831"/>
+        <location filename="../../ui/projectpropertie.ui" line="973"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="784"/>
+        <location filename="../../ui/projectpropertie.ui" line="926"/>
         <source>Values :</source>
         <translation>Wartości :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="898"/>
+        <location filename="../../ui/projectpropertie.ui" line="55"/>
         <source>Project Template</source>
         <translation>Project Template</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="910"/>
+        <location filename="../../ui/projectpropertie.ui" line="84"/>
         <source>subdirs</source>
         <translation>podkatalogi</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="917"/>
+        <location filename="../../ui/projectpropertie.ui" line="77"/>
         <source>lib</source>
         <translation>lib</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="924"/>
+        <location filename="../../ui/projectpropertie.ui" line="67"/>
         <source>app</source>
         <translation>app</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="945"/>
+        <location filename="../../ui/projectpropertie.ui" line="110"/>
         <source>Project or Scope :</source>
         <translation>Projekt lub zakres zastosowania :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="960"/>
+        <location filename="../../ui/projectpropertie.ui" line="1071"/>
         <source>Advanced mode</source>
         <translation>Tryb zaawansowany</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="999"/>
+        <location filename="../../ui/projectpropertie.ui" line="1053"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1006"/>
+        <location filename="../../ui/projectpropertie.ui" line="1060"/>
         <source>Cancel</source>
         <translation>Anuluj</translation>
+    </message>
+    <message>
+        <location filename="../../ui/projectpropertie.ui" line="135"/>
+        <source>Default directories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/projectpropertie.ui" line="147"/>
+        <source>Dialogs:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/projectpropertie.ui" line="174"/>
+        <source>Sources:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertieImpl</name>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="46"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="50"/>
         <source>Properties of</source>
         <translation>Właściwości</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="520"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="530"/>
         <source>New Value:</source>
         <translation>Nowa wartość:</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="526"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="536"/>
         <source>The spaces are don&apos;t correctly parsed by qmake</source>
         <translation>Odstępy błędnie sparsowane przez qmake</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="527"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="537"/>
         <source>delete spaces or put quotes.</source>
         <translation>usuń spacje lub wstaw cudzysłowy.</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="528"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="538"/>
         <source>Modify</source>
         <translation>Modyfikuj</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="528"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="538"/>
         <source>Cancel</source>
         <translation>Anuluj</translation>
+    </message>
+    <message>
+        <location filename="../../src/projectpropertieimpl.cpp" line="772"/>
+        <source>Choose the sources location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectpropertieimpl.cpp" line="786"/>
+        <source>Choose the dialogs location</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2648,7 +2824,7 @@ variables :</translation>
         <translation>Nie można uruchomić asystenta !</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="91"/>
+        <location filename="../../src/main.cpp" line="95"/>
         <source>Loading:</source>
         <translation>Ładowanie:</translation>
     </message>
@@ -2668,7 +2844,7 @@ variables :</translation>
         <translation>Pliki w edytorze</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="95"/>
+        <location filename="../../src/main.cpp" line="99"/>
         <source>Main Window creation</source>
         <translation>Tworzenie głównego okna</translation>
     </message>
@@ -2683,12 +2859,12 @@ variables :</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="169"/>
+        <location filename="../../src/projectmanager.cpp" line="172"/>
         <source>Current project parsing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="91"/>
+        <location filename="../../src/main.cpp" line="95"/>
         <source>Plugins</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2848,17 +3024,12 @@ variables :</translation>
         <translation>&amp;Nowy...</translation>
     </message>
     <message>
-        <location filename="../../ui/subclassing.ui" line="168"/>
-        <source>Select slots to implement (blue items are already subclassed):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/subclassing.ui" line="200"/>
+        <location filename="../../ui/subclassing.ui" line="177"/>
         <source>&amp;Create</source>
         <translation>S&amp;twórz</translation>
     </message>
     <message>
-        <location filename="../../ui/subclassing.ui" line="210"/>
+        <location filename="../../ui/subclassing.ui" line="187"/>
         <source>C&amp;ancel</source>
         <translation>&amp;Anuluj</translation>
     </message>
@@ -2886,24 +3057,29 @@ variables :</translation>
 <context>
     <name>SubclassingImpl</name>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="407"/>
+        <location filename="../../src/subclassingimpl.cpp" line="411"/>
         <source>Choose the file location</source>
         <translation>Wybierz lokalizację pliku</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="323"/>
+        <location filename="../../src/subclassingimpl.cpp" line="327"/>
         <source>&amp;Update</source>
         <translation>Akt&amp;ualizauj</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="327"/>
+        <location filename="../../src/subclassingimpl.cpp" line="331"/>
         <source>C&amp;reate</source>
         <translation>Stwó&amp;rz</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="331"/>
+        <location filename="../../src/subclassingimpl.cpp" line="335"/>
         <source>(.h and .cpp)</source>
         <translation>(.h and .cpp)</translation>
+    </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="47"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3106,17 +3282,17 @@ variables :</translation>
 <context>
     <name>TreeClasses</name>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="485"/>
+        <location filename="../../src/treeclasses.cpp" line="484"/>
         <source>Open Declaration</source>
         <translation>Otwórz deklarację</translation>
     </message>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="487"/>
+        <location filename="../../src/treeclasses.cpp" line="486"/>
         <source>Open Implementation</source>
         <translation>Otwórz implementację</translation>
     </message>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="491"/>
+        <location filename="../../src/treeclasses.cpp" line="490"/>
         <source>Refresh contents</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3139,73 +3315,83 @@ variables :</translation>
         <translation>Dodaj zakres...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="197"/>
+        <location filename="../../src/treeproject.cpp" line="198"/>
         <source>Add Existing Files...</source>
         <translation>Dodaj istniejące pliki...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="203"/>
+        <location filename="../../src/treeproject.cpp" line="204"/>
         <source>Open in Linguist</source>
         <translation>Otwórz w tłumaczu</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="204"/>
+        <location filename="../../src/treeproject.cpp" line="205"/>
         <source>Refresh translation files</source>
         <translation>Odświerz pliki tlumaczeń</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="205"/>
+        <location filename="../../src/treeproject.cpp" line="206"/>
         <source>Build release translation files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="209"/>
+        <location filename="../../src/treeproject.cpp" line="210"/>
         <source>Open in Designer</source>
         <translation>Otwórz w designerze</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="210"/>
+        <location filename="../../src/treeproject.cpp" line="211"/>
         <source>Dialog Subclassing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="211"/>
+        <location filename="../../src/treeproject.cpp" line="212"/>
         <source>Dialog Preview</source>
         <translation>Podgląd dialogu</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="214"/>
+        <location filename="../../src/treeproject.cpp" line="215"/>
         <source>Open</source>
         <translation>Otwórz</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="217"/>
+        <location filename="../../src/treeproject.cpp" line="218"/>
         <source>Sort</source>
         <translation>Sortuj</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="218"/>
+        <location filename="../../src/treeproject.cpp" line="219"/>
         <source>Delete</source>
         <translation>Usuń</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="224"/>
+        <location filename="../../src/treeproject.cpp" line="225"/>
         <source>Propertie of</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="227"/>
+        <location filename="../../src/treeproject.cpp" line="228"/>
         <source>Show As</source>
         <translation>Pokaż jako</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="228"/>
+        <location filename="../../src/treeproject.cpp" line="229"/>
         <source>Normal</source>
         <translation>Normalny</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="229"/>
+        <location filename="../../src/treeproject.cpp" line="230"/>
         <source>Krawek</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/treeproject.cpp" line="197"/>
+        <source>Add New Class...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/treeproject.cpp" line="216"/>
+        <source>Rename...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

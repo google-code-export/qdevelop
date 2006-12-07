@@ -353,6 +353,7 @@ void MainImpl::createConnections()
     m_projectGroup->addAction( actionCloseProject );
     m_projectGroup->addAction( actionSaveProject );
     m_projectGroup->addAction( actionAddNewItem );
+    m_projectGroup->addAction( actionAddNewClass );
     m_projectGroup->addAction( actionAddScope );
     m_projectGroup->addAction( actionAddExistingFiles );
     m_projectGroup->addAction( actionProjectPropertie );
@@ -1078,6 +1079,7 @@ bool MainImpl::openProject(QString s)
     connect(actionSaveProject, SIGNAL(triggered()), m_projectManager, SLOT(slotSaveProject()) );
     connect(actionAddExistingFiles, SIGNAL(triggered()), m_projectManager, SLOT(slotAddExistingFiles()) );
     connect(actionAddNewItem, SIGNAL(triggered()), m_projectManager, SLOT(slotAddNewItem()) );
+    connect(actionAddNewClass, SIGNAL(triggered()), m_projectManager, SLOT(slotAddNewClass()) );
     connect(actionAddScope, SIGNAL(triggered()), m_projectManager, SLOT(slotAddScope()) );
     connect(actionProjectPropertie, SIGNAL(triggered()), m_projectManager, SLOT(slotProjectPropertie()) );
     setWindowTitle( s );

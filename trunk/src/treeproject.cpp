@@ -194,6 +194,7 @@ void TreeProject::mousePressEvent( QMouseEvent * event )
 			}
 			connect(menu->addAction(QIcon(), tr("Add New Item...")), SIGNAL(triggered()), this, SLOT(slotAddNewItem()) );
 			connect(menu->addAction(QIcon(), tr("Add Scope...")), SIGNAL(triggered()), this, SLOT(slotAddScope()) );
+			connect(menu->addAction(QIcon(), tr("Add New Class...")), SIGNAL(triggered()), this, SLOT(slotAddNewClass()) );
 			connect(menu->addAction(QIcon(), tr("Add Existing Files...")), SIGNAL(triggered()), this, SLOT(slotAddExistingFiles()) );
 		}
 		else if( cle == "DATA" )
@@ -322,6 +323,11 @@ void TreeProject::slotDeleteItem()
 void TreeProject::slotRenameItem()
 {
 	emit renameItem(m_itemClicked);
+}
+//
+void TreeProject::slotAddNewClass()
+{
+	emit addNewClass(m_itemClicked);
 }
 //
 void TreeProject::slotSort()

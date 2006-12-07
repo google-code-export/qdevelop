@@ -50,6 +50,7 @@ private:
 	QAbstractItemDelegate *normalItemDelegate, *krawekItemDelegate;
 private slots:
 	void slotAddNewItem();
+	void slotAddNewClass();
 	void slotAddExistingFiles();
 	void slotAddScope();
 	void slotRenameItem();
@@ -67,6 +68,7 @@ private slots:
 signals:
 	void addNewItem(QTreeWidgetItem *);
 	void addExistingsFiles(QTreeWidgetItem *);
+	void addNewClass(QTreeWidgetItem *);
 	void deleteItem(QTreeWidgetItem *);
 	void renameItem(QTreeWidgetItem *);
 	void addScope(QTreeWidgetItem *);

@@ -1,11 +1,12 @@
 CONFIG +=   qt \
+  release \
   uitools \
-  warn_on \
-  release
-DESTDIR +=   bin
-FORMS +=   ui/about.ui \
+  warn_on
+DESTDIR =   bin
+FORMS =   ui/about.ui \
   ui/addexistant.ui \
   ui/addnew.ui \
+  ui/addnewclass.ui \
   ui/addscope.ui \
   ui/exechoice.ui \
   ui/findfiles.ui \
@@ -25,11 +26,12 @@ FORMS +=   ui/about.ui \
   ui/subclassing.ui \
   ui/toolsControl.ui \
   ui/warning.ui
-HEADERS +=   src/InitCompletion.h \
+HEADERS =   src/InitCompletion.h \
   src/QIComplete/parse.h \
   src/QIComplete/readtags.h \
   src/QIComplete/tree.h \
   src/addexistantimpl.h \
+  src/addnewclassimpl.h \
   src/addnewimpl.h \
   src/addscopeimpl.h \
   src/assistant.h \
@@ -59,22 +61,23 @@ HEADERS +=   src/InitCompletion.h \
   src/toolscontrolimpl.h \
   src/treeclasses.h \
   src/treeproject.h
-INCLUDEPATH +=   . \
+INCLUDEPATH =   . \
   src \
   src/ui
-MOC_DIR +=   build/moc
+MOC_DIR =   build/moc
 QT +=   core \
   gui \
   network \
   sql
-RCC_DIR +=   build/rcc
-RC_FILE +=   QDevelop.rc
-RESOURCES +=   resources/resources.qrc
-SOURCES +=   src/InitCompletion.cpp \
+RCC_DIR =   build/rcc
+RC_FILE =   QDevelop.rc
+RESOURCES =   resources/resources.qrc
+SOURCES =   src/InitCompletion.cpp \
   src/QIComplete/parse.cpp \
   src/QIComplete/readtags.cpp \
   src/QIComplete/tree.cpp \
   src/addexistantimpl.cpp \
+  src/addnewclassimpl.cpp \
   src/addnewimpl.cpp \
   src/addscopeimpl.cpp \
   src/assistant.cpp \
@@ -105,23 +108,23 @@ SOURCES +=   src/InitCompletion.cpp \
   src/treeclasses.cpp \
   src/treeproject.cpp
 TARGET =   QDevelop
-TEMPLATE +=   app
-TRANSLATIONS +=   resources/translations/QDevelop_Chinese.ts \
+TEMPLATE =   app
+TRANSLATIONS =   resources/translations/QDevelop_Chinese.ts \
   resources/translations/QDevelop_Dutch.ts \
   resources/translations/QDevelop_French.ts \
   resources/translations/QDevelop_German.ts \
+  resources/translations/QDevelop_Italian.ts \
   resources/translations/QDevelop_Polish.ts \
   resources/translations/QDevelop_Russian.ts \
-  resources/translations/QDevelop_Spanish.ts \
-  resources/translations/QDevelop_Italian.ts
-UI_DIR +=   build/ui
+  resources/translations/QDevelop_Spanish.ts
+UI_DIR =   build/ui
 macx {
-  ICON +=     resources/images/qdevelop.icns
-  OBJECTS_DIR +=     build/o/mac
+  ICON =     resources/images/qdevelop.icns
+  OBJECTS_DIR =     build/o/mac
 }
 unix {
-  OBJECTS_DIR +=     build/o/unix
+  OBJECTS_DIR =     build/o/unix
 }
 win32 {
-  OBJECTS_DIR +=     build/o/win32
+  OBJECTS_DIR =     build/o/win32
 }
