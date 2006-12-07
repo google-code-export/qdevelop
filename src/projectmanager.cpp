@@ -25,6 +25,7 @@
 #include "ui_exechoice.h"
 #include "addexistantimpl.h"
 #include "addnewimpl.h"
+#include "addnewclassimpl.h"
 #include "addscopeimpl.h"
 #include "misc.h"
 #include "newprojectimpl.h"
@@ -63,6 +64,7 @@ ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeCl
     //
     //
     connect(m_treeFiles, SIGNAL(addNewItem(QTreeWidgetItem *)), this, SLOT(slotAddNewItem(QTreeWidgetItem *)));
+    connect(m_treeFiles, SIGNAL(addNewClass(QTreeWidgetItem *)), this, SLOT(slotAddNewClass(QTreeWidgetItem *)));
     connect(m_treeFiles, SIGNAL(addExistingsFiles(QTreeWidgetItem *)), this, SLOT(slotAddExistingFiles(QTreeWidgetItem *)));
     connect(m_treeFiles, SIGNAL(addScope(QTreeWidgetItem *)), this, SLOT(slotAddScope(QTreeWidgetItem *)));
     connect(m_treeFiles, SIGNAL(lupdate(QTreeWidgetItem *)), this, SLOT(slotlupdate(QTreeWidgetItem *)));
@@ -269,7 +271,7 @@ void ProjectManager::saveProjectSettings()
     {
         qDebug() << "Failed to execute" << queryString;
         return;
-    }    
+    }
     queryString = "delete from projectsDirectories where 1";
     if (!query.exec(queryString))
     {
@@ -320,7 +322,9 @@ void ProjectManager::saveProjectSettings()
         QString projectName = projectsList.at(nbProjects)->text(0);
         QString projectDir = findData(projectName, "projectDirectory");
         QString srcDir = srcDirectory( itemProject(projectName) );
+        srcDir = QDir( projectDir ).relativeFilePath( srcDir );
         QString uiDir = uiDirectory( itemProject(projectName) );
+        uiDir = QDir( projectDir ).relativeFilePath( uiDir );
         QSqlQuery query;
         query.prepare("INSERT INTO projectsDirectories (projectName, srcDirectory, uiDirectory) "
                       "VALUES (:projectName, :srcDirectory, :uiDirectory)");
@@ -391,7 +395,7 @@ void ProjectManager::loadProjectSettings()
     {
         int currentEditor = query.value( 0 ).toInt();
         //qDebug()<<"currentEditor"<<currentEditor;
-        if( currentEditor != -1 )
+        if ( currentEditor != -1 )
             m_parent->tabEditors()->setCurrentIndex( currentEditor );
     }
     //
@@ -400,12 +404,15 @@ void ProjectManager::loadProjectSettings()
     while (query.next())
     {
         QString projectName = query.value( 0 ).toString();
+        QString projectDir = findData(projectName, "projectDirectory");
         QString srcDir = query.value( 1 ).toString();
+        srcDir = QDir( projectDir ).absoluteFilePath( srcDir );
         QString uiDir = query.value( 2 ).toString();
+        uiDir = QDir( projectDir ).absoluteFilePath( uiDir );
         QTreeWidgetItem *itProject = itemProject( projectName );
         setSrcDirectory(itProject, srcDir);
-        //qDebug()<<"loadProjectSettings"<< srcDir<< uiDir;
         setUiDirectory(itProject, uiDir);
+        //qDebug()<<"loadProjectSettings"<< srcDir<< uiDir;
     }
 }
 //
@@ -508,6 +515,83 @@ void ProjectManager::slotAddExistingFiles(QTreeWidgetItem *it)
     }
 }
 //
+void ProjectManager::slotAddNewClass(QTreeWidgetItem *it)
+{
+    if ( !it )
+        it = m_treeFiles->currentItem();
+    if ( !it )
+        it = m_treeFiles->topLevelItem( 0 );
+    QString projectName;
+    QString projectDir;
+    QString absoluteFilename;
+    QString plateforme;
+    QStringList filesList;
+    AddNewClassImpl *window = new AddNewClassImpl(this);
+
+    QList<QTreeWidgetItem *> projectsList;
+    childsList(0, "PROJECT", projectsList);
+    for (int nbProjects=0; nbProjects < projectsList.count(); nbProjects++)
+    {
+        projectName = projectsList.at(nbProjects)->text(0);
+        projectDir = findData(projectName, "projectDirectory");
+        QList<QTreeWidgetItem *> listeTemplate;
+        bool ajouter = true;
+        for (int enfant=0; enfant<projectsList.at(nbProjects)->childCount(); enfant++)
+        {
+            ajouter = true;
+            if ( projectsList.at(nbProjects)->child(enfant)->data(0,Qt::UserRole).toString() == "TEMPLATE")
+            {
+                QTreeWidgetItem *itTemplate = projectsList.at(nbProjects)->child(enfant);
+                for (int nbTemplate=0; nbTemplate < itTemplate->childCount(); nbTemplate++)
+                {
+                    if ( itTemplate->child(nbTemplate)->text(0) == "subdirs" )
+                    {
+                        ajouter = false;
+                        break;
+                    }
+                }
+            }
+        }
+        if ( ajouter )
+        {
+            window->comboProjects->addItem( projectName,  addressToVariant(projectsList.at(nbProjects)));
+            if ( projectsList.at(nbProjects) == it )
+                window->comboProjects->setCurrentIndex( window->comboProjects->count()-1);
+            QList<QTreeWidgetItem *> listeScope;
+            childsList(projectsList.at(nbProjects), "SCOPE", listeScope);
+            for (int nbScope=0; nbScope < listeScope.count(); nbScope++)
+            {
+                QString nomScope;
+                QTreeWidgetItem *tmp = listeScope.at(nbScope);
+                int nbSpace = 0;
+                while ( tmp )
+                {
+                    QString cleTmp = tmp->data(0,Qt::UserRole).toString();
+                    QString indent;
+                    for (int i=0; i<nbSpace; i++)
+                        indent += "  ";
+                    if ( cleTmp == "SCOPE" || cleTmp == "PROJECT" )
+                        nomScope = indent + tmp->text(0) + ":" + nomScope.simplified();
+                    if ( cleTmp == "PROJECT" )
+                        break;
+                    tmp = tmp->parent();
+                    nbSpace++;
+                }
+                window->comboProjects->addItem( nomScope, addressToVariant(listeScope.at(nbScope)));
+                if ( listeScope.at(nbScope) == it )
+                    window->comboProjects->setCurrentIndex( window->comboProjects->count()-1);
+            }
+        }
+    }
+    //
+    if ( window->comboProjects->count() == 1 )
+        window->comboProjects->setEnabled( false );
+    window->on_comboProjects_currentIndexChanged( window->comboProjects->currentIndex() );
+    if( window->exec() == QDialog::Accepted )
+	    m_isModifiedProject = true;
+    delete window;
+}
+//
 void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
 {
     if ( !it )
@@ -570,7 +654,6 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
                     tmp = tmp->parent();
                     nbSpace++;
                 }
-                //window->comboProjects->addItem( nomScope, QVariant(reinterpret_cast<uint>(listeScope.at(nbScope))));
                 window->comboProjects->addItem( nomScope, addressToVariant(listeScope.at(nbScope)));
                 if ( listeScope.at(nbScope) == it )
                     window->comboProjects->setCurrentIndex( window->comboProjects->count()-1);
@@ -598,7 +681,6 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
         delete window;
         return;
     }
-    //QTreeWidgetItem *item = reinterpret_cast<QTreeWidgetItem*>(variant.toUInt());
     QTreeWidgetItem *item = (QTreeWidgetItem*)variantToItem(variant);
     projectDir = projectDirectory( item );
     setQmake( projectFilename( item ) );
