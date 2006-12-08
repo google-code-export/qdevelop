@@ -69,14 +69,16 @@ void Assistant::showQtWord(QString className, QString word)
 		}
 	}
 	QTextStream os( socket );
-	if( className == word )
-	{
-		os << doc+className.toLower()+".html" << "\n";
-	}
-	else
-	{
-		os << doc+className.toLower()+".html#"+word/*.toLower()*/ << "\n";
-//qDebug()<<doc+className.toLower()+".html#"+word/*.toLower()*/ << "\n";
-	}
+    if( !word.isEmpty() )
+    {
+    	if( className == word )
+    	{
+    		os << doc+className.toLower()+".html" << "\n";
+    	}
+    	else
+    	{
+    		os << doc+className.toLower()+".html#"+word << "\n";
+    	}
+    }
 	os.flush();
 }

@@ -1167,15 +1167,16 @@ void MainImpl::slotSaveFileAs()
 void MainImpl::slotHelpQtWord()
 {
     Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    QString className = "index";
+    QString word = "index";
     if ( editor )
     {
-        QString word = editor->wordUnderCursor();
-        QString className = editor->classNameUnderCursor();
+        word = editor->wordUnderCursor();
+        className = editor->classNameUnderCursor();
         if (className.isEmpty() )
             className = word;
-        if ( !word.isEmpty() )
-            m_assistant->showQtWord(className, word );
     }
+    m_assistant->showQtWord(className, word );
 }
 //
 void MainImpl::slotCloseCurrentTab()

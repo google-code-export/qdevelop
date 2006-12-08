@@ -60,7 +60,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addexistant.ui" line="44"/>
         <source>Project or Scope :</source>
-        <translation>Progetto o Scope :</translation>
+        <translation>Progetto o Contesto :</translation>
     </message>
     <message>
         <location filename="../../ui/addexistant.ui" line="54"/>
@@ -166,7 +166,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnew.ui" line="131"/>
         <source>Project or Scope:</source>
-        <translation>Progetto o Scope:</translation>
+        <translation>Progetto o Contesto:</translation>
     </message>
     <message>
         <location filename="../../ui/addnew.ui" line="141"/>
@@ -204,102 +204,102 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclass.ui" line="49"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="56"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="65"/>
         <source>Inheritance</source>
-        <translation type="unfinished"></translation>
+        <translation>Eredità</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="89"/>
         <source>public</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="94"/>
         <source>protected</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="99"/>
         <source>private</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="122"/>
         <source>Inherits another class</source>
-        <translation type="unfinished"></translation>
+        <translation>Eredita un&apos;altra classe</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="129"/>
         <source>Ancestor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Antenato:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="150"/>
         <source>Ancestor&apos;s include filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>include nome file antenato:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="157"/>
         <source>Scope:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contesto:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="167"/>
         <source>Filenames</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome file</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="195"/>
         <source>Header filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome file intestazione:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="205"/>
         <source>Implementation filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome file implementazione:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="215"/>
         <source>Location :</source>
-        <translation type="unfinished">Destinazione :</translation>
+        <translation>Destinazione :</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="266"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="298"/>
         <source>Project or Scope:</source>
-        <translation type="unfinished">Progetto o Scope:</translation>
+        <translation>Progetto o Contesto:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="308"/>
         <source>Class name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome classe:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="315"/>
         <source>Constructor arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>Argomenti costruttore:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="348"/>
         <source>Virtual destructor</source>
-        <translation type="unfinished"></translation>
+        <translation>Distruttore virtuale</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="13"/>
         <source>Add New Class</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi nuova Classe</translation>
     </message>
 </context>
 <context>
@@ -307,27 +307,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="30"/>
         <source>Choose the file location</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli la destinazione del file</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="108"/>
         <source>The file</source>
-        <translation type="unfinished">Il file</translation>
+        <translation>Il file</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="108"/>
         <source>already exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>esiste già.</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="116"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="115"/>
         <source>Unable to create file.</source>
-        <translation type="unfinished">Impossibile creare il file.</translation>
+        <translation>Impossibile creare il file.</translation>
     </message>
 </context>
 <context>
@@ -378,12 +378,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addscope.ui" line="16"/>
         <source>Add New Scope</source>
-        <translation>Aggiungi nuovo Scope</translation>
+        <translation>Aggiungi nuovo Contesto</translation>
     </message>
     <message>
         <location filename="../../ui/addscope.ui" line="31"/>
         <source>New Scope</source>
-        <translation>Nuovo Scope</translation>
+        <translation>Nuovo Contesto</translation>
     </message>
     <message>
         <location filename="../../ui/addscope.ui" line="67"/>
@@ -418,7 +418,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addscope.ui" line="179"/>
         <source>Project or Scope :</source>
-        <translation>Progetto o Scope :</translation>
+        <translation>Progetto o Contesto :</translation>
     </message>
     <message>
         <location filename="../../ui/addscope.ui" line="236"/>
@@ -1093,7 +1093,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/main.ui" line="1251"/>
         <source>Add Scope...</source>
-        <translation>Aggiungi Scope...</translation>
+        <translation>Aggiungi Contesto...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1259"/>
@@ -1443,7 +1443,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/main.ui" line="1448"/>
         <source>Add New Class...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi nuova Classe...</translation>
     </message>
 </context>
 <context>
@@ -1651,27 +1651,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/mainimpl.cpp" line="1552"/>
         <source>Build finished without error</source>
-        <translation type="unfinished">Generazione finita senza errori</translation>
+        <translation>Generazione finita senza errori</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1554"/>
         <source>Build finished with</source>
-        <translation type="unfinished">Generazione finita con</translation>
+        <translation>Generazione finita con</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1556"/>
         <source>error(s)</source>
-        <translation type="unfinished">errori</translation>
+        <translation>errori</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1556"/>
         <source>and</source>
-        <translation type="unfinished">e</translation>
+        <translation>e</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1558"/>
         <source>warning(s)</source>
-        <translation type="unfinished">avvertimenti</translation>
+        <translation>avvertimenti</translation>
     </message>
 </context>
 <context>
@@ -2148,7 +2148,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/options.ui" line="176"/>
         <source>User plugins directory: </source>
-        <translation type="unfinished"></translation>
+        <translation>Cartella estensioni utente: </translation>
     </message>
 </context>
 <context>
@@ -2410,22 +2410,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="1289"/>
         <source>New name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuovo nome:</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1295"/>
         <source>The kind of the new and the old filename is different !</source>
-        <translation type="unfinished"></translation>
+        <translation>Il genere del nuovo e del vecchio nome file è differente !</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1296"/>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Rinomina</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1319"/>
         <source>Unable to rename the file to</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile rinominare il file in</translation>
     </message>
 </context>
 <context>
@@ -2706,7 +2706,7 @@ variabili :</translation>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="110"/>
         <source>Project or Scope :</source>
-        <translation>Progetto o Scope :</translation>
+        <translation>Progetto o Contesto :</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="1071"/>
@@ -2726,17 +2726,17 @@ variabili :</translation>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="135"/>
         <source>Default directories</source>
-        <translation type="unfinished"></translation>
+        <translation>Cartella predefinita</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="147"/>
         <source>Dialogs:</source>
-        <translation type="unfinished">Finestre:</translation>
+        <translation>Finestre:</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="174"/>
         <source>Sources:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorgenti:</translation>
     </message>
 </context>
 <context>
@@ -2774,12 +2774,12 @@ variabili :</translation>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="772"/>
         <source>Choose the sources location</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli una destinazione dei sorgenti</translation>
     </message>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="786"/>
         <source>Choose the dialogs location</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli una destinazione delle finestre</translation>
     </message>
 </context>
 <context>
@@ -2865,7 +2865,7 @@ variabili :</translation>
     <message>
         <location filename="../../src/main.cpp" line="95"/>
         <source>Plugins</source>
-        <translation type="unfinished">Estensioni</translation>
+        <translation>Estensioni</translation>
     </message>
 </context>
 <context>
@@ -3078,7 +3078,7 @@ variabili :</translation>
     <message>
         <location filename="../../src/subclassingimpl.cpp" line="47"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3311,7 +3311,7 @@ variabili :</translation>
     <message>
         <location filename="../../src/treeproject.cpp" line="196"/>
         <source>Add Scope...</source>
-        <translation>Aggiungi Scope...</translation>
+        <translation>Aggiungi Contesto...</translation>
     </message>
     <message>
         <location filename="../../src/treeproject.cpp" line="198"/>
@@ -3386,12 +3386,12 @@ variabili :</translation>
     <message>
         <location filename="../../src/treeproject.cpp" line="197"/>
         <source>Add New Class...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi nuova Classe...</translation>
     </message>
     <message>
         <location filename="../../src/treeproject.cpp" line="216"/>
         <source>Rename...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rinomina...</translation>
     </message>
 </context>
 <context>
