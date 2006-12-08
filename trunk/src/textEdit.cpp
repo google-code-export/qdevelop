@@ -113,6 +113,8 @@ void TextEdit::setCurrentLineColor( QColor c )
 //
 void TextEdit::completeCode()
 {
+    if( !m_completion )
+    	return;
 	if( m_completion->isRunning() )
 	{
 		m_completion->setEmitResults( false );
