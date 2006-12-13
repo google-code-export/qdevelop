@@ -13,10 +13,7 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:29pt; font-weight:600;&quot;&gt;QDevelop&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:29pt; font-weight:600;&quot;&gt;QDevelop&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:29pt; font-weight:600;&quot;&gt;QDevelop&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/about.ui" line="155"/>
@@ -40,7 +37,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:elcuco@kde.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager : Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }(new line)&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006&lt;/span&gt;&lt;/p&gt;(new line)&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#000000;&quot;&gt;Главный разработчик: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jlbiord@qtfr.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jlbiord@qtfr.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#000000;&quot;&gt;Кодозавершение: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Разработчик : Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:elcuco@kde.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Разработчик : Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Разработчик: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager : Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Перевод на русский язык : Mixolap&lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:mixolapqt@rambler.ru&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;mixolapqt@rambler.ru&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -199,7 +196,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnew.ui" line="174"/>
         <source>newfile.cpp</source>
-        <translation type="unfinished"></translation>
+        <translation>newfile.cpp</translation>
     </message>
 </context>
 <context>
@@ -207,102 +204,102 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclass.ui" line="49"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="56"/>
         <source>Cancel</source>
-        <translation type="unfinished">Отмена</translation>
+        <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="65"/>
         <source>Inheritance</source>
-        <translation type="unfinished"></translation>
+        <translation>Наследование</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="89"/>
         <source>public</source>
-        <translation type="unfinished"></translation>
+        <translation>public</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="94"/>
         <source>protected</source>
-        <translation type="unfinished"></translation>
+        <translation>protected</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="99"/>
         <source>private</source>
-        <translation type="unfinished"></translation>
+        <translation>private</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="122"/>
         <source>Inherits another class</source>
-        <translation type="unfinished"></translation>
+        <translation>Наследование другого класса</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="129"/>
         <source>Ancestor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Родительский класс:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="150"/>
         <source>Ancestor&apos;s include filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя файла родительского класса:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="157"/>
         <source>Scope:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип наследования:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="167"/>
         <source>Filenames</source>
-        <translation type="unfinished"></translation>
+        <translation>Имена файлов</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="195"/>
         <source>Header filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя файла заголовка:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="205"/>
         <source>Implementation filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя файла реализации:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="215"/>
         <source>Location :</source>
-        <translation type="unfinished">Путь:</translation>
+        <translation>Путь:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="266"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="298"/>
         <source>Project or Scope:</source>
-        <translation type="unfinished">Проект или Папка:</translation>
+        <translation>Проект или Папка:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="308"/>
         <source>Class name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя класса:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="315"/>
         <source>Constructor arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>Параметры конструктора:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="348"/>
         <source>Virtual destructor</source>
-        <translation type="unfinished"></translation>
+        <translation>Виртуальный деструктор</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="13"/>
         <source>Add New Class</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить новый класс</translation>
     </message>
 </context>
 <context>
@@ -310,27 +307,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="30"/>
         <source>Choose the file location</source>
-        <translation type="unfinished">Укажите расположение файла</translation>
+        <translation>Укажите расположение файла</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="108"/>
         <source>The file</source>
-        <translation type="unfinished">Файл</translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="108"/>
         <source>already exist.</source>
-        <translation type="unfinished"></translation>
+        <translation> уже существует.</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="116"/>
         <source>Cancel</source>
-        <translation type="unfinished">Отмена</translation>
+        <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="115"/>
         <source>Unable to create file.</source>
-        <translation type="unfinished">Не могу создать файл.</translation>
+        <translation>Не могу создать файл.</translation>
     </message>
 </context>
 <context>
@@ -421,7 +418,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addscope.ui" line="179"/>
         <source>Project or Scope :</source>
-        <translation>Проект или папка</translation>
+        <translation>Проект или папка:</translation>
     </message>
     <message>
         <location filename="../../ui/addscope.ui" line="236"/>
@@ -1426,27 +1423,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/main.ui" line="161"/>
         <source>Plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Плагины</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="170"/>
         <source>Plugins settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка плагинов</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="941"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1443"/>
         <source>Foo</source>
-        <translation type="unfinished"></translation>
+        <translation>Foo</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1448"/>
         <source>Add New Class...</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить новый класс...</translation>
     </message>
 </context>
 <context>
@@ -1654,27 +1651,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/mainimpl.cpp" line="1552"/>
         <source>Build finished without error</source>
-        <translation type="unfinished"></translation>
+        <translation>Сборка завершена без ошибок</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1554"/>
         <source>Build finished with</source>
-        <translation type="unfinished"></translation>
+        <translation>Сборка завершена с</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1556"/>
         <source>error(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> ошибками</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1556"/>
         <source>and</source>
-        <translation type="unfinished"></translation>
+        <translation>и</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1558"/>
         <source>warning(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>предупреждениями</translation>
     </message>
 </context>
 <context>
@@ -1825,7 +1822,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/newproject.ui" line="367"/>
         <source>sources:</source>
-        <translation>исходники:</translation>
+        <translation>Исходники:</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="377"/>
@@ -1880,12 +1877,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/newproject.ui" line="546"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Dialog:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Диалог:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Форма:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="556"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Subclass:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Подкласс:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Класс:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -2146,12 +2143,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/options.ui" line="82"/>
         <source>Close button in each tab (not work with all styles)</source>
-        <translation type="unfinished"></translation>
+        <translation>Кнопка &quot;Закрыть&quot; в каждой вкладке (работает не при всех стилях)</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="176"/>
         <source>User plugins directory: </source>
-        <translation type="unfinished"></translation>
+        <translation>Папка с плагинами пользователя:</translation>
     </message>
 </context>
 <context>
@@ -2408,32 +2405,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="156"/>
         <source>Project parsing</source>
-        <translation type="unfinished"></translation>
+        <translation>Разбор проекта</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1289"/>
         <source>New name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Новое имя:</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1295"/>
         <source>The kind of the new and the old filename is different !</source>
-        <translation type="unfinished"></translation>
+        <translation>Типы нового и старого имени файла разные!</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1296"/>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Переименовать</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1319"/>
         <source>Unable to rename the file to</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу переименовать файл в </translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1248"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2733,17 +2730,17 @@ variables :</source>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="135"/>
         <source>Default directories</source>
-        <translation type="unfinished"></translation>
+        <translation>Папки по умолчанию</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="147"/>
         <source>Dialogs:</source>
-        <translation type="unfinished">Формы:</translation>
+        <translation>Формы:</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="174"/>
         <source>Sources:</source>
-        <translation type="unfinished"></translation>
+        <translation>Исходники:</translation>
     </message>
 </context>
 <context>
@@ -2781,12 +2778,12 @@ variables :</source>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="772"/>
         <source>Choose the sources location</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите расположение исходников</translation>
     </message>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="786"/>
         <source>Choose the dialogs location</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите расположение диалогов </translation>
     </message>
 </context>
 <context>
@@ -2867,12 +2864,12 @@ variables :</source>
     <message>
         <location filename="../../src/projectmanager.cpp" line="172"/>
         <source>Current project parsing</source>
-        <translation type="unfinished"></translation>
+        <translation>Разбор текущего проекта</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="95"/>
         <source>Plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Плагины</translation>
     </message>
 </context>
 <context>
@@ -3042,22 +3039,22 @@ variables :</source>
     <message>
         <location filename="../../ui/subclassing.ui" line="28"/>
         <source>Class Na&amp;me:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Название класса:</translation>
     </message>
     <message>
         <location filename="../../ui/subclassing.ui" line="66"/>
         <source>&amp;File Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя &amp;файла:</translation>
     </message>
     <message>
         <location filename="../../ui/subclassing.ui" line="83"/>
         <source>&amp;Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Расположение:</translation>
     </message>
     <message>
         <location filename="../../ui/subclassing.ui" line="100"/>
         <source>Filter &amp;by:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Фильтр:</translation>
     </message>
 </context>
 <context>
@@ -3085,7 +3082,7 @@ variables :</source>
     <message>
         <location filename="../../src/subclassingimpl.cpp" line="47"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation> </translation>
     </message>
 </context>
 <context>
@@ -3295,7 +3292,7 @@ variables :</source>
     <message>
         <location filename="../../src/treeclasses.cpp" line="486"/>
         <source>Open Implementation</source>
-        <translation>Перейти к  применению</translation>
+        <translation>Перейти к реализации</translation>
     </message>
     <message>
         <location filename="../../src/treeclasses.cpp" line="490"/>
@@ -3393,12 +3390,12 @@ variables :</source>
     <message>
         <location filename="../../src/treeproject.cpp" line="197"/>
         <source>Add New Class...</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить новый класс...</translation>
     </message>
     <message>
         <location filename="../../src/treeproject.cpp" line="216"/>
         <source>Rename...</source>
-        <translation type="unfinished"></translation>
+        <translation>Переименовать...</translation>
     </message>
 </context>
 <context>
