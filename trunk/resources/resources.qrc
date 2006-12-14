@@ -100,6 +100,7 @@
         <file>images/stop.png</file>
         <file>images/undo.png</file>
         <file>images/view_tree.png</file>
+        <file>images/print.png</file>
     </qresource>
     <qresource prefix="/translations" >
         <file>translations/QDevelop_Chinese.qm</file>

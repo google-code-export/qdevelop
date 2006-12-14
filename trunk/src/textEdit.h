@@ -30,7 +30,7 @@
 #include "InitCompletion.h"
 #include "ui_findwidget.h"
 //
-typedef QMap<QString, QStringList> classesMethodsList; 
+typedef QMap<QString, QStringList> classesMethodsList;
 //
 class LineNumbers;
 class SelectionBorder;
@@ -41,86 +41,111 @@ class TextEditInterface;
 //
 class TextEdit : public QTextEdit
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-	TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completion);
-	~TextEdit();
-	bool open(bool silentMode, QString filename, QDateTime &lastModified);
-	bool save(QString filename, QDateTime &lastModified);
-	bool close(QString filename);
-	QTextCursor getLineCursor( int line ) const;
-	void setLineNumbers( LineNumbers* );
-	LineNumbers* lineNumbers();
-	void setSelectionBorder( SelectionBorder* );
-	SelectionBorder* selectionBorder();
-	void findText();
-	void setExecutedLine(int line);
-	void selectLines(int debut, int fin);
-	QString wordUnderCursor(const QPoint & pos=QPoint(), bool select=false);
-	QString classNameUnderCursor();
-	QString methodeMotSousCurseur();
-	void activateLineNumbers(bool activate);
-	void setSelectionBorder(bool activate);
-	void setSyntaxHighlight(bool activate );
-	void setAutoIndent( bool activate ) { m_autoindent = activate; };
-	void setAutoCompletion( bool activate ) { m_autoCompletion = activate; };
-	void setTabStopWidth(int taille);
-	void setSyntaxColors(QTextCharFormat a, QTextCharFormat b, QTextCharFormat c, QTextCharFormat d, QTextCharFormat e, QTextCharFormat f, QTextCharFormat g);
-	void setEndLine(MainImpl::EndLine end) { m_endLine = end; };
-	void setTabSpaces(bool t) { m_tabSpaces = t; };
-	void setAutobrackets(bool b) { m_autobrackets = b; };
-	void setMatch(bool b) { m_match = b; };
-	void setBackgroundColor( QColor c );
-	void setCurrentLineColor( QColor c );
-	void setMatchingColor( QColor c ) { m_matchingColor = c; };
-	int currentLineNumber();
-	int currentLineNumber(QTextBlock block);
-	int linesCount();
+    TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completion);
+    ~TextEdit();
+    bool open(bool silentMode, QString filename, QDateTime &lastModified);
+    bool save(QString filename, QDateTime &lastModified);
+    bool close(QString filename);
+    QTextCursor getLineCursor( int line ) const;
+    void setLineNumbers( LineNumbers* );
+    LineNumbers* lineNumbers();
+    void setSelectionBorder( SelectionBorder* );
+    SelectionBorder* selectionBorder();
+    void findText();
+    void setExecutedLine(int line);
+    void selectLines(int debut, int fin);
+    QString wordUnderCursor(const QPoint & pos=QPoint(), bool select=false);
+    QString classNameUnderCursor();
+    QString methodeMotSousCurseur();
+    void activateLineNumbers(bool activate);
+    void setSelectionBorder(bool activate);
+    void setSyntaxHighlight(bool activate );
+    void setAutoIndent( bool activate )
+    {
+        m_autoindent = activate;
+    };
+    void setAutoCompletion( bool activate )
+    {
+        m_autoCompletion = activate;
+    };
+    void setTabStopWidth(int taille);
+    void setSyntaxColors(QTextCharFormat a, QTextCharFormat b, QTextCharFormat c, QTextCharFormat d, QTextCharFormat e, QTextCharFormat f, QTextCharFormat g);
+    void setEndLine(MainImpl::EndLine end)
+    {
+        m_endLine = end;
+    };
+    void setTabSpaces(bool t)
+    {
+        m_tabSpaces = t;
+    };
+    void setAutobrackets(bool b)
+    {
+        m_autobrackets = b;
+    };
+    void setMatch(bool b)
+    {
+        m_match = b;
+    };
+    void setBackgroundColor( QColor c );
+    void setCurrentLineColor( QColor c );
+    void setMatchingColor( QColor c )
+    {
+        m_matchingColor = c;
+    };
+    int currentLineNumber();
+    int currentLineNumber(QTextBlock block);
+    int linesCount();
     void dialogGotoLine();
     void completeCode();
     void setFocus(Qt::FocusReason reason);
     void gotoMatchingBracket();
- 	void textPlugin(TextEditInterface *iTextEdit);
-    enum ActionComment {Toggle, Comment, Uncomment};
+    void textPlugin(TextEditInterface *iTextEdit);
+    void print();
+    enum ActionComment
+    {
+        Toggle, Comment, Uncomment
+    };
 public slots:
-	void gotoLine( int line, bool moveTop );
-	void slotFind(Ui::FindWidget ui, QString ttf=0,  QTextDocument::FindFlags options=0, bool fromButton=false);
-	void slotIndent(bool indent=true);
-	void slotUnindent();
-	void comment(ActionComment action);
-private slots:	
-	void slotAdjustSize();
+    void gotoLine( int line, bool moveTop );
+    void slotFind(Ui::FindWidget ui, QString ttf=0,  QTextDocument::FindFlags options=0, bool fromButton=false);
+    void slotIndent(bool indent=true);
+    void slotUnindent();
+    void comment(ActionComment action);
+private slots:
+    void slotAdjustSize();
     void slotWordCompletion(QListWidgetItem *item);
-	void slotCursorPositionChanged();
-	void slotContentsChange ( int position, int charsRemoved, int charsAdded );
-	void slotCompletionList(TagList TagList);
-	void slotToggleBreakpoint();
-	void slotToggleBookmark();
+    void slotCursorPositionChanged();
+    void slotContentsChange ( int position, int charsRemoved, int charsAdded );
+    void slotCompletionList(TagList TagList);
+    void slotToggleBreakpoint();
+    void slotToggleBookmark();
 private:
-	QString m_plainText;
-	long m_matchingBegin;
-	long m_matchingEnd;
-	QPointer<LineNumbers> m_lineNumbers;
-	QPointer<SelectionBorder> m_selectionBorder;
-	CppHighlighter *cpphighlighter;
-	QString m_findExp;
-	int m_findOptions;
-	FindImpl *m_findImpl;
-	int lineNumber(QTextCursor cursor);
-	int lineNumber(QTextBlock b);
-	int lineNumber(QPoint point);
-	void key_home();
-	QPoint mousePosition;
-	Editor *m_editor;
-	MainImpl *m_mainImpl;
-	bool m_autoindent;
-	void autoIndent();
-	void autobrackets();
-	void autoUnindent();
-	void match();
-	void clearMatch();
-	MainImpl::EndLine m_endLine;
-	bool m_tabSpaces;
+    QString m_plainText;
+    long m_matchingBegin;
+    long m_matchingEnd;
+    QPointer<LineNumbers> m_lineNumbers;
+    QPointer<SelectionBorder> m_selectionBorder;
+    CppHighlighter *cpphighlighter;
+    QString m_findExp;
+    int m_findOptions;
+    FindImpl *m_findImpl;
+    int lineNumber(QTextCursor cursor);
+    int lineNumber(QTextBlock b);
+    int lineNumber(QPoint point);
+    void key_home();
+    QPoint mousePosition;
+    Editor *m_editor;
+    MainImpl *m_mainImpl;
+    bool m_autoindent;
+    void autoIndent();
+    void autobrackets();
+    void autoUnindent();
+    void match();
+    void clearMatch();
+    MainImpl::EndLine m_endLine;
+    bool m_tabSpaces;
     InitCompletion *m_completion;
     QListWidget *m_completionList;
     bool m_autoCompletion;
@@ -132,15 +157,15 @@ private:
     QAction *actionToggleBreakpoint;
     int m_lineNumber;
 protected:
-	void resizeEvent( QResizeEvent* );
-	void keyPressEvent ( QKeyEvent * event );
-	void contextMenuEvent(QContextMenuEvent * e);
-	void mouseDoubleClickEvent( QMouseEvent * event );
-	void dropEvent( QDropEvent * event );
+    void resizeEvent( QResizeEvent* );
+    void keyPressEvent ( QKeyEvent * event );
+    void contextMenuEvent(QContextMenuEvent * e);
+    void mouseDoubleClickEvent( QMouseEvent * event );
+    void dropEvent( QDropEvent * event );
     void mousePressEvent ( QMouseEvent * event );
-	void paintEvent ( QPaintEvent * event );
+    void paintEvent ( QPaintEvent * event );
 signals:
-	void editorModified(bool);
+    void editorModified(bool);
 };
 
 #endif

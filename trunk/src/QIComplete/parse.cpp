@@ -400,7 +400,12 @@ Expression Parse::parseExpression(QString expression, Scope * scope, bool showAl
 	// we found that the user has beginning to write
 	if(!showAllResults)
 	{
-		const char *start = expression.toLocal8Bit(), *p = start;
+        QByteArray array(expression.toLocal8Bit() ); 
+        if( !array.count() ) 
+        	return exp; 
+        unsigned long len = array.length(); 
+        const char *start = array.data(), *p = start;
+		//const char *start = expression.toLocal8Bit(), *p = start;
 		while (*p)
 			p++;
 		p--;

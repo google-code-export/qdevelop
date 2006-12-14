@@ -89,6 +89,7 @@ public:
 	void gotoMatchingBracket(){ m_textEdit->gotoMatchingBracket(); };
 	int currentLineNumber(){ return m_textEdit->currentLineNumber(); };
 	int currentLineNumber(QTextBlock block){ return m_textEdit->currentLineNumber(block); };
+	void print(){ m_textEdit->print(); };
 	void toggleBreakpoint(int line);
 	void setExecutedLine(int line);
 	void emitListBreakpoints();

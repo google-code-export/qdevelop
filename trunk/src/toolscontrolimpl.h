@@ -17,10 +17,12 @@ public:
 	QString lupdateName() { return lupdate->text(); };
 	QString lreleaseName() { return lrelease->text(); };
 	QString designerName() { return designer->text(); };
+	QString assistantName() { return assistant->text(); };
 	bool ctagsIsPresent()  { return m_ctagsIsPresent; };
 	bool checkEnvironment()  { return m_checkEnvironment; };
 	bool  checkEnvOnStartup() { return checkEnvironmentOnStartup->isChecked(); };
 private slots:
+	void on_assistantLocation_clicked();
 	void on_linguistLocation_clicked();
 	void on_lupdateLocation_clicked();
 	void on_lreleaseLocation_clicked();
@@ -37,6 +39,7 @@ private:
 	bool m_checkEnvironment;
 };
 #endif
+
 
 
 
