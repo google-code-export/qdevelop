@@ -319,6 +319,7 @@ void MainImpl::createConnections()
     connect(actionBacktraces, SIGNAL(triggered()), this, SLOT(slotBacktraces()) );
     connect(addDebugVariable, SIGNAL(clicked()), this, SLOT(slotAddDebugVariable()) );
     connect(removeDebugVariable, SIGNAL(clicked()), this, SLOT(slotRemoveDebugVariable()) );
+    connect(actionPrint, SIGNAL(triggered()), this, SLOT(slotPrint()) );
     //
     connect(actionExternalTools, SIGNAL(triggered()), this, SLOT(slotToolsControl()) );
     connect(actionCloseCurrentEditor, SIGNAL(triggered()), this, SLOT(slotCloseCurrentTab()) );
@@ -859,7 +860,7 @@ void MainImpl::slotNewProject()
                 mainFile.open(QIODevice::WriteOnly);
                 mainFile.write( data );
                 mainFile.close();
-               s += "\t"+ QDir(projectDirectory).relativeFilePath(srcDirectory + "/" + "main.cpp") + "\n";
+                s += "\t"+ QDir(projectDirectory).relativeFilePath(srcDirectory + "/" + "main.cpp") + "\n";
             }
             //
             projectFile.write( s );
@@ -1646,6 +1647,13 @@ void MainImpl::slotCut()
         editor->cut();
 }
 //
+void MainImpl::slotPrint()
+{
+    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    if ( editor )
+        editor->print();
+}
+//
 void MainImpl::slotCurrentTabChanged(int index)
 {
     for (int i=0; i<m_tabEditors->count(); i++)
@@ -2185,6 +2193,7 @@ void MainImpl::slotToolsControl(bool show)
     m_ctagsIsPresent = toolsControlImpl->ctagsIsPresent();
     m_checkEnvironment = toolsControlImpl->checkEnvironment();
     m_checkEnvironmentOnStartup = toolsControlImpl->checkEnvOnStartup();
+    m_assistant->setName( toolsControlImpl->assistantName() );
     delete toolsControlImpl;
     treeClasses->setCtagsIsPresent( m_ctagsIsPresent );
     treeClasses->setCtagsName( m_ctagsName );

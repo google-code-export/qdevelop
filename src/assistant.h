@@ -35,6 +35,7 @@ public:
 	Assistant();
 	~Assistant();
 	void showQtWord(QString className, QString word);
+    void setName( QString s ) { m_assistantName = s; };
 	//
 protected:
 	//
@@ -43,6 +44,7 @@ private:
 	QTcpSocket *socket;
 	QString m_QTDIR;
 	quint16 m_port;
+    QString m_assistantName;
 signals:	
 protected slots:
 public slots:

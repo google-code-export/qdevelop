@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>519</width>
-    <height>363</height>
+    <height>379</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -19,6 +19,32 @@
    <property name="spacing" >
     <number>6</number>
    </property>
+   <item row="2" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>501</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0" >
+    <widget class="QCheckBox" name="checkEnvironmentOnStartup" >
+     <property name="autoFillBackground" >
+      <bool>false</bool>
+     </property>
+     <property name="text" >
+      <string>Check environment on start</string>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
    <item row="4" column="0" >
     <layout class="QHBoxLayout" >
      <property name="margin" >
@@ -63,18 +89,12 @@
      </item>
     </layout>
    </item>
-   <item row="2" column="0" >
-    <spacer>
-     <property name="orientation" >
-      <enum>Qt::Vertical</enum>
+   <item row="0" column="0" >
+    <widget class="QLabel" name="label" >
+     <property name="text" >
+      <string>Please enter the path to the external programs:</string>
      </property>
-     <property name="sizeHint" >
-      <size>
-       <width>349</width>
-       <height>21</height>
-      </size>
-     </property>
-    </spacer>
+    </widget>
    </item>
    <item row="1" column="0" >
     <layout class="QGridLayout" >
@@ -84,139 +104,8 @@
      <property name="spacing" >
       <number>6</number>
      </property>
-     <item row="1" column="2" >
-      <widget class="QLineEdit" name="make" >
-       <property name="readOnly" >
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0" >
-      <widget class="QLabel" name="qmakeIcon" >
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="pixmap" >
-        <pixmap resource="../resources/resources.qrc" >:/divers/images/good.png</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="3" >
-      <widget class="QToolButton" name="designerLocation" >
-       <property name="text" >
-        <string>...</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2" >
-      <widget class="QLineEdit" name="ctags" >
-       <property name="readOnly" >
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1" >
-      <widget class="QLabel" name="label_11" >
-       <property name="text" >
-        <string>lrelease:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2" >
-      <widget class="QLineEdit" name="qmake" >
-       <property name="readOnly" >
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="3" >
-      <widget class="QToolButton" name="linguistLocation" >
-       <property name="text" >
-        <string>...</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="3" >
-      <widget class="QToolButton" name="makeLocation" >
-       <property name="text" >
-        <string>...</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="2" >
-      <widget class="QLineEdit" name="lrelease" >
-       <property name="readOnly" >
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0" >
-      <widget class="QLabel" name="gdbIcon" >
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="pixmap" >
-        <pixmap resource="../resources/resources.qrc" >:/divers/images/good.png</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" >
-      <widget class="QLabel" name="label_6" >
-       <property name="text" >
-        <string>make:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0" >
-      <widget class="QLabel" name="ctagsIcon" >
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="pixmap" >
-        <pixmap resource="../resources/resources.qrc" >:/divers/images/good.png</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="3" >
-      <widget class="QToolButton" name="lreleaseLocation" >
-       <property name="text" >
-        <string>...</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2" >
-      <widget class="QLineEdit" name="gdb" >
-       <property name="readOnly" >
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1" >
-      <widget class="QLabel" name="label_5" >
-       <property name="text" >
-        <string>qmake:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0" >
-      <widget class="QLabel" name="linguistIcon" >
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="pixmap" >
-        <pixmap resource="../resources/resources.qrc" >:/divers/images/good.png</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1" >
-      <widget class="QLabel" name="label_12" >
-       <property name="text" >
-        <string>designer:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="0" >
-      <widget class="QLabel" name="designerIcon" >
+     <item row="6" column="0" >
+      <widget class="QLabel" name="lreleaseIcon" >
        <property name="text" >
         <string/>
        </property>
@@ -232,45 +121,10 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="3" >
-      <widget class="QToolButton" name="qmakeLocation" >
+     <item row="2" column="3" >
+      <widget class="QToolButton" name="gdbLocation" >
        <property name="text" >
         <string>...</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1" >
-      <widget class="QLabel" name="label_10" >
-       <property name="text" >
-        <string>lupdate:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="3" >
-      <widget class="QToolButton" name="lupdateLocation" >
-       <property name="text" >
-        <string>...</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1" >
-      <widget class="QLabel" name="label_7" >
-       <property name="text" >
-        <string>gdb:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="3" >
-      <widget class="QToolButton" name="ctagsLocation" >
-       <property name="text" >
-        <string>...</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="2" >
-      <widget class="QLineEdit" name="linguist" >
-       <property name="readOnly" >
-        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -284,22 +138,29 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="3" >
-      <widget class="QToolButton" name="gdbLocation" >
+     <item row="4" column="1" >
+      <widget class="QLabel" name="label_9" >
+       <property name="text" >
+        <string>linguist:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="3" >
+      <widget class="QToolButton" name="lupdateLocation" >
        <property name="text" >
         <string>...</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="2" >
-      <widget class="QLineEdit" name="lupdate" >
-       <property name="readOnly" >
-        <bool>false</bool>
+     <item row="6" column="3" >
+      <widget class="QToolButton" name="lreleaseLocation" >
+       <property name="text" >
+        <string>...</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="0" >
-      <widget class="QLabel" name="lreleaseIcon" >
+     <item row="4" column="0" >
+      <widget class="QLabel" name="linguistIcon" >
        <property name="text" >
         <string/>
        </property>
@@ -308,17 +169,227 @@
        </property>
       </widget>
      </item>
-     <item row="7" column="2" >
-      <widget class="QLineEdit" name="designer" >
+     <item row="3" column="0" >
+      <widget class="QLabel" name="ctagsIcon" >
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="pixmap" >
+        <pixmap resource="../resources/resources.qrc" >:/divers/images/good.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="3" >
+      <widget class="QToolButton" name="designerLocation" >
+       <property name="text" >
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0" >
+      <widget class="QLabel" name="designerIcon" >
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="pixmap" >
+        <pixmap resource="../resources/resources.qrc" >:/divers/images/good.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="3" >
+      <widget class="QToolButton" name="assistantLocation" >
+       <property name="text" >
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2" >
+      <widget class="QLineEdit" name="lupdate" >
+       <property name="dragEnabled" >
+        <bool>true</bool>
+       </property>
        <property name="readOnly" >
         <bool>false</bool>
        </property>
       </widget>
      </item>
-     <item row="4" column="1" >
-      <widget class="QLabel" name="label_9" >
+     <item row="8" column="1" >
+      <widget class="QLabel" name="label_13" >
        <property name="text" >
-        <string>linguist:</string>
+        <string>assistant:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2" >
+      <widget class="QLineEdit" name="linguist" >
+       <property name="dragEnabled" >
+        <bool>true</bool>
+       </property>
+       <property name="readOnly" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" >
+      <widget class="QLabel" name="gdbIcon" >
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="pixmap" >
+        <pixmap resource="../resources/resources.qrc" >:/divers/images/good.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3" >
+      <widget class="QToolButton" name="linguistLocation" >
+       <property name="text" >
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2" >
+      <widget class="QLineEdit" name="designer" >
+       <property name="dragEnabled" >
+        <bool>true</bool>
+       </property>
+       <property name="readOnly" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" >
+      <widget class="QLabel" name="label_7" >
+       <property name="text" >
+        <string>gdb:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3" >
+      <widget class="QToolButton" name="qmakeLocation" >
+       <property name="text" >
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" >
+      <widget class="QLabel" name="qmakeIcon" >
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="pixmap" >
+        <pixmap resource="../resources/resources.qrc" >:/divers/images/good.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1" >
+      <widget class="QLabel" name="label_12" >
+       <property name="text" >
+        <string>designer:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0" >
+      <widget class="QLabel" name="assistantIcon" >
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="pixmap" >
+        <pixmap resource="../resources/resources.qrc" >:/divers/images/good.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="2" >
+      <widget class="QLineEdit" name="assistant" >
+       <property name="dragEnabled" >
+        <bool>true</bool>
+       </property>
+       <property name="readOnly" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2" >
+      <widget class="QLineEdit" name="gdb" >
+       <property name="dragEnabled" >
+        <bool>true</bool>
+       </property>
+       <property name="readOnly" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2" >
+      <widget class="QLineEdit" name="qmake" >
+       <property name="dragEnabled" >
+        <bool>true</bool>
+       </property>
+       <property name="readOnly" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3" >
+      <widget class="QToolButton" name="ctagsLocation" >
+       <property name="text" >
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1" >
+      <widget class="QLabel" name="label_10" >
+       <property name="text" >
+        <string>lupdate:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1" >
+      <widget class="QLabel" name="label_11" >
+       <property name="text" >
+        <string>lrelease:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" >
+      <widget class="QLabel" name="label_5" >
+       <property name="text" >
+        <string>qmake:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2" >
+      <widget class="QLineEdit" name="make" >
+       <property name="dragEnabled" >
+        <bool>true</bool>
+       </property>
+       <property name="readOnly" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2" >
+      <widget class="QLineEdit" name="lrelease" >
+       <property name="dragEnabled" >
+        <bool>true</bool>
+       </property>
+       <property name="readOnly" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2" >
+      <widget class="QLineEdit" name="ctags" >
+       <property name="dragEnabled" >
+        <bool>true</bool>
+       </property>
+       <property name="readOnly" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" >
+      <widget class="QLabel" name="label_6" >
+       <property name="text" >
+        <string>make:</string>
        </property>
       </widget>
      </item>
@@ -332,27 +403,14 @@
        </property>
       </widget>
      </item>
+     <item row="1" column="3" >
+      <widget class="QToolButton" name="makeLocation" >
+       <property name="text" >
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
     </layout>
-   </item>
-   <item row="0" column="0" >
-    <widget class="QLabel" name="label" >
-     <property name="text" >
-      <string>Please enter the path to the external programs:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0" >
-    <widget class="QCheckBox" name="checkEnvironmentOnStartup" >
-     <property name="autoFillBackground" >
-      <bool>false</bool>
-     </property>
-     <property name="text" >
-      <string>Check environment on start</string>
-     </property>
-     <property name="checked" >
-      <bool>true</bool>
-     </property>
-    </widget>
    </item>
   </layout>
  </widget>

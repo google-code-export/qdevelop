@@ -92,29 +92,6 @@
     <addaction name="separator" />
     <addaction name="actionCompile" />
    </widget>
-   <widget class="QMenu" name="menu_File" >
-    <property name="title" >
-     <string>&amp;File</string>
-    </property>
-    <widget class="QMenu" name="menuLastsFiles" >
-     <property name="title" >
-      <string>Last Files</string>
-     </property>
-    </widget>
-    <addaction name="actionNewFile" />
-    <addaction name="actionOpen" />
-    <addaction name="separator" />
-    <addaction name="actionSaveFile" />
-    <addaction name="actionSaveFileAs" />
-    <addaction name="separator" />
-    <addaction name="actionSaveAll" />
-    <addaction name="actionCloseAllFiles" />
-    <addaction name="separator" />
-    <addaction name="actionPrint" />
-    <addaction name="menuLastsFiles" />
-    <addaction name="separator" />
-    <addaction name="actionQuit" />
-   </widget>
    <widget class="QMenu" name="menuBookmarks" >
     <property name="title" >
      <string>Bookmarks</string>
@@ -213,6 +190,30 @@
     <addaction name="actionAddExistingFiles" />
     <addaction name="separator" />
     <addaction name="actionProjectPropertie" />
+   </widget>
+   <widget class="QMenu" name="menu_File" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <widget class="QMenu" name="menuLastsFiles" >
+     <property name="title" >
+      <string>Last Files</string>
+     </property>
+    </widget>
+    <addaction name="actionNewFile" />
+    <addaction name="actionOpen" />
+    <addaction name="separator" />
+    <addaction name="actionSaveFile" />
+    <addaction name="actionSaveFileAs" />
+    <addaction name="separator" />
+    <addaction name="actionSaveAll" />
+    <addaction name="actionCloseAllFiles" />
+    <addaction name="separator" />
+    <addaction name="actionPrint" />
+    <addaction name="separator" />
+    <addaction name="menuLastsFiles" />
+    <addaction name="separator" />
+    <addaction name="actionQuit" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -658,6 +659,7 @@
    <addaction name="actionNewFile" />
    <addaction name="actionOpen" />
    <addaction name="actionSaveFile" />
+   <addaction name="actionPrint" />
   </widget>
   <widget class="QToolBar" name="toolBarEdit" >
    <property name="windowTitle" >
@@ -914,17 +916,6 @@
    </property>
    <property name="shortcut" >
     <string>Ctrl+Alt+F</string>
-   </property>
-  </action>
-  <action name="actionPrint" >
-   <property name="icon" >
-    <iconset resource="../resources/resources.qrc" >:/toolbar/images/fileprint.png</iconset>
-   </property>
-   <property name="text" >
-    <string>Print</string>
-   </property>
-   <property name="visible" >
-    <bool>false</bool>
    </property>
   </action>
   <action name="actionAddNewItem" >
@@ -1446,6 +1437,14 @@
   <action name="actionAddNewClass" >
    <property name="text" >
     <string>Add New Class...</string>
+   </property>
+  </action>
+  <action name="actionPrint" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/toolbar/images/print.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Print...</string>
    </property>
   </action>
  </widget>

@@ -22,7 +22,6 @@ ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
 #endif
 
 	setupUi(this);
-	//QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
 #ifdef Q_OS_WIN32
 	QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
@@ -34,6 +33,7 @@ ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
 	lupdate->setText ( settings.value("m_lupdateName" , QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lupdate" +suffix).toString() );
 	lrelease->setText( settings.value("m_lreleaseName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lrelease"+suffix).toString() );
 	designer->setText( settings.value("m_designerName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"designer"+suffix).toString() );
+	assistant->setText( settings.value("m_assistantName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"assistant"+suffix).toString() );
 	
 #ifdef Q_OS_WIN32
 	make->setText( settings.value("m_makeName").toString() );
@@ -74,7 +74,7 @@ void ToolsControlImpl::chooseLocation(QLineEdit *dest)
 	QString s = QFileDialog::getOpenFileName(
 		this,
 		tr("Please designe the program"),
-		"/",
+		QDir::cleanPath(dest->text()),
 		"*" );
 	if( !s.isEmpty() ) // Ok clicked
 	{
@@ -98,6 +98,7 @@ bool ToolsControlImpl::toolsControl()
 	lupdateIcon->setPixmap( QPixmap(":/divers/images/good.png") );
 	lreleaseIcon->setPixmap( QPixmap(":/divers/images/good.png") );
 	designerIcon->setPixmap( QPixmap(":/divers/images/good.png") );
+	assistantIcon->setPixmap( QPixmap(":/divers/images/good.png") );
 	// Control external tools
 	QString lu;
 	QProcess *testqmake = new QProcess(this);
@@ -182,6 +183,13 @@ bool ToolsControlImpl::toolsControl()
 		designerIcon->setPixmap( QPixmap(":/divers/images/nogood.png") );
 		result = false;
 	}
+	// assistant control
+	s = assistant->text();
+	if( !QFile::exists( s ) )
+	{
+		assistantIcon->setPixmap( QPixmap(":/divers/images/nogood.png") );
+		result = false;
+	}
 	return result;
 }
 //
@@ -203,6 +211,7 @@ void ToolsControlImpl::on_okButton_clicked()
 	settings.setValue("m_lreleaseName", lrelease->text());
 	settings.setValue("m_lupdateName", lupdate->text());
 	settings.setValue("m_designerName", designer->text());
+	settings.setValue("m_assistantName", assistant->text());
 	settings.endGroup();
 	accept();
 }
@@ -228,3 +237,9 @@ void ToolsControlImpl::on_designerLocation_clicked()
 	chooseLocation( designer );
 }
 //
+
+void ToolsControlImpl::on_assistantLocation_clicked()
+{
+	chooseLocation( assistant );
+}
+
