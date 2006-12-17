@@ -108,7 +108,7 @@ SOURCES +=   src/InitCompletion.cpp \
   src/treeclasses.cpp \
   src/treeproject.cpp
 TARGET =   QDevelop
-TEMPLATE +=   app
+TEMPLATE =   app
 TRANSLATIONS +=   resources/translations/QDevelop_Chinese.ts \
   resources/translations/QDevelop_Dutch.ts \
   resources/translations/QDevelop_French.ts \
