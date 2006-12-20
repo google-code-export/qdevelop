@@ -704,6 +704,7 @@ void MainImpl::saveINI()
     settings.setValue("state", saveState());
     settings.setValue("pos", pos());
     settings.setValue("size", size());
+    settings.setValue("tabExplorer", tabExplorer->currentIndex());
     settings.endGroup();
 }
 //
@@ -959,6 +960,7 @@ QString MainImpl::loadINI()
     restoreState(settings.value("state", saveState()).toByteArray());
     move(settings.value("pos", pos()).toPoint());
     resize(settings.value("size", size()).toSize());
+    tabExplorer->setCurrentIndex( settings.value("tabExplorer", 0).toInt() );
     settings.endGroup();
     return projectName;
 }
@@ -1116,7 +1118,7 @@ bool MainImpl::slotCloseProject(bool hide)
 //
 void MainImpl::slotDoubleClickTreeFiles(QTreeWidgetItem *item, int)
 {
-    if ( item->childCount() > 0 ) // Pas �itable
+    if ( item->childCount() > 0 ) // Pas ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½itable
         return;
     QString filename = item->text(0);
     QString projectName = m_projectManager->projectFilename( item );
@@ -1157,7 +1159,7 @@ void MainImpl::slotSaveFileAs()
 
     if ( s.isEmpty() )
     {
-        // Le bouton Annuler a ��cliqu�
+        // Le bouton Annuler a ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½cliquÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½
         return;
     }
     editor->setFilename( s );
@@ -2348,3 +2350,5 @@ void MainImpl::slotConfigPlugin()
         iTextEdit->config();
 }
 //
+//
+

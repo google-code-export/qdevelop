@@ -115,12 +115,12 @@ void TextEdit::setCurrentLineColor( QColor c )
 //
 void TextEdit::print()
 {
-	QPrinter printer(QPrinter::HighResolution);
-	printer.setFullPage(true);
+    QPrinter printer(QPrinter::HighResolution);
+    printer.setFullPage(true);
     QPrintDialog dlg(&printer, this);
     //dlg.addEnabledOption( QAbstractPrintDialog::PrintSelection );
     //if( 1 )
-        //dlg.setEnabledOptions( QAbstractPrintDialog::PrintSelection );
+    //dlg.setEnabledOptions( QAbstractPrintDialog::PrintSelection );
     if (dlg.exec() == QDialog::Accepted)
     {
         document()->print(&printer);
@@ -1327,3 +1327,28 @@ void TextEdit::slotToggleBreakpoint()
     m_editor->toggleBreakpoint( m_lineNumber );
     m_lineNumbers->update();
 }
+void TextEdit::insertText(QString text, int insertAfterLine)
+{
+    if ( m_tabSpaces )
+    {
+        int nbSpaces = tabStopWidth() / fontMetrics().width( " " );
+        QString spaces;
+        for (int i = 0; i<nbSpaces; i++)
+            spaces += " " ;
+        text.replace("\t", spaces);
+    }
+    if ( insertAfterLine == -1 )
+    {
+	    QTextCursor c = textCursor();
+	    c.movePosition( QTextCursor::End );
+	    c.movePosition( QTextCursor::EndOfLine );
+	    c.insertText( "\n" + text );
+	    setTextCursor( c );
+    }
+    else
+    {
+        gotoLine(insertAfterLine, false);
+        textCursor().insertText( text );
+    }
+}
+//

@@ -160,11 +160,27 @@ void ProjectManager::parseTreeClasses(bool force)
             foreach(QString s, files)
             {
                 QStringList parentsList = parents(projectsList.at(nbProjects));
-                QFile file(s);
-                if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-                    continue;
-                QString buffer = file.readAll();
-                file.close();
+                QString buffer;
+                Editor *editor = 0;
+                for (int i=0; i<m_parent->tabEditors()->count(); i++)
+                {
+                    if ( ((Editor *)m_parent->tabEditors()->widget(i))->filename() == s)
+                    {
+                        editor = ((Editor *)m_parent->tabEditors()->widget(i));
+                    }
+                }
+                if ( editor )
+                {
+                    buffer = editor->toPlainText();
+                }
+                else
+                {
+                    QFile file(s);
+                    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+                        continue;
+                    buffer = file.readAll();
+                    file.close();
+                }
                 m_treeClasses->updateClasses(s, buffer, parentsList, "."+s.section(".", -1, -1));
                 if ( !splash )
                     bar->setValue( value++ );
@@ -587,8 +603,8 @@ void ProjectManager::slotAddNewClass(QTreeWidgetItem *it)
     if ( window->comboProjects->count() == 1 )
         window->comboProjects->setEnabled( false );
     window->on_comboProjects_currentIndexChanged( window->comboProjects->currentIndex() );
-    if( window->exec() == QDialog::Accepted )
-	    m_isModifiedProject = true;
+    if ( window->exec() == QDialog::Accepted )
+        m_isModifiedProject = true;
     delete window;
 }
 //

@@ -34,7 +34,7 @@
 #include <QTimer>
 #include <QTextBlockUserData>
 //
-typedef struct ReplaceOptions
+typedef struct
 {
 	QStringList textFind;
 	QStringList textReplace;
@@ -42,7 +42,7 @@ typedef struct ReplaceOptions
 	bool backwards;
 	bool wholeWords;
 	bool prompt;
-};
+} ReplaceOptions;
 //
 typedef QMap<QString, QStringList> classesMethodsList; 
 //
@@ -122,6 +122,8 @@ public:
 	QList<int> bookmarksList();
 	QList<int> breakpointsList();
 	bool inQuotations(int position, QString text);
+    QString toPlainText() { return m_textEdit->toPlainText(); };
+    void insertText(QString text, int insertAfterLine) { m_textEdit->insertText(text, insertAfterLine); };
 	//
 public slots:
 	void gotoLine( int line, bool moveTop);
