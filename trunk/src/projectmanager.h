@@ -33,13 +33,13 @@
 #include <QListWidget>
 
 //
-typedef struct Parameters
+typedef struct
 {
 	QString arguments;
 	QString workingDirectory;
 	QStringList env;
 	bool isEmpty;
-};
+} Parameters;
 //
 class TreeProject;
 class TreeClasses;

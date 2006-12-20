@@ -1,13 +1,16 @@
 CONFIG +=   qt \
+  release \
   uitools \
-  warn_on \
-  release
+  warn_on
 DESTDIR +=   bin
 FORMS +=   ui/about.ui \
   ui/addexistant.ui \
   ui/addnew.ui \
   ui/addnewclass.ui \
+  ui/addnewclassmethod.ui \
+  ui/addnewclassvariable.ui \
   ui/addscope.ui \
+  ui/addsetget.ui \
   ui/exechoice.ui \
   ui/findfiles.ui \
   ui/findwidget.ui \
@@ -32,8 +35,11 @@ HEADERS +=   src/InitCompletion.h \
   src/QIComplete/tree.h \
   src/addexistantimpl.h \
   src/addnewclassimpl.h \
+  src/addnewclassmethodimpl.h \
+  src/addnewclassvariableimpl.h \
   src/addnewimpl.h \
   src/addscopeimpl.h \
+  src/addsetgetimpl.h \
   src/assistant.h \
   src/build.h \
   src/cpphighlighter.h \
@@ -78,8 +84,11 @@ SOURCES +=   src/InitCompletion.cpp \
   src/QIComplete/tree.cpp \
   src/addexistantimpl.cpp \
   src/addnewclassimpl.cpp \
+  src/addnewclassmethodimpl.cpp \
+  src/addnewclassvariableimpl.cpp \
   src/addnewimpl.cpp \
   src/addscopeimpl.cpp \
+  src/addsetgetimpl.cpp \
   src/assistant.cpp \
   src/build.cpp \
   src/cpphighlighter.cpp \

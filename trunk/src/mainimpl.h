@@ -210,7 +210,6 @@ private slots:
 	void slotParameters();
 	void slotBacktraces();
 	void slotCurrentTabChanged(int index);
-	void slotUpdateClasses(QString filename, QString buffer);
 	void slotDebugVariables( QList<Variable> list);
 	void slotAddDebugVariable();
 	void slotRemoveDebugVariable();
@@ -227,6 +226,7 @@ public slots:
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);
 	bool slotCloseAllFiles();
 	void slotToolsControl(bool show=true);
+	void slotUpdateClasses(QString filename, QString buffer);
 signals:
 	void debugCommand(QString);
 	void stopBuild();

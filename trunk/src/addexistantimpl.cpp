@@ -59,22 +59,22 @@ void AddExistantImpl::slotAccept()
 		if( location->text().right(1) != "/" )
 			location->setText( location->text()+"/" );
 		QString newList;
-		foreach(QString filename, filename->text().split(","))
+		foreach(QString filenamestr, filename->text().split(","))
 		{
-			filename = filename.remove("\"").simplified();
-			filename.replace("\\", "/");
-			if( !QFile::exists( filename ) )
+			filenamestr = filenamestr.remove("\"").simplified();
+			filenamestr.replace("\\", "/");
+			if( !QFile::exists( filenamestr ) )
 			{
 				QMessageBox::warning(0, 
-					"QDevelop", tr("The file")+ " " + filename + " " + tr("doesn't exist."),
+					"QDevelop", tr("The file")+ " " + filenamestr + " " + tr("doesn't exist."),
 					tr("Cancel") );
 				return;
 			}
-			QString f = filename.section("/", -1, -1);
-			if( !QFile::copy(filename, location->text()+f) )
+			QString f = filenamestr.section("/", -1, -1);
+			if( !QFile::copy(filenamestr, location->text()+f) )
 			{
 				QMessageBox::warning(0, 
-					"QDevelop", tr("Unable to copy")+ " " + filename,
+					"QDevelop", tr("Unable to copy")+ " " + filenamestr,
 					tr("Cancel") );
 				return;
 			}

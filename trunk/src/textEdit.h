@@ -107,6 +107,7 @@ public:
     {
         Toggle, Comment, Uncomment
     };
+    void insertText(QString text, int insertAfterLine);
 public slots:
     void gotoLine( int line, bool moveTop );
     void slotFind(Ui::FindWidget ui, QString ttf=0,  QTextDocument::FindFlags options=0, bool fromButton=false);

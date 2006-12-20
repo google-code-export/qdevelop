@@ -32,7 +32,7 @@
 //
 class QProcess;
 //
-typedef struct ParsedItem 
+typedef struct  
 {
 	QString key;
 	QStringList parents;
@@ -49,16 +49,16 @@ typedef struct ParsedItem
 	QString kind;
 	bool markedForDelete;
 	QString icon;
-};
+} ParsedItem;
 Q_DECLARE_METATYPE(ParsedItem)
 //
-typedef struct TempProcess
+typedef struct 
 {
 	QStringList parents;
 	QString filename;
 	int numTempFile;
 	QString ext;
-};
+} TempProcess;
 //
 class ProjectManager;
 class MainImpl;
@@ -77,6 +77,8 @@ public:
 	void fromDB(QString projectDirectory);
 	void setCtagsName(QString s) { m_ctagsName=s;};
 	QList<ParsedItem> treeClassesItems() { return m_treeClassesItems; };
+	QString signature(QString line);
+    QStringList methods(QString filename, QString classname);
 protected:
 	void mousePressEvent( QMouseEvent * event );
 	void mouseDoubleClickEvent ( QMouseEvent * event );
@@ -95,7 +97,6 @@ private:
 	QString markForSorting(QString kind, QString text);
 	void setSortingSymbols( QTreeWidgetItem *it, bool active, QString filename, QString ext, QStringList parents);
 	void setTooltip(QTreeWidgetItem *item, ParsedItem parsedItem);
-	QString signature(QString line);
 	void writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query);
 	void createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem);
 	QString getPathHash(QString const& pathName);
@@ -106,6 +107,9 @@ private slots:
 	void slotOpenDeclaration();
 	void slotRefresh();
 	void parse(ParsedItem parsedItem);
+    void slotAddNewClassMethod();
+    void slotAddNewClassVariable();
+    void slotAddGetSetMethod();
 public slots:
 	void updateClasses( QString filename, QString buffer, QStringList parents, QString ext);
 signals:
