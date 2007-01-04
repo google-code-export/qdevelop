@@ -300,30 +300,33 @@ void ProjectManager::saveProjectSettings()
         Editor *editor = ((Editor *)m_parent->tabEditors()->widget( i ));
         if ( editor )
         {
+            QString filename = QDir( directory ).relativeFilePath( editor->filename() );
             QSqlQuery query;
             query.prepare("INSERT INTO editors (filename, scrollbar, numline) "
                           "VALUES (:filename, :scrollbar, :numline)");
-            query.bindValue(":filename", editor->filename());
+            query.bindValue(":filename", filename);
             query.bindValue(":scrollbar", editor->verticalScrollBar());
             query.bindValue(":numline", editor->currentLineNumber());
             if ( !query.exec() )
                 qDebug() << query.lastError();
             foreach(int line, editor->bookmarksList())
             {
+                filename = QDir( directory ).relativeFilePath( editor->filename() );
                 QSqlQuery query;
                 query.prepare("INSERT INTO bookmarks (filename, numline) "
                               "VALUES (:filename, :numline)");
-                query.bindValue(":filename", editor->filename());
+                query.bindValue(":filename", filename);
                 query.bindValue(":numline", line);
                 if ( !query.exec() )
                     qDebug() << query.lastError();
             }
             foreach(int line, editor->breakpointsList())
             {
+                filename = QDir( directory ).relativeFilePath( editor->filename() );
                 QSqlQuery query;
                 query.prepare("INSERT INTO breakpoints (filename, numline) "
                               "VALUES (:filename, :numline)");
-                query.bindValue(":filename", editor->filename());
+                query.bindValue(":filename", filename);
                 query.bindValue(":numline", line);
                 if ( !query.exec() )
                     qDebug() << query.lastError();
@@ -373,6 +376,7 @@ void ProjectManager::loadProjectSettings()
     while (query.next())
     {
         QString filename = query.value(0).toString();
+        filename = QDir( directory ).absoluteFilePath( filename );
         int scrollbar = query.value(1).toInt();
         int numline = query.value(2).toInt();
         m_parent->openFile( QStringList( filename ) );
@@ -388,6 +392,7 @@ void ProjectManager::loadProjectSettings()
     while (query.next())
     {
         QString filename = query.value(0).toString();
+        filename = QDir( directory ).absoluteFilePath( filename );
         int line = query.value(1).toInt();
         Editor *editor = m_parent->openFile( QStringList(filename) );
         if ( editor )
@@ -399,6 +404,7 @@ void ProjectManager::loadProjectSettings()
     while (query.next())
     {
         QString filename = query.value(0).toString();
+        filename = QDir( directory ).absoluteFilePath( filename );
         int line = query.value(1).toInt();
         Editor *editor = m_parent->openFile( QStringList(filename) );
         if ( editor )
@@ -420,7 +426,7 @@ void ProjectManager::loadProjectSettings()
     while (query.next())
     {
         QString projectName = query.value( 0 ).toString();
-        QString projectDir = findData(projectName, "projectDirectory");
+    	QString projectDir = projectDirectory( projectName );
         QString srcDir = query.value( 1 ).toString();
         srcDir = QDir( projectDir ).absoluteFilePath( srcDir );
         QString uiDir = query.value( 2 ).toString();
