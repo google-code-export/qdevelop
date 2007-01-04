@@ -118,7 +118,7 @@ bool ToolsControlImpl::toolsControl()
 	testMake->start(make->text(), QStringList("-v"));
 	testMake->waitForFinished(5000);
 	lu = testMake->readAll();
-	if( lu.left(8) != "GNU Make" )
+	if( !lu.toLower().contains( "make" ) )
 	{
 		makeIcon->setPixmap( QPixmap(":/divers/images/nogood.png") );
 		result = false;
