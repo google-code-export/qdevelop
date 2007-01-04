@@ -97,7 +97,7 @@ private:
 	QString markForSorting(QString kind, QString text);
 	void setSortingSymbols( QTreeWidgetItem *it, bool active, QString filename, QString ext, QStringList parents);
 	void setTooltip(QTreeWidgetItem *item, ParsedItem parsedItem);
-	void writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query);
+	void writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query, QString projectDirectory);
 	void createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem);
 	QString getPathHash(QString const& pathName);
 	QString m_ctagsName;

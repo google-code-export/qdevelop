@@ -87,9 +87,9 @@ ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeCl
 //
 ProjectManager::~ProjectManager()
 {
-    QString projectDirectory = absoluteNameProjectFile(m_treeFiles->topLevelItem(0));
+    QString directory = projectDirectory(m_treeFiles->topLevelItem(0));
     if ( m_treeFiles->topLevelItem ( 0 ) )
-        m_treeClasses->toDB( projectDirectory );
+        m_treeClasses->toDB( directory );
     m_treeFiles->clear();
     m_treeClasses->clear();
     if ( m_previewForm )

@@ -531,17 +531,15 @@ void TreeClasses::slotOpenDeclaration()
 //
 void TreeClasses::slotRefresh()
 {
-    m_projectManager->parseTreeClasses(true);
+	if( m_projectManager )
+    	m_projectManager->parseTreeClasses(true);
 }
 //
 void TreeClasses::toDB(QString projectDirectory)
 {
-//qDebug() << "toDB" << projectDirectory+"/qdevelop-settings.db";
     if ( !topLevelItem(0) )
         return;
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    //db = connectDB(projectDirectory+"/qdevelop-settings.db");
-    //TagToDB tagToDB;
     QSqlQuery query;
     QString queryString = "delete from classesbrowser where 1";
     if (!query.exec(queryString))
@@ -550,17 +548,15 @@ void TreeClasses::toDB(QString projectDirectory)
         return;
     }
     query.exec("BEGIN TRANSACTION;");
-    writeItemsInDB(topLevelItem(0), QString(), query);
+    writeItemsInDB(topLevelItem(0), QString(), query, projectDirectory);
     query.exec("END TRANSACTION;");
-    //db.close();
     QApplication::restoreOverrideCursor();
-//qDebug() << "Fin toDB";
 
     // TODO remove gcc warnings
     projectDirectory.isNull();
 }
 //
-void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query)
+void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query, QString projectDirectory)
 {
     //
     ParsedItem parsedItem = it->data(0, Qt::UserRole).value<ParsedItem>();
@@ -572,8 +568,8 @@ void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSq
                   + "'" + parsedItem.key.replace("'", "$") + "', "
                   + "'" + parents.replace("'", "$") + "', "
                   + "'" + parsedItem.name.replace("'", "$") + "', "
-                  + "'" + parsedItem.implementation.replace("'", "$") + "', "
-                  + "'" + parsedItem.declaration.replace("'", "$") + "', "
+                  + "'" + QDir( projectDirectory ).relativeFilePath( QDir::cleanPath( parsedItem.implementation ) ).replace("'", "$") + "', "
+                  + "'" + QDir( projectDirectory ).relativeFilePath( QDir::cleanPath( parsedItem.declaration ) ).replace("'", "$") + "', "
                   + "'" + parsedItem.ex_cmd.replace("'", "$") + "', "
                   + "'" + parsedItem.language.replace("'", "$") + "', "
                   + "'" + parsedItem.classname.replace("'", "$") + "', "
@@ -583,7 +579,6 @@ void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSq
                   + "'" + parsedItem.signature.replace("'", "$") + "', "
                   + "'" + parsedItem.kind.replace("'", "$") + "')";
     bool rc = query.exec(queryString);
-//qDebug() << "writeItemToDB" << it->text(0) << parsedItem.icon;
     if (rc == false)
     {
         qDebug() << "Failed to insert record to db" << query.lastError();
@@ -593,13 +588,12 @@ void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSq
     //
     for (int i=0; i<it->childCount(); i++)
     {
-        writeItemsInDB( it->child( i ), parents+":"+it->text(0), query);
+        writeItemsInDB( it->child( i ), parents+":"+it->text(0), query, projectDirectory);
     }
 }
 //
 void TreeClasses::fromDB(QString projectDirectory)
 {
-//qDebug()<<"fromDB :"+projectDirectory+"/qdevelop-settings.db";
     m_treeClassesItems.clear();
     connectDB(projectDirectory+"/qdevelop-settings.db");
     QSqlQuery query;
@@ -617,7 +611,9 @@ void TreeClasses::fromDB(QString projectDirectory)
         QString parents = query.value(4).toString().replace("$", "'");
         parsedItem.name = query.value(5).toString().replace("$", "'");
         parsedItem.implementation = query.value(6).toString().replace("$", "'");
+        parsedItem.implementation = QDir( projectDirectory ).absoluteFilePath(parsedItem.implementation  );
         parsedItem.declaration = query.value(7).toString().replace("$", "'");
+        parsedItem.declaration = QDir( projectDirectory ).absoluteFilePath(parsedItem.declaration  );
         parsedItem.ex_cmd = query.value(8).toString().replace("$", "'");
         parsedItem.language = query.value(9).toString().replace("$", "'");
         parsedItem.classname = query.value(10).toString().replace("$", "'");
@@ -642,7 +638,6 @@ void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QStrin
         it->setText(0, text);
         setTooltip(it, parsedItem);
         it->setIcon(0, QIcon(parsedItem.icon));
-//qDebug()<<"createItemFromDB" << text << parsedItem.icon;
         QVariant v;
         v.setValue( parsedItem );
         it->setData(0, Qt::UserRole, v );
