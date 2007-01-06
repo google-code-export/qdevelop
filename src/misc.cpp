@@ -67,7 +67,7 @@ bool connectDB(QString const& dbName)
 		    "key string,"
 		    "parents string,"
 		    "name string,"
-		    "implementation int,"
+		    "implementation string,"
 		    "declaration string,"
 		    "ex_cmd string,"
 		    "language string,"
