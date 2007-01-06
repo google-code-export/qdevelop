@@ -668,8 +668,7 @@
                   <item>
                    <widget class="QCheckBox" name="qtestlib" >
                     <property name="text" >
-                     <string>qtestlib
-</string>
+                     <string>qtestlib</string>
                     </property>
                    </widget>
                   </item>
