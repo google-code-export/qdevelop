@@ -65,11 +65,11 @@ bool TabWidget::eventFilter(QObject *obj, QEvent *event)
             {
                 if ( tabBar()->tabRect(i).contains( mouseEvent->pos() ) )
                 {
-                    m_hoverItem = i;
+                    m_clickedItem= i;
                     break;
                 }
             }
-            cross->setGeometry(tabBar()->tabRect(m_hoverItem).x()+tabBar()->tabRect(m_hoverItem).width()-cross->width()-5,
+            cross->setGeometry(tabBar()->tabRect(m_clickedItem).x()+tabBar()->tabRect(m_clickedItem).width()-cross->width()-5,
                                //tabBar()->height()-(tabBar()->tabRect(m_clickedItem).height()/2),
                                5,
                                cross->width(),

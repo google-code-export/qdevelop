@@ -41,7 +41,6 @@ protected:
 private:
     bool swapTabs(int index1, int index2);
     int m_clickedItem;
-    int m_hoverItem;
     MainImpl *m_mainImpl;
     QToolButton *cross;
     QPoint mousePos;
