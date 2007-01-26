@@ -2293,6 +2293,12 @@ void MainImpl::loadPlugins()
         {
             entryList += dir.absoluteFilePath(fileName);
         }
+		// for linux only
+        dir = QDir(qApp->applicationDirPath()+"/plugins/");
+        foreach(QString fileName, dir.entryList(QDir::Files) )
+        {
+            entryList += dir.absoluteFilePath(fileName);
+        }
     }
     else
     {

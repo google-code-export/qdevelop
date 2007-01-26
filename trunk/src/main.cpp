@@ -42,6 +42,13 @@ int main(int argc, char *argv[])
 	splash = new QSplashScreen(QPixmap(":/divers/images/SplashQDevelop.png"));
 	splash->setFont( QFont("Helvetica", 10) );
 	splash->show();
+	//
+	// change the plugins path (add the installation directory)
+	QStringList list_path ;
+	QDir dir = QDir(qApp->applicationDirPath()+"/QtPlugins/");
+	list_path << dir.absolutePath () << app.libraryPaths ();
+	app.setLibraryPaths( list_path  );
+	//
 	QTranslator translator;
 	QString translationFile = QLocale::languageToString( QLocale::system().language() );
 	//
