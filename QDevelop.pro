@@ -117,7 +117,7 @@ SOURCES +=   src/InitCompletion.cpp \
   src/treeclasses.cpp \
   src/treeproject.cpp
 TARGET =   QDevelop
-TEMPLATE =   app
+TEMPLATE +=   app
 TRANSLATIONS +=   resources/translations/QDevelop_Chinese.ts \
   resources/translations/QDevelop_Dutch.ts \
   resources/translations/QDevelop_French.ts \
@@ -125,7 +125,8 @@ TRANSLATIONS +=   resources/translations/QDevelop_Chinese.ts \
   resources/translations/QDevelop_Italian.ts \
   resources/translations/QDevelop_Polish.ts \
   resources/translations/QDevelop_Russian.ts \
-  resources/translations/QDevelop_Spanish.ts
+  resources/translations/QDevelop_Spanish.ts \
+  resources/translations/QDevelop_Ukrainian.ts
 UI_DIR +=   build/ui
 macx {
   ICON +=     resources/images/qdevelop.icns
