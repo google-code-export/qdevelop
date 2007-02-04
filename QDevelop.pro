@@ -126,7 +126,8 @@ TRANSLATIONS +=   resources/translations/QDevelop_Chinese.ts \
   resources/translations/QDevelop_Polish.ts \
   resources/translations/QDevelop_Russian.ts \
   resources/translations/QDevelop_Spanish.ts \
-  resources/translations/QDevelop_Ukrainian.ts
+  resources/translations/QDevelop_Ukrainian.ts \
+  resources/translations/QDevelop_Czech.ts
 UI_DIR +=   build/ui
 macx {
   ICON +=     resources/images/qdevelop.icns
