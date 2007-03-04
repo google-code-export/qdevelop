@@ -771,10 +771,15 @@ void TextEdit::clearMatch()
 void TextEdit::match()
 {
     QTextCursor cursor = textCursor();
-    int pos = textCursor().position();
+    int pos = cursor.position();
     QChar car;
-    if ( pos != -1 )
-        car = m_plainText.at( pos );
+    if ( pos != -1 ){
+        if( !cursor.atEnd() ){
+          car = m_plainText.at( pos );                    
+        } else {
+          car = m_plainText.at( pos - 1);        
+        }
+    }
     if ( QString("({").contains( car ) && !m_editor->inQuotations(pos, m_plainText) )
     {
         // First match
@@ -1351,4 +1356,3 @@ void TextEdit::insertText(QString text, int insertAfterLine)
         textCursor().insertText( text );
     }
 }
-//
