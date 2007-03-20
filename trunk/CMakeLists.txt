@@ -18,7 +18,7 @@
 # 	http://wiki.qtcentre.org/index.php?title=Compiling_Qt4_apps_with_CMake
 # 	http://qtnode.net/wiki/Qt_with_cmake#cmake_for_Qt_4
 
-PROJECT(qdevelop)
+PROJECT(QDevelop)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 # input files
@@ -26,6 +26,10 @@ SET( qdevelop_UIS
 	ui/about.ui 
 	ui/addexistant.ui
 	ui/addnew.ui
+	ui/addnewclass.ui
+	ui/addnewclassmethod.ui
+	ui/addnewclassvariable.ui
+	ui/addsetget.ui
 	ui/addscope.ui
 	ui/exechoice.ui
 	ui/findfiles.ui
@@ -54,7 +58,11 @@ SET( qdevelop_SRCS
 	src/QIComplete/tree.cpp
 	src/addexistantimpl.cpp
 	src/addnewimpl.cpp
+	src/addnewclassimpl.cpp
 	src/addscopeimpl.cpp
+	src/addsetgetimpl.cpp 
+	src/addnewclassmethodimpl.cpp
+	src/addnewclassvariableimpl.cpp
 	src/assistant.cpp
 	src/build.cpp
 	src/cpphighlighter.cpp
@@ -88,7 +96,11 @@ SET( qdevelop_MOC_HDRS
 	src/InitCompletion.h
 	src/addexistantimpl.h
 	src/addnewimpl.h
+	src/addnewclassimpl.h
+	src/addnewclassmethodimpl.h
+	src/addnewclassvariableimpl.h
 	src/addscopeimpl.h
+	src/addsetgetimpl.h
 	src/build.h
 	src/debug.h
 	src/editor.h
@@ -156,7 +168,7 @@ INCLUDE_DIRECTORIES(
 )
 
 # the main build target
-ADD_EXECUTABLE(qdevelop	
+ADD_EXECUTABLE(QDevelop	
 	${qdevelop_SRCS} 
 	${qdevelop_UIS_H} 
 	${qdevelop_MOC_SRCS} 
@@ -172,7 +184,7 @@ ELSE (WIN32)
 	SET( QT_UITOOLSLIB   ${QT_QTUITOOLS_LIBRARY_RELEASE} )
 ENDIF (WIN32)
 
-TARGET_LINK_LIBRARIES(qdevelop
+TARGET_LINK_LIBRARIES(QDevelop
 	${QT_UITOOLSLIB} 
 	${QT_QTSQL_LIBRARY}
 	${QT_LIBRARIES}
