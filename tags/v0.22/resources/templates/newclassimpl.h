@@ -1,0 +1,13 @@
+#ifndef $IMPL_H
+#define $IMPL_H
+//
+$ANCESTORFILENAME
+//
+class $CLASSNAME $SCOPE $PARENTNAME
+{
+Q_OBJECT
+public:
+	$CLASSNAME($ARGUMENTS);
+	$VIRTUAL
+};
+#endif
