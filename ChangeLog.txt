@@ -1,3 +1,23 @@
+April 11 2007 Version 0.22
+
+Corrections:
+- Fixed cmake compilation. Now executable is called QDevelop. I think I will have to revert this for UNIX* environemtns, in which the binary should be named qdevelop.
+- Update the code to accept the plugins in subdirectory of executable directory.
+- Fix the kind for field implementation (int to string) in table classesbrowser in database.
+- Fix items alignment default in projectpropertie.ui
+- In project database, opened files are now saved with relative paths to the project directory. If project directory is moved to other path, the files are correctly reopened. This commit saves relative paths for files in classes browser too.
+- Fix a crash when "Refresh contents" is called on tree browser without project opened.
+
+Adds:
+- Add  czech translation language.
+- Add Ukrainian translation.
+- The application accept now "GNU make" as previously but also others like "FreeBSD make".
+- With a right-click on a class name in classes browser, it is possible to:
+   - Add a new method to the class (can be a slot or a signal)
+   - Add a new variable member
+- With a right-click on a member variable of a class in classes browser, it is possible to:
+   - Add set and get methods for this variable member.
+
 Version 0.21-svn
 Adds:
 - Colorized matching for ( and {
