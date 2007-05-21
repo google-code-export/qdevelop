@@ -1270,7 +1270,7 @@ void ProjectManager::slotSubclassing(QTreeWidgetItem *it)
     QString uiName = QDir(projectDir+"/"+filename).absolutePath();
     QStringList listeHeaders;
     headers( itemProject(projectName), listeHeaders);
-    SubclassingImpl *dialog = new SubclassingImpl(0, srcDir, uiName, listeHeaders);
+    SubclassingImpl *dialog = new SubclassingImpl(0, m_parent, srcDir, uiName, listeHeaders);
     if ( dialog->exec() == QDialog::Accepted )
     {
         while ( it->data(0, Qt::UserRole).toString() != "PROJECT" )
