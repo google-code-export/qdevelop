@@ -29,12 +29,13 @@
 class ProjectManager;
 class QSortFilterProxyModel;
 class QTreeWidget;
+class MainImpl;
 
 class SubclassingImpl : public QDialog, public Ui::Subclassing
 {
 Q_OBJECT
 public:
-	SubclassingImpl(ProjectManager * parent, QString srcDirectory, QString uiName, QStringList headers);
+	SubclassingImpl(ProjectManager * parent, MainImpl *mainImpl, QString srcDirectory, QString uiName, QStringList headers);
 	QString newFile();
 private:	
 	void		implementations(QStringList);
@@ -57,6 +58,7 @@ private slots:
 	
 private:
 	ProjectManager		*m_parent;
+	MainImpl 			*m_mainImpl;
 	QSortFilterProxyModel	*proxyModel;
 	QString			m_uiName;
 	QString			m_srcDirectory;
