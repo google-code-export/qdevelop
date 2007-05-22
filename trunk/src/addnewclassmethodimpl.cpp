@@ -5,11 +5,13 @@
 #include "editor.h"
 #include <QMessageBox>
 #include <QComboBox>
+#include <QDebug>
 //
 AddNewClassMethodImpl::AddNewClassMethodImpl( MainImpl * parent, TreeClasses *treeClasses, QString implementation, QString declaration, QString classname)
         : QDialog(parent), m_mainImpl(parent), m_treeClasses(treeClasses), m_implementation(implementation), m_declaration(declaration), m_classname(classname)
 {
     setupUi(this);
+    setWindowTitle ( tr("Add New Method in class") + " " + m_classname );
 }
 //
 
@@ -32,7 +34,7 @@ void AddNewClassMethodImpl::on_okButton_clicked()
     if ( m_implementation.section("|", 0, 0).isEmpty() && !l_Inline && !l_Pure && l_scope.simplified() != "signals" )
     {
         QMessageBox::warning(this,
-                             "QDevelop", tr("An m_implementation file is required."),
+                             "QDevelop", tr("An implementation file is required."),
                              tr("Cancel") );
         return;
     }
@@ -79,20 +81,20 @@ void AddNewClassMethodImpl::on_okButton_clicked()
     for (int ind = m_declaration.section("|", 1, 1).toInt(); lines.count()>0, ind<lines.count(); ind++)
     {
         QString s = lines.at( ind );
-        if ( s.remove(" ").startsWith( l_scope.simplified()+":" ) )
+        if ( s.simplified().startsWith( l_scope.simplified()+":" ) )
         {
             indexScope = ind+1;
             break;
         }
-        else if ( s.remove(" ").startsWith( "{" ) )
+        else if ( s.simplified().startsWith( "{" ) )
         {
             indexBracket = ind+1;
         }
-        else if ( s.remove(" ").startsWith( "Q_OBJECT" ) )
+        else if ( s.simplified().startsWith( "Q_OBJECT" ) )
         {
             indexQ_OBJECT = ind+1;
         }
-        else if ( s.remove(" ").startsWith( "class" ) )
+        else if ( s.simplified().startsWith( "class" ) )
         {
             // The begin of another class, stop find
             break;
@@ -130,7 +132,9 @@ void AddNewClassMethodImpl::on_okButton_clicked()
     else
     {
         foreach(QString s, insertedText.split("\n") )
-        lines.insert(insertAfterLine++, s);
+        {
+        	lines.insert(insertAfterLine++, s);
+       	}
         QFile file(m_declaration.section("|", 0, 0));
         file.open(QIODevice::WriteOnly | QIODevice::Text);
         file.write( lines.join("\n").toLocal8Bit()  );
@@ -138,7 +142,7 @@ void AddNewClassMethodImpl::on_okButton_clicked()
         m_mainImpl->slotUpdateClasses(m_declaration.section("|", 0, 0), lines.join("\n").toLocal8Bit());
     }
     if ( l_Pure || l_Inline || l_scope.simplified() == "signals" )
-        return;
+        accept();
     // Now, add in implementation file or editor
     if ( l_parameters.contains( "=" ) )
     {
@@ -161,17 +165,17 @@ void AddNewClassMethodImpl::on_okButton_clicked()
         }
     }
     insertedText = l_returnType + " " + m_classname + "::" + l_methodName + l_parameters;
-    insertedText += "\n{\n\t// place your code here\n}\n";
+    insertedText += "\n{\n\t// TODO\n}\n";
     if ( editor )
     {
-        // Get content of opened editor
+        // Write content in opened editor
         lines = editor->toPlainText().split("\n");
         insertedText += "\n";
         editor->insertText(insertedText, -1);
     }
     else
     {
-        // The file is not opened, get content from file
+        // The file is not opened, write content in file on disk
         QFile file(m_implementation.section("|", 0, 0));
         file.open(QIODevice::ReadOnly | QIODevice::Text);
         lines = QString(file.readAll()).split("\n");

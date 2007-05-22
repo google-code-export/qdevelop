@@ -257,7 +257,6 @@ void SubclassingImpl::on_okButton_clicked()
         if ( last == -1 )
             last = headerImpl.lastIndexOf("}");
         headerInsertLineAfter = last -1 ;
-        //qDebug() << __LINE__ << headerInsertLineAfter;
         if ( editorHeader )
         {
             editorHeader->insertText("private slots:\n", headerInsertLineAfter++);
@@ -267,7 +266,6 @@ void SubclassingImpl::on_okButton_clicked()
         	headerInsertLineAfter--;
             headerImpl.insert(headerInsertLineAfter++, "private slots:");
        	}
-        //qDebug() << __LINE__ << headerInsertLineAfter;
     }
     // Implementation
     // Find filename in opened editors
@@ -301,7 +299,6 @@ void SubclassingImpl::on_okButton_clicked()
             if ( item->checkState( 0 ) && item->textColor(0)!= Qt::blue )
             {
                 QString s = item->data(0, Qt::UserRole).toString();
-                //qDebug() << __LINE__ << headerInsertLineAfter;
                 if ( editorHeader )
                     editorHeader->insertText("\tvoid "+s+";\n", headerInsertLineAfter++);
                 else
