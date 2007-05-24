@@ -86,7 +86,7 @@ private:
 	void saveINI();
 	void setCrossButton(bool activate);
 	bool modifiedEditors();
-	void configureCompletion();
+	void configureCompletion(QString projectDirectory);
 	// Objects and Variables
 	enum ExecuteVersion { ExecuteNone, ExecuteRelease, ExecuteDebug};
 	Build *m_builder;
