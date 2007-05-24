@@ -164,6 +164,7 @@ void TextEdit::slotCompletionList(TagList TagList)
             //qDebug() << tag.name << tag.longName << tag.parameters << tag.access << tag.kind;
         }
         w = qMin(w+20, 350);
+        w = qMax(w, 150);
         int posX = qMax(cursorRect().x(), 80);
         if ( posX+w > width() )
             posX = width()-220;
@@ -773,11 +774,15 @@ void TextEdit::match()
     QTextCursor cursor = textCursor();
     int pos = cursor.position();
     QChar car;
-    if ( pos != -1 ){
-        if( !cursor.atEnd() ){
-          car = m_plainText.at( pos );                    
-        } else {
-          car = m_plainText.at( pos - 1);        
+    if ( pos != -1 )
+    {
+        if ( !cursor.atEnd() )
+        {
+            car = m_plainText.at( pos );
+        }
+        else
+        {
+            car = m_plainText.at( pos - 1);
         }
     }
     if ( QString("({").contains( car ) && !m_editor->inQuotations(pos, m_plainText) )
@@ -844,10 +849,16 @@ void TextEdit::match()
 void TextEdit::slotWordCompletion(QListWidgetItem *item)
 {
     m_completionList->hide();
+    QString signature = item->text();
     QString text = item->data(Qt::UserRole).toString();
-    //QString texte = item->text();
     wordUnderCursor(QPoint(), true);
-    textCursor().insertText( text );
+    textCursor().insertText( text + "()" );
+    if ( !signature.contains("()") )
+    {
+        QTextCursor cursor = textCursor();
+        cursor.movePosition(QTextCursor::PreviousCharacter);
+        setTextCursor( cursor );
+    }
     ensureCursorVisible();
     setFocus( Qt::OtherFocusReason );
     return;
@@ -1344,11 +1355,11 @@ void TextEdit::insertText(QString text, int insertAfterLine)
     }
     if ( insertAfterLine == -1 )
     {
-	    QTextCursor c = textCursor();
-	    c.movePosition( QTextCursor::End );
-	    c.movePosition( QTextCursor::EndOfLine );
-	    c.insertText( "\n" + text );
-	    setTextCursor( c );
+        QTextCursor c = textCursor();
+        c.movePosition( QTextCursor::End );
+        c.movePosition( QTextCursor::EndOfLine );
+        c.insertText( "\n" + text );
+        setTextCursor( c );
     }
     else
     {

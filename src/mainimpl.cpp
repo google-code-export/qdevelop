@@ -205,7 +205,7 @@ void MainImpl::renameEditor(QString oldName, QString newName)
     }
 }
 //
-void MainImpl::configureCompletion()
+void MainImpl::configureCompletion(QString projectDirectory)
 {
     if ( m_completion )
         delete m_completion;
@@ -229,12 +229,8 @@ void MainImpl::configureCompletion()
         }
 #endif
     }
-    QString projectDirectory;
-    if ( treeFiles->topLevelItem(0) )
-        projectDirectory = m_projectManager->projectDirectory(treeFiles->topLevelItem(0));
     QStringList includes;
     includes << QLibraryInfo::location( QLibraryInfo::HeadersPath ) << projectDirectory
-    //includes << m_qtInstallHeaders << projectDirectory
 #ifdef WIN32
     << compilerInclude;
 #else
@@ -1075,7 +1071,7 @@ bool MainImpl::openProject(QString s)
     }
     if ( !slotCloseProject() )
         return false;
-    configureCompletion();
+    configureCompletion( QFileInfo(s).absoluteDir().path() );
     m_projectManager = new ProjectManager(this, treeFiles, treeClasses, s);
     treeFiles->setProjectManager( m_projectManager );
     treeClasses->setProjectManager( m_projectManager );
@@ -1160,7 +1156,7 @@ void MainImpl::slotSaveFileAs()
 
     if ( s.isEmpty() )
     {
-        // Le bouton Annuler a ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½cliquÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½
+        // Le bouton Annuler a ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½cliquÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½
         return;
     }
     editor->setFilename( s );
