@@ -34,6 +34,8 @@
 #include <QTimer>
 #include <QTextBlockUserData>
 //
+Q_DECLARE_METATYPE(Tag)
+//
 typedef struct
 {
 	QStringList textFind;
