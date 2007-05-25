@@ -154,7 +154,10 @@ void TextEdit::slotCompletionList(TagList TagList)
             m_completionList->addItem( tag.name+tag.parameters );
             h += 15;
             QListWidgetItem *item = m_completionList->item(m_completionList->count()-1);
-            item->setData(Qt::UserRole, QVariant(tag.name) );
+		    QVariant v;
+		    v.setValue( tag );
+		    item->setData(Qt::UserRole, v );
+            //item->setData(Qt::UserRole, QVariant(tag.name) );
 
             if ( tag.kind == "function" || tag.kind == "prototype")
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_meth.png"));
@@ -470,13 +473,12 @@ bool TextEdit::save(QString filename, QDateTime &lastModified)
     if ( !document()->isModified() )
         return true;
     QFile file( filename );
-    if (!file.open(QIODevice::WriteOnly /*| QIODevice::Text*/))
+    if (!file.open(QIODevice::WriteOnly))
     {
         QMessageBox::about(0, "QDevelop",tr("Unable to save")+" "+filename);
         return false;
     }
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    //QTextStream out(&file);
     QString s = toPlainText();
     if ( m_endLine != MainImpl::Default )
     {
@@ -484,14 +486,13 @@ bool TextEdit::save(QString filename, QDateTime &lastModified)
         if ( m_endLine == MainImpl::Windows )
             s.replace("\n", "\r\n");
     }
-    //out << s;
-    //file.write( s.toLatin1() );
     file.write( s.toLocal8Bit() );
     file.close();
     QFile last( filename );
     lastModified = QFileInfo( last ).lastModified();
     QApplication::restoreOverrideCursor();
     document()->setModified( false );
+    //m_completion->initParse("", true, false);
     return true;
 }
 //
@@ -850,15 +851,20 @@ void TextEdit::slotWordCompletion(QListWidgetItem *item)
 {
     m_completionList->hide();
     QString signature = item->text();
-    QString text = item->data(Qt::UserRole).toString();
+    Tag tag = item->data(Qt::UserRole).value<Tag>();
+    QString text = tag.name;
     wordUnderCursor(QPoint(), true);
-    textCursor().insertText( text + "()" );
-    if ( !signature.contains("()") )
-    {
-        QTextCursor cursor = textCursor();
-        cursor.movePosition(QTextCursor::PreviousCharacter);
-        setTextCursor( cursor );
-    }
+	textCursor().insertText( text );
+	if( tag.isFunction )
+	{
+	    textCursor().insertText( "()" );
+	    if ( !tag.signature.contains("()") )
+	    {
+	        QTextCursor cursor = textCursor();
+	        cursor.movePosition(QTextCursor::PreviousCharacter);
+	        setTextCursor( cursor );
+	    }
+	}
     ensureCursorVisible();
     setFocus( Qt::OtherFocusReason );
     return;
