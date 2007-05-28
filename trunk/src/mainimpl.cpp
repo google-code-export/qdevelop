@@ -100,6 +100,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_completion = 0;
     m_projectsDirectory = QDir::homePath();
     m_closeButtonInTabs = false;
+    m_assistant = 0;
     crossButton = 0;
     m_pluginsDirectory = "";
     //
@@ -230,7 +231,8 @@ void MainImpl::configureCompletion(QString projectDirectory)
 #endif
     }
     QStringList includes;
-    includes << QLibraryInfo::location( QLibraryInfo::HeadersPath ) << projectDirectory
+    includes << QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../include" ) << projectDirectory
+//    includes << QLibraryInfo::location( QLibraryInfo::HeadersPath ) << projectDirectory
 #ifdef WIN32
     << compilerInclude;
 #else
@@ -2354,5 +2356,3 @@ void MainImpl::slotConfigPlugin()
         iTextEdit->config();
 }
 //
-//
-

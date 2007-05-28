@@ -42,7 +42,7 @@ protected:
 private:
 	QProcess *process;
 	QTcpSocket *socket;
-	QString m_QTDIR;
+	QString m_location;
 	quint16 m_port;
     QString m_assistantName;
 signals:	
