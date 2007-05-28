@@ -27,6 +27,7 @@
 #include <QTextStream>
 #include <QtNetwork/QTcpSocket>
 #include <QLibraryInfo>
+#include <QDir>
 #include <QDebug>
 //
 Assistant::Assistant()
@@ -46,12 +47,7 @@ Assistant::~Assistant()
 void Assistant::showQtWord(QString className, QString word)
 {
 	QString lu;
-//#ifdef Q_WS_MAC
-    //QString assistant = QLibraryInfo::location( QLibraryInfo::BinariesPath )+ "/assistant.app";
-//#else
-    //QString assistant = QLibraryInfo::location( QLibraryInfo::BinariesPath )+ "/assistant";
-//#endif
-    QString doc = QLibraryInfo::location( QLibraryInfo::DocumentationPath )+ "/html/";
+    QString doc = QDir::cleanPath( QFileInfo(m_assistantName).absoluteDir().path()+"/../doc" ) + "/html/";
 	if ( process->state() == QProcess::NotRunning )
 	{
 		process->start(m_assistantName, QStringList() << "-server" );
