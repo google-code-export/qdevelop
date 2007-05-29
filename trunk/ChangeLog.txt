@@ -1,3 +1,17 @@
+May 29 2007 Version 0.23
+
+Corrections:
+- Prevents the opening of the same file in several tab.
+The code completion works now with the classes created in the project.
+When the IDE auto-completes some code, it also add the "()" after the cursor, and place the cursor in the best position
+possible.
+- Fix a problem with packaged versions of QDevelop. With these versions, the code completion did not work.
+
+Adds:
+- Add Portuguese translation thanks to Giuliano Santana
+- Add Vietnamese translation. Thanks to Chuong Nguyen
+- In subclassing, the code is now added in editor if the file is opened in tab (before, the code was added always in files on disk, even with the file opened).
+
 April 11 2007 Version 0.22
 
 Corrections:
