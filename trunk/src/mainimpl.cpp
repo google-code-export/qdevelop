@@ -31,6 +31,7 @@
 #include "shortcutsimpl.h"
 #include "projectmanager.h"
 #include "assistant.h"
+#include "designer.h"
 #include "optionsimpl.h"
 #include "newprojectimpl.h"
 #include "cpphighlighter.h"
@@ -68,7 +69,7 @@
 //
 
 #define PROJECT_NAME "QDevelop"
-#define VERSION "0.24-svn"
+#define VERSION "0.23"
 
 MainImpl::MainImpl(QWidget * parent)
         : QMainWindow(parent)
@@ -101,6 +102,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_projectsDirectory = QDir::homePath();
     m_closeButtonInTabs = false;
     m_assistant = 0;
+    m_designer = 0;
     crossButton = 0;
     m_pluginsDirectory = "";
     //
@@ -130,6 +132,7 @@ MainImpl::MainImpl(QWidget * parent)
     setCentralWidget( m_tabEditors );
     //
     m_assistant = new Assistant();
+    m_designer = new Designer();
     //
     treeFiles->setColumnCount(1);
     treeFiles->setHeaderLabels(QStringList(""));
@@ -982,6 +985,7 @@ void MainImpl::closeEvent( QCloseEvent * event )
     if ( slotCloseProject(true) )
     {
         delete m_assistant;
+        delete m_designer;
         event->accept();
     }
     else
@@ -1258,7 +1262,8 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     s = QDir::cleanPath( s );
     if ( Editor::shortFilename(s).section(".", -1, -1).toLower() == "ui" )
     {
-        QProcess::startDetached (m_designerName, QStringList(s));
+        //QProcess::startDetached (m_designerName, QStringList(s));
+        m_designer->openUI( s );
         QApplication::restoreOverrideCursor();
         return 0;
     }
@@ -2196,6 +2201,7 @@ void MainImpl::slotToolsControl(bool show)
     m_checkEnvironment = toolsControlImpl->checkEnvironment();
     m_checkEnvironmentOnStartup = toolsControlImpl->checkEnvOnStartup();
     m_assistant->setName( toolsControlImpl->assistantName() );
+    m_designer->setName( toolsControlImpl->designerName() );
     delete toolsControlImpl;
     treeClasses->setCtagsIsPresent( m_ctagsIsPresent );
     treeClasses->setCtagsName( m_ctagsName );
