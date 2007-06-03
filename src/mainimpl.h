@@ -37,6 +37,7 @@ class Build;
 class QComboBox;
 class ProjectManager;
 class Assistant;
+class Designer;
 class QActionGroup;
 class TabWidget;
 class FindFileImpl;
@@ -100,6 +101,7 @@ private:
 	bool m_clean;
 	bool m_build;
 	Assistant *m_assistant;
+	Designer *m_designer;
 	QFont m_font;
 	//QTimer *m_timer;
 	int m_tabStopWidth;

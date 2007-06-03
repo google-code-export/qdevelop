@@ -44,6 +44,7 @@ HEADERS +=   src/InitCompletion.h \
   src/build.h \
   src/cpphighlighter.h \
   src/debug.h \
+  src/designer.h \
   src/editor.h \
   src/findfileimpl.h \
   src/lineedit.h \
@@ -93,6 +94,7 @@ SOURCES +=   src/InitCompletion.cpp \
   src/build.cpp \
   src/cpphighlighter.cpp \
   src/debug.cpp \
+  src/designer.cpp \
   src/editor.cpp \
   src/findfileimpl.cpp \
   src/lineedit.cpp \
