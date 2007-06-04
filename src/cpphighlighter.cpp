@@ -158,7 +158,9 @@ void CppHighlighter::setupRegexTable()
              << "struct" << "switch" << "template" << "this" << "throw"
              << "true" << "try" << "typedef" << "typeid" << "typename"
              << "union" << "unsigned" << "using" << "virtual" << "void"
-             << "volatile" << "wchar_t" << "while";
+             << "volatile" << "wchar_t" << "while"
+             // BK - Added Qt keywords
+             << "slots" << "signals";
 
     item.regex = QRegExp("\\b[a-zA-Z_][a-zA-Z0-9_]+\\b");
     item.type = TEXT;

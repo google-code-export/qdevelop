@@ -426,7 +426,7 @@ void ProjectManager::loadProjectSettings()
     while (query.next())
     {
         QString projectName = query.value( 0 ).toString();
-    	QString projectDir = projectDirectory( projectName );
+        QString projectDir = projectDirectory( projectName );
         QString srcDir = query.value( 1 ).toString();
         srcDir = QDir( projectDir ).absoluteFilePath( srcDir );
         QString uiDir = query.value( 2 ).toString();
@@ -1322,6 +1322,12 @@ void ProjectManager::slotRenameItem(QTreeWidgetItem *it)
             insertFile(itProject, newName);
             m_parent->renameEditor(oldAbsolutePath, newAbsolutePath);
             m_isModifiedProject = true;
+            Editor *editor = 0;
+            for (int i=0; i<m_parent->tabEditors()->count(); i++)
+            {
+                editor = ((Editor *)m_parent->tabEditors()->widget(i));
+                editor->setNameOtherFile(oldAbsolutePath, newAbsolutePath);
+            }
         }
         else
         {

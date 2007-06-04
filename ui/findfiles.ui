@@ -1,7 +1,4 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>FindFile</class>
  <widget class="QDialog" name="FindFile" >
   <property name="geometry" >
@@ -9,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>396</width>
-    <height>245</height>
+    <height>194</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -280,7 +277,6 @@
    </item>
   </layout>
  </widget>
- <pixmapfunction></pixmapfunction>
  <resources/>
  <connections>
   <connection>

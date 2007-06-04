@@ -73,7 +73,7 @@ protected slots:
 	void slotOtherVariables(QStringList list);
 };
 //
-typedef struct Variable
+struct Variable
 {
 	Debug::Request kind;
 	QString name;

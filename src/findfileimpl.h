@@ -15,6 +15,8 @@ private slots:
 	void on_chooseDirectoryButton_clicked();
 	void on_findButton_clicked();
 	void find( QString directory );
+protected:
+	void showEvent(QShowEvent* _pEvent);
 private:
 	QWidget *m_parent;
 	QListWidget *m_listResult, *m_listLines;

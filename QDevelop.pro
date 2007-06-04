@@ -1,7 +1,7 @@
 CONFIG +=   qt \
-  release \
   uitools \
-  warn_on
+  warn_on \
+  release
 DESTDIR +=   bin
 FORMS +=   ui/about.ui \
   ui/addexistant.ui \
@@ -19,6 +19,7 @@ FORMS +=   ui/about.ui \
   ui/newimplementation.ui \
   ui/newproject.ui \
   ui/newvariable.ui \
+  ui/openfile.ui \
   ui/options.ui \
   ui/parameters.ui \
   ui/projectpropertie.ui \
@@ -52,6 +53,7 @@ HEADERS +=   src/InitCompletion.h \
   src/mainimpl.h \
   src/misc.h \
   src/newprojectimpl.h \
+  src/openfileimpl.h \
   src/optionsimpl.h \
   src/parametersimpl.h \
   src/pluginsinterfaces.h \
@@ -103,6 +105,7 @@ SOURCES +=   src/InitCompletion.cpp \
   src/mainimpl.cpp \
   src/misc.cpp \
   src/newprojectimpl.cpp \
+  src/openfileimpl.cpp \
   src/optionsimpl.cpp \
   src/parametersimpl.cpp \
   src/projectmanager.cpp \
