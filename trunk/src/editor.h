@@ -126,6 +126,7 @@ public:
 	bool inQuotations(int position, QString text);
     QString toPlainText() { return m_textEdit->toPlainText(); };
     void insertText(QString text, int insertAfterLine) { m_textEdit->insertText(text, insertAfterLine); };
+	void setNameOtherFile(QString oldName, QString newName);
 	//
 public slots:
 	void gotoLine( int line, bool moveTop);

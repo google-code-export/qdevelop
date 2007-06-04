@@ -711,3 +711,23 @@ void Editor::slotOtherFile()
     m_mainimpl->openFile( QStringList(m_nameOtherFile) );
 }
 //
+void Editor::setNameOtherFile(QString oldName, QString newName)
+{
+	/* When a file is renamed in files browser (by a right-click the "Rename..."), this function is called on
+	all editors to rename the other file.
+	*/
+	if( oldName != m_nameOtherFile )
+		return;
+    m_nameOtherFile = newName.mid(0, newName.lastIndexOf(".") );
+    if ( suffixe( newName ).toLower() == "h" )
+    {
+        m_otherFileButton->setToolTip( tr("Open")+" "+Editor::shortFilename(m_nameOtherFile)+".h" );
+    	m_nameOtherFile += ".h";
+   	}
+    else
+    {
+        m_otherFileButton->setToolTip( tr("Open")+" "+Editor::shortFilename(m_nameOtherFile)+".cpp" );
+    	m_nameOtherFile += ".cpp";
+   	}
+}
+//

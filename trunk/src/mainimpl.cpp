@@ -28,6 +28,7 @@
 #include "ui_warning.h"
 #include "parametersimpl.h"
 #include "findfileimpl.h"
+#include "openfileimpl.h"
 #include "shortcutsimpl.h"
 #include "projectmanager.h"
 #include "assistant.h"
@@ -69,7 +70,7 @@
 //
 
 #define PROJECT_NAME "QDevelop"
-#define VERSION "0.23"
+#define VERSION "0.24-svn"
 
 MainImpl::MainImpl(QWidget * parent)
         : QMainWindow(parent)
@@ -350,6 +351,7 @@ void MainImpl::createConnections()
     connect(actionNextBookmark, SIGNAL(triggered()), this, SLOT(slotNextBookmark()) );
     connect(actionPreviousBookmark, SIGNAL(triggered()), this, SLOT(slotPreviousBookmark()) );
     connect(actionClearAllBookmarks, SIGNAL(triggered()), this, SLOT(slotClearAllBookmarks()) );
+	connect(actionOpenFile, SIGNAL(triggered()), this, SLOT(slotOpenFile()) );
     //
     m_projectGroup = new QActionGroup( this );
     m_projectGroup->addAction( actionCloseProject );
@@ -507,21 +509,27 @@ void MainImpl::slotUncomment()
         editor->comment( TextEdit::Uncomment );
 }
 //
-//
 void MainImpl::slotPreviousTab()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i-1 ));
-    if ( editor  )
-        m_tabEditors->setCurrentWidget( editor );
+	if ( 0 < m_tabEditors->count() )
+	{
+	    int i = m_tabEditors->currentIndex()-1;
+	    Editor *editor = ((Editor*)m_tabEditors->widget( 0>i?m_tabEditors->count()-1:i ));
+		
+	    if ( editor  )
+	        m_tabEditors->setCurrentWidget( editor );		
+	}
 }
 //
 void MainImpl::slotNextTab()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i+1 ));
-    if ( editor  )
-        m_tabEditors->setCurrentWidget( editor );
+	if ( 0 < m_tabEditors->count() )
+	{
+	    int i = (m_tabEditors->currentIndex()+1)%m_tabEditors->count();
+	    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    	if ( editor  )
+    	    m_tabEditors->setCurrentWidget( editor );
+	}
 }
 //
 void MainImpl::slotParameters()
@@ -1162,7 +1170,7 @@ void MainImpl::slotSaveFileAs()
 
     if ( s.isEmpty() )
     {
-        // Le bouton Annuler a ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½cliquÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½
+        // Le bouton Annuler a ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½cliquÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½
         return;
     }
     editor->setFilename( s );
@@ -2176,9 +2184,17 @@ void MainImpl::slotFindInFiles()
         }
         m_findInFiles = new FindFileImpl(this, directories, findFiles, findLines);
     }
+    else
+    {
+    	// BK - allow find in files dialog to be moved around
+    	// and on signal set the focus.
+	    QRect rect = m_findInFiles->geometry();
+	    m_findInFiles->hide();
+	    m_findInFiles->setGeometry(rect);
+   	}
     dockOutputs->setVisible(true);
     tabOutputs->setCurrentIndex( 2 );
-    m_findInFiles->exec();
+    m_findInFiles->show();
     // Not delete dialog to save options, location and pattern on next showing.
 }
 //
@@ -2264,6 +2280,12 @@ void MainImpl::slotRemoveDebugVariable()
     for (int i=0; i < tableOtherVariables->rowCount(); i++)
         list << tableOtherVariables->item(i, 0)->text();
     emit otherVariables(list);
+}
+//
+void MainImpl::slotOpenFile()
+{
+	OpenFileImpl dialog(this, m_projectManager, this);
+	dialog.exec();
 }
 //
 void MainImpl::loadPlugins()

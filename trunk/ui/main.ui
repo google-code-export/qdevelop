@@ -39,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>686</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu" >
@@ -92,17 +92,6 @@
     <addaction name="separator" />
     <addaction name="actionCompile" />
    </widget>
-   <widget class="QMenu" name="menuBookmarks" >
-    <property name="title" >
-     <string>Bookmarks</string>
-    </property>
-    <addaction name="actionToggleBookmark" />
-    <addaction name="actionNextBookmark" />
-    <addaction name="actionPreviousBookmark" />
-    <addaction name="separator" />
-    <addaction name="actionClearAllBookmarks" />
-    <addaction name="separator" />
-   </widget>
    <widget class="QMenu" name="menu_Edit" >
     <property name="title" >
      <string>&amp;Edit</string>
@@ -138,22 +127,6 @@
      <string>Plugins</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuTools" >
-    <property name="title" >
-     <string>Tools</string>
-    </property>
-    <widget class="QMenu" name="menuPluginsSettings" >
-     <property name="title" >
-      <string>Plugins settings</string>
-     </property>
-    </widget>
-    <addaction name="actionFindInFiles" />
-    <addaction name="separator" />
-    <addaction name="actionOptions" />
-    <addaction name="actionExternalTools" />
-    <addaction name="actionConfigureShortcuts" />
-    <addaction name="menuPluginsSettings" />
-   </widget>
    <widget class="QMenu" name="menuView" >
     <property name="title" >
      <string>&amp;View</string>
@@ -164,6 +137,58 @@
      </property>
     </widget>
     <addaction name="menuToolbar" />
+   </widget>
+   <widget class="QMenu" name="menu_File" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <widget class="QMenu" name="menuLastsFiles" >
+     <property name="title" >
+      <string>Last Files</string>
+     </property>
+    </widget>
+    <addaction name="actionNewFile" />
+    <addaction name="actionOpen" />
+    <addaction name="separator" />
+    <addaction name="actionSaveFile" />
+    <addaction name="actionSaveFileAs" />
+    <addaction name="separator" />
+    <addaction name="actionSaveAll" />
+    <addaction name="actionCloseAllFiles" />
+    <addaction name="separator" />
+    <addaction name="actionPrint" />
+    <addaction name="separator" />
+    <addaction name="menuLastsFiles" />
+    <addaction name="separator" />
+    <addaction name="actionQuit" />
+   </widget>
+   <widget class="QMenu" name="menuTools" >
+    <property name="title" >
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuPluginsSettings" >
+     <property name="title" >
+      <string>Plugins settings</string>
+     </property>
+    </widget>
+    <addaction name="actionFindInFiles" />
+    <addaction name="actionOpenFile" />
+    <addaction name="separator" />
+    <addaction name="actionOptions" />
+    <addaction name="actionExternalTools" />
+    <addaction name="actionConfigureShortcuts" />
+    <addaction name="menuPluginsSettings" />
+   </widget>
+   <widget class="QMenu" name="menuBookmarks" >
+    <property name="title" >
+     <string>Bookmarks</string>
+    </property>
+    <addaction name="actionToggleBookmark" />
+    <addaction name="actionNextBookmark" />
+    <addaction name="actionPreviousBookmark" />
+    <addaction name="separator" />
+    <addaction name="actionClearAllBookmarks" />
+    <addaction name="separator" />
    </widget>
    <widget class="QMenu" name="menuProject" >
     <property name="enabled" >
@@ -190,30 +215,6 @@
     <addaction name="actionAddExistingFiles" />
     <addaction name="separator" />
     <addaction name="actionProjectPropertie" />
-   </widget>
-   <widget class="QMenu" name="menu_File" >
-    <property name="title" >
-     <string>&amp;File</string>
-    </property>
-    <widget class="QMenu" name="menuLastsFiles" >
-     <property name="title" >
-      <string>Last Files</string>
-     </property>
-    </widget>
-    <addaction name="actionNewFile" />
-    <addaction name="actionOpen" />
-    <addaction name="separator" />
-    <addaction name="actionSaveFile" />
-    <addaction name="actionSaveFileAs" />
-    <addaction name="separator" />
-    <addaction name="actionSaveAll" />
-    <addaction name="actionCloseAllFiles" />
-    <addaction name="separator" />
-    <addaction name="actionPrint" />
-    <addaction name="separator" />
-    <addaction name="menuLastsFiles" />
-    <addaction name="separator" />
-    <addaction name="actionQuit" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -265,7 +266,7 @@
         </sizepolicy>
        </property>
        <property name="currentIndex" >
-        <number>0</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="tabBuild" >
         <attribute name="title" >
@@ -287,6 +288,11 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Lucida Console</family>
+            </font>
            </property>
            <property name="selectionMode" >
             <enum>QAbstractItemView::SingleSelection</enum>
@@ -340,6 +346,11 @@
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
+               </property>
+               <property name="font" >
+                <font>
+                 <family>Lucida Console</family>
+                </font>
                </property>
                <property name="toolTip" >
                 <string/>
@@ -526,8 +537,20 @@
            <property name="orientation" >
             <enum>Qt::Horizontal</enum>
            </property>
-           <widget class="QListWidget" name="findFiles" />
-           <widget class="QListWidget" name="findLines" />
+           <widget class="QListWidget" name="findFiles" >
+            <property name="font" >
+             <font>
+              <family>Lucida Console</family>
+             </font>
+            </property>
+           </widget>
+           <widget class="QListWidget" name="findLines" >
+            <property name="font" >
+             <font>
+              <family>Lucida Console</family>
+             </font>
+            </property>
+           </widget>
           </widget>
          </item>
         </layout>
@@ -915,7 +938,7 @@
     <string>Find in Files...</string>
    </property>
    <property name="shortcut" >
-    <string>Ctrl+Alt+F</string>
+    <string>Ctrl+Shift+F</string>
    </property>
   </action>
   <action name="actionAddNewItem" >
@@ -1445,6 +1468,14 @@
    </property>
    <property name="text" >
     <string>&amp;Print...</string>
+   </property>
+  </action>
+  <action name="actionOpenFile" >
+   <property name="text" >
+    <string>Open File in project...</string>
+   </property>
+   <property name="shortcut" >
+    <string>Alt+Shift+O</string>
    </property>
   </action>
  </widget>
