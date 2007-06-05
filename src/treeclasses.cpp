@@ -819,3 +819,21 @@ QStringList TreeClasses::methods(QString filename, QString classname)
     return listMethods;
 }
 //
+QList<ParsedItem> TreeClasses::treeClassesItems(QString classname)
+{
+    QList<ParsedItem> list;
+	QTreeWidgetItem *parent = findItem(0, classname, "class:"+classname, false);
+	if( parent )
+	{
+        ParsedItem parsedItem = parent->data(0, Qt::UserRole).value<ParsedItem>();
+		list << parsedItem;
+		for(int i=0; i<parent->childCount(); i++)
+		{
+			QTreeWidgetItem *childItem = parent->child( i );
+	        ParsedItem parsedItem = childItem->data(0, Qt::UserRole).value<ParsedItem>();
+			list << parsedItem;
+		}
+	}
+	return list;
+}
+//

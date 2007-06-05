@@ -74,6 +74,7 @@ public:
 	void toggleBookmark(Editor *editor, QString text, bool activate, QTextBlock block);
 	QMenu *bookmarksMenu() { return menuBookmarks; };
 	QList<ParsedItem> treeClassesItems() { return treeClasses->treeClassesItems(); };
+	QList<ParsedItem> treeClassesItems(QString classname) { return treeClasses->treeClassesItems(classname); };
 	void loadPlugins();
 	void renameEditor(QString oldName, QString newName);
 private:

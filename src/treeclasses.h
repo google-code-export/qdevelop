@@ -77,6 +77,7 @@ public:
 	void fromDB(QString projectDirectory);
 	void setCtagsName(QString s) { m_ctagsName=s;};
 	QList<ParsedItem> treeClassesItems() { return m_treeClassesItems; };
+	QList<ParsedItem> treeClassesItems(QString classname);
 	QString signature(QString line);
     QStringList methods(QString filename, QString classname);
 protected:

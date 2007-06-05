@@ -57,8 +57,7 @@ public:
     void setExecutedLine(int line);
     void selectLines(int debut, int fin);
     QString wordUnderCursor(const QPoint & pos=QPoint(), bool select=false);
-    QString classNameUnderCursor();
-    QString methodeMotSousCurseur();
+    QString classNameUnderCursor(const QPoint & pos=QPoint());
     void activateLineNumbers(bool activate);
     void setSelectionBorder(bool activate);
     void setSyntaxHighlight(bool activate );
@@ -122,6 +121,8 @@ private slots:
     void slotCompletionList(TagList TagList);
     void slotToggleBreakpoint();
     void slotToggleBookmark();
+    void slotGotoImplementation();
+    void slotGotoDeclaration();
 private:
     QString m_plainText;
     long m_matchingBegin;
