@@ -27,6 +27,8 @@
 #include "cpphighlighter.h"
 #include "ui_gotoline.h"
 #include "pluginsinterfaces.h"
+#include "treeclasses.h"
+#include "InitCompletion.h"
 //
 #include <QTextCursor>
 #include <QDialog>
@@ -137,6 +139,10 @@ void TextEdit::completeCode()
         m_completion->wait();
     }
     QString c = m_plainText.left(textCursor().position());
+    if( c.simplified().right(2) != "::" && c.simplified().right(2) != "->" && c.simplified().right(1) != "." && c.simplified().right(1) != "(" )
+    {
+    	c += "this->";
+   	}
     m_completion->initParse(c, true);
     m_completion->start();
 }
@@ -1189,6 +1195,29 @@ void TextEdit::contextMenuEvent(QContextMenuEvent * e)
     connect(menu->addAction(QIcon(":/divers/images/bookmark.png"), tr("Toggle Bookmark")), SIGNAL(triggered()), this, SLOT(slotToggleBookmark()) );
     connect(menu->addAction(QIcon(":/divers/images/pointArret.png"), tr("Toggle Breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
     //
+    QString classname = classNameUnderCursor(mousePosition);
+    QString name = wordUnderCursor(mousePosition);
+    if( !classname.isEmpty() && !name.isEmpty() )
+    {
+	    QList<ParsedItem> itemsList = m_mainImpl->treeClassesItems(classname);
+	    foreach(ParsedItem parsedItem, itemsList)
+	    {
+	    	if( parsedItem.classname == classname && parsedItem.name == name)
+	    	{
+	    		menu->addSeparator();
+	    		if( !parsedItem.implementation.isEmpty() && parsedItem.implementation.contains("|") )
+	    		{
+	    			connect(menu->addAction(QIcon(":/treeview/images/cpp.png"), tr("Goto Implementation")), SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
+	   			}
+	    		if( !parsedItem.declaration.isEmpty() && parsedItem.declaration.contains("|") )
+	    		{
+	    			connect(menu->addAction(QIcon(":/treeview/images/h.png"), tr("Goto Declaration")), SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
+	   			}
+	   			break;
+	   		}
+	   	}
+   	}
+    //
     menu->exec(e->globalPos());
     delete menu;
 }
@@ -1233,59 +1262,21 @@ QString TextEdit::wordUnderCursor(const QPoint & pos, bool select)
     return word;
 }
 //
-QString TextEdit::classNameUnderCursor()
+QString TextEdit::classNameUnderCursor(const QPoint & pos)
 {
-    QString c = m_plainText.left(textCursor().position());
-    return m_completion->className(c);
-}
-//
-QString TextEdit::methodeMotSousCurseur()
-{
-    QString contenu, retour="";
-    int posDebut = 0;
-    QTextCursor sauveCurseur = textCursor();
-    int posScrollBar = verticalScrollBar()->value();
-    int positionMot = textCursor().block().position();
-    //
-    QTextCursor c = textCursor();
-    c.movePosition(QTextCursor::Start);
-    setTextCursor( c );
-    //
-    foreach(QString nomClasse, m_editor->classes() )
+    QTextCursor cursor;
+    if ( pos.isNull() )
+        cursor = textCursor();
+    else
+        cursor = cursorForPosition ( pos );
+    QString c = m_plainText.left(cursor.position());
+    QString classname = m_completion->className(c);
+    if( classname.isEmpty() )
     {
-        foreach(QString nomMethode, m_editor->methodes( nomClasse ) )
-        {
-            gotoLine( 1, false );
-            bool trouve = find (nomMethode);
-            if ( trouve )
-            {
-                contenu = "";
-                posDebut = textCursor().block().position();
-                int nbAccolades = -1;
-                QTextBlock block;
-                for ( block = textCursor().block(); block.isValid() && nbAccolades; block = block.next() )
-                {
-                    contenu += block.text() + "\n";
-                    if ( block.text().contains("{") )
-                        if ( nbAccolades == -1 )
-                            nbAccolades = 1;
-                        else
-                            nbAccolades++;
-                    if ( block.text().contains("}") )
-                        nbAccolades--;
-                }
-                if ( posDebut <= positionMot && positionMot <= block.position() )
-                {
-                    retour = contenu;
-                    break;
-                }
-            }
-        }
-    }
-    //
-    setTextCursor( sauveCurseur );
-    verticalScrollBar()->setValue(posScrollBar);
-    return retour;
+    	c += " this->";
+    	classname = m_completion->className(c);
+   	}
+    return classname;
 }
 //
 int TextEdit::currentLineNumber()
@@ -1373,3 +1364,46 @@ void TextEdit::insertText(QString text, int insertAfterLine)
         textCursor().insertText( text );
     }
 }
+//
+void TextEdit::slotGotoImplementation()
+{
+    QString classname = classNameUnderCursor(mousePosition);
+    QString name = wordUnderCursor(mousePosition);
+    QList<ParsedItem> itemsList = m_mainImpl->treeClassesItems();
+    foreach(ParsedItem parsedItem, itemsList)
+    {
+    	if( parsedItem.classname == classname && parsedItem.name == name)
+    	{
+    		if( !parsedItem.implementation.isEmpty() )
+    		{
+			    QString s = parsedItem.implementation;
+			    QString filename = s.section("|", 0, 0);
+			    int numLine = s.section("|", -1, -1).toInt();
+			    m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
+			    break;
+   			}
+   		}
+   	}
+}
+//
+void TextEdit::slotGotoDeclaration()
+{
+    QString classname = classNameUnderCursor(mousePosition);
+    QString name = wordUnderCursor(mousePosition);
+    QList<ParsedItem> itemsList = m_mainImpl->treeClassesItems();
+    foreach(ParsedItem parsedItem, itemsList)
+    {
+    	if( parsedItem.classname == classname && parsedItem.name == name)
+    	{
+    		if( !parsedItem.declaration.isEmpty() )
+    		{
+			    QString s = parsedItem.declaration;
+			    QString filename = s.section("|", 0, 0);
+			    int numLine = s.section("|", -1, -1).toInt();
+			    m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
+			    break;
+   			}
+   		}
+   	}
+}
+//
