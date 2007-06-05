@@ -21,6 +21,9 @@
 PROJECT(QDevelop)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
+# verbose - off
+#SET( CMAKE_VERBOSE_MAKEFILE  ON )
+
 # input files
 SET( qdevelop_UIS
 	ui/about.ui 
@@ -40,6 +43,7 @@ SET( qdevelop_UIS
 	ui/newproject.ui
 	ui/newvariable.ui
 	ui/options.ui
+	ui/openfile.ui
 	ui/parameters.ui
 	ui/projectpropertie.ui
 	ui/promptreplace.ui
@@ -67,6 +71,7 @@ SET( qdevelop_SRCS
 	src/build.cpp
 	src/cpphighlighter.cpp
 	src/debug.cpp
+	src/designer.cpp
 	src/editor.cpp
 	src/findfileimpl.cpp
 	src/lineedit.cpp
@@ -76,6 +81,7 @@ SET( qdevelop_SRCS
 	src/misc.cpp
 	src/newprojectimpl.cpp
 	src/optionsimpl.cpp
+	src/openfileimpl.cpp 
 	src/parametersimpl.cpp
 	src/projectmanager.cpp
 	src/projectpropertieimpl.cpp
@@ -109,6 +115,7 @@ SET( qdevelop_MOC_HDRS
 	src/mainimpl.h
 	src/newprojectimpl.h
 	src/optionsimpl.h
+	src/openfileimpl.h
 	src/parametersimpl.h
 	src/projectmanager.h
 	src/projectpropertieimpl.h
@@ -132,8 +139,6 @@ SET( qdevelop_RESOUCES
 	resources/resources.qrc
 )
 
-# verbose - on
-# SET( CMAKE_VERBOSE_MAKEFILE  ON )
 
 FIND_PACKAGE( Qt4 REQUIRED )
 INCLUDE(${QT_USE_FILE})
@@ -177,12 +182,8 @@ ADD_EXECUTABLE(QDevelop
 )
 
 # libraries to be linked to the project
-IF (WIN32)
-	SET( QT_UITOOLSLIB   ${QT_QTUITOOLS_LIBRARY_RELEASE} )
-ELSE (WIN32)
-# 	SET( QT_UITOOLSLIB   QtUiTools )
-	SET( QT_UITOOLSLIB   ${QT_QTUITOOLS_LIBRARY_RELEASE} )
-ENDIF (WIN32)
+#SET( QT_UITOOLSLIB   ${QT_QTUITOOLS_LIBRARY_RELEASE} )
+SET( QT_UITOOLSLIB   QtUiTools QtDesigner  )
 
 TARGET_LINK_LIBRARIES(QDevelop
 	${QT_UITOOLSLIB} 
