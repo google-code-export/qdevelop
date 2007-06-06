@@ -77,6 +77,7 @@ public:
 	QList<ParsedItem> treeClassesItems(QString classname) { return treeClasses->treeClassesItems(classname); };
 	void loadPlugins();
 	void renameEditor(QString oldName, QString newName);
+	void configureCompletion(QString projectDirectory);
 private:
 	// Functions
 	void createConnections();
@@ -88,7 +89,6 @@ private:
 	void saveINI();
 	void setCrossButton(bool activate);
 	bool modifiedEditors();
-	void configureCompletion(QString projectDirectory);
 	// Objects and Variables
 	enum ExecuteVersion { ExecuteNone, ExecuteRelease, ExecuteDebug};
 	Build *m_builder;
@@ -130,6 +130,7 @@ private:
 	bool m_autobrackets;
 	bool m_match;
 	bool m_ctagsIsPresent;
+	bool m_configureCompletionNeeded;
 	QColor m_backgroundColor;
 	QColor m_currentLineColor;
 	QColor m_matchingColor;

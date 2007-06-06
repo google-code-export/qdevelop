@@ -106,6 +106,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_designer = 0;
     crossButton = 0;
     m_pluginsDirectory = "";
+    m_configureCompletionNeeded = false;
     //
     m_formatPreprocessorText.setForeground(QColor(0,128,0));
     m_formatQtText.setForeground(Qt::blue);
@@ -212,9 +213,6 @@ void MainImpl::renameEditor(QString oldName, QString newName)
 //
 void MainImpl::configureCompletion(QString projectDirectory)
 {
-    if ( m_completion )
-        delete m_completion;
-    m_completion = new InitCompletion (this);
     QString QTDIR;
     QString compilerInclude = "/usr/include";
     QStringList env = QProcess::systemEnvironment();
@@ -236,7 +234,6 @@ void MainImpl::configureCompletion(QString projectDirectory)
     }
     QStringList includes;
     includes << QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../include" ) << projectDirectory
-//    includes << QLibraryInfo::location( QLibraryInfo::HeadersPath ) << projectDirectory
 #ifdef WIN32
     << compilerInclude;
 #else
@@ -247,6 +244,7 @@ void MainImpl::configureCompletion(QString projectDirectory)
     m_completion->addIncludes( includes );
     m_completion->initParse("", true, false);
     m_completion->start();
+    m_configureCompletionNeeded = false;
 }
 //
 void MainImpl::setCrossButton(bool activate)
@@ -1085,6 +1083,9 @@ bool MainImpl::openProject(QString s)
     }
     if ( !slotCloseProject() )
         return false;
+    if ( m_completion )
+        delete m_completion;
+    m_completion = new InitCompletion (this);
     configureCompletion( QFileInfo(s).absoluteDir().path() );
     m_projectManager = new ProjectManager(this, treeFiles, treeClasses, s);
     treeFiles->setProjectManager( m_projectManager );
@@ -1129,7 +1130,7 @@ bool MainImpl::slotCloseProject(bool hide)
 //
 void MainImpl::slotDoubleClickTreeFiles(QTreeWidgetItem *item, int)
 {
-    if ( item->childCount() > 0 ) // Pas ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½itable
+    if ( item->childCount() > 0 ) 
         return;
     QString filename = item->text(0);
     QString projectName = m_projectManager->projectFilename( item );
@@ -1507,6 +1508,7 @@ void MainImpl::slotCompile()
 //
 void MainImpl::slotBuild(bool clean, bool build)
 {
+	bool qmakeNeeded = false;
     if (!m_projectManager)
     {
         return;
@@ -1519,6 +1521,7 @@ void MainImpl::slotBuild(bool clean, bool build)
     if ( actionDebug->text() == tr("Stop") && !slotDebug())
         return;
     m_buildAfterDebug = false;
+	qmakeNeeded = m_projectManager->isModifiedProject();
     if ( m_projectsDirectoriesList.count() == 0 )
     {
         actionBuild->setEnabled( false );
@@ -1540,8 +1543,11 @@ void MainImpl::slotBuild(bool clean, bool build)
     QString projectName = m_projectManager->projectName( repProjet );
 
     QString makefilePath = repProjet + "/Makefile";
-    bool qmakeNeeded = !QFile::exists(makefilePath);
-
+    qmakeNeeded = qmakeNeeded || !QFile::exists(makefilePath);
+    if( qmakeNeeded )
+    {
+    	m_configureCompletionNeeded = true;
+   	}
     m_builder = new Build(this, m_qmakeName, m_makeName, repProjet, qmakeNeeded|m_clean, m_clean, m_build);
 
     connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
@@ -1559,6 +1565,8 @@ void MainImpl::slotStopBuild()
 //
 void MainImpl::slotEndBuild()
 {
+    if( m_configureCompletionNeeded )
+    	configureCompletion(m_projectsDirectoriesList.first());
     m_projectsDirectoriesList.removeFirst();
     if ( m_projectsDirectoriesList.count() )
         slotBuild();
