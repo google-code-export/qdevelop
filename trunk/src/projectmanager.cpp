@@ -535,6 +535,7 @@ void ProjectManager::slotAddExistingFiles(QTreeWidgetItem *it)
         filename = QDir(projectDir).relativeFilePath(filename).replace("\\", "/");
         insertFile(item, filename);
     }
+    m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
 }
 //
 void ProjectManager::slotAddNewClass(QTreeWidgetItem *it)
@@ -612,6 +613,7 @@ void ProjectManager::slotAddNewClass(QTreeWidgetItem *it)
     if ( window->exec() == QDialog::Accepted )
         m_isModifiedProject = true;
     delete window;
+    m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
 }
 //
 void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
@@ -800,6 +802,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
         insertFile(item, filename);
     }
     m_isModifiedProject = true;
+    m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
 }
 //
 bool ProjectManager::listContains(QList<QTreeWidgetItem *>list, QString name, findMode type)
@@ -986,6 +989,7 @@ void ProjectManager::slotAddSubProject(QTreeWidgetItem *it)
     }
     else
         delete window;
+    m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
 }
 //
 void ProjectManager::slotProjectPropertie(QTreeWidgetItem *it)
@@ -1283,6 +1287,7 @@ void ProjectManager::slotSubclassing(QTreeWidgetItem *it)
         insertFile(it, filename, true);
     }
     delete dialog;
+    m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
 }
 //
 void ProjectManager::slotRenameItem(QTreeWidgetItem *it)
@@ -1335,6 +1340,7 @@ void ProjectManager::slotRenameItem(QTreeWidgetItem *it)
             return;
         }
     }
+    m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
 }
 //
 void ProjectManager::slotDeleteItem(QTreeWidgetItem *it, bool silentMode)
@@ -1403,6 +1409,7 @@ void ProjectManager::slotDeleteItem(QTreeWidgetItem *it, bool silentMode)
             insertItem(itTemplate, "DATA", "app" );
         }
     }
+    m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
 }
 //
 
