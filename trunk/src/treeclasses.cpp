@@ -48,15 +48,17 @@ TreeClasses::TreeClasses(QWidget * parent)
         : QTreeWidget(parent)
 {
     header()->hide();
+    m_treeClassesItems = new QList<ParsedItem>();
 }
 //
 TreeClasses::~TreeClasses()
-{}
+{
+	delete m_treeClassesItems;
+}
 //
 void TreeClasses::clear()
 {
     QTreeWidget::clear();
-    //m_parsedItemsList.clear();
 }
 //
 void TreeClasses::updateClasses(QString filename, QString buffer, QStringList parents, QString ext)
@@ -169,7 +171,7 @@ void TreeClasses::slotParseCtags()
         m_listDeletion.clear();
         setItemExpanded(topLevelItem(0), true );
         sortItems(0, Qt::AscendingOrder);
-        m_treeClassesItems.clear();
+        m_treeClassesItems->clear();
         setSortingSymbols(topLevelItem(0), false, QString(), QString(), QStringList());
     }
 }
@@ -288,7 +290,7 @@ void TreeClasses::parse(ParsedItem parsedItem)
 void TreeClasses::setSortingSymbols(QTreeWidgetItem *it, bool active, QString filename, QString ext, QStringList parents)
 {
     ParsedItem parsedItem = it->data(0, Qt::UserRole).value<ParsedItem>();
-    m_treeClassesItems.append( parsedItem );
+    m_treeClassesItems->append( parsedItem );
     if ( active )
     {
         it->setText(0, markForSorting(parsedItem.kind, it->text(0)) );
@@ -594,7 +596,7 @@ void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSq
 //
 void TreeClasses::fromDB(QString projectDirectory)
 {
-    m_treeClassesItems.clear();
+    m_treeClassesItems->clear();
     connectDB(projectDirectory+"/qdevelop-settings.db");
     QSqlQuery query;
     query.exec("BEGIN TRANSACTION;");
@@ -623,7 +625,7 @@ void TreeClasses::fromDB(QString projectDirectory)
         parsedItem.signature = query.value(14).toString().replace("$", "'");
         parsedItem.kind = query.value(15).toString().replace("$", "'");
         createItemFromDB(topLevelItem(0), text, tooltip, parents, parsedItem);
-        m_treeClassesItems.append( parsedItem );
+        m_treeClassesItems->append( parsedItem );
     }
     query.exec("END TRANSACTION;");
     //db.close();
@@ -798,10 +800,12 @@ void TreeClasses::slotAddGetSetMethod()
 QStringList TreeClasses::methods(QString filename, QString classname)
 {
     QStringList listMethods;
-    QList<ParsedItem> list;
+    const QList<ParsedItem> *list;
     list = treeClassesItems();
-    foreach( ParsedItem parsedItem, list )
+    //foreach( ParsedItem parsedItem, list )
+    for (int i = 0; i < list->size(); ++i)
     {
+    	ParsedItem parsedItem = list->at( i );
         if ( ( parsedItem.kind == "p" || parsedItem.kind == "f" )
                 && parsedItem.declaration.section("|", 0, 0) == filename )
         {
@@ -819,21 +823,20 @@ QStringList TreeClasses::methods(QString filename, QString classname)
     return listMethods;
 }
 //
-QList<ParsedItem> TreeClasses::treeClassesItems(QString classname)
+/*const QList<ParsedItem> *TreeClasses::treeClassesItems(QString classname)
 {
-    QList<ParsedItem> list;
 	QTreeWidgetItem *parent = findItem(0, classname, "class:"+classname, false);
 	if( parent )
 	{
         ParsedItem parsedItem = parent->data(0, Qt::UserRole).value<ParsedItem>();
-		list << parsedItem;
+		list->append( parsedItem );
 		for(int i=0; i<parent->childCount(); i++)
 		{
 			QTreeWidgetItem *childItem = parent->child( i );
 	        ParsedItem parsedItem = childItem->data(0, Qt::UserRole).value<ParsedItem>();
-			list << parsedItem;
+			list->append( parsedItem );
 		}
 	}
 	return list;
-}
+}*/
 //

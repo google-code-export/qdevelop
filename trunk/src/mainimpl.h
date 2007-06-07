@@ -73,8 +73,8 @@ public:
 	bool showTreeClasses() { return m_showTreeClasses; };
 	void toggleBookmark(Editor *editor, QString text, bool activate, QTextBlock block);
 	QMenu *bookmarksMenu() { return menuBookmarks; };
-	QList<ParsedItem> treeClassesItems() { return treeClasses->treeClassesItems(); };
-	QList<ParsedItem> treeClassesItems(QString classname) { return treeClasses->treeClassesItems(classname); };
+	const QList<ParsedItem> *treeClassesItems() { return treeClasses->treeClassesItems(); };
+	//const QList<ParsedItem> *treeClassesItems(QString classname) { return treeClasses->treeClassesItems(classname); };
 	void loadPlugins();
 	void renameEditor(QString oldName, QString newName);
 	void configureCompletion(QString projectDirectory);
@@ -227,6 +227,8 @@ private slots:
 	void slotConfigPlugin();
     void slotPrint();
 	void slotOpenFile();
+	void slotGotoDeclaration();
+	void slotGotoImplementation();
 public slots:
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);
 	bool slotCloseAllFiles();

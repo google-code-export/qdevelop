@@ -320,6 +320,8 @@ void MainImpl::createConnections()
     connect(addDebugVariable, SIGNAL(clicked()), this, SLOT(slotAddDebugVariable()) );
     connect(removeDebugVariable, SIGNAL(clicked()), this, SLOT(slotRemoveDebugVariable()) );
     connect(actionPrint, SIGNAL(triggered()), this, SLOT(slotPrint()) );
+    connect(actionGotoDeclaration, SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
+    connect(actionGotoImplementation, SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
     //
     connect(actionExternalTools, SIGNAL(triggered()), this, SLOT(slotToolsControl()) );
     connect(actionCloseCurrentEditor, SIGNAL(triggered()), this, SLOT(slotCloseCurrentTab()) );
@@ -489,6 +491,22 @@ void MainImpl::slotComment()
     Editor *editor = ((Editor*)m_tabEditors->widget( i ));
     if ( editor  )
         editor->comment( TextEdit::Comment );
+}
+//
+void MainImpl::slotGotoImplementation()
+{
+    int i = m_tabEditors->currentIndex();
+    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    if ( editor  )
+        editor->gotoImplementation();
+}
+//
+void MainImpl::slotGotoDeclaration()
+{
+    int i = m_tabEditors->currentIndex();
+    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    if ( editor  )
+        editor->gotoDeclaration();
 }
 //
 void MainImpl::slotGotoMatchingBracket()
@@ -1171,7 +1189,6 @@ void MainImpl::slotSaveFileAs()
 
     if ( s.isEmpty() )
     {
-        // Le bouton Annuler a ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½cliquÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¿ÃÂÃÂÃÂÃÂÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ½
         return;
     }
     editor->setFilename( s );

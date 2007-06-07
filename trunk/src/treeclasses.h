@@ -76,15 +76,15 @@ public:
 	void toDB(QString projectDirectory);
 	void fromDB(QString projectDirectory);
 	void setCtagsName(QString s) { m_ctagsName=s;};
-	QList<ParsedItem> treeClassesItems() { return m_treeClassesItems; };
-	QList<ParsedItem> treeClassesItems(QString classname);
+	const QList<ParsedItem> *treeClassesItems() { return m_treeClassesItems; };
+	//const QList<ParsedItem> *treeClassesItems(QString classname);
 	QString signature(QString line);
     QStringList methods(QString filename, QString classname);
 protected:
 	void mousePressEvent( QMouseEvent * event );
 	void mouseDoubleClickEvent ( QMouseEvent * event );
 private:
-	QList<ParsedItem> m_treeClassesItems;
+	QList<ParsedItem> *m_treeClassesItems;
 	QTreeWidgetItem *m_itemClicked;
 	QList<QTreeWidgetItem *> m_listDeletion;
 	QTreeWidgetItem *findItem(const QTreeWidgetItem *begin, const QString text, const QString key, const bool recursive);

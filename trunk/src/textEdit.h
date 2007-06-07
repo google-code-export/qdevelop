@@ -57,7 +57,7 @@ public:
     void setExecutedLine(int line);
     void selectLines(int debut, int fin);
     QString wordUnderCursor(const QPoint & pos=QPoint(), bool select=false);
-    QString classNameUnderCursor(const QPoint & pos=QPoint());
+    QString classNameUnderCursor(const QPoint & pos=QPoint(), bool addThis=true);
     void activateLineNumbers(bool activate);
     void setSelectionBorder(bool activate);
     void setSyntaxHighlight(bool activate );
@@ -113,6 +113,8 @@ public slots:
     void slotIndent(bool indent=true);
     void slotUnindent();
     void comment(ActionComment action);
+    void slotGotoImplementation();
+    void slotGotoDeclaration();
 private slots:
     void slotAdjustSize();
     void slotWordCompletion(QListWidgetItem *item);
@@ -121,8 +123,6 @@ private slots:
     void slotCompletionList(TagList TagList);
     void slotToggleBreakpoint();
     void slotToggleBookmark();
-    void slotGotoImplementation();
-    void slotGotoDeclaration();
 private:
     QString m_plainText;
     long m_matchingBegin;

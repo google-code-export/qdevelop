@@ -287,6 +287,8 @@ bool Editor::open(bool silentMode)
 bool Editor::close()
 {
     bool ret = m_textEdit->close( m_filename );
+    if( ret )
+    	clearAllBookmarks();
     return ret;
 }
 //
@@ -382,14 +384,15 @@ QStringList Editor::methodes(QString classe)
 void Editor::slotClassesMethodsList()
 {
     int width = 0;
-    QList<ParsedItem> list;
+    const QList<ParsedItem> *list;
     list = m_mainimpl->treeClassesItems();
-    if ( list.isEmpty() )
+    if ( list->isEmpty() )
         return;
     m_comboClasses->clear();
     m_classesMethodsList.clear();
-    foreach( ParsedItem parsedItem, list )
+    for (int i = 0; i < list->size(); ++i)
     {
+    	ParsedItem parsedItem = list->at( i );
         if ( ( parsedItem.kind == "p" || parsedItem.kind == "f" )
                 && parsedItem.implementation.section("|", 0, 0) == filename() )
         {
