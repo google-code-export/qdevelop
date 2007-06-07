@@ -120,9 +120,6 @@ void TextEdit::print()
     QPrinter printer(QPrinter::HighResolution);
     printer.setFullPage(true);
     QPrintDialog dlg(&printer, this);
-    //dlg.addEnabledOption( QAbstractPrintDialog::PrintSelection );
-    //if( 1 )
-    //dlg.setEnabledOptions( QAbstractPrintDialog::PrintSelection );
     if (dlg.exec() == QDialog::Accepted)
     {
         document()->print(&printer);
@@ -139,10 +136,10 @@ void TextEdit::completeCode()
         m_completion->wait();
     }
     QString c = m_plainText.left(textCursor().position());
-    if( c.simplified().right(2) != "::" && c.simplified().right(2) != "->" && c.simplified().right(1) != "." && c.simplified().right(1) != "(" )
+    if ( c.simplified().right(2) != "::" && c.simplified().right(2) != "->" && c.simplified().right(1) != "." && c.simplified().right(1) != "(" )
     {
-    	c += "this->";
-   	}
+        c += "this->";
+    }
     m_completion->initParse(c, true);
     m_completion->start();
 }
@@ -160,9 +157,9 @@ void TextEdit::slotCompletionList(TagList TagList)
             m_completionList->addItem( tag.name+tag.parameters );
             h += 15;
             QListWidgetItem *item = m_completionList->item(m_completionList->count()-1);
-		    QVariant v;
-		    v.setValue( tag );
-		    item->setData(Qt::UserRole, v );
+            QVariant v;
+            v.setValue( tag );
+            item->setData(Qt::UserRole, v );
             //item->setData(Qt::UserRole, QVariant(tag.name) );
 
             if ( tag.kind == "function" || tag.kind == "prototype")
@@ -860,17 +857,17 @@ void TextEdit::slotWordCompletion(QListWidgetItem *item)
     Tag tag = item->data(Qt::UserRole).value<Tag>();
     QString text = tag.name;
     wordUnderCursor(QPoint(), true);
-	textCursor().insertText( text );
-	if( tag.isFunction )
-	{
-	    textCursor().insertText( "()" );
-	    if ( !tag.signature.contains("()") )
-	    {
-	        QTextCursor cursor = textCursor();
-	        cursor.movePosition(QTextCursor::PreviousCharacter);
-	        setTextCursor( cursor );
-	    }
-	}
+    textCursor().insertText( text );
+    if ( tag.isFunction )
+    {
+        textCursor().insertText( "()" );
+        if ( !tag.signature.contains("()") )
+        {
+            QTextCursor cursor = textCursor();
+            cursor.movePosition(QTextCursor::PreviousCharacter);
+            setTextCursor( cursor );
+        }
+    }
     ensureCursorVisible();
     setFocus( Qt::OtherFocusReason );
     return;
@@ -1195,28 +1192,9 @@ void TextEdit::contextMenuEvent(QContextMenuEvent * e)
     connect(menu->addAction(QIcon(":/divers/images/bookmark.png"), tr("Toggle Bookmark")), SIGNAL(triggered()), this, SLOT(slotToggleBookmark()) );
     connect(menu->addAction(QIcon(":/divers/images/pointArret.png"), tr("Toggle Breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
     //
-    QString classname = classNameUnderCursor(mousePosition);
-    QString name = wordUnderCursor(mousePosition);
-    if( !classname.isEmpty() && !name.isEmpty() )
-    {
-	    QList<ParsedItem> itemsList = m_mainImpl->treeClassesItems(classname);
-	    foreach(ParsedItem parsedItem, itemsList)
-	    {
-	    	if( parsedItem.classname == classname && parsedItem.name == name)
-	    	{
-	    		menu->addSeparator();
-	    		if( !parsedItem.implementation.isEmpty() && parsedItem.implementation.contains("|") )
-	    		{
-	    			connect(menu->addAction(QIcon(":/treeview/images/cpp.png"), tr("Goto Implementation")), SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
-	   			}
-	    		if( !parsedItem.declaration.isEmpty() && parsedItem.declaration.contains("|") )
-	    		{
-	    			connect(menu->addAction(QIcon(":/treeview/images/h.png"), tr("Goto Declaration")), SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
-	   			}
-	   			break;
-	   		}
-	   	}
-   	}
+    menu->addSeparator();
+    connect(menu->addAction(QIcon(":/treeview/images/cpp.png"), tr("Goto Implementation")), SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
+    connect(menu->addAction(QIcon(":/treeview/images/h.png"), tr("Goto Declaration")), SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
     //
     menu->exec(e->globalPos());
     delete menu;
@@ -1262,7 +1240,7 @@ QString TextEdit::wordUnderCursor(const QPoint & pos, bool select)
     return word;
 }
 //
-QString TextEdit::classNameUnderCursor(const QPoint & pos)
+QString TextEdit::classNameUnderCursor(const QPoint & pos, bool addThis)
 {
     QTextCursor cursor;
     if ( pos.isNull() )
@@ -1271,11 +1249,11 @@ QString TextEdit::classNameUnderCursor(const QPoint & pos)
         cursor = cursorForPosition ( pos );
     QString c = m_plainText.left(cursor.position());
     QString classname = m_completion->className(c);
-    if( classname.isEmpty() )
+    if ( classname.isEmpty() && addThis )
     {
-    	c += " this->";
-    	classname = m_completion->className(c);
-   	}
+        c += " this->";
+        classname = m_completion->className(c);
+    }
     return classname;
 }
 //
@@ -1367,43 +1345,111 @@ void TextEdit::insertText(QString text, int insertAfterLine)
 //
 void TextEdit::slotGotoImplementation()
 {
-    QString classname = classNameUnderCursor(mousePosition);
+    QString classname;
+    // classNameUnderCursor is a long computing. Call only for .cpp files because with .h the result 
+    // is always "" 
+    if ( m_editor->filename().toLower().endsWith(".cpp") )
+        classname = classNameUnderCursor(mousePosition, false);
     QString name = wordUnderCursor(mousePosition);
-    QList<ParsedItem> itemsList = m_mainImpl->treeClassesItems();
-    foreach(ParsedItem parsedItem, itemsList)
+    if ( name.isEmpty() )
+        return;
+    const QList<ParsedItem> *itemsList;
+    itemsList = m_mainImpl->treeClassesItems();
+    bool found = false;
+    for (int i = 0; i < itemsList->size(); ++i)
     {
-    	if( parsedItem.classname == classname && parsedItem.name == name)
-    	{
-    		if( !parsedItem.implementation.isEmpty() )
-    		{
-			    QString s = parsedItem.implementation;
-			    QString filename = s.section("|", 0, 0);
-			    int numLine = s.section("|", -1, -1).toInt();
-			    m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
-			    break;
-   			}
-   		}
-   	}
+        ParsedItem parsedItem = itemsList->at( i );
+        if ( parsedItem.classname == classname && parsedItem.name == name)
+        {
+            if ( !parsedItem.implementation.isEmpty() )
+            {
+                QString s = parsedItem.implementation;
+                QString filename = s.section("|", 0, 0);
+                int numLine = s.section("|", -1, -1).toInt();
+                if ( QFileInfo(filename).isFile() )
+                    m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
+                found = true;
+                break;
+            }
+        }
+        /* Below, the item in database has the same filename that the current editor and the same line number.
+        The cursor is on a declaration in a header (.h). Open the implementation (.cpp).
+        */
+        else if (m_editor->filename().toLower().endsWith(".h")  
+        	&& parsedItem.declaration.section("|", 0, 0) == m_editor->filename() 
+        	&& parsedItem.name == name 
+        	&& parsedItem.declaration.section("|", 1, 1).toInt() == currentLineNumber() 
+        	)
+        {
+            QString s = parsedItem.implementation;
+            QString filename = s.section("|", 0, 0);
+            int numLine = s.section("|", -1, -1).toInt();
+            if ( QFileInfo(filename).isFile() )
+                m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
+            found = true;
+            break;
+        }
+    }
+    // Now if the text is an .cpp, find the first name in database with the name "name"
+    // Perhaps return a bad result but it should work many time.
+    if ( !found && m_editor->filename().toLower().endsWith(".cpp"))
+    {
+        for (int i = 0; i < itemsList->size(); ++i)
+        {
+            ParsedItem parsedItem = itemsList->at( i );
+            if ( parsedItem.name == name )
+            {
+                QString s = parsedItem.implementation;
+                QString filename = s.section("|", 0, 0);
+                int numLine = s.section("|", -1, -1).toInt();
+                if ( QFileInfo(filename).isFile() )
+                    m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
+                break;
+
+            }
+        }
+    }
 }
 //
 void TextEdit::slotGotoDeclaration()
 {
-    QString classname = classNameUnderCursor(mousePosition);
+    QString classname = classNameUnderCursor(mousePosition, false);
     QString name = wordUnderCursor(mousePosition);
-    QList<ParsedItem> itemsList = m_mainImpl->treeClassesItems();
-    foreach(ParsedItem parsedItem, itemsList)
+    const QList<ParsedItem> *itemsList = m_mainImpl->treeClassesItems();
+    bool found = false;
+    for (int i = 0; i < itemsList->size(); ++i)
     {
-    	if( parsedItem.classname == classname && parsedItem.name == name)
-    	{
-    		if( !parsedItem.declaration.isEmpty() )
-    		{
-			    QString s = parsedItem.declaration;
-			    QString filename = s.section("|", 0, 0);
-			    int numLine = s.section("|", -1, -1).toInt();
-			    m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
-			    break;
-   			}
-   		}
-   	}
+        ParsedItem parsedItem = itemsList->at( i );
+        if ( parsedItem.classname == classname && parsedItem.name == name)
+        {
+            if ( !parsedItem.declaration.isEmpty() )
+            {
+                QString s = parsedItem.declaration;
+                QString filename = s.section("|", 0, 0);
+                int numLine = s.section("|", -1, -1).toInt();
+                if ( QFileInfo(filename).isFile() )
+                    m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
+                found = true;
+                break;
+            }
+        }
+    }
+    if ( !found && m_editor->filename().toLower().endsWith(".cpp"))
+    {
+        for (int i = 0; i < itemsList->size(); ++i)
+        {
+            ParsedItem parsedItem = itemsList->at( i );
+            if ( parsedItem.name == name )
+            {
+                QString s = parsedItem.declaration;
+                QString filename = s.section("|", 0, 0);
+                int numLine = s.section("|", -1, -1).toInt();
+                if ( QFileInfo(filename).isFile() )
+                    m_mainImpl->openFile(QStringList(filename) , numLine, false, true);
+                break;
+
+            }
+        }
+    }
 }
 //

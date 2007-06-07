@@ -106,6 +106,8 @@ public:
 	void slotUnindent() { m_textEdit->slotUnindent(); };
 	void dialogGotoLine() { m_textEdit->dialogGotoLine(); };
 	void completeCode() { m_textEdit->completeCode(); };
+	void gotoImplementation() { m_textEdit->slotGotoImplementation(); };
+	void gotoDeclaration() { m_textEdit->slotGotoDeclaration(); };
 	QString wordUnderCursor() { return m_textEdit->wordUnderCursor(); };
 	void textPlugin(TextEditInterface *iTextEdit) { m_textEdit->textPlugin(iTextEdit); };
 	QString classNameUnderCursor() { return m_textEdit->classNameUnderCursor(); };
