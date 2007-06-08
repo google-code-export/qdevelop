@@ -46,6 +46,7 @@
 #include <QClipboard>
 #include <QFileInfo>
 #include <QPrintDialog>
+#include <QTime>
 #include <QPrinter>
 
 TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completion)
@@ -65,6 +66,7 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_match = true;
     m_matchingBegin = -1;
     m_matchingEnd = -1;
+    m_completionShowHelp = true;
     m_endLine = MainImpl::Default;
     connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));
     connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
@@ -75,6 +77,7 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     //
     m_completionList = new QListWidget(this);
     m_completionList->setSelectionMode( QAbstractItemView::SingleSelection );
+    m_completionList->setVerticalScrollBarPolicy( Qt::ScrollBarAsNeeded );
     m_completionList->hide();
 #ifdef Q_WS_MAC
     m_completionList->setFont(QFont(m_completionList->font().family(), 12) );
@@ -99,8 +102,6 @@ void TextEdit::setBackgroundColor( QColor c )
 //
 void TextEdit::slotContentsChange ( int position, int charsRemoved, int charsAdded )
 {
-    //qDebug()<<"slotContentsChange"<<position<<charsRemoved<<charsAdded;
-
     // TODO remove gcc warnings
     position = 0;
     charsRemoved = 0;
@@ -140,7 +141,7 @@ void TextEdit::completeCode()
     {
         c += "this->";
     }
-    m_completion->initParse(c, true);
+    m_completion->initParse(c, true, true, false);
     m_completion->start();
 }
 
@@ -169,7 +170,13 @@ void TextEdit::slotCompletionList(TagList TagList)
             //m_completionList->addItem( tag.name );
             //qDebug() << tag.name << tag.longName << tag.parameters << tag.access << tag.kind;
         }
-        w = qMin(w+20, 350);
+        m_completionList->setSelectionMode( QAbstractItemView::SingleSelection );
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        m_completionList->setPalette(palette);
+        w = qMin(w+20, 550);
         w = qMax(w, 150);
         int posX = qMax(cursorRect().x(), 80);
         if ( posX+w > width() )
@@ -199,6 +206,54 @@ void TextEdit::slotCompletionList(TagList TagList)
         }
         else if ( listeItems.count()>1 )
             m_completionList->setCurrentItem( listeItems.first() );
+        //
+    }
+    else
+        m_completionList->hide();
+}
+//
+void TextEdit::slotCompletionHelpList(TagList TagList)
+{
+    if ( TagList.count() )
+    {
+        int w = 0;
+        int h = 0;
+        m_completionList->clear();
+        foreach(Tag tag, TagList)
+        {
+            w = qMax(w, fontMetrics().width( tag.name+tag.parameters ));
+            m_completionList->addItem( tag.name+tag.parameters );
+            h += 15;
+            QListWidgetItem *item = m_completionList->item(m_completionList->count()-1);
+            if ( tag.kind == "function" || tag.kind == "prototype")
+                item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_meth.png"));
+            else if ( tag.kind == "member" )
+                item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_var.png"));
+        }
+        m_completionList->setSelectionMode( QAbstractItemView::NoSelection );
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 127, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        m_completionList->setPalette(palette);
+        w = qMin(w+20, 550);
+        w = qMax(w, 150);
+        int posX = qMax(cursorRect().x(), 80);
+        if ( posX+w > width() )
+            posX = width()-220;
+        if ( cursorRect().y() > viewport()->height()/2 )
+        {
+            h = qMin( qMin(h+20, cursorRect().y()), 250);
+            m_completionList->setGeometry(posX, cursorRect().y()-h, w, h);
+
+        }
+        else
+        {
+            h = qMin( qMin(h+20, viewport()->height()-22-cursorRect().y()), 250);
+            m_completionList->setGeometry(posX, cursorRect().y()+fontMetrics().height(), w, h);
+
+        }
+        m_completionList->show();
         //
     }
     else
@@ -853,11 +908,21 @@ void TextEdit::match()
 void TextEdit::slotWordCompletion(QListWidgetItem *item)
 {
     m_completionList->hide();
+    if ( m_completionList->selectionMode() == QAbstractItemView::NoSelection )
+    {
+        ensureCursorVisible();
+        setFocus( Qt::OtherFocusReason );
+        return;
+    }
     QString signature = item->text();
     Tag tag = item->data(Qt::UserRole).value<Tag>();
     QString text = tag.name;
     wordUnderCursor(QPoint(), true);
     textCursor().insertText( text );
+    if ( m_completionShowHelp && tag.isFunction && !tag.signature.contains("()") )
+    {
+        completionHelp();
+    }
     if ( tag.isFunction )
     {
         textCursor().insertText( "()" );
@@ -886,7 +951,19 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
         if (event->key() == Qt::Key_Backspace && (m_plainText.left(textCursor().position()).right(1) == "."
                 || m_plainText.left(textCursor().position()).right(1) == ">"
                 || m_plainText.left(textCursor().position()).right(1) == ":"))
+        {
             m_completionList->hide();
+        }
+        else if ( m_autoCompletion &&
+                  (
+                      event->key() == '.'
+                      || ( event->key() == '>' && m_plainText.left(textCursor().position()).right(1) == "-"  )
+                      || ( event->key() == ':' && m_plainText.left(textCursor().position()).right(1) == ":"  ) )
+                )
+        {
+            QTextEdit::keyPressEvent ( event );
+            completeCode();
+        }
         else if ( event->key() == Qt::Key_Up )
         {
             int row = m_completionList->currentRow();
@@ -939,7 +1016,6 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
         }
         else
             QTextEdit::keyPressEvent ( event );
-        //m_editor->updateNumLines(currentLineNumber(), 1);
     }
     else if ( event->key() == Qt::Key_Home && !event->modifiers() )
     {
@@ -951,6 +1027,11 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
         autoUnindent();
         if ( m_autobrackets && event->key() == '{' )
             autobrackets();
+    }
+    else if ( event->key() == '(' && m_completionShowHelp )
+    {
+        completionHelp();
+        QTextEdit::keyPressEvent ( event );
     }
     else if ( event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace )
     {
@@ -1346,8 +1427,8 @@ void TextEdit::insertText(QString text, int insertAfterLine)
 void TextEdit::slotGotoImplementation()
 {
     QString classname;
-    // classNameUnderCursor is a long computing. Call only for .cpp files because with .h the result 
-    // is always "" 
+    // classNameUnderCursor is a long computing. Call only for .cpp files because with .h the result
+    // is always ""
     if ( m_editor->filename().toLower().endsWith(".cpp") )
         classname = classNameUnderCursor(mousePosition, false);
     QString name = wordUnderCursor(mousePosition);
@@ -1375,11 +1456,11 @@ void TextEdit::slotGotoImplementation()
         /* Below, the item in database has the same filename that the current editor and the same line number.
         The cursor is on a declaration in a header (.h). Open the implementation (.cpp).
         */
-        else if (m_editor->filename().toLower().endsWith(".h")  
-        	&& parsedItem.declaration.section("|", 0, 0) == m_editor->filename() 
-        	&& parsedItem.name == name 
-        	&& parsedItem.declaration.section("|", 1, 1).toInt() == currentLineNumber() 
-        	)
+        else if (m_editor->filename().toLower().endsWith(".h")
+                 && parsedItem.declaration.section("|", 0, 0) == m_editor->filename()
+                 && parsedItem.name == name
+                 && parsedItem.declaration.section("|", 1, 1).toInt() == currentLineNumber()
+                )
         {
             QString s = parsedItem.implementation;
             QString filename = s.section("|", 0, 0);
@@ -1453,3 +1534,19 @@ void TextEdit::slotGotoDeclaration()
     }
 }
 //
+
+void TextEdit::completionHelp()
+{
+    if ( !m_completion )
+        return;
+    if ( m_completion->isRunning() )
+    {
+        m_completion->setEmitResults( false );
+        m_completion->wait();
+    }
+    QString name = wordUnderCursor(mousePosition);
+    QString c = m_plainText.left(textCursor().position()).section(name, 0, 0);
+    m_completion->initParse(c, true, true, true, name);
+    m_completion->start();
+}
+

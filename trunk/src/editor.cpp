@@ -166,6 +166,7 @@ void Editor::setActiveEditor(bool b)
         {
             m_completion->disconnect( m_textEdit );
             connect(m_completion, SIGNAL(completionList(TagList)), m_textEdit, SLOT(slotCompletionList(TagList)) );
+            connect(m_completion, SIGNAL(completionHelpList(TagList)), m_textEdit, SLOT(slotCompletionHelpList(TagList)) );
         }
     }
     else

@@ -45,7 +45,7 @@ public:
 	void addIncludes (QStringList includesPath);
 	void run();
 	QString className(const QString &text);
-	void initParse(const QString &text, bool showAllResults = false, bool emitResults = true);
+	void initParse(const QString &text, bool showAllResults = false, bool emitResults = true, bool showDuplicateEntries = false, QString name="");
 	void setEmitResults(bool r) { m_emitResults = r; };
 	/*
 		* @param: filename is a name like "string.h"
@@ -76,8 +76,11 @@ private:
 	QString m_text;
 	bool m_showAllResults;
 	bool m_emitResults;
+    bool m_showDuplicateEntries;
+    QString m_name;
 signals:
 	void completionList( TagList ); 
+	void completionHelpList( TagList ); 
 };
 
 #endif
