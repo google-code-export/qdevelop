@@ -1296,12 +1296,12 @@ void TextEdit::selectLines(int debut, int fin)
 //
 QString TextEdit::wordUnderCursor(const QPoint & pos, bool select)
 {
+    QTextCursor save(textCursor());
     QTextCursor cursor;
     if ( pos.isNull() )
         cursor = textCursor();
     else
         cursor = cursorForPosition ( pos );
-    QTextCursor save(cursor);
     //
     int curpos = cursor.position();
     while ( curpos>0  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( m_plainText.at( curpos-1 ).toUpper()  ) )
@@ -1544,7 +1544,7 @@ void TextEdit::completionHelp()
         m_completion->setEmitResults( false );
         m_completion->wait();
     }
-    QString name = wordUnderCursor(mousePosition);
+    QString name = wordUnderCursor();
     QString c = m_plainText.left(textCursor().position()).section(name, 0, 0);
     m_completion->initParse(c, true, true, true, name);
     m_completion->start();
