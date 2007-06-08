@@ -205,7 +205,7 @@ bool Tree::isMemberOfScope(const tagEntry * entry, const Scope * scope)
 	return false;
 }
 
-TagList Tree::findEntries(const Expression * exp, const Scope * scope)
+TagList Tree::findEntries(const Expression * exp, const Scope * scope, const bool showAllEntries, const QString nameFilter)
 {
 	QList < Tag > TagList;
 
@@ -353,8 +353,10 @@ TagList Tree::findEntries(const Expression * exp, const Scope * scope)
 				/* output the tag if it is valid and no duplicate either to stdout
 				 * or to a file if the -o flag was given */
 				if (show_this_tag
-				        && (exp->access == AccessInFunction
-				            || strcmp(entry.name, lasttag)))
+				        && ( exp->access == AccessInFunction
+				            || ( strcmp(entry.name, lasttag ) && !showAllEntries )
+                            || ( showAllEntries && entry.name == nameFilter )
+                            ))
 				{
 					Tag tag;
 					if (exp->access & AccessInFunction)

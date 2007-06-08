@@ -121,9 +121,11 @@ private slots:
     void slotCursorPositionChanged();
     void slotContentsChange ( int position, int charsRemoved, int charsAdded );
     void slotCompletionList(TagList TagList);
+    void slotCompletionHelpList(TagList TagList);
     void slotToggleBreakpoint();
     void slotToggleBookmark();
 private:
+    void completionHelp();
     QString m_plainText;
     long m_matchingBegin;
     long m_matchingEnd;
@@ -153,6 +155,7 @@ private:
     bool m_autoCompletion;
     bool m_autobrackets;
     bool m_match;
+    bool m_completionShowHelp;
     QColor m_backgroundColor;
     QColor m_currentLineColor;
     QColor m_matchingColor;

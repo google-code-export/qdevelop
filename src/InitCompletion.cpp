@@ -30,11 +30,13 @@ InitCompletion::InitCompletion (QObject *parent)
 	setTempFilePath(QDir::tempPath());
 }
 //
-void InitCompletion::initParse(const QString &text, bool showAllResults, bool emitResults)
+void InitCompletion::initParse(const QString &text, bool showAllResults, bool emitResults, bool showDuplicateEntries, QString name)
 {
 	m_text = text;
 	m_showAllResults = showAllResults;
 	m_emitResults = emitResults;
+    m_showDuplicateEntries = showDuplicateEntries;
+    m_name = name;
 }
 
 void InitCompletion::setTempFilePath (const QString &Path)
@@ -210,7 +212,10 @@ void InitCompletion::run()
 	/* we have all relevant information, so just list the entries */
 	if (exp.access != ParseError && m_emitResults)
 	{
-		emit completionList( Tree::findEntries(&exp, &sc) );
+        if( m_name.isEmpty() )
+		    emit completionList( Tree::findEntries(&exp, &sc, m_showDuplicateEntries, m_name) );
+        else
+		    emit completionHelpList( Tree::findEntries(&exp, &sc, m_showDuplicateEntries, m_name) );
 	}
 }
 
