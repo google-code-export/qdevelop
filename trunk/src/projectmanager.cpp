@@ -138,7 +138,7 @@ void ProjectManager::parseTreeClasses(bool force)
             headers(projectsList.at(nbProjects), files );
             files.sort();
             extern QSplashScreen *splash;
-            QProgressBar *bar;
+            QProgressBar *bar = 0;
             if ( !splash )
             {
                 bar = new QProgressBar( 0 );

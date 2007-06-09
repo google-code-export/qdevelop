@@ -112,7 +112,7 @@ public:
 
     // Function format? Ignore it...
     QTextCharFormat functionFormat() { return QTextCharFormat(); }
-    void setFunctionFormat(QTextCharFormat const& f) {  }
+    void setFunctionFormat(QTextCharFormat const& /*f*/) {  }
 
     QTextCharFormat preprocessorFormat() { return m_formatMacro; }
     void setPreprocessorFormat(QTextCharFormat const& f) { m_formatMacro = f; }
@@ -129,4 +129,5 @@ public:
 
 
 #endif
+
 
