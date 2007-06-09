@@ -131,12 +131,17 @@ void TextEdit::completeCode()
 {
     if ( !m_completion )
         return;
+    QString c = m_plainText.left(textCursor().position());
+    if( c.simplified().right(1) == "(" )
+    {
+    	completionHelp();
+    	return;
+   	}
     if ( m_completion->isRunning() )
     {
         m_completion->setEmitResults( false );
         m_completion->wait();
     }
-    QString c = m_plainText.left(textCursor().position());
     if ( c.simplified().right(2) != "::" && c.simplified().right(2) != "->" && c.simplified().right(1) != "." && c.simplified().right(1) != "(" )
     {
         c += "this->";
@@ -1030,8 +1035,8 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
     }
     else if ( event->key() == '(' && m_completionShowHelp )
     {
-        completionHelp();
         QTextEdit::keyPressEvent ( event );
+        completionHelp();
     }
     else if ( event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace )
     {
@@ -1321,6 +1326,19 @@ QString TextEdit::wordUnderCursor(const QPoint & pos, bool select)
     return word;
 }
 //
+QString TextEdit::wordUnderCursor(const QString text)
+{
+    int begin = text.length();
+    while ( begin>0  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( text.at( begin-1 ).toUpper()  ) )
+        begin--;
+    //
+    int end = begin;
+    while ( end < text.length()  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( text.at( end ).toUpper()  ) )
+        end++;
+    QString word = text.mid(begin, end-begin);
+    return word;
+}
+//
 QString TextEdit::classNameUnderCursor(const QPoint & pos, bool addThis)
 {
     QTextCursor cursor;
@@ -1544,8 +1562,11 @@ void TextEdit::completionHelp()
         m_completion->setEmitResults( false );
         m_completion->wait();
     }
-    QString name = wordUnderCursor();
-    QString c = m_plainText.left(textCursor().position()).section(name, 0, 0);
+    QString c = m_plainText.left(textCursor().position()).simplified();
+    if( c.right(1) == "(" )
+    	c = c.left( c.count()-1 );
+    QString name = wordUnderCursor(c);
+    c = c.section(name, 0, 0);
     m_completion->initParse(c, true, true, true, name);
     m_completion->start();
 }
