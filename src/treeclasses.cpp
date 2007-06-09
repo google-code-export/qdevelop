@@ -797,7 +797,7 @@ void TreeClasses::slotAddGetSetMethod()
     delete addSetGetImpl;
 }
 //
-QStringList TreeClasses::methods(QString filename, QString classname)
+QStringList TreeClasses::methods(QString filename, QString /*classname*/)
 {
     QStringList listMethods;
     const QList<ParsedItem> *list;
