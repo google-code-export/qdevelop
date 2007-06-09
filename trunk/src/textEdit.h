@@ -94,7 +94,7 @@ public:
     {
         m_matchingColor = c;
     };
-    int currentLineNumber();
+    int currentLineNumber(QTextCursor cursor=QTextCursor());
     int currentLineNumber(QTextBlock block);
     int linesCount();
     void dialogGotoLine();

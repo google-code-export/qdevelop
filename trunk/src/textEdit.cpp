@@ -1356,9 +1356,12 @@ QString TextEdit::classNameUnderCursor(const QPoint & pos, bool addThis)
     return classname;
 }
 //
-int TextEdit::currentLineNumber()
+int TextEdit::currentLineNumber(QTextCursor cursor)
 {
-    return lineNumber( textCursor() );
+	if( cursor.isNull() )
+    	return lineNumber( textCursor() );
+    else
+    	return lineNumber( cursor );
 }
 //
 int TextEdit::currentLineNumber(QTextBlock block)
@@ -1474,10 +1477,11 @@ void TextEdit::slotGotoImplementation()
         /* Below, the item in database has the same filename that the current editor and the same line number.
         The cursor is on a declaration in a header (.h). Open the implementation (.cpp).
         */
+        /* If sender() is not null, this function is called from the context menu. Otherwise from the main menu */
         else if (m_editor->filename().toLower().endsWith(".h")
                  && parsedItem.declaration.section("|", 0, 0) == m_editor->filename()
                  && parsedItem.name == name
-                 && parsedItem.declaration.section("|", 1, 1).toInt() == currentLineNumber()
+                 && parsedItem.declaration.section("|", 1, 1).toInt() == currentLineNumber( sender() ? cursorForPosition(mousePosition) : QTextCursor() )
                 )
         {
             QString s = parsedItem.implementation;
