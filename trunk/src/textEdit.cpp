@@ -404,47 +404,55 @@ void TextEdit::comment(ActionComment action)
 {
     // Trent's implementation
     QTextCursor cursor = textCursor();
-    if ( cursor.selectedText().isEmpty() )
-        return;
+	
+	//when there is no selection startPos and endPos are equal to position()
     int startPos = cursor.selectionStart();
     int endPos = cursor.selectionEnd();
-    QTextBlock startBlock = document()->findBlock(startPos);
-    QTextBlock endBlock = document()->findBlock(endPos).previous();
-    int firstLine = lineNumber( startBlock );
+	QTextBlock startBlock = document()->findBlock(startPos);
+    QTextBlock endBlock = document()->findBlock(endPos);
+    
+	//special case : the end of the selction is at the beginning of a line
+	if ( startPos != endPos && cursor.atBlockStart()) {
+		endBlock = document()->findBlock(endPos).previous();
+	}
+	
+	int firstLine = lineNumber( startBlock );
     int lastLine = lineNumber( endBlock );
     QTextBlock block = startBlock;
     cursor.setPosition(startPos);
-    while (!(endBlock < block))
+    cursor.beginEditBlock();
+	while (!(endBlock < block))
     {
         QString text = block.text();
-        if (text.isEmpty())
-            continue;
-        int i = 0;
-        while (i < text.length() && text.at(i).isSpace())
-            i++;
-        if (action == Comment)
-        {
-            if (text.mid(i, 2) != "//")
-                text.insert(i, "//");
-        }
-        else if (action == Uncomment)
-        {
-            if (text.mid(i, 2) == "//")
-                text.remove(i, 2);
-        }
-        else if (action == Toggle)
-        {
-            if (text.mid(i, 2) == "//")
-                text.remove(i, 2);
-            else
-                text.insert(i, "//");
-        }
-        cursor.movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
-        cursor.movePosition(QTextCursor::EndOfLine, QTextCursor::KeepAnchor);
-        cursor.insertText(text);
+        if (!text.isEmpty()) {
+	        int i = 0;
+	        while (i < text.length() && text.at(i).isSpace())
+	            i++;
+	        if (action == Comment)
+	        {
+	            if (text.mid(i, 2) != "//")
+	                text.insert(i, "//");
+	        }
+	        else if (action == Uncomment)
+	        {
+	            if (text.mid(i, 2) == "//")
+	                text.remove(i, 2);
+	        }
+	        else if (action == Toggle)
+	        {
+	            if (text.mid(i, 2) == "//")
+	                text.remove(i, 2);
+	            else
+	                text.insert(i, "//");
+	        }
+	        cursor.movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
+	        cursor.movePosition(QTextCursor::EndOfLine, QTextCursor::KeepAnchor);
+	        cursor.insertText(text);
+		}
         cursor.movePosition(QTextCursor::NextBlock);
         block = cursor.block();
     }
+	cursor.endEditBlock();
     // Reselect blocks
     selectLines(firstLine, lastLine);
 }
@@ -1574,4 +1582,6 @@ void TextEdit::completionHelp()
     m_completion->initParse(c, true, true, true, name);
     m_completion->start();
 }
+
+
 
