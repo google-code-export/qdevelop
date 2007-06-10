@@ -39,6 +39,7 @@ CppHighlighter::CppHighlighter(QTextDocument* document):
 {
     setupRegexTable();
 
+	m_formatFunction.setForeground(Qt::black);
     m_formatSingleLineComment.setForeground(Qt::red);
     m_formatKeyword.setForeground(Qt::blue);
     m_formatUserKeyword.setForeground(Qt::darkBlue);
@@ -63,6 +64,8 @@ QTextCharFormat const& CppHighlighter::formatFor(SyntaxType type)
         case TEXT:
         default:
             break;
+		case FUNCTION:
+			return m_formatFunction;
         case SINGLE_LINE_COMMENT:
             return m_formatSingleLineComment;
         case KEYWORD:
@@ -160,19 +163,25 @@ void CppHighlighter::setupRegexTable()
              << "union" << "unsigned" << "using" << "virtual" << "void"
              << "volatile" << "wchar_t" << "while"
              // BK - Added Qt keywords
-             << "slots" << "signals";
+             << "slots" << "signals" << "SIGNAL" << "SLOT";
 
+   	//functions and methods
+	item.regex = QRegExp("\\b[a-zA-Z_][a-zA-Z0-9_]+\\s*(?=\\()");
+    item.type = FUNCTION;
+    m_regexItems.push_back(item);
+
+	//normal text
     item.regex = QRegExp("\\b[a-zA-Z_][a-zA-Z0-9_]+\\b");
     item.type = TEXT;
     m_regexItems.push_back(item);
-
+	
     m_keywords = QSet<QString>::fromList(keywords);
     
     // user keywords
     QStringList userKeywords;
     userKeywords << "foreach";
     
-    m_userKeywords = QSet<QString>::fromList(userKeywords);
+    m_userKeywords = QSet<QString>::fromList(userKeywords);    
 }
 
 // state
@@ -426,4 +435,5 @@ void CppHighlighter::handleEscapeChar(QString const& text, int start, int len)
         }
     }
 }
+
 
