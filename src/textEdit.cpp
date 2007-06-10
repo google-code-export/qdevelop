@@ -84,11 +84,11 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
 #else
     m_completionList->setFont( QFont(m_completionList->font().family(), 8) );
 #endif
+
     connect(m_completionList, SIGNAL(itemActivated(QListWidgetItem *)), this, SLOT(slotWordCompletion(QListWidgetItem *)) );
     setBackgroundColor( m_backgroundColor );
 }
 //
-
 void TextEdit::setBackgroundColor( QColor c )
 {
     if ( c == m_backgroundColor )
@@ -419,8 +419,8 @@ void TextEdit::comment(ActionComment action)
 	int firstLine = lineNumber( startBlock );
     int lastLine = lineNumber( endBlock );
     QTextBlock block = startBlock;
-    cursor.setPosition(startPos);
     cursor.beginEditBlock();
+    cursor.setPosition(startPos);
 	while (!(endBlock < block))
     {
         QString text = block.text();
@@ -1067,21 +1067,22 @@ void TextEdit::key_home()
 {
     QTextCursor cursor = textCursor();
     int col = cursor.columnNumber();
-    if ( col > 0 )
+    
+    cursor.movePosition(QTextCursor::StartOfLine);
+    QTextBlock b = cursor.block();
+    int firstWordCol = cursor.columnNumber();
+    while ( b.text().at(firstWordCol) == ' ' || b.text().at(firstWordCol) == '\t' )
+    {
+		cursor.movePosition(QTextCursor::NextCharacter);
+        firstWordCol++;
+    }
+
+    if ( col > 0
+	&&   col == firstWordCol )
     {
         cursor.movePosition(QTextCursor::StartOfLine);
     }
-    else
-    {
-        cursor.movePosition(QTextCursor::StartOfLine);
-        QTextBlock b = textCursor().block();
-        int i = 0;
-        while ( b.text().at(i) == ' ' || b.text().at(i) == '\t' )
-        {
-            cursor.movePosition(QTextCursor::NextCharacter);
-            i++;
-        }
-    }
+
     setTextCursor( cursor );
 }
 
@@ -1142,6 +1143,7 @@ void TextEdit::slotIndent(bool indenter)
 {
     QTextCursor curseurActuel = textCursor();
     QTextCursor c = textCursor();
+    c.beginEditBlock();
     if ( indenter && c.selectedText().isEmpty() )
     {
         if ( m_tabSpaces )
@@ -1161,6 +1163,7 @@ void TextEdit::slotIndent(bool indenter)
             else
                 c.insertText( "\t" );
         }
+        c.endEditBlock();
         return;
     }
     else if ( !indenter && c.selectedText().isEmpty() )
@@ -1188,6 +1191,7 @@ void TextEdit::slotIndent(bool indenter)
         else
             curseurActuel.insertText( "\t" );
         setTextCursor( curseurActuel );
+        c.endEditBlock();
         return;
     }
     //
@@ -1231,6 +1235,7 @@ void TextEdit::slotIndent(bool indenter)
     }
     while (  block.isValid() && block != blocFin );
     selectLines(ligneDebut, ligneFin);
+	c.endEditBlock();   
 }
 //
 void TextEdit::slotUnindent()
@@ -1268,8 +1273,10 @@ void TextEdit::contextMenuEvent(QContextMenuEvent * e)
     m_lineNumber = lineNumber( e->pos() );
     QMenu *menu = createStandardContextMenu();
     menu->clear();
-    connect(menu->addAction(QIcon(":/toolbar/images/undo.png"), tr("Undo")), SIGNAL(triggered()), this, SLOT(undo()) );
-    connect(menu->addAction(QIcon(":/toolbar/images/redo.png"), tr("Redo")), SIGNAL(triggered()), this, SLOT(redo()) );
+    connect(menu->addAction(QIcon(":/treeview/images/cpp.png"), tr("Goto Implementation")), SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
+    connect(menu->addAction(QIcon(":/treeview/images/h.png"), tr("Goto Declaration")), SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
+//    connect(menu->addAction(QIcon(":/toolbar/images/undo.png"), tr("Undo")), SIGNAL(triggered()), this, SLOT(undo()) );
+//    connect(menu->addAction(QIcon(":/toolbar/images/redo.png"), tr("Redo")), SIGNAL(triggered()), this, SLOT(redo()) );
     menu->addSeparator();
     connect(menu->addAction(QIcon(":/toolbar/images/editcut.png"), tr("Cut")), SIGNAL(triggered()), this, SLOT(cut()) );
     connect(menu->addAction(QIcon(":/toolbar/images/editcopy.png"), tr("Copy")), SIGNAL(triggered()), this, SLOT(copy()) );
@@ -1286,9 +1293,6 @@ void TextEdit::contextMenuEvent(QContextMenuEvent * e)
     connect(menu->addAction(QIcon(":/divers/images/bookmark.png"), tr("Toggle Bookmark")), SIGNAL(triggered()), this, SLOT(slotToggleBookmark()) );
     connect(menu->addAction(QIcon(":/divers/images/pointArret.png"), tr("Toggle Breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
     //
-    menu->addSeparator();
-    connect(menu->addAction(QIcon(":/treeview/images/cpp.png"), tr("Goto Implementation")), SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
-    connect(menu->addAction(QIcon(":/treeview/images/h.png"), tr("Goto Declaration")), SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
     //
     menu->exec(e->globalPos());
     delete menu;

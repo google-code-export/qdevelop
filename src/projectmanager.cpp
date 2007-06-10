@@ -2123,6 +2123,49 @@ void ProjectManager::sources(QTreeWidgetItem *it, QStringList &sourcesFiles)
     return;
 }
 //
+void ProjectManager::setCurrentItem(const QString& _strFileName)
+{
+	QString strSearch( QDir::cleanPath(_strFileName) );
+
+	qint32 ii;
+	QTreeWidgetItem* pItemFound = NULL;
+    QList<QTreeWidgetItem *> projectsList;
+    childsList(0, "PROJECT", projectsList);
+    for (ii = 0; ii < projectsList.count() && NULL == pItemFound; ++ii)
+    {
+		QString strProjectDir = projectDirectory(projectsList.at(ii));
+		pItemFound = find_r(projectsList.at(ii), strSearch, strProjectDir);	
+	}
+}
+//
+QTreeWidgetItem* ProjectManager::find_r(const QTreeWidgetItem* _pItem, const QString& _strFileName, const QString& _strProjectDir) // BK - recursive call
+{
+	QTreeWidgetItem* pItemFound = NULL;
+	qint32 ii, jj;
+    for (ii = 0; ii < _pItem->childCount() && NULL == pItemFound; ++ii)
+    {
+        QTreeWidgetItem* pItemChild = _pItem->child(ii);
+        if ( _pItem->child(ii)->data(0, Qt::UserRole).toString() == "SCOPE" )
+        {
+            pItemFound = find_r(_pItem->child(ii), _strFileName, _strProjectDir);
+        }
+		else
+        {
+            for (jj = 0; jj < pItemChild->childCount(); ++jj)
+            {
+                QString str = _strProjectDir+"/"+pItemChild->child(jj)->text(0);
+				if ( QDir::cleanPath(str) == _strFileName )
+				{
+					pItemFound = pItemChild->child(jj);
+					m_treeFiles->setCurrentItem(pItemFound);
+				}
+            }
+        }
+    }
+
+    return pItemFound;
+}
+//
 QString ProjectManager::findExecutable( QString projectDirectory, QString preferedVersion )
 {
     // Find on Makefile, Makefile.Debug or Makefile.Release the name of executable

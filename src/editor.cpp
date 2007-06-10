@@ -329,6 +329,8 @@ void Editor::find()
     uiFind.editFind->setFocus(Qt::ShortcutFocusReason);
     if ( m_textEdit->textCursor().selectedText().length() )
         uiFind.editFind->setText( m_textEdit->textCursor().selectedText() );
+    else
+        uiFind.editFind->setText( m_textEdit->wordUnderCursor() );
     uiFind.editFind->selectAll();
     autoHideTimer->start();
 }

@@ -150,9 +150,7 @@ const QColor& LineNumbers::backgroundColor() const
 void LineNumbers::setDefaultProperties()
 {
 	// Default properties
-#ifdef WIN32
-	setFont( QFont("MS Shell Dlg 2", 8));
-#endif
+	setFont( m_textEdit->font() );
 	setBackgroundColor( QColor( "#ffffd2" ) );
 	setTextColor( QColor( Qt::black ) );
 	//setTextColor( QColor( "#aaaaff" ) );
