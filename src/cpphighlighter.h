@@ -45,9 +45,10 @@ private:
     enum SyntaxType
     {
         TEXT, // normal text
-
+		
         // following items can be fetched by a simple pattern matching
-        SINGLE_LINE_COMMENT,
+        FUNCTION,
+		SINGLE_LINE_COMMENT,
         KEYWORD, 
         USER_KEYWORD,
         OPERATOR,
@@ -84,6 +85,7 @@ private:
     QVector<RegexItem> m_regexItems;
 
     // formats
+	QTextCharFormat m_formatFunction;
     QTextCharFormat m_formatSingleLineComment;
     QTextCharFormat m_formatMultiLineComment;
     QTextCharFormat m_formatKeyword;
@@ -110,9 +112,8 @@ public:
     QTextCharFormat quotationFormat() { return m_formatString; }
     void setQuotationFormat(QTextCharFormat const& f) { m_formatString = f; }
 
-    // Function format? Ignore it...
-    QTextCharFormat functionFormat() { return QTextCharFormat(); }
-    void setFunctionFormat(QTextCharFormat const& /*f*/) {  }
+    QTextCharFormat functionFormat() { return m_formatFunction; }
+    void setFunctionFormat(QTextCharFormat const& f) { m_formatFunction = f; }
 
     QTextCharFormat preprocessorFormat() { return m_formatMacro; }
     void setPreprocessorFormat(QTextCharFormat const& f) { m_formatMacro = f; }
@@ -129,5 +130,6 @@ public:
 
 
 #endif
+
 
 
