@@ -247,6 +247,15 @@ void MainImpl::configureCompletion(QString projectDirectory)
     m_configureCompletionNeeded = false;
 }
 //
+void MainImpl::gotoFileInProject(QString& filename)
+{
+    if ( !m_projectManager )
+        return;
+
+    tabExplorer->setCurrentIndex(0);
+	m_projectManager->setCurrentItem(filename);
+}
+//
 void MainImpl::setCrossButton(bool activate)
 {
     if (crossButton && !activate)

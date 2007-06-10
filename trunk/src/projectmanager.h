@@ -84,7 +84,9 @@ public:
 	void parseTreeClasses(bool force=false );
 	void setQmake(QString projectName);
 	void insertFile(QTreeWidgetItem *it, QString filename, bool silentMode=false);
+	void setCurrentItem(const QString& _strFileName);
 private:
+	QTreeWidgetItem* find_r(const QTreeWidgetItem* _pItem, const QString& _strFileName, const QString& _strProjectDir);
 	enum findMode { Key, Data };
 	// Methods
 	void loadProject(QString s, QTreeWidgetItem *newProjectItem);

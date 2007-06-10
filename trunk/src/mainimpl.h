@@ -78,6 +78,7 @@ public:
 	void loadPlugins();
 	void renameEditor(QString oldName, QString newName);
 	void configureCompletion(QString projectDirectory);
+	void gotoFileInProject(QString& filename);
 private:
 	// Functions
 	void createConnections();
