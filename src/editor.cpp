@@ -288,8 +288,8 @@ bool Editor::open(bool silentMode)
 bool Editor::close()
 {
     bool ret = m_textEdit->close( m_filename );
-    if( ret )
-    	clearAllBookmarks();
+    if ( ret )
+        clearAllBookmarks();
     return ret;
 }
 //
@@ -395,7 +395,7 @@ void Editor::slotClassesMethodsList()
     m_classesMethodsList.clear();
     for (int i = 0; i < list->size(); ++i)
     {
-    	ParsedItem parsedItem = list->at( i );
+        ParsedItem parsedItem = list->at( i );
         if ( ( parsedItem.kind == "p" || parsedItem.kind == "f" )
                 && parsedItem.implementation.section("|", 0, 0) == filename() )
         {
@@ -719,21 +719,36 @@ void Editor::slotOtherFile()
 //
 void Editor::setNameOtherFile(QString oldName, QString newName)
 {
-	/* When a file is renamed in files browser (by a right-click the "Rename..."), this function is called on
-	all editors to rename the other file.
-	*/
-	if( oldName != m_nameOtherFile )
-		return;
+    /* When a file is renamed in files browser (by a right-click the "Rename..."), this function is called on
+    all editors to rename the other file.
+    */
+    if ( oldName != m_nameOtherFile )
+        return;
     m_nameOtherFile = newName.mid(0, newName.lastIndexOf(".") );
     if ( suffixe( newName ).toLower() == "h" )
     {
         m_otherFileButton->setToolTip( tr("Open")+" "+Editor::shortFilename(m_nameOtherFile)+".h" );
-    	m_nameOtherFile += ".h";
-   	}
+        m_nameOtherFile += ".h";
+    }
     else
     {
         m_otherFileButton->setToolTip( tr("Open")+" "+Editor::shortFilename(m_nameOtherFile)+".cpp" );
-    	m_nameOtherFile += ".cpp";
-   	}
+        m_nameOtherFile += ".cpp";
+    }
+}
+//
+void Editor::methodsList()
+{
+    if ( NULL == m_comboMethods )
+    {
+        QApplication::beep();
+    }
+    else
+    {
+        QLineEdit* pLineEdit = m_comboMethods->lineEdit();
+        pLineEdit->setSelection(0, pLineEdit->text().count());
+        m_comboMethods->showPopup();
+        m_comboMethods->setFocus();
+    }
 }
 //

@@ -61,6 +61,7 @@
     <addaction name="actionPreviousTab" />
     <addaction name="actionSwitchHeaderSources" />
     <addaction name="actionToggleBreakpoint" />
+    <addaction name="actionMethodsList" />
    </widget>
    <widget class="QMenu" name="menuDebug" >
     <property name="title" >
@@ -1337,6 +1338,11 @@
    </property>
    <property name="shortcut" >
     <string>F9</string>
+   </property>
+  </action>
+  <action name="actionMethodsList" >
+   <property name="text" >
+    <string>Goto Methods List</string>
    </property>
   </action>
   <action name="actionConfigureShortcuts" >
