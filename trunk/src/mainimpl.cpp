@@ -331,6 +331,7 @@ void MainImpl::createConnections()
     connect(actionPrint, SIGNAL(triggered()), this, SLOT(slotPrint()) );
     connect(actionGotoDeclaration, SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
     connect(actionGotoImplementation, SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
+    connect(actionMethodsList, SIGNAL(triggered()), this, SLOT(slotMethodsList()) );
     //
     connect(actionExternalTools, SIGNAL(triggered()), this, SLOT(slotToolsControl()) );
     connect(actionCloseCurrentEditor, SIGNAL(triggered()), this, SLOT(slotCloseCurrentTab()) );
@@ -500,6 +501,14 @@ void MainImpl::slotComment()
     Editor *editor = ((Editor*)m_tabEditors->widget( i ));
     if ( editor  )
         editor->comment( TextEdit::Comment );
+}
+//
+void MainImpl::slotMethodsList()
+{
+    int i = m_tabEditors->currentIndex();
+    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    if ( editor  )
+        editor->methodsList();
 }
 //
 void MainImpl::slotGotoImplementation()
@@ -1152,6 +1161,8 @@ bool MainImpl::slotCloseProject(bool hide)
     m_projectManager = 0;
     setWindowTitle( "QDevelop" );
     m_projectGroup->setEnabled( false );
+    delete m_findInFiles;
+    m_findInFiles = 0;
     return true;
 }
 //
@@ -2318,6 +2329,8 @@ void MainImpl::slotRemoveDebugVariable()
 //
 void MainImpl::slotOpenFile()
 {
+	if( !m_projectManager )
+		return;
 	OpenFileImpl dialog(this, m_projectManager, this);
 	dialog.exec();
 }

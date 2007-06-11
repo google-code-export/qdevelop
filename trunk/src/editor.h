@@ -129,6 +129,7 @@ public:
     QString toPlainText() { return m_textEdit->toPlainText(); };
     void insertText(QString text, int insertAfterLine) { m_textEdit->insertText(text, insertAfterLine); };
 	void setNameOtherFile(QString oldName, QString newName);
+	void methodsList();
 	//
 public slots:
 	void gotoLine( int line, bool moveTop);

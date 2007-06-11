@@ -230,6 +230,7 @@ private slots:
 	void slotOpenFile();
 	void slotGotoDeclaration();
 	void slotGotoImplementation();
+	void slotMethodsList();
 public slots:
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);
 	bool slotCloseAllFiles();
