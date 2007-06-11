@@ -128,7 +128,7 @@ QString AddNewClassImpl::templateHeaderImpl()
 {
     QString filename = header->text();
     QString classImpl = className->text();
-    QFile file(":/templates/templates/newclassimpl.h");
+    QFile file(":/templates/templates/newclassimpl.h.template");
     QString data;
 
     file.open(QIODevice::ReadOnly);
@@ -164,7 +164,7 @@ QString AddNewClassImpl::templateSourceImpl()
 {
     QString filename = implementation->text();
     QString classImpl = className->text();
-    QFile file(":/templates/templates/newclassimpl.cpp");
+    QFile file(":/templates/templates/newclassimpl.cpp.template");
     QString data;
 
     file.open(QIODevice::ReadOnly);

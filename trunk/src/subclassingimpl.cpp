@@ -169,7 +169,7 @@ QStringList SubclassingImpl::templateHeaderImpl()
 {
     QString filename = comboClassName->itemData( comboClassName->currentIndex() ).toString().section("/", -1).section(".", 0);
     QString classImpl = comboClassName->currentText();
-    QFile file(":/templates/templates/impl.h");
+    QFile file(":/templates/templates/impl.h.template");
     QString data;
 
     file.open(QIODevice::ReadOnly);
@@ -190,7 +190,7 @@ QStringList SubclassingImpl::templateSourceImpl()
 {
     QString	filename  = comboClassName->itemData( comboClassName->currentIndex() ).toString().section("/", -1);
     QString	classImpl = comboClassName->currentText();
-    QFile	file(":/templates/templates/impl.cpp");
+    QFile	file(":/templates/templates/impl.cpp.template");
     QString	data;
 
     file.open(QIODevice::ReadOnly);

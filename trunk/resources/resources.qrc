@@ -47,11 +47,11 @@
     </qresource>
     <qresource prefix="/templates" >
         <file>templates/dialog.ui</file>
-        <file>templates/impl.cpp</file>
-        <file>templates/impl.h</file>
-        <file>templates/newclassimpl.cpp</file>
-        <file>templates/newclassimpl.h</file>
-        <file>templates/main.cpp</file>
+        <file>templates/impl.cpp.template</file>
+        <file>templates/impl.h.template</file>
+        <file>templates/newclassimpl.cpp.template</file>
+        <file>templates/newclassimpl.h.template</file>
+        <file>templates/main.cpp.template</file>
         <file>templates/mainwindow.ui</file>
         <file>templates/widget.ui</file>
     </qresource>
