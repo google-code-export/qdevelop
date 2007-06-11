@@ -851,7 +851,7 @@ void MainImpl::slotNewProject()
                     s+= "FORMS = "+QDir(projectDirectory).relativeFilePath(uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui") + "\n";
                 }
                 // Create subclassing header
-                QFile file(":/templates/templates/impl.h");
+                QFile file(":/templates/templates/impl.h.template");
                 file.open(QIODevice::ReadOnly);
                 QByteArray data = file.readAll();
                 file.close();
@@ -869,7 +869,7 @@ void MainImpl::slotNewProject()
                 headerFile.close();
                 s += "HEADERS = "+ QDir(projectDirectory).relativeFilePath(srcDirectory + "/" + subclassFilename + ".h") + "\n";
                 // Create subclassing sources
-                QFile file2(":/templates/templates/impl.cpp");
+                QFile file2(":/templates/templates/impl.cpp.template");
                 file2.open(QIODevice::ReadOnly);
                 data = file2.readAll();
                 file2.close();
@@ -885,7 +885,7 @@ void MainImpl::slotNewProject()
                 sourceFile.close();
                 s += "SOURCES = "+ QDir(projectDirectory).relativeFilePath(srcDirectory + "/" + subclassFilename + ".cpp")+" \\" + "\n";
                 // Create main.cpp
-                QFile file3(":/templates/templates/main.cpp");
+                QFile file3(":/templates/templates/main.cpp.template");
                 file3.open(QIODevice::ReadOnly);
                 data = file3.readAll();
                 file3.close();
