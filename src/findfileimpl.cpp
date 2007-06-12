@@ -18,13 +18,25 @@ FindFileImpl::FindFileImpl( QWidget * parent, QStringList directories, QListWidg
     for (int i=0; i<directories.count(); i++)
         comboFindIn->addItem(directories.at(i)+"/");
 }
+
+//
+void FindFileImpl::setDefaultWord( QString s) {
+    defaultWord=s;
+}
+
 //
 void FindFileImpl::showEvent(QShowEvent* _pEvent)
 {
     // BK - put focus on textFind and select previous search word
     textFind->setFocus();
     QLineEdit* pLineEdit = textFind->lineEdit();
-    pLineEdit->setSelection(0, pLineEdit->text().count());
+    if(!defaultWord.isEmpty()) {
+        pLineEdit->setText(defaultWord);
+	defaultWord.clear();
+    } else {
+        pLineEdit->setSelection(0, pLineEdit->text().count());
+    }
+
     QWidget::showEvent(_pEvent);
 }
 //
