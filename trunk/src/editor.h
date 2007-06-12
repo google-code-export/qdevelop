@@ -148,13 +148,14 @@ public slots:
 	void slotClassesMethodsList();	
 	void slotOtherFile();
 	void find();
+	QString selection();
 private slots:	
 	void slotComboMethods(int index);
 	void slotFindWidget_textChanged(QString text="", bool fromButton=false);
-    void slotFindPrevious();
-    void slotFindNext();
-    void slotTimerUpdateClasses();
-    void slotTimerCheckIfModifiedOutside();
+	void slotFindPrevious();
+	void slotFindNext();
+	void slotTimerUpdateClasses();
+	void slotTimerCheckIfModifiedOutside();
 private:
 	TabWidget *m_parent;
 	QPointer<LineNumbers> m_lineNumbers;

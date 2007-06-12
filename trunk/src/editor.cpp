@@ -334,6 +334,16 @@ void Editor::find()
     uiFind.editFind->selectAll();
     autoHideTimer->start();
 }
+
+//return current selected text or word under cursor
+QString Editor::selection()
+{
+    if ( m_textEdit->textCursor().selectedText().length() )
+        return ( m_textEdit->textCursor().selectedText() );
+    else
+        return ( m_textEdit->wordUnderCursor() );
+}
+
 //
 void Editor::setFocus()
 {

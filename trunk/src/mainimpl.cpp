@@ -2227,7 +2227,8 @@ void MainImpl::slotFindInFiles()
                 directories << m_projectManager->projectDirectory(listeProjets.at(nbProjets)->text(0));
             }
         }
-        m_findInFiles = new FindFileImpl(this, directories, findFiles, findLines);
+	
+	m_findInFiles = new FindFileImpl(this, directories, findFiles, findLines);
     }
     else
     {
@@ -2236,7 +2237,14 @@ void MainImpl::slotFindInFiles()
 	    QRect rect = m_findInFiles->geometry();
 	    m_findInFiles->hide();
 	    m_findInFiles->setGeometry(rect);
-   	}
+    }
+
+    //read selected text or current word
+    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    if ( editor ) {
+	m_findInFiles->setDefaultWord(editor->selection());
+    }
+
     dockOutputs->setVisible(true);
     tabOutputs->setCurrentIndex( 2 );
     m_findInFiles->show();
