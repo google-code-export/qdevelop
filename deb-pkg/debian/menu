@@ -1,0 +1,2 @@
+?package(qdevelop):needs="X11" section="Apps/Programming"\
+  title="QDevelop" command="/usr/bin/qdevelop"

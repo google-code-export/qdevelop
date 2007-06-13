@@ -1,0 +1,30 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## use-qmake-qt4.dpatch by Diego Iastrubni <elcuco@kde.org>
+##
+## DP: force the usage of the qmake files in debian, and not the generic ones.
+## DP: in debian qmake is handled by the alternatives system, and can link to
+## DP: the qt3 version
+
+@DPATCH@
+diff -urNad qdevelop-0.24~/src/toolscontrolimpl.cpp qdevelop-0.24/src/toolscontrolimpl.cpp
+--- qdevelop-0.24~/src/toolscontrolimpl.cpp	2007-02-03 19:10:08.000000000 +0200
++++ qdevelop-0.24/src/toolscontrolimpl.cpp	2007-06-10 17:51:37.000000000 +0300
+@@ -27,12 +27,12 @@
+     QSettings settings;
+ #endif
+     settings.beginGroup("Options");
+-    qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"qmake"+suffix).toString() );
+-    linguist->setText( settings.value("m_linguistName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"linguist"+suffix).toString() );
+-    lupdate->setText ( settings.value("m_lupdateName" , QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lupdate" +suffix).toString() );
+-    lrelease->setText( settings.value("m_lreleaseName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lrelease"+suffix).toString() );
+-    designer->setText( settings.value("m_designerName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"designer"+suffix).toString() );
+-    assistant->setText( settings.value("m_assistantName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"assistant"+suffix).toString() );
++    qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"qmake-qt4"+suffix).toString() );
++    linguist->setText( settings.value("m_linguistName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"linguist-qt4"+suffix).toString() );
++    lupdate->setText ( settings.value("m_lupdateName" , QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lupdate-qt4" +suffix).toString() );
++    lrelease->setText( settings.value("m_lreleaseName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lrelease-qt4"+suffix).toString() );
++    designer->setText( settings.value("m_designerName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"designer-qt4"+suffix).toString() );
++    assistant->setText( settings.value("m_assistantName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"assistant-qt4"+suffix).toString() );
+ 
+ #ifdef Q_OS_WIN32
+     make->setText( settings.value("m_makeName").toString() );
