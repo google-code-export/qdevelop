@@ -67,7 +67,7 @@ public:
 	     * parses a tags file to show all className members
 	     * relative to the scope of another className
 	 */
-	static QList < Tag > findEntries(const Expression * exp, const Scope * scope, const bool showAllEntries, const QString nameFilter);
+	static QList < Tag > findEntries(const Expression * exp, const Scope * scope);
 
 private:
 	void addTreeChild(const QString &className);
