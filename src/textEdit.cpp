@@ -79,6 +79,7 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_completionList->setSelectionMode( QAbstractItemView::SingleSelection );
     m_completionList->setVerticalScrollBarPolicy( Qt::ScrollBarAsNeeded );
     m_completionList->hide();
+    m_completionList->setSortingEnabled( true );
 #ifdef Q_WS_MAC
     m_completionList->setFont(QFont(m_completionList->font().family(), 12) );
 #else
@@ -160,18 +161,20 @@ void TextEdit::slotCompletionList(TagList TagList)
         foreach(Tag tag, TagList)
         {
             w = qMax(w, fontMetrics().width( tag.name+tag.parameters ));
-            m_completionList->addItem( tag.name+tag.parameters );
+            QListWidgetItem *item = new QListWidgetItem( m_completionList );
+            item->setText(tag.name+tag.parameters );
             h += 15;
-            QListWidgetItem *item = m_completionList->item(m_completionList->count()-1);
             QVariant v;
             v.setValue( tag );
             item->setData(Qt::UserRole, v );
             //item->setData(Qt::UserRole, QVariant(tag.name) );
-
+			if( tag.access.isEmpty() )
+				tag.access = "public";
             if ( tag.kind == "function" || tag.kind == "prototype")
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_meth.png"));
             else if ( tag.kind == "member" )
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_var.png"));
+            m_completionList->addItem(item);
             //m_completionList->addItem( tag.name );
             //qDebug() << tag.name << tag.longName << tag.parameters << tag.access << tag.kind;
         }
@@ -227,13 +230,16 @@ void TextEdit::slotCompletionHelpList(TagList TagList)
         foreach(Tag tag, TagList)
         {
             w = qMax(w, fontMetrics().width( tag.name+tag.parameters ));
-            m_completionList->addItem( tag.name+tag.parameters );
+            QListWidgetItem *item = new QListWidgetItem( m_completionList );
+            item->setText( tag.name+tag.parameters );
             h += 15;
-            QListWidgetItem *item = m_completionList->item(m_completionList->count()-1);
+			if( tag.access.isEmpty() )
+				tag.access = "public";
             if ( tag.kind == "function" || tag.kind == "prototype")
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_meth.png"));
             else if ( tag.kind == "member" )
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_var.png"));
+            m_completionList->addItem( item );
         }
         m_completionList->setSelectionMode( QAbstractItemView::NoSelection );
         QPalette palette;
