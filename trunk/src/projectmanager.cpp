@@ -164,9 +164,9 @@ void ProjectManager::parseTreeClasses(bool force)
                 Editor *editor = 0;
                 for (int i=0; i<m_parent->tabEditors()->count(); i++)
                 {
-                    if ( ((Editor *)m_parent->tabEditors()->widget(i))->filename() == s)
+                    if ( m_parent->givenEditor(i)->filename() == s)
                     {
-                        editor = ((Editor *)m_parent->tabEditors()->widget(i));
+                        editor = m_parent->givenEditor(i);
                     }
                 }
                 if ( editor )
@@ -297,7 +297,7 @@ void ProjectManager::saveProjectSettings()
 
     for (int i=0; i<m_parent->tabEditors()->count(); i++)
     {
-        Editor *editor = ((Editor *)m_parent->tabEditors()->widget( i ));
+        Editor *editor = m_parent->givenEditor(i);
         if ( editor )
         {
             QString filename = QDir( directory ).relativeFilePath( editor->filename() );
@@ -382,8 +382,8 @@ void ProjectManager::loadProjectSettings()
         m_parent->openFile( QStringList( filename ) );
         if ( m_parent->tabEditors()->count() && numline )
         {
-            ((Editor *)m_parent->tabEditors()->widget( m_parent->tabEditors()->count()-1 ))->setVerticalScrollBar( scrollbar );
-            ((Editor *)m_parent->tabEditors()->widget( m_parent->tabEditors()->count()-1 ))->gotoLine( numline,false );
+            m_parent->givenEditor( m_parent->tabEditors()->count()-1 )->setVerticalScrollBar( scrollbar );
+            m_parent->givenEditor( m_parent->tabEditors()->count()-1 )->gotoLine( numline,false );
         }
     }
     //
@@ -1330,7 +1330,7 @@ void ProjectManager::slotRenameItem(QTreeWidgetItem *it)
             Editor *editor = 0;
             for (int i=0; i<m_parent->tabEditors()->count(); i++)
             {
-                editor = ((Editor *)m_parent->tabEditors()->widget(i));
+                editor = m_parent->givenEditor(i);
                 editor->setNameOtherFile(oldAbsolutePath, newAbsolutePath);
             }
         }

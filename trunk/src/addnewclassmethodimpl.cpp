@@ -57,9 +57,9 @@ void AddNewClassMethodImpl::on_okButton_clicked()
     Editor *editor = 0;
     for (int i=0; i<m_mainImpl->tabEditors()->count(); i++)
     {
-        if ( ((Editor *)m_mainImpl->tabEditors()->widget(i))->filename() == m_declaration.section("|", 0, 0))
+        if ( m_mainImpl->givenEditor(i)->filename() == m_declaration.section("|", 0, 0))
         {
-            editor = ((Editor *)m_mainImpl->tabEditors()->widget(i));
+            editor = m_mainImpl->givenEditor(i);
         }
     }
     if ( editor )
@@ -159,9 +159,9 @@ void AddNewClassMethodImpl::on_okButton_clicked()
     editor = 0;
     for (int i=0; i<m_mainImpl->tabEditors()->count(); i++)
     {
-        if ( ((Editor *)m_mainImpl->tabEditors()->widget(i))->filename() == m_implementation.section("|", 0, 0))
+        if ( m_mainImpl->givenEditor(i)->filename() == m_implementation.section("|", 0, 0))
         {
-            editor = ((Editor *)m_mainImpl->tabEditors()->widget(i));
+            editor = m_mainImpl->givenEditor(i);
         }
     }
     insertedText = l_returnType + " " + m_classname + "::" + l_methodName + l_parameters;

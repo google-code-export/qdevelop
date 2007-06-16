@@ -195,12 +195,22 @@ MainImpl::~MainImpl()
         m_completion = 0;
     }
 }
+
+//convenient functions to access editor tabs
+Editor * MainImpl::currentEditor() {
+	return (Editor*) (m_tabEditors->currentWidget());
+}
+
+Editor * MainImpl::givenEditor(int i) {
+	return (Editor*) (m_tabEditors->widget(i));
+}
+
 //
 void MainImpl::renameEditor(QString oldName, QString newName)
 {
     for (int i=0; i<m_tabEditors->count(); i++)
     {
-        Editor *editor = ((Editor *)m_tabEditors->widget(i));
+        Editor *editor = givenEditor(i);
         if ( editor->filename() == oldName)
         {
             editor->setFilename( newName );
@@ -280,7 +290,7 @@ void MainImpl::setCrossButton(bool activate)
 void MainImpl::slotOtherFile()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->slotOtherFile();
 }
@@ -425,7 +435,7 @@ void MainImpl::slotNewFile()
 void MainImpl::slotSetFocusToEditor()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->setFocus();
 }
@@ -433,7 +443,7 @@ void MainImpl::slotSetFocusToEditor()
 void MainImpl::slotToggleBreakpoint()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->toggleBreakpoint();
 }
@@ -482,7 +492,7 @@ void MainImpl::slotNextBookmark()
 void MainImpl::slotToggleBookmark()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->toggleBookmark();
 }
@@ -490,7 +500,7 @@ void MainImpl::slotToggleBookmark()
 void MainImpl::slotToggleComment()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->comment( TextEdit::Toggle );
 }
@@ -498,7 +508,7 @@ void MainImpl::slotToggleComment()
 void MainImpl::slotComment()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->comment( TextEdit::Comment );
 }
@@ -506,7 +516,7 @@ void MainImpl::slotComment()
 void MainImpl::slotMethodsList()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->methodsList();
 }
@@ -514,7 +524,7 @@ void MainImpl::slotMethodsList()
 void MainImpl::slotGotoImplementation()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->gotoImplementation();
 }
@@ -522,7 +532,7 @@ void MainImpl::slotGotoImplementation()
 void MainImpl::slotGotoDeclaration()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->gotoDeclaration();
 }
@@ -530,7 +540,7 @@ void MainImpl::slotGotoDeclaration()
 void MainImpl::slotGotoMatchingBracket()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->gotoMatchingBracket();
 }
@@ -538,7 +548,7 @@ void MainImpl::slotGotoMatchingBracket()
 void MainImpl::slotUncomment()
 {
     int i = m_tabEditors->currentIndex();
-    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+    Editor *editor = givenEditor(i);
     if ( editor  )
         editor->comment( TextEdit::Uncomment );
 }
@@ -548,7 +558,7 @@ void MainImpl::slotPreviousTab()
 	if ( 0 < m_tabEditors->count() )
 	{
 	    int i = m_tabEditors->currentIndex()-1;
-	    Editor *editor = ((Editor*)m_tabEditors->widget( 0>i?m_tabEditors->count()-1:i ));
+	    Editor *editor = givenEditor( 0>i?m_tabEditors->count()-1:i );
 		
 	    if ( editor  )
 	        m_tabEditors->setCurrentWidget( editor );		
@@ -560,7 +570,7 @@ void MainImpl::slotNextTab()
 	if ( 0 < m_tabEditors->count() )
 	{
 	    int i = (m_tabEditors->currentIndex()+1)%m_tabEditors->count();
-	    Editor *editor = ((Editor*)m_tabEditors->widget( i ));
+	    Editor *editor = givenEditor(i);
     	if ( editor  )
     	    m_tabEditors->setCurrentWidget( editor );
 	}
@@ -631,23 +641,24 @@ void MainImpl::slotOptions()
         //
         for (int i=0; i<m_tabEditors->count(); i++)
         {
-            ((Editor *)m_tabEditors->widget( i ))->setShowTreeClasses( m_showTreeClasses );
-            ((Editor *)m_tabEditors->widget( i ))->setIntervalUpdatingTreeClasses( m_intervalUpdatingClasses );
-            ((Editor *)m_tabEditors->widget( i ))->setFont( m_font );
-            ((Editor *)m_tabEditors->widget( i ))->setTabStopWidth( m_tabStopWidth );
-            ((Editor *)m_tabEditors->widget( i ))->setSyntaxHighlight( m_cppHighlighter );
-            ((Editor *)m_tabEditors->widget( i ))->setLineNumbers( m_lineNumbers );
-            ((Editor *)m_tabEditors->widget( i ))->setAutoIndent( m_autoIndent );
-            ((Editor *)m_tabEditors->widget( i ))->setMatch( m_match );
-            ((Editor *)m_tabEditors->widget( i ))->setSelectionBorder( m_selectionBorder );
-            ((Editor *)m_tabEditors->widget( i ))->setAutoCompletion( m_autoCompletion );
-            ((Editor *)m_tabEditors->widget( i ))->setEndLine( m_endLine );
-            ((Editor *)m_tabEditors->widget( i ))->setTabSpaces( m_tabSpaces );
-            ((Editor *)m_tabEditors->widget( i ))->setBackgroundColor( m_backgroundColor );
-            ((Editor *)m_tabEditors->widget( i ))->setCurrentLineColor( m_currentLineColor );
-            ((Editor *)m_tabEditors->widget( i ))->setMatchingColor( m_matchingColor );
-            ((Editor *)m_tabEditors->widget( i ))->setAutobrackets( m_autobrackets );
-            ((Editor *)m_tabEditors->widget( i ))->setSyntaxColors
+            Editor *editor = givenEditor(i);
+            editor->setShowTreeClasses( m_showTreeClasses );
+            editor->setIntervalUpdatingTreeClasses( m_intervalUpdatingClasses );
+            editor->setFont( m_font );
+            editor->setTabStopWidth( m_tabStopWidth );
+            editor->setSyntaxHighlight( m_cppHighlighter );
+            editor->setLineNumbers( m_lineNumbers );
+            editor->setAutoIndent( m_autoIndent );
+            editor->setMatch( m_match );
+            editor->setSelectionBorder( m_selectionBorder );
+            editor->setAutoCompletion( m_autoCompletion );
+            editor->setEndLine( m_endLine );
+            editor->setTabSpaces( m_tabSpaces );
+            editor->setBackgroundColor( m_backgroundColor );
+            editor->setCurrentLineColor( m_currentLineColor );
+            editor->setMatchingColor( m_matchingColor );
+            editor->setAutobrackets( m_autobrackets );
+            editor->setSyntaxColors
             (
                 m_formatPreprocessorText,
                 m_formatQtText,
@@ -1041,7 +1052,7 @@ bool MainImpl::slotCloseAllFiles()
     QList<Editor *> editorList;
 
     for (int i=0; i<m_tabEditors->count(); i++)
-        editorList.append( ((Editor *)m_tabEditors->widget( i )) );
+        editorList.append( givenEditor(i) );
     foreach(Editor *editor, editorList )
     {
         if ( !editor->close() )
@@ -1189,7 +1200,7 @@ void MainImpl::slotClickTreeFiles(QTreeWidgetItem *item, int)
 //
 void MainImpl::slotSaveFile()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
     {
         editor->save();
@@ -1198,7 +1209,7 @@ void MainImpl::slotSaveFile()
 //
 void MainImpl::slotSaveFileAs()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( !editor )
         return;
     QString s = QFileDialog::getSaveFileName(
@@ -1218,7 +1229,7 @@ void MainImpl::slotSaveFileAs()
 //
 void MainImpl::slotHelpQtWord()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     QString className = "index";
     QString word = "index";
     if ( editor )
@@ -1233,7 +1244,7 @@ void MainImpl::slotHelpQtWord()
 //
 void MainImpl::slotCloseCurrentTab()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor && !editor->close() )
         return;
     delete editor;
@@ -1241,7 +1252,7 @@ void MainImpl::slotCloseCurrentTab()
 //
 void MainImpl::closeTab(int numTab)
 {
-    Editor *editor = ((Editor*)m_tabEditors->widget( numTab ));
+    Editor *editor = givenEditor(numTab);
     if ( editor && !editor->close() )
         return;
     delete editor;
@@ -1249,10 +1260,10 @@ void MainImpl::closeTab(int numTab)
 //
 void MainImpl::closeOtherTab(int numTab)
 {
-    Editor *noClose = ((Editor *)m_tabEditors->widget( numTab ));
+    Editor *noClose = givenEditor(numTab);
     QList<Editor *> editorlist;
     for (int i=0; i<m_tabEditors->count(); i++)
-        editorlist.append( ((Editor *)m_tabEditors->widget( i )) );
+        editorlist.append( givenEditor(i) );
     foreach(Editor *editor, editorlist)
     {
         if ( editor != noClose )
@@ -1269,7 +1280,7 @@ void MainImpl::slotClearAllBookmarks()
 {
     for (int i=0; i<m_tabEditors->count(); i++)
     {
-        Editor *editor = ((Editor *)m_tabEditors->widget( i ));
+        Editor *editor = givenEditor(i);
         if ( editor )
         {
             editor->clearAllBookmarks();
@@ -1283,7 +1294,7 @@ bool MainImpl::slotSaveAll()
     ok = true;
     for (int i=0; i<m_tabEditors->count(); i++)
     {
-        Editor *editor = ((Editor *)m_tabEditors->widget( i ));
+        Editor *editor = givenEditor(i);
         if ( editor )
         {
             if ( !editor->save() )
@@ -1322,17 +1333,17 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     // The file is perhaps already opened. Find filename in tabs.
     for (int i=0; i<m_tabEditors->count(); i++)
     {
-        if ( ((Editor *)m_tabEditors->widget(i))->filename() == s)
+        if ( givenEditor(i)->filename() == s)
         {
             m_tabEditors->setCurrentIndex( i );
             if ( numLine != -1 )
             {
-                ((Editor *)m_tabEditors->widget(i))->setFocus( /*Qt::OtherFocusReason*/ );
-                ((Editor *)m_tabEditors->widget(i))->gotoLine( numLine, false );
+                givenEditor(i)->setFocus( /*Qt::OtherFocusReason*/ );
+                givenEditor(i)->gotoLine( numLine, false );
                 slotCurrentTabChanged( i );
             }
             QApplication::restoreOverrideCursor();
-            return (Editor *)m_tabEditors->widget(i);
+            return givenEditor(i);
         }
     }
     //
@@ -1446,7 +1457,7 @@ void MainImpl::slotActivateBookmark(QAction *action)
     QTextBlock block = bookmark.second;
     for (int i=0; i<m_tabEditors->count(); i++)
     {
-        Editor *edit = ((Editor *)m_tabEditors->widget( i ));
+        Editor *edit = givenEditor(i);
         if ( edit == bookmarkEditor )
         {
             editor = edit;
@@ -1497,7 +1508,7 @@ void MainImpl::slotModifiedEditor( Editor *editor, bool modified)
 {
     for (int i=0; i<m_tabEditors->count(); i++)
     {
-        if ( ((Editor *)m_tabEditors->widget( i )) == editor )
+        if ( givenEditor(i) == editor )
         {
             if ( modified && m_tabEditors->tabText(i).left(1) != "*" )
                 m_tabEditors->setTabText(i, "* "+m_tabEditors->tabText(i) );
@@ -1520,7 +1531,7 @@ void MainImpl::slotClean()
 //
 void MainImpl::slotCompile()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor && Editor::suffixe( editor->filename() ).toLower() == "cpp" )
     {
         actionBuild->setEnabled( false );
@@ -1702,14 +1713,14 @@ void MainImpl::slotDoubleClickFindLines( QListWidgetItem *item)
 //
 void MainImpl::slotCut()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->cut();
 }
 //
 void MainImpl::slotPrint()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->print();
 }
@@ -1718,7 +1729,7 @@ void MainImpl::slotCurrentTabChanged(int index)
 {
     for (int i=0; i<m_tabEditors->count(); i++)
     {
-        Editor *editor = ((Editor*)m_tabEditors->widget(i));
+        Editor *editor = givenEditor(i);
         if ( editor )
             editor->setActiveEditor(i==index);
     }
@@ -1726,91 +1737,91 @@ void MainImpl::slotCurrentTabChanged(int index)
 //
 void MainImpl::slotCopy()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->copy();
 }
 //
 void MainImpl::slotCompleteCode()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->completeCode();
 }
 //
 void MainImpl::slotPaste()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->paste();
 }
 //
 void MainImpl::slotUndo()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->undo();
 }
 //
 void MainImpl::slotIndent()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->slotIndent();
 }
 //
 void MainImpl::slotUnindent()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->slotUnindent();
 }
 //
 void MainImpl::slotRedo()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->redo();
 }
 //
 void MainImpl::slotSelectAll()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->selectAll();
 }
 //
 void MainImpl::slotFind()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->find();
 }
 //
 void MainImpl::slotReplace()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->replace();
 }
 //
 void MainImpl::slotGotoLine()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->dialogGotoLine();
 }
 //
 void MainImpl::slotFindContinue()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->findContinue();
 }
 //
 void MainImpl::slotFindPrevious()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor )
         editor->findPrevious();
 }
@@ -1825,7 +1836,7 @@ bool MainImpl::modifiedEditors()
     bool modified = false;
     for (int i=0; i<m_tabEditors->count(); i++)
     {
-        Editor *editor = ((Editor *)m_tabEditors->widget( i ));
+        Editor *editor = givenEditor(i);
         if ( editor )
         {
             if ( editor->isModified() )
@@ -1907,7 +1918,7 @@ bool MainImpl::slotDebug(bool executeOnly)
     {
         for (int i=0; i<m_tabEditors->count(); i++)
         {
-            Editor *editor = ((Editor *)m_tabEditors->widget( i ));
+            Editor *editor = givenEditor(i);
             connect(editor, SIGNAL(breakpoint(QString, QPair<bool,unsigned int>)), m_debug, SLOT(slotBreakpoint(QString, QPair<bool,unsigned int>)) );
             editor->emitListBreakpoints();
         }
@@ -2240,9 +2251,9 @@ void MainImpl::slotFindInFiles()
     }
 
     //read selected text or current word
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( editor ) {
-	m_findInFiles->setDefaultWord(editor->selection());
+		m_findInFiles->setDefaultWord(editor->selection());
     }
 
     dockOutputs->setVisible(true);
@@ -2423,7 +2434,7 @@ void MainImpl::loadPlugins()
 //
 void MainImpl::slotTextEditPlugin()
 {
-    Editor *editor = ((Editor*)m_tabEditors->currentWidget());
+    Editor *editor = currentEditor();
     if ( !editor )
         return;
     QAction *action = qobject_cast<QAction *>(sender());
