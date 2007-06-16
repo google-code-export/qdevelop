@@ -79,6 +79,8 @@ public:
 	void renameEditor(QString oldName, QString newName);
 	void configureCompletion(QString projectDirectory);
 	void gotoFileInProject(QString& filename);
+	Editor * currentEditor();
+	Editor * givenEditor(int i);
 private:
 	// Functions
 	void createConnections();

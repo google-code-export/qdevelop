@@ -91,9 +91,9 @@ void AddNewClassVariableImpl::insertInDeclaration(QString scope, QString inserte
     Editor *editor = 0;
     for (int i=0; i<m_mainImpl->tabEditors()->count(); i++)
     {
-        if ( ((Editor *)m_mainImpl->tabEditors()->widget(i))->filename() == m_declaration.section("|", 0, 0))
+        if ( m_mainImpl->givenEditor(i)->filename() == m_declaration.section("|", 0, 0))
         {
-            editor = ((Editor *)m_mainImpl->tabEditors()->widget(i));
+            editor = m_mainImpl->givenEditor(i);
         }
     }
     //
@@ -171,9 +171,9 @@ void AddNewClassVariableImpl::insertInImplementation(QString insertedText)
     Editor *editor = 0;
     for (int i=0; i<m_mainImpl->tabEditors()->count(); i++)
     {
-        if ( ((Editor *)m_mainImpl->tabEditors()->widget(i))->filename() == m_implementation.section("|", 0, 0))
+        if ( m_mainImpl->givenEditor(i)->filename() == m_implementation.section("|", 0, 0))
         {
-            editor = ((Editor *)m_mainImpl->tabEditors()->widget(i));
+            editor = m_mainImpl->givenEditor(i);
         }
     }
     //
