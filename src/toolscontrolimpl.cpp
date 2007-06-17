@@ -137,7 +137,7 @@ bool ToolsControlImpl::toolsControl() {
     m_ctagsIsPresent = true;
     if ( lu.isEmpty() ) {
         if (testCtags->error() == QProcess::UnknownError) {
-            QMessageBox::warning(this, "QDevelop", tr("Ctags was detected in path %1, but this is to old version.").arg(ctags->text())
+            QMessageBox::warning(this, "QDevelop", tr("Ctags was detected in path %1, but this version is too old.").arg(ctags->text())
              , tr("Ok") );
         }
         m_ctagsIsPresent = false;

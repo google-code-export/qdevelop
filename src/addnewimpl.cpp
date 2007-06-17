@@ -132,7 +132,7 @@ void AddNewImpl::slotAccept()
 			autreSuffixe = "cpp";
 		}
 		int rep = QMessageBox::question(0, "QDevelop", 
-			tr("Also create the file")+" "+ type +" "+tr("in same location ?"), tr("Yes"), tr("No"), tr("Cancel"), 0, 2 );
+			tr("Also create the file %1 in same location ?").arg(type), tr("Yes"), tr("No"), tr("Cancel"), 0, 2 );
 		if( rep == 2 )
 			return;
 		if( rep == 0 )

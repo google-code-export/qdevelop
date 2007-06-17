@@ -87,7 +87,7 @@ void AddNewClassImpl::on_okButton_clicked()
     if ( file.exists() )
     {
         QMessageBox::warning(0,
-                             "QDevelop", tr("The file")+" \""+absoluteNameHeader+"\"\n "+tr("already exist."),
+                             "QDevelop", tr("The file \"%1\"\n already exists.").arg(absoluteNameHeader),
                              tr("Cancel") );
         return;
     }
@@ -105,7 +105,7 @@ void AddNewClassImpl::on_okButton_clicked()
     if ( file2.exists() )
     {
         QMessageBox::warning(0,
-                             "QDevelop", tr("The file")+" \""+absoluteNameImpl+"\"\n "+tr("already exist."),
+                             "QDevelop", tr("The file \"%1\"\n already exists.").arg(absoluteNameImpl),
                              tr("Cancel") );
         return;
     }

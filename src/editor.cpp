@@ -78,13 +78,13 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         m_otherFileButton = new QToolButton(this);
         m_otherFileButton->setIcon(QIcon(":/treeview/images/h.png"));
         //
-        m_otherFileButton->setToolTip( tr("Open")+" "+Editor::shortFilename(m_nameOtherFile)+".cpp" );
+        m_otherFileButton->setToolTip( tr("Open %1.cpp").arg(Editor::shortFilename(m_nameOtherFile)) );
         connect(m_otherFileButton, SIGNAL(clicked()), this, SLOT(slotOtherFile()));
         hboxLayout->addWidget(m_otherFileButton);
         //
         if ( suffixe( m_filename ).toLower() != "h" )
         {
-            m_otherFileButton->setToolTip( tr("Open")+" "+Editor::shortFilename(m_nameOtherFile)+".h" );
+            m_otherFileButton->setToolTip( tr("Open %1.h").arg(Editor::shortFilename(m_nameOtherFile)) );
             m_refreshButton = new QToolButton(this);
             m_refreshButton->setIcon(QIcon(":/toolbar/images/refresh.png"));
             m_refreshButton->setToolTip( tr("Refresh classes and methods lists") );
@@ -206,7 +206,7 @@ void Editor::slotTimerCheckIfModifiedOutside()
     {
         m_timerCheckLastModified.stop();
         int rep = QMessageBox::question(this, "QDevelop",
-                                        tr("The file")+" \""+m_filename+"\"\n"+tr("was modified outside editor.")+"\n\n"+
+                                        tr("The file \"%1\"\nwas modified outside editor.\n\n").arg(m_filename)+
                                         tr("What do you want to do?"),
                                         tr("Overwrite"), tr("Reload File") );
         if ( rep == 0 ) // Overwrite
@@ -737,12 +737,12 @@ void Editor::setNameOtherFile(QString oldName, QString newName)
     m_nameOtherFile = newName.mid(0, newName.lastIndexOf(".") );
     if ( suffixe( newName ).toLower() == "h" )
     {
-        m_otherFileButton->setToolTip( tr("Open")+" "+Editor::shortFilename(m_nameOtherFile)+".h" );
+        m_otherFileButton->setToolTip( tr("Open %1.h").arg(Editor::shortFilename(m_nameOtherFile)) );
         m_nameOtherFile += ".h";
     }
     else
     {
-        m_otherFileButton->setToolTip( tr("Open")+" "+Editor::shortFilename(m_nameOtherFile)+".cpp" );
+        m_otherFileButton->setToolTip( tr("Open %1.cpp").arg(Editor::shortFilename(m_nameOtherFile)) );
         m_nameOtherFile += ".cpp";
     }
 }

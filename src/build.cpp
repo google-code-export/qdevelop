@@ -91,7 +91,7 @@ void Build::run()
 		if( !compilation.isEmpty() )
 		{
 			m_buildProcess->start( compilation );
-			emit message( QString("\n"+tr("Compilation of ")+m_compileFile+"...\n") );
+			emit message( tr("\nCompilation of %1...\n").arg(m_compileFile) );
 		}
 		else
 		{

@@ -66,7 +66,7 @@ void AddExistantImpl::slotAccept()
 			if( !QFile::exists( filenamestr ) )
 			{
 				QMessageBox::warning(0, 
-					"QDevelop", tr("The file")+ " " + filenamestr + " " + tr("doesn't exist."),
+					"QDevelop", tr("The file %1 doesn't exist.").arg(filenamestr),
 					tr("Cancel") );
 				return;
 			}
@@ -74,7 +74,7 @@ void AddExistantImpl::slotAccept()
 			if( !QFile::copy(filenamestr, location->text()+f) )
 			{
 				QMessageBox::warning(0, 
-					"QDevelop", tr("Unable to copy")+ " " + filenamestr,
+					"QDevelop", tr("Unable to copy %1").arg(filenamestr),
 					tr("Cancel") );
 				return;
 			}

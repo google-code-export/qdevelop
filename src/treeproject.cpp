@@ -222,7 +222,7 @@ void TreeProject::mousePressEvent( QMouseEvent * event )
 		while( tmp && tmp->data(0, Qt::UserRole).toString() != "PROJECT" )
 			tmp = tmp->parent();
 		if( tmp )
-			connect(menu->addAction(QIcon(), tr("Propertie of")+" "+tmp->text(0)+"..."), SIGNAL(triggered()), this, SLOT(slotProjectPropertie()) );
+			connect(menu->addAction(QIcon(), tr("Properties of %1...").arg(tmp->text(0)) ), SIGNAL(triggered()), this, SLOT(slotProjectPropertie()) );
 		//
 		menu->addSeparator();
 		QMenu *showAs = menu->addMenu(tr("Show As"));

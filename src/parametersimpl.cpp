@@ -88,7 +88,7 @@ void ParametersImpl::on_add_clicked()
 	if( tableVariables->findItems(variable, Qt::MatchExactly).count() )
 	{
 		QMessageBox::warning(this, 
-			"QDevelop", tr("The variable")+" \""+variable+"\" "+tr("already exist."),
+			"QDevelop", tr("The variable \"%1\" already exists.").arg(variable),
 			tr("Cancel") );
 		return;
 	}

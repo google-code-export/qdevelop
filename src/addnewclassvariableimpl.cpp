@@ -40,7 +40,7 @@ void AddNewClassVariableImpl::on_okButton_clicked()
         if ( parsedItem.name == l_variableName )
         {
             QMessageBox::warning(this,
-                                 "QDevelop", l_variableName+" "+tr("already exists in class") + " "+m_classname+".",
+                                 "QDevelop", tr("%1 already exists in class %2.").arg(l_variableName, m_classname),
                                  tr("Cancel") );
             return;
         }
