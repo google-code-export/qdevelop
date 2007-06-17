@@ -309,7 +309,7 @@ bool TextEdit::open(bool silentMode, QString filename, QDateTime &lastModified)
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         if ( !silentMode )
-            QMessageBox::critical(0, "QDevelop", tr("The file ")+" \""+filename+"\" "+tr("could not be loaded."),tr("Cancel") );
+            QMessageBox::critical(0, "QDevelop", tr("The file \"%1\" could not be loaded.").arg(filename),tr("Cancel") );
         return false;
     }
     QTextStream in(&file);
@@ -533,7 +533,7 @@ bool TextEdit::close(QString filename)
     {
         // Proposer sauvegarde
         int rep = QMessageBox::question(this, "QDevelop",
-                                        tr("Save")+" \""+filename+"\"", tr("Yes"), tr("No"), tr("Cancel"), 0, 2 );
+                                        tr("Save \"%1\"").arg(filename), tr("Yes"), tr("No"), tr("Cancel"), 0, 2 );
         if ( rep == 2 )
             return false;
         if ( rep == 0 )
@@ -552,7 +552,7 @@ bool TextEdit::save(QString filename, QDateTime &lastModified)
     QFile file( filename );
     if (!file.open(QIODevice::WriteOnly))
     {
-        QMessageBox::about(0, "QDevelop",tr("Unable to save")+" "+filename);
+        QMessageBox::about(0, "QDevelop",tr("Unable to save %1").arg(filename));
         return false;
     }
     QApplication::setOverrideCursor(Qt::WaitCursor);

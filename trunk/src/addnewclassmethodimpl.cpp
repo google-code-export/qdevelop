@@ -11,7 +11,7 @@ AddNewClassMethodImpl::AddNewClassMethodImpl( MainImpl * parent, TreeClasses *tr
         : QDialog(parent), m_mainImpl(parent), m_treeClasses(treeClasses), m_implementation(implementation), m_declaration(declaration), m_classname(classname)
 {
     setupUi(this);
-    setWindowTitle ( tr("Add New Method in class") + " " + m_classname );
+    setWindowTitle ( tr("Add New Method in class %1").arg(m_classname) );
 }
 //
 
@@ -46,7 +46,7 @@ void AddNewClassMethodImpl::on_okButton_clicked()
         if ( s.contains(l_methodName) && m_treeClasses->signature(s) == m_treeClasses->signature(sign) )
         {
             QMessageBox::warning(this,
-                                 "QDevelop", l_methodName+m_treeClasses->signature(sign)+" "+tr("already exists in class") + " "+m_classname+".",
+                                 "QDevelop", tr("%1 already exists in class %2.").arg(l_methodName+m_treeClasses->signature(sign), m_classname),
                                  tr("Cancel") );
             return;
         }

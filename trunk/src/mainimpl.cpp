@@ -419,13 +419,13 @@ void MainImpl::slotNewFile()
     if ( file.exists() )
     {
         QMessageBox::warning(0,
-                             "QDevelop", tr("The file")+" \""+s+"\"\n "+tr("already exist on directory."),
+                             "QDevelop", tr("The file \"%1\"\n already exists in directory.").arg(s),
                              tr("Cancel") );
         return;
     }
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
-        QMessageBox::about(0, "QDevelop",tr("Unable to create")+" "+s);
+        QMessageBox::about(0, "QDevelop",tr("Unable to create %1").arg(s));
         return;
     }
     file.close();
@@ -792,7 +792,7 @@ void MainImpl::slotNewProject()
         if ( !dir.mkdir(projectDirectory) )
         {
             QMessageBox::warning(0,
-                                 "QDevelop", tr("The directory cannot be created")+" \""+projectDirectory+"\"",
+                                 "QDevelop", tr("The directory \"%1\" cannot be created").arg(projectDirectory),
                                  tr("Cancel") );
             return;
         }
@@ -1124,7 +1124,7 @@ bool MainImpl::openProject(QString s)
     if ( !file.exists() )
     {
         QMessageBox::warning(this,
-                             "QDevelop", tr("The project")+ " " + s + " " + tr("doesn't exist."),
+                             "QDevelop", tr("The project %1 doesn't exist.").arg(s),
                              tr("Cancel") );
         return false;
     }
@@ -1195,7 +1195,7 @@ void MainImpl::slotDoubleClickTreeFiles(QTreeWidgetItem *item, int)
 void MainImpl::slotClickTreeFiles(QTreeWidgetItem *item, int)
 {
     QString projectName = m_projectManager->projectFilename( item );
-    actionProjectPropertie->setText( tr("Properties of")+" "+projectName+"..." );
+    actionProjectPropertie->setText( tr("Properties of %1...").arg(projectName) );
 }
 //
 void MainImpl::slotSaveFile()
@@ -1887,7 +1887,7 @@ bool MainImpl::slotDebug(bool executeOnly)
     if ( exeName.isEmpty() && actionDebug->text() != tr("Stop"))
     {
         QMessageBox::critical(0, "QDevelop",
-                              tr("The program don't exist,")+"\n"+
+                              tr("The program doesn't exist,")+"\n"+
                               tr("run Build."),tr("Ok") );
         return false;
     }
@@ -2309,7 +2309,7 @@ void MainImpl::slotAddDebugVariable()
         if ( tableOtherVariables->item(i, 0)->text() == var )
         {
             QMessageBox::warning(0,
-                                 "QDevelop", tr("The variable")+" \""+var+"\"\n "+tr("already exist."),
+                                 "QDevelop", tr("The variable \"%1\"\n already exists.").arg(var),
                                  tr("Cancel") );
             return;
         }

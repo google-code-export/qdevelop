@@ -718,7 +718,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
         if ( file.exists() )
         {
             QMessageBox::warning(0,
-                                 "QDevelop", tr("The file already exist on directory."),
+                                 "QDevelop", tr("The file already exists in directory."),
                                  tr("Cancel") );
             return;
         }
@@ -829,7 +829,7 @@ void ProjectManager::insertFile(QTreeWidgetItem *it, QString filename, bool sile
     {
         if ( !silentMode)
             QMessageBox::warning(0,
-                                 "QDevelop", tr("The file already exist."),
+                                 "QDevelop", tr("The file already exists."),
                                  tr("Cancel")
                                 );
         //return;
@@ -840,7 +840,7 @@ void ProjectManager::insertFile(QTreeWidgetItem *it, QString filename, bool sile
         {
             if ( !silentMode)
                 QMessageBox::warning(0,
-                                     "QDevelop", tr("This file is not permit."),
+                                     "QDevelop", tr("This file is not permitted."),
                                      tr("Ok")
                                     );
             return;
@@ -920,7 +920,7 @@ void ProjectManager::slotAddSubProject(QTreeWidgetItem *it)
         if ( !dir.mkdir(location) )
         {
             QMessageBox::warning(0,
-                                 "QDevelop", tr("Unable to create directory")+" \""+location+"\"",
+                                 "QDevelop", tr("Unable to create \"%1\" directory").arg(location),
                                  tr("Cancel") );
             return;
         }
@@ -928,7 +928,7 @@ void ProjectManager::slotAddSubProject(QTreeWidgetItem *it)
         if ( file.exists() )
         {
             QMessageBox::warning(0,
-                                 "QDevelop", tr("The project")+" \"")+nomAbsoluProjet+("\"\n "+tr("already exist on directory."),
+                                 "QDevelop", tr("The project \"%1\"\n already exists in directory.").arg(nomAbsoluProjet),
                                          tr("Cancel") );
             return;
         }
@@ -1259,7 +1259,7 @@ void ProjectManager::slotPreviewForm(QTreeWidgetItem *it)
     }
     else
     {
-        QString error = tr("The file")+" \""+uiName+"\" "+tr("");
+        QString error = tr("The file  \"%1\" ").arg(uiName);
         QMessageBox::warning(0,
                              "QDevelop", error,
                              tr("Cancel") );
@@ -1337,7 +1337,7 @@ void ProjectManager::slotRenameItem(QTreeWidgetItem *it)
         }
         else
         {
-            QMessageBox::warning(0,"QDevelop", tr("Unable to rename the file to")+" \""+newAbsolutePath+"\"", tr("Cancel"));
+            QMessageBox::warning(0,"QDevelop", tr("Unable to rename the file to \"%1\"").arg(newAbsolutePath), tr("Cancel"));
             return;
         }
     }
@@ -1359,7 +1359,7 @@ void ProjectManager::slotDeleteItem(QTreeWidgetItem *it, bool silentMode)
     if ( !silentMode )
     {
         rep = QMessageBox::question(0, "QDevelop",
-                                    tr("Do you want to delete")+" \""+it->text(0)+"\" "+tr("on project ?"),
+                                    tr("Do you want to delete \"%1\" on project ?").arg(it->text(0)),
                                     tr("Yes"), tr("No") );
     }
     if ( rep == 1 )
@@ -2024,8 +2024,8 @@ QString ProjectManager::executableName(QString preferedVersion)
             else if ( realVersion != preferedVersion && realVersion.length() )
             {
                 QMessageBox::warning(0,
-                                     "QDevelop", tr("The only available version for")+" \""+projectName+"\" "+tr("is") + " " +realVersion,
-                                     tr("Run on")+" "+realVersion );
+                                     "QDevelop", tr("The only available version for \"%1\" is %2").arg(projectName, realVersion),
+                                     tr("Run on %1").arg(realVersion) );
             }
             if ( realVersion.toLower() == "release" )
                 m_releaseVersion = true;

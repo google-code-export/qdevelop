@@ -47,7 +47,7 @@ ProjectPropertieImpl::ProjectPropertieImpl(ProjectManager * parent, QTreeWidget 
     copyTreeWidget(m_treeFiles->topLevelItem(0), m_copyTreeFiles->topLevelItem(0));
     while ( m_copyItProject->data(0, Qt::UserRole).toString() != "PROJECT" )
         m_copyItProject = m_copyItProject->parent();
-    setWindowTitle( tr("Properties of")+" "+m_projectName );
+    setWindowTitle( tr("Properties of %1").arg(m_projectName) );
     populateComboScope();
     advancedMode->setChecked( false );
     resize(10,10);
@@ -476,7 +476,7 @@ void ProjectPropertieImpl::slotAddValue()
         if ( text.contains(" ") && !text.contains("\""))
         {
             corriger = QMessageBox::warning(0, "QDevelop",
-                                            tr("The spaces are don't correctly parsed by qmake")
+                                            tr("The spaces aren't correctly parsed by qmake")
                                             +",\n"
                                             +tr("delete spaces or put quotes."),
                                             tr("Modify"), tr("Cancel") );
@@ -532,7 +532,7 @@ void ProjectPropertieImpl::slotModifyValue()
         if ( text.contains(" ") && !text.contains("\""))
         {
             corriger = QMessageBox::warning(0, "QDevelop",
-                                            tr("The spaces are don't correctly parsed by qmake")
+                                            tr("The spaces aren't correctly parsed by qmake")
                                             +",\n"
                                             +tr("delete spaces or put quotes."),
                                             tr("Modify"), tr("Cancel") );
