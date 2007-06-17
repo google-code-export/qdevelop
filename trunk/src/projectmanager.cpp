@@ -711,6 +711,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
     foreach(QString filename, filesList)
     {
         absoluteFilename = repCreation+"/"+filename.remove("\"").simplified();
+        QDir( projectDir ).mkdir( repCreation );
         filename = QDir(projectDir).relativeFilePath(absoluteFilename).replace("\\", "/");
         QFile file ( absoluteFilename );
 
