@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="tr_TR">
-<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -106,21 +105,6 @@ p, li { white-space: pre-wrap; }
         <translation>Bir hedef konum seçin.</translation>
     </message>
     <message>
-        <location filename="../../src/addexistantimpl.cpp" line="69"/>
-        <source>The file</source>
-        <translation>Dosya</translation>
-    </message>
-    <message>
-        <location filename="../../src/addexistantimpl.cpp" line="69"/>
-        <source>doesn&apos;t exist.</source>
-        <translation>mevcut değil.</translation>
-    </message>
-    <message>
-        <location filename="../../src/addexistantimpl.cpp" line="77"/>
-        <source>Unable to copy</source>
-        <translation>Kopyalanamıyor</translation>
-    </message>
-    <message>
         <location filename="../../src/addexistantimpl.cpp" line="92"/>
         <source>Choose a directory</source>
         <translation>Bir dizin seçin</translation>
@@ -134,6 +118,16 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/addexistantimpl.cpp" line="109"/>
         <source>Files (*.cpp *.h *.ui *.qrc *.ts)</source>
         <translation>Dosyalar (*.cpp *.h *.ui *.qrc *.ts)</translation>
+    </message>
+    <message>
+        <location filename="../../src/addexistantimpl.cpp" line="69"/>
+        <source>The file %1 doesn&apos;t exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/addexistantimpl.cpp" line="77"/>
+        <source>Unable to copy %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -320,16 +314,6 @@ p, li { white-space: pre-wrap; }
         <translation>Dosya konumunu seçin</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="108"/>
-        <source>The file</source>
-        <translation>Dosya</translation>
-    </message>
-    <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="108"/>
-        <source>already exist.</source>
-        <translation>zaten var.</translation>
-    </message>
-    <message>
         <location filename="../../src/addnewclassimpl.cpp" line="116"/>
         <source>Cancel</source>
         <translation>İptal</translation>
@@ -338,6 +322,12 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/addnewclassimpl.cpp" line="115"/>
         <source>Unable to create file.</source>
         <translation>Dosya oluşturulamıyor.</translation>
+    </message>
+    <message>
+        <location filename="../../src/addnewclassimpl.cpp" line="108"/>
+        <source>The file &quot;%1&quot;
+ already exists.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -486,11 +476,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddNewClassMethodImpl</name>
     <message>
-        <location filename="../../src/addnewclassmethodimpl.cpp" line="14"/>
-        <source>Add New Method in class</source>
-        <translation>Sınıfa Yeni Yöntem Ekle</translation>
-    </message>
-    <message>
         <location filename="../../src/addnewclassmethodimpl.cpp" line="37"/>
         <source>An implementation file is required.</source>
         <translation>Bir tanım dosyası gerekli.</translation>
@@ -501,9 +486,14 @@ p, li { white-space: pre-wrap; }
         <translation>İptal</translation>
     </message>
     <message>
+        <location filename="../../src/addnewclassmethodimpl.cpp" line="14"/>
+        <source>Add New Method in class %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/addnewclassmethodimpl.cpp" line="49"/>
-        <source>already exists in class</source>
-        <translation>sınıfta zaten var</translation>
+        <source>%1 already exists in class %2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -638,8 +628,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../src/addnewclassvariableimpl.cpp" line="43"/>
-        <source>already exists in class</source>
-        <translation>sınıfta zaten var</translation>
+        <source>%1 already exists in class %2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -666,16 +656,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../src/addnewimpl.cpp" line="135"/>
-        <source>Also create the file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/addnewimpl.cpp" line="135"/>
-        <source>in same location ?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/addnewimpl.cpp" line="135"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
@@ -683,6 +663,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/addnewimpl.cpp" line="135"/>
         <source>No</source>
         <translation>Hayır</translation>
+    </message>
+    <message>
+        <location filename="../../src/addnewimpl.cpp" line="135"/>
+        <source>Also create the file %1 in same location ?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -802,11 +787,6 @@ p, li { white-space: pre-wrap; }
         <translation>Projeyi Temizle</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="94"/>
-        <source>Compilation of </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/build.cpp" line="98"/>
         <source>Build</source>
         <translation>İnşa Et</translation>
@@ -815,6 +795,13 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/build.cpp" line="120"/>
         <source>Build stopped</source>
         <translation>İnşa durdu</translation>
+    </message>
+    <message>
+        <location filename="../../src/build.cpp" line="94"/>
+        <source>
+Compilation of %1...
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -848,24 +835,9 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Editor</name>
     <message>
-        <location filename="../../src/editor.cpp" line="745"/>
-        <source>Open</source>
-        <translation>Aç</translation>
-    </message>
-    <message>
         <location filename="../../src/editor.cpp" line="90"/>
         <source>Refresh classes and methods lists</source>
         <translation>Sınıf ve yöntem listelerini yenile</translation>
-    </message>
-    <message>
-        <location filename="../../src/editor.cpp" line="209"/>
-        <source>The file</source>
-        <translation>Dosya</translation>
-    </message>
-    <message>
-        <location filename="../../src/editor.cpp" line="209"/>
-        <source>was modified outside editor.</source>
-        <translation>düzenleyici dışında değiştirildi.</translation>
     </message>
     <message>
         <location filename="../../src/editor.cpp" line="210"/>
@@ -881,6 +853,24 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/editor.cpp" line="211"/>
         <source>Reload File</source>
         <translation>Dosyayı Yeniden Yükle</translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="745"/>
+        <source>Open %1.cpp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="740"/>
+        <source>Open %1.h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="209"/>
+        <source>The file &quot;%1&quot;
+was modified outside editor.
+
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1832,229 +1822,216 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1206"/>
+        <location filename="../../src/mainimpl.cpp" line="1217"/>
         <source>Choose the file to create</source>
         <translation>Oluşturulacak dosyayı seçin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="402"/>
+        <location filename="../../src/mainimpl.cpp" line="412"/>
         <source>Files</source>
         <translation>Dosyalar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="412"/>
-        <source>The file</source>
-        <translation>Dosya</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="412"/>
-        <source>already exist on directory.</source>
-        <translation>dizinde zaten var.</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="2302"/>
+        <location filename="../../src/mainimpl.cpp" line="2313"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="418"/>
-        <source>Unable to create</source>
-        <translation>Oluşturulamıyor</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="784"/>
-        <source>The directory cannot be created</source>
-        <translation>Dizin oluşturulamıyor</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="792"/>
+        <location filename="../../src/mainimpl.cpp" line="803"/>
         <source>The project cannot be created</source>
         <translation>Proje oluşturulamıyor</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1017"/>
+        <location filename="../../src/mainimpl.cpp" line="1028"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>QDevelop&apos;tan çıkmak istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1868"/>
+        <location filename="../../src/mainimpl.cpp" line="1879"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1868"/>
+        <location filename="../../src/mainimpl.cpp" line="1879"/>
         <source>No</source>
         <translation>Hayır</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1065"/>
+        <location filename="../../src/mainimpl.cpp" line="1076"/>
         <source>Choose a file to open</source>
         <translation>Açmak için bir dosya seçin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1067"/>
+        <location filename="../../src/mainimpl.cpp" line="1078"/>
         <source>Sources</source>
         <translation>Kaynaklar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1095"/>
+        <location filename="../../src/mainimpl.cpp" line="1106"/>
         <source>Projects</source>
         <translation>Projeler</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1069"/>
+        <location filename="../../src/mainimpl.cpp" line="1080"/>
         <source>Texts</source>
         <translation>Metinler</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1070"/>
+        <location filename="../../src/mainimpl.cpp" line="1081"/>
         <source>All Files</source>
         <translation>Tüm Dosyalar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1093"/>
+        <location filename="../../src/mainimpl.cpp" line="1104"/>
         <source>Choose a project to open</source>
         <translation>Açmak için bir proje seçin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1116"/>
-        <source>The project</source>
-        <translation>Proje</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="1116"/>
-        <source>doesn&apos;t exist.</source>
-        <translation>mevcut değil.</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="1187"/>
-        <source>Properties of</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="1208"/>
+        <location filename="../../src/mainimpl.cpp" line="1219"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>Dosyalar (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1893"/>
+        <location filename="../../src/mainimpl.cpp" line="1904"/>
         <source>Stop</source>
         <translation>Dur</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1614"/>
+        <location filename="../../src/mainimpl.cpp" line="1625"/>
         <source>Build finished without error</source>
         <translation>İnşa hatasız bitti</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1616"/>
+        <location filename="../../src/mainimpl.cpp" line="1627"/>
         <source>Build finished with</source>
         <translation>İnşa sonuçları</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1618"/>
+        <location filename="../../src/mainimpl.cpp" line="1629"/>
         <source>error(s)</source>
         <translation>hata</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1618"/>
+        <location filename="../../src/mainimpl.cpp" line="1629"/>
         <source>and</source>
         <translation>ve</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1620"/>
+        <location filename="../../src/mainimpl.cpp" line="1631"/>
         <source>warning(s)</source>
         <translation>uyarı</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1668"/>
+        <location filename="../../src/mainimpl.cpp" line="1679"/>
         <source>error:</source>
         <translation>hata:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1668"/>
+        <location filename="../../src/mainimpl.cpp" line="1679"/>
         <source>warning:</source>
         <translation>uyarı:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1697"/>
+        <location filename="../../src/mainimpl.cpp" line="1708"/>
         <source>File</source>
         <translation>Dosya</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1976"/>
+        <location filename="../../src/mainimpl.cpp" line="1987"/>
         <source>Start</source>
         <translation>Başla</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1851"/>
+        <location filename="../../src/mainimpl.cpp" line="1862"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Proje değiştirildi. Değişiklikleri kaydetmek istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1867"/>
+        <location filename="../../src/mainimpl.cpp" line="1878"/>
         <source>Stop debugging ?</source>
         <translation>Hata ayıklama sonlansın mı?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1879"/>
-        <source>The program don&apos;t exist,</source>
-        <translation>Program mevcut değil,</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="1880"/>
+        <location filename="../../src/mainimpl.cpp" line="1891"/>
         <source>run Build.</source>
         <translation>İnşayı çalıştır.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1880"/>
+        <location filename="../../src/mainimpl.cpp" line="1891"/>
         <source>Ok</source>
         <translation>Tamam</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1895"/>
+        <location filename="../../src/mainimpl.cpp" line="1906"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1977"/>
+        <location filename="../../src/mainimpl.cpp" line="1988"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2042"/>
+        <location filename="../../src/mainimpl.cpp" line="2053"/>
         <source>Abort</source>
         <translation>Durdur</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2035"/>
+        <location filename="../../src/mainimpl.cpp" line="2046"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Windows altında durdurmak mümkün değil. Kesme noktaları koyun.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2084"/>
+        <location filename="../../src/mainimpl.cpp" line="2095"/>
         <source>Continue</source>
         <translation>Devam</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2150"/>
+        <location filename="../../src/mainimpl.cpp" line="2161"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2292"/>
+        <location filename="../../src/mainimpl.cpp" line="2303"/>
         <source>New Variable:</source>
         <translation>Yeni Değişken:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2301"/>
-        <source>The variable</source>
-        <translation>Değişken</translation>
+        <location filename="../../src/mainimpl.cpp" line="422"/>
+        <source>The file &quot;%1&quot;
+ already exists in directory.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2301"/>
-        <source>already exist.</source>
-        <translation>zaten var.</translation>
+        <location filename="../../src/mainimpl.cpp" line="428"/>
+        <source>Unable to create %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="795"/>
+        <source>The directory &quot;%1&quot; cannot be created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1127"/>
+        <source>The project %1 doesn&apos;t exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1198"/>
+        <source>Properties of %1...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1890"/>
+        <source>The program doesn&apos;t exist,</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="2312"/>
+        <source>The variable &quot;%1&quot;
+ already exists.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2230,7 +2207,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/newproject.ui" line="438"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">İletişim Kutusu</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="445"/>
@@ -2658,19 +2635,14 @@ p, li { white-space: pre-wrap; }
         <translation>Proje konumunu seçin</translation>
     </message>
     <message>
-        <location filename="../../src/parametersimpl.cpp" line="91"/>
-        <source>The variable</source>
-        <translation>Değişken</translation>
-    </message>
-    <message>
-        <location filename="../../src/parametersimpl.cpp" line="91"/>
-        <source>already exist.</source>
-        <translation>zaten var.</translation>
-    </message>
-    <message>
         <location filename="../../src/parametersimpl.cpp" line="92"/>
         <source>Cancel</source>
         <translation>İptal</translation>
+    </message>
+    <message>
+        <location filename="../../src/parametersimpl.cpp" line="91"/>
+        <source>The variable &quot;%1&quot; already exists.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2681,168 +2653,154 @@ p, li { white-space: pre-wrap; }
         <translation>Proje ayrıştırma</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1187"/>
+        <location filename="../../src/projectmanager.cpp" line="1188"/>
         <source>Save project changes ?</source>
         <translation>Proje değişiklikleri kaydedilsin mi?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1362"/>
+        <location filename="../../src/projectmanager.cpp" line="1363"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1362"/>
+        <location filename="../../src/projectmanager.cpp" line="1363"/>
         <source>No</source>
         <translation>Hayır</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1339"/>
+        <location filename="../../src/projectmanager.cpp" line="1340"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="720"/>
-        <source>The file already exist on directory.</source>
-        <translation>Dosya dizinde zaten var.</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="733"/>
+        <location filename="../../src/projectmanager.cpp" line="734"/>
         <source>Forms:</source>
         <translation>Formlar:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="791"/>
+        <location filename="../../src/projectmanager.cpp" line="792"/>
         <source>Unable to create file.</source>
         <translation>Dosya oluşturulamıyor.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="831"/>
-        <source>The file already exist.</source>
-        <translation>Dosya zaten var.</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="842"/>
-        <source>This file is not permit.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="1354"/>
+        <location filename="../../src/projectmanager.cpp" line="1355"/>
         <source>Ok</source>
         <translation>Tamam</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="905"/>
+        <location filename="../../src/projectmanager.cpp" line="906"/>
         <source>Sub-project creation</source>
         <translation>Alt-proje oluşturma</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="922"/>
-        <source>Unable to create directory</source>
-        <translation>Dizin oluşturulamıyor</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="930"/>
-        <source>The project</source>
-        <translation>Proje</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="930"/>
-        <source>already exist on directory.</source>
-        <translation>dizinde zaten var.</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="937"/>
+        <location filename="../../src/projectmanager.cpp" line="938"/>
         <source>Unable to create project.</source>
         <translation>Proje oluşturulamıyor.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="974"/>
+        <location filename="../../src/projectmanager.cpp" line="975"/>
         <source>Sub-Projects</source>
         <translation>Alt-Projeler</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1261"/>
-        <source>The file</source>
-        <translation>Dosya</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="1303"/>
+        <location filename="../../src/projectmanager.cpp" line="1304"/>
         <source>New name:</source>
         <translation>Yeni ad:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1309"/>
+        <location filename="../../src/projectmanager.cpp" line="1310"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Yeni ve eski dosya adları değişik türdeler!</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1310"/>
+        <location filename="../../src/projectmanager.cpp" line="1311"/>
         <source>Rename</source>
         <translation>Yeniden adlandır</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1339"/>
-        <source>Unable to rename the file to</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="1353"/>
+        <location filename="../../src/projectmanager.cpp" line="1354"/>
         <source>Unable to delete the main project.</source>
         <translation>Ana proje silinemiyor.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1361"/>
-        <source>Do you want to delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="1361"/>
-        <source>on project ?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="1501"/>
+        <location filename="../../src/projectmanager.cpp" line="1502"/>
         <source>Sub-projects</source>
         <translation>Alt-projeler</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1599"/>
+        <location filename="../../src/projectmanager.cpp" line="1600"/>
         <source>Headers</source>
         <translation>Başlıklar</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1604"/>
+        <location filename="../../src/projectmanager.cpp" line="1605"/>
         <source>Sources</source>
         <translation>Kaynaklar</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1609"/>
+        <location filename="../../src/projectmanager.cpp" line="1610"/>
         <source>Dialogs</source>
         <translation>İletişim Pencereleri</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1614"/>
+        <location filename="../../src/projectmanager.cpp" line="1615"/>
         <source>Translations</source>
         <translation>Çeviriler</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1619"/>
+        <location filename="../../src/projectmanager.cpp" line="1620"/>
         <source>Resources</source>
         <translation>Veri Kaynakları</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2026"/>
-        <source>The only available version for</source>
+        <location filename="../../src/projectmanager.cpp" line="721"/>
+        <source>The file already exists in directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2026"/>
-        <source>is</source>
+        <location filename="../../src/projectmanager.cpp" line="832"/>
+        <source>The file already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="843"/>
+        <source>This file is not permitted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="923"/>
+        <source>Unable to create &quot;%1&quot; directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="931"/>
+        <source>The project &quot;%1&quot;
+ already exists in directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="1262"/>
+        <source>The file  &quot;%1&quot; </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="1340"/>
+        <source>Unable to rename the file to &quot;%1&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="1362"/>
+        <source>Do you want to delete &quot;%1&quot; on project ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="2027"/>
-        <source>Run on</source>
+        <source>The only available version for &quot;%1&quot; is %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="2028"/>
+        <source>Run on %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3158,19 +3116,9 @@ variables :</source>
 <context>
     <name>ProjectPropertieImpl</name>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="50"/>
-        <source>Properties of</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="530"/>
         <source>New Value:</source>
         <translation>Yeni Değer:</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="536"/>
-        <source>The spaces are don&apos;t correctly parsed by qmake</source>
-        <translation>Boşluklar qmake tarafından düzgünce ayrıştırılamıyor</translation>
     </message>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="537"/>
@@ -3196,6 +3144,16 @@ variables :</source>
         <location filename="../../src/projectpropertieimpl.cpp" line="786"/>
         <source>Choose the dialogs location</source>
         <translation>İletişim kutularının konumunu seçin</translation>
+    </message>
+    <message>
+        <location filename="../../src/projectpropertieimpl.cpp" line="50"/>
+        <source>Properties of %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectpropertieimpl.cpp" line="536"/>
+        <source>The spaces aren&apos;t correctly parsed by qmake</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3518,24 +3476,9 @@ variables :</source>
 <context>
     <name>TextEdit</name>
     <message>
-        <location filename="../../src/textEdit.cpp" line="312"/>
-        <source>The file </source>
-        <translation>Dosya </translation>
-    </message>
-    <message>
-        <location filename="../../src/textEdit.cpp" line="312"/>
-        <source>could not be loaded.</source>
-        <translation>yüklenemedi.</translation>
-    </message>
-    <message>
         <location filename="../../src/textEdit.cpp" line="536"/>
         <source>Cancel</source>
         <translation>İptal</translation>
-    </message>
-    <message>
-        <location filename="../../src/textEdit.cpp" line="536"/>
-        <source>Save</source>
-        <translation>Kaydet</translation>
     </message>
     <message>
         <location filename="../../src/textEdit.cpp" line="536"/>
@@ -3546,11 +3489,6 @@ variables :</source>
         <location filename="../../src/textEdit.cpp" line="536"/>
         <source>No</source>
         <translation>Hayır</translation>
-    </message>
-    <message>
-        <location filename="../../src/textEdit.cpp" line="555"/>
-        <source>Unable to save</source>
-        <translation>Kaydedilemedi</translation>
     </message>
     <message>
         <location filename="../../src/textEdit.cpp" line="1282"/>
@@ -3606,6 +3544,21 @@ variables :</source>
         <location filename="../../src/textEdit.cpp" line="1300"/>
         <source>Toggle Breakpoint</source>
         <translation>Kesme Noktası Ekle/Kaldır</translation>
+    </message>
+    <message>
+        <location filename="../../src/textEdit.cpp" line="312"/>
+        <source>The file &quot;%1&quot; could not be loaded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/textEdit.cpp" line="536"/>
+        <source>Save &quot;%1&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/textEdit.cpp" line="555"/>
+        <source>Unable to save %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3699,14 +3652,14 @@ variables :</source>
         <translation>Lütfen programı tasarlayın</translation>
     </message>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="140"/>
-        <source>Ctags was detected in path %1, but this is to old version.</source>
-        <translation>Ctags %1 altında algılandı; fakat çok eski bir sürüm.</translation>
-    </message>
-    <message>
         <location filename="../../src/toolscontrolimpl.cpp" line="141"/>
         <source>Ok</source>
         <translation>Tamam</translation>
+    </message>
+    <message>
+        <location filename="../../src/toolscontrolimpl.cpp" line="140"/>
+        <source>Ctags was detected in path %1, but this version is too old.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3820,11 +3773,6 @@ variables :</source>
         <translation>Sil</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="225"/>
-        <source>Propertie of</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/treeproject.cpp" line="228"/>
         <source>Show As</source>
         <translation>Gösterim</translation>
@@ -3838,6 +3786,11 @@ variables :</source>
         <location filename="../../src/treeproject.cpp" line="230"/>
         <source>Krawek</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../../src/treeproject.cpp" line="225"/>
+        <source>Properties of %1...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
