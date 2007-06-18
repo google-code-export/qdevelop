@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fr_FR">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -10,7 +11,7 @@
     <message>
         <location filename="../../ui/about.ui" line="155"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Version&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/about.ui" line="190"/>
@@ -23,7 +24,7 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:29pt; font-weight:600;&quot;&gt;QDevelop&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/about.ui" line="133"/>
@@ -113,12 +114,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addexistantimpl.cpp" line="69"/>
         <source>The file %1 doesn&apos;t exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier %1 n&apos;existe pas.</translation>
     </message>
     <message>
         <location filename="../../src/addexistantimpl.cpp" line="77"/>
         <source>Unable to copy %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de copier %1</translation>
     </message>
 </context>
 <context>
@@ -318,7 +319,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/addnewclassimpl.cpp" line="108"/>
         <source>The file &quot;%1&quot;
  already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier &quot;%1&quot; existe déjà.</translation>
     </message>
 </context>
 <context>
@@ -326,142 +327,142 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="13"/>
         <source>Add New Method</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une nouvelle méthode</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="41"/>
         <source>Method Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de la méthode:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="48"/>
         <source>Return type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Type de retour:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="55"/>
         <source>Parameters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="62"/>
         <source>Scope:</source>
-        <translation type="unfinished">Portée:</translation>
+        <translation>Portée:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="94"/>
         <source>void</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="99"/>
         <source>bool</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="104"/>
         <source>char</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="109"/>
         <source>short</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="114"/>
         <source>long</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="119"/>
         <source>int</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="124"/>
         <source>signed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="129"/>
         <source>unsigned</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="134"/>
         <source>float</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="139"/>
         <source>double</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="180"/>
         <source>public</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="185"/>
         <source>protected</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="190"/>
         <source>private</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="195"/>
         <source>public slots</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="200"/>
         <source>protected slots</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="205"/>
         <source>private slots</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="210"/>
         <source>signals</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="245"/>
         <source>Inline</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="252"/>
         <source>Virtual</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="259"/>
         <source>Static</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="266"/>
         <source>Pure</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="296"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="303"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
 </context>
 <context>
@@ -469,22 +470,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewclassmethodimpl.cpp" line="14"/>
         <source>Add New Method in class %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une nouvelle méthode dans la classe %1</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassmethodimpl.cpp" line="37"/>
         <source>An implementation file is required.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un fichier d&apos;implémentation est nécessaire.</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassmethodimpl.cpp" line="50"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassmethodimpl.cpp" line="49"/>
         <source>%1 already exists in class %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 existe déjà dans la classe %2.</translation>
     </message>
 </context>
 <context>
@@ -492,122 +493,122 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="13"/>
         <source>Add New Variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une nouvelle variable</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="25"/>
         <source>Create get/set methods</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer get/set méthodes</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="56"/>
         <source>inline</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="73"/>
         <source>set method</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="87"/>
         <source>get method</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="131"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="138"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="163"/>
         <source>Variable Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de variable:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="170"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Type:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="177"/>
         <source>Scope:</source>
-        <translation type="unfinished">Portée:</translation>
+        <translation>Portée:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="209"/>
         <source>bool</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="214"/>
         <source>char</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="219"/>
         <source>short</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="224"/>
         <source>long</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="229"/>
         <source>int</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="234"/>
         <source>signed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="239"/>
         <source>unsigned</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="244"/>
         <source>float</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="249"/>
         <source>double</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="254"/>
         <source>QString</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="259"/>
         <source>void</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="297"/>
         <source>private</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="302"/>
         <source>protected</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="307"/>
         <source>public</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -615,12 +616,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewclassvariableimpl.cpp" line="44"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassvariableimpl.cpp" line="43"/>
         <source>%1 already exists in class %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 existe déjà dans la classe %2.</translation>
     </message>
 </context>
 <context>
@@ -658,7 +659,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewimpl.cpp" line="135"/>
         <source>Also create the file %1 in same location ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer également le fichier %1 au même emplacement?</translation>
     </message>
 </context>
 <context>
@@ -724,37 +725,37 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addsetget.ui" line="13"/>
         <source>Add get/set methods</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter get/set méthodes</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="59"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="66"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="75"/>
         <source>Create get/set methods for</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer get/set méthodes pour</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="106"/>
         <source>inline</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="123"/>
         <source>set method</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="140"/>
         <source>get method</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -762,7 +763,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addsetgetimpl.cpp" line="34"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
 </context>
 <context>
@@ -792,7 +793,7 @@ p, li { white-space: pre-wrap; }
         <source>
 Compilation of %1...
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Compilation de %1...</translation>
     </message>
 </context>
 <context>
@@ -848,12 +849,12 @@ Compilation of %1...
     <message>
         <location filename="../../src/editor.cpp" line="745"/>
         <source>Open %1.cpp</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir %1.cpp</translation>
     </message>
     <message>
         <location filename="../../src/editor.cpp" line="740"/>
         <source>Open %1.h</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir %1.h</translation>
     </message>
     <message>
         <location filename="../../src/editor.cpp" line="209"/>
@@ -861,7 +862,7 @@ Compilation of %1...
 was modified outside editor.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier &quot;%1&quot; a été modifié en dehors de l&apos;éditeur.</translation>
     </message>
 </context>
 <context>
@@ -1782,32 +1783,32 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="945"/>
         <source>Ctrl+Shift+F</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1345"/>
         <source>Goto Methods List</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher la liste des méthodes</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1484"/>
         <source>Open File in project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir un fichier du projet...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1487"/>
         <source>Alt+Shift+O</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1495"/>
         <source>Goto Implementation</source>
-        <translation type="unfinished"></translation>
+        <translation>Aller à l&apos;implémentation</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1503"/>
         <source>Goto Declaration</source>
-        <translation type="unfinished"></translation>
+        <translation>Aller à la déclaration</translation>
     </message>
 </context>
 <context>
@@ -1991,38 +1992,38 @@ was modified outside editor.
         <location filename="../../src/mainimpl.cpp" line="422"/>
         <source>The file &quot;%1&quot;
  already exists in directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier &quot;%1&quot; existe déjà dans le répertoire.</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="428"/>
         <source>Unable to create %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de créer %1</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="795"/>
         <source>The directory &quot;%1&quot; cannot be created</source>
-        <translation type="unfinished"></translation>
+        <translation>Le répertoire &quot;%1&quot; ne peut pas être créé</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1127"/>
         <source>The project %1 doesn&apos;t exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le projet %1 n&apos;existe pas.</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1198"/>
         <source>Properties of %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>Propriétés de %1...</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1890"/>
         <source>The program doesn&apos;t exist,</source>
-        <translation type="unfinished"></translation>
+        <translation>Le programme n&apos;existe pas,</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="2312"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>La variable &quot;%1&quot; existe déjà.</translation>
     </message>
 </context>
 <context>
@@ -2287,17 +2288,17 @@ was modified outside editor.
     <message>
         <location filename="../../ui/openfile.ui" line="13"/>
         <source>Open File in Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir un fichier du projet</translation>
     </message>
     <message>
         <location filename="../../ui/openfile.ui" line="47"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/openfile.ui" line="54"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
 </context>
 <context>
@@ -2616,7 +2617,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/parametersimpl.cpp" line="91"/>
         <source>The variable &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>La variable &quot;%1&quot; existe déjà.</translation>
     </message>
 </context>
 <context>
@@ -2729,53 +2730,53 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="721"/>
         <source>The file already exists in directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier exite déjà dans le répertoire.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="832"/>
         <source>The file already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier existe déjà.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="843"/>
         <source>This file is not permitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier n&apos;est pas autorisé.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="923"/>
         <source>Unable to create &quot;%1&quot; directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de créer le répertoire &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="931"/>
         <source>The project &quot;%1&quot;
  already exists in directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le projet &quot;%1&quot; existe déjà dans le répertoire.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1262"/>
         <source>The file  &quot;%1&quot; </source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1340"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de renommer le fichier pour &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1362"/>
         <source>Do you want to delete &quot;%1&quot; on project ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Voulez-vous supprimer &quot;%1&quot; du projet ?</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="2027"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
-        <translation type="unfinished"></translation>
+        <translation>La seule version disponible pour &quot;%1&quot; est %2</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="2028"/>
         <source>Run on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lancer sur %1</translation>
     </message>
 </context>
 <context>
@@ -3085,7 +3086,7 @@ supplémentaires :</translation>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="671"/>
         <source>qtestlib</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3123,12 +3124,12 @@ supplémentaires :</translation>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="50"/>
         <source>Properties of %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Propriétés de %1</translation>
     </message>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="536"/>
         <source>The spaces aren&apos;t correctly parsed by qmake</source>
-        <translation type="unfinished"></translation>
+        <translation>Les espaces ne sont pas bien interprétés par qmake</translation>
     </message>
 </context>
 <context>
@@ -3219,7 +3220,7 @@ supplémentaires :</translation>
     <message>
         <location filename="../../src/designer.cpp" line="65"/>
         <source>Unable to start Designer !</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de lancer Designer !</translation>
     </message>
 </context>
 <context>
@@ -3429,6 +3430,11 @@ supplémentaires :</translation>
         <source>(.h and .cpp)</source>
         <translation>(.h et .cpp)</translation>
     </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="50"/>
+        <source></source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>TabWidget</name>
@@ -3513,27 +3519,27 @@ supplémentaires :</translation>
     <message>
         <location filename="../../src/textEdit.cpp" line="312"/>
         <source>The file &quot;%1&quot; could not be loaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier &quot;%1&quot; ne peut pas être chargé.</translation>
     </message>
     <message>
         <location filename="../../src/textEdit.cpp" line="536"/>
         <source>Save &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauver &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/textEdit.cpp" line="555"/>
         <source>Unable to save %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de sauver %1</translation>
     </message>
     <message>
         <location filename="../../src/textEdit.cpp" line="1282"/>
         <source>Goto Implementation</source>
-        <translation type="unfinished"></translation>
+        <translation>Aller à l&apos;implémentation</translation>
     </message>
     <message>
         <location filename="../../src/textEdit.cpp" line="1283"/>
         <source>Goto Declaration</source>
-        <translation type="unfinished"></translation>
+        <translation>Aller à la déclaration</translation>
     </message>
 </context>
 <context>
@@ -3629,12 +3635,12 @@ supplémentaires :</translation>
     <message>
         <location filename="../../src/toolscontrolimpl.cpp" line="140"/>
         <source>Ctags was detected in path %1, but this version is too old.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctags a été détecté à l&apos;emplacement %1, mais cette version est trop ancienne.</translation>
     </message>
     <message>
         <location filename="../../src/toolscontrolimpl.cpp" line="141"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3657,17 +3663,17 @@ supplémentaires :</translation>
     <message>
         <location filename="../../src/treeclasses.cpp" line="497"/>
         <source>Add Method...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une méthode...</translation>
     </message>
     <message>
         <location filename="../../src/treeclasses.cpp" line="498"/>
         <source>Add Variable...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une variable...</translation>
     </message>
     <message>
         <location filename="../../src/treeclasses.cpp" line="502"/>
         <source>Add get/set Methods...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une méthode get/set...</translation>
     </message>
 </context>
 <context>
@@ -3765,7 +3771,7 @@ supplémentaires :</translation>
     <message>
         <location filename="../../src/treeproject.cpp" line="225"/>
         <source>Properties of %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>Propriétés de %1...</translation>
     </message>
 </context>
 <context>

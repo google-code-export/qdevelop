@@ -37,7 +37,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:elcuco@kde.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager : Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#000000;&quot;&gt;Main Developper: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:elcuco@kde.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager : Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -93,7 +93,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addexistantimpl.cpp" line="47"/>
         <source>Enter a filename.</source>
-        <translation>输入文件名：</translation>
+        <translation>输入文件名.</translation>
     </message>
     <message>
         <location filename="../../src/addexistantimpl.cpp" line="78"/>
@@ -113,12 +113,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addexistantimpl.cpp" line="69"/>
         <source>The file %1 doesn&apos;t exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>文件%1不存在.</translation>
     </message>
     <message>
         <location filename="../../src/addexistantimpl.cpp" line="77"/>
         <source>Unable to copy %1</source>
-        <translation type="unfinished"></translation>
+        <translation>不能复制%1</translation>
     </message>
 </context>
 <context>
@@ -199,102 +199,102 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclass.ui" line="49"/>
         <source>OK</source>
-        <translation type="unfinished">确定</translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="56"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="65"/>
         <source>Inheritance</source>
-        <translation type="unfinished"></translation>
+        <translation>继承</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="89"/>
         <source>public</source>
-        <translation type="unfinished"></translation>
+        <translation>public</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="94"/>
         <source>protected</source>
-        <translation type="unfinished"></translation>
+        <translation>protected</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="99"/>
         <source>private</source>
-        <translation type="unfinished"></translation>
+        <translation>private</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="122"/>
         <source>Inherits another class</source>
-        <translation type="unfinished"></translation>
+        <translation>继承其他类</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="129"/>
         <source>Ancestor:</source>
-        <translation type="unfinished"></translation>
+        <translation>祖先:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="150"/>
         <source>Ancestor&apos;s include filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>祖先包含文件:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="157"/>
         <source>Scope:</source>
-        <translation type="unfinished"></translation>
+        <translation>组:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="167"/>
         <source>Filenames</source>
-        <translation type="unfinished"></translation>
+        <translation>文件名</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="195"/>
         <source>Header filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>头文件名:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="205"/>
         <source>Implementation filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>实现文件名:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="215"/>
         <source>Location :</source>
-        <translation type="unfinished"></translation>
+        <translation>位置:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="266"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="298"/>
         <source>Project or Scope:</source>
-        <translation type="unfinished">工程或组:</translation>
+        <translation>工程或组:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="308"/>
         <source>Class name:</source>
-        <translation type="unfinished"></translation>
+        <translation>类名:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="315"/>
         <source>Constructor arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>构造参数:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="348"/>
         <source>Virtual destructor</source>
-        <translation type="unfinished"></translation>
+        <translation>虚拟破坏器</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="13"/>
         <source>Add New Class</source>
-        <translation type="unfinished"></translation>
+        <translation>添加新类</translation>
     </message>
 </context>
 <context>
@@ -302,23 +302,23 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="30"/>
         <source>Choose the file location</source>
-        <translation type="unfinished">选择文件位置</translation>
+        <translation>选择文件位置</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="116"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="115"/>
         <source>Unable to create file.</source>
-        <translation type="unfinished">不能创建文件。</translation>
+        <translation>不能创建文件.</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassimpl.cpp" line="108"/>
         <source>The file &quot;%1&quot;
  already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>文件 &quot;%1&quot; 已经存在.</translation>
     </message>
 </context>
 <context>
@@ -326,142 +326,142 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="13"/>
         <source>Add New Method</source>
-        <translation type="unfinished"></translation>
+        <translation>添加新函数</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="41"/>
         <source>Method Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Method名:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="48"/>
         <source>Return type:</source>
-        <translation type="unfinished"></translation>
+        <translation>返回类型:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="55"/>
         <source>Parameters:</source>
-        <translation type="unfinished"></translation>
+        <translation>参数:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="62"/>
         <source>Scope:</source>
-        <translation type="unfinished"></translation>
+        <translation>组:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="94"/>
         <source>void</source>
-        <translation type="unfinished"></translation>
+        <translation>void</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="99"/>
         <source>bool</source>
-        <translation type="unfinished"></translation>
+        <translation>bool</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="104"/>
         <source>char</source>
-        <translation type="unfinished"></translation>
+        <translation>char</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="109"/>
         <source>short</source>
-        <translation type="unfinished"></translation>
+        <translation>short</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="114"/>
         <source>long</source>
-        <translation type="unfinished"></translation>
+        <translation>long</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="119"/>
         <source>int</source>
-        <translation type="unfinished"></translation>
+        <translation>int</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="124"/>
         <source>signed</source>
-        <translation type="unfinished"></translation>
+        <translation>signed</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="129"/>
         <source>unsigned</source>
-        <translation type="unfinished"></translation>
+        <translation>unsigned</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="134"/>
         <source>float</source>
-        <translation type="unfinished"></translation>
+        <translation>float</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="139"/>
         <source>double</source>
-        <translation type="unfinished"></translation>
+        <translation>double</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="180"/>
         <source>public</source>
-        <translation type="unfinished"></translation>
+        <translation>public</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="185"/>
         <source>protected</source>
-        <translation type="unfinished"></translation>
+        <translation>protected</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="190"/>
         <source>private</source>
-        <translation type="unfinished"></translation>
+        <translation>private</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="195"/>
         <source>public slots</source>
-        <translation type="unfinished"></translation>
+        <translation>public slots</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="200"/>
         <source>protected slots</source>
-        <translation type="unfinished"></translation>
+        <translation>protected slots</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="205"/>
         <source>private slots</source>
-        <translation type="unfinished"></translation>
+        <translation>private slot</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="210"/>
         <source>signals</source>
-        <translation type="unfinished"></translation>
+        <translation>信号</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="245"/>
         <source>Inline</source>
-        <translation type="unfinished"></translation>
+        <translation>Inline</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="252"/>
         <source>Virtual</source>
-        <translation type="unfinished"></translation>
+        <translation>虚拟的</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="259"/>
         <source>Static</source>
-        <translation type="unfinished"></translation>
+        <translation>Static</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="266"/>
         <source>Pure</source>
-        <translation type="unfinished"></translation>
+        <translation>Pure</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="296"/>
         <source>OK</source>
-        <translation type="unfinished">确定</translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="303"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -469,22 +469,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewclassmethodimpl.cpp" line="14"/>
         <source>Add New Method in class %1</source>
-        <translation type="unfinished"></translation>
+        <translation>在类 %1里添加新函数</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassmethodimpl.cpp" line="37"/>
         <source>An implementation file is required.</source>
-        <translation type="unfinished"></translation>
+        <translation>要求一个实现文件.</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassmethodimpl.cpp" line="50"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassmethodimpl.cpp" line="49"/>
         <source>%1 already exists in class %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>在类%2里已经存在%1.</translation>
     </message>
 </context>
 <context>
@@ -492,122 +492,122 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="13"/>
         <source>Add New Variable</source>
-        <translation type="unfinished"></translation>
+        <translation>添加新变量</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="25"/>
         <source>Create get/set methods</source>
-        <translation type="unfinished"></translation>
+        <translation>创建 get/set methods</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="56"/>
         <source>inline</source>
-        <translation type="unfinished"></translation>
+        <translation>inline</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="73"/>
         <source>set method</source>
-        <translation type="unfinished"></translation>
+        <translation>set method</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="87"/>
         <source>get method</source>
-        <translation type="unfinished"></translation>
+        <translation>get method</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="131"/>
         <source>OK</source>
-        <translation type="unfinished">确定</translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="138"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="163"/>
         <source>Variable Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>变量名:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="170"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>类型:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="177"/>
         <source>Scope:</source>
-        <translation type="unfinished"></translation>
+        <translation>组:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="209"/>
         <source>bool</source>
-        <translation type="unfinished"></translation>
+        <translation>bool</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="214"/>
         <source>char</source>
-        <translation type="unfinished"></translation>
+        <translation>char</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="219"/>
         <source>short</source>
-        <translation type="unfinished"></translation>
+        <translation>short</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="224"/>
         <source>long</source>
-        <translation type="unfinished"></translation>
+        <translation>long</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="229"/>
         <source>int</source>
-        <translation type="unfinished"></translation>
+        <translation>int</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="234"/>
         <source>signed</source>
-        <translation type="unfinished"></translation>
+        <translation>signed</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="239"/>
         <source>unsigned</source>
-        <translation type="unfinished"></translation>
+        <translation>unsigned</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="244"/>
         <source>float</source>
-        <translation type="unfinished"></translation>
+        <translation>float</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="249"/>
         <source>double</source>
-        <translation type="unfinished"></translation>
+        <translation>double</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="254"/>
         <source>QString</source>
-        <translation type="unfinished"></translation>
+        <translation>Qstring</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="259"/>
         <source>void</source>
-        <translation type="unfinished"></translation>
+        <translation>void</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="297"/>
         <source>private</source>
-        <translation type="unfinished"></translation>
+        <translation>private</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="302"/>
         <source>protected</source>
-        <translation type="unfinished"></translation>
+        <translation>protected</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="307"/>
         <source>public</source>
-        <translation type="unfinished"></translation>
+        <translation>public</translation>
     </message>
 </context>
 <context>
@@ -615,12 +615,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewclassvariableimpl.cpp" line="44"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../../src/addnewclassvariableimpl.cpp" line="43"/>
         <source>%1 already exists in class %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>在类 %2里已经存在%1.</translation>
     </message>
 </context>
 <context>
@@ -633,7 +633,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewimpl.cpp" line="121"/>
         <source>The suffix of the file is not correct.</source>
-        <translation>文件扩展名不正确</translation>
+        <translation>文件扩展名不正确.</translation>
     </message>
     <message>
         <location filename="../../src/addnewimpl.cpp" line="135"/>
@@ -658,7 +658,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewimpl.cpp" line="135"/>
         <source>Also create the file %1 in same location ?</source>
-        <translation type="unfinished"></translation>
+        <translation>也在同一位置创建文件%1?</translation>
     </message>
 </context>
 <context>
@@ -724,37 +724,37 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addsetget.ui" line="13"/>
         <source>Add get/set methods</source>
-        <translation type="unfinished"></translation>
+        <translation>添加get/set methods</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="59"/>
         <source>OK</source>
-        <translation type="unfinished">确定</translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="66"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="75"/>
         <source>Create get/set methods for</source>
-        <translation type="unfinished"></translation>
+        <translation>为创建get/set methods</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="106"/>
         <source>inline</source>
-        <translation type="unfinished"></translation>
+        <translation>inline</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="123"/>
         <source>set method</source>
-        <translation type="unfinished"></translation>
+        <translation>set method</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="140"/>
         <source>get method</source>
-        <translation type="unfinished"></translation>
+        <translation>get method</translation>
     </message>
 </context>
 <context>
@@ -762,7 +762,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addsetgetimpl.cpp" line="34"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -792,7 +792,7 @@ p, li { white-space: pre-wrap; }
         <source>
 Compilation of %1...
 </source>
-        <translation type="unfinished"></translation>
+        <translation>解析 of %1...</translation>
     </message>
 </context>
 <context>
@@ -833,7 +833,7 @@ Compilation of %1...
     <message>
         <location filename="../../src/editor.cpp" line="210"/>
         <source>What do you want to do?</source>
-        <translation>你想怎么处理？</translation>
+        <translation>你想怎么处理?</translation>
     </message>
     <message>
         <location filename="../../src/editor.cpp" line="211"/>
@@ -848,12 +848,12 @@ Compilation of %1...
     <message>
         <location filename="../../src/editor.cpp" line="745"/>
         <source>Open %1.cpp</source>
-        <translation type="unfinished"></translation>
+        <translation>打开 %1.cpp</translation>
     </message>
     <message>
         <location filename="../../src/editor.cpp" line="740"/>
         <source>Open %1.h</source>
-        <translation type="unfinished"></translation>
+        <translation>打开 %1.h</translation>
     </message>
     <message>
         <location filename="../../src/editor.cpp" line="209"/>
@@ -861,7 +861,7 @@ Compilation of %1...
 was modified outside editor.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>文件 &quot;%1&quot;已经在编辑外被更改.</translation>
     </message>
 </context>
 <context>
@@ -1062,7 +1062,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="47"/>
         <source>&amp;?</source>
-        <translation>帮助(&amp;?)</translation>
+        <translation>&amp;?</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="202"/>
@@ -1167,7 +1167,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="468"/>
         <source>...</source>
-        <translation></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="530"/>
@@ -1212,7 +1212,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="770"/>
         <source>&amp;New Project...</source>
-        <translation>新建工程(&amp;N)</translation>
+        <translation>新建工程(&amp;N)...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="778"/>
@@ -1442,7 +1442,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1103"/>
         <source>Parameters...</source>
-        <translation>参数</translation>
+        <translation>参数...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1108"/>
@@ -1692,7 +1692,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1417"/>
         <source>External Tools...</source>
-        <translation>外部工具</translation>
+        <translation>外部工具...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1425"/>
@@ -1772,42 +1772,42 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1471"/>
         <source>Add New Class...</source>
-        <translation type="unfinished"></translation>
+        <translation>添加新类...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1479"/>
         <source>&amp;Print...</source>
-        <translation type="unfinished"></translation>
+        <translation>打印(&amp;P)...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="945"/>
         <source>Ctrl+Shift+F</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+F</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1345"/>
         <source>Goto Methods List</source>
-        <translation type="unfinished"></translation>
+        <translation>跳到 Methods 列表</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1484"/>
         <source>Open File in project...</source>
-        <translation type="unfinished"></translation>
+        <translation>在工程里打开文件...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1487"/>
         <source>Alt+Shift+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Shift+O</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1495"/>
         <source>Goto Implementation</source>
-        <translation type="unfinished"></translation>
+        <translation>跳到实现</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1503"/>
         <source>Goto Declaration</source>
-        <translation type="unfinished"></translation>
+        <translation>跳到声明</translation>
     </message>
 </context>
 <context>
@@ -1835,7 +1835,7 @@ was modified outside editor.
     <message>
         <location filename="../../src/mainimpl.cpp" line="1028"/>
         <source>Do you want to quit QDevelop ?</source>
-        <translation>你要退出QDevelop吗？</translation>
+        <translation>你要退出QDevelop吗?</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1879"/>
@@ -1885,12 +1885,12 @@ was modified outside editor.
     <message>
         <location filename="../../src/mainimpl.cpp" line="1679"/>
         <source>error:</source>
-        <translation>错误：</translation>
+        <translation>错误:</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1679"/>
         <source>warning:</source>
-        <translation>警告：</translation>
+        <translation>警告:</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1708"/>
@@ -1905,7 +1905,7 @@ was modified outside editor.
     <message>
         <location filename="../../src/mainimpl.cpp" line="1862"/>
         <source>The project has been modified, do you want to save your changes ?</source>
-        <translation>工程已经被更改，你愿意保存改动吗？</translation>
+        <translation>工程已经被更改，你愿意保存改动吗?</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1878"/>
@@ -1955,7 +1955,7 @@ was modified outside editor.
     <message>
         <location filename="../../src/mainimpl.cpp" line="2303"/>
         <source>New Variable:</source>
-        <translation>新变量：</translation>
+        <translation>新变量:</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1104"/>
@@ -1965,64 +1965,64 @@ was modified outside editor.
     <message>
         <location filename="../../src/mainimpl.cpp" line="1625"/>
         <source>Build finished without error</source>
-        <translation type="unfinished"></translation>
+        <translation>编译结束没有错误</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1627"/>
         <source>Build finished with</source>
-        <translation type="unfinished"></translation>
+        <translation>编译结束</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1629"/>
         <source>error(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1629"/>
         <source>and</source>
-        <translation type="unfinished"></translation>
+        <translation>和</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1631"/>
         <source>warning(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="422"/>
         <source>The file &quot;%1&quot;
  already exists in directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>文件 &quot;%1&quot; 在目录里已经存在.</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="428"/>
         <source>Unable to create %1</source>
-        <translation type="unfinished"></translation>
+        <translation>不能创建%1</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="795"/>
         <source>The directory &quot;%1&quot; cannot be created</source>
-        <translation type="unfinished"></translation>
+        <translation>不能创建目录&quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1127"/>
         <source>The project %1 doesn&apos;t exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>工程%1不存在.</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1198"/>
         <source>Properties of %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1属性...</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1890"/>
         <source>The program doesn&apos;t exist,</source>
-        <translation type="unfinished"></translation>
+        <translation>程序不存在,</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="2312"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>变量 &quot;%1&quot; 已经存在.</translation>
     </message>
 </context>
 <context>
@@ -2287,17 +2287,17 @@ was modified outside editor.
     <message>
         <location filename="../../ui/openfile.ui" line="13"/>
         <source>Open File in Project</source>
-        <translation type="unfinished"></translation>
+        <translation>在工程里打开文件</translation>
     </message>
     <message>
         <location filename="../../ui/openfile.ui" line="47"/>
         <source>OK</source>
-        <translation type="unfinished">确定</translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="../../ui/openfile.ui" line="54"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -2395,7 +2395,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/options.ui" line="707"/>
         <source>...</source>
-        <translation></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="255"/>
@@ -2435,37 +2435,37 @@ was modified outside editor.
     <message>
         <location filename="../../ui/options.ui" line="606"/>
         <source>Function/method names :</source>
-        <translation>函数/方法名：</translation>
+        <translation>函数/方法名:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="613"/>
         <source>Preprocessor :</source>
-        <translation>预处理器：</translation>
+        <translation>预处理器:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="620"/>
         <source>Qt words :</source>
-        <translation>Qt关键字：</translation>
+        <translation>Qt关键字:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="627"/>
         <source>Keywords :</source>
-        <translation>关键字：</translation>
+        <translation>关键字:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="634"/>
         <source>Single comments :</source>
-        <translation>单行注释：</translation>
+        <translation>单行注释:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="641"/>
         <source>Multiline comments :</source>
-        <translation>多行注释：</translation>
+        <translation>多行注释:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="648"/>
         <source>Quotation strings :</source>
-        <translation>引号内字符串：</translation>
+        <translation>引号内字符串:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="791"/>
@@ -2480,7 +2480,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/options.ui" line="169"/>
         <source>Default projects directory: </source>
-        <translation> 默认工程目录：</translation>
+        <translation> 默认工程目录: </translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="735"/>
@@ -2502,7 +2502,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;/*&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* Multi-lines&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;*/&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;// Single line comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;{&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QApplication app(argc, argv);&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QString chaine = &quot;between quotations&quot;;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QDialog *main = new QDialog;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="275"/>
@@ -2512,12 +2512,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/options.ui" line="82"/>
         <source>Close button in each tab (not work with all styles)</source>
-        <translation type="unfinished"></translation>
+        <translation>关闭每个制表里的按钮（所有类型都不运行）</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="176"/>
         <source>User plugins directory: </source>
-        <translation type="unfinished"></translation>
+        <translation>用插件目录: </translation>
     </message>
 </context>
 <context>
@@ -2616,7 +2616,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/parametersimpl.cpp" line="91"/>
         <source>The variable &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>变量&quot;%1&quot;已经存在.</translation>
     </message>
 </context>
 <context>
@@ -2624,7 +2624,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="1188"/>
         <source>Save project changes ?</source>
-        <translation>保存工程的改动？</translation>
+        <translation>保存工程的改动?</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1363"/>
@@ -2644,7 +2644,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="734"/>
         <source>Forms:</source>
-        <translation>表单：</translation>
+        <translation>表单:</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="792"/>
@@ -2664,7 +2664,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="938"/>
         <source>Unable to create project.</source>
-        <translation>不能创建工程</translation>
+        <translation>不能创建工程.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="975"/>
@@ -2674,7 +2674,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="1354"/>
         <source>Unable to delete the main project.</source>
-        <translation>不能删除主工程</translation>
+        <translation>不能删除主工程.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1502"/>
@@ -2709,73 +2709,73 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="156"/>
         <source>Project parsing</source>
-        <translation type="unfinished"></translation>
+        <translation>工程解析</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1304"/>
         <source>New name:</source>
-        <translation type="unfinished"></translation>
+        <translation>新命名:</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1310"/>
         <source>The kind of the new and the old filename is different !</source>
-        <translation type="unfinished"></translation>
+        <translation>新文件名和旧文件名类型不同!</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1311"/>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>重新命名</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="721"/>
         <source>The file already exists in directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>文件在目录已经存在.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="832"/>
         <source>The file already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>文件已经存在.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="843"/>
         <source>This file is not permitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>文件不准许.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="923"/>
         <source>Unable to create &quot;%1&quot; directory</source>
-        <translation type="unfinished"></translation>
+        <translation>不能创建&quot;%1&quot;目录</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="931"/>
         <source>The project &quot;%1&quot;
  already exists in directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>工程 &quot;%1&quot; 已经在目录里存在.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1262"/>
         <source>The file  &quot;%1&quot; </source>
-        <translation type="unfinished"></translation>
+        <translation>文件  &quot;%1&quot; </translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1340"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>不能重新命名文件为&quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1362"/>
         <source>Do you want to delete &quot;%1&quot; on project ?</source>
-        <translation type="unfinished"></translation>
+        <translation>您想在工程里删除&quot;%1&quot;吗?</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="2027"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
-        <translation type="unfinished"></translation>
+        <translation>唯一的变量版本&quot;%1&quot; 是 %2</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="2028"/>
         <source>Run on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>启动 %1</translation>
     </message>
 </context>
 <context>
@@ -2793,7 +2793,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/projectpropertie.ui" line="232"/>
         <source>General :</source>
-        <translation>一般：</translation>
+        <translation>一般:</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="255"/>
@@ -2803,82 +2803,82 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/projectpropertie.ui" line="267"/>
         <source>build_all</source>
-        <translation type="unfinished"></translation>
+        <translation>全编译</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="274"/>
         <source>debug</source>
-        <translation type="unfinished">debug</translation>
+        <translation>debug</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="284"/>
         <source>release</source>
-        <translation type="unfinished">release</translation>
+        <translation>release</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="291"/>
         <source>debug_and_release</source>
-        <translation type="unfinished"></translation>
+        <translation>debug_and_releas</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="324"/>
         <source>Warnings</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="336"/>
         <source>warn_off</source>
-        <translation type="unfinished"></translation>
+        <translation>关闭警告</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="343"/>
         <source>warn_on</source>
-        <translation type="unfinished"></translation>
+        <translation>启动警告</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="379"/>
         <source>Qt Libraries</source>
-        <translation type="unfinished">Qt库</translation>
+        <translation>Qt库</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="407"/>
         <source>core</source>
-        <translation type="unfinished"></translation>
+        <translation>core</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="414"/>
         <source>network</source>
-        <translation type="unfinished"></translation>
+        <translation>network</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="421"/>
         <source>sql</source>
-        <translation type="unfinished"></translation>
+        <translation>sql</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="428"/>
         <source>xml</source>
-        <translation type="unfinished"></translation>
+        <translation>xml</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="445"/>
         <source>gui</source>
-        <translation type="unfinished"></translation>
+        <translation>gui</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="616"/>
         <source>opengl</source>
-        <translation type="unfinished"></translation>
+        <translation>opengl</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="459"/>
         <source>svg</source>
-        <translation type="unfinished"></translation>
+        <translation>svg</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="466"/>
         <source>qt3support</source>
-        <translation type="unfinished"></translation>
+        <translation>qt3support</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="514"/>
@@ -2888,123 +2888,123 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/projectpropertie.ui" line="550"/>
         <source>app_bundle</source>
-        <translation type="unfinished"></translation>
+        <translation>app_bundle</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="557"/>
         <source>assistant</source>
-        <translation type="unfinished"></translation>
+        <translation>assistant</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="564"/>
         <source>console</source>
-        <translation type="unfinished"></translation>
+        <translation>console</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="571"/>
         <source>designer</source>
-        <translation type="unfinished"></translation>
+        <translation>designer</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="578"/>
         <source>dll</source>
-        <translation type="unfinished"></translation>
+        <translation>dll</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="595"/>
         <source>exceptions</source>
-        <translation type="unfinished"></translation>
+        <translation>exceptions</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="602"/>
         <source>lib_bundle</source>
-        <translation type="unfinished"></translation>
+        <translation>lib_bundle</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="609"/>
         <source>no_lflags_merge</source>
-        <translation type="unfinished"></translation>
+        <translation>no_lflags_merge</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="623"/>
         <source>plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>plugin</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="640"/>
         <source>ppc</source>
-        <translation type="unfinished"></translation>
+        <translation>ppc</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="647"/>
         <source>qaxcontainer</source>
-        <translation type="unfinished"></translation>
+        <translation>qaxcontainer</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="654"/>
         <source>qaxserver</source>
-        <translation type="unfinished"></translation>
+        <translation>qaxserver</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="661"/>
         <source>qt</source>
-        <translation type="unfinished"></translation>
+        <translation>qt</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="688"/>
         <source>resources</source>
-        <translation type="unfinished"></translation>
+        <translation>resources</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="695"/>
         <source>rtti</source>
-        <translation type="unfinished"></translation>
+        <translation>rtti</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="702"/>
         <source>staticlib</source>
-        <translation type="unfinished"></translation>
+        <translation>staticlib</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="709"/>
         <source>stl</source>
-        <translation type="unfinished"></translation>
+        <translation>stl</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="716"/>
         <source>thread</source>
-        <translation type="unfinished"></translation>
+        <translation>thread</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="733"/>
         <source>uic3</source>
-        <translation type="unfinished"></translation>
+        <translation>uic3</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="740"/>
         <source>uitools</source>
-        <translation type="unfinished"></translation>
+        <translation>uitools</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="747"/>
         <source>windows</source>
-        <translation type="unfinished"></translation>
+        <translation>windows</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="754"/>
         <source>x11</source>
-        <translation type="unfinished"></translation>
+        <translation>x11</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="761"/>
         <source>x86</source>
-        <translation type="unfinished"></translation>
+        <translation>x86</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="780"/>
         <source>Free CONFIG
 variables :</source>
-        <translation type="unfinished">自定义CONFIG
+        <translation>自定义CONFIG
 变量:</translation>
     </message>
     <message>
@@ -3015,17 +3015,17 @@ variables :</source>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="845"/>
         <source>Variable :</source>
-        <translation>变量</translation>
+        <translation>变量:</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="972"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="925"/>
         <source>Values :</source>
-        <translation>值</translation>
+        <translation>值:</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="55"/>
@@ -3040,17 +3040,17 @@ variables :</source>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="77"/>
         <source>lib</source>
-        <translation type="unfinished"></translation>
+        <translation>lib</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="67"/>
         <source>app</source>
-        <translation type="unfinished"></translation>
+        <translation>app</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="110"/>
         <source>Project or Scope :</source>
-        <translation>工程或组：</translation>
+        <translation>工程或组:</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="1070"/>
@@ -3070,22 +3070,22 @@ variables :</source>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="135"/>
         <source>Default directories</source>
-        <translation type="unfinished"></translation>
+        <translation> 默认目录 </translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="147"/>
         <source>Dialogs:</source>
-        <translation type="unfinished">对话框：</translation>
+        <translation>对话框:</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="174"/>
         <source>Sources:</source>
-        <translation type="unfinished"></translation>
+        <translation>源文件:</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="671"/>
         <source>qtestlib</source>
-        <translation type="unfinished"></translation>
+        <translation>qtestlib</translation>
     </message>
 </context>
 <context>
@@ -3093,12 +3093,12 @@ variables :</source>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="530"/>
         <source>New Value:</source>
-        <translation>新值：</translation>
+        <translation>新值:</translation>
     </message>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="537"/>
         <source>delete spaces or put quotes.</source>
-        <translation>去掉空格，用引号</translation>
+        <translation>去掉空格或用引号.</translation>
     </message>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="538"/>
@@ -3113,22 +3113,22 @@ variables :</source>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="772"/>
         <source>Choose the sources location</source>
-        <translation type="unfinished"></translation>
+        <translation>选择源文件位置</translation>
     </message>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="786"/>
         <source>Choose the dialogs location</source>
-        <translation type="unfinished"></translation>
+        <translation>选择对话框位置</translation>
     </message>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="50"/>
         <source>Properties of %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1属性</translation>
     </message>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="536"/>
         <source>The spaces aren&apos;t correctly parsed by qmake</source>
-        <translation type="unfinished"></translation>
+        <translation>空格没有被qmake正确解析</translation>
     </message>
 </context>
 <context>
@@ -3169,12 +3169,12 @@ variables :</source>
     <message>
         <location filename="../../src/assistant.cpp" line="58"/>
         <source>Unable to start Assistant !</source>
-        <translation>不能启动Assistant！</translation>
+        <translation>不能启动Assistant!</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="103"/>
         <source>Loading:</source>
-        <translation>加载中：</translation>
+        <translation>加载中:</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="71"/>
@@ -3209,17 +3209,17 @@ variables :</source>
     <message>
         <location filename="../../src/projectmanager.cpp" line="188"/>
         <source>Current project parsing</source>
-        <translation type="unfinished">解析当前工程</translation>
+        <translation>解析当前工程</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="103"/>
         <source>Plugins</source>
-        <translation type="unfinished">插件</translation>
+        <translation>插件</translation>
     </message>
     <message>
         <location filename="../../src/designer.cpp" line="65"/>
         <source>Unable to start Designer !</source>
-        <translation type="unfinished"></translation>
+        <translation>不能启动Designer!</translation>
     </message>
 </context>
 <context>
@@ -3389,22 +3389,22 @@ variables :</source>
     <message>
         <location filename="../../ui/subclassing.ui" line="28"/>
         <source>Class Na&amp;me:</source>
-        <translation type="unfinished"></translation>
+        <translation>类名(&amp;M):</translation>
     </message>
     <message>
         <location filename="../../ui/subclassing.ui" line="66"/>
         <source>&amp;File Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>文件名(&amp;F):</translation>
     </message>
     <message>
         <location filename="../../ui/subclassing.ui" line="83"/>
         <source>&amp;Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>位置(&amp;L):</translation>
     </message>
     <message>
         <location filename="../../ui/subclassing.ui" line="100"/>
         <source>Filter &amp;by:</source>
-        <translation type="unfinished"></translation>
+        <translation>筛选(&amp;B):</translation>
     </message>
 </context>
 <context>
@@ -3513,27 +3513,27 @@ variables :</source>
     <message>
         <location filename="../../src/textEdit.cpp" line="312"/>
         <source>The file &quot;%1&quot; could not be loaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>文件&quot;%1&quot;不能被加载.</translation>
     </message>
     <message>
         <location filename="../../src/textEdit.cpp" line="536"/>
         <source>Save &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>保存&quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../../src/textEdit.cpp" line="555"/>
         <source>Unable to save %1</source>
-        <translation type="unfinished"></translation>
+        <translation>不能保存%1</translation>
     </message>
     <message>
         <location filename="../../src/textEdit.cpp" line="1282"/>
         <source>Goto Implementation</source>
-        <translation type="unfinished"></translation>
+        <translation>跳到实现</translation>
     </message>
     <message>
         <location filename="../../src/textEdit.cpp" line="1283"/>
         <source>Goto Declaration</source>
-        <translation type="unfinished"></translation>
+        <translation>跳到声明</translation>
     </message>
 </context>
 <context>
@@ -3546,47 +3546,47 @@ variables :</source>
     <message>
         <location filename="../../ui/toolsControl.ui" line="355"/>
         <source>qmake:</source>
-        <translation type="unfinished"></translation>
+        <translation>qmake:</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="392"/>
         <source>make:</source>
-        <translation type="unfinished"></translation>
+        <translation>make:</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="263"/>
         <source>gdb:</source>
-        <translation type="unfinished"></translation>
+        <translation>gdb:</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="120"/>
         <source>ctags:</source>
-        <translation type="unfinished"></translation>
+        <translation>ctags:</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="144"/>
         <source>linguist:</source>
-        <translation type="unfinished"></translation>
+        <translation>linguist:</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="341"/>
         <source>lupdate:</source>
-        <translation type="unfinished"></translation>
+        <translation>lupdate:</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="348"/>
         <source>lrelease:</source>
-        <translation type="unfinished"></translation>
+        <translation>irelease:</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="287"/>
         <source>designer:</source>
-        <translation type="unfinished"></translation>
+        <translation>designer:</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="409"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="59"/>
@@ -3606,7 +3606,7 @@ variables :</source>
     <message>
         <location filename="../../ui/toolsControl.ui" line="95"/>
         <source>Please enter the path to the external programs:</source>
-        <translation>请输入外部工具的路径：</translation>
+        <translation>请输入外部工具的路径:</translation>
     </message>
     <message>
         <location filename="../../ui/toolsControl.ui" line="41"/>
@@ -3616,7 +3616,7 @@ variables :</source>
     <message>
         <location filename="../../ui/toolsControl.ui" line="219"/>
         <source>assistant:</source>
-        <translation type="unfinished"></translation>
+        <translation>assistant:</translation>
     </message>
 </context>
 <context>
@@ -3629,12 +3629,12 @@ variables :</source>
     <message>
         <location filename="../../src/toolscontrolimpl.cpp" line="140"/>
         <source>Ctags was detected in path %1, but this version is too old.</source>
-        <translation type="unfinished"></translation>
+        <translation>ctags 已经在路径%1里被检测到，但是版本太旧了.</translation>
     </message>
     <message>
         <location filename="../../src/toolscontrolimpl.cpp" line="141"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>确定</translation>
     </message>
 </context>
 <context>
@@ -3657,17 +3657,17 @@ variables :</source>
     <message>
         <location filename="../../src/treeclasses.cpp" line="497"/>
         <source>Add Method...</source>
-        <translation type="unfinished"></translation>
+        <translation>添加 Method...</translation>
     </message>
     <message>
         <location filename="../../src/treeclasses.cpp" line="498"/>
         <source>Add Variable...</source>
-        <translation type="unfinished"></translation>
+        <translation>添加变量...</translation>
     </message>
     <message>
         <location filename="../../src/treeclasses.cpp" line="502"/>
         <source>Add get/set Methods...</source>
-        <translation type="unfinished"></translation>
+        <translation>添加 get/set Methods...</translation>
     </message>
 </context>
 <context>
@@ -3675,7 +3675,7 @@ variables :</source>
     <message>
         <location filename="../../src/treeproject.cpp" line="188"/>
         <source>Add sub-project...</source>
-        <translation>添加子工程</translation>
+        <translation>添加子工程...</translation>
     </message>
     <message>
         <location filename="../../src/treeproject.cpp" line="195"/>
@@ -3685,7 +3685,7 @@ variables :</source>
     <message>
         <location filename="../../src/treeproject.cpp" line="196"/>
         <source>Add Scope...</source>
-        <translation>添加组</translation>
+        <translation>添加组...</translation>
     </message>
     <message>
         <location filename="../../src/treeproject.cpp" line="198"/>
@@ -3745,27 +3745,27 @@ variables :</source>
     <message>
         <location filename="../../src/treeproject.cpp" line="229"/>
         <source>Normal</source>
-        <translation type="unfinished"></translation>
+        <translation>正常</translation>
     </message>
     <message>
         <location filename="../../src/treeproject.cpp" line="230"/>
         <source>Krawek</source>
-        <translation type="unfinished"></translation>
+        <translation>Krawek</translation>
     </message>
     <message>
         <location filename="../../src/treeproject.cpp" line="197"/>
         <source>Add New Class...</source>
-        <translation type="unfinished"></translation>
+        <translation>添加新类...</translation>
     </message>
     <message>
         <location filename="../../src/treeproject.cpp" line="216"/>
         <source>Rename...</source>
-        <translation type="unfinished"></translation>
+        <translation>重新命名...</translation>
     </message>
     <message>
         <location filename="../../src/treeproject.cpp" line="225"/>
         <source>Properties of %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1属性...</translation>
     </message>
 </context>
 <context>
@@ -3778,7 +3778,7 @@ variables :</source>
     <message>
         <location filename="../../ui/warning.ui" line="101"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>文本标签</translation>
     </message>
     <message>
         <location filename="../../ui/warning.ui" line="134"/>
