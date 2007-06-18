@@ -1039,6 +1039,7 @@ void MainImpl::closeEvent( QCloseEvent * event )
     {
         delete m_assistant;
         delete m_designer;
+        this->hide();  //give an impression of quick close
         event->accept();
     }
     else
@@ -1151,15 +1152,13 @@ bool MainImpl::openProject(QString s)
     return true;
 }
 //
-bool MainImpl::slotCloseProject(bool hide)
+bool MainImpl::slotCloseProject(bool /*hide*/)
 {
     if ( m_projectManager )
         m_projectManager->saveProjectSettings();
     slotClearAllBookmarks();
     if ( !slotCloseAllFiles() )
         return false;
-    if ( hide )
-        this->hide();
     logBuild->clear();
     logDebug->clear();
     //
