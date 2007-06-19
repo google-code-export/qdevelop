@@ -30,12 +30,15 @@ void FindFileImpl::showEvent(QShowEvent* _pEvent)
     // BK - put focus on textFind and select previous search word
     textFind->setFocus();
     QLineEdit* pLineEdit = textFind->lineEdit();
+    
+    //set the default word if existing
     if(!defaultWord.isEmpty()) {
         pLineEdit->setText(defaultWord);
-	defaultWord.clear();
-    } else {
-        pLineEdit->setSelection(0, pLineEdit->text().count());
+		defaultWord.clear();
     }
+    
+    //select the displayed word
+    pLineEdit->setSelection(0, pLineEdit->text().count());
 
     QWidget::showEvent(_pEvent);
 }
