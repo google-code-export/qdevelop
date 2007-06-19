@@ -75,6 +75,7 @@ SET( qdevelop_SRCS
 	src/editor.cpp
 	src/findfileimpl.cpp
 	src/lineedit.cpp
+	src/logbuild.cpp
 	src/linenumbers.cpp
 	src/main.cpp
 	src/mainimpl.cpp
@@ -112,6 +113,7 @@ SET( qdevelop_MOC_HDRS
 	src/editor.h
 	src/findfileimpl.h
 	src/linenumbers.h
+	src/logbuild.h
 	src/mainimpl.h
 	src/newprojectimpl.h
 	src/optionsimpl.h
