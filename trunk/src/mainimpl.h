@@ -53,6 +53,7 @@ Q_OBJECT
 public:
 	MainImpl(QWidget * parent = 0);
 	~MainImpl();
+	enum ExecuteVersion { ExecuteNone, ExecuteRelease, ExecuteDebug};
 	Editor * openFile(QStringList locationsList, int numLine=-1, bool silentMode=false, bool moveTop=false);
 	QString loadINI();
 	bool saveBeforeBuild() { return m_saveBeforeBuild; };
@@ -81,6 +82,10 @@ public:
 	void gotoFileInProject(QString& filename);
 	Editor * currentEditor();
 	Editor * givenEditor(int i);
+	void resetProjectsDirectoriesList();
+	void resetDebugAfterBuild();
+	void incErrors();
+	void incWarnings(); 
 private:
 	// Functions
 	void createConnections();
@@ -93,7 +98,6 @@ private:
 	void setCrossButton(bool activate);
 	bool modifiedEditors();
 	// Objects and Variables
-	enum ExecuteVersion { ExecuteNone, ExecuteRelease, ExecuteDebug};
 	Build *m_builder;
 	Debug *m_debug;
 	ProjectManager *m_projectManager;
@@ -186,8 +190,6 @@ private slots:
 	void slotContinueDebug();
 	void slotEndDebug();
 	void slotMessagesDebug(QString message);
-	void slotMessagesBuild(QString list, QString directory);
-	void slotDoubleClickLogBuild( QListWidgetItem *item);	
 	void slotFindFilesActivated(QListWidgetItem *item, QListWidgetItem *);
 	void slotDoubleClickFindLines( QListWidgetItem *item);	
 	void slotModifiedEditor(Editor *editor, bool modified);
