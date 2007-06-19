@@ -183,6 +183,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_stack->hide();
     //
     treeClasses->setCtagsName( m_ctagsName );
+    logBuild->setMainImpl( this );
 }
 //
 MainImpl::~MainImpl()
@@ -362,7 +363,6 @@ void MainImpl::createConnections()
     connect(actionQuit, SIGNAL(triggered()), this, SLOT(close()) );
     connect(treeFiles, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), this, SLOT(slotDoubleClickTreeFiles(QTreeWidgetItem *, int)) );
     connect(treeFiles, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(slotClickTreeFiles(QTreeWidgetItem *, int)) );
-    connect(logBuild, SIGNAL(itemDoubleClicked ( QListWidgetItem *)), this, SLOT(slotDoubleClickLogBuild( QListWidgetItem *)) );
     connect(findFiles, SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)), this, SLOT(slotFindFilesActivated( QListWidgetItem *, QListWidgetItem *)) );
     connect(findLines, SIGNAL(itemDoubleClicked ( QListWidgetItem *)), this, SLOT(slotDoubleClickFindLines( QListWidgetItem *)) );
     connect(actionHelpQtWord, SIGNAL(triggered()), this, SLOT(slotHelpQtWord()) );
@@ -1316,6 +1316,12 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
         }
     }
     s = QDir::cleanPath( s );
+    // The file is really opened only if it exists and if it is a file.
+    if ( !QFileInfo(s).isFile() )
+    {
+        QApplication::restoreOverrideCursor();
+    	return 0;
+   	}
     if ( Editor::shortFilename(s).section(".", -1, -1).toLower() == "ui" )
     {
         //QProcess::startDetached (m_designerName, QStringList(s));
@@ -1548,7 +1554,7 @@ void MainImpl::slotCompile()
 
         connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
         connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
-        connect(m_builder, SIGNAL(message(QString, QString)), this, SLOT(slotMessagesBuild(QString, QString)) );
+        connect(m_builder, SIGNAL(message(QString, QString)), logBuild, SLOT(slotMessagesBuild(QString, QString)) );
         m_builder->start();
     }
 }
@@ -1599,7 +1605,7 @@ void MainImpl::slotBuild(bool clean, bool build)
 
     connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
     connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
-    connect(m_builder, SIGNAL(message(QString, QString)), this, SLOT(slotMessagesBuild(QString, QString)) );
+    connect(m_builder, SIGNAL(message(QString, QString)), logBuild, SLOT(slotMessagesBuild(QString, QString)) );
     m_builder->start();
 }
 //
@@ -1628,7 +1634,7 @@ void MainImpl::slotEndBuild()
             msg += QString::number(m_builder->nbErrors())+" "+tr("error(s)")+ (m_builder->nbWarnings() ? " "+tr("and")+ " " : QString(" "));
         if ( m_builder->nbWarnings() )
             msg += QString::number(m_builder->nbWarnings())+" "+tr("warning(s)")+" ";
-        slotMessagesBuild( QString("\n---------------------- "+msg+"----------------------\n"), "");
+        logBuild->slotMessagesBuild( QString("\n---------------------- "+msg+"----------------------\n"), "");
         actionBuild->setEnabled( true );
         actionRebuild->setEnabled( true );
         actionCompile->setEnabled( true );
@@ -1637,53 +1643,6 @@ void MainImpl::slotEndBuild()
         if ( m_debugAfterBuild )
             slotDebug( (int)m_debugAfterBuild-1 );
     }
-}
-//
-void MainImpl::slotMessagesBuild(QString list, QString directory)
-{
-    QListWidgetItem *item = 0;
-    foreach(QString message, list.split("\n"))
-    {
-        if ( !message.isEmpty() )
-        {
-            message.remove( "\r" );
-            logBuild->addItem( message );
-            item = logBuild->item(logBuild->count()-1);
-            if ( message.toLower().contains("error:") || message.toLower().contains( tr("error:").toLower() ))
-            {
-                item->setTextColor( Qt::red );
-                item->setData(Qt::UserRole, QVariant(directory) );
-                m_projectsDirectoriesList = QStringList(QString());
-                m_debugAfterBuild = ExecuteNone;
-                m_builder->incErrors();
-            }
-            // Modify the two strings below "error:" and "warning:" to adapt in your language.
-            else if ( message.toLower().contains( "warning:") || message.toLower().contains( tr("warning:").toLower() ) )
-            {
-                item->setTextColor( Qt::blue );
-                item->setData(Qt::UserRole, QVariant(directory) );
-                m_builder->incWarnings();
-            }
-        }
-    }
-    logBuild->setCurrentRow( logBuild->count()-1 );
-    logBuild->setItemSelected( logBuild->currentItem(), false);
-}
-//
-void MainImpl::slotDoubleClickLogBuild( QListWidgetItem *item )
-{
-    QString texte = item->text();
-    if ( !texte.contains("error:") && !texte.contains("warning:")
-            // Modify the two strings below "error:" and "warning:" to adapt in your language.
-            && !texte.contains( tr("error:").toLower() ) && !texte.contains( tr("warning:").toLower() ) )
-        return;
-    QString filename = texte.section(":", 0, 0).replace("\\", "/").replace("//", "/");
-    int numLine = texte.section(":", 1, 1).toInt();
-    if ( numLine == 0 )
-        return;
-    QString projectDirectory = item->data(Qt::UserRole).toString();
-    QString absoluteName = QDir(projectDirectory+"/"+filename).absolutePath();
-    openFile( QStringList( absoluteName ), numLine);
 }
 //
 void MainImpl::slotFindFilesActivated(QListWidgetItem *item, QListWidgetItem *)
@@ -2449,3 +2408,24 @@ void MainImpl::slotConfigPlugin()
         iTextEdit->config();
 }
 //
+void MainImpl::incErrors() 
+{ 
+	m_builder->incErrors(); 
+} 
+//
+void MainImpl::incWarnings()
+{ 
+	m_builder->incWarnings(); 
+} 
+//
+void MainImpl::resetProjectsDirectoriesList() 
+{ 
+	if( m_projectsDirectoriesList.count() )
+    	m_projectsDirectoriesList = QStringList(QString());
+}
+//
+void MainImpl::resetDebugAfterBuild()  
+{ 
+	m_debugAfterBuild = ExecuteNone; 
+}
+
