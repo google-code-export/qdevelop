@@ -50,6 +50,7 @@ HEADERS +=   src/InitCompletion.h \
   src/findfileimpl.h \
   src/lineedit.h \
   src/linenumbers.h \
+  src/logbuild.h \
   src/mainimpl.h \
   src/misc.h \
   src/newprojectimpl.h \
@@ -101,6 +102,7 @@ SOURCES +=   src/InitCompletion.cpp \
   src/findfileimpl.cpp \
   src/lineedit.cpp \
   src/linenumbers.cpp \
+  src/logbuild.cpp \
   src/main.cpp \
   src/mainimpl.cpp \
   src/misc.cpp \
