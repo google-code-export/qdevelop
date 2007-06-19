@@ -1344,7 +1344,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
             if ( numLine != -1 )
             {
                 givenEditor(i)->setFocus( /*Qt::OtherFocusReason*/ );
-                givenEditor(i)->gotoLine( numLine, false );
+                givenEditor(i)->gotoLine( numLine, moveTop );
                 slotCurrentTabChanged( i );
             }
             QApplication::restoreOverrideCursor();
@@ -1665,7 +1665,7 @@ void MainImpl::slotDoubleClickFindLines( QListWidgetItem *item)
         it = findFiles->item(0);
     QString filename = it->text().mid( QString(tr("File")+" : ").length() );
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    openFile( QStringList( filename ), numLine);
+    openFile( QStringList( filename ), numLine, false, true);
     QApplication::restoreOverrideCursor();
 }
 //

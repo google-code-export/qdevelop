@@ -163,7 +163,7 @@ void CppHighlighter::setupRegexTable()
              << "union" << "unsigned" << "using" << "virtual" << "void"
              << "volatile" << "wchar_t" << "while"
              // BK - Added Qt keywords
-             << "slots" << "signals" << "SIGNAL" << "SLOT";
+             << "slots" << "signals" << "SIGNAL" << "SLOT" << "connect";
 
    	//functions and methods
 	item.regex = QRegExp("\\b[a-zA-Z_][a-zA-Z0-9_]+\\s*(?=\\()");
@@ -435,5 +435,6 @@ void CppHighlighter::handleEscapeChar(QString const& text, int start, int len)
         }
     }
 }
+
 
 
