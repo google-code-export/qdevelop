@@ -1144,31 +1144,26 @@ void TextEdit::dropEvent( QDropEvent * event )
     }
     verticalScrollBar()->setValue( posScrollbar );
 }
+
 //
 void TextEdit::slotIndent(bool indenter)
 {
+	//string used to indent text
+	QString indentString;
+	if ( m_tabSpaces )
+	{
+		int nbSpaces = tabStopWidth() / fontMetrics().width( " " );
+		indentString.fill(' ', nbSpaces);
+	} else {
+		indentString = QString("\t");
+	}
+
     QTextCursor curseurActuel = textCursor();
     QTextCursor c = textCursor();
     c.beginEditBlock();
     if ( indenter && c.selectedText().isEmpty() )
     {
-        if ( m_tabSpaces )
-        {
-            int nbSpaces = tabStopWidth() / fontMetrics().width( " " );
-            for (int i = 0; i<nbSpaces; i++)
-                c.insertText( " " );
-        }
-        else
-        {
-            if ( m_tabSpaces )
-            {
-                int nbSpaces = tabStopWidth() / fontMetrics().width( " " );
-                for (int i = 0; i<nbSpaces; i++)
-                    c.insertText( " " );
-            }
-            else
-                c.insertText( "\t" );
-        }
+        c.insertText( indentString );
         c.endEditBlock();
         return;
     }
@@ -1176,38 +1171,27 @@ void TextEdit::slotIndent(bool indenter)
     {}
     int debut = c.selectionStart();
     int fin = c.selectionEnd();
+    //
+	QTextBlock blocDebut = document()->findBlock(debut);
+    QTextBlock blocFin = document()->findBlock(fin);
+
+    //special case
+    if ( c.atBlockStart()) {
+		blocFin = document()->findBlock(fin).previous();
+	}
+
     c.clearSelection();
-    //
-    c.setPosition(debut, QTextCursor::MoveAnchor);
-    c.movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
-    QTextBlock blocDebut = c.block();
-    //
-    c.setPosition(fin, QTextCursor::MoveAnchor);
-    c.movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
-    QTextBlock blocFin = c.block();
-    //
+
     if ( blocDebut == blocFin )
     {
-        if ( m_tabSpaces )
-        {
-            int nbSpaces = tabStopWidth() / fontMetrics().width( " " );
-            for (int i = 0; i<nbSpaces; i++)
-                curseurActuel.insertText( " " );
-        }
-        else
-            curseurActuel.insertText( "\t" );
+        curseurActuel.insertText( indentString );
         setTextCursor( curseurActuel );
         c.endEditBlock();
         return;
     }
-    //
-    int ligneDebut = 1;
-    for ( QTextBlock block = document()->begin(); block.isValid() && block!=blocDebut; block = block.next(), ligneDebut++)
-        ;
-    //
-    int ligneFin = ligneDebut-1;
+    
     QTextBlock block = blocDebut;
-    do
+    while (  block.isValid() && !(blocFin < block) )
     {
         c.setPosition(block.position(), QTextCursor::MoveAnchor);
         if ( !indenter )
@@ -1217,29 +1201,14 @@ void TextEdit::slotIndent(bool indenter)
         }
         else
         {
-            if ( m_tabSpaces )
-            {
-                int nbSpaces = tabStopWidth() / fontMetrics().width( " " );
-                for (int i = 0; i<nbSpaces; i++)
-                    c.insertText( " " );
-            }
-            else
-            {
-                if ( m_tabSpaces )
-                {
-                    int nbSpaces = tabStopWidth() / fontMetrics().width( " " );
-                    for (int i = 0; i<nbSpaces; i++)
-                        c.insertText( " " );
-                }
-                else
-                    c.insertText( "\t" );
-            }
+            c.insertText( indentString );
         }
         setTextCursor( c );
-        ligneFin++;
         block = block.next();
     }
-    while (  block.isValid() && block != blocFin );
+
+    int ligneDebut = lineNumber(blocDebut);
+    int ligneFin = lineNumber(blocFin);
     selectLines(ligneDebut, ligneFin);
 	c.endEditBlock();   
 }
