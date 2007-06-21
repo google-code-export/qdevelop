@@ -66,6 +66,9 @@ void LogBuild::slotMessagesBuild(QString list, QString directory)
             }
         }
     }
-    ensureCursorVisible();
+    // Move the cursor to the bottom. Ensure it is visible.
+    QTextCursor cursor = textCursor();
+    cursor.movePosition(QTextCursor::End, QTextCursor::MoveAnchor);
+    setTextCursor( cursor );
 }
 //
