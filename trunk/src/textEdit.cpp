@@ -417,7 +417,7 @@ void TextEdit::comment(ActionComment action)
 	QTextBlock startBlock = document()->findBlock(startPos);
     QTextBlock endBlock = document()->findBlock(endPos);
     
-	//special case : the end of the selction is at the beginning of a line
+	//special case : the end of the selection is at the beginning of a line
 	if ( startPos != endPos && cursor.atBlockStart()) {
 		endBlock = document()->findBlock(endPos).previous();
 	}
@@ -1161,14 +1161,27 @@ void TextEdit::slotIndent(bool indenter)
     QTextCursor curseurActuel = textCursor();
     QTextCursor c = textCursor();
     c.beginEditBlock();
-    if ( indenter && c.selectedText().isEmpty() )
+    
+	if ( !c.hasSelection() )
     {
-        c.insertText( indentString );
-        c.endEditBlock();
+		if(indenter)
+		{
+			c.insertText( indentString );
+		} else {
+			//delete the previous character if it's a space or a tab
+			int p = textCursor().position() - 1;
+			if( p>0 && p< m_plainText.length() ) {
+				QChar s = m_plainText.at( p );
+				if ( s == '\t' || s == ' ') {
+					c.deletePreviousChar();
+				}
+			}
+		}
+		
+		c.endEditBlock();
         return;
     }
-    else if ( !indenter && c.selectedText().isEmpty() )
-    {}
+
     int debut = c.selectionStart();
     int fin = c.selectionEnd();
     //
@@ -1561,6 +1574,7 @@ void TextEdit::completionHelp()
     m_completion->initParse(c, true, true, true, name);
     m_completion->start();
 }
+
 
 
 
