@@ -2,10 +2,17 @@
 # -*- makefile -*-
 
 # Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+export DH_VERBOSE=1
 
 -include /usr/share/dpatch/dpatch.make
 
+# needed for get-orig-source
+NAME		= 	qdevelop
+TMP_DIR		:=	$(shell mktemp /tmp/svn-export.XXXXXXXXXX -d -q)
+SVN_RELEASE	=	$(shell svn info | grep Revision | awk '{ print $$2 }' )
+OUTPUT_DIR_NAME	=	$(TMP_DIR)/$(NAME)-$(VERSION)
+VERSION_RELEASE =	0.24
+FILE_NAME	=	$(NAME)_$(VERSION_RELEASE).orig.tar.gz 
 
 CFLAGS = -Wall -g
 
@@ -69,6 +76,18 @@ binary-arch: build install
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
+
+get-svn-source:
+	rm -fr $(TMP_DIR)
+	mkdir -p $(TMP_DIR)
+	svn export ../../trunk $(OUTPUT_DIR_NAME)
+	#cd $(OUTPUT_DIR_NAME) && doxygen
+	tar -czf $(FILE_NAME) -C $(TMP_DIR)/ .
+	cp $(FILE_NAME) ../tarballs
+	rm -fr $(TMP_DIR)
+
+get-orig-source:
+	echo "TODO"
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install configure patch unpatch
