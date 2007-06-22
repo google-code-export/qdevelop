@@ -54,8 +54,12 @@
 #include <QPlastiqueStyle>
 #include <QSplashScreen>
 //
-ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeClasses *treeClasses, QString name)
+ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeClasses *treeClasses)
         : m_parent(parent), m_treeFiles(treeFiles), m_treeClasses(treeClasses)
+{
+}
+
+void ProjectManager::init(QString name)
 {
     m_treeFiles->clear();
     m_treeClasses->clear();
@@ -2082,7 +2086,9 @@ QString ProjectManager::executableName(QString preferedVersion)
 void ProjectManager::headers(QTreeWidgetItem *it, QStringList &headerFiles)
 {
     if ( !it )
-        return;
+        it = m_treeFiles->topLevelItem(0);
+    if ( !it )
+	return;
     QString projectDir = projectDirectory( it );
     for (int i=0; i<it->childCount(); i++)
     {
@@ -2104,7 +2110,9 @@ void ProjectManager::headers(QTreeWidgetItem *it, QStringList &headerFiles)
 void ProjectManager::sources(QTreeWidgetItem *it, QStringList &sourcesFiles)
 {
     if ( !it )
-        return;
+        it = m_treeFiles->topLevelItem(0);
+    if ( !it )
+	return;
     QString projectDir = projectDirectory( it );
     for (int i=0; i<it->childCount(); i++)
     {

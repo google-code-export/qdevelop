@@ -111,6 +111,12 @@ bool connectDB(QString const& dbName)
 		    ")";
 		query.exec(queryString);
 		//
+		queryString = "create table checksums ("
+		    "filename string,"
+		    "checksum int"
+		    ")";
+		query.exec(queryString);
+		//
     }
     return true;
 }

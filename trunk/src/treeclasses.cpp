@@ -53,7 +53,7 @@ TreeClasses::TreeClasses(QWidget * parent)
 //
 TreeClasses::~TreeClasses()
 {
-	delete m_treeClassesItems;
+    delete m_treeClassesItems;
 }
 //
 void TreeClasses::clear()
@@ -533,8 +533,8 @@ void TreeClasses::slotOpenDeclaration()
 //
 void TreeClasses::slotRefresh()
 {
-	if( m_projectManager )
-    	m_projectManager->parseTreeClasses(true);
+    if ( m_projectManager )
+        m_projectManager->parseTreeClasses(true);
 }
 //
 void TreeClasses::toDB(QString projectDirectory)
@@ -549,8 +549,46 @@ void TreeClasses::toDB(QString projectDirectory)
         qDebug() << "Failed to execute" << queryString;
         return;
     }
+    queryString = "delete from checksums where 1";
+    if (!query.exec(queryString))
+    {
+        qDebug() << "Failed to execute" << queryString;
+        return;
+    }
     query.exec("BEGIN TRANSACTION;");
     writeItemsInDB(topLevelItem(0), QString(), query, projectDirectory);
+    /** Here, for each file, a checksum is computed with his contents then 
+    this checksum is saved in database. When the database is reloaded in fromDB() function, 
+    the checksum is computed again. If the new checksum and the checksum in database are different, 
+    the file was modified between the recording and the reloading (certainly by an external editor). 
+    A new parsing for this file is required to populate correctly the classes browser.   
+    */
+    QStringList files;
+    m_projectManager->sources( 0, files );
+    m_projectManager->headers( 0, files );
+    foreach(QString filename, files)
+    {
+        QFile file(filename);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+            continue;
+        QByteArray array( file.readAll() );
+        if ( !array.count() )
+            continue;
+        char *ptr = array.data();
+        quint16 check = qChecksum(ptr, array.length());
+        queryString = "insert into checksums values(";
+        queryString = queryString
+                      + "'" + filename + "', "
+                      + "'" + QString::number(check) + "')";
+        bool rc = query.exec(queryString);
+        if (rc == false)
+        {
+            qDebug() << "Failed to insert record to db" << query.lastError();
+            qDebug() << queryString;
+            exit(0);
+        }
+        file.close();
+    }
     query.exec("END TRANSACTION;");
     QApplication::restoreOverrideCursor();
 
@@ -627,8 +665,28 @@ void TreeClasses::fromDB(QString projectDirectory)
         createItemFromDB(topLevelItem(0), text, tooltip, parents, parsedItem);
         m_treeClassesItems->append( parsedItem );
     }
+    queryString = QString()
+                  + "select * from checksums where 1";
+    query.exec(queryString);
+    while (query.next())
+    {
+        QString filename = query.value(0).toString();
+        quint16 checksum = query.value(1).toInt();
+        QFile file(filename);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+        QByteArray array( file.readAll() );
+        if ( !array.count() )
+            return;
+        char *ptr = array.data();
+        quint16 check = qChecksum(ptr, array.length());
+        if ( check != checksum )
+        {
+            m_mainImpl->slotUpdateClasses(filename, QString(array));
+        }
+        file.close();
+    }
     query.exec("END TRANSACTION;");
-    //db.close();
 }
 //
 //
@@ -805,7 +863,7 @@ QStringList TreeClasses::methods(QString filename, QString /*classname*/)
     //foreach( ParsedItem parsedItem, list )
     for (int i = 0; i < list->size(); ++i)
     {
-    	ParsedItem parsedItem = list->at( i );
+        ParsedItem parsedItem = list->at( i );
         if ( ( parsedItem.kind == "p" || parsedItem.kind == "f" )
                 && parsedItem.declaration.section("|", 0, 0) == filename )
         {
