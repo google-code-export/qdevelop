@@ -1135,7 +1135,8 @@ bool MainImpl::openProject(QString s)
         delete m_completion;
     m_completion = new InitCompletion (this);
     configureCompletion( QFileInfo(s).absoluteDir().path() );
-    m_projectManager = new ProjectManager(this, treeFiles, treeClasses, s);
+    m_projectManager = new ProjectManager(this, treeFiles, treeClasses);
+    m_projectManager->init(s);
     treeFiles->setProjectManager( m_projectManager );
     treeClasses->setProjectManager( m_projectManager );
     connect(actionResetExecutablesList, SIGNAL(triggered()), m_projectManager, SLOT(slotResetExecutablesList()) );

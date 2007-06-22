@@ -52,8 +52,9 @@ class ProjectManager : public QObject
 {
 Q_OBJECT
 public:
-	ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeClasses *treeClasses, QString name);
+	ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeClasses *treeClasses);
 	~ProjectManager();
+	void init(QString name);
 	QString absoluteNameProjectFile(QTreeWidgetItem *it);
 	QString projectFilename(QTreeWidgetItem *it);
 	QString projectDirectory(QTreeWidgetItem *it);
