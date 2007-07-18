@@ -1057,12 +1057,12 @@ was modified outside editor.
     <message>
         <location filename="../../src/logbuild.cpp" line="46"/>
         <source>error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../../src/logbuild.cpp" line="54"/>
         <source>warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
 </context>
 <context>
@@ -2038,22 +2038,22 @@ was modified outside editor.
     <message>
         <location filename="../../ui/newimplementation.ui" line="47"/>
         <source>Class Name :</source>
-        <translation>类名：</translation>
+        <translation>类名:</translation>
     </message>
     <message>
         <location filename="../../ui/newimplementation.ui" line="54"/>
         <source>File Name :</source>
-        <translation>文件名：</translation>
+        <translation>文件名:</translation>
     </message>
     <message>
         <location filename="../../ui/newimplementation.ui" line="61"/>
         <source>Location :</source>
-        <translation>位置：</translation>
+        <translation>位置:</translation>
     </message>
     <message>
         <location filename="../../ui/newimplementation.ui" line="115"/>
         <source>...</source>
-        <translation></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/newimplementation.ui" line="165"/>
@@ -2101,27 +2101,27 @@ was modified outside editor.
     <message>
         <location filename="../../ui/newproject.ui" line="114"/>
         <source>Parent project :</source>
-        <translation>父工程：</translation>
+        <translation>父工程:</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="124"/>
         <source>Project name :</source>
-        <translation>工程名：</translation>
+        <translation>工程名:</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="134"/>
         <source>Location :</source>
-        <translation>位置：</translation>
+        <translation>位置:</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="175"/>
         <source>...</source>
-        <translation></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="188"/>
         <source>Project creation on : </source>
-        <translation>工程创建于：</translation>
+        <translation>工程创建于:</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="200"/>
@@ -3240,12 +3240,12 @@ variables :</source>
     <message>
         <location filename="../../ui/replace.ui" line="53"/>
         <source>Text to find:</source>
-        <translation>搜索文本：</translation>
+        <translation>搜索文本:</translation>
     </message>
     <message>
         <location filename="../../ui/replace.ui" line="63"/>
         <source>Replacement text:</source>
-        <translation>替换成：</translation>
+        <translation>替换成:</translation>
     </message>
     <message>
         <location filename="../../ui/replace.ui" line="153"/>
@@ -3288,7 +3288,7 @@ variables :</source>
     <message>
         <location filename="../../src/replaceimpl.cpp" line="67"/>
         <source>Beginning of document reached.</source>
-        <translation>到达文件头</translation>
+        <translation>到达文件头.</translation>
     </message>
     <message>
         <location filename="../../src/replaceimpl.cpp" line="67"/>
@@ -3298,7 +3298,7 @@ variables :</source>
     <message>
         <location filename="../../src/replaceimpl.cpp" line="69"/>
         <source>End of document reached.</source>
-        <translation>到达文件尾</translation>
+        <translation>到达文件尾.</translation>
     </message>
     <message>
         <location filename="../../src/replaceimpl.cpp" line="69"/>
@@ -3313,7 +3313,7 @@ variables :</source>
     <message>
         <location filename="../../src/replaceimpl.cpp" line="73"/>
         <source>replacement(s) made.</source>
-        <translation>有文本被替换</translation>
+        <translation>有文本被替换.</translation>
     </message>
     <message>
         <location filename="../../src/replaceimpl.cpp" line="75"/>
@@ -3435,7 +3435,7 @@ variables :</source>
     <message>
         <location filename="../../src/subclassingimpl.cpp" line="50"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
