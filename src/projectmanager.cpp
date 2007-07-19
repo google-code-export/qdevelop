@@ -56,8 +56,7 @@
 //
 ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeClasses *treeClasses)
         : m_parent(parent), m_treeFiles(treeFiles), m_treeClasses(treeClasses)
-{
-}
+{}
 
 void ProjectManager::init(QString name)
 {
@@ -789,22 +788,32 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
 
             templateData.append( QString("// place your code here\n") );
         }
-
-        if ( !file.open(QIODevice::WriteOnly | QIODevice::Text) )
+		// The (.ts) file must be created by lupdate only
+        if ( filename.section(".", -1, -1) != "ts" )
         {
-            QMessageBox::warning(0,
-                                 "QDevelop", tr("Unable to create file."),
-                                 tr("Cancel") );
-            return;
-        }
+            if ( !file.open(QIODevice::WriteOnly | QIODevice::Text) )
+            {
+                QMessageBox::warning(0,
+                                     "QDevelop", tr("Unable to create file."),
+                                     tr("Cancel") );
+                return;
+            }
 
-        if (!templateData.isEmpty ())
-        {
-            file.write( templateData );
-        }
+            if (!templateData.isEmpty ())
+            {
+                file.write( templateData );
+            }
 
-        file.close();
+            file.close();
+
+        }
         insertFile(item, filename);
+        // If it's a (.ts) file, save the project then call lupdate to create the file on disk.
+        if ( filename.section(".", -1, -1) == "ts" )
+        {
+        	slotSaveProject();
+        	slotlupdate(item);
+        }
     }
     m_isModifiedProject = true;
     m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
@@ -933,7 +942,7 @@ void ProjectManager::slotAddSubProject(QTreeWidgetItem *it)
         {
             QMessageBox::warning(0,
                                  "QDevelop", tr("The project \"%1\"\n already exists in directory.").arg(nomAbsoluProjet),
-                                         tr("Cancel") );
+                                 tr("Cancel") );
             return;
         }
         if ( !file.open(QIODevice::WriteOnly | QIODevice::Text) )
@@ -2088,7 +2097,7 @@ void ProjectManager::headers(QTreeWidgetItem *it, QStringList &headerFiles)
     if ( !it )
         it = m_treeFiles->topLevelItem(0);
     if ( !it )
-	return;
+        return;
     QString projectDir = projectDirectory( it );
     for (int i=0; i<it->childCount(); i++)
     {
@@ -2112,7 +2121,7 @@ void ProjectManager::sources(QTreeWidgetItem *it, QStringList &sourcesFiles)
     if ( !it )
         it = m_treeFiles->topLevelItem(0);
     if ( !it )
-	return;
+        return;
     QString projectDir = projectDirectory( it );
     for (int i=0; i<it->childCount(); i++)
     {
@@ -2134,23 +2143,23 @@ void ProjectManager::sources(QTreeWidgetItem *it, QStringList &sourcesFiles)
 //
 void ProjectManager::setCurrentItem(const QString& _strFileName)
 {
-	QString strSearch( QDir::cleanPath(_strFileName) );
+    QString strSearch( QDir::cleanPath(_strFileName) );
 
-	qint32 ii;
-	QTreeWidgetItem* pItemFound = NULL;
+    qint32 ii;
+    QTreeWidgetItem* pItemFound = NULL;
     QList<QTreeWidgetItem *> projectsList;
     childsList(0, "PROJECT", projectsList);
     for (ii = 0; ii < projectsList.count() && NULL == pItemFound; ++ii)
     {
-		QString strProjectDir = projectDirectory(projectsList.at(ii));
-		pItemFound = find_r(projectsList.at(ii), strSearch, strProjectDir);	
-	}
+        QString strProjectDir = projectDirectory(projectsList.at(ii));
+        pItemFound = find_r(projectsList.at(ii), strSearch, strProjectDir);
+    }
 }
 //
 QTreeWidgetItem* ProjectManager::find_r(const QTreeWidgetItem* _pItem, const QString& _strFileName, const QString& _strProjectDir) // BK - recursive call
 {
-	QTreeWidgetItem* pItemFound = NULL;
-	qint32 ii, jj;
+    QTreeWidgetItem* pItemFound = NULL;
+    qint32 ii, jj;
     for (ii = 0; ii < _pItem->childCount() && NULL == pItemFound; ++ii)
     {
         QTreeWidgetItem* pItemChild = _pItem->child(ii);
@@ -2158,16 +2167,16 @@ QTreeWidgetItem* ProjectManager::find_r(const QTreeWidgetItem* _pItem, const QSt
         {
             pItemFound = find_r(_pItem->child(ii), _strFileName, _strProjectDir);
         }
-		else
+        else
         {
             for (jj = 0; jj < pItemChild->childCount(); ++jj)
             {
                 QString str = _strProjectDir+"/"+pItemChild->child(jj)->text(0);
-				if ( QDir::cleanPath(str) == _strFileName )
-				{
-					pItemFound = pItemChild->child(jj);
-					m_treeFiles->setCurrentItem(pItemFound);
-				}
+                if ( QDir::cleanPath(str) == _strFileName )
+                {
+                    pItemFound = pItemChild->child(jj);
+                    m_treeFiles->setCurrentItem(pItemFound);
+                }
             }
         }
     }
