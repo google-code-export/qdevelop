@@ -19,6 +19,7 @@ XXX XX 2007 Version 0.24:
   - Hide mouse cursor while typing code (fixes issue 24)
   - When creating a new dialog, the template will use by default QDialogButtonBox (fixes issue 83)
   - Order of widgets in tools control is revised, also use QDialogButtonBox instead of normal buttons (fixes issue 89)
+  - Improved save and restore of MainWindow position, size and state (fixes issue 103).
   - Break IDE closing with Cancel button if project changes are not saved (fixes issue 107)
   - The build log window is now a sub-class of QTextEdit. It is possible to copy and paste by right-click the texts in 
     this window (fixes issue 136 and 141)

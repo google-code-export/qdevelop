@@ -755,9 +755,14 @@ void MainImpl::saveINI()
     }
     //
     settings.beginGroup("mainwindowstate");
-    settings.setValue("state", saveState());
-    settings.setValue("pos", pos());
-    settings.setValue("size", size());
+	if (!isMinimized() && !isMaximized() && !isFullScreen()) {
+		settings.setValue("pos", pos());
+		settings.setValue("size", size());
+	}
+	settings.setValue("maximized", isMaximized());
+	settings.setValue("fullscreen", isFullScreen());
+	settings.setValue("geometry", saveGeometry()); // Window geometry and state (only needed for Windows!).
+	settings.setValue("state", saveState()); // Toolbar and DockWidget state.
     settings.setValue("tabExplorer", tabExplorer->currentIndex());
     settings.endGroup();
 }
@@ -1011,10 +1016,22 @@ QString MainImpl::loadINI()
     }
     //
     settings.beginGroup("mainwindowstate");
-    restoreState(settings.value("state", saveState()).toByteArray());
-    move(settings.value("pos", pos()).toPoint());
-    resize(settings.value("size", size()).toSize());
-    tabExplorer->setCurrentIndex( settings.value("tabExplorer", 0).toInt() );
+#ifdef Q_OS_WIN32
+	// Restores position, size and state for both normal and maximized/fullscreen state. Problems reported unter X11.
+	// See Qt doc: Geometry: Restoring a Window's Geometry for details.
+	restoreGeometry(settings.value("geometry", saveGeometry()).toByteArray()); // Window geometry and state.
+#else
+	// Restores position, size and state including maximized/fullscreen.
+	move(settings.value("pos", pos()).toPoint()); // Window position.
+	resize(settings.value("size", size()).toSize()); // Window size.
+	// Note: Yes, the window can be maximized and fullscreen!
+	if (settings.value("maximized", isMaximized()).toBool()) // Window maximized.
+		setWindowState(windowState() | Qt::WindowMaximized);
+	if (settings.value("fullscreen", isFullScreen()).toBool()) // Window fullscreen.
+		setWindowState(windowState() | Qt::WindowFullScreen);
+#endif
+	restoreState(settings.value("state", saveState()).toByteArray()); // Toolbar and DockWidget state.
+	tabExplorer->setCurrentIndex( settings.value("tabExplorer", 0).toInt() );
     settings.endGroup();
     return projectName;
 }
