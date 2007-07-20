@@ -300,7 +300,7 @@ void TextEdit::setTabStopWidth(int taille)
 //
 bool TextEdit::open(bool silentMode, QString filename, QDateTime &lastModified)
 {
-    if ( cpphighlighter && !QString(":c:cc:cpp:h:").contains( ":"+filename.section(".", -1, -1).toLower()+":" ) )
+    if ( cpphighlighter && !QString(":c:cc:cpp:h:hpp").contains( ":"+filename.section(".", -1, -1).toLower()+":" ) )
     {
         delete cpphighlighter;
         cpphighlighter = 0;

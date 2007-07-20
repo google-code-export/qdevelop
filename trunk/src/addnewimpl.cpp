@@ -122,11 +122,11 @@ void AddNewImpl::slotAccept()
 			tr("Cancel") );
 		return;
 	}
-	if( suffixe == "cpp" || suffixe == "h" )
+	if( suffixe == "cpp" || suffixe == "c" || suffixe == "h" || suffixe == "hpp" )
 	{
 		QString type = tr("header");
 		QString autreSuffixe = "h";
-		if( suffixe == "h" )
+		if( suffixe == "h" || suffixe == "hpp")
 		{
 			type = "source";
 			autreSuffixe = "cpp";
