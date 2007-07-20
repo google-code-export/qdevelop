@@ -27,7 +27,7 @@ private slots:
 	void on_lupdateLocation_clicked();
 	void on_lreleaseLocation_clicked();
 	void on_designerLocation_clicked();
-	void on_okButton_clicked();
+	void on_buttonBox_clicked(QAbstractButton * button );	
 	void on_qmakeLocation_clicked();
 	void on_makeLocation_clicked();
 	void on_gdbLocation_clicked();
