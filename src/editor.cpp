@@ -65,7 +65,9 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
     gridLayout->setSpacing(0);
     gridLayout->setMargin(0);
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-    if ( suffixe( m_filename ).toLower() == "cpp" || suffixe( m_filename ).toLower() == "cc" || suffixe( m_filename ).toLower() == "h")
+    if ( suffixe( m_filename ).toLower() == "cpp" || suffixe( m_filename ).toLower() == "cc" || suffixe( m_filename ).toLower() == "c" || 
+         suffixe( m_filename ).toLower() == "h" || suffixe( m_filename ).toLower() == "hpp" 
+       )
     {
 
         QHBoxLayout *hboxLayout = new QHBoxLayout();
@@ -82,7 +84,7 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         connect(m_otherFileButton, SIGNAL(clicked()), this, SLOT(slotOtherFile()));
         hboxLayout->addWidget(m_otherFileButton);
         //
-        if ( suffixe( m_filename ).toLower() != "h" )
+        if  ( (suffixe( m_filename ).toLower() != "h") && (suffixe( m_filename ).toLower() != "hpp") )
         {
             m_otherFileButton->setToolTip( tr("Open %1.h").arg(Editor::shortFilename(m_nameOtherFile)) );
             m_refreshButton = new QToolButton(this);
@@ -120,12 +122,12 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         hboxLayout->addItem(spacerItem);
         //
         //
-        if ( suffixe( m_filename ).toLower() == "h" )
+        if ( (suffixe( m_filename ).toLower() == "h" ) || (suffixe( m_filename ).toLower() == "hpp" ) )
         {
             m_nameOtherFile += ".cpp";
             m_otherFileButton->setIcon(QIcon(":/treeview/images/cpp.png"));
         }
-        else if ( suffixe( m_filename ).toLower() == "cpp" || suffixe( m_filename ).toLower() == "cc")
+        else if ( suffixe( m_filename ).toLower() == "cpp" || suffixe( m_filename ).toLower() == "cc"  || suffixe( m_filename ).toLower() == "c")
         {
             m_nameOtherFile += ".h";
         }
