@@ -1,3 +1,37 @@
+XXX XX 2007 Version 0.24:
+ 
+  - Source/header navigation after files are renamed is working once more (fixes issue 137)
+  - The list of include directories is parsed by the code completion each time it is necessary (fixes issue 145)
+  - Commet/Uncomment line fixes, thanks to Simon Viennot <krazwer@gmail.com>  (fixes issues 101, 113 and 131).
+  - Fixed function/method names color bug (fixes issues 77 and 96)
+  - Line numers are consistant with text editor, improved undo/redo behavior, enhanced find in document behavior,
+    Removed Undo and Redo from editor context menu and moved Goto Implementation and Goto Declaration to the top. Thanks
+    to Branimir Karadzic <branimirkaradzic@gmail.com> (revision 144)
+  - Fixed templates for win32-msvc2005 target. Thanks to Branimir Karadzic <branimirkaradzic@gmail.com>. (revision 145) 
+  - Added an entry to the main menu to open class methods combo box for fast
+     lookup without using mouse. Thanks to Branimir Karadzic <branimirkaradzic@gmail.com>. (revision 146)
+  - Find in files funtions has been improoved (revision 147).
+  - Completion improvement: If a function has many overloaded versions, the code completion choose the version with the biggest 
+    number of parameters, overcome some problems with ctags and Qt macros (revision 151)
+  - When adding files to a project if the directories do not exixt, create them (revision 154)
+  - new text format used in ths source, which allows to translate more easily. Thanks to Simon Viennot <krazwer@gmail.com>. (revision 155)
+  - Indentation should be working once more (fixes issue 18)
+  - Hide mouse cursor while typing code (fixes issue 24)
+  - When creating a new dialog, the template will use by default QDialogButtonBox (fixes issue 83)
+  - Order of widgets in tools control is revised, also use QDialogButtonBox instead of normal buttons (fixes issue 89)
+  - Break IDE closing with Cancel button if project changes are not saved (fixes issue 107)
+  - The build log window is now a sub-class of QTextEdit. It is possible to copy and paste by right-click the texts in 
+    this window (fixes issue 136 and 141)
+  - Make moving up/down in files explorer equivalent to clicking items, and Return equivalent to clicking Open (fixes issue 154)
+  - Updated translations for 
+      * Chinese (Henri Girard <henrigirard@free.fr>) 
+      * Vietnamese (Chuong.Nguyen@eng.monash.edu.au)
+      * Italian (Rafael Venancio <rafael.venan@free.fr>)
+      * Portuguese (Rafael Venancio <rafael.venan@free.fr>)
+      * Spanish (Jorge Daniel Sampayo Vargas <jdsampayo@gmail.com>)
+      * Turkish (fatih.asici@gmail.com)
+      * German (Ralf Jung <ralfjung-e@gmx.de>)
+  
 May 29 2007 Version 0.23
 
 Corrections:
