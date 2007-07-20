@@ -108,6 +108,7 @@ public:
         Toggle, Comment, Uncomment
     };
     void insertText(QString text, int insertAfterLine);
+    void setMouseHidden( bool hidden );
 public slots:
     void gotoLine( int line, bool moveTop );
     void slotFind(Ui::FindWidget ui, QString ttf=0,  QTextDocument::FindFlags options=0, bool fromButton=false);
@@ -162,6 +163,7 @@ private:
     QColor m_matchingColor;
     QAction *actionToggleBreakpoint;
     int m_lineNumber;
+    bool m_mouseHidden;
 protected:
     void resizeEvent( QResizeEvent* );
     void keyPressEvent ( QKeyEvent * event );
@@ -170,6 +172,7 @@ protected:
     void dropEvent( QDropEvent * event );
     void mousePressEvent ( QMouseEvent * event );
     void paintEvent ( QPaintEvent * event );
+    void mouseMoveEvent( QMouseEvent * event );
 signals:
     void editorModified(bool);
 };

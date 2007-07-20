@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="cs_CZ">
-<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -3468,11 +3467,6 @@ proměnné :</translation>
         <location filename="../../src/subclassingimpl.cpp" line="488"/>
         <source>Choose the file location</source>
         <translation>Vyberte umístění souboru</translation>
-    </message>
-    <message>
-        <location filename="../../src/subclassingimpl.cpp" line="50"/>
-        <source></source>
-        <translation></translation>
     </message>
 </context>
 <context>
