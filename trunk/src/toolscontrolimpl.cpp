@@ -182,8 +182,16 @@ bool ToolsControlImpl::toolsControl() {
 }
 //
 
-void ToolsControlImpl::on_okButton_clicked() {
-    //QSettings settings(QDir::homePath()+"/qdevelop.ini", QSettings::IniFormat);
+void ToolsControlImpl::on_buttonBox_clicked(QAbstractButton * button ) {
+    // we only deal with "ok" and "cancel" clicks, all others are ignored
+    if (buttonBox->button(QDialogButtonBox::Cancel) ==  button)
+    {
+	reject();
+	return; 
+    }
+    else if (buttonBox->button(QDialogButtonBox::Ok) !=  button)
+	return;
+	
 #ifdef Q_OS_WIN32
     QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
 #else
