@@ -44,6 +44,7 @@ protected:
 	void dragEnterEvent(QDragEnterEvent *);
 	void drawBranches ( QPainter * painter, const QRect & rect, const QModelIndex & index ) const;
 	void resizeEvent ( QResizeEvent * event );
+	void keyPressEvent( QKeyEvent * event );
 private:
 	QPointer<ProjectManager> m_projectManager;
 	QTreeWidgetItem *m_itemClicked;

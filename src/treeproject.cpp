@@ -239,6 +239,20 @@ void TreeProject::resizeEvent ( QResizeEvent * event )
 	QTreeWidget::resizeEvent( event );
 }
 //
+void TreeProject::keyPressEvent( QKeyEvent * event )
+{
+    if ( event->key( ) == Qt::Key_Return )
+    {
+        slotOpen( );
+        event->setAccepted( true );
+    }
+    else
+    {
+        QTreeWidget::keyPressEvent( event );
+        m_itemClicked = currentItem( );
+    }
+}
+//
 void TreeProject::slotShowAsNormal()
 {
 	setItemDelegate( normalItemDelegate );
