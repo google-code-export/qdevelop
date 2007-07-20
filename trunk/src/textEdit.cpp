@@ -50,7 +50,7 @@
 #include <QPrinter>
 
 TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completion)
-        : QTextEdit(parent), m_editor(parent), m_mainImpl(mainimpl), m_completion(completion)
+        : QTextEdit(parent), m_editor(parent), m_mainImpl(mainimpl), m_completion(completion), m_mouseHidden(false)
 {
     setObjectName( "editorZone" );
     m_lineNumbers = 0;
@@ -573,6 +573,15 @@ bool TextEdit::save(QString filename, QDateTime &lastModified)
     return true;
 }
 //
+void TextEdit::setMouseHidden( bool hidden )
+{
+	if ( hidden == m_mouseHidden )
+		return;
+	viewport()->setCursor( hidden ? Qt::BlankCursor : Qt::IBeamCursor );
+	setMouseTracking( hidden );
+	m_mouseHidden = hidden;
+}
+//
 void TextEdit::resizeEvent( QResizeEvent* e )
 {
     QTextEdit::resizeEvent( e );
@@ -829,6 +838,12 @@ void TextEdit::paintEvent ( QPaintEvent * event )
     //
 }
 //
+void TextEdit::mouseMoveEvent( QMouseEvent * event )
+{
+    setMouseHidden( false );
+    event->setAccepted( false );
+}
+//
 void TextEdit::slotCursorPositionChanged()
 {
     if ( m_currentLineColor.isValid() )
@@ -961,6 +976,7 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 {
     QTextCursor cursor = textCursor();
     clearMatch();
+    setMouseHidden( true );
     if ( event->key() == Qt::Key_Tab )
     {
         slotIndent( !(event->modifiers() == Qt::ControlModifier) );
@@ -1034,7 +1050,9 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
             autoIndent();
         }
         else
+        {
             QTextEdit::keyPressEvent ( event );
+        }
     }
     else if ( event->key() == Qt::Key_Home && !event->modifiers() )
     {
@@ -1057,15 +1075,25 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
         QTextEdit::keyPressEvent ( event );
     }
     else if ( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutCut() )
+    {
         cut();
+    }
     else if ( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutPaste() )
+    {
         paste();
+    }
     else if ( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutUndo() )
+    {
         document()->undo();
+    }
     else if ( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutRedo() )
+    {
         document()->redo();
+    }
     else
+    {
         QTextEdit::keyPressEvent ( event );
+    }
     event->accept();
 }
 //
@@ -1148,6 +1176,7 @@ void TextEdit::dropEvent( QDropEvent * event )
 //
 void TextEdit::slotIndent(bool indenter)
 {
+    setMouseHidden( true );
 	//string used to indent text
 	QString indentString;
 	if ( m_tabSpaces )

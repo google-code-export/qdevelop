@@ -1826,7 +1826,7 @@ was modified outside editor.
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1216"/>
+        <location filename="../../src/mainimpl.cpp" line="1217"/>
         <source>Choose the file to create</source>
         <translation>选择要创建的文件</translation>
     </message>
@@ -1836,7 +1836,7 @@ was modified outside editor.
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2271"/>
+        <location filename="../../src/mainimpl.cpp" line="2272"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -1851,12 +1851,12 @@ was modified outside editor.
         <translation>你要退出QDevelop吗?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1837"/>
+        <location filename="../../src/mainimpl.cpp" line="1838"/>
         <source>Yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1837"/>
+        <location filename="../../src/mainimpl.cpp" line="1838"/>
         <source>No</source>
         <translation>否</translation>
     </message>
@@ -1886,77 +1886,77 @@ was modified outside editor.
         <translation>所有文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1218"/>
+        <location filename="../../src/mainimpl.cpp" line="1219"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>文件 (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1862"/>
+        <location filename="../../src/mainimpl.cpp" line="1863"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1666"/>
+        <location filename="../../src/mainimpl.cpp" line="1667"/>
         <source>File</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1945"/>
+        <location filename="../../src/mainimpl.cpp" line="1946"/>
         <source>Start</source>
         <translation>开始</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1820"/>
+        <location filename="../../src/mainimpl.cpp" line="1821"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>工程已经被更改，你愿意保存改动吗?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1836"/>
+        <location filename="../../src/mainimpl.cpp" line="1837"/>
         <source>Stop debugging ?</source>
         <translation>停止调试?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1849"/>
+        <location filename="../../src/mainimpl.cpp" line="1850"/>
         <source>run Build.</source>
         <translation>运行编译。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1849"/>
+        <location filename="../../src/mainimpl.cpp" line="1850"/>
         <source>Ok</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1864"/>
+        <location filename="../../src/mainimpl.cpp" line="1865"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1946"/>
+        <location filename="../../src/mainimpl.cpp" line="1947"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2011"/>
+        <location filename="../../src/mainimpl.cpp" line="2012"/>
         <source>Abort</source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2004"/>
+        <location filename="../../src/mainimpl.cpp" line="2005"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>窗口中无法停下，请设置断点。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2053"/>
+        <location filename="../../src/mainimpl.cpp" line="2054"/>
         <source>Continue</source>
         <translation>继续</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2119"/>
+        <location filename="../../src/mainimpl.cpp" line="2120"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2261"/>
+        <location filename="../../src/mainimpl.cpp" line="2262"/>
         <source>New Variable:</source>
         <translation>新变量:</translation>
     </message>
@@ -1966,27 +1966,27 @@ was modified outside editor.
         <translation>选择要打开的工程</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1630"/>
+        <location filename="../../src/mainimpl.cpp" line="1631"/>
         <source>Build finished without error</source>
         <translation>编译结束没有错误</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1632"/>
+        <location filename="../../src/mainimpl.cpp" line="1633"/>
         <source>Build finished with</source>
         <translation>编译结束</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1634"/>
+        <location filename="../../src/mainimpl.cpp" line="1635"/>
         <source>error(s)</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1634"/>
+        <location filename="../../src/mainimpl.cpp" line="1635"/>
         <source>and</source>
         <translation>和</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1636"/>
+        <location filename="../../src/mainimpl.cpp" line="1637"/>
         <source>warning(s)</source>
         <translation>警告</translation>
     </message>
@@ -2012,17 +2012,17 @@ was modified outside editor.
         <translation>工程%1不存在.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1197"/>
+        <location filename="../../src/mainimpl.cpp" line="1198"/>
         <source>Properties of %1...</source>
         <translation>%1属性...</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1848"/>
+        <location filename="../../src/mainimpl.cpp" line="1849"/>
         <source>The program doesn&apos;t exist,</source>
         <translation>程序不存在,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2270"/>
+        <location filename="../../src/mainimpl.cpp" line="2271"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation>变量 &quot;%1&quot; 已经存在.</translation>
@@ -2625,158 +2625,158 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1188"/>
+        <location filename="../../src/projectmanager.cpp" line="1201"/>
         <source>Save project changes ?</source>
         <translation>保存工程的改动?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1363"/>
+        <location filename="../../src/projectmanager.cpp" line="1376"/>
         <source>Yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1363"/>
+        <location filename="../../src/projectmanager.cpp" line="1376"/>
         <source>No</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1340"/>
+        <location filename="../../src/projectmanager.cpp" line="1353"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="734"/>
+        <location filename="../../src/projectmanager.cpp" line="737"/>
         <source>Forms:</source>
         <translation>表单:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="792"/>
+        <location filename="../../src/projectmanager.cpp" line="797"/>
         <source>Unable to create file.</source>
         <translation>不能创建文件。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1355"/>
+        <location filename="../../src/projectmanager.cpp" line="1368"/>
         <source>Ok</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="906"/>
+        <location filename="../../src/projectmanager.cpp" line="919"/>
         <source>Sub-project creation</source>
         <translation>创建子工程</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="938"/>
+        <location filename="../../src/projectmanager.cpp" line="951"/>
         <source>Unable to create project.</source>
         <translation>不能创建工程.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="975"/>
+        <location filename="../../src/projectmanager.cpp" line="988"/>
         <source>Sub-Projects</source>
         <translation>子工程</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1354"/>
+        <location filename="../../src/projectmanager.cpp" line="1367"/>
         <source>Unable to delete the main project.</source>
         <translation>不能删除主工程.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1502"/>
+        <location filename="../../src/projectmanager.cpp" line="1515"/>
         <source>Sub-projects</source>
         <translation>子工程</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1600"/>
+        <location filename="../../src/projectmanager.cpp" line="1613"/>
         <source>Headers</source>
         <translation>头文件</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1605"/>
+        <location filename="../../src/projectmanager.cpp" line="1618"/>
         <source>Sources</source>
         <translation>源文件</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1610"/>
+        <location filename="../../src/projectmanager.cpp" line="1623"/>
         <source>Dialogs</source>
         <translation>对话框</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1615"/>
+        <location filename="../../src/projectmanager.cpp" line="1628"/>
         <source>Translations</source>
         <translation>翻译</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1620"/>
+        <location filename="../../src/projectmanager.cpp" line="1633"/>
         <source>Resources</source>
         <translation>资源</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="156"/>
+        <location filename="../../src/projectmanager.cpp" line="159"/>
         <source>Project parsing</source>
         <translation>工程解析</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1304"/>
+        <location filename="../../src/projectmanager.cpp" line="1317"/>
         <source>New name:</source>
         <translation>新命名:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1310"/>
+        <location filename="../../src/projectmanager.cpp" line="1323"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>新文件名和旧文件名类型不同!</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1311"/>
+        <location filename="../../src/projectmanager.cpp" line="1324"/>
         <source>Rename</source>
         <translation>重新命名</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="721"/>
+        <location filename="../../src/projectmanager.cpp" line="724"/>
         <source>The file already exists in directory.</source>
         <translation>文件在目录已经存在.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="832"/>
+        <location filename="../../src/projectmanager.cpp" line="845"/>
         <source>The file already exists.</source>
         <translation>文件已经存在.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="843"/>
+        <location filename="../../src/projectmanager.cpp" line="856"/>
         <source>This file is not permitted.</source>
         <translation>文件不准许.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="923"/>
+        <location filename="../../src/projectmanager.cpp" line="936"/>
         <source>Unable to create &quot;%1&quot; directory</source>
         <translation>不能创建&quot;%1&quot;目录</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="931"/>
+        <location filename="../../src/projectmanager.cpp" line="944"/>
         <source>The project &quot;%1&quot;
  already exists in directory.</source>
         <translation>工程 &quot;%1&quot; 已经在目录里存在.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1262"/>
+        <location filename="../../src/projectmanager.cpp" line="1275"/>
         <source>The file  &quot;%1&quot; </source>
         <translation>文件  &quot;%1&quot; </translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1340"/>
+        <location filename="../../src/projectmanager.cpp" line="1353"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>不能重新命名文件为&quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1362"/>
+        <location filename="../../src/projectmanager.cpp" line="1375"/>
         <source>Do you want to delete &quot;%1&quot; on project ?</source>
         <translation>您想在工程里删除&quot;%1&quot;吗?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2027"/>
+        <location filename="../../src/projectmanager.cpp" line="2040"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>唯一的变量版本&quot;%1&quot; 是 %2</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2028"/>
+        <location filename="../../src/projectmanager.cpp" line="2041"/>
         <source>Run on %1</source>
         <translation>启动 %1</translation>
     </message>
@@ -3210,7 +3210,7 @@ variables :</source>
         <translation>QDevelop需要SQLite支持。编译方法请参阅Qt SQL driver的文档。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="188"/>
+        <location filename="../../src/projectmanager.cpp" line="191"/>
         <source>Current project parsing</source>
         <translation>解析当前工程</translation>
     </message>
@@ -3432,11 +3432,6 @@ variables :</source>
         <source>(.h and .cpp)</source>
         <translation></translation>
     </message>
-    <message>
-        <location filename="../../src/subclassingimpl.cpp" line="50"/>
-        <source></source>
-        <translation></translation>
-    </message>
 </context>
 <context>
     <name>TabWidget</name>
@@ -3474,47 +3469,47 @@ variables :</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1256"/>
+        <location filename="../../src/textEdit.cpp" line="1269"/>
         <source>Cut</source>
         <translation>剪切</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1257"/>
+        <location filename="../../src/textEdit.cpp" line="1270"/>
         <source>Copy</source>
         <translation>复制</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1258"/>
+        <location filename="../../src/textEdit.cpp" line="1271"/>
         <source>Paste</source>
         <translation>粘贴</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1260"/>
+        <location filename="../../src/textEdit.cpp" line="1273"/>
         <source>Selection Indent</source>
         <translation>缩进选中的文字</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1261"/>
+        <location filename="../../src/textEdit.cpp" line="1274"/>
         <source>Selection Unindent</source>
         <translation>反缩进选中的文字</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1264"/>
+        <location filename="../../src/textEdit.cpp" line="1277"/>
         <source>Select All</source>
         <translation>选择所有</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1266"/>
+        <location filename="../../src/textEdit.cpp" line="1279"/>
         <source>Find...</source>
         <translation>查找...</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1268"/>
+        <location filename="../../src/textEdit.cpp" line="1281"/>
         <source>Toggle Bookmark</source>
         <translation>添加/去除书签</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1269"/>
+        <location filename="../../src/textEdit.cpp" line="1282"/>
         <source>Toggle Breakpoint</source>
         <translation>添加/去除断点</translation>
     </message>
@@ -3534,12 +3529,12 @@ variables :</source>
         <translation>不能保存%1</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1251"/>
+        <location filename="../../src/textEdit.cpp" line="1264"/>
         <source>Goto Implementation</source>
         <translation>跳到实现</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1252"/>
+        <location filename="../../src/textEdit.cpp" line="1265"/>
         <source>Goto Declaration</source>
         <translation>跳到声明</translation>
     </message>

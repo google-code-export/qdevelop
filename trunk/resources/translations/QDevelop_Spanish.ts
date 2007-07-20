@@ -2632,159 +2632,159 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1192"/>
+        <location filename="../../src/projectmanager.cpp" line="1201"/>
         <source>Save project changes ?</source>
         <translation>¿Deseas guardar los cambios del proyecto?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1367"/>
+        <location filename="../../src/projectmanager.cpp" line="1376"/>
         <source>Yes</source>
         <translation>Sí</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1367"/>
+        <location filename="../../src/projectmanager.cpp" line="1376"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1344"/>
+        <location filename="../../src/projectmanager.cpp" line="1353"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="738"/>
+        <location filename="../../src/projectmanager.cpp" line="737"/>
         <source>Forms:</source>
         <translation>Formularios:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="796"/>
+        <location filename="../../src/projectmanager.cpp" line="797"/>
         <source>Unable to create file.</source>
         <translation>Imposible crear archivo.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1359"/>
+        <location filename="../../src/projectmanager.cpp" line="1368"/>
         <source>Ok</source>
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="910"/>
+        <location filename="../../src/projectmanager.cpp" line="919"/>
         <source>Sub-project creation</source>
         <translation>Creación de sub-proyecto</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="942"/>
+        <location filename="../../src/projectmanager.cpp" line="951"/>
         <source>Unable to create project.</source>
         <translation>Imposible crear proyecto.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="979"/>
+        <location filename="../../src/projectmanager.cpp" line="988"/>
         <source>Sub-Projects</source>
         <translation>Sub-Proyectos</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1367"/>
         <source>Unable to delete the main project.</source>
         <translation>Imposible eliminar el proyecto principal.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1506"/>
+        <location filename="../../src/projectmanager.cpp" line="1515"/>
         <source>Sub-projects</source>
         <translation>Sub-proyectos</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1604"/>
+        <location filename="../../src/projectmanager.cpp" line="1613"/>
         <source>Headers</source>
         <translation>Cabeceras</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1609"/>
+        <location filename="../../src/projectmanager.cpp" line="1618"/>
         <source>Sources</source>
         <translation>Fuentes</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1614"/>
+        <location filename="../../src/projectmanager.cpp" line="1623"/>
         <source>Dialogs</source>
         <translation>Diálogos</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1619"/>
+        <location filename="../../src/projectmanager.cpp" line="1628"/>
         <source>Translations</source>
         <translation>Traduciones</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1624"/>
+        <location filename="../../src/projectmanager.cpp" line="1633"/>
         <source>Resources</source>
         <translation>Recursos</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="160"/>
+        <location filename="../../src/projectmanager.cpp" line="159"/>
         <source>Project parsing</source>
         <translation>Comprobando proyecto</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1308"/>
+        <location filename="../../src/projectmanager.cpp" line="1317"/>
         <source>New name:</source>
         <translation>Nuevo nombre:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1314"/>
+        <location filename="../../src/projectmanager.cpp" line="1323"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>El tipo del nuevo y del viejo archivo es diferente !</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1315"/>
+        <location filename="../../src/projectmanager.cpp" line="1324"/>
         <source>Rename</source>
         <translation>Renombrar</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="725"/>
+        <location filename="../../src/projectmanager.cpp" line="724"/>
         <source>The file already exists in directory.</source>
         <translation>El archivo ya existe en el directorio.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="836"/>
+        <location filename="../../src/projectmanager.cpp" line="845"/>
         <source>The file already exists.</source>
         <translation>El archivo ya existe.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="847"/>
+        <location filename="../../src/projectmanager.cpp" line="856"/>
         <source>This file is not permitted.</source>
         <translation>El archivo no esta permitido.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="927"/>
+        <location filename="../../src/projectmanager.cpp" line="936"/>
         <source>Unable to create &quot;%1&quot; directory</source>
         <translation>Imposible crear el directorio &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="935"/>
+        <location filename="../../src/projectmanager.cpp" line="944"/>
         <source>The project &quot;%1&quot;
  already exists in directory.</source>
         <translation>El proyecto &quot;%1&quot;
  ya existe en el directorio.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1266"/>
+        <location filename="../../src/projectmanager.cpp" line="1275"/>
         <source>The file  &quot;%1&quot; </source>
         <translation>El archivo  &quot;%1&quot; </translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1344"/>
+        <location filename="../../src/projectmanager.cpp" line="1353"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Imposible renombrar el archivo a &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp" line="1375"/>
         <source>Do you want to delete &quot;%1&quot; on project ?</source>
         <translation>¿Deseas borrar &quot;%1&quot; del proyecto?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2031"/>
+        <location filename="../../src/projectmanager.cpp" line="2040"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>La única versión avaliable para &quot;%1&quot; es %2</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2032"/>
+        <location filename="../../src/projectmanager.cpp" line="2041"/>
         <source>Run on %1</source>
         <translation>Correr en %1</translation>
     </message>
@@ -3218,7 +3218,7 @@ libres :</translation>
         <translation>QDevelop necesita soporte SQLite. Por favor lea la documentación sobre el driver QtSQL para información de como compilarlo.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="192"/>
+        <location filename="../../src/projectmanager.cpp" line="191"/>
         <source>Current project parsing</source>
         <translation>Comprobando proyecto actual</translation>
     </message>
@@ -3439,11 +3439,6 @@ libres :</translation>
         <location filename="../../src/subclassingimpl.cpp" line="412"/>
         <source>(.h and .cpp)</source>
         <translation>(.h y .cpp)</translation>
-    </message>
-    <message>
-        <location filename="../../src/subclassingimpl.cpp" line="50"/>
-        <source></source>
-        <translation></translation>
     </message>
 </context>
 <context>

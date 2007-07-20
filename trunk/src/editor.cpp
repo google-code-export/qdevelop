@@ -197,6 +197,7 @@ void Editor::slotTimerUpdateClasses()
         m_checksum = check;
         emit updateClasses( filename(), m_textEdit->toPlainText());
     }
+    m_textEdit->setMouseHidden( true );
 }
 //
 void Editor::slotTimerCheckIfModifiedOutside()
