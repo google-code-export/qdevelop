@@ -6,13 +6,19 @@
     <x>0</x>
     <y>0</y>
     <width>519</width>
-    <height>410</height>
+    <height>427</height>
    </rect>
   </property>
   <property name="windowTitle" >
    <string>External Tools</string>
   </property>
   <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
    <item>
     <widget class="QLabel" name="label" >
      <property name="text" >
@@ -22,22 +28,10 @@
    </item>
    <item>
     <layout class="QGridLayout" >
-     <property name="leftMargin" >
+     <property name="margin" >
       <number>0</number>
      </property>
-     <property name="topMargin" >
-      <number>0</number>
-     </property>
-     <property name="rightMargin" >
-      <number>0</number>
-     </property>
-     <property name="bottomMargin" >
-      <number>0</number>
-     </property>
-     <property name="horizontalSpacing" >
-      <number>6</number>
-     </property>
-     <property name="verticalSpacing" >
+     <property name="spacing" >
       <number>6</number>
      </property>
      <item row="6" column="0" >
@@ -376,20 +370,11 @@
    </item>
    <item>
     <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
      <property name="spacing" >
       <number>6</number>
-     </property>
-     <property name="leftMargin" >
-      <number>0</number>
-     </property>
-     <property name="topMargin" >
-      <number>0</number>
-     </property>
-     <property name="rightMargin" >
-      <number>0</number>
-     </property>
-     <property name="bottomMargin" >
-      <number>0</number>
      </property>
      <item>
       <widget class="QPushButton" name="test" >
@@ -413,6 +398,9 @@
      </item>
      <item>
       <widget class="QDialogButtonBox" name="buttonBox" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
        <property name="standardButtons" >
         <set>QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok</set>
        </property>
