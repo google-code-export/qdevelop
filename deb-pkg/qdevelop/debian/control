@@ -3,7 +3,7 @@ Section: devel
 Priority: extra
 Maintainer: Diego Iastrubni <elcuco@kde.org>
 Standards-Version: 3.7.2
-Build-Depends: debhelper (>= 5), libqt4-dev, cmake, unzip, tar, gzip
+Build-Depends: debhelper (>= 5), libqt4-dev, cmake, unzip
 
 Package: qdevelop
 Architecture: any

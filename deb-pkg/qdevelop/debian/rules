@@ -8,9 +8,9 @@
 
 # needed for get-orig-source
 NAME		= 	qdevelop
-VERSION_RELEASE =	0.23
+VERSION_RELEASE =	0.24
 TMP_DIR		:=	$(shell mktemp /tmp/svn-export.XXXXXXXXXX -d -q)
-SVN_RELEASE	=	$(shell svn info | grep Revision | awk '{ print $$2 }' )
+SVN_RELEASE	:=	$(shell svn info | grep Revision | awk '{ print $$2 }' )
 OUTPUT_DIR_NAME	=	$(TMP_DIR)/$(NAME)-$(VERSION_RELEASE)
 FILE_NAME	=	$(NAME)_$(VERSION_RELEASE).orig.tar.gz 
 
@@ -80,8 +80,10 @@ binary-arch: build install
 get-svn-source:
 	rm -fr $(TMP_DIR)
 	mkdir -p $(TMP_DIR)
-	svn export ../../trunk $(OUTPUT_DIR_NAME)
+	svn export ../../trunk $(TMP_DIR)/trunk
 	#cd $(OUTPUT_DIR_NAME) && doxygen
+	mv $(TMP_DIR)/trunk $(TMP_DIR)/QDevelop-$(VERSION_RELEASE)
+	tar -czf ../tarballs/$(FILE_NAME) -C $(TMP_DIR)/ .
 	rm -fr $(TMP_DIR)
 
 get-orig-source:
