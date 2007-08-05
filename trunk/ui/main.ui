@@ -344,6 +344,11 @@
              </property>
              <item row="0" column="0" >
               <widget class="QTextEdit" name="logDebug" >
+	      
+	      <property name="frameShape" >
+	      <enum>QFrame::NoFrame</enum>
+	      </property>
+	      
                <property name="sizePolicy" >
                 <sizepolicy>
                  <hsizetype>5</hsizetype>
