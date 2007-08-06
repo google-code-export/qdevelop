@@ -93,7 +93,8 @@ int main(int argc, char *argv[])
 	{
 		if( s.right(4).toLower() == ".pro" )
 		{
-			main.openProject(s);
+			if( s.toLower() != projectName.toLower() )
+				main.openProject(s);
 			break;
 		}
 		else

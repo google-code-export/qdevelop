@@ -1180,8 +1180,12 @@ bool MainImpl::slotCloseProject(bool /*hide*/)
     logBuild->clear();
     logDebug->clear();
     //
-    delete m_completion;
-    m_completion = 0;
+	if( m_completion )
+	{
+		m_completion->wait();
+	    delete m_completion;
+	    m_completion = 0;
+	}
     //
     if ( m_projectManager && !m_projectManager->close() )
         return false;
