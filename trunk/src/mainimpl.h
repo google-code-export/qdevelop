@@ -179,7 +179,6 @@ private slots:
 	void slotSelectAll();
 	void slotUnindent();
 	void slotIndent();
-	bool slotCloseProject(bool hide=false);
 	void slotFind();
 	void slotReplace();
 	void slotFindContinue();
@@ -240,6 +239,7 @@ public slots:
 	bool slotCloseAllFiles();
 	void slotToolsControl(bool show=true);
 	void slotUpdateClasses(QString filename, QString buffer);
+	bool slotCloseProject(bool hide=false);
 signals:
 	void debugCommand(QString);
 	void stopBuild();

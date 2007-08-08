@@ -27,16 +27,27 @@
 #include <QDialog>
 //
 class ProjectManager;
+class MainImpl;
 //
 class NewProjectImpl : public QDialog, public Ui::NewProject
 {
 Q_OBJECT
 public:
 	NewProjectImpl(QWidget * parent, QString s);
+	QString absoluteProjectName() {
+		return m_absoluteProjectName;
+	}
+	QString filename() {
+		return m_filename;
+	}
 public slots:
 private:
     QString m_projectLocation;
+    QString m_absoluteProjectName;
+    QString m_filename;
+	MainImpl *m_mainImpl;
 private slots:
+	void on_okButton_clicked();
 	void on_dialog_clicked(bool checked);
 	void on_mainwindow_clicked(bool checked);
 	void slotChooseDirectory();
@@ -44,3 +55,4 @@ private slots:
 };
 
 #endif
+

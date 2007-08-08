@@ -41,6 +41,13 @@ typedef struct
 	bool isEmpty;
 } Parameters;
 //
+typedef struct
+{
+	QString key;
+	QString op;
+} Item;
+Q_DECLARE_METATYPE(Item)
+//
 class TreeProject;
 class TreeClasses;
 class QTreeWidget;
@@ -86,6 +93,9 @@ public:
 	void setQmake(QString projectName);
 	void insertFile(QTreeWidgetItem *it, QString filename, bool silentMode=false);
 	void setCurrentItem(const QString& _strFileName);
+	QString toKey(QVariant variant);
+	QString toOp(QVariant variant);
+	QVariant toItem(QString key, QString op=QString());
 private:
 	QTreeWidgetItem* find_r(const QTreeWidgetItem* _pItem, const QString& _strFileName, const QString& _strProjectDir);
 	enum findMode { Key, Data };
@@ -95,8 +105,8 @@ private:
 	void parseFile(QString file);
 	QString projectVersion(QTreeWidgetItem *it);
 	QTreeWidgetItem *item(QTreeWidgetItem *begin, QString name, findMode type);
-	bool saveDataOfProject(QTreeWidgetItem *item, QTextStream *s, int nbSpace=-1, bool aSuivre=false);
-	QTreeWidgetItem * insertItem(QTreeWidgetItem *parent, QString key, QString data);
+	bool saveDataOfProject(QTreeWidgetItem *item, QTextStream *s, int nbSpace=-1, QString endOfLine="");
+	QTreeWidgetItem * insertItem(QTreeWidgetItem *parent, QString key, QString data, QString op=QString());
 	bool listContains(QList<QTreeWidgetItem *>, QString name, findMode type);
 	void loadProjectSettings();
 	bool m_isModifiedProject;
@@ -119,7 +129,7 @@ public slots:
 	void slotResetExecutablesList() { m_executablesList.clear(); };
 	bool slotSaveProject();
 	void slotAddExistingFiles(QTreeWidgetItem *it=0);
-	void slotAddNewItem(QTreeWidgetItem *it=0);
+	void slotAddNewItem(QTreeWidgetItem *it=0, QString kind=QString());
 	void slotAddNewClass(QTreeWidgetItem *it=0);
 	void slotAddScope(QTreeWidgetItem *it=0);
 	void slotAddSubProject(QTreeWidgetItem *it=0);

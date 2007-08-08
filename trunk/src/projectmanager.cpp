@@ -66,7 +66,7 @@ void ProjectManager::init(QString name)
     QTreeWidgetItem *newProjectItem = new QTreeWidgetItem(m_treeFiles);
     //
     //
-    connect(m_treeFiles, SIGNAL(addNewItem(QTreeWidgetItem *)), this, SLOT(slotAddNewItem(QTreeWidgetItem *)));
+    connect(m_treeFiles, SIGNAL(addNewItem(QTreeWidgetItem *, QString)), this, SLOT(slotAddNewItem(QTreeWidgetItem *, QString)));
     connect(m_treeFiles, SIGNAL(addNewClass(QTreeWidgetItem *)), this, SLOT(slotAddNewClass(QTreeWidgetItem *)));
     connect(m_treeFiles, SIGNAL(addExistingsFiles(QTreeWidgetItem *)), this, SLOT(slotAddExistingFiles(QTreeWidgetItem *)));
     connect(m_treeFiles, SIGNAL(addScope(QTreeWidgetItem *)), this, SLOT(slotAddScope(QTreeWidgetItem *)));
@@ -106,12 +106,12 @@ QStringList ProjectManager::parents(QTreeWidgetItem *it)
     if ( !it )
         return QStringList();
     QTreeWidgetItem *parent = it;
-    if ( it->data(0, Qt::UserRole).toString() == "PROJECT" || it->data(0, Qt::UserRole).toString() == "SCOPE" )
+    if ( toKey( it->data(0, Qt::UserRole) ) == "PROJECT" || toKey( it->data(0, Qt::UserRole) ) == "SCOPE" )
         parentsList.prepend( it->text( 0 ) );
     //
     while ( (parent = parent->parent()) )
     {
-        if ( parent->data(0, Qt::UserRole).toString() == "PROJECT" || parent->data(0, Qt::UserRole).toString() == "SCOPE" )
+        if ( toKey( parent->data(0, Qt::UserRole) ) == "PROJECT" || toKey( parent->data(0, Qt::UserRole) ) == "SCOPE" )
             parentsList.prepend( parent->text( 0 ) );
     }
     return parentsList;
@@ -218,12 +218,12 @@ QStringList ProjectManager::dependpath(QTreeWidgetItem *it)
 {
     if ( !it )
         return QStringList();
-    while ( it->data(0, Qt::UserRole).toString() != "PROJECT" )
+    while ( toKey( it->data(0, Qt::UserRole) ) != "PROJECT" )
         it = it->parent();
     QTreeWidgetItem *itDepend = 0;
     for (int i=0; i<it->childCount(); i++)
     {
-        if ( it->child(i)->data(0, Qt::UserRole).toString() == "DEPENDPATH" )
+        if ( toKey( it->child(i)->data(0, Qt::UserRole) ) == "DEPENDPATH" )
         {
             itDepend = it->child(i);
             break;
@@ -464,7 +464,7 @@ void ProjectManager::slotAddExistingFiles(QTreeWidgetItem *it)
         for (int enfant=0; enfant<projectsList.at(nbProjects)->childCount(); enfant++)
         {
             ajouter = true;
-            if ( projectsList.at(nbProjects)->child(enfant)->data(0,Qt::UserRole).toString() == "TEMPLATE")
+            if ( toKey( projectsList.at(nbProjects)->child(enfant)->data(0,Qt::UserRole) ) == "TEMPLATE")
             {
                 QTreeWidgetItem *itTemplate = projectsList.at(nbProjects)->child(enfant);
                 for (int nbTemplate=0; nbTemplate < itTemplate->childCount(); nbTemplate++)
@@ -492,7 +492,7 @@ void ProjectManager::slotAddExistingFiles(QTreeWidgetItem *it)
                 int nbSpace = 0;
                 while ( tmp )
                 {
-                    QString cleTmp = tmp->data(0,Qt::UserRole).toString();
+                    QString cleTmp = toKey( tmp->data(0,Qt::UserRole) );
                     QString indent;
                     for (int i=0; i<nbSpace; i++)
                         indent += "  ";
@@ -565,7 +565,7 @@ void ProjectManager::slotAddNewClass(QTreeWidgetItem *it)
         for (int enfant=0; enfant<projectsList.at(nbProjects)->childCount(); enfant++)
         {
             ajouter = true;
-            if ( projectsList.at(nbProjects)->child(enfant)->data(0,Qt::UserRole).toString() == "TEMPLATE")
+            if ( toKey( projectsList.at(nbProjects)->child(enfant)->data(0,Qt::UserRole) ) == "TEMPLATE")
             {
                 QTreeWidgetItem *itTemplate = projectsList.at(nbProjects)->child(enfant);
                 for (int nbTemplate=0; nbTemplate < itTemplate->childCount(); nbTemplate++)
@@ -592,7 +592,7 @@ void ProjectManager::slotAddNewClass(QTreeWidgetItem *it)
                 int nbSpace = 0;
                 while ( tmp )
                 {
-                    QString cleTmp = tmp->data(0,Qt::UserRole).toString();
+                    QString cleTmp = toKey( tmp->data(0,Qt::UserRole) );
                     QString indent;
                     for (int i=0; i<nbSpace; i++)
                         indent += "  ";
@@ -619,7 +619,7 @@ void ProjectManager::slotAddNewClass(QTreeWidgetItem *it)
     m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
 }
 //
-void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
+void ProjectManager::slotAddNewItem(QTreeWidgetItem *it, QString kind)
 {
     if ( !it )
         it = m_treeFiles->currentItem();
@@ -631,7 +631,19 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
     QString plateforme;
     QStringList filesList;
     AddNewImpl *window = new AddNewImpl(this);
-
+	if( !kind.isEmpty() )
+	{
+		if( kind == "SOURCES" )
+			window->source->setChecked(true);
+		else if( kind == "HEADERS" )
+			window->header->setChecked(true);
+		else if( kind == "FORMS" )
+			window->dialog->setChecked(true);
+		else if( kind == "RESOURCES" )
+			window->resource->setChecked(true);
+		else if( kind == "TRANSLATIONS" )
+			window->translation->setChecked(true);
+	}
     QList<QTreeWidgetItem *> projectsList;
     childsList(0, "PROJECT", projectsList);
     for (int nbProjects=0; nbProjects < projectsList.count(); nbProjects++)
@@ -643,7 +655,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
         for (int enfant=0; enfant<projectsList.at(nbProjects)->childCount(); enfant++)
         {
             ajouter = true;
-            if ( projectsList.at(nbProjects)->child(enfant)->data(0,Qt::UserRole).toString() == "TEMPLATE")
+            if ( toKey( projectsList.at(nbProjects)->child(enfant)->data(0,Qt::UserRole) ) == "TEMPLATE")
             {
                 QTreeWidgetItem *itTemplate = projectsList.at(nbProjects)->child(enfant);
                 for (int nbTemplate=0; nbTemplate < itTemplate->childCount(); nbTemplate++)
@@ -670,7 +682,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
                 int nbSpace = 0;
                 while ( tmp )
                 {
-                    QString cleTmp = tmp->data(0,Qt::UserRole).toString();
+                    QString cleTmp = toKey( tmp->data(0,Qt::UserRole) );
                     QString indent;
                     for (int i=0; i<nbSpace; i++)
                         indent += "  ";
@@ -717,7 +729,6 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it)
         QDir( projectDir ).mkdir( repCreation );
         filename = QDir(projectDir).relativeFilePath(absoluteFilename).replace("\\", "/");
         QFile file ( absoluteFilename );
-
         if ( file.exists() )
         {
             QMessageBox::warning(0,
@@ -825,7 +836,7 @@ bool ProjectManager::listContains(QList<QTreeWidgetItem *>list, QString name, fi
     {
         if ( (type==Data && list.at( i )->text(0)==name) )
             return true;
-        else if (type==Key && list.at( i )->data(0, Qt::UserRole).toString()==name)
+        else if (type==Key && toKey( list.at( i )->data(0, Qt::UserRole) )==name)
             return true;
     }
     return false;
@@ -878,14 +889,14 @@ void ProjectManager::insertFile(QTreeWidgetItem *it, QString filename, bool sile
         QTreeWidgetItem *parent = 0;
         for (int i=0; i<it->childCount(); i++)
         {
-            if ( it->child( i )->data(0, Qt::UserRole).toString() == parentKey )
+            if ( toKey( it->child( i )->data(0, Qt::UserRole) ) == parentKey )
             {
                 parent =  it->child( i );
                 break;
             }
         }
         if ( !parent )
-            parent = insertItem(it, parentKey, parentKey);
+            parent = insertItem(it, parentKey, parentKey, "+=");
         newItem = insertItem(parent, "DATA", filename);
         //
         do
@@ -918,43 +929,10 @@ void ProjectManager::slotAddSubProject(QTreeWidgetItem *it)
     NewProjectImpl *window = new NewProjectImpl(m_parent, projectDirectory(it->text(0)));
     window->setWindowTitle( tr("Sub-project creation") );
     window->parentProjectName->setText( it->text(0) );
-    QString nomAbsoluProjet;
     if ( window->exec() == QDialog::Accepted )
     {
         setQmake( projectFilename( it ) );
-        QString filename = window->projectName->text();
-        if ( !filename.toLower().contains( ".pro" ) )
-            filename += ".pro";
-        QString location = window->location->text();
-        location += "/" + filename.left( filename.lastIndexOf(".") );
-        nomAbsoluProjet = location + "/" + filename ;
-        delete window;
-        QDir dir;
-        if ( !dir.mkdir(location) )
-        {
-            QMessageBox::warning(0,
-                                 "QDevelop", tr("Unable to create \"%1\" directory").arg(location),
-                                 tr("Cancel") );
-            return;
-        }
-        QFile file ( nomAbsoluProjet );
-        if ( file.exists() )
-        {
-            QMessageBox::warning(0,
-                                 "QDevelop", tr("The project \"%1\"\n already exists in directory.").arg(nomAbsoluProjet),
-                                 tr("Cancel") );
-            return;
-        }
-        if ( !file.open(QIODevice::WriteOnly | QIODevice::Text) )
-        {
-            QMessageBox::warning(0,
-                                 "QDevelop", tr("Unable to create project."),
-                                 tr("Cancel") );
-            return;
-        }
-        else
-            file.write( "TEMPLATE = app\nQT = gui \\\n  core\nCONFIG += qt \\\n  debug \\\n  warn_on\n");
-        file.close();
+        QString filename = window->filename();
         bool continuer = true;
         QList<QTreeWidgetItem *> listeTemplate;
         childsList(it, "TEMPLATE", listeTemplate);
@@ -973,7 +951,7 @@ void ProjectManager::slotAddSubProject(QTreeWidgetItem *it)
             continuer = false;
             for (int i=0; i<it->childCount(); i++)
             {
-                if ( !QString("absoluteNameProjectFile:projectDirectory").contains( it->child( i )->data(0,Qt::UserRole).toString() ) )
+                if ( !QString("absoluteNameProjectFile:projectDirectory").contains( toKey( it->child( i )->data(0,Qt::UserRole) ) ) )
                 {
                     delete it->child( i );
                     continuer = true;
@@ -986,31 +964,25 @@ void ProjectManager::slotAddSubProject(QTreeWidgetItem *it)
         if ( !itSubdir )
             itSubdir = insertItem(it, "SUBDIRS", "SUBDIRS");
         itSubdir->setText(0, tr("Sub-Projects"));
-        QTreeWidgetItem *itSousProjet = insertItem(itSubdir, "PROJECT", filename);
-        insertItem(itSousProjet, "qmake", "1");
-        insertItem(itSousProjet, "absoluteNameProjectFile", nomAbsoluProjet);
-        insertItem(itSousProjet, "projectDirectory", location);
-        insertItem(itSousProjet, "subProjectName", filename.left(filename.lastIndexOf(".")));
-        QTreeWidgetItem *itTemplate  = insertItem(itSousProjet, "TEMPLATE", "TEMPLATE");
-        insertItem(itTemplate, "DATA", "app" );
-        QTreeWidgetItem *itQT = insertItem(itSousProjet, "QT", "QT");
-        insertItem(itQT, "DATA", "gui" );
-        insertItem(itQT, "DATA", "core" );
-        QTreeWidgetItem *itConfig = insertItem(itSousProjet, "CONFIG", "CONFIG");
-        insertItem(itConfig, "DATA", "qt" );
-        insertItem(itConfig, "DATA", "debug" );
-        insertItem(itConfig, "DATA", "warn_on" );
+        QTreeWidgetItem *subProjectItem = insertItem(itSubdir, "PROJECT", filename);
+        insertItem(subProjectItem, "qmake", "1");
+        insertItem(subProjectItem, "absoluteNameProjectFile", window->absoluteProjectName());
+        insertItem(subProjectItem, "projectDirectory", window->location->text());
+        insertItem(subProjectItem, "subProjectName", filename.left(filename.lastIndexOf(".")));
+	    loadProject(window->absoluteProjectName(), subProjectItem);
+        QTreeWidgetItem *itProject = itemProject(  window->filename() );
+        setSrcDirectory(itProject, window->srcDirectory->text());
+        setUiDirectory(itProject, window->uiDirectory->text());
+    	m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
     }
-    else
-        delete window;
-    m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
+    delete window;
 }
 //
 void ProjectManager::slotProjectPropertie(QTreeWidgetItem *it)
 {
     if ( !it )
         it = m_treeFiles->currentItem();
-    while ( it && it->data(0,Qt::UserRole).toString() != "PROJECT" )
+    while ( it && toKey( it->data(0,Qt::UserRole) ) != "PROJECT" )
         it = it->parent();
     if ( !it )
         it = m_treeFiles->topLevelItem( 0 );
@@ -1047,7 +1019,7 @@ void ProjectManager::slotAddScope(QTreeWidgetItem *it)
         for (int enfant=0; enfant<projectsList.at(nbProjects)->childCount(); enfant++)
         {
             ajouter = true;
-            if ( projectsList.at(nbProjects)->child(enfant)->data(0,Qt::UserRole).toString() == "TEMPLATE")
+            if ( toKey( projectsList.at(nbProjects)->child(enfant)->data(0,Qt::UserRole) ) == "TEMPLATE")
             {
                 QTreeWidgetItem *itTemplate = projectsList.at(nbProjects)->child(enfant);
                 for (int nbTemplate=0; nbTemplate < itTemplate->childCount(); nbTemplate++)
@@ -1075,7 +1047,7 @@ void ProjectManager::slotAddScope(QTreeWidgetItem *it)
                 int nbSpace = 0;
                 while ( tmp )
                 {
-                    QString cleTmp = tmp->data(0,Qt::UserRole).toString();
+                    QString cleTmp = toKey( tmp->data(0,Qt::UserRole) );
                     QString indent;
                     for (int i=0; i<nbSpace; i++)
                         indent += "  ";
@@ -1130,7 +1102,6 @@ void ProjectManager::setQmake(QString projectName)
 {
     QTreeWidgetItem *itProjet = item(m_treeFiles->topLevelItem ( 0 ), projectName, Data);
     QTreeWidgetItem *itModifie = item(itProjet, "qmake", Key);
-    //itModifie->setData(0, Qt::UserRole, QVariant(QString("1")));
     itModifie->setText(0, "1");
     m_isModifiedProject = true;
 }
@@ -1291,7 +1262,7 @@ void ProjectManager::slotSubclassing(QTreeWidgetItem *it)
     SubclassingImpl *dialog = new SubclassingImpl(0, m_parent, srcDir, uiName, listeHeaders);
     if ( dialog->exec() == QDialog::Accepted )
     {
-        while ( it->data(0, Qt::UserRole).toString() != "PROJECT" )
+        while ( toKey( it->data(0, Qt::UserRole) ) != "PROJECT" )
             it = it->parent();
         projectDir = projectDirectory( itemProject(projectName) );
         setQmake( projectFilename(it) );
@@ -1399,7 +1370,7 @@ void ProjectManager::slotDeleteItem(QTreeWidgetItem *it, bool silentMode)
     //
     // Le parent est de type PROJECT. S'il a un TEMPLATE subdirs mais qu'il n'a plus de sous-projets,
     // il doit devenir un projet normal de TEMPLATE app.
-    if ( parent->data(0, Qt::UserRole).toString() == "PROJECT" )
+    if ( toKey( parent->data(0, Qt::UserRole) ) == "PROJECT" )
     {
         bool subdirs = false;
         QTreeWidgetItem *itTemplate = item(parent, "TEMPLATE", Key);
@@ -1436,7 +1407,7 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
         return;
     QString projectName = s.section("/",-1,-1);
     newProjectItem->setText(0, projectName);
-    newProjectItem->setData(0, Qt::UserRole, QVariant("PROJECT"));
+    newProjectItem->setData(0, Qt::UserRole, toItem("PROJECT"));
     m_treeFiles->setItemExpanded(newProjectItem, true );
     //
     //
@@ -1456,6 +1427,8 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
     while (!file.atEnd())
     {
         QString line = QString( file.readLine() );
+        if( !line.simplified().length() )
+        	continue;
         if ( scope && !toFollow)
         {
             scope = false;
@@ -1465,7 +1438,7 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
                 && line.indexOf(":")!=-1 && ( line.indexOf(":")<line.indexOf("=") || line.indexOf("=")==-1 ) )
         {
             it = item(newProjectItem, line.section(":", 0, 0).simplified(), Data);
-            if ( it && it->data(0, Qt::UserRole).toString() == "SCOPE" )
+            if ( it && toKey( it->data(0, Qt::UserRole) ) == "SCOPE" )
                 newProjectItem = it;
             else
                 newProjectItem = insertItem(newProjectItem, "SCOPE", line.section(":", 0, 0).simplified());
@@ -1475,7 +1448,7 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
         if ( !line.simplified().contains(QRegExp("^#")) && !line.contains(QRegExp("\"")) && !line.contains(QRegExp("/")) && line.contains("{") )
         {
             it = item(newProjectItem, line.section("{", 0, 0).simplified(), Data);
-            if ( it && it->data(0, Qt::UserRole).toString() == "SCOPE" )
+            if ( it && toKey( it->data(0, Qt::UserRole) ) == "SCOPE" )
                 newProjectItem = it;
             else
                 newProjectItem = insertItem(newProjectItem, "SCOPE", line.section("{", 0, 0).simplified());
@@ -1493,6 +1466,12 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
             QString operateur;
             if ( line.contains("+=") )
                 operateur = "+=";
+            else if ( line.contains("-=") )
+                operateur = "-=";
+            else if ( line.contains("*=") )
+                operateur = "*=";
+            else if ( line.contains("~=") )
+                operateur = "~=";
             else
                 operateur = "=";
             key = line.simplified().section(operateur, 0, 0).simplified();
@@ -1503,14 +1482,14 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
             QTreeWidgetItem *it = 0;
             for (int i=0; i<newProjectItem->childCount(); i++)
             {
-                if ( newProjectItem->child( i )->data(0, Qt::UserRole).toString() == key )
+                if ( toKey( newProjectItem->child( i )->data(0, Qt::UserRole) ) == key )
                 {
                     it = newProjectItem->child( i );
                     break;
                 }
             }
             if ( !it )
-                it = insertItem(newProjectItem, key, key);
+                it = insertItem(newProjectItem, key, key, operateur);
             if ( key == "SUBDIRS" )
                 it->setText(0, tr("Sub-projects"));
             if ( toFollow )
@@ -1569,10 +1548,10 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
         QTreeWidgetItem *tmp = insertItem(itemProject, "TEMPLATE", "TEMPLATE");
         insertItem(tmp, "DATA", "app");
     }
-    // On traite les SUBDIRS
+    // SUBDIRS loading
     for (int i=0; i<itemProject->childCount(); i++)
     {
-        if ( itemProject->child( i )->data(0, Qt::UserRole) == "SUBDIRS" )
+        if ( toKey( itemProject->child( i )->data(0, Qt::UserRole) ) == "SUBDIRS" )
         {
             QTreeWidgetItem *sub = itemProject->child( i );
             m_treeFiles->setItemExpanded(sub, true );
@@ -1596,41 +1575,43 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
     return;
 }
 //
-QTreeWidgetItem * ProjectManager::insertItem(QTreeWidgetItem *parent, QString key, QString data)
+QTreeWidgetItem * ProjectManager::insertItem(QTreeWidgetItem *parent, QString key, QString data, QString op)
 {
+	QString begin;
+	if( !op.isEmpty() && op != "=" && op != "+=" )
+		begin = op + " ";
     QTreeWidgetItem *it = new QTreeWidgetItem(parent);
     it->setText(0, data);
-    it->setData(0, Qt::UserRole, QVariant(key));
-    //it->setToolTip(0, key);
+    it->setData(0, Qt::UserRole, toItem(key, op));
     key = "|"+key+"|";
-    QString parentKey = "|"+it->parent()->data(0, Qt::UserRole).toString()+"|";
+    QString parentKey = "|"+toKey( it->parent()->data(0, Qt::UserRole) )+"|";
     if ( !QString("|PROJECT|SUBDIRS|SOURCES|SCOPE|HEADERS|FORMS|TRANSLATIONS|RESOURCES|").contains(key) )
         if (key!="|DATA|" || !QString("|PROJECT|SUBDIRS|SOURCES|SCOPE|HEADERS|FORMS|TRANSLATIONS|RESOURCES|").contains(parentKey) )
             m_treeFiles->setItemHidden(it, true);
 
     if ( key == "|HEADERS|" )
     {
-        it->setText(0, tr("Headers"));
+        it->setText(0, begin + tr("Headers"));
         it->setIcon(0, QIcon(":/treeview/images/h.png"));
     }
     else if ( key == "|SOURCES|" )
     {
-        it->setText(0, tr("Sources"));
+        it->setText(0, begin + tr("Sources"));
         it->setIcon(0, QIcon(":/treeview/images/cpp.png"));
     }
     else if ( key == "|FORMS|" )
     {
-        it->setText(0, tr("Dialogs"));
+        it->setText(0, begin + tr("Dialogs"));
         it->setIcon(0, QIcon(":/treeview/images/designer.png"));
     }
     else if ( key == "|TRANSLATIONS|" )
     {
-        it->setText(0, tr("Translations"));
+        it->setText(0, begin + tr("Translations"));
         it->setIcon(0, QIcon(":/treeview/images/linguist.png"));
     }
     else if ( key == "|RESOURCES|" )
     {
-        it->setText(0, tr("Resources"));
+        it->setText(0, begin + tr("Resources"));
         it->setIcon(0, QIcon(":/treeview/images/qrc.png"));
     }
     QTreeWidgetItem *itemParent = it->parent();
@@ -1638,7 +1619,7 @@ QTreeWidgetItem * ProjectManager::insertItem(QTreeWidgetItem *parent, QString ke
     for (int i = 0; i < itemParent->childCount(); i++ )
         if ( !m_treeFiles->isItemHidden(itemParent->child(i) ) )
             hide = false;
-    if ( hide && itemParent->data(0, Qt::UserRole).toString() != "SCOPE" && itemParent->data(0, Qt::UserRole).toString() != "PROJECT")
+    if ( hide && toKey( itemParent->data(0, Qt::UserRole) ) != "SCOPE" && toKey( itemParent->data(0, Qt::UserRole) ) != "PROJECT")
         m_treeFiles->setItemHidden(itemParent, true);
     else
     {
@@ -1671,23 +1652,21 @@ bool ProjectManager::slotSaveProject()
     return ret;
 }
 //
-bool ProjectManager::saveDataOfProject(QTreeWidgetItem *it, QTextStream *s, int nbSpace, bool toFollow)
+bool ProjectManager::saveDataOfProject(QTreeWidgetItem *it, QTextStream *s, int nbSpace, QString endOfLine)
 {
     QTextStream *output = s;
-    QString key = it->data(0, Qt::UserRole).toString();
+    QString key = toKey( it->data(0, Qt::UserRole) );
+    QString op = toOp( it->data(0, Qt::UserRole) );
     QString data = it->text(0);
     QString indent;
     for (int x=0; x<nbSpace; x++)
-        indent += "  ";
+        indent += " ";
     QFile file;
     if ( (key == "PROJECT" && it != m_treeFiles->topLevelItem ( 0 ) ) )
     {
         QString subProjectName = item(it, "subProjectName", Key)->text(0);
-        *output << subProjectName;
-        if ( toFollow )
-            *output << " \\\n";
-        else
-            *output << "\n";
+        *output << subProjectName + " ";
+        *output << endOfLine;
     }
     if ( key == "PROJECT" )
     {
@@ -1700,39 +1679,38 @@ bool ProjectManager::saveDataOfProject(QTreeWidgetItem *it, QTextStream *s, int 
     }
     else if ( key == "SCOPE" )
     {
-        *output << indent+data << " {" << "\n";
+        *output << indent+data << " {\n";
         if ( !it->childCount() )
         {
             nbSpace--;
             for (int x=0; x<nbSpace; x++)
                 indent += "  ";
-            *output << indent + "}" << "\n";
+            *output << "\n" +indent + "}";
         }
     }
     else if ( key == "DATA" )
     {
         *output << indent+data;
-        if ( toFollow )
-            *output << " \\\n";
-        else
-            *output << "\n";
+        *output << endOfLine;
     }
     else if ( !QString("absoluteNameProjectFile:projectDirectory:subProjectName:qmake:uiDirectory:srcDirectory").contains(key) )
     {
-        if ( key == "TARGET" | key == "TEMPLATE" )
-            *output << indent+key << " = ";
-        else
-            *output << indent+key << " += ";
+        *output << indent+key << " " + op;
         if ( !it->childCount() )
             *output << "\n";
     }
     for ( int i=0; i<it->childCount(); i++)
     {
-        saveDataOfProject(it->child(i), output, nbSpace+1, !(i+1==it->childCount()));
+    	QString newEndLine = "";
+	    if( it->childCount() > 4 && i+1<it->childCount() )
+	    	newEndLine = " \\\n";
+	    else if( i+1 == it->childCount() )
+	    	newEndLine = "\n";
+        saveDataOfProject(it->child(i), output, nbSpace+1, newEndLine);
     }
     if ( it->childCount() && key == "SCOPE" )
     {
-        *output << indent+"}" << "\n";
+        *output << indent+"}\n";
     }
     return true;
 }
@@ -1745,7 +1723,7 @@ QString ProjectManager::projectDirectory(QTreeWidgetItem *it)
         if ( tmp->text(0).toLower().right(4) == ".pro" )
         {
             for (int i=0; i<tmp->childCount(); i++ )
-                if ( tmp->child( i )->data(0, Qt::UserRole).toString() == "projectDirectory" )
+                if ( toKey( tmp->child( i )->data(0, Qt::UserRole) ) == "projectDirectory" )
                     return tmp->child( i )->text(0);
         }
     }
@@ -1767,7 +1745,7 @@ QString ProjectManager::uiDirectory(QTreeWidgetItem *it)
         if ( tmp->text(0).toLower().right(4) == ".pro" )
         {
             for (int i=0; i<tmp->childCount(); i++ )
-                if ( tmp->child( i )->data(0, Qt::UserRole).toString() == "uiDirectory" )
+                if ( toKey( tmp->child( i )->data(0, Qt::UserRole) ) == "uiDirectory" )
                     return tmp->child( i )->text(0);
         }
     }
@@ -1789,7 +1767,7 @@ QString ProjectManager::srcDirectory(QTreeWidgetItem *it)
         if ( tmp->text(0).toLower().right(4) == ".pro" )
         {
             for (int i=0; i<tmp->childCount(); i++ )
-                if ( tmp->child( i )->data(0, Qt::UserRole).toString() == "srcDirectory" )
+                if ( toKey( tmp->child( i )->data(0, Qt::UserRole) ) == "srcDirectory" )
                     return tmp->child( i )->text(0);
         }
     }
@@ -1889,7 +1867,7 @@ QTreeWidgetItem *ProjectManager::item(QTreeWidgetItem *begin, QString name, find
         begin = m_treeFiles->topLevelItem( 0 );
     if ( (type==Data && begin->text(0)==name) )
         return begin;
-    else if (type==Key && begin->data(0, Qt::UserRole).toString()==name)
+    else if (type==Key && toKey( begin->data(0, Qt::UserRole) )==name)
         return begin;
     else
     {
@@ -1898,7 +1876,7 @@ QTreeWidgetItem *ProjectManager::item(QTreeWidgetItem *begin, QString name, find
         {
             if ( (type==Data && begin->child( i )->text(0)==name) )
                 return begin->child( i );
-            else if (type==Key && begin->child( i )->data(0, Qt::UserRole).toString()==name)
+            else if (type==Key && toKey( begin->child( i )->data(0, Qt::UserRole) )==name)
                 return begin->child( i );
         }
         // Les petits-enfants
@@ -1929,7 +1907,7 @@ void ProjectManager::childsList(QTreeWidgetItem *begin, QString key, QList<QTree
     // Renvoie la list enfants correspondants la cl
     if ( begin == 0 )
         begin = m_treeFiles->topLevelItem( 0 );
-    if ( begin->data(0, Qt::UserRole) == key )
+    if ( toKey( begin->data(0, Qt::UserRole) ) == key )
         list.append(begin);
     for (int i=0; i<begin->childCount(); i++)
     {
@@ -1983,7 +1961,7 @@ QString ProjectManager::projectVersion(QTreeWidgetItem *it)
     for (int i=0; i<it->childCount(); i++)
     {
         QTreeWidgetItem *item = it->child( i );
-        QString key = item->data(0, Qt::UserRole).toString();
+        QString key = toKey( item->data(0, Qt::UserRole) );
         if ( key == "CONFIG" )
         {
             itConfig = item;
@@ -2101,14 +2079,14 @@ void ProjectManager::headers(QTreeWidgetItem *it, QStringList &headerFiles)
     QString projectDir = projectDirectory( it );
     for (int i=0; i<it->childCount(); i++)
     {
-        if ( it->child(i)->data(0, Qt::UserRole).toString() == "HEADERS" )
+        if ( toKey( it->child(i)->data(0, Qt::UserRole) ) == "HEADERS" )
         {
             for (int j=0; j<it->child(i)->childCount(); j++)
             {
                 headerFiles += projectDir+"/"+it->child(i)->child(j)->text(0);
             }
         }
-        else if ( it->child(i)->data(0, Qt::UserRole).toString() == "SCOPE" )
+        else if ( toKey( it->child(i)->data(0, Qt::UserRole) ) == "SCOPE" )
         {
             headers(it->child(i), headerFiles);
         }
@@ -2126,14 +2104,14 @@ void ProjectManager::sources(QTreeWidgetItem *it, QStringList &sourcesFiles)
     for (int i=0; i<it->childCount(); i++)
     {
         QTreeWidgetItem *itChild = it->child(i);
-        if ( it->child(i)->data(0, Qt::UserRole).toString() == "SOURCES" )
+        if ( toKey( it->child(i)->data(0, Qt::UserRole) ) == "SOURCES" )
         {
             for (int j=0; j<itChild->childCount(); j++)
             {
                 sourcesFiles += projectDir+"/"+itChild->child(j)->text(0);
             }
         }
-        else if ( it->child(i)->data(0, Qt::UserRole).toString() == "SCOPE" )
+        else if ( toKey( it->child(i)->data(0, Qt::UserRole) ) == "SCOPE" )
         {
             sources(it->child(i), sourcesFiles);
         }
@@ -2163,7 +2141,7 @@ QTreeWidgetItem* ProjectManager::find_r(const QTreeWidgetItem* _pItem, const QSt
     for (ii = 0; ii < _pItem->childCount() && NULL == pItemFound; ++ii)
     {
         QTreeWidgetItem* pItemChild = _pItem->child(ii);
-        if ( _pItem->child(ii)->data(0, Qt::UserRole).toString() == "SCOPE" )
+        if ( toKey( _pItem->child(ii)->data(0, Qt::UserRole) ) == "SCOPE" )
         {
             pItemFound = find_r(_pItem->child(ii), _strFileName, _strProjectDir);
         }
@@ -2273,3 +2251,28 @@ bool ProjectManager::eventFilter( QObject *obj, QEvent *ev )
         return QObject::eventFilter(obj,ev);
 }
 //
+QString ProjectManager::toOp(QVariant variant)
+{
+    Item item = variant.value<Item>();
+	return item.op;
+}
+//
+QString ProjectManager::toKey(QVariant variant)
+{
+    Item item = variant.value<Item>();
+	return item.key;
+}
+//
+QVariant ProjectManager::toItem(QString key, QString op)
+{
+	// An item contains:
+	//		a key "HEADERS", "SOURCES", "DATA" etc.
+	//		a operator "=", "+="; "-=", "*=" or "~=". This operator is read and wrote in project file
+	//		Example : SOURCES += myfile.cpp
+    Item item;
+    item.key = key;
+    item.op = op;
+    QVariant v;
+    v.setValue( item );
+    return v;
+}

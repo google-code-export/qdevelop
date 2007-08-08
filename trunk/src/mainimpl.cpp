@@ -198,12 +198,14 @@ MainImpl::~MainImpl()
 }
 
 //convenient functions to access editor tabs
-Editor * MainImpl::currentEditor() {
-	return (Editor*) (m_tabEditors->currentWidget());
+Editor * MainImpl::currentEditor()
+{
+    return (Editor*) (m_tabEditors->currentWidget());
 }
 
-Editor * MainImpl::givenEditor(int i) {
-	return (Editor*) (m_tabEditors->widget(i));
+Editor * MainImpl::givenEditor(int i)
+{
+    return (Editor*) (m_tabEditors->widget(i));
 }
 
 //
@@ -264,7 +266,7 @@ void MainImpl::gotoFileInProject(QString& filename)
         return;
 
     tabExplorer->setCurrentIndex(0);
-	m_projectManager->setCurrentItem(filename);
+    m_projectManager->setCurrentItem(filename);
 }
 //
 void MainImpl::setCrossButton(bool activate)
@@ -371,7 +373,7 @@ void MainImpl::createConnections()
     connect(actionNextBookmark, SIGNAL(triggered()), this, SLOT(slotNextBookmark()) );
     connect(actionPreviousBookmark, SIGNAL(triggered()), this, SLOT(slotPreviousBookmark()) );
     connect(actionClearAllBookmarks, SIGNAL(triggered()), this, SLOT(slotClearAllBookmarks()) );
-	connect(actionOpenFile, SIGNAL(triggered()), this, SLOT(slotOpenFile()) );
+    connect(actionOpenFile, SIGNAL(triggered()), this, SLOT(slotOpenFile()) );
     //
     m_projectGroup = new QActionGroup( this );
     m_projectGroup->addAction( actionCloseProject );
@@ -555,25 +557,25 @@ void MainImpl::slotUncomment()
 //
 void MainImpl::slotPreviousTab()
 {
-	if ( 0 < m_tabEditors->count() )
-	{
-	    int i = m_tabEditors->currentIndex()-1;
-	    Editor *editor = givenEditor( 0>i?m_tabEditors->count()-1:i );
-		
-	    if ( editor  )
-	        m_tabEditors->setCurrentWidget( editor );		
-	}
+    if ( 0 < m_tabEditors->count() )
+    {
+        int i = m_tabEditors->currentIndex()-1;
+        Editor *editor = givenEditor( 0>i?m_tabEditors->count()-1:i );
+
+        if ( editor  )
+            m_tabEditors->setCurrentWidget( editor );
+    }
 }
 //
 void MainImpl::slotNextTab()
 {
-	if ( 0 < m_tabEditors->count() )
-	{
-	    int i = (m_tabEditors->currentIndex()+1)%m_tabEditors->count();
-	    Editor *editor = givenEditor(i);
-    	if ( editor  )
-    	    m_tabEditors->setCurrentWidget( editor );
-	}
+    if ( 0 < m_tabEditors->count() )
+    {
+        int i = (m_tabEditors->currentIndex()+1)%m_tabEditors->count();
+        Editor *editor = givenEditor(i);
+        if ( editor  )
+            m_tabEditors->setCurrentWidget( editor );
+    }
 }
 //
 void MainImpl::slotParameters()
@@ -755,14 +757,15 @@ void MainImpl::saveINI()
     }
     //
     settings.beginGroup("mainwindowstate");
-	if (!isMinimized() && !isMaximized() && !isFullScreen()) {
-		settings.setValue("pos", pos());
-		settings.setValue("size", size());
-	}
-	settings.setValue("maximized", isMaximized());
-	settings.setValue("fullscreen", isFullScreen());
-	settings.setValue("geometry", saveGeometry()); // Window geometry and state (only needed for Windows!).
-	settings.setValue("state", saveState()); // Toolbar and DockWidget state.
+    if (!isMinimized() && !isMaximized() && !isFullScreen())
+    {
+        settings.setValue("pos", pos());
+        settings.setValue("size", size());
+    }
+    settings.setValue("maximized", isMaximized());
+    settings.setValue("fullscreen", isFullScreen());
+    settings.setValue("geometry", saveGeometry()); // Window geometry and state (only needed for Windows!).
+    settings.setValue("state", saveState()); // Toolbar and DockWidget state.
     settings.setValue("tabExplorer", tabExplorer->currentIndex());
     settings.endGroup();
 }
@@ -774,166 +777,12 @@ void MainImpl::slotNewProject()
     window->parentProjectName->setHidden( true );
     if ( window->exec() == QDialog::Accepted )
     {
-        if ( !slotCloseProject() )
-        {
-            delete window;
-            return;
-        }
-        QString filename = window->projectName->text();
-        if ( !filename.toLower().contains( ".pro" ) )
-            filename += ".pro";
-        QString projectDirectory = window->location->text();
-        projectDirectory += "/" + filename.left( filename.lastIndexOf(".") );
-        QString srcDirectory = projectDirectory+"/"+window->srcDirectory->text();
-        QString uiDirectory = projectDirectory+"/"+window->uiDirectory->text();
-        QString buildDirectory = window->buildDirectory->text();
-        QString binDirectory = window->binDirectory->text();
-        QString uiFilename = window->uiFilename->text();
-        QString uiObjectName = window->uiObjectName->text();
-        QString subclassFilename = window->subclassFilename->text();
-        QString subclassObjectName = window->subclassObjectName->text();
-        QString absoluteProjectName = projectDirectory + "/" + filename ;
-        QDir dir;
-        if ( !dir.mkdir(projectDirectory) )
-        {
-            QMessageBox::warning(0,
-                                 "QDevelop", tr("The directory \"%1\" cannot be created").arg(projectDirectory),
-                                 tr("Cancel") );
-            return;
-        }
-        QFile projectFile ( absoluteProjectName );
-        if ( !projectFile.open(QIODevice::WriteOnly | QIODevice::Text) )
-        {
-            QMessageBox::warning(0,
-                                 "QDevelop", tr("The project cannot be created"),
-                                 tr("Cancel") );
-            return;
-        }
-        else
-        {
-            QByteArray s;
-            if ( !window->empty->isChecked() )
-            {
-
-                s += "TEMPLATE = app\n";
-                s += "QT = gui \\\n";
-                s += "core\n";
-                s += "CONFIG += qt \\\n";
-                QString version = "debug";
-                if ( window->release->isChecked() )
-                    s += "release \\\n";
-                else
-                    s += "debug \\\n";
-                s += "warn_on \\\n";
-                s += "console\n";
-            }
-            if ( window->dialog->isChecked() || window->mainwindow->isChecked() )
-            {
-                if ( !srcDirectory.isEmpty() )
-                {
-                    QDir().mkdir( srcDirectory );
-                }
-                if ( !uiDirectory.isEmpty() )
-                {
-                    QDir().mkdir( uiDirectory );
-                }
-                if ( !binDirectory.isEmpty() )
-                {
-                    s += "DESTDIR = "+binDirectory+"\n";
-                }
-                if ( !buildDirectory.isEmpty() )
-                {
-                    s += "OBJECTS_DIR = "+buildDirectory+"\n";
-                    s += "MOC_DIR = "+buildDirectory+"\n";
-                    s += "UI_DIR = "+buildDirectory+"\n";
-                }
-                if ( window->dialog->isChecked() )
-                {
-                    QFile file(":/templates/templates/dialog.ui");
-                    file.open(QIODevice::ReadOnly);
-                    QByteArray data = file.readAll();
-                    file.close();
-                    data.replace("<class>Dialog</class>", "<class>"+uiObjectName.toAscii()+"</class>");
-                    data.replace("name=\"Dialog\"", "name=\""+uiObjectName.toAscii()+"\"");
-                    QFile uiFile(uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui");
-                    uiFile.open(QIODevice::WriteOnly);
-                    uiFile.write( data );
-                    uiFile.close();
-                    s+= "FORMS = "+QDir(projectDirectory).relativeFilePath(uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui") + "\n";
-                }
-                else if ( window->mainwindow->isChecked() )
-                {
-                    QFile file(":/templates/templates/mainwindow.ui");
-                    file.open(QIODevice::ReadOnly);
-                    QByteArray data = file.readAll();
-                    file.close();
-                    data.replace("<class>MainWindow</class>", "<class>"+uiObjectName.toAscii()+"</class>");
-                    data.replace("name=\"MainWindow\"", "name=\""+uiObjectName.toAscii()+"\"");
-                    QFile uiFile(uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui");
-                    uiFile.open(QIODevice::WriteOnly);
-                    uiFile.write( data );
-                    uiFile.close();
-                    s+= "FORMS = "+QDir(projectDirectory).relativeFilePath(uiDirectory + "/" + uiFilename.section(".ui", 0, 0) + ".ui") + "\n";
-                }
-                // Create subclassing header
-                QFile file(":/templates/templates/impl.h.template");
-                file.open(QIODevice::ReadOnly);
-                QByteArray data = file.readAll();
-                file.close();
-                data.replace("$IMPL_H", QString( subclassFilename.section(".h", 0, 0).toUpper()+"_H" ).toAscii());
-                data.replace("$UIHEADERNAME", QString( "\"ui_"+uiFilename.section(".ui", 0, 0)+".h\"").toAscii());
-                data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
-                if ( window->dialog->isChecked() )
-                    data.replace("$PARENTNAME", QString( "QDialog" ).toAscii());
-                else
-                    data.replace("$PARENTNAME", QString( "QMainWindow" ).toAscii());
-                data.replace("$OBJECTNAME", QString( uiObjectName ).toAscii());
-                QFile headerFile(srcDirectory + "/" + subclassFilename + ".h");
-                headerFile.open(QIODevice::WriteOnly);
-                headerFile.write( data );
-                headerFile.close();
-                s += "HEADERS = "+ QDir(projectDirectory).relativeFilePath(srcDirectory + "/" + subclassFilename + ".h") + "\n";
-                // Create subclassing sources
-                QFile file2(":/templates/templates/impl.cpp.template");
-                file2.open(QIODevice::ReadOnly);
-                data = file2.readAll();
-                file2.close();
-                QFile sourceFile(srcDirectory + "/" + subclassFilename + ".cpp");
-                data.replace("$HEADERNAME", QString( "\""+subclassFilename+".h\"" ).toAscii());
-                data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
-                if ( window->dialog->isChecked() )
-                    data.replace("$PARENTNAME", QString( "QDialog" ).toAscii());
-                else
-                    data.replace("$PARENTNAME", QString( "QMainWindow" ).toAscii());
-                sourceFile.open(QIODevice::WriteOnly);
-                sourceFile.write( data );
-                sourceFile.close();
-                s += "SOURCES = "+ QDir(projectDirectory).relativeFilePath(srcDirectory + "/" + subclassFilename + ".cpp")+" \\" + "\n";
-                // Create main.cpp
-                QFile file3(":/templates/templates/main.cpp.template");
-                file3.open(QIODevice::ReadOnly);
-                data = file3.readAll();
-                file3.close();
-                QFile mainFile(srcDirectory + "/" + "main.cpp");
-                data.replace("$HEADERNAME", QString( "\""+subclassFilename+".h\"" ).toAscii());
-                data.replace("$CLASSNAME", QString( subclassObjectName ).toAscii());
-                mainFile.open(QIODevice::WriteOnly);
-                mainFile.write( data );
-                mainFile.close();
-                s += "\t"+ QDir(projectDirectory).relativeFilePath(srcDirectory + "/" + "main.cpp") + "\n";
-            }
-            //
-            projectFile.write( s );
-            projectFile.close();
-        }
-        delete window;
-        openProject( absoluteProjectName );
-        QTreeWidgetItem *itProject = m_projectManager->itemProject( filename );
-        m_projectManager->setSrcDirectory(itProject, srcDirectory);
-        m_projectManager->setUiDirectory(itProject, uiDirectory);
+        openProject( window->absoluteProjectName() );
+        QTreeWidgetItem *itProject = m_projectManager->itemProject(  window->filename() );
+        m_projectManager->setSrcDirectory(itProject, window->srcDirectory->text());
+        m_projectManager->setUiDirectory(itProject, window->uiDirectory->text());
     }
-    else
-        delete window;
+    delete window;
 }
 //
 QString MainImpl::loadINI()
@@ -1017,21 +866,21 @@ QString MainImpl::loadINI()
     //
     settings.beginGroup("mainwindowstate");
 #ifdef Q_OS_WIN32
-	// Restores position, size and state for both normal and maximized/fullscreen state. Problems reported unter X11.
-	// See Qt doc: Geometry: Restoring a Window's Geometry for details.
-	restoreGeometry(settings.value("geometry", saveGeometry()).toByteArray()); // Window geometry and state.
+    // Restores position, size and state for both normal and maximized/fullscreen state. Problems reported unter X11.
+    // See Qt doc: Geometry: Restoring a Window's Geometry for details.
+    restoreGeometry(settings.value("geometry", saveGeometry()).toByteArray()); // Window geometry and state.
 #else
-	// Restores position, size and state including maximized/fullscreen.
-	move(settings.value("pos", pos()).toPoint()); // Window position.
-	resize(settings.value("size", size()).toSize()); // Window size.
-	// Note: Yes, the window can be maximized and fullscreen!
-	if (settings.value("maximized", isMaximized()).toBool()) // Window maximized.
-		setWindowState(windowState() | Qt::WindowMaximized);
-	if (settings.value("fullscreen", isFullScreen()).toBool()) // Window fullscreen.
-		setWindowState(windowState() | Qt::WindowFullScreen);
+    // Restores position, size and state including maximized/fullscreen.
+    move(settings.value("pos", pos()).toPoint()); // Window position.
+    resize(settings.value("size", size()).toSize()); // Window size.
+    // Note: Yes, the window can be maximized and fullscreen!
+    if (settings.value("maximized", isMaximized()).toBool()) // Window maximized.
+        setWindowState(windowState() | Qt::WindowMaximized);
+    if (settings.value("fullscreen", isFullScreen()).toBool()) // Window fullscreen.
+        setWindowState(windowState() | Qt::WindowFullScreen);
 #endif
-	restoreState(settings.value("state", saveState()).toByteArray()); // Toolbar and DockWidget state.
-	tabExplorer->setCurrentIndex( settings.value("tabExplorer", 0).toInt() );
+    restoreState(settings.value("state", saveState()).toByteArray()); // Toolbar and DockWidget state.
+    tabExplorer->setCurrentIndex( settings.value("tabExplorer", 0).toInt() );
     settings.endGroup();
     return projectName;
 }
@@ -1180,12 +1029,12 @@ bool MainImpl::slotCloseProject(bool /*hide*/)
     logBuild->clear();
     logDebug->clear();
     //
-	if( m_completion )
-	{
-		m_completion->wait();
-	    delete m_completion;
-	    m_completion = 0;
-	}
+    if ( m_completion )
+    {
+        m_completion->wait();
+        delete m_completion;
+        m_completion = 0;
+    }
     //
     if ( m_projectManager && !m_projectManager->close() )
         return false;
@@ -1200,7 +1049,7 @@ bool MainImpl::slotCloseProject(bool /*hide*/)
 //
 void MainImpl::slotDoubleClickTreeFiles(QTreeWidgetItem *item, int)
 {
-    if ( item->childCount() > 0 ) 
+    if ( item->childCount() > 0 )
         return;
     QString filename = item->text(0);
     QString projectName = m_projectManager->projectFilename( item );
@@ -1342,8 +1191,8 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     if ( !QFileInfo(s).isFile() )
     {
         QApplication::restoreOverrideCursor();
-    	return 0;
-   	}
+        return 0;
+    }
     if ( Editor::shortFilename(s).section(".", -1, -1).toLower() == "ui" )
     {
         //QProcess::startDetached (m_designerName, QStringList(s));
@@ -1583,7 +1432,7 @@ void MainImpl::slotCompile()
 //
 void MainImpl::slotBuild(bool clean, bool build)
 {
-	bool qmakeNeeded = false;
+    bool qmakeNeeded = false;
     if (!m_projectManager)
     {
         return;
@@ -1596,7 +1445,7 @@ void MainImpl::slotBuild(bool clean, bool build)
     if ( actionDebug->text() == tr("Stop") && !slotDebug())
         return;
     m_buildAfterDebug = false;
-	qmakeNeeded = m_projectManager->isModifiedProject();
+    qmakeNeeded = m_projectManager->isModifiedProject();
     if ( m_projectsDirectoriesList.count() == 0 )
     {
         actionBuild->setEnabled( false );
@@ -1619,10 +1468,10 @@ void MainImpl::slotBuild(bool clean, bool build)
 
     QString makefilePath = repProjet + "/Makefile";
     qmakeNeeded = qmakeNeeded || !QFile::exists(makefilePath);
-    if( qmakeNeeded )
+    if ( qmakeNeeded )
     {
-    	m_configureCompletionNeeded = true;
-   	}
+        m_configureCompletionNeeded = true;
+    }
     m_builder = new Build(this, m_qmakeName, m_makeName, repProjet, qmakeNeeded|m_clean, m_clean, m_build);
 
     connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
@@ -1640,8 +1489,8 @@ void MainImpl::slotStopBuild()
 //
 void MainImpl::slotEndBuild()
 {
-    if( m_configureCompletionNeeded )
-    	configureCompletion(m_projectsDirectoriesList.first());
+    if ( m_configureCompletionNeeded )
+        configureCompletion(m_projectsDirectoriesList.first());
     m_projectsDirectoriesList.removeFirst();
     if ( m_projectsDirectoriesList.count() )
         slotBuild();
@@ -2218,22 +2067,23 @@ void MainImpl::slotFindInFiles()
                 directories << m_projectManager->projectDirectory(listeProjets.at(nbProjets)->text(0));
             }
         }
-	
-	m_findInFiles = new FindFileImpl(this, directories, findFiles, findLines);
+
+        m_findInFiles = new FindFileImpl(this, directories, findFiles, findLines);
     }
     else
     {
-    	// BK - allow find in files dialog to be moved around
-    	// and on signal set the focus.
-	    QRect rect = m_findInFiles->geometry();
-	    m_findInFiles->hide();
-	    m_findInFiles->setGeometry(rect);
+        // BK - allow find in files dialog to be moved around
+        // and on signal set the focus.
+        QRect rect = m_findInFiles->geometry();
+        m_findInFiles->hide();
+        m_findInFiles->setGeometry(rect);
     }
 
     //read selected text or current word
     Editor *editor = currentEditor();
-    if ( editor ) {
-		m_findInFiles->setDefaultWord(editor->selection());
+    if ( editor )
+    {
+        m_findInFiles->setDefaultWord(editor->selection());
     }
 
     dockOutputs->setVisible(true);
@@ -2328,10 +2178,10 @@ void MainImpl::slotRemoveDebugVariable()
 //
 void MainImpl::slotOpenFile()
 {
-	if( !m_projectManager )
-		return;
-	OpenFileImpl dialog(this, m_projectManager, this);
-	dialog.exec();
+    if ( !m_projectManager )
+        return;
+    OpenFileImpl dialog(this, m_projectManager, this);
+    dialog.exec();
 }
 //
 void MainImpl::loadPlugins()
@@ -2367,7 +2217,7 @@ void MainImpl::loadPlugins()
         {
             entryList += dir.absoluteFilePath(fileName);
         }
-		// for linux only
+        // for linux only
         dir = QDir(qApp->applicationDirPath()+"/plugins/");
         foreach(QString fileName, dir.entryList(QDir::Files) )
         {
@@ -2430,24 +2280,24 @@ void MainImpl::slotConfigPlugin()
         iTextEdit->config();
 }
 //
-void MainImpl::incErrors() 
-{ 
-	m_builder->incErrors(); 
-} 
-//
-void MainImpl::incWarnings()
-{ 
-	m_builder->incWarnings(); 
-} 
-//
-void MainImpl::resetProjectsDirectoriesList() 
-{ 
-	if( m_projectsDirectoriesList.count() )
-    	m_projectsDirectoriesList = QStringList(QString());
+void MainImpl::incErrors()
+{
+    m_builder->incErrors();
 }
 //
-void MainImpl::resetDebugAfterBuild()  
-{ 
-	m_debugAfterBuild = ExecuteNone; 
+void MainImpl::incWarnings()
+{
+    m_builder->incWarnings();
+}
+//
+void MainImpl::resetProjectsDirectoriesList()
+{
+    if ( m_projectsDirectoriesList.count() )
+        m_projectsDirectoriesList = QStringList(QString());
+}
+//
+void MainImpl::resetDebugAfterBuild()
+{
+    m_debugAfterBuild = ExecuteNone;
 }
 

@@ -45,7 +45,7 @@ ProjectPropertieImpl::ProjectPropertieImpl(ProjectManager * parent, QTreeWidget 
     uiDirectory->setText( m_projectManager->uiDirectory( itProject ) );
     new QTreeWidgetItem(m_copyTreeFiles);
     copyTreeWidget(m_treeFiles->topLevelItem(0), m_copyTreeFiles->topLevelItem(0));
-    while ( m_copyItProject->data(0, Qt::UserRole).toString() != "PROJECT" )
+    while ( m_projectManager->toKey( m_copyItProject->data(0, Qt::UserRole) ) != "PROJECT" )
         m_copyItProject = m_copyItProject->parent();
     setWindowTitle( tr("Properties of %1").arg(m_projectName) );
     populateComboScope();
@@ -247,7 +247,7 @@ void ProjectPropertieImpl::slotCheck(bool activer)
         {
             itTemplate = new QTreeWidgetItem( itCombo );
             itTemplate->setText(0, "TEMPLATE");
-            itTemplate->setData(0, Qt::UserRole, "TEMPLATE");
+            itTemplate->setData(0, Qt::UserRole, m_projectManager->toItem("TEMPLATE"));
             m_copyTreeFiles->setItemHidden(itTemplate, true);
         }
         it = itTemplate;
@@ -259,7 +259,7 @@ void ProjectPropertieImpl::slotCheck(bool activer)
         {
             itQT = new QTreeWidgetItem( itCombo );
             itQT->setText(0, "QT");
-            itQT->setData(0, Qt::UserRole, QVariant("QT"));
+            itQT->setData(0, Qt::UserRole, m_projectManager->toItem("QT"));
             m_copyTreeFiles->setItemHidden(itQT, true);
         }
         it = itQT;
@@ -271,7 +271,7 @@ void ProjectPropertieImpl::slotCheck(bool activer)
         {
             itConfig = new QTreeWidgetItem( itCombo );
             itConfig->setText(0, "CONFIG");
-            itConfig->setData(0, Qt::UserRole, QVariant("CONFIG"));
+            itConfig->setData(0, Qt::UserRole, m_projectManager->toItem("CONFIG"));
             m_copyTreeFiles->setItemHidden(itConfig, true);
         }
         it = itConfig;
@@ -280,7 +280,7 @@ void ProjectPropertieImpl::slotCheck(bool activer)
     {
         QTreeWidgetItem *nouvelItem = new QTreeWidgetItem( it );
         nouvelItem->setText(0, texteVariable);
-        nouvelItem->setData(0, Qt::UserRole, QVariant("DATA"));
+        nouvelItem->setData(0, Qt::UserRole, m_projectManager->toItem("DATA"));
     }
     else
     {
@@ -291,8 +291,8 @@ void ProjectPropertieImpl::slotCheck(bool activer)
                 QTreeWidgetItem *parent = it->child( i )->parent();
                 delete it->child( i );
                 while ( !parent->childCount()
-                        && parent->data(0, Qt::UserRole).toString() != "PROJECT"
-                        && parent->data(0, Qt::UserRole).toString() != "SCOPE"
+                        && m_projectManager->toKey( parent->data(0, Qt::UserRole) ) != "PROJECT"
+                        && m_projectManager->toKey( parent->data(0, Qt::UserRole) ) != "SCOPE"
                       )
                 {
                     it = parent->parent();
@@ -309,7 +309,7 @@ QTreeWidgetItem *ProjectPropertieImpl::subItTemplate(QTreeWidgetItem *it)
     for (int i=0; i<it->childCount(); i++)
     {
         QTreeWidgetItem *item = it->child( i );
-        QString cle = item->data(0, Qt::UserRole).toString();
+        QString cle = m_projectManager->toKey( item->data(0, Qt::UserRole) );
         if ( cle == "TEMPLATE" )
             return item;
     }
@@ -321,7 +321,7 @@ QTreeWidgetItem *ProjectPropertieImpl::subItQT(QTreeWidgetItem *it)
     for (int i=0; i<it->childCount(); i++)
     {
         QTreeWidgetItem *item = it->child( i );
-        QString cle = item->data(0, Qt::UserRole).toString();
+        QString cle = m_projectManager->toKey( item->data(0, Qt::UserRole) );
         if ( cle == "QT" )
             return item;
     }
@@ -333,7 +333,7 @@ QTreeWidgetItem *ProjectPropertieImpl::subItConfig(QTreeWidgetItem *it)
     for (int i=0; i<it->childCount(); i++)
     {
         QTreeWidgetItem *item = it->child( i );
-        QString cle = item->data(0, Qt::UserRole).toString();
+        QString cle = m_projectManager->toKey( item->data(0, Qt::UserRole) );
         if ( cle == "CONFIG" )
             return item;
     }
@@ -345,7 +345,7 @@ void ProjectPropertieImpl::copyTreeWidget(QTreeWidgetItem *source, QTreeWidgetIt
     if ( source == m_itProject )
         m_copyItProject = dest;
     dest->setText(0, source->text(0));
-    dest->setData(0, Qt::UserRole, QVariant(source->data(0, Qt::UserRole ).toString()) );
+    dest->setData(0, Qt::UserRole, source->data(0, Qt::UserRole ) );
     dest->setToolTip(0, source->toolTip(0) );
     dest->setIcon(0, source->icon(0));
     dest->treeWidget()->setItemHidden(dest, source->treeWidget()->isItemHidden(source));
@@ -367,14 +367,14 @@ void ProjectPropertieImpl::slotAccept()
     {
         itConfig = new QTreeWidgetItem( m_copyItProject );
         itConfig->setText(0, "CONFIG");
-        itConfig->setData(0, Qt::UserRole, "CONFIG");
+        itConfig->setData(0, Qt::UserRole, m_projectManager->toItem("CONFIG"));
         m_copyTreeFiles->setItemHidden(itConfig, true);
     }
     foreach(QString nomVariable, supplement->text().simplified().split(" ", QString::SkipEmptyParts))
     {
         QTreeWidgetItem *nouvelItem = new QTreeWidgetItem( itConfig );
         nouvelItem->setText(0, nomVariable);
-        nouvelItem->setData(0, Qt::UserRole, "DATA");
+        nouvelItem->setData(0, Qt::UserRole, m_projectManager->toItem("DATA"));
     }
     m_treeFiles->clear();
     new QTreeWidgetItem(m_treeFiles);
@@ -391,12 +391,10 @@ void ProjectPropertieImpl::slotCurrentItemChanged ( QListWidgetItem * current, Q
     if ( !current )
         return;
     QVariant variant = current->data( Qt::UserRole );
-    //QTreeWidgetItem *item = reinterpret_cast<QTreeWidgetItem*>(variant.toUInt());
     QTreeWidgetItem *item = (QTreeWidgetItem*)variantToItem(variant);
     for (int nb=0; nb < item->childCount(); nb++)
     {
         valuesList->addItem( item->child( nb )->text(0) );
-        //valuesList->item( valuesList->count()-1 )->setData(Qt::UserRole, QVariant(reinterpret_cast<uint>(item->child( nb )) ) );
         valuesList->item( valuesList->count()-1 )->setData(Qt::UserRole, addressToVariant(item->child( nb ) ) );
     }
 
@@ -437,13 +435,14 @@ void ProjectPropertieImpl::slotAddVariable()
         delete newVariable;
         return;
     }
+    QComboBox *comboOperator = ui.comboOperator;
     QVariant variant = comboScope->itemData( comboScope->currentIndex() );
     //QTreeWidgetItem *item = reinterpret_cast<QTreeWidgetItem*>(variant.toUInt());
     QTreeWidgetItem *item = (QTreeWidgetItem*)variantToItem(variant);
     QTreeWidgetItem *nouvelItem = new QTreeWidgetItem( item );
     m_copyTreeFiles->setItemHidden(nouvelItem, true);
     nouvelItem->setText(0, nouvelleVariable);
-    nouvelItem->setData(0, Qt::UserRole, nouvelleVariable);
+    nouvelItem->setData(0, Qt::UserRole, m_projectManager->toItem(nouvelleVariable, comboOperator->currentText()));
     slotComboScope( comboScope->currentIndex() );
 }
 //
@@ -467,7 +466,7 @@ void ProjectPropertieImpl::slotAddValue()
     QString nouvelleValeur;
     bool ok;
     int corriger = -1;
-    QString text = itemCourant->text();
+    QString text;
     do
     {
         text = QInputDialog::getText(this, "QDevelop",
@@ -490,12 +489,11 @@ void ProjectPropertieImpl::slotAddValue()
     else
         return;
     QVariant variant = itemCourant->data( Qt::UserRole );
-    //QTreeWidgetItem *item = reinterpret_cast<QTreeWidgetItem*>(variant.toUInt());
     QTreeWidgetItem *item = (QTreeWidgetItem*)variantToItem(variant);
     QTreeWidgetItem *nouvelItem = new QTreeWidgetItem( item );
     m_copyTreeFiles->setItemHidden(nouvelItem, true);
     nouvelItem->setText(0, nouvelleValeur);
-    nouvelItem->setData(0, Qt::UserRole, "DATA");
+    nouvelItem->setData(0, Qt::UserRole, m_projectManager->toItem("DATA"));
     slotCurrentItemChanged(variablesList->currentItem(), 0);
 }
 //
@@ -559,7 +557,7 @@ void ProjectPropertieImpl::slotComboScope(int index)
     QVariant variant = comboScope->itemData( index );
     //QTreeWidgetItem *item = reinterpret_cast<QTreeWidgetItem*>(variant.toUInt());
     QTreeWidgetItem *item = (QTreeWidgetItem*)variantToItem(variant);
-    if ( item->data(0, Qt::UserRole).toString() != "PROJECT" )
+    if ( m_projectManager->toKey( item->data(0, Qt::UserRole) ) != "PROJECT" )
         projectTemplate->setDisabled( true );
     else
         projectTemplate->setDisabled( false );
@@ -569,7 +567,7 @@ void ProjectPropertieImpl::slotComboScope(int index)
     {
 
         QTreeWidgetItem *it = item->child( nbScope );
-        QString cle = it->data(0, Qt::UserRole).toString();
+        QString cle = m_projectManager->toKey( it->data(0, Qt::UserRole) );
         QString donnee = it->text( 0 );
         if ( !QString("CONFIG|FORMS|HEADERS|QT|RESOURCES|SOURCES|TRANSLATIONS|TEMPLATE|SCOPE|SUBDIRS|absoluteNameProjectFile|projectDirectory|subProjectName|qmake|srcDirectory|uiDirectory").contains( cle ) )
         {
@@ -581,7 +579,7 @@ void ProjectPropertieImpl::slotComboScope(int index)
     if ( variablesList->count() )
         slotCurrentItemChanged( variablesList->item( 0 ), 0);
     connections();
-    if ( item->data(0, Qt::UserRole).toString() != "PROJECT" )
+    if ( m_projectManager->toKey( item->data(0, Qt::UserRole) ) != "PROJECT" )
         projectTemplate->setDisabled( true );
     else
         projectTemplate->setDisabled( false );
@@ -592,7 +590,7 @@ void ProjectPropertieImpl::parse(QTreeWidgetItem *it)
     for (int i=0; i<it->childCount(); i++)
     {
         QTreeWidgetItem *item = it->child( i );
-        QString cle = item->data(0, Qt::UserRole).toString();
+        QString cle = m_projectManager->toKey( item->data(0, Qt::UserRole) );
         if ( cle == "TEMPLATE" )
             parseTemplate(item);
         else if ( cle == "QT" )
@@ -708,7 +706,7 @@ void ProjectPropertieImpl::populateComboScope()
         int nbEspace = 0;
         while ( tmp )
         {
-            QString cleTmp = tmp->data(0,Qt::UserRole).toString();
+            QString cleTmp = m_projectManager->toKey( tmp->data(0,Qt::UserRole) );
             QString indent;
             for (int i=0; i<nbEspace; i++)
                 indent += "  ";

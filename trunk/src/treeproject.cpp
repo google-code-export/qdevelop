@@ -178,17 +178,17 @@ void TreeProject::mousePressEvent( QMouseEvent * event )
 		setCurrentItem( m_itemClicked );
 		if( !m_itemClicked )
 			return;
-		QString cle = m_itemClicked->data(0, Qt::UserRole).toString();
+		QString key = m_projectManager->toKey( m_itemClicked->data(0, Qt::UserRole) );
 		setCurrentItem( m_itemClicked );
 		QMenu *menu = new QMenu(this);
-		if( cle == "PROJECT" || cle == "SCOPE" )
+		if( key == "PROJECT" || key == "SCOPE" )
 		{
-			if (cle == "PROJECT" )
+			if (key == "PROJECT" )
 			{
 				QAction *sousProjet = menu->addAction(QIcon(), tr("Add sub-project..."));
 				connect(sousProjet, SIGNAL(triggered()), this, SLOT(slotAddSubProject()) );
 				for(int i=0; i<m_itemClicked->childCount(); i++)
-					if( QString("SCOPE:FORMS:HEADERS:RESOURCES:SOURCES:TRANSLATIONS").contains(m_itemClicked->child( i )->data(0, Qt::UserRole).toString() ) )
+					if( QString("SCOPE:FORMS:HEADERS:RESOURCES:SOURCES:TRANSLATIONS").contains( m_projectManager->toKey( m_itemClicked->child( i )->data(0, Qt::UserRole) ) ) )
 						sousProjet->setEnabled( false );
 					
 			}
@@ -197,15 +197,15 @@ void TreeProject::mousePressEvent( QMouseEvent * event )
 			connect(menu->addAction(QIcon(), tr("Add New Class...")), SIGNAL(triggered()), this, SLOT(slotAddNewClass()) );
 			connect(menu->addAction(QIcon(), tr("Add Existing Files...")), SIGNAL(triggered()), this, SLOT(slotAddExistingFiles()) );
 		}
-		else if( cle == "DATA" )
+		else if( key == "DATA" )
 		{
-			if( m_itemClicked->parent()->data(0, Qt::UserRole).toString() == "TRANSLATIONS" )
+			if( m_projectManager->toKey( m_itemClicked->parent()->data(0, Qt::UserRole) ) == "TRANSLATIONS" )
 			{
 				connect(menu->addAction(QIcon(":/toolbar/images/edit.png"), tr("Open in Linguist")), SIGNAL(triggered()), this, SLOT(slotOpen()) );
 				connect(menu->addAction(QIcon(":/toolbar/images/refresh.png"), tr("Refresh translation files")+" (.ts)"), SIGNAL(triggered()), this, SLOT(slotlupdate()) );
 				connect(menu->addAction(QIcon(""), tr("Build release translation files")+" (.qm)"), SIGNAL(triggered()), this, SLOT(slotlrelease()) );
 			}
-			if( m_itemClicked->parent()->data(0, Qt::UserRole).toString() == "FORMS" )
+			if( m_projectManager->toKey( m_itemClicked->parent()->data(0, Qt::UserRole) ) == "FORMS" )
 			{
 				connect(menu->addAction(QIcon(":/toolbar/images/edit.png"), tr("Open in Designer")), SIGNAL(triggered()), this, SLOT(slotOpen()) );
 				connect(menu->addAction(QIcon(), tr("Dialog Subclassing...")), SIGNAL(triggered()), this, SLOT(slotSubclassing()) );
@@ -215,11 +215,15 @@ void TreeProject::mousePressEvent( QMouseEvent * event )
 				connect(menu->addAction(QIcon(":/toolbar/images/edit.png"), tr("Open")), SIGNAL(triggered()), this, SLOT(slotOpen()) );
             connect(menu->addAction(QIcon(), tr("Rename...")), SIGNAL(triggered()), this, SLOT(slotRenameItem()) );
 		}
+		else if( QString("FORMS:HEADERS:RESOURCES:SOURCES:TRANSLATIONS").contains(key) )
+		{
+			connect(menu->addAction(QIcon(), tr("Add New Item...")), SIGNAL(triggered()), this, SLOT(slotAddNewItem()) );
+		}
 		connect(menu->addAction(QIcon(), tr("Sort")), SIGNAL(triggered()), this, SLOT(slotSort()) );
 		connect(menu->addAction(QIcon(":/toolbar/images/editdelete.png"), tr("Delete")), SIGNAL(triggered()), this, SLOT(slotDeleteItem()) );
 		menu->addSeparator();
 		QTreeWidgetItem *tmp = m_itemClicked;
-		while( tmp && tmp->data(0, Qt::UserRole).toString() != "PROJECT" )
+		while( tmp && m_projectManager->toKey( tmp->data(0, Qt::UserRole) ) != "PROJECT" )
 			tmp = tmp->parent();
 		if( tmp )
 			connect(menu->addAction(QIcon(), tr("Properties of %1...").arg(tmp->text(0)) ), SIGNAL(triggered()), this, SLOT(slotProjectPropertie()) );
@@ -281,7 +285,11 @@ void TreeProject::slotShowAsKrawek()
 //
 void TreeProject::slotAddNewItem()
 {
-	emit addNewItem(m_itemClicked);
+	QString kind;
+	QString key = m_projectManager->toKey( m_itemClicked->data(0, Qt::UserRole) );
+	if( QString("FORMS:HEADERS:RESOURCES:SOURCES:TRANSLATIONS").contains(key) )
+		kind = key;
+	emit addNewItem(m_itemClicked, kind);
 }
 //
 void TreeProject::slotPreviewForm()
