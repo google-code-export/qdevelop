@@ -842,6 +842,7 @@ void TextEdit::mouseMoveEvent( QMouseEvent * event )
 {
     setMouseHidden( false );
     event->setAccepted( false );
+    QTextEdit::mouseMoveEvent( event );
 }
 //
 void TextEdit::slotCursorPositionChanged()

@@ -67,7 +67,7 @@ private slots:
 	void slotShowAsKrawek();
 	void slotPreviewForm();
 signals:
-	void addNewItem(QTreeWidgetItem *);
+	void addNewItem(QTreeWidgetItem *, QString);
 	void addExistingsFiles(QTreeWidgetItem *);
 	void addNewClass(QTreeWidgetItem *);
 	void deleteItem(QTreeWidgetItem *);
