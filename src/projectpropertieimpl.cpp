@@ -247,7 +247,7 @@ void ProjectPropertieImpl::slotCheck(bool activer)
         {
             itTemplate = new QTreeWidgetItem( itCombo );
             itTemplate->setText(0, "TEMPLATE");
-            itTemplate->setData(0, Qt::UserRole, m_projectManager->toItem("TEMPLATE"));
+            itTemplate->setData(0, Qt::UserRole, m_projectManager->toItem("TEMPLATE", "="));
             m_copyTreeFiles->setItemHidden(itTemplate, true);
         }
         it = itTemplate;
@@ -259,7 +259,7 @@ void ProjectPropertieImpl::slotCheck(bool activer)
         {
             itQT = new QTreeWidgetItem( itCombo );
             itQT->setText(0, "QT");
-            itQT->setData(0, Qt::UserRole, m_projectManager->toItem("QT"));
+            itQT->setData(0, Qt::UserRole, m_projectManager->toItem("QT", "+="));
             m_copyTreeFiles->setItemHidden(itQT, true);
         }
         it = itQT;
@@ -271,7 +271,7 @@ void ProjectPropertieImpl::slotCheck(bool activer)
         {
             itConfig = new QTreeWidgetItem( itCombo );
             itConfig->setText(0, "CONFIG");
-            itConfig->setData(0, Qt::UserRole, m_projectManager->toItem("CONFIG"));
+            itConfig->setData(0, Qt::UserRole, m_projectManager->toItem("CONFIG", "+="));
             m_copyTreeFiles->setItemHidden(itConfig, true);
         }
         it = itConfig;
@@ -367,7 +367,7 @@ void ProjectPropertieImpl::slotAccept()
     {
         itConfig = new QTreeWidgetItem( m_copyItProject );
         itConfig->setText(0, "CONFIG");
-        itConfig->setData(0, Qt::UserRole, m_projectManager->toItem("CONFIG"));
+        itConfig->setData(0, Qt::UserRole, m_projectManager->toItem("CONFIG", "+=") );
         m_copyTreeFiles->setItemHidden(itConfig, true);
     }
     foreach(QString nomVariable, supplement->text().simplified().split(" ", QString::SkipEmptyParts))

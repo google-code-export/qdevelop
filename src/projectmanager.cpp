@@ -631,19 +631,19 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it, QString kind)
     QString plateforme;
     QStringList filesList;
     AddNewImpl *window = new AddNewImpl(this);
-	if( !kind.isEmpty() )
-	{
-		if( kind == "SOURCES" )
-			window->source->setChecked(true);
-		else if( kind == "HEADERS" )
-			window->header->setChecked(true);
-		else if( kind == "FORMS" )
-			window->dialog->setChecked(true);
-		else if( kind == "RESOURCES" )
-			window->resource->setChecked(true);
-		else if( kind == "TRANSLATIONS" )
-			window->translation->setChecked(true);
-	}
+    if ( !kind.isEmpty() )
+    {
+        if ( kind == "SOURCES" )
+            window->source->setChecked(true);
+        else if ( kind == "HEADERS" )
+            window->header->setChecked(true);
+        else if ( kind == "FORMS" )
+            window->dialog->setChecked(true);
+        else if ( kind == "RESOURCES" )
+            window->resource->setChecked(true);
+        else if ( kind == "TRANSLATIONS" )
+            window->translation->setChecked(true);
+    }
     QList<QTreeWidgetItem *> projectsList;
     childsList(0, "PROJECT", projectsList);
     for (int nbProjects=0; nbProjects < projectsList.count(); nbProjects++)
@@ -799,7 +799,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it, QString kind)
 
             templateData.append( QString("// place your code here\n") );
         }
-		// The (.ts) file must be created by lupdate only
+        // The (.ts) file must be created by lupdate only
         if ( filename.section(".", -1, -1) != "ts" )
         {
             if ( !file.open(QIODevice::WriteOnly | QIODevice::Text) )
@@ -822,8 +822,8 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it, QString kind)
         // If it's a (.ts) file, save the project then call lupdate to create the file on disk.
         if ( filename.section(".", -1, -1) == "ts" )
         {
-        	slotSaveProject();
-        	slotlupdate(item);
+            slotSaveProject();
+            slotlupdate(item);
         }
     }
     m_isModifiedProject = true;
@@ -969,11 +969,11 @@ void ProjectManager::slotAddSubProject(QTreeWidgetItem *it)
         insertItem(subProjectItem, "absoluteNameProjectFile", window->absoluteProjectName());
         insertItem(subProjectItem, "projectDirectory", window->location->text());
         insertItem(subProjectItem, "subProjectName", filename.left(filename.lastIndexOf(".")));
-	    loadProject(window->absoluteProjectName(), subProjectItem);
+        loadProject(window->absoluteProjectName(), subProjectItem);
         QTreeWidgetItem *itProject = itemProject(  window->filename() );
         setSrcDirectory(itProject, window->srcDirectory->text());
         setUiDirectory(itProject, window->uiDirectory->text());
-    	m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
+        m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
     }
     delete window;
 }
@@ -1427,8 +1427,8 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
     while (!file.atEnd())
     {
         QString line = QString( file.readLine() );
-        if( !line.simplified().length() )
-        	continue;
+        if ( !line.simplified().length() )
+            continue;
         if ( scope && !toFollow)
         {
             scope = false;
@@ -1476,7 +1476,7 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
                 operateur = "=";
             key = line.simplified().section(operateur, 0, 0).simplified();
             data =  line.simplified().section(operateur, 1).simplified();
-            toFollow = line.section(" ",-1,-1).simplified() == "\\";
+            toFollow = line.simplified().right(1) == "\\";
             if ( data.simplified().right(1) == "\\" )
                 data = data.simplified().left( data.simplified().length()-1 );
             QTreeWidgetItem *it = 0;
@@ -1532,15 +1532,45 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
             {
                 insertItem(newProjectItem, "DATA", name);
             }
-            toFollow = line.section(" ",-1,-1).simplified() == "\\";
+            toFollow = line.simplified().right(1) == "\\";
             if ( !toFollow )
                 newProjectItem = newProjectItem->parent();
+        }
+        else if ( !line.simplified().contains(QRegExp("^#"))  )
+        {
+        	QString function = line.simplified().section("\(", 0, 0).simplified();
+            data =  line.simplified();
+            insertItem(newProjectItem, "DATA", data);
         }
         /*else //if ( line.contains(QRegExp("^#")) )
         {
         	insertItem(newProjectItem, "TEXTELIBRE", line);
         	toFollow = false;
         }*/
+        // SUBDIRS loading
+        for (int i=0; i<newProjectItem->childCount(); i++)
+        {
+            if ( toKey( newProjectItem->child( i )->data(0, Qt::UserRole) ) == "SUBDIRS" )
+            {
+                QTreeWidgetItem *sub = newProjectItem->child( i );
+                m_treeFiles->setItemExpanded(sub, true );
+                for (int n=0; n<sub->childCount(); n++)
+                {
+                    QString name = sub->child(n)->text(0);
+                    QString subDirName = QDir(projectDirectory+"/"+name).absolutePath();
+                    QStringList filesList = QDir(subDirName).entryList();
+                    foreach(QString newProjectName, filesList )
+                    {
+                        if ( newProjectName.toLower().right(4) == ".pro" )
+                        {
+                            loadProject(subDirName+"/"+newProjectName, sub->child( n ));
+                            insertItem(sub->child( n ), "subProjectName", name);
+
+                        }
+                    }
+                }
+            }
+        }
     }
     //
     if ( findData(projectName, QString("TEMPLATE")).isEmpty() )
@@ -1548,38 +1578,14 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
         QTreeWidgetItem *tmp = insertItem(itemProject, "TEMPLATE", "TEMPLATE");
         insertItem(tmp, "DATA", "app");
     }
-    // SUBDIRS loading
-    for (int i=0; i<itemProject->childCount(); i++)
-    {
-        if ( toKey( itemProject->child( i )->data(0, Qt::UserRole) ) == "SUBDIRS" )
-        {
-            QTreeWidgetItem *sub = itemProject->child( i );
-            m_treeFiles->setItemExpanded(sub, true );
-            for (int n=0; n<sub->childCount(); n++)
-            {
-                QString name = sub->child(n)->text(0);
-                QString subDirName = QDir(projectDirectory+"/"+name).absolutePath();
-                QStringList filesList = QDir(subDirName).entryList();
-                foreach(QString newProjectName, filesList )
-                {
-                    if ( newProjectName.toLower().right(4) == ".pro" )
-                    {
-                        loadProject(subDirName+"/"+newProjectName, sub->child( n ));
-                        insertItem(sub->child( n ), "subProjectName", name);
-
-                    }
-                }
-            }
-        }
-    }
     return;
 }
 //
 QTreeWidgetItem * ProjectManager::insertItem(QTreeWidgetItem *parent, QString key, QString data, QString op)
 {
-	QString begin;
-	if( !op.isEmpty() && op != "=" && op != "+=" )
-		begin = op + " ";
+    QString begin;
+    if ( !op.isEmpty() && op != "=" && op != "+=" )
+        begin = op + " ";
     QTreeWidgetItem *it = new QTreeWidgetItem(parent);
     it->setText(0, data);
     it->setData(0, Qt::UserRole, toItem(key, op));
@@ -1701,11 +1707,12 @@ bool ProjectManager::saveDataOfProject(QTreeWidgetItem *it, QTextStream *s, int 
     }
     for ( int i=0; i<it->childCount(); i++)
     {
-    	QString newEndLine = "";
-	    if( it->childCount() > 4 && i+1<it->childCount() )
-	    	newEndLine = " \\\n";
-	    else if( i+1 == it->childCount() )
-	    	newEndLine = "\n";
+        QString newEndLine = "";
+        if ( it->childCount() > 4 && i+1<it->childCount() )
+            newEndLine = " \\\n";
+        else if ( i+1 == it->childCount() )
+            newEndLine = "\n";
+qDebug() << it->child(i)->text(0) << toKey(it->child(i)->data(0, Qt::UserRole)) << newEndLine;
         saveDataOfProject(it->child(i), output, nbSpace+1, newEndLine);
     }
     if ( it->childCount() && key == "SCOPE" )
@@ -2254,21 +2261,21 @@ bool ProjectManager::eventFilter( QObject *obj, QEvent *ev )
 QString ProjectManager::toOp(QVariant variant)
 {
     Item item = variant.value<Item>();
-	return item.op;
+    return item.op;
 }
 //
 QString ProjectManager::toKey(QVariant variant)
 {
     Item item = variant.value<Item>();
-	return item.key;
+    return item.key;
 }
 //
 QVariant ProjectManager::toItem(QString key, QString op)
 {
-	// An item contains:
-	//		a key "HEADERS", "SOURCES", "DATA" etc.
-	//		a operator "=", "+="; "-=", "*=" or "~=". This operator is read and wrote in project file
-	//		Example : SOURCES += myfile.cpp
+    // An item contains:
+    //		a key "HEADERS", "SOURCES", "DATA" etc.
+    //		a operator "=", "+="; "-=", "*=" or "~=". This operator is read and wrote in project file
+    //		Example : SOURCES += myfile.cpp
     Item item;
     item.key = key;
     item.op = op;

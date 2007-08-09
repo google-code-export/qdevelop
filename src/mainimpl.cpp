@@ -1421,7 +1421,7 @@ void MainImpl::slotCompile()
         tabOutputs->setCurrentIndex( 0 );
         m_projectsDirectoriesList << editor->directory();
         QString projectDirectory = m_projectManager->fileDirectory(editor->filename() );
-        m_builder = new Build(this, m_qmakeName, m_makeName, projectDirectory, false, false, true, editor->filename());
+        m_builder = new Build(this, m_qmakeName, m_makeName, projectDirectory+"/", false, false, true, editor->filename());
 
         connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
         connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
@@ -1463,17 +1463,19 @@ void MainImpl::slotBuild(bool clean, bool build)
         m_clean = clean;
         m_build = build;
     }
-    QString repProjet = m_projectsDirectoriesList.first();
-    QString projectName = m_projectManager->projectName( repProjet );
+    QString projectDirectory = m_projectsDirectoriesList.first();
+    QString projectName = m_projectManager->projectName( projectDirectory );
 
-    QString makefilePath = repProjet + "/Makefile";
+    QString makefilePath = projectDirectory + "/Makefile";
     qmakeNeeded = qmakeNeeded || !QFile::exists(makefilePath);
     if ( qmakeNeeded )
     {
         m_configureCompletionNeeded = true;
     }
-    m_builder = new Build(this, m_qmakeName, m_makeName, repProjet, qmakeNeeded|m_clean, m_clean, m_build);
+    m_builder = new Build(this, m_qmakeName, m_makeName, projectDirectory+"/"+projectName, qmakeNeeded|m_clean, m_clean, m_build);
 
+    connect(logBuild, SIGNAL(incErrors()), m_builder, SLOT(slotIncErrors()) );
+    connect(logBuild, SIGNAL(incWarnings()), m_builder, SLOT(slotIncWarnings()) );
     connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
     connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
     connect(m_builder, SIGNAL(message(QString, QString)), logBuild, SLOT(slotMessagesBuild(QString, QString)) );
@@ -2278,16 +2280,6 @@ void MainImpl::slotConfigPlugin()
     TextEditInterface *iTextEdit = qobject_cast<TextEditInterface *>(action->parent());
     if ( iTextEdit )
         iTextEdit->config();
-}
-//
-void MainImpl::incErrors()
-{
-    m_builder->incErrors();
-}
-//
-void MainImpl::incWarnings()
-{
-    m_builder->incWarnings();
 }
 //
 void MainImpl::resetProjectsDirectoriesList()

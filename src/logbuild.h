@@ -46,5 +46,8 @@ private:
 	* A pointer to the MainImpl class 
 	*/
 	MainImpl* m_mainImpl;
+signals:
+	void incErrors();
+	void incWarnings();
 };
 #endif

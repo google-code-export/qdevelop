@@ -75,7 +75,6 @@ public:
 	void toggleBookmark(Editor *editor, QString text, bool activate, QTextBlock block);
 	QMenu *bookmarksMenu() { return menuBookmarks; };
 	const QList<ParsedItem> *treeClassesItems() { return treeClasses->treeClassesItems(); };
-	//const QList<ParsedItem> *treeClassesItems(QString classname) { return treeClasses->treeClassesItems(classname); };
 	void loadPlugins();
 	void renameEditor(QString oldName, QString newName);
 	void configureCompletion(QString projectDirectory);
@@ -84,8 +83,6 @@ public:
 	Editor * givenEditor(int i);
 	void resetProjectsDirectoriesList();
 	void resetDebugAfterBuild();
-	void incErrors();
-	void incWarnings(); 
 private:
 	// Functions
 	void createConnections();
