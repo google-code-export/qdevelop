@@ -11,16 +11,14 @@ class Build : public QThread
 {
 Q_OBJECT
 public:
-	Build(QObject * parent, QString qmakeName, QString makename, QString rep, bool qmake, bool n, bool g, QString compileFile=0);
+	Build(QObject * parent, QString qmakeName, QString makename, QString absoluteProjectName, bool qmake, bool n, bool g, QString compileFile=0);
     void run();
-    void incErrors();
-    void incWarnings();
     int nbErrors() { return m_errors; }
     int nbWarnings() { return m_warnings; }
 private:
 	bool m_qmake;
-	QString projectDirectory;
-	QString nameProjectFile;
+	QString m_projectDirectory;
+	QString m_projectName;
 	bool m_clean;
 	bool m_build;
 	bool m_isStopped;
@@ -36,6 +34,9 @@ signals:
 protected slots:
 	void slotBuildMessages();
 	void slotStopBuild();
+public slots:
+    void slotIncErrors();
+    void slotIncWarnings();
 };
 
 #endif

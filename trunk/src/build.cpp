@@ -28,7 +28,7 @@
 #include <QString>
 #include <QDir>
 //
-Build::Build(QObject * parent, QString qmakeName, QString makeName, QString rep, bool qmake, bool n, bool g, QString compileFile)
+Build::Build(QObject * parent, QString qmakeName, QString makeName, QString absoluteProjectName, bool qmake, bool n, bool g, QString compileFile)
 
 	: QThread(parent)
 {
@@ -37,7 +37,8 @@ Build::Build(QObject * parent, QString qmakeName, QString makeName, QString rep,
 	m_qmakeName = qmakeName;
 	m_qmake = qmake;
 	m_makeName = makeName;
-	projectDirectory = rep;
+	m_projectDirectory = QFileInfo(absoluteProjectName).absolutePath();
+	m_projectName = QFileInfo(absoluteProjectName).fileName();
 	m_clean = n;
 	m_build = g;
 	m_compileFile = compileFile;
@@ -45,12 +46,12 @@ Build::Build(QObject * parent, QString qmakeName, QString makeName, QString rep,
 	m_warnings = 0;
 }
 //
-void Build::incErrors() 
+void Build::slotIncErrors() 
 { 
 	m_errors++; 
 }
 //
-void Build::incWarnings() 
+void Build::slotIncWarnings() 
 { 
 	m_warnings++; 
 }
@@ -61,11 +62,11 @@ void Build::run()
 	m_buildProcess = new QProcess();
 	connect(m_buildProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(slotBuildMessages()) );
 	connect(m_buildProcess, SIGNAL(readyReadStandardError()), this, SLOT(slotBuildMessages()) );
-	m_buildProcess->setWorkingDirectory( projectDirectory );
+	m_buildProcess->setWorkingDirectory( m_projectDirectory );
 	if( m_qmake )
 	{
-		emit message( QString(tr("Update project"))+" (qmake)..." );
-		m_buildProcess->start(m_qmakeName);
+		emit message( QString(tr("Update project"))+" (qmake "+m_projectName+")..." );
+		m_buildProcess->start(m_qmakeName, QStringList() << m_projectName);
     	if (!m_buildProcess->waitForFinished(800000))
 		{
 			m_buildProcess->deleteLater();
@@ -104,14 +105,14 @@ void Build::run()
         	return;
 		}
 	}
-	emit message( QString(m_buildProcess->readAll()), projectDirectory);
+	emit message( QString(m_buildProcess->readAll()), m_projectDirectory);
 	m_buildProcess->deleteLater();
 }
 //
 void Build::slotBuildMessages()
 {
-	emit message( QString::fromLocal8Bit(m_buildProcess->readAllStandardOutput()), projectDirectory );
-	emit message( QString::fromLocal8Bit(m_buildProcess->readAllStandardError()), projectDirectory );
+	emit message( QString::fromLocal8Bit(m_buildProcess->readAllStandardOutput()), m_projectDirectory );
+	emit message( QString::fromLocal8Bit(m_buildProcess->readAllStandardError()), m_projectDirectory );
 }
 //
 void Build::slotStopBuild()
@@ -128,14 +129,14 @@ QString Build::buildOnly( QString sourceFile )
 		return QString();
 	QString objectFile = sourceFile.mid(0, sourceFile.lastIndexOf("."))+".o";
 #ifndef WIN32
-	QString name = QDir( projectDirectory ).relativeFilePath( sourceFile ); 
+	QString name = QDir( m_projectDirectory ).relativeFilePath( sourceFile ); 
 	return m_makeName+" "+ name.mid(0, name.lastIndexOf("."))+".o";
 #endif
 	QString shortObjectFile = objectFile;
 	if( !objectFile.section("/", -1, -1).isEmpty() )
 		shortObjectFile = shortObjectFile.section("/", -1, -1).section(".", 0, 0)+".o";
 	QString directives;
-	QFile makefile(projectDirectory+"/"+"Makefile");
+	QFile makefile(m_projectDirectory+"/"+"Makefile");
 	if (!makefile.open(QIODevice::ReadOnly | QIODevice::Text))
 		return QString();
 	QString target, makefileFile, CXX, DEFINES, CXXFLAGS, INCPATH;
@@ -152,7 +153,7 @@ QString Build::buildOnly( QString sourceFile )
 		{
 			makefileFile = line.section(" ", 1, 1).simplified().replace("$(MAKEFILE)", makefileFile);
 			makefile.close();
-			makefile.setFileName( projectDirectory+"/"+makefileFile );
+			makefile.setFileName( m_projectDirectory+"/"+makefileFile );
 			if (!makefile.open(QIODevice::ReadOnly | QIODevice::Text))
 				return QString();
 			target = QString();

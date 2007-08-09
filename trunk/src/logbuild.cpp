@@ -49,12 +49,12 @@ void LogBuild::slotMessagesBuild(QString list, QString directory)
                 setTextColor( Qt::red );
                 m_mainImpl->resetProjectsDirectoriesList();
                 m_mainImpl->resetDebugAfterBuild();
-                m_mainImpl->incErrors();
+                emit incErrors();
             }
             else if ( message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ) )
             {
                 setTextColor( Qt::blue );
-                m_mainImpl->incWarnings();
+                emit incWarnings();
             }
             append( message );
             if ( !directory.isEmpty() )
