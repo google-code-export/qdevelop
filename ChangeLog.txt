@@ -1,32 +1,7 @@
-XXX XX 2007 Version 0.24:
+August 11 2007 Version 0.24:
  
+Corrections and improvements:
   - Source/header navigation after files are renamed is working once more (fixes issue 137)
-  - The list of include directories is parsed by the code completion each time it is necessary (fixes issue 145)
-  - Commet/Uncomment line fixes, thanks to Simon Viennot <krazwer@gmail.com>  (fixes issues 101, 113 and 131).
-  - Fixed function/method names color bug (fixes issues 77 and 96)
-  - Line numers are consistant with text editor, improved undo/redo behavior, enhanced find in document behavior,
-    Removed Undo and Redo from editor context menu and moved Goto Implementation and Goto Declaration to the top. Thanks
-    to Branimir Karadzic <branimirkaradzic@gmail.com> (revision 144)
-  - Fixed templates for win32-msvc2005 target. Thanks to Branimir Karadzic <branimirkaradzic@gmail.com>. (revision 145) 
-  - Added an entry to the main menu to open class methods combo box for fast
-     lookup without using mouse. Thanks to Branimir Karadzic <branimirkaradzic@gmail.com>. (revision 146)
-  - Find in files funtions has been improoved (revision 147).
-  - Completion improvement: If a function has many overloaded versions, the code completion choose the version with the biggest 
-    number of parameters, overcome some problems with ctags and Qt macros (revision 151)
-  - When adding files to a project if the directories do not exixt, create them (revision 154)
-  - new text format used in ths source, which allows to translate more easily. Thanks to Simon Viennot <krazwer@gmail.com>. (revision 155)
-  - Indentation should be working once more (fixes issue 18)
-  - Hide mouse cursor while typing code (fixes issue 24)
-  - When creating a new dialog, the template will use by default QDialogButtonBox (fixes issue 83)
-  - Order of widgets in tools control is revised, also use QDialogButtonBox instead of normal buttons (fixes issue 89)
-  - Improved save and restore of MainWindow position, size and state (fixes issue 103).
-  - Break IDE closing with Cancel button if project changes are not saved (fixes issue 107)
-  - The build log window is now a sub-class of QTextEdit. It is possible to copy and paste by right-click the texts in 
-    this window (fixes issue 136 and 141)
-  - Make moving up/down in files explorer equivalent to clicking items, and Return equivalent to clicking Open (fixes issue 154)
-  - Updated the shape of the tabs on the output dock window (revisions 182, 183)
-  - Improove handleing of pro files (revision 185,187)
-  - Fixed various crashes related for the code completion (revision 184,188)
   - Updated translations for 
       * Chinese (Henri Girard <henrigirard@free.fr>) 
       * Vietnamese (Chuong.Nguyen@eng.monash.edu.au)
@@ -35,6 +10,34 @@ XXX XX 2007 Version 0.24:
       * Spanish (Jorge Daniel Sampayo Vargas <jdsampayo@gmail.com>)
       * Turkish (fatih.asici@gmail.com)
       * German (Ralf Jung <ralfjung-e@gmx.de>)
+  - The build log window is now a sub-class of QTextEdit. It is possible to copy and paste by right-click the texts in 
+    this window (fixes issue 136 and 141)
+  - Make moving up/down in files explorer equivalent to clicking items, and Return equivalent to clicking Open (fixes issue 154)
+  - Updated the shape of the tabs on the output dock window (revisions 182, 183)
+  - Improove handleing of pro files (revision 185,187)
+  - Fixed various crashes related for the code completion (revision 184,188)
+  - The list of include directories is parsed by the code completion each time it is necessary (fixes issue 145)
+  - Commet/Uncomment line fixes, thanks to Simon Viennot <krazwer@gmail.com>  (fixes issues 101, 113 and 131).
+  - Fixed function/method names color bug (fixes issues 77 and 96)
+  - Line numbers are consistant with text editor, improved undo/redo behavior, enhanced find in document behavior,
+    Removed Undo and Redo from editor context menu and moved Goto Implementation and Goto Declaration to the top. Thanks
+    to Branimir Karadzic <branimirkaradzic@gmail.com> (revision 144)
+  - Fixed templates for win32-msvc2005 target. Thanks to Branimir Karadzic <branimirkaradzic@gmail.com>. (revision 145) 
+  - Find in files funtions has been improoved (revision 147).
+  - Completion improvement: If a function has many overloaded versions, the code completion choose the version with the biggest 
+    number of parameters, overcome some problems with ctags and Qt macros (revision 151)
+  - When adding files to a project if the directories do not exixt, create them (revision 154)
+  - New text format used in the source, which allows to translate more easily. Thanks to Simon Viennot <krazwer@gmail.com>. (revision 155)
+  - Indentation should be working once more (fixes issue 18)
+  - When creating a new dialog, the template will use by default QDialogButtonBox (fixes issue 83)
+  - Order of widgets in tools control is revised, also use QDialogButtonBox instead of normal buttons (fixes issue 89)
+  - Improved save and restore of MainWindow position, size and state (fixes issue 103).
+  - Break IDE closing with Cancel button if project changes are not saved (fixes issue 107)
+Adds:
+  - Add "Goto Declaration" and "Goto Implementation" entries in the popup menu showed by right-click in an editor. After the right-click on a word, the program find the member object or function and his class then, if possible allows to go to the implementation and the declaration files.  
+  - Since Qt 4.3.0, Designer can be controlled  as Assistant by socket. That allows to open all UI files with one instance of Designer.
+  - Added an entry to the main menu to open class methods combo box for fast lookup without using mouse. Thanks to Branimir Karadzic <branimirkaradzic@gmail.com>. (revision 146)
+  - Hide mouse cursor while typing code (fixes issue 24)
   
 May 29 2007 Version 0.23
 
