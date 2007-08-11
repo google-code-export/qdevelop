@@ -157,7 +157,6 @@ private:
     bool m_autoCompletion;
     bool m_autobrackets;
     bool m_match;
-    bool m_completionShowHelp;
     QColor m_backgroundColor;
     QColor m_currentLineColor;
     QColor m_matchingColor;

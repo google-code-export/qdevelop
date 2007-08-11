@@ -66,7 +66,6 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_match = true;
     m_matchingBegin = -1;
     m_matchingEnd = -1;
-    m_completionShowHelp = true;
     m_endLine = MainImpl::Default;
     connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));
     connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
@@ -954,7 +953,7 @@ void TextEdit::slotWordCompletion(QListWidgetItem *item)
     QString text = tag.name;
     wordUnderCursor(QPoint(), true);
     textCursor().insertText( text );
-    if ( m_completionShowHelp && tag.isFunction && !tag.signature.contains("()") )
+    if ( m_completion && tag.isFunction && !tag.signature.contains("()") )
     {
         completionHelp();
     }
@@ -1066,7 +1065,7 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
         if ( m_autobrackets && event->key() == '{' )
             autobrackets();
     }
-    else if ( event->key() == '(' && m_completionShowHelp )
+    else if ( event->key() == '(' && m_completion )
     {
         QTextEdit::keyPressEvent ( event );
         completionHelp();
