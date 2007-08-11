@@ -24,6 +24,9 @@ XXX XX 2007 Version 0.24:
   - The build log window is now a sub-class of QTextEdit. It is possible to copy and paste by right-click the texts in 
     this window (fixes issue 136 and 141)
   - Make moving up/down in files explorer equivalent to clicking items, and Return equivalent to clicking Open (fixes issue 154)
+  - Updated the shape of the tabs on the output dock window (revisions 182, 183)
+  - Improove handleing of pro files (revision 185,187)
+  - Fixed various crashes related for the code completion (revision 184,188)
   - Updated translations for 
       * Chinese (Henri Girard <henrigirard@free.fr>) 
       * Vietnamese (Chuong.Nguyen@eng.monash.edu.au)
