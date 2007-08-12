@@ -935,6 +935,8 @@ static QString dir;
 
 void MainImpl::slotOpen()
 {
+	static QString selectedFilter;
+	
     if ( dir.isEmpty() && m_projectManager )
         dir = m_projectManager->projectDirectory( treeFiles->topLevelItem ( 0 ) );
 
@@ -945,7 +947,8 @@ void MainImpl::slotOpen()
                     tr("Sources")+" (*.cpp *.h);;"+
                     tr("Projects")+" (*.pro);;"+
                     tr("Texts")+" (*.txt *.TXT);;"+
-                    tr("All Files")+" (* *.*)"
+                    tr("All Files")+" (* *.*)",
+                    &selectedFilter
                 );
     if ( s.isEmpty() )
     {
