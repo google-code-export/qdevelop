@@ -48,6 +48,45 @@
 #include <QPrintDialog>
 #include <QTime>
 #include <QPrinter>
+#include <QTextLayout>
+
+static const char * tabPixmap_img[] = 
+{
+/* width height ncolors cpp [x_hot y_hot] */
+	"8 8 3 2 0 0",
+/* colors */
+	"  s none       m none  c none",
+	"O s iconColor1 m black c black",
+	"X s iconColor2 m black c #E0E0E0",
+/* pixels */
+	"  X     X       ",
+	"    X     X     ",
+	"      X     X   ",
+	"        X     X ",
+	"      X     X   ",
+	"    X     X     ",
+	"  X     X       ",
+	"                ",
+};
+
+static const char * spacePixmap_img[] = 
+{
+/* width height ncolors cpp [x_hot y_hot] */
+	"8 8 3 2 0 0",
+/* colors */
+	"  s none       m none  c none",
+	"O s iconColor1 m black c black",
+	"X s iconColor2 m black c #E0E0E0",
+/* pixels */
+	"                ",
+	"                ",
+ 	"                ",
+	"                ",
+	"                ",
+	"      X         ",
+	"      X X       ",
+	"                ",
+};
 
 TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completion)
         : QTextEdit(parent), m_editor(parent), m_mainImpl(mainimpl), m_completion(completion), m_mouseHidden(false)
@@ -67,6 +106,11 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_matchingBegin = -1;
     m_matchingEnd = -1;
     m_endLine = MainImpl::Default;
+    	m_tabPixmap		= QPixmap( tabPixmap_img ); 
+	m_spacePixmap		= QPixmap( spacePixmap_img ); 
+	m_showWhiteSpaces	= true;
+
+    
     connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));
     connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
     connect( document(), SIGNAL( contentsChange(int, int, int) ), this, SLOT( slotContentsChange(int, int, int) ));
@@ -126,6 +170,50 @@ void TextEdit::print()
         document()->print(&printer);
     }
 }
+
+void TextEdit::printWhiteSpaces( QPainter &p )
+{		
+	const int contentsY = verticalScrollBar()->value();
+	const qreal pageBottom = contentsY + viewport()->height();
+	const QFontMetrics fm = QFontMetrics( currentFont() );
+	
+	for ( QTextBlock block = document()->begin(); block.isValid(); block = block.next() )
+	{
+		QTextLayout* layout = block.layout();
+		const QRectF boundingRect = layout->boundingRect();
+		QPointF position = layout->position();
+		
+		if ( position.y() +boundingRect.height() < contentsY )
+			continue;
+		if ( position.y() > pageBottom )
+			break;
+		
+		const QString txt = block.text();
+		const int len = txt.length();
+		
+		for ( int i=0; i<len; i++)
+		{
+			QPixmap *p1 = 0;
+			
+			if (txt[i] == ' ' )
+				p1 = &m_spacePixmap;
+			else if (txt[i] == '\t' )
+				p1 = &m_tabPixmap;
+			else 
+				continue;
+			
+			// pixmaps are of size 8x8 pixels
+			QTextCursor cursor = textCursor();
+			cursor.setPosition( block.position() + i, QTextCursor::MoveAnchor);
+			
+			QRect r = cursorRect( cursor );
+			int x = r.x() + 4;
+			int y = r.y() + fm.height() / 2 - 5;
+			p.drawPixmap( x, y, *p1 );
+		}
+	}
+}
+
 //
 void TextEdit::completeCode()
 {
@@ -813,13 +901,14 @@ void TextEdit::paintEvent ( QPaintEvent * event )
         r.setWidth( viewport()->width() );
         painter.fillRect( r, QBrush( m_currentLineColor ) );
     }
-    painter.end();
-    //
+
+	if (m_showWhiteSpaces)
+		printWhiteSpaces( painter );
+		
     QTextEdit::paintEvent( event );
-    //
+
     if ( m_matchingBegin != -1 )
     {
-        painter.begin( viewport() );
         QFont f = font();
         f.setBold( true );
         painter.setFont( f );
@@ -828,13 +917,10 @@ void TextEdit::paintEvent ( QPaintEvent * event )
         cursor.setPosition(m_matchingBegin+1, QTextCursor::MoveAnchor);
         QRect r = cursorRect( cursor );
         painter.drawText(r.x()-2, r.y(), r.width(), r.height(), Qt::AlignLeft | Qt::AlignVCenter, m_plainText.at(m_matchingBegin));
-        //
         cursor.setPosition(m_matchingEnd+1, QTextCursor::MoveAnchor);
         r = cursorRect( cursor );
         painter.drawText(r.x()-2, r.y(), r.width(), r.height(), Qt::AlignLeft | Qt::AlignVCenter, m_plainText.at(m_matchingEnd));
-        painter.end();
     }
-    //
 }
 //
 void TextEdit::mouseMoveEvent( QMouseEvent * event )
