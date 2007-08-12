@@ -38,6 +38,8 @@ class Editor;
 class FindImpl;
 class CppHighlighter;
 class TextEditInterface;
+class QPixmap;
+
 //
 class TextEdit : public QTextEdit
 {
@@ -103,6 +105,8 @@ public:
     void gotoMatchingBracket();
     void textPlugin(TextEditInterface *iTextEdit);
     void print();
+    void printWhiteSpaces( QPainter &p );
+
     enum ActionComment
     {
         Toggle, Comment, Uncomment
@@ -157,12 +161,16 @@ private:
     bool m_autoCompletion;
     bool m_autobrackets;
     bool m_match;
+    bool m_showWhiteSpaces;
     QColor m_backgroundColor;
     QColor m_currentLineColor;
     QColor m_matchingColor;
     QAction *actionToggleBreakpoint;
     int m_lineNumber;
     bool m_mouseHidden;
+	QPixmap	m_tabPixmap;
+	QPixmap m_spacePixmap;
+
 protected:
     void resizeEvent( QResizeEvent* );
     void keyPressEvent ( QKeyEvent * event );
