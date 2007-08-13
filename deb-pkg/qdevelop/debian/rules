@@ -86,15 +86,14 @@ get-svn-source:
 	tar -czf ../tarballs/$(FILE_NAME) -C $(TMP_DIR)/ .
 	rm -fr $(TMP_DIR)
 
+# download upstream source, and repackage from zip to tar.gz
 get-orig-source:
 	rm -fr $(TMP_DIR)
 	mkdir -p $(TMP_DIR)
-	
-	wget -q -nc  -O  $(TMP_DIR)/qdevelop-upstream.zip  http://qdevelop.org/download/compteur.php3?soft=QDevelop-0.23-1.zip
+#	wget -q -nc  -O  $(TMP_DIR)/qdevelop-upstream.zip  http://qdevelop.org/download/compteur.php3?soft=qdevelop-$(VERSION_RELEASE).zip
+	wget -q -nc  -O  $(TMP_DIR)/qdevelop-upstream.zip  http://qdevelop.org/download/$(name)_$(VERSION_RELEASE).zip
 	unzip -q $(TMP_DIR)/qdevelop-upstream.zip -d $(TMP_DIR)
 	rm -f $(TMP_DIR)/qdevelop-upstream.zip
-	mv $(TMP_DIR)/QDevelop-0.23-1 $(TMP_DIR)/qdevelop-0.23
-	
 	tar -czf ../tarballs/$(FILE_NAME) -C $(TMP_DIR)/ .
 	rm -fr $(TMP_DIR)
 

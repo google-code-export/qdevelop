@@ -1,8 +1,8 @@
-qdevelop (0.24-0.1) unstable; urgency=low
+qdevelop (0.24-1) unstable; urgency=low
   
-  * test release, basing on a pre-release - not official
+  * New release
 
- -- Diego Iastrubni <elcuco@kde.org>  Tue,  31 Jul 2007 17:00:00 +0300
+ -- Diego Iastrubni <elcuco@kde.org>  Tue,  13 Aug 2007 17:00:00 +0300
 
 qdevelop (0.23-1) unstable; urgency=low
 
