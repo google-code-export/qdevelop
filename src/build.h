@@ -11,7 +11,7 @@ class Build : public QThread
 {
 Q_OBJECT
 public:
-	Build(QObject * parent, QString qmakeName, QString makename, QString absoluteProjectName, bool qmake, bool n, bool g, QString compileFile=0);
+	Build(QObject * parent, QString qmakeName, QString makename, QString makeOptions, QString absoluteProjectName, bool qmake, bool n, bool g, QString compileFile=0);
     void run();
     int nbErrors() { return m_errors; }
     int nbWarnings() { return m_warnings; }
@@ -27,6 +27,7 @@ private:
 	QString buildOnly( QString sourceFile );
 	QString m_qmakeName;
 	QString m_makeName;
+	QString m_makeOptions;
 	int m_errors;
 	int m_warnings;
 signals:

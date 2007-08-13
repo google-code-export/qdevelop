@@ -112,6 +112,7 @@ private:
 	int m_tabStopWidth;
 	QString m_qmakeName;
 	QString m_makeName;
+	QString m_makeOptions;
 	QString m_gdbName;
 	QString m_ctagsName;
 	QString m_linguistName;

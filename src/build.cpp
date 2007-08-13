@@ -28,7 +28,7 @@
 #include <QString>
 #include <QDir>
 //
-Build::Build(QObject * parent, QString qmakeName, QString makeName, QString absoluteProjectName, bool qmake, bool n, bool g, QString compileFile)
+Build::Build(QObject * parent, QString qmakeName, QString makeName, QString makeOptions, QString absoluteProjectName, bool qmake, bool n, bool g, QString compileFile)
 
 	: QThread(parent)
 {
@@ -37,6 +37,7 @@ Build::Build(QObject * parent, QString qmakeName, QString makeName, QString abso
 	m_qmakeName = qmakeName;
 	m_qmake = qmake;
 	m_makeName = makeName;
+	m_makeOptions = makeOptions;
 	m_projectDirectory = QFileInfo(absoluteProjectName).absolutePath();
 	m_projectName = QFileInfo(absoluteProjectName).fileName();
 	m_clean = n;
@@ -97,7 +98,7 @@ void Build::run()
 		else
 		{
 			emit message( QString("\n"+tr("Build")+" (make)...\n") );
-			m_buildProcess->start(m_makeName);
+			m_buildProcess->start(m_makeName, QStringList() << m_makeOptions.split(" ", QString::SkipEmptyParts));
 		}
     		if (!m_buildProcess->waitForFinished(800000))
 		{

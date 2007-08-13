@@ -959,21 +959,22 @@ void ProjectManager::slotAddSubProject(QTreeWidgetItem *it)
             }
         }
         if ( !item(it, "TEMPLATE", Key ) )
-            insertItem( insertItem(it, "TEMPLATE", "TEMPLATE"), "DATA", "subdirs" );
+            insertItem( insertItem(it, "TEMPLATE", "TEMPLATE", "="), "DATA", "subdirs" );
         QTreeWidgetItem *itSubdir = item(it, "SUBDIRS", Key);
         if ( !itSubdir )
-            itSubdir = insertItem(it, "SUBDIRS", "SUBDIRS");
+            itSubdir = insertItem(it, "SUBDIRS", "SUBDIRS", "=");
         itSubdir->setText(0, tr("Sub-Projects"));
         QTreeWidgetItem *subProjectItem = insertItem(itSubdir, "PROJECT", filename);
         insertItem(subProjectItem, "qmake", "1");
         insertItem(subProjectItem, "absoluteNameProjectFile", window->absoluteProjectName());
-        insertItem(subProjectItem, "projectDirectory", window->location->text());
+        insertItem(subProjectItem, "projectDirectory", window->location->text() + "/" + QFileInfo(window->projectName->text()).baseName());
         insertItem(subProjectItem, "subProjectName", filename.left(filename.lastIndexOf(".")));
         loadProject(window->absoluteProjectName(), subProjectItem);
         QTreeWidgetItem *itProject = itemProject(  window->filename() );
         setSrcDirectory(itProject, window->srcDirectory->text());
         setUiDirectory(itProject, window->uiDirectory->text());
-        m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
+        //m_parent->configureCompletion( projectDirectory(m_treeFiles->topLevelItem( 0 ) ) );
+        m_parent->configureCompletion( projectDirectory( window->location->text() + "/" + QFileInfo(window->projectName->text()).baseName() ) );
     }
     delete window;
 }
@@ -1390,7 +1391,7 @@ void ProjectManager::slotDeleteItem(QTreeWidgetItem *it, bool silentMode)
             QTreeWidgetItem *itTemplate = item(parent, "TEMPLATE", Key);
             if ( itTemplate )
                 delete itTemplate;
-            itTemplate  = insertItem(parent, "TEMPLATE", "TEMPLATE");
+            itTemplate  = insertItem(parent, "TEMPLATE", "TEMPLATE", "=");
             insertItem(itTemplate, "DATA", "app" );
         }
     }
@@ -1575,7 +1576,7 @@ void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
     //
     if ( findData(projectName, QString("TEMPLATE")).isEmpty() )
     {
-        QTreeWidgetItem *tmp = insertItem(itemProject, "TEMPLATE", "TEMPLATE");
+        QTreeWidgetItem *tmp = insertItem(itemProject, "TEMPLATE", "TEMPLATE", "=");
         insertItem(tmp, "DATA", "app");
     }
     return;
@@ -1712,7 +1713,6 @@ bool ProjectManager::saveDataOfProject(QTreeWidgetItem *it, QTextStream *s, int 
             newEndLine = " \\\n";
         else if ( i+1 == it->childCount() )
             newEndLine = "\n";
-qDebug() << it->child(i)->text(0) << toKey(it->child(i)->data(0, Qt::UserRole)) << newEndLine;
         saveDataOfProject(it->child(i), output, nbSpace+1, newEndLine);
     }
     if ( it->childCount() && key == "SCOPE" )

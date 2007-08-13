@@ -35,7 +35,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
     QColor back, bool prompt, QColor lc, bool bk, bool tc, int in, QString directory,
-    bool m, QColor mc, bool close, QString pd)
+    bool m, QColor mc, bool close, QString pd, QString mo)
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -61,6 +61,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
     closeButton->setChecked( close );
     projectsDirectory->setText( directory );
     pluginsDirectory->setText( pd );
+    makeOptions->setText( mo );
 	//
 	cppHighLighter = new CppHighlighter( 0 );
 	cppHighLighter->setPreprocessorFormat( pre );

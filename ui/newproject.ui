@@ -45,7 +45,7 @@
       <item row="2" column="0" >
        <widget class="QRadioButton" name="empty" >
         <property name="text" >
-         <string>Empty project</string>
+         <string>Empty or master project</string>
         </property>
        </widget>
       </item>
