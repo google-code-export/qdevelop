@@ -598,7 +598,7 @@ void MainImpl::slotOptions()
                                            m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion,
                                            m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets,
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
-                                           m_closeButtonInTabs, m_pluginsDirectory);
+                                           m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions);
 
     if ( options->exec() == QDialog::Accepted )
     {
@@ -621,6 +621,7 @@ void MainImpl::slotOptions()
         m_promptBeforeQuit = options->promptBeforeQuit->isChecked();
         m_projectsDirectory = options->projectsDirectory->text();
         m_pluginsDirectory = options->pluginsDirectory->text();
+        m_makeOptions = options->makeOptions->text();
         m_closeButtonInTabs = options->closeButton->isChecked();
         setCrossButton( !m_closeButtonInTabs );
         //
@@ -710,6 +711,7 @@ void MainImpl::saveINI()
     settings.setValue("m_matchingColor", m_matchingColor.name());
     settings.setValue("m_projectsDirectory", m_projectsDirectory);
     settings.setValue("m_pluginsDirectory", m_pluginsDirectory);
+    settings.setValue("m_makeOptions", m_makeOptions);
     //
     settings.setValue("m_formatPreprocessorText", m_formatPreprocessorText.foreground().color().name());
     settings.setValue("m_formatQtText", m_formatQtText.foreground().color().name());
@@ -817,6 +819,7 @@ QString MainImpl::loadINI()
     m_matchingColor = QColor(settings.value("m_matchingColor", m_matchingColor).toString());
     m_projectsDirectory = settings.value("m_projectsDirectory", m_projectsDirectory).toString();
     m_pluginsDirectory = settings.value("m_pluginsDirectory", m_pluginsDirectory).toString();
+    m_makeOptions = settings.value("m_makeOptions", m_makeOptions).toString();
     m_showTreeClasses = settings.value("m_showTreeClasses", m_showTreeClasses).toBool();
     m_closeButtonInTabs = settings.value("m_closeButtonInTabs", m_closeButtonInTabs).toBool();
     setCrossButton( !m_closeButtonInTabs );
@@ -1424,7 +1427,7 @@ void MainImpl::slotCompile()
         tabOutputs->setCurrentIndex( 0 );
         m_projectsDirectoriesList << editor->directory();
         QString projectDirectory = m_projectManager->fileDirectory(editor->filename() );
-        m_builder = new Build(this, m_qmakeName, m_makeName, projectDirectory+"/", false, false, true, editor->filename());
+        m_builder = new Build(this, m_qmakeName, m_makeName, m_makeOptions, projectDirectory+"/", false, false, true, editor->filename());
 
         connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
         connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
@@ -1475,7 +1478,7 @@ void MainImpl::slotBuild(bool clean, bool build)
     {
         m_configureCompletionNeeded = true;
     }
-    m_builder = new Build(this, m_qmakeName, m_makeName, projectDirectory+"/"+projectName, qmakeNeeded|m_clean, m_clean, m_build);
+    m_builder = new Build(this, m_qmakeName, m_makeName, m_makeOptions, projectDirectory+"/"+projectName, qmakeNeeded|m_clean, m_clean, m_build);
 
     connect(logBuild, SIGNAL(incErrors()), m_builder, SLOT(slotIncErrors()) );
     connect(logBuild, SIGNAL(incWarnings()), m_builder, SLOT(slotIncWarnings()) );

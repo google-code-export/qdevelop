@@ -98,7 +98,8 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_autoindent = true;
     m_autobrackets = true;
     setAcceptRichText( false );
-    setLineWrapMode( QTextEdit::NoWrap );
+    setLineWrapMode( QTextEdit::FixedPixelWidth );
+    setLineWrapColumnOrWidth( 65535 );
     m_findOptions = 0;
     m_findExp = "";
     m_findImpl = 0;
@@ -106,7 +107,7 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_matchingBegin = -1;
     m_matchingEnd = -1;
     m_endLine = MainImpl::Default;
-    	m_tabPixmap		= QPixmap( tabPixmap_img ); 
+    m_tabPixmap		= QPixmap( tabPixmap_img ); 
 	m_spacePixmap		= QPixmap( spacePixmap_img ); 
 	m_showWhiteSpaces	= true;
 

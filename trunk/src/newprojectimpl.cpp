@@ -58,7 +58,7 @@ void NewProjectImpl::slotChooseDirectory()
 //
 void NewProjectImpl::slotLabel()
 {
-    label->setText( label->text().section(":", 0, 0) + ": "	+ location->text() + "/" + projectName->text() );
+    //label->setText( label->text().section(":", 0, 0) + ": "	+ location->text() + "/" + projectName->text().toLower().remove(".pro") );
     if ( projectName->text().isEmpty() || location->text().isEmpty() )
     {
         okButton->setEnabled( false );
@@ -67,7 +67,7 @@ void NewProjectImpl::slotLabel()
     else
     {
         okButton->setEnabled( true );
-        label->setText( label->text().section(":", 0, 0) + ": "	+ location->text() + "/" + projectName->text() );
+        label->setText( label->text().section(":", 0, 0) + ": "	+ location->text() + "/" + QFileInfo(projectName->text()).baseName() );
     }
 }
 
