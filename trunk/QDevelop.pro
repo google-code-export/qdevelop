@@ -148,4 +148,5 @@ unix {
 }
 win32 {
   OBJECTS_DIR +=     build/o/win32
+  CONFIG -=          debug_and_release
 }
