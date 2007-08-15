@@ -26,6 +26,7 @@
 #include "ui_options.h"
 //
 class CppHighlighter;
+class QTextCodec;
 //
 class OptionsImpl : public QDialog, public Ui::Options
 {
@@ -37,17 +38,21 @@ public:
 		QTextCharFormat commMulti, QTextCharFormat guillemets, QTextCharFormat meth, 
 		QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
 		QColor back, bool prompt, bool hcl, QColor lc, bool bk, 
-		bool tc, int in, QString directory, bool m, QColor mc, bool close, QString pd, QString mo);
+		bool tc, int in, QString directory, bool m, QColor mc, bool close, QString pd, QString mo, int mi);
 	QFont font();
 	CppHighlighter *syntaxe() { return cppHighLighter; };
 	QColor backgroundColor();
 	QColor currentLineColor();
 	QColor matchingColor();
+	int mib();
 private:
 	CppHighlighter *cppHighLighter;
 	QColor m_backgroundColor;
     QColor m_colorCurrentLine;
     QColor m_matchingColor;
+	void findCodecs();
+	void setCodecList(const QList<QTextCodec *> &list, int m);
+    QList<QTextCodec *> codecs;
 private slots:
 	void slotChangeColor();
 	void slotDefault();

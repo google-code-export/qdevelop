@@ -27,6 +27,7 @@
 #include <QPalette>
 #include <QColorDialog>
 #include <QFileDialog>
+#include <QTextCodec>
 #include <QDebug>
 //
 OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool ind, 
@@ -35,7 +36,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
     QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool tc, int in, QString directory,
-    bool m, QColor mc, bool close, QString pd, QString mo)
+    bool m, QColor mc, bool close, QString pd, QString mo, int mi)
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -114,6 +115,9 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	connect(chooseProjectsDirectory, SIGNAL(clicked()), this, SLOT(slotChooseProjectsDirectory()));
 	connect(choosePluginsDirectory, SIGNAL(clicked()), this, SLOT(slotChoosePluginsDirectory()));
 	textEdit->setPlainText( textEdit->toPlainText() );
+
+    findCodecs();
+    setCodecList(codecs, mi);
 
 	// TODO remove gcc warnings
 	autoMask = false;
@@ -289,3 +293,56 @@ void OptionsImpl::slotChoosePluginsDirectory()
 	pluginsDirectory->setText( s );
 }
 //
+void OptionsImpl::findCodecs()
+{
+    QMap<QString, QTextCodec *> codecMap;
+    QRegExp iso8859RegExp("ISO[- ]8859-([0-9]+).*");
+
+    foreach (int mib, QTextCodec::availableMibs())
+    {
+        QTextCodec *codec = QTextCodec::codecForMib(mib);
+
+        QString sortKey = codec->name().toUpper();
+        int rank;
+
+        if (sortKey.startsWith("UTF-8"))
+        {
+            rank = 1;
+        }
+        else if (sortKey.startsWith("UTF-16"))
+        {
+            rank = 2;
+        }
+        else if (iso8859RegExp.exactMatch(sortKey))
+        {
+            if (iso8859RegExp.cap(1).size() == 1)
+                rank = 3;
+            else
+                rank = 4;
+        }
+        else
+        {
+            rank = 5;
+        }
+        sortKey.prepend(QChar('0' + rank));
+
+        codecMap.insert(sortKey, codec);
+    }
+    codecs = codecMap.values();
+}
+void OptionsImpl::setCodecList(const QList<QTextCodec *> &list, int m)
+{
+    encodingComboBox->clear();
+    foreach (QTextCodec *codec, list)
+    {
+    	encodingComboBox->addItem(codec->name(), codec->mibEnum());
+    	if( codec->mibEnum() == m )
+    		encodingComboBox->setCurrentIndex( encodingComboBox->count()-1 );
+   	}
+}
+//
+int OptionsImpl::mib()
+{
+    return encodingComboBox->itemData( encodingComboBox->currentIndex() ).toInt();
+}
+

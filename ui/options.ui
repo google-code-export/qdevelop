@@ -28,7 +28,7 @@
    <item row="0" column="0" >
     <widget class="QTabWidget" name="tabWidget" >
      <property name="currentIndex" >
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tabGeneral" >
       <attribute name="title" >
@@ -386,6 +386,13 @@
             </widget>
            </item>
            <item>
+            <widget class="QLabel" name="label_17" >
+             <property name="text" >
+              <string>Files encoding:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QCheckBox" name="groupHighlightCurrentLine" >
              <property name="text" >
               <string>Current line background</string>
@@ -472,6 +479,9 @@
               </widget>
              </item>
             </layout>
+           </item>
+           <item>
+            <widget class="QComboBox" name="encodingComboBox" />
            </item>
            <item>
             <layout class="QHBoxLayout" >
