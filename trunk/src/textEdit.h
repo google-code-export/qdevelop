@@ -90,6 +90,10 @@ public:
     {
         m_match = b;
     };
+    void setHighlightCurrentLine(bool b)
+    {
+        m_highlightCurrentLine = b;
+    }
     void setBackgroundColor( QColor c );
     void setCurrentLineColor( QColor c );
     void setMatchingColor( QColor c )
@@ -161,6 +165,7 @@ private:
     bool m_autoCompletion;
     bool m_autobrackets;
     bool m_match;
+    bool m_highlightCurrentLine;
     bool m_showWhiteSpaces;
     QColor m_backgroundColor;
     QColor m_currentLineColor;

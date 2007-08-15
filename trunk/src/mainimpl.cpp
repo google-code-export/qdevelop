@@ -91,6 +91,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_autoCompletion = true;
     m_autobrackets = true;
     m_match = true;
+    m_highlightCurrentLine = true;
     m_backgroundColor = Qt::white;
     m_promptBeforeQuit = false;
     m_currentLineColor = QColor(215,252,255);
@@ -596,7 +597,7 @@ void MainImpl::slotOptions()
                                            m_formatPreprocessorText, m_formatQtText, m_formatSingleComments,
                                            m_formatMultilineComments, m_formatQuotationText, m_formatMethods,
                                            m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion,
-                                           m_backgroundColor, m_promptBeforeQuit, m_currentLineColor, m_autobrackets,
+                                           m_backgroundColor, m_promptBeforeQuit, m_highlightCurrentLine, m_currentLineColor, m_autobrackets,
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
                                            m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions);
 
@@ -618,6 +619,7 @@ void MainImpl::slotOptions()
         m_autoCompletion = options->completion->isChecked();
         m_autobrackets = options->brackets->isChecked();
         m_match = options->match->isChecked();
+        m_highlightCurrentLine = options->groupHighlightCurrentLine->isChecked();
         m_promptBeforeQuit = options->promptBeforeQuit->isChecked();
         m_projectsDirectory = options->projectsDirectory->text();
         m_pluginsDirectory = options->pluginsDirectory->text();
@@ -633,14 +635,8 @@ void MainImpl::slotOptions()
         m_formatMethods = options->syntaxe()->functionFormat();
         m_formatKeywords = options->syntaxe()->keywordFormat();
         m_backgroundColor = options->backgroundColor();
-        if ( options->groupHighlightCurrentLine->isChecked() )
-            m_currentLineColor = options->currentLineColor();
-        else
-            m_currentLineColor = QColor();
-        if ( options->match->isChecked() )
-            m_matchingColor = options->matchingColor();
-        else
-            m_matchingColor = QColor();
+        m_currentLineColor = options->currentLineColor();
+        m_matchingColor = options->matchingColor();
         //
         for (int i=0; i<m_tabEditors->count(); i++)
         {
@@ -653,6 +649,7 @@ void MainImpl::slotOptions()
             editor->setLineNumbers( m_lineNumbers );
             editor->setAutoIndent( m_autoIndent );
             editor->setMatch( m_match );
+            editor->setHighlightCurrentLine( m_highlightCurrentLine );
             editor->setSelectionBorder( m_selectionBorder );
             editor->setAutoCompletion( m_autoCompletion );
             editor->setEndLine( m_endLine );
@@ -702,6 +699,7 @@ void MainImpl::saveINI()
     settings.setValue("m_autobrackets", m_autobrackets);
     settings.setValue("m_closeButtonInTabs", m_closeButtonInTabs);
     settings.setValue("m_match", m_match);
+    settings.setValue("m_highlightCurrentLine", m_highlightCurrentLine);
     settings.setValue("m_checkEnvironment", m_checkEnvironment);
     settings.setValue("m_checkEnvironmentOnStartup", m_checkEnvironmentOnStartup);
     settings.setValue("m_endLine", m_endLine);
@@ -814,6 +812,7 @@ QString MainImpl::loadINI()
     m_endLine = (EndLine)settings.value("m_endLine", m_endLine).toInt();
     m_tabSpaces = settings.value("m_tabSpaces", m_tabSpaces).toBool();
     m_match = settings.value("m_match", m_match).toBool();
+    m_highlightCurrentLine = settings.value("m_highlightCurrentLine", m_highlightCurrentLine).toBool();
     m_backgroundColor = QColor(settings.value("m_backgroundColor", m_backgroundColor).toString());
     m_currentLineColor = QColor(settings.value("m_currentLineColor", m_currentLineColor).toString());
     m_matchingColor = QColor(settings.value("m_matchingColor", m_matchingColor).toString());
@@ -1244,6 +1243,8 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     editor->setAutoCompletion( m_autoCompletion );
     editor->setAutobrackets( m_autobrackets );
     editor->setBackgroundColor( m_backgroundColor );
+    editor->setMatch( m_match );
+    editor->setHighlightCurrentLine( m_highlightCurrentLine );
     editor->setMatchingColor( m_matchingColor );
     editor->setCurrentLineColor( m_currentLineColor );
     editor->setSyntaxColors
@@ -2298,4 +2299,5 @@ void MainImpl::resetDebugAfterBuild()
 {
     m_debugAfterBuild = ExecuteNone;
 }
+
 

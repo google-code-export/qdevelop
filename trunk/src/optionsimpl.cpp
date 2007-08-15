@@ -34,7 +34,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat pre, QTextCharFormat qt, QTextCharFormat commSimples, 
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
-    QColor back, bool prompt, QColor lc, bool bk, bool tc, int in, QString directory,
+    QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool tc, int in, QString directory,
     bool m, QColor mc, bool close, QString pd, QString mo)
 	: QDialog(parent)
 {
@@ -52,16 +52,17 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	restore->setChecked( res );
 	endLine->setCurrentIndex( end );
 	tabSpaces->setChecked( spaces );
-    completion->setChecked( complete );
-    promptBeforeQuit->setChecked( prompt );
-    brackets->setChecked( bk );
-    showTreeClasses->setChecked( tc );
-    interval->setValue( in );
-    match->setChecked( m );
-    closeButton->setChecked( close );
-    projectsDirectory->setText( directory );
-    pluginsDirectory->setText( pd );
-    makeOptions->setText( mo );
+	completion->setChecked( complete );
+	promptBeforeQuit->setChecked( prompt );
+	brackets->setChecked( bk );
+	showTreeClasses->setChecked( tc );
+	interval->setValue( in );
+	match->setChecked( m );
+	groupHighlightCurrentLine->setChecked( hcl );
+	closeButton->setChecked( close );
+	projectsDirectory->setText( directory );
+	pluginsDirectory->setText( pd );
+	makeOptions->setText( mo );
 	//
 	cppHighLighter = new CppHighlighter( 0 );
 	cppHighLighter->setPreprocessorFormat( pre );
@@ -95,19 +96,9 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	pix.fill( mc );
 	matching->setIcon( pix );
 	m_matchingColor = mc;
-	if( lc.isValid() )
-	{
-		pix.fill( lc );
-		lineColor->setIcon( pix );
-		m_colorCurrentLine = lc;
-		groupHighlightCurrentLine->setChecked( true );
-		lineColor->setEnabled( true );
-	}
-	else
-	{
-		groupHighlightCurrentLine->setChecked( false );
-		lineColor->setEnabled( false );
-	}
+	pix.fill( lc );
+	lineColor->setIcon( pix );
+	m_colorCurrentLine = lc;
 	//
 	connect(preprocessor, SIGNAL(clicked()), this, SLOT(slotChangeColor())); 
 	connect(qtWords, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
@@ -250,20 +241,22 @@ void OptionsImpl::slotDefault()
 	m_matchingColor = Qt::red;
 	matching->setIcon( pix );
 	//
-	pix.fill( QColor(238,246,255) );
-	m_colorCurrentLine = QColor(238,246,255);
+	pix.fill( QColor(215,252,255) );
+	m_colorCurrentLine = QColor(215,252,255);
 	lineColor->setIcon( pix );
 	//
 	saveAll->setChecked( true );
 	restore->setChecked( true );
 	promptBeforeQuit->setChecked( false );
 	groupHighlightCurrentLine->setChecked( true );
+	//lineColor->setEnabled( true );
 	numbers->setChecked( true );
 	selectionBorder->setChecked( true );
 	completion->setChecked( true );
 	indent->setChecked( true );
 	brackets->setChecked( true );
 	highlight->setChecked( true );
+	match->setChecked( true );
 }
 //
 void OptionsImpl::slotChooseProjectsDirectory()
