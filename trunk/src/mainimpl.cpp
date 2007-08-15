@@ -108,6 +108,7 @@ MainImpl::MainImpl(QWidget * parent)
     crossButton = 0;
     m_pluginsDirectory = "";
     m_configureCompletionNeeded = false;
+    m_mibCodec = 106; // UTF-8 by default
     //
     m_formatPreprocessorText.setForeground(QColor(0,128,0));
     m_formatQtText.setForeground(Qt::blue);
@@ -599,7 +600,7 @@ void MainImpl::slotOptions()
                                            m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion,
                                            m_backgroundColor, m_promptBeforeQuit, m_highlightCurrentLine, m_currentLineColor, m_autobrackets,
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
-                                           m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions);
+                                           m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec);
 
     if ( options->exec() == QDialog::Accepted )
     {
@@ -637,6 +638,8 @@ void MainImpl::slotOptions()
         m_backgroundColor = options->backgroundColor();
         m_currentLineColor = options->currentLineColor();
         m_matchingColor = options->matchingColor();
+        m_mibCodec = options->mib();
+qDebug() << m_mibCodec;
         //
         for (int i=0; i<m_tabEditors->count(); i++)
         {
@@ -710,6 +713,7 @@ void MainImpl::saveINI()
     settings.setValue("m_projectsDirectory", m_projectsDirectory);
     settings.setValue("m_pluginsDirectory", m_pluginsDirectory);
     settings.setValue("m_makeOptions", m_makeOptions);
+    settings.setValue("m_mibCodec", m_mibCodec);
     //
     settings.setValue("m_formatPreprocessorText", m_formatPreprocessorText.foreground().color().name());
     settings.setValue("m_formatQtText", m_formatQtText.foreground().color().name());
@@ -825,6 +829,7 @@ QString MainImpl::loadINI()
     m_intervalUpdatingClasses = settings.value("m_intervalUpdatingClasses", m_intervalUpdatingClasses).toInt();
     if ( m_currentLineColor == Qt::black )
         m_currentLineColor = QColor();
+    m_mibCodec = settings.value("m_mibCodec", m_mibCodec).toInt();
     //
     m_formatPreprocessorText.setForeground( QColor(settings.value("m_formatPreprocessorText", m_formatPreprocessorText.foreground().color().name()).toString() ) );
     m_formatQtText.setForeground( QColor(settings.value("m_formatQtText", m_formatQtText.foreground().color().name()).toString() ) );

@@ -49,6 +49,7 @@
 #include <QTime>
 #include <QPrinter>
 #include <QTextLayout>
+#include <QTextCodec>
 
 static const char * tabPixmap_img[] = 
 {
@@ -401,9 +402,15 @@ bool TextEdit::open(bool silentMode, QString filename, QDateTime &lastModified)
             QMessageBox::critical(0, "QDevelop", tr("The file \"%1\" could not be loaded.").arg(filename),tr("Cancel") );
         return false;
     }
-    QTextStream in(&file);
+    QByteArray data = file.readAll();
+    QTextStream in(&data);
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    setPlainText(in.readAll());
+    int mib = m_mainImpl->mibCodec();
+    QTextCodec *codec = QTextCodec::codecForMib(mib);
+    in.setAutoDetectUnicode(false);
+    in.setCodec(codec);
+    QString decodedStr = in.readAll();
+    setPlainText(decodedStr);
     lastModified = QFileInfo( file ).lastModified();
     file.close();
     if ( m_lineNumbers )
@@ -652,13 +659,16 @@ bool TextEdit::save(QString filename, QDateTime &lastModified)
         if ( m_endLine == MainImpl::Windows )
             s.replace("\n", "\r\n");
     }
-    file.write( s.toLocal8Bit() );
+    int mib = m_mainImpl->mibCodec();
+    QTextCodec *codec = QTextCodec::codecForMib(mib);
+    QTextStream out(&file);
+    out.setCodec(codec);
+    out << s;
     file.close();
     QFile last( filename );
     lastModified = QFileInfo( last ).lastModified();
     QApplication::restoreOverrideCursor();
     document()->setModified( false );
-    //m_completion->initParse("", true, false);
     return true;
 }
 //

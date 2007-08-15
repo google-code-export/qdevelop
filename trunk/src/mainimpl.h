@@ -83,6 +83,7 @@ public:
 	Editor * givenEditor(int i);
 	void resetProjectsDirectoriesList();
 	void resetDebugAfterBuild();
+	int mibCodec() { return m_mibCodec;	}
 private:
 	// Functions
 	void createConnections();
@@ -154,6 +155,7 @@ private:
 	bool m_showTreeClasses;
 	InitCompletion *m_completion;
 	QAction *actionActiveBookmark;
+	int m_mibCodec;
 protected:
 	void closeEvent( QCloseEvent * event );
 private slots:
