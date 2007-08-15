@@ -115,6 +115,7 @@ public:
 	void setVerticalScrollBar(int s) { m_textEdit->verticalScrollBar()->setValue(s); };
 	void setAutobrackets(bool b) { m_textEdit->setAutobrackets(b); };
 	void setMatch(bool b) { m_textEdit->setMatch(b); };
+	void setHighlightCurrentLine(bool b) { m_textEdit->setHighlightCurrentLine(b); };
 	bool isModified() { return m_textEdit->document()->isModified(); };
 	void setFocus();
 	void replace();
@@ -126,8 +127,8 @@ public:
 	QList<int> bookmarksList();
 	QList<int> breakpointsList();
 	bool inQuotations(int position, QString text);
-    QString toPlainText() { return m_textEdit->toPlainText(); };
-    void insertText(QString text, int insertAfterLine) { m_textEdit->insertText(text, insertAfterLine); };
+	QString toPlainText() { return m_textEdit->toPlainText(); };
+	void insertText(QString text, int insertAfterLine) { m_textEdit->insertText(text, insertAfterLine); };
 	void setNameOtherFile(QString oldName, QString newName);
 	void methodsList();
 	//
@@ -168,22 +169,22 @@ private:
 	QToolButton *m_refreshButton;
 	QString m_nameOtherFile;
 	MainImpl *m_mainimpl;
-    QWidget *m_findWidget;
+	QWidget *m_findWidget;
 	TextEdit *m_textEdit;
 	QString m_filename;
 	Ui::FindWidget uiFind;
-    QTimer *autoHideTimer;
-    bool m_backward;
+	QTimer *autoHideTimer;
+	bool m_backward;
 	ReplaceOptions m_replaceOptions;
-    bool m_activeEditor;
-    QTimer m_timerUpdateClasses;
-    QTimer m_timerCheckLastModified;
-    bool m_showTreeClasses;
-    int m_intervalUpdatingClasses;
-    quint16 m_checksum;
-    InitCompletion *m_completion;
-    QDateTime m_lastModified;
-    void checkBookmarks();
+	bool m_activeEditor;
+	QTimer m_timerUpdateClasses;
+	QTimer m_timerCheckLastModified;
+	bool m_showTreeClasses;
+	int m_intervalUpdatingClasses;
+	quint16 m_checksum;
+	InitCompletion *m_completion;
+	QDateTime m_lastModified;
+	void checkBookmarks();
 protected:
 signals:
 	void editorModified(Editor *, bool);

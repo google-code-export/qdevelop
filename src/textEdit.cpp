@@ -57,7 +57,7 @@ static const char * tabPixmap_img[] =
 /* colors */
 	"  s none       m none  c none",
 	"O s iconColor1 m black c black",
-	"X s iconColor2 m black c #E0E0E0",
+	"X s iconColor2 m black c #D0D0D0",
 /* pixels */
 	"  X     X       ",
 	"    X     X     ",
@@ -76,7 +76,7 @@ static const char * spacePixmap_img[] =
 /* colors */
 	"  s none       m none  c none",
 	"O s iconColor1 m black c black",
-	"X s iconColor2 m black c #E0E0E0",
+	"X s iconColor2 m black c #D0D0D0",
 /* pixels */
 	"                ",
 	"                ",
@@ -104,6 +104,7 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_findExp = "";
     m_findImpl = 0;
     m_match = true;
+    m_highlightCurrentLine = true;
     m_matchingBegin = -1;
     m_matchingEnd = -1;
     m_endLine = MainImpl::Default;
@@ -895,7 +896,7 @@ void TextEdit::slotFind(Ui::FindWidget ui, QString ttf,QTextDocument::FindFlags 
 void TextEdit::paintEvent ( QPaintEvent * event )
 {
     QPainter painter( viewport() );
-    if ( m_currentLineColor.isValid() )
+    if ( m_highlightCurrentLine && m_currentLineColor.isValid() )
     {
         QRect r = cursorRect();
         r.setX( 0 );
@@ -1690,6 +1691,7 @@ void TextEdit::completionHelp()
     m_completion->initParse(c, true, true, true, name);
     m_completion->start();
 }
+
 
 
 

@@ -134,6 +134,7 @@ private:
 	bool m_autoCompletion;
 	bool m_autobrackets;
 	bool m_match;
+	bool m_highlightCurrentLine;
 	bool m_ctagsIsPresent;
 	bool m_configureCompletionNeeded;
 	QColor m_backgroundColor;
