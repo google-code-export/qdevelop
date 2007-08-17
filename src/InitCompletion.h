@@ -42,7 +42,7 @@ public:
 
 	void setTempFilePath (const QString &Path);	// Optionnal
 	void setCtagsCmdPath (const QString &cmdPath);
-	void addIncludes (QStringList includesPath);
+	void addIncludes (QStringList includesPath, QString projectDirectory);
 	void run();
 	QString className(const QString &text);
 	void initParse(const QString &text, bool showAllResults = false, bool emitResults = true, bool showDuplicateEntries = false, QString name="");
@@ -72,12 +72,20 @@ private:
 	QStringList includesList(const QString &parsedText);
 	QString includesPathList(const QString &parsedText);
 
+	TagList readFromDB(Expression exp, QString functionName);
+	void writeToDB(Expression exp, TagList list);
+	bool connectQDevelopDB(QString const& dbName);
+	void createTables();
+	
 	QStringList cpp_includes;
 	QString m_text;
 	bool m_showAllResults;
 	bool m_emitResults;
     bool m_showDuplicateEntries;
     QString m_name;
+    QString m_projectDirectory;
+public slots:
+	void slotModifiedClasse(QString classname);
 signals:
 	void completionList( TagList ); 
 	void completionHelpList( TagList ); 

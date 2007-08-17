@@ -347,6 +347,7 @@ void TreeClasses::deleteMarked(QTreeWidgetItem *current)
     {
         //delete current;
         m_listDeletion.append( current );
+		emit modifiedClasse( parsedItem.classname );
         return;
     }
     for (int i=0; i<current->childCount(); i++)
@@ -362,6 +363,7 @@ QTreeWidgetItem *TreeClasses::findAndCreate(QTreeWidgetItem *begin, QString pixn
     QTreeWidgetItem *newItem = findItem(begin, text, key, recursive);
     if ( !newItem  )
     {
+		emit modifiedClasse( parsedItem.classname );
         if ( begin )
             newItem = new QTreeWidgetItem( begin );
         else

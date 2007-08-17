@@ -39,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>686</width>
-     <height>19</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu" >
@@ -166,23 +166,6 @@
     <addaction name="separator" />
     <addaction name="actionQuit" />
    </widget>
-   <widget class="QMenu" name="menuTools" >
-    <property name="title" >
-     <string>Tools</string>
-    </property>
-    <widget class="QMenu" name="menuPluginsSettings" >
-     <property name="title" >
-      <string>Plugins settings</string>
-     </property>
-    </widget>
-    <addaction name="actionFindInFiles" />
-    <addaction name="actionOpenFile" />
-    <addaction name="separator" />
-    <addaction name="actionOptions" />
-    <addaction name="actionExternalTools" />
-    <addaction name="actionConfigureShortcuts" />
-    <addaction name="menuPluginsSettings" />
-   </widget>
    <widget class="QMenu" name="menuBookmarks" >
     <property name="title" >
      <string>Bookmarks</string>
@@ -219,6 +202,24 @@
     <addaction name="actionAddExistingFiles" />
     <addaction name="separator" />
     <addaction name="actionProjectPropertie" />
+   </widget>
+   <widget class="QMenu" name="menuTools" >
+    <property name="title" >
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuPluginsSettings" >
+     <property name="title" >
+      <string>Plugins settings</string>
+     </property>
+    </widget>
+    <addaction name="actionFindInFiles" />
+    <addaction name="actionOpenFile" />
+    <addaction name="separator" />
+    <addaction name="actionOptions" />
+    <addaction name="actionExternalTools" />
+    <addaction name="actionConfigureShortcuts" />
+    <addaction name="actionNewQtVersion" />
+    <addaction name="menuPluginsSettings" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -301,7 +302,6 @@
            <property name="readOnly" >
             <bool>true</bool>
            </property>
-	   
           </widget>
          </item>
         </layout>
@@ -325,9 +325,9 @@
            <property name="tabPosition" >
             <enum>QTabWidget::South</enum>
            </property>
-	   <property name="tabShape" >
-	     <enum>QTabWidget::Triangular</enum>
-	   </property>
+           <property name="tabShape" >
+            <enum>QTabWidget::Triangular</enum>
+           </property>
            <property name="currentIndex" >
             <number>0</number>
            </property>
@@ -344,11 +344,6 @@
              </property>
              <item row="0" column="0" >
               <widget class="QTextEdit" name="logDebug" >
-	      
-	      <property name="frameShape" >
-	      <enum>QFrame::NoFrame</enum>
-	      </property>
-	      
                <property name="sizePolicy" >
                 <sizepolicy>
                  <hsizetype>5</hsizetype>
@@ -364,6 +359,9 @@
                </property>
                <property name="toolTip" >
                 <string/>
+               </property>
+               <property name="frameShape" >
+                <enum>QFrame::NoFrame</enum>
                </property>
                <property name="readOnly" >
                 <bool>true</bool>
@@ -1509,6 +1507,11 @@
     <string>Goto Declaration</string>
    </property>
   </action>
+  <action name="actionNewQtVersion" >
+   <property name="text" >
+    <string>Define new Qt version</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -1522,12 +1525,11 @@
    <header>treeproject.h</header>
    <container>1</container>
   </customwidget>
-    <customwidget>
-     <class>LogBuild</class>
-     <extends>QTextEdit</extends>
-     <header>logbuild.h</header>
-    </customwidget>
-  
+  <customwidget>
+   <class>LogBuild</class>
+   <extends>QTextEdit</extends>
+   <header>logbuild.h</header>
+  </customwidget>
  </customwidgets>
  <resources>
   <include location="../resources/resources.qrc" />

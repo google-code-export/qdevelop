@@ -81,7 +81,6 @@ MainImpl::MainImpl(QWidget * parent)
     m_restoreOnStart = true;
     m_projectManager = 0;
     m_debug = 0;
-    //m_timer = 0;
     m_debugAfterBuild = ExecuteNone;
     m_buildAfterDebug = false;
     m_checkEnvironment = true;
@@ -256,7 +255,7 @@ void MainImpl::configureCompletion(QString projectDirectory)
 #endif
     m_completion->setTempFilePath( QDir::tempPath() );
     m_completion->setCtagsCmdPath( ctagsName() );
-    m_completion->addIncludes( includes );
+    m_completion->addIncludes( includes, projectDirectory);
     m_completion->initParse("", true, false);
     m_completion->start();
     m_configureCompletionNeeded = false;
@@ -376,6 +375,7 @@ void MainImpl::createConnections()
     connect(actionPreviousBookmark, SIGNAL(triggered()), this, SLOT(slotPreviousBookmark()) );
     connect(actionClearAllBookmarks, SIGNAL(triggered()), this, SLOT(slotClearAllBookmarks()) );
     connect(actionOpenFile, SIGNAL(triggered()), this, SLOT(slotOpenFile()) );
+    connect(actionNewQtVersion, SIGNAL(triggered()), this, SLOT(slotNewQtVersion()) );
     //
     m_projectGroup = new QActionGroup( this );
     m_projectGroup->addAction( actionCloseProject );
@@ -1010,6 +1010,7 @@ bool MainImpl::openProject(QString s)
     if ( m_completion )
         delete m_completion;
     m_completion = new InitCompletion (this);
+    connect(treeClasses, SIGNAL(modifiedClasse(QString)),  m_completion, SLOT(slotModifiedClasse(QString)) );
     configureCompletion( QFileInfo(s).absoluteDir().path() );
     m_projectManager = new ProjectManager(this, treeFiles, treeClasses);
     m_projectManager->init(s);
@@ -2304,5 +2305,16 @@ void MainImpl::resetDebugAfterBuild()
 {
     m_debugAfterBuild = ExecuteNone;
 }
-
+//
+void MainImpl::slotNewQtVersion()
+{
+	QSqlDatabase database;
+	QSqlDatabase::database().close();
+#ifdef Q_OS_WIN32
+	QFile::remove(QDir::homePath()+"/Application Data/qdevelop.db");
+#else
+	QFile::remove(QDir::homePath()+"/qdevelop.db");
+#endif
+	QMessageBox::information(this, "QDevelop", "Completion database correctly deleted");
+}
 

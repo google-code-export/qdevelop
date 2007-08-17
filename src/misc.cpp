@@ -35,7 +35,6 @@ QAction* variantToAction( QVariant variant )
 bool connectDB(QString const& dbName)
 {
 	QSqlDatabase database;
-	
 	if( QSqlDatabase::database().databaseName() != dbName )
 	{
 		database = QSqlDatabase::addDatabase("QSQLITE");

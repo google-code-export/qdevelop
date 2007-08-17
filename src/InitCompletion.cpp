@@ -10,12 +10,19 @@
 #include "./QIComplete/parse.h"
 #include "./QIComplete/readtags.h"
 #include "./QIComplete/tree.h"
+#include "misc.h"
 
 #include <QDir>
 #include <QProcess>
 #include <QLibraryInfo>
 #include <QMetaType>
-#include <QTemporaryFile> // jlbrd
+#include <QTemporaryFile> 
+#include <QSqlDatabase> 
+#include <QSqlQuery> 
+#include <QSqlError> 
+#include <QMessageBox> 
+#include <QVariant> 
+#include <QMetaType> 
 
 #ifdef _WIN32
 #define NEW_LINE "\r\n"
@@ -47,7 +54,7 @@ void InitCompletion::setTempFilePath (const QString &Path)
     parsedFilePath = Path + '/' + "parsed_file";
 }
 
-void InitCompletion::addIncludes (QStringList includesPath)
+void InitCompletion::addIncludes (QStringList includesPath, QString projectDirectory)
 {
     QDir dir;
     QFileInfoList list;
@@ -62,6 +69,7 @@ void InitCompletion::addIncludes (QStringList includesPath)
         for (int j = 0; j < list.size(); ++j)
             includesPath.insert(i+1, list[j].absoluteFilePath());
     }
+    m_projectDirectory = projectDirectory;
 }
 
 QStringList InitCompletion::includesList(const QString &parsedText)
@@ -210,37 +218,64 @@ void InitCompletion::run()
     Scope sc;
     Expression exp = getExpression(m_text, sc, m_showAllResults);
     /* we have all relevant information, so just list the entries */
+	TagList list, newList, listForDB;
     if (exp.access != ParseError && m_emitResults)
     {
-        TagList list = Tree::findEntries(&exp, &sc);
-        TagList newList;
-        for (int i=0; i<list.count(); i++)
-        {
-            /* The file created by ctags can contain entries badly created with "Q_REQUIRED_RESULT" in name field.
-            For these entries, we try to find the good informations in other fields.
-            */
-            if ( list[i].name=="Q_REQUIRED_RESULT" )
-            {
-                if ( list[i].longName.contains("(") && !list[i].longName.contains("="))
-                {
-                    list[i].name = list[i].longName.remove("const ").section(" ", 1, 1).section("(", 0, 0);
-                    list[i].kind = "function";
-                    list[i].parameters = list[i].signature = "(" + list[i].longName.section("(", 1, 1).section(")", -2, -2) + ")";
-                    list[i].access = "public";
-                    list[i].isFunction = true;
-                }
-            }
-            if ( !m_name.isEmpty() && m_name != list[i].name )
-                continue;
-            if ( i+1<list.count() && list[i+1].name == list[i].name && m_name.isEmpty())
-                continue;
-            newList << list[i];
-        }
-        if ( m_name.isEmpty() )
-            emit completionList( newList );
-        else
-            emit completionHelpList( newList );
-    }
+		if( !exp.className.isEmpty() )
+		{
+			// Try to read from database
+			list = readFromDB(exp, m_name.simplified());
+			// If the list is empty, the classe is not present in database
+			if( list.isEmpty() )
+			{
+				// Populate the list by reading the tag file on disk
+	        	list = Tree::findEntries(&exp, &sc);
+		        for (int i=0; i<list.count(); i++)
+		        {
+		            /* The file created by ctags can contain entries badly created with "Q_REQUIRED_RESULT" in name field.
+		            For these entries, we try to find the good informations in other fields.
+		            */
+		            if ( list[i].name=="Q_REQUIRED_RESULT" )
+		            {
+		                if ( list[i].longName.contains("(") && !list[i].longName.contains("="))
+		                {
+		                    list[i].name = list[i].longName.remove("const ").section(" ", 1, 1).section("(", 0, 0);
+		                    list[i].kind = "function";
+		                    list[i].parameters = list[i].signature = "(" + list[i].longName.section("(", 1, 1).section(")", -2, -2) + ")";
+		                    list[i].access = "public";
+		                    list[i].isFunction = true;
+		                }
+		            }
+		            if ( list[i].name=="Q_REQUIRED_RESULT" )
+		            	continue;
+		            if ( !m_name.simplified().isEmpty() && m_name.simplified() != list[i].name )
+		                continue;
+		            listForDB << list[i];
+		            if ( i+1<list.count() && list[i+1].name == list[i].name && m_name.simplified().isEmpty())
+		            {
+		                continue;
+	            	}
+		            newList << list[i];
+	            }
+		        if ( m_name.simplified().isEmpty() )
+		            emit completionList( newList );
+		        else
+		            emit completionHelpList( newList );
+	        	// Then save list in database to reuse after.
+	        	if( m_name.simplified().isEmpty() )
+	        	{
+	       			writeToDB(exp, listForDB);
+        		}
+	        }
+	        else
+	        {
+		        if ( m_name.isEmpty() )
+		            emit completionList( list );
+		        else
+		            emit completionHelpList( list );
+        	}
+		}
+	}
 }
 
 QString InitCompletion::className(const QString &text)
@@ -294,3 +329,206 @@ QFile* InitCompletion::getFiledescriptor(const QString &filename, QString &fulln
     delete fd;
     return NULL;
 }
+//
+TagList InitCompletion::readFromDB(Expression exp, QString functionName)
+{
+	TagList list;
+#ifdef Q_OS_WIN32
+	if( exp.className.at(0) == 'Q' ) // Certainly a Qt classe
+	{
+		if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
+		{
+			return TagList();
+		}
+	}
+	else
+	{
+	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
+	    {
+			return TagList();
+    	}
+	}
+	createTables();
+#else
+	if( exp.className.at(0) == 'Q' ) // Certainly a Qt classe
+	{
+		if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
+		{
+			return TagList();
+		}
+	}
+	else
+	{
+	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
+	    {
+			return TagList();
+    	}
+	}
+	createTables();
+#endif
+    QSqlQuery query;
+    query.exec("BEGIN TRANSACTION;");
+    QString queryString = QString()
+                          + "select * from tags where class='"+exp.className+"'";
+    if( !functionName.simplified().isEmpty() )
+    {
+    	queryString += " and name='" + functionName + "'";
+   	}
+    query.exec(queryString);
+    while (query.next())
+    {
+    	Tag tag;
+    	tag.name = query.value(1).toString().replace("$", "'");
+    	tag.parameters = query.value(2).toString().replace("$", "'");
+    	tag.longName = query.value(3).toString().replace("$", "'");
+    	tag.kind = query.value(4).toString().replace("$", "'");
+    	tag.access = query.value(5).toString().replace("$", "'");
+    	tag.signature = query.value(6).toString().replace("$", "'");
+    	tag.isFunction = query.value(7).toInt();
+    	if( list.count() && functionName.simplified().isEmpty())
+    	{
+	    	Tag lastTag = list.last();
+	    	if( lastTag.name == tag.name )
+	    		list.pop_back();
+   		}
+    	list << tag;
+    }
+	return list;
+}
+//
+bool InitCompletion::connectQDevelopDB(QString const& dbName)
+{
+	QSqlDatabase database;
+	
+	if( QSqlDatabase::database().databaseName() != dbName )
+	{
+		database = QSqlDatabase::addDatabase("QSQLITE");
+		database.setDatabaseName(dbName);
+	}
+	else
+	{
+		database = QSqlDatabase::database();
+		if ( database.isOpen() )
+			return true;
+	}
+	//
+    if (!database.open()) {
+        QMessageBox::critical(0, "QDevelop",
+            QObject::tr("Unable to establish a database connection.")+"\n"+
+                     QObject::tr("QDevelop needs SQLite support. Please read "
+                     "the Qt SQL driver documentation for information how "
+                     "to build it."), QMessageBox::Cancel,
+                     QMessageBox::NoButton);
+        return false;
+    }
+    return true;
+}
+//
+void InitCompletion::writeToDB(Expression exp, TagList list)
+{
+#ifdef Q_OS_WIN32
+	if( exp.className.at(0) == 'Q' ) // Certainly a Qt classe
+	{
+		if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
+		{
+			return;
+		}
+	}
+	else
+	{
+	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
+	    {
+			return;
+    	}
+	}
+	createTables();
+#else
+	if( exp.className.at(0) == 'Q' ) // Certainly a Qt classe
+	{
+		if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
+		{
+			return;
+		}
+	}
+	else
+	{
+	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
+	    {
+			return;
+    	}
+	}
+	createTables();
+#endif
+    QSqlQuery query;
+    query.exec("BEGIN TRANSACTION;");
+    foreach(Tag tag, list)
+    {
+        QString queryString = "insert into tags values(";
+        queryString = queryString
+                      + "'" + exp.className.replace("'", "$") + "', "
+                      + "'" + tag.name.replace("'", "$") + "', "
+                      + "'" + tag.parameters.replace("'", "$") + "', "
+                      + "'" + tag.longName.replace("'", "$") + "', "
+                      + "'" + tag.kind.replace("'", "$") + "', "
+                      + "'" + tag.access.replace("'", "$") + "', "
+                      + "'" + tag.signature.replace("'", "$") + "', "
+                      + "'" + QString::number(tag.isFunction) + "')";
+        bool rc = query.exec(queryString);
+        if (rc == false)
+        {
+            qDebug() << "Failed to insert record to db" << query.lastError();
+            qDebug() << queryString;
+            exit(0);
+        }
+    }
+    query.exec("END TRANSACTION;");
+}
+//
+void InitCompletion::slotModifiedClasse(QString classname)
+{
+#ifdef Q_OS_WIN32
+	if( classname.at(0) == 'Q' ) // Certainly a Qt classe
+		if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
+			return;
+	else
+	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
+	    	return;
+#else
+	if( classname.at(0) == 'Q' ) 
+		if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
+			return;
+	else
+	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
+	    	return;
+#endif
+	createTables();
+    QSqlQuery query;
+    query.exec("BEGIN TRANSACTION;");
+    QString queryString = QString()
+                          + "delete from tags where class='"+classname+"'";
+    bool rc = query.exec(queryString);
+    if (rc == false)
+    {
+        qDebug() << "Failed delete from db" << query.lastError();
+        qDebug() << queryString;
+        exit(0);
+    }
+    query.exec("END TRANSACTION;");
+}
+void InitCompletion::createTables()
+{
+	QSqlQuery query;
+	QString queryString = "create table tags ("
+	    "class string,"
+	    "name string,"
+	    "parameters string,"
+	    "longName string,"
+	    "kind string,"
+	    "access string,"
+	    "signature string,"
+	    "isFunction int"
+	    ")";
+	
+	query.exec(queryString);
+}
+//

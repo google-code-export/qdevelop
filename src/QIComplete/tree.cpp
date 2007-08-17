@@ -365,7 +365,10 @@ TagList Tree::findEntries(const Expression * exp, const Scope * scope)
 
 					if ( ( exp->writing.length() && exp->writing[0] == 0 )
 					        || tag.name.startsWith(exp->writing))
-						TagList << tag;
+					        {
+								TagList << tag;
+					        	
+				        	}
 				}
 			}
 			while (tagsNext(tfile, &entry) == TagSuccess);
