@@ -1697,6 +1697,8 @@ void TextEdit::completionHelp()
     if( c.right(1) == "(" )
     	c = c.left( c.count()-1 );
     QString name = wordUnderCursor(c);
+	if( QString(":if:else:for:return:connect:while:do:").contains( name ) )
+		return;
     c = c.section(name, 0, 0);
     m_completion->initParse(c, true, true, true, name);
     m_completion->start();
