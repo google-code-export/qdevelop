@@ -1,3 +1,26 @@
+/*
+* This file is part of QDevelop, an open-source cross-platform IDE
+* Copyright (C) 2007  Jean-Luc Biord
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program; if not, write to the Free Software
+* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*
+* Contact e-mail: Jean-Luc Biord <jl.biord@free.fr>
+* Program URL   : http://qdevelop.org
+*
+*/
+
 #include "addnewclassvariableimpl.h"
 #include "mainimpl.h"
 #include "treeclasses.h"
@@ -113,7 +136,7 @@ void AddNewClassVariableImpl::insertInDeclaration(QString scope, QString inserte
     int indexScope = -1;
     int indexBracket = -1;
     int indexQ_OBJECT = -1;
-    for (int ind = m_declaration.section("|", 1, 1).toInt(); lines.count()>0, ind<lines.count(); ind++)
+    for (int ind = m_declaration.section("|", 1, 1).toInt(); lines.count()>0 && ind<lines.count(); ind++)
     {
         QString s = lines.at( ind );
         if ( s.remove(" ").startsWith( scope.simplified()+":" ) )
@@ -206,4 +229,5 @@ void AddNewClassVariableImpl::on_variableName_textChanged(QString )
     setName->setText( "set"+variableName->text().toUpper().left(1)+variableName->text().mid(1) );
     getName->setText( "get"+variableName->text().toUpper().left(1)+variableName->text().mid(1) );
 }
+
 

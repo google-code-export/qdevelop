@@ -531,4 +531,3 @@ void InitCompletion::createTables()
 	
 	query.exec(queryString);
 }
-//
