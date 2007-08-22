@@ -484,8 +484,15 @@ void InitCompletion::writeToDB(Expression exp, TagList list)
     query.exec("END TRANSACTION;");
 }
 //
+
 void InitCompletion::slotModifiedClasse(QString classname)
 {
+	if (classname.isEmpty() || classname.isNull() )
+	{
+		qDebug( "trying to init completion on a null class name");
+		return;
+	}
+		
 #ifdef Q_OS_WIN32
 	if( classname.at(0) == 'Q' ) // Certainly a Qt classe
 		if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
@@ -515,6 +522,7 @@ void InitCompletion::slotModifiedClasse(QString classname)
     }
     query.exec("END TRANSACTION;");
 }
+
 void InitCompletion::createTables()
 {
 	QSqlQuery query;
