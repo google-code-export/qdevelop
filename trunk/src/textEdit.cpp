@@ -117,6 +117,7 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));
     connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
     connect( document(), SIGNAL( contentsChange(int, int, int) ), this, SLOT( slotContentsChange(int, int, int) ));
+    connect(this, SIGNAL(initParse(QString, QString, bool, bool, bool, QString, bool)), m_completion, SLOT(slotInitParse(QString, QString, bool, bool, bool, QString, bool)) );
     actionToggleBreakpoint = new QAction(this);
     actionToggleBreakpoint->setShortcut( Qt::Key_F9 );
     connect(actionToggleBreakpoint, SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
@@ -220,6 +221,11 @@ void TextEdit::printWhiteSpaces( QPainter &p )
 //
 void TextEdit::completeCode()
 {
+    if ( m_mainImpl->buildQtDatabase() )
+    {
+    	QMessageBox::warning(m_mainImpl, "QDevelop", tr("The Qt database building is in progress.\nTry to complete code later."));
+        return;
+   	}
     if ( !m_completion )
         return;
     QString c = m_plainText.left(textCursor().position());
@@ -230,15 +236,15 @@ void TextEdit::completeCode()
    	}
     if ( m_completion->isRunning() )
     {
-        m_completion->setEmitResults( false );
-        m_completion->wait();
+        //m_completion->setEmitResults( false );
+        //m_completion->wait();
     }
     if ( c.simplified().right(2) != "::" && c.simplified().right(2) != "->" && c.simplified().right(1) != "." && c.simplified().right(1) != "(" )
     {
         c += "this->";
     }
-    m_completion->initParse(c, true, true, false);
-    m_completion->start();
+    emit initParse(m_editor->filename(), c, true, true, false, QString(), false);
+    //m_completion->start();
 }
 
 void TextEdit::slotCompletionList(TagList TagList)
@@ -415,10 +421,10 @@ bool TextEdit::open(bool silentMode, QString filename, QDateTime &lastModified)
     file.close();
     if ( m_lineNumbers )
         m_lineNumbers->setDigitNumbers( QString::number(linesCount()).length() );
-    if ( m_completion )
+    if ( m_completion  && !m_mainImpl->buildQtDatabase() )
     {
-        m_completion->initParse(toPlainText(), true, false);
-        m_completion->start();
+        emit initParse(m_editor->filename(), toPlainText(), true, false, false, QString(), false);
+        //m_completion->start();
     }
     QApplication::restoreOverrideCursor();
     return true;
@@ -1690,8 +1696,8 @@ void TextEdit::completionHelp()
         return;
     if ( m_completion->isRunning() )
     {
-        m_completion->setEmitResults( false );
-        m_completion->wait();
+       // m_completion->setEmitResults( false );
+       // m_completion->wait();
     }
     QString c = m_plainText.left(textCursor().position()).simplified();
     if( c.right(1) == "(" )
@@ -1700,8 +1706,8 @@ void TextEdit::completionHelp()
 	if( QString(":if:else:for:return:connect:while:do:").contains( name ) )
 		return;
     c = c.section(name, 0, 0);
-    m_completion->initParse(c, true, true, true, name);
-    m_completion->start();
+    emit initParse(m_editor->filename(), c, true, true, true, name, false);
+    //m_completion->start();
 }
 
 

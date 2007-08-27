@@ -113,5 +113,7 @@ int main(int argc, char *argv[])
 	splash = 0;
 	//
 	app.connect( &app, SIGNAL( lastWindowClosed() ), &app, SLOT( quit() ) );
+	main.checkQtDatabase();
 	return app.exec();
 }
+

@@ -23,6 +23,7 @@
 #include <QMessageBox> 
 #include <QVariant> 
 #include <QMetaType> 
+#include <QCoreApplication> 
 
 #ifdef _WIN32
 #define NEW_LINE "\r\n"
@@ -34,24 +35,55 @@ InitCompletion::InitCompletion (QObject *parent)
         : QThread(parent)
 {
     qRegisterMetaType<TagList>("TagList");
-    setTempFilePath(QDir::tempPath());
+    m_stopRequired = false;
 }
 //
-void InitCompletion::initParse(const QString &text, bool showAllResults, bool emitResults, bool showDuplicateEntries, QString name)
+InitCompletion::~InitCompletion()
 {
-    m_text = text;
-    m_showAllResults = showAllResults;
-    m_emitResults = emitResults;
-    m_showDuplicateEntries = showDuplicateEntries;
-    m_name = name;
+	QStringList list = QDir( QDir::tempPath() ).entryList(QStringList() << "qdevelop-completion-*", QDir::Files);
+	foreach(QString file, list)
+	{
+		QFile( QDir::tempPath()+"/"+file ).remove();
+	}
+	if( m_stopRequired )
+	{
+		#ifdef Q_OS_WIN32
+			if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
+			{
+				return;
+			}
+			createTables();
+		#else
+			if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
+			{
+				return;
+			}
+			createTables();
+		#endif
+		    QSqlQuery query;
+		    query.exec("BEGIN TRANSACTION;");
+	        QString queryString = "delete from tags";
+	        query.exec(queryString);
+		    query.exec("END TRANSACTION;");
+	}
 }
-
-void InitCompletion::setTempFilePath (const QString &Path)
+//
+void InitCompletion::slotInitParse(QString filename, const QString &text, bool showAllResults, bool emitResults, bool showDuplicateEntries, QString name, bool checkQt)
 {
-    tagsIncludesPath = Path + '/' + "tags_includes";
-    tagsFilePath = Path + '/' + "tags";
-    smallTagsFilePath = Path + '/' + "small-tags";
-    parsedFilePath = Path + '/' + "parsed_file";
+
+    m_text = text;
+    m_emitResults = emitResults;
+    m_showAllResults = showAllResults;
+    m_name = name;
+    m_checkQt = checkQt;
+    
+	QString Path = QDir::tempPath();
+    tagsIncludesPath = Path + '/' + "qdevelop-completion-" + QFileInfo(filename).baseName() + "-tags_includes";
+    tagsFilePath = Path + '/' + "qdevelop-completion-" + QFileInfo(filename).baseName() + "-tags";
+    smallTagsFilePath = Path + '/' + "qdevelop-completion-" + QFileInfo(filename).baseName() + "-small-tags";
+    parsedFilePath = Path + '/' + "qdevelop-completion-" + QFileInfo(filename).baseName() + "-parsed_file";
+
+    this->start();
 }
 
 void InitCompletion::addIncludes (QStringList includesPath, QString projectDirectory)
@@ -215,11 +247,23 @@ Expression InitCompletion::getExpression(const QString &text, Scope &sc, bool sh
 
 void InitCompletion::run()
 {
+	if( m_checkQt )
+	{
+    	Expression exp;
+    	exp.className = "QString";
+		TagList list = readFromDB(exp, QString());
+		if( list.count() )
+		{
+			return;
+		}
+		populateQtDatabase();
+		return;			
+	}
     Scope sc;
     Expression exp = getExpression(m_text, sc, m_showAllResults);
     /* we have all relevant information, so just list the entries */
 	TagList list, newList, listForDB;
-    if (exp.access != ParseError && m_emitResults)
+    if (exp.access != ParseError && ( m_emitResults || m_checkQt ))
     {
 		if( !exp.className.isEmpty() )
 		{
@@ -257,14 +301,33 @@ void InitCompletion::run()
 	            	}
 		            newList << list[i];
 	            }
-		        if ( m_name.simplified().isEmpty() )
-		            emit completionList( newList );
-		        else
-		            emit completionHelpList( newList );
+	            if( !m_checkQt )
+	            {
+			        if ( m_name.simplified().isEmpty() )
+			            emit completionList( newList );
+			        else
+			            emit completionHelpList( newList );
+            	}
 	        	// Then save list in database to reuse after.
 	        	if( m_name.simplified().isEmpty() )
 	        	{
-	       			writeToDB(exp, listForDB);
+				#ifdef Q_OS_WIN32
+				    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
+				    {
+						return;
+			    	}
+					createTables();
+				#else
+				    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
+				    {
+						return;
+			    	}
+					createTables();
+				#endif
+				    QSqlQuery query;
+				    query.exec("BEGIN TRANSACTION;");
+	       			writeToDB(exp, listForDB, query);
+				    query.exec("END TRANSACTION;");
         		}
 	        }
 	        else
@@ -334,7 +397,7 @@ TagList InitCompletion::readFromDB(Expression exp, QString functionName)
 {
 	TagList list;
 #ifdef Q_OS_WIN32
-	if( exp.className.at(0) == 'Q' ) // Certainly a Qt classe
+	if( exp.className.length() > 1 && exp.className.at(0) == 'Q' && exp.className.at(1).isUpper() ) // Certainly a Qt classe
 	{
 		if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
 		{
@@ -350,7 +413,7 @@ TagList InitCompletion::readFromDB(Expression exp, QString functionName)
 	}
 	createTables();
 #else
-	if( exp.className.at(0) == 'Q' ) // Certainly a Qt classe
+	if( exp.className.length() > 1 && exp.className.at(0) == 'Q' && exp.className.at(1).isUpper() ) // Certainly a Qt classe
 	{
 		if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
 		{
@@ -424,43 +487,8 @@ bool InitCompletion::connectQDevelopDB(QString const& dbName)
     return true;
 }
 //
-void InitCompletion::writeToDB(Expression exp, TagList list)
+void InitCompletion::writeToDB(Expression exp, TagList list, QSqlQuery query)
 {
-#ifdef Q_OS_WIN32
-	if( exp.className.at(0) == 'Q' ) // Certainly a Qt classe
-	{
-		if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
-		{
-			return;
-		}
-	}
-	else
-	{
-	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
-	    {
-			return;
-    	}
-	}
-	createTables();
-#else
-	if( exp.className.at(0) == 'Q' ) // Certainly a Qt classe
-	{
-		if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
-		{
-			return;
-		}
-	}
-	else
-	{
-	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
-	    {
-			return;
-    	}
-	}
-	createTables();
-#endif
-    QSqlQuery query;
-    query.exec("BEGIN TRANSACTION;");
     foreach(Tag tag, list)
     {
         QString queryString = "insert into tags values(";
@@ -481,7 +509,6 @@ void InitCompletion::writeToDB(Expression exp, TagList list)
             exit(0);
         }
     }
-    query.exec("END TRANSACTION;");
 }
 //
 
@@ -494,14 +521,14 @@ void InitCompletion::slotModifiedClasse(QString classname)
 	}
 		
 #ifdef Q_OS_WIN32
-	if( classname.at(0) == 'Q' ) // Certainly a Qt classe
+	if( classname.length() > 1 && classname.at(0) == 'Q' && classname.at(1).isUpper() ) // Certainly a Qt classe
 		if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
 			return;
 	else
 	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
 	    	return;
 #else
-	if( classname.at(0) == 'Q' ) 
+	if( classname.length() > 1 && classname.at(0) == 'Q' && classname.at(1).isUpper() ) // Certainly a Qt classe
 		if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
 			return;
 	else
@@ -539,3 +566,91 @@ void InitCompletion::createTables()
 	
 	query.exec(queryString);
 }
+//
+
+void InitCompletion::populateQtDatabase()
+{
+	QString command = ctagsCmdPath + " -R -f \"" + QDir::tempPath()+"/qttags" +
+	                  "\" --language-force=c++ --fields=afiKmsSzn --c++-kinds=cdefgmnpstuvx \""
+	                  + m_qtInclude + '\"';
+	QProcess ctags;
+	ctags.execute(command);
+	ctags.waitForFinished();
+    QFile file(QDir::tempPath()+"/qttags");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+    QString read;
+    read = file.readAll();
+    file.close();
+    file.remove();
+
+	QMap<QString, TagList> map;
+    foreach(QString s, read.split("\n", QString::SkipEmptyParts) )
+    {
+    	QString classname;
+    	Tag tag;
+        if ( !s.isEmpty() && s.simplified().at(0) == '!' )
+            continue;
+        s += '\t';
+        tag.name = s.section("\t", 0, 0).simplified();
+        QString ex_cmd = s.section("/^", -1, -1).section("\"", 0, 0).simplified();
+        classname = s.section("class:", -1, -1).section("\t", 0, 0).simplified();
+        tag.access =  "public";
+        tag.longName =  s;
+        tag.kind = s.section("kind:", -1, -1).section("\t", 0, 0).simplified();
+        if ( classname.isEmpty() )
+        	continue;
+        tag.parameters = "(" + tag.longName.section("(", 1, 1).section(")", -2, -2) + ")";
+        tag.signature = ex_cmd;
+        tag.isFunction = true;
+        tag.signature = s.section("signature:", -1, -1).section("\t", 0, 0).simplified();
+        tag.kind = s.section("kind:", -1, -1).section("\t", 0, 0).simplified();
+        if( tag.kind != "prototype" && tag.kind != "function" )
+        	continue;
+        if ( tag.name=="Q_REQUIRED_RESULT" )
+        {
+            if ( tag.longName.contains("(") && !tag.longName.contains("="))
+            {
+                tag.name = tag.longName.remove("const ").section(" ", 1, 1).section("(", 0, 0);
+                tag.kind = "function";
+                tag.parameters = tag.signature = "(" + tag.longName.section("(", 1, 1).section(")", -2, -2) + ")";
+                tag.access = "public";
+                tag.isFunction = true;
+            }
+        }
+        if ( tag.name=="Q_REQUIRED_RESULT" )
+        	continue;
+        TagList list;
+        list = map[classname];
+        list << tag;
+        map[classname] = list;
+    }
+#ifdef Q_OS_WIN32
+	if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
+	{
+		return;
+	}
+	createTables();
+#else
+	if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
+	{
+		return;
+	}
+	createTables();
+#endif
+    QSqlQuery query;
+    query.exec("BEGIN TRANSACTION;");
+    query.exec("delete from tags");
+    QStringList keys = map.keys();
+    foreach(QString key, keys)
+    {
+    	if( m_stopRequired )
+    		break;
+	 	TagList tagList = map[key];
+	    Expression exp;
+	    exp.className = key;
+    	writeToDB(exp, tagList, query);
+   	}
+    query.exec("END TRANSACTION;");
+}
+//
