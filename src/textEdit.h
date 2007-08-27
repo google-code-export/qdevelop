@@ -187,6 +187,7 @@ protected:
     void mouseMoveEvent( QMouseEvent * event );
 signals:
     void editorModified(bool);
+    void initParse(QString, QString, bool, bool, bool, QString, bool);
 };
 
 #endif

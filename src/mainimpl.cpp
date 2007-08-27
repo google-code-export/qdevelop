@@ -196,6 +196,12 @@ MainImpl::~MainImpl()
         delete m_completion;
         m_completion = 0;
     }
+    if( m_buildQtDatabase )
+    {
+    	m_buildQtDatabase->setStopRequired();
+    	m_buildQtDatabase->wait();
+    	delete m_buildQtDatabase;
+   	}
 }
 
 //convenient functions to access editor tabs
@@ -247,17 +253,17 @@ void MainImpl::configureCompletion(QString projectDirectory)
 #endif
     }
     QStringList includes;
-    includes << QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../include" ) << projectDirectory
+    includes /*<< QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../include" )*/ << projectDirectory
 #ifdef WIN32
     << compilerInclude;
 #else
     << "/usr/include";
 #endif
-    m_completion->setTempFilePath( QDir::tempPath() );
+    //m_completion->setTempFilePath( QDir::tempPath() );
     m_completion->setCtagsCmdPath( ctagsName() );
     m_completion->addIncludes( includes, projectDirectory);
-    m_completion->initParse("", true, false);
-    m_completion->start();
+    //m_completion->initParse("", true, false);
+    //m_completion->start();
     m_configureCompletionNeeded = false;
 }
 //
@@ -1009,7 +1015,22 @@ bool MainImpl::openProject(QString s)
         return false;
     if ( m_completion )
         delete m_completion;
+    if( m_buildQtDatabase )
+    {
+    	m_buildQtDatabase->setStopRequired();
+    	m_buildQtDatabase->wait();
+    	delete m_buildQtDatabase;
+   	}
     m_completion = new InitCompletion (this);
+    QString includes;
+    includes = QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../include" ) ;
+#ifdef WIN32
+    includes += "\" \"" + QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../src" ) ;
+#endif
+    m_completion->setCtagsCmdPath( ctagsName() );
+    m_completion->setQtInclude( includes );
+    //m_completion->slotInitParse(QString(), QString(), true, false, true, QString(), true);
+	//
     connect(treeClasses, SIGNAL(modifiedClasse(QString)),  m_completion, SLOT(slotModifiedClasse(QString)) );
     configureCompletion( QFileInfo(s).absoluteDir().path() );
     m_projectManager = new ProjectManager(this, treeFiles, treeClasses);
@@ -1383,11 +1404,11 @@ void MainImpl::slotUpdateClasses(QString filename, QString buffer)
             {
                 QStringList parents = m_projectManager->parents(projectsList.at(nbProjects));
                 treeClasses->updateClasses(QDir::cleanPath(filename), buffer, parents, ext);
-                if ( m_completion )
+                /*if ( m_completion )
                 {
                     m_completion->initParse(buffer, true, false);
                     m_completion->start();
-                }
+                }*/
             }
         }
     }
@@ -2308,6 +2329,11 @@ void MainImpl::resetDebugAfterBuild()
 //
 void MainImpl::slotNewQtVersion()
 {
+    if( m_buildQtDatabase )
+    {
+   		QMessageBox::information(this, "QDevelop", tr("The Qt database building is already in progress."));
+   		return;
+   	}
 	QSqlDatabase database;
 	QSqlDatabase::database().close();
 #ifdef Q_OS_WIN32
@@ -2315,6 +2341,21 @@ void MainImpl::slotNewQtVersion()
 #else
 	QFile::remove(QDir::homePath()+"/qdevelop.db");
 #endif
-	QMessageBox::information(this, "QDevelop", "Completion database correctly deleted");
+   	QMessageBox::information(this, "QDevelop", tr("The Qt database will be rebuilt now."));
+	checkQtDatabase();
 }
-
+//
+void MainImpl::checkQtDatabase()
+{
+    m_buildQtDatabase = new InitCompletion (this);
+    connect(m_buildQtDatabase, SIGNAL(finished()), m_buildQtDatabase, SLOT(deleteLater()) );
+    QString includes;
+    includes = QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../include" ) ;
+#ifdef WIN32
+    includes += "\" \"" + QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../src" ) ;
+#endif
+    m_buildQtDatabase->setCtagsCmdPath( ctagsName() );
+    m_buildQtDatabase->setQtInclude( includes );
+    m_buildQtDatabase->slotInitParse(QString(), QString(), true, false, true, QString(), true);
+	//
+}

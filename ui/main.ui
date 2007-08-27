@@ -1509,7 +1509,7 @@
   </action>
   <action name="actionNewQtVersion" >
    <property name="text" >
-    <string>Define new Qt version</string>
+    <string>Rebuild Qt classes database</string>
    </property>
   </action>
  </widget>

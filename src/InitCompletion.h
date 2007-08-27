@@ -13,6 +13,8 @@
 #include <QList>
 #include <QThread>
 #include <QFile>
+#include <QPair>
+#include <QSqlQuery>
 
 class Tree;
 struct Expression;
@@ -32,28 +34,39 @@ public:
 	bool isFunction;
 };
 typedef QList<Tag> TagList;
-
+//
+/*struct EnqueuedFiles
+{
+public:
+	QString text;
+	bool emitResults;
+	bool showAllResults;
+	QString name;
+	QString filename;
+    bool checkQt;
+};
+typedef QList<EnqueuedFiles> EnqueuedFilesList;*/
+//
 class InitCompletion : public QThread
 {
 	Q_OBJECT
 
 public:
 	InitCompletion (QObject *parent = 0);
-
-	void setTempFilePath (const QString &Path);	// Optionnal
+	~InitCompletion();
 	void setCtagsCmdPath (const QString &cmdPath);
 	void addIncludes (QStringList includesPath, QString projectDirectory);
 	void run();
 	QString className(const QString &text);
-	void initParse(const QString &text, bool showAllResults = false, bool emitResults = true, bool showDuplicateEntries = false, QString name="");
-	void setEmitResults(bool r) { m_emitResults = r; };
+	//void setEmitResults(bool r) { m_emitResults = r; };
 	/*
 		* @param: filename is a name like "string.h"
 		* @return: the file descriptor (fd) and stores
 		*          "/usr/include/string.h" in fullname
 	*/
+	void setQtInclude(QString value) { m_qtInclude = value; }
 	QFile* getFiledescriptor(const QString &filename, QString &fullname);
-
+	void setStopRequired() { m_stopRequired = true;}
 	QString tagsFilePath,
 		tagsIncludesPath,
 		ctagsCmdPath,
@@ -73,19 +86,26 @@ private:
 	QString includesPathList(const QString &parsedText);
 
 	TagList readFromDB(Expression exp, QString functionName);
-	void writeToDB(Expression exp, TagList list);
+	void writeToDB(Expression exp, TagList list, QSqlQuery query);
 	bool connectQDevelopDB(QString const& dbName);
 	void createTables();
-	
+	void populateQtDatabase();
+
 	QStringList cpp_includes;
 	QString m_text;
 	bool m_showAllResults;
 	bool m_emitResults;
     bool m_showDuplicateEntries;
+    bool m_checkQt;
     QString m_name;
+    //EnqueuedFilesList enqueuedFilesList;
     QString m_projectDirectory;
+    QList<QPair<QString, QString> > parsingList;
+	QString m_qtInclude;
+	bool m_stopRequired;
 public slots:
 	void slotModifiedClasse(QString classname);
+	void slotInitParse(QString filename, const QString &text, bool showAllResults, bool emitResults, bool showDuplicateEntries, QString name, bool checkQt);
 signals:
 	void completionList( TagList ); 
 	void completionHelpList( TagList ); 
