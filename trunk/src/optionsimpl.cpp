@@ -36,7 +36,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
     QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool tc, int in, QString directory,
-    bool m, QColor mc, bool close, QString pd, QString mo, int mi)
+    bool m, QColor mc, bool close, QString pd, QString mo, int mi, QString ic)
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -63,6 +63,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	closeButton->setChecked( close );
 	projectsDirectory->setText( directory );
 	pluginsDirectory->setText( pd );
+	includeDirectory->setText( ic );
 	makeOptions->setText( mo );
 	//
 	cppHighLighter = new CppHighlighter( 0 );
@@ -114,6 +115,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	connect(defaults, SIGNAL(clicked()), this, SLOT(slotDefault()));
 	connect(chooseProjectsDirectory, SIGNAL(clicked()), this, SLOT(slotChooseProjectsDirectory()));
 	connect(choosePluginsDirectory, SIGNAL(clicked()), this, SLOT(slotChoosePluginsDirectory()));
+	connect(chooseIncludeDirectory, SIGNAL(clicked()), this, SLOT(slotChooseIncludeDirectory()));
 	textEdit->setPlainText( textEdit->toPlainText() );
 
     findCodecs();
@@ -291,6 +293,21 @@ void OptionsImpl::slotChoosePluginsDirectory()
 		return;
 	}
 	pluginsDirectory->setText( s );
+}
+//
+void OptionsImpl::slotChooseIncludeDirectory()
+{
+	QString s = QFileDialog::getExistingDirectory(
+		this,
+		tr("Choose the project directory"),
+		includeDirectory->text(),
+		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
+	if( s.isEmpty() )
+	{
+		// Cancel clicked
+		return;
+	}
+	includeDirectory->setText( s );
 }
 //
 void OptionsImpl::findCodecs()
