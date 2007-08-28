@@ -125,6 +125,7 @@ private:
 	QString m_qtInstallHeaders;
 	QString m_projectsDirectory;
 	QString m_pluginsDirectory;
+	QString m_includeDirectory;
 	bool m_lineNumbers, m_selectionBorder, m_autoIndent, m_cppHighlighter;
 	bool m_saveBeforeBuild;
 	bool m_restoreOnStart;

@@ -106,6 +106,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_designer = 0;
     crossButton = 0;
     m_pluginsDirectory = "";
+    m_includeDirectory = QLibraryInfo::location( QLibraryInfo::HeadersPath );
     m_configureCompletionNeeded = false;
     m_mibCodec = 106; // UTF-8 by default
     //
@@ -606,7 +607,8 @@ void MainImpl::slotOptions()
                                            m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion,
                                            m_backgroundColor, m_promptBeforeQuit, m_highlightCurrentLine, m_currentLineColor, m_autobrackets,
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
-                                           m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec);
+                                           m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec,
+                                           m_includeDirectory);
 
     if ( options->exec() == QDialog::Accepted )
     {
@@ -630,6 +632,7 @@ void MainImpl::slotOptions()
         m_promptBeforeQuit = options->promptBeforeQuit->isChecked();
         m_projectsDirectory = options->projectsDirectory->text();
         m_pluginsDirectory = options->pluginsDirectory->text();
+        m_includeDirectory = options->includeDirectory->text();
         m_makeOptions = options->makeOptions->text();
         m_closeButtonInTabs = options->closeButton->isChecked();
         setCrossButton( !m_closeButtonInTabs );
@@ -718,6 +721,7 @@ void MainImpl::saveINI()
     settings.setValue("m_matchingColor", m_matchingColor.name());
     settings.setValue("m_projectsDirectory", m_projectsDirectory);
     settings.setValue("m_pluginsDirectory", m_pluginsDirectory);
+    settings.setValue("m_includeDirectory", m_includeDirectory);
     settings.setValue("m_makeOptions", m_makeOptions);
     settings.setValue("m_mibCodec", m_mibCodec);
     //
@@ -828,6 +832,7 @@ QString MainImpl::loadINI()
     m_matchingColor = QColor(settings.value("m_matchingColor", m_matchingColor).toString());
     m_projectsDirectory = settings.value("m_projectsDirectory", m_projectsDirectory).toString();
     m_pluginsDirectory = settings.value("m_pluginsDirectory", m_pluginsDirectory).toString();
+    m_includeDirectory = settings.value("m_includeDirectory", m_includeDirectory).toString();
     m_makeOptions = settings.value("m_makeOptions", m_makeOptions).toString();
     m_showTreeClasses = settings.value("m_showTreeClasses", m_showTreeClasses).toBool();
     m_closeButtonInTabs = settings.value("m_closeButtonInTabs", m_closeButtonInTabs).toBool();
@@ -1023,7 +1028,7 @@ bool MainImpl::openProject(QString s)
    	}
     m_completion = new InitCompletion (this);
     QString includes;
-    includes = QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../include" ) ;
+    includes = m_includeDirectory;
 #ifdef WIN32
     includes += "\" \"" + QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../src" ) ;
 #endif
@@ -2350,7 +2355,7 @@ void MainImpl::checkQtDatabase()
     m_buildQtDatabase = new InitCompletion (this);
     connect(m_buildQtDatabase, SIGNAL(finished()), m_buildQtDatabase, SLOT(deleteLater()) );
     QString includes;
-    includes = QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../include" ) ;
+    includes = m_includeDirectory;
 #ifdef WIN32
     includes += "\" \"" + QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../src" ) ;
 #endif

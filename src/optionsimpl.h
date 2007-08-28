@@ -38,7 +38,8 @@ public:
 		QTextCharFormat commMulti, QTextCharFormat guillemets, QTextCharFormat meth, 
 		QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
 		QColor back, bool prompt, bool hcl, QColor lc, bool bk, 
-		bool tc, int in, QString directory, bool m, QColor mc, bool close, QString pd, QString mo, int mi);
+		bool tc, int in, QString directory, bool m, QColor mc, bool close, QString pd, QString mo, int mi,
+		QString ic);
 	QFont font();
 	CppHighlighter *syntaxe() { return cppHighLighter; };
 	QColor backgroundColor();
@@ -58,6 +59,7 @@ private slots:
 	void slotDefault();
 	void slotChooseProjectsDirectory();
 	void slotChoosePluginsDirectory();
+	void slotChooseIncludeDirectory();
 signals:
 };
 
