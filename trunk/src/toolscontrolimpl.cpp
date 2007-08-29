@@ -23,6 +23,7 @@
 
 #include "toolscontrolimpl.h"
 #include "ui_warning.h"
+#include "misc.h"
 //
 #include <QSettings>
 #include <QLibraryInfo>
@@ -44,11 +45,7 @@ ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
 #endif
 
     setupUi(this);
-#ifdef Q_OS_WIN32
-    QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
-#else
-    QSettings settings;
-#endif
+    QSettings settings( getQDevelopPath() + "qdevelop.ini" , QSettings::IniFormat);
     settings.beginGroup("Options");
     qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"qmake"+suffix).toString() );
     linguist->setText( settings.value("m_linguistName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"linguist"+suffix).toString() );
@@ -215,11 +212,7 @@ void ToolsControlImpl::on_buttonBox_clicked(QAbstractButton * button ) {
     else if (buttonBox->button(QDialogButtonBox::Ok) !=  button)
 	return;
 	
-#ifdef Q_OS_WIN32
-    QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
-#else
-    QSettings settings;
-#endif
+    QSettings settings( getQDevelopPath() + "qdevelop.ini" , QSettings::IniFormat);
     settings.beginGroup("Options");
     settings.setValue("m_qmakeName", qmake->text());
     settings.setValue("m_makeName", make->text());
@@ -230,6 +223,7 @@ void ToolsControlImpl::on_buttonBox_clicked(QAbstractButton * button ) {
     settings.setValue("m_lupdateName", lupdate->text());
     settings.setValue("m_designerName", designer->text());
     settings.setValue("m_assistantName", assistant->text());
+    settings.setValue("m_checkEnvironmentOnStartup", checkEnvironmentOnStartup->isChecked());
     settings.endGroup();
     accept();
 }
@@ -255,5 +249,6 @@ void ToolsControlImpl::on_designerLocation_clicked() {
 void ToolsControlImpl::on_assistantLocation_clicked() {
     chooseLocation( assistant );
 }
+
 
 

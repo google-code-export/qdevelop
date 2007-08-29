@@ -42,7 +42,6 @@ public:
 	QString designerName() { return designer->text(); };
 	QString assistantName() { return assistant->text(); };
 	bool ctagsIsPresent()  { return m_ctagsIsPresent; };
-	bool checkEnvironment()  { return m_checkEnvironment; };
 	bool  checkEnvOnStartup() { return checkEnvironmentOnStartup->isChecked(); };
 private slots:
 	void on_assistantLocation_clicked();
@@ -59,9 +58,9 @@ private slots:
 	void chooseLocation(QLineEdit *dest);
 private:
 	bool m_ctagsIsPresent;
-	bool m_checkEnvironment;
 };
 #endif
+
 
 
 

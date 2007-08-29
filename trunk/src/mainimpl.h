@@ -132,7 +132,6 @@ private:
 	bool m_promptBeforeQuit;
 	ExecuteVersion m_debugAfterBuild;
 	bool m_buildAfterDebug;
-	bool m_checkEnvironment;
 	bool m_checkEnvironmentOnStartup;
 	bool m_autoMaskDocks;
 	bool m_autoCompletion;

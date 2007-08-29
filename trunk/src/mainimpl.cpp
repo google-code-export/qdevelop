@@ -84,7 +84,6 @@ MainImpl::MainImpl(QWidget * parent)
     m_debug = 0;
     m_debugAfterBuild = ExecuteNone;
     m_buildAfterDebug = false;
-    m_checkEnvironment = true;
     m_checkEnvironmentOnStartup = true;
     m_endLine = Default;
     m_tabSpaces = false;
@@ -709,7 +708,6 @@ void MainImpl::saveINI()
     settings.setValue("m_closeButtonInTabs", m_closeButtonInTabs);
     settings.setValue("m_match", m_match);
     settings.setValue("m_highlightCurrentLine", m_highlightCurrentLine);
-    settings.setValue("m_checkEnvironment", m_checkEnvironment);
     settings.setValue("m_checkEnvironmentOnStartup", m_checkEnvironmentOnStartup);
     settings.setValue("m_endLine", m_endLine);
     settings.setValue("m_tabSpaces", m_tabSpaces);
@@ -814,7 +812,6 @@ QString MainImpl::loadINI()
     m_saveBeforeBuild = settings.value("m_saveBeforeBuild", m_saveBeforeBuild).toBool();
     m_restoreOnStart = settings.value("m_restoreOnStart", m_restoreOnStart).toBool();
     m_promptBeforeQuit = settings.value("m_promptBeforeQuit", m_promptBeforeQuit).toBool();
-    m_checkEnvironment = settings.value("m_checkEnvironment", m_checkEnvironment).toBool();
     m_checkEnvironmentOnStartup = settings.value("m_checkEnvironmentOnStartup", m_checkEnvironmentOnStartup).toBool();
     m_autoMaskDocks = settings.value("m_autoMaskDocks", m_autoMaskDocks).toBool();
     m_endLine = (EndLine)settings.value("m_endLine", m_endLine).toInt();
@@ -2115,6 +2112,7 @@ void MainImpl::slotToolsControl(bool show)
 {
     ToolsControlImpl *toolsControlImpl = new ToolsControlImpl( this );
     if ( (!toolsControlImpl->toolsControl() && m_checkEnvironmentOnStartup ) || show )
+    		// toolsControlImpl->toolsControl() is always called so that there was a check done - if it isn't called, all tools will appear valid if m_checkEnvironmentOnStartup is disabled
         toolsControlImpl->exec();
 
     m_qmakeName = toolsControlImpl->qmakeName();
@@ -2127,7 +2125,6 @@ void MainImpl::slotToolsControl(bool show)
     m_designerName = toolsControlImpl->designerName();
     //
     m_ctagsIsPresent = toolsControlImpl->ctagsIsPresent();
-    m_checkEnvironment = toolsControlImpl->checkEnvironment();
     m_checkEnvironmentOnStartup = toolsControlImpl->checkEnvOnStartup();
     m_assistant->setName( toolsControlImpl->assistantName() );
     m_designer->setName( toolsControlImpl->designerName() );
