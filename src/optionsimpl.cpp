@@ -28,6 +28,7 @@
 #include <QColorDialog>
 #include <QFileDialog>
 #include <QTextCodec>
+#include <QLibraryInfo>
 #include <QDebug>
 //
 OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool ind, 
@@ -263,6 +264,7 @@ void OptionsImpl::slotDefault()
 	brackets->setChecked( true );
 	highlight->setChecked( true );
 	match->setChecked( true );
+	includeDirectory->setText( QLibraryInfo::location( QLibraryInfo::HeadersPath ) );
 }
 //
 void OptionsImpl::slotChooseProjectsDirectory()
