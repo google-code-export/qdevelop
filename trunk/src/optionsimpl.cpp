@@ -59,6 +59,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	brackets->setChecked( bk );
 	showTreeClasses->setChecked( tc );
 	interval->setValue( in );
+	interval->setEnabled( tc );
 	match->setChecked( m );
 	groupHighlightCurrentLine->setChecked( hcl );
 	closeButton->setChecked( close );
@@ -264,7 +265,23 @@ void OptionsImpl::slotDefault()
 	brackets->setChecked( true );
 	highlight->setChecked( true );
 	match->setChecked( true );
+	projectsDirectory->setText( QDir::homePath() );
+	pluginsDirectory->setText( "" );
 	includeDirectory->setText( QLibraryInfo::location( QLibraryInfo::HeadersPath ) );
+	makeOptions->setText( "" );
+	tabStopWidth->setValue( 4 );
+	tabSpaces->setChecked( false );
+#ifdef WIN32
+    comboFont->setCurrentIndex( comboFont->findText( "Courier New" ) );
+#else
+    comboFont->setCurrentIndex( comboFont->findText( "Monospace" ) );
+#endif
+	fontSize->setValue( 10 );
+	closeButton->setChecked( false );
+	setCodecList( codecs, 106 );  // UTF-8 by default
+	endLine->setCurrentIndex( 0 );
+	interval->setValue( 5 );
+	showTreeClasses->setChecked( true );
 }
 //
 void OptionsImpl::slotChooseProjectsDirectory()
