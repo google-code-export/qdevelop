@@ -25,10 +25,6 @@
 #include <QMetaType> 
 #include <QCoreApplication> 
 
-#ifdef Q_OS_WIN32
-#include <shlobj.h>
-#endif
-
 #ifdef _WIN32
 #define NEW_LINE "\r\n"
 #else
@@ -51,7 +47,7 @@ InitCompletion::~InitCompletion()
 	}
 	if( m_stopRequired )
 	{
-		if( !connectQDevelopDB( getQtDBFile() ) )
+		if( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
 		{
 			return;
 		}
@@ -63,37 +59,7 @@ InitCompletion::~InitCompletion()
 		query.exec("END TRANSACTION;");
 	}
 }
-//
-QString InitCompletion::getQtDBFile(void)
-{
-	static QString file;
-	QString path;
-	if (!file.isEmpty()) return file;
-	
-	// if we havn't yet done so, determine the full db file name and make sure the directory exists
-	// determine path for application data dirs
-#ifdef Q_OS_WIN32
-	wchar_t buf[MAX_PATH];
-	if (!SHGetFolderPathW(NULL, CSIDL_APPDATA, NULL, 0, buf))
-		path = QString::fromUtf16((ushort *)buf)+"/";
-	else
-		path = QDir::homePath()+"/Application Data/";
-#else
-	path = QDir::homePath()+"/";
-#endif
 
-	// create subdir
-	QDir dir(path);
-#ifdef Q_OS_WIN32
-	dir.mkdir("QDevelop");
-	path += "QDevelop/";
-#else
-	dir.mkdir(".qdevelop");
-	path += ".qdevelop/";
-#endif
-	file = path + "qdevelop.db";
-	return file;
-}
 //
 void InitCompletion::slotInitParse(QString filename, const QString &text, bool showAllResults, bool emitResults, bool /*showDuplicateEntries*/, QString name, bool checkQt)
 {
@@ -417,7 +383,7 @@ TagList InitCompletion::readFromDB(Expression exp, QString functionName)
 	TagList list;
 	if( exp.className.length() > 1 && exp.className.at(0) == 'Q' && exp.className.at(1).isUpper() ) // Certainly a Qt classe
 	{
-		if( !connectQDevelopDB( getQtDBFile() ) )
+		if( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
 		{
 			return TagList();
 		}
@@ -522,7 +488,7 @@ void InitCompletion::slotModifiedClasse(QString classname)
 	}
 		
 	if( classname.length() > 1 && classname.at(0) == 'Q' && classname.at(1).isUpper() ) // Certainly a Qt classe
-		if( !connectQDevelopDB( getQtDBFile() ) )
+		if( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
 			return;
 	else
 	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
@@ -617,7 +583,7 @@ void InitCompletion::populateQtDatabase()
         list << tag;
         map[classname] = list;
     }
-	if( !connectQDevelopDB( getQtDBFile() ) )
+	if( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
 	{
 		return;
 	}

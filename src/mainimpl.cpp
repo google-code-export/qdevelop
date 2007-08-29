@@ -41,6 +41,7 @@
 #include "toolscontrolimpl.h"
 #include "InitCompletion.h"
 #include "pluginsinterfaces.h"
+#include "misc.h"
 //
 #include <QFileDialog>
 #include <QGridLayout>
@@ -689,11 +690,7 @@ qDebug() << m_mibCodec;
 //
 void MainImpl::saveINI()
 {
-#ifdef Q_OS_WIN32
-    QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
-#else
-    QSettings settings(PROJECT_NAME);
-#endif
+    QSettings settings(getQDevelopPath() + "qdevelop.ini", QSettings::IniFormat);
 
     settings.beginGroup("Options");
     settings.setValue("m_showTreeClasses", m_showTreeClasses);
@@ -801,11 +798,8 @@ void MainImpl::slotNewProject()
 //
 QString MainImpl::loadINI()
 {
-#ifdef Q_OS_WIN32
-    QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
-#else
-    QSettings settings(PROJECT_NAME);
-#endif
+    QSettings settings(getQDevelopPath() + "qdevelop.ini", QSettings::IniFormat);
+
     QString projectName;
     settings.beginGroup("Options");
     QString s = settings.value("m_font", m_font.toString()).toString();
@@ -1967,11 +1961,7 @@ void MainImpl::slotOnPause()
 //
 void MainImpl::updateActionsRecentsFiles()
 {
-#ifdef Q_OS_WIN32
-    QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
-#else
-    QSettings settings(PROJECT_NAME);
-#endif
+    QSettings settings(getQDevelopPath() + "qdevelop.ini", QSettings::IniFormat);
 
     settings.beginGroup("RecentFiles");
     QStringList files = settings.value("RecentFilesList").toStringList();
@@ -2003,11 +1993,7 @@ void MainImpl::updateActionsRecentsFiles()
 //
 void MainImpl::updateActionsRecentsProjects()
 {
-#ifdef Q_OS_WIN32
-    QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
-#else
-    QSettings settings(PROJECT_NAME);
-#endif
+    QSettings settings(getQDevelopPath() + "qdevelop.ini", QSettings::IniFormat);
 
     settings.beginGroup("RecentProjects");
     QStringList files = settings.value("RecentProjectsList").toStringList();
@@ -2058,11 +2044,7 @@ QString MainImpl::strippedName(const QString &fullFileName)
 //
 void MainImpl::setCurrentFile(const QString &file)
 {
-#ifdef Q_OS_WIN32
-    QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
-#else
-    QSettings settings(PROJECT_NAME);
-#endif
+    QSettings settings(getQDevelopPath() + "qdevelop.ini", QSettings::IniFormat);
 
     settings.beginGroup("RecentFiles");
     QStringList files = settings.value("RecentFilesList").toStringList();
@@ -2077,11 +2059,7 @@ void MainImpl::setCurrentFile(const QString &file)
 //
 void MainImpl::setCurrentProject(const QString &file)
 {
-#ifdef Q_OS_WIN32
-    QSettings settings(QDir::homePath()+"/Application Data/qdevelop.ini", QSettings::IniFormat);
-#else
-    QSettings settings(PROJECT_NAME);
-#endif
+    QSettings settings(getQDevelopPath() + "qdevelop.ini", QSettings::IniFormat);
 
     settings.beginGroup("RecentProjects");
     QStringList files = settings.value("RecentProjectsList").toStringList();
@@ -2341,7 +2319,7 @@ void MainImpl::slotNewQtVersion()
    	}
 	QSqlDatabase database;
 	QSqlDatabase::database().close();
-	QFile::remove(InitCompletion::getQtDBFile());
+	QFile::remove( getQDevelopPath() + "qdevelop.db" );
    	QMessageBox::information(this, "QDevelop", tr("The Qt database will be rebuilt now."));
 	checkQtDatabase();
 }

@@ -26,6 +26,11 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 #include <QDebug>
+#include <QDir>
+
+#ifdef Q_OS_WIN32
+#include <shlobj.h>
+#endif
 
 //
 QVariant addressToVariant(void *it ) 
@@ -141,5 +146,37 @@ bool connectDB(QString const& dbName)
 		//
     }
     return true;
+}
+//
+
+//static function to determine the QDevelop directory (used for settings and global ctags database)
+// the directory is returnded WITH a trailing slash
+QString getQDevelopPath(void)
+{
+	static QString path;
+	if (!path.isEmpty()) return path;
+	
+	// if we havn't yet done so, determine the full db file name and make sure the directory exists
+	// determine path for application data dirs
+#ifdef Q_OS_WIN32
+	wchar_t buf[MAX_PATH];
+	if (!SHGetFolderPathW(NULL, CSIDL_APPDATA, NULL, 0, buf))
+		path = QString::fromUtf16((ushort *)buf)+"/";
+	else
+		path = QDir::homePath()+"/Application Data/"; // this shouldn't happen
+#else
+	path = QDir::homePath()+"/";
+#endif
+
+	// create subdir
+	QDir dir(path);
+#ifdef Q_OS_WIN32
+	dir.mkdir("QDevelop");
+	path += "QDevelop/";
+#else
+	dir.mkdir(".qdevelop");
+	path += ".qdevelop/";
+#endif
+	return path;
 }
 //
