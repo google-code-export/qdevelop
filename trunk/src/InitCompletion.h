@@ -73,6 +73,8 @@ public:
 		smallTagsFilePath,
 		parsedFilePath;
 
+	static QString getQtDBFile(void);
+
 private:
 	Expression getExpression(const QString &text, Scope &sc, bool showAllResults = false);
 	

@@ -2341,11 +2341,7 @@ void MainImpl::slotNewQtVersion()
    	}
 	QSqlDatabase database;
 	QSqlDatabase::database().close();
-#ifdef Q_OS_WIN32
-	QFile::remove(QDir::homePath()+"/Application Data/qdevelop.db");
-#else
-	QFile::remove(QDir::homePath()+"/qdevelop.db");
-#endif
+	QFile::remove(InitCompletion::getQtDBFile());
    	QMessageBox::information(this, "QDevelop", tr("The Qt database will be rebuilt now."));
 	checkQtDatabase();
 }

@@ -25,6 +25,10 @@
 #include <QMetaType> 
 #include <QCoreApplication> 
 
+#ifdef Q_OS_WIN32
+#include <shlobj.h>
+#endif
+
 #ifdef _WIN32
 #define NEW_LINE "\r\n"
 #else
@@ -47,28 +51,51 @@ InitCompletion::~InitCompletion()
 	}
 	if( m_stopRequired )
 	{
-		#ifdef Q_OS_WIN32
-			if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
-			{
-				return;
-			}
-			createTables();
-		#else
-			if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
-			{
-				return;
-			}
-			createTables();
-		#endif
-		    QSqlQuery query;
-		    query.exec("BEGIN TRANSACTION;");
-	        QString queryString = "delete from tags";
-	        query.exec(queryString);
-		    query.exec("END TRANSACTION;");
+		if( !connectQDevelopDB( getQtDBFile() ) )
+		{
+			return;
+		}
+		createTables();
+		QSqlQuery query;
+		query.exec("BEGIN TRANSACTION;");
+		QString queryString = "delete from tags";
+		query.exec(queryString);
+		query.exec("END TRANSACTION;");
 	}
 }
 //
-void InitCompletion::slotInitParse(QString filename, const QString &text, bool showAllResults, bool emitResults, bool showDuplicateEntries, QString name, bool checkQt)
+QString InitCompletion::getQtDBFile(void)
+{
+	static QString file;
+	QString path;
+	if (!file.isEmpty()) return file;
+	
+	// if we havn't yet done so, determine the full db file name and make sure the directory exists
+	// determine path for application data dirs
+#ifdef Q_OS_WIN32
+	wchar_t buf[MAX_PATH];
+	if (!SHGetFolderPathW(NULL, CSIDL_APPDATA, NULL, 0, buf))
+		path = QString::fromUtf16((ushort *)buf)+"/";
+	else
+		path = QDir::homePath()+"/Application Data/";
+#else
+	path = QDir::homePath()+"/";
+#endif
+
+	// create subdir
+	QDir dir(path);
+#ifdef Q_OS_WIN32
+	dir.mkdir("QDevelop");
+	path += "QDevelop/";
+#else
+	dir.mkdir(".qdevelop");
+	path += ".qdevelop/";
+#endif
+	file = path + "qdevelop.db";
+	return file;
+}
+//
+void InitCompletion::slotInitParse(QString filename, const QString &text, bool showAllResults, bool emitResults, bool /*showDuplicateEntries*/, QString name, bool checkQt)
 {
 
     m_text = text;
@@ -311,19 +338,11 @@ void InitCompletion::run()
 	        	// Then save list in database to reuse after.
 	        	if( m_name.simplified().isEmpty() )
 	        	{
-				#ifdef Q_OS_WIN32
 				    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
 				    {
 						return;
 			    	}
 					createTables();
-				#else
-				    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
-				    {
-						return;
-			    	}
-					createTables();
-				#endif
 				    QSqlQuery query;
 				    query.exec("BEGIN TRANSACTION;");
 	       			writeToDB(exp, listForDB, query);
@@ -396,10 +415,9 @@ QFile* InitCompletion::getFiledescriptor(const QString &filename, QString &fulln
 TagList InitCompletion::readFromDB(Expression exp, QString functionName)
 {
 	TagList list;
-#ifdef Q_OS_WIN32
 	if( exp.className.length() > 1 && exp.className.at(0) == 'Q' && exp.className.at(1).isUpper() ) // Certainly a Qt classe
 	{
-		if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
+		if( !connectQDevelopDB( getQtDBFile() ) )
 		{
 			return TagList();
 		}
@@ -412,23 +430,6 @@ TagList InitCompletion::readFromDB(Expression exp, QString functionName)
     	}
 	}
 	createTables();
-#else
-	if( exp.className.length() > 1 && exp.className.at(0) == 'Q' && exp.className.at(1).isUpper() ) // Certainly a Qt classe
-	{
-		if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
-		{
-			return TagList();
-		}
-	}
-	else
-	{
-	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
-	    {
-			return TagList();
-    	}
-	}
-	createTables();
-#endif
     QSqlQuery query;
     query.exec("BEGIN TRANSACTION;");
     QString queryString = QString()
@@ -520,21 +521,12 @@ void InitCompletion::slotModifiedClasse(QString classname)
 		return;
 	}
 		
-#ifdef Q_OS_WIN32
 	if( classname.length() > 1 && classname.at(0) == 'Q' && classname.at(1).isUpper() ) // Certainly a Qt classe
-		if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
+		if( !connectQDevelopDB( getQtDBFile() ) )
 			return;
 	else
 	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
 	    	return;
-#else
-	if( classname.length() > 1 && classname.at(0) == 'Q' && classname.at(1).isUpper() ) // Certainly a Qt classe
-		if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
-			return;
-	else
-	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
-	    	return;
-#endif
 	createTables();
     QSqlQuery query;
     query.exec("BEGIN TRANSACTION;");
@@ -625,19 +617,11 @@ void InitCompletion::populateQtDatabase()
         list << tag;
         map[classname] = list;
     }
-#ifdef Q_OS_WIN32
-	if( !connectQDevelopDB( QDir::homePath()+"/Application Data/qdevelop.db" ) )
+	if( !connectQDevelopDB( getQtDBFile() ) )
 	{
 		return;
 	}
 	createTables();
-#else
-	if( !connectQDevelopDB( QDir::homePath()+"/qdevelop.db" ) )
-	{
-		return;
-	}
-	createTables();
-#endif
     QSqlQuery query;
     query.exec("BEGIN TRANSACTION;");
     query.exec("delete from tags");
