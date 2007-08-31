@@ -32,6 +32,7 @@ public:
 	QString signature;
 
 	bool isFunction;
+	bool isStatic;
 };
 typedef QList<Tag> TagList;
 //
@@ -84,8 +85,9 @@ private:
 	
 	QStringList includesList(const QString &parsedText);
 	QString includesPathList(const QString &parsedText);
+	void writeInheritanceToDB(QMap<QString, QString> inheritsList, QSqlQuery query);
 
-	TagList readFromDB(Expression exp, QString functionName);
+	TagList readFromDB(TagList &list, Expression exp, QString functionName);
 	void writeToDB(Expression exp, TagList list, QSqlQuery query);
 	bool connectQDevelopDB(QString const& dbName);
 	void createTables();
