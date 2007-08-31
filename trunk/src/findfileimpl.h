@@ -48,5 +48,9 @@ private:
 	QString defaultWord;
 	void findInFile( QString filename );
 	bool m_stop;
+	
+	//variables used to remember where the search begins
+	QString m_searchDirectory;
+	int m_recursiveDepth;
 };
 #endif

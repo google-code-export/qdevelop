@@ -40,6 +40,9 @@ FindFileImpl::FindFileImpl( QWidget * parent, QStringList directories, QListWidg
 
     for (int i=0; i<directories.count(); i++)
         comboFindIn->addItem(directories.at(i)+"/");
+        
+    //initialize the variable used to remember where we are in the recursive search algorithm
+    m_recursiveDepth=0;
 }
 
 //
@@ -118,6 +121,12 @@ void FindFileImpl::on_findButton_clicked()
 //
 void FindFileImpl::find( QString directory )
 {
+    //save the folder only if the search is just beginning
+    if(m_recursiveDepth==0) {
+        m_searchDirectory=directory;
+    }
+    m_recursiveDepth++; //search is one-level deeper
+    
     QDir dir(directory);
     QString filterNames = comboFileTypes->currentText();
     filterNames.remove(" ");
@@ -136,6 +145,9 @@ void FindFileImpl::find( QString directory )
             find( fileInfo.absoluteFilePath() );
         }
     }
+    
+    //search is one-level less deep
+    m_recursiveDepth--;
 }
 //
 void FindFileImpl::findInFile( QString filename )
@@ -167,9 +179,13 @@ void FindFileImpl::findInFile( QString filename )
     file.close();
     if ( lines.count() )
     {
-        m_listResult->addItem( tr("File")+" : "+filename );
+        //display only the relative path
+        m_listResult->addItem( tr("File")+" : "+filename.mid(m_searchDirectory.size()) );
         QListWidgetItem *item = m_listResult->item(m_listResult->count()-1);
         item->setData(Qt::UserRole, QVariant(lines) );
+        
+        //complete filename (used in slotDoubleClickFindLines)
+        item->setData(Qt::UserRole+1, QVariant(filename) );
     }
 }
 //

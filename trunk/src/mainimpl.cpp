@@ -1566,7 +1566,7 @@ void MainImpl::slotDoubleClickFindLines( QListWidgetItem *item)
     QListWidgetItem *it = findFiles->currentItem();
     if ( !it )
         it = findFiles->item(0);
-    QString filename = it->text().mid( QString(tr("File")+" : ").length() );
+    QString filename = it->data(Qt::UserRole+1).toString();
     QApplication::setOverrideCursor(Qt::WaitCursor);
     openFile( QStringList( filename ), numLine, false, true);
     QApplication::restoreOverrideCursor();
