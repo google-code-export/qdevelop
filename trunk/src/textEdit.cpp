@@ -234,17 +234,29 @@ void TextEdit::completeCode()
     	completionHelp();
     	return;
    	}
-    if ( m_completion->isRunning() )
+	bool addThis = true;
+	QString word;
+	int i;
+	for(i = c.length()-1; i>0; i--)
+	{
+		if( c.at(i) == '\n' || c.at(i) == ';' )
+		{
+			i++;
+			word = c.mid( i );
+			c = c.left( i );
+			break;
+		}
+		if( QString(":.>(").contains( c.at(i) ) )
+		{
+			addThis = false;
+			break;
+		}
+	}
+    if( addThis )
     {
-        //m_completion->setEmitResults( false );
-        //m_completion->wait();
-    }
-    if ( c.simplified().right(2) != "::" && c.simplified().right(2) != "->" && c.simplified().right(1) != "." && c.simplified().right(1) != "(" )
-    {
-        c += "this->";
+        c += "this->" + word;
     }
     emit initParse(m_editor->filename(), c, true, true, false, QString(), false);
-    //m_completion->start();
 }
 
 void TextEdit::slotCompletionList(TagList TagList)
@@ -1694,11 +1706,6 @@ void TextEdit::completionHelp()
 {
     if ( !m_completion )
         return;
-    if ( m_completion->isRunning() )
-    {
-       // m_completion->setEmitResults( false );
-       // m_completion->wait();
-    }
     QString c = m_plainText.left(textCursor().position()).simplified();
     if( c.right(1) == "(" )
     	c = c.left( c.count()-1 );
@@ -1707,7 +1714,6 @@ void TextEdit::completionHelp()
 		return;
     c = c.section(name, 0, 0);
     emit initParse(m_editor->filename(), c, true, true, true, name, false);
-    //m_completion->start();
 }
 
 

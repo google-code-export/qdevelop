@@ -10,6 +10,7 @@
 #include <QRegExp>
 #include <QFile>
 #include <QProcess>
+#include <QDebug>
 
 #include "parse.h"
 #include "tree.h"
@@ -413,7 +414,6 @@ Expression Parse::parseExpression(QString expression, Scope * scope, bool showAl
 			p--;
 		exp.writing = p+1;
 	}
-
 	/* A global function should be completed, if nothing else is found */
 	exp.access = AccessGlobal;
 
