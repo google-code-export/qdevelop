@@ -94,13 +94,16 @@ bool Parse::scanForFuncdef(const QString &expr)
 QString Parse::getTypeOfToken(const QString &ident, const QString &className,
                               Scope * scope, bool token_is_function)
 {
+
 	/* if we have a variable and already found a local definition, just return it after duplicating */
-	if (!token_is_function && scope->localdef.length())
+	if (!token_is_function && scope->localdef.length() && ident!="this")
 		return scope->localdef;
 
 	/* if the identifier is this-> return the current class */
 	if (ident == "this")
+	{
 		return scope->scope;
+	}
 
 	Tree *tree = NULL;
 	if (className.length())
@@ -350,11 +353,9 @@ extract:
 	{
 		QString saved_start = start;	// start can change, so we save it
 		getScopeAndLocals(scope, expr, ident);
-
 		/* if we have the start of a function/method, don't return the type
 		 * of this function, but className, which it is member of */
 		type = getTypeOfToken(ident, NULL, scope, scanForFuncdef(saved_start));
-
 		/* members can't be local variables */
 		scope->localdef[0] = '\0';
 		while (type!="" && num_stack > 0)
