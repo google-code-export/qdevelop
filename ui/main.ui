@@ -81,18 +81,6 @@
     <addaction name="separator" />
     <addaction name="actionResetExecutablesList" />
    </widget>
-   <widget class="QMenu" name="menuBuild" >
-    <property name="title" >
-     <string>&amp;Build</string>
-    </property>
-    <addaction name="actionBuild" />
-    <addaction name="actionRebuild" />
-    <addaction name="actionClean" />
-    <addaction name="separator" />
-    <addaction name="actionStopBuild" />
-    <addaction name="separator" />
-    <addaction name="actionCompile" />
-   </widget>
    <widget class="QMenu" name="menu_Edit" >
     <property name="title" >
      <string>&amp;Edit</string>
@@ -220,6 +208,19 @@
     <addaction name="actionConfigureShortcuts" />
     <addaction name="actionNewQtVersion" />
     <addaction name="menuPluginsSettings" />
+   </widget>
+   <widget class="QMenu" name="menuBuild" >
+    <property name="title" >
+     <string>&amp;Build</string>
+    </property>
+    <addaction name="actionBuild" />
+    <addaction name="actionRebuild" />
+    <addaction name="actionClean" />
+    <addaction name="separator" />
+    <addaction name="actionStopBuild" />
+    <addaction name="separator" />
+    <addaction name="actionCompile" />
+    <addaction name="actionQmake" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -1510,6 +1511,11 @@
   <action name="actionNewQtVersion" >
    <property name="text" >
     <string>Rebuild Qt classes database</string>
+   </property>
+  </action>
+  <action name="actionQmake" >
+   <property name="text" >
+    <string>qmake</string>
    </property>
   </action>
  </widget>

@@ -162,13 +162,14 @@ private:
 protected:
 	void closeEvent( QCloseEvent * event );
 private slots:
+	void slotQmake();
 	void slotOpen();
 	void slotOpenProject();
 	void slotSaveFile();
 	void slotCompleteCode();
 	void slotSaveFileAs();
 	bool slotSaveAll();
-	void slotBuild(bool clean=false, bool build=true);
+	void slotBuild(bool clean=false, bool build=true, bool forceQmake=false);
 	void slotCompile();
 	void slotNewProject();
 	void slotRebuild();

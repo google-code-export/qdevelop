@@ -130,8 +130,8 @@ private slots:
     void slotWordCompletion(QListWidgetItem *item);
     void slotCursorPositionChanged();
     void slotContentsChange ( int position, int charsRemoved, int charsAdded );
-    void slotCompletionList(TagList TagList);
-    void slotCompletionHelpList(TagList TagList);
+    void slotCompletionList(TagList tagList);
+    void slotCompletionHelpList(TagList tagList);
     void slotToggleBreakpoint();
     void slotToggleBookmark();
 private:
