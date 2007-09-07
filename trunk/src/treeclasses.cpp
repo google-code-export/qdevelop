@@ -319,7 +319,7 @@ void TreeClasses::markForDeletion(QTreeWidgetItem *current, QString filename, QS
 //qDebug()<<parsedItem.parents << parents;
     if ( ext==".cpp" && parsedItem.implementation.section("|", 0, 0) == filename && parsedItem.parents == parents)
     {
-        if ( parsedItem.declaration.isEmpty() )
+        if ( !parsedItem.declaration.toLower().endsWith(".h") )
         {
             parsedItem.markedForDelete = true;
         }
@@ -327,7 +327,7 @@ void TreeClasses::markForDeletion(QTreeWidgetItem *current, QString filename, QS
     }
     else if ( ext==".h" && parsedItem.declaration.section("|", 0, 0) == filename && parsedItem.parents == parents )
     {
-        if ( parsedItem.implementation.isEmpty() )
+        if ( !parsedItem.implementation.toLower().endsWith(".cpp") )
         {
             parsedItem.markedForDelete = true;
         }
@@ -347,7 +347,7 @@ void TreeClasses::deleteMarked(QTreeWidgetItem *current)
     {
         //delete current;
         m_listDeletion.append( current );
-		emit modifiedClasse( parsedItem.classname );
+		//emit modifiedClasse( parsedItem.classname );
         return;
     }
     for (int i=0; i<current->childCount(); i++)
@@ -363,7 +363,7 @@ QTreeWidgetItem *TreeClasses::findAndCreate(QTreeWidgetItem *begin, QString pixn
     QTreeWidgetItem *newItem = findItem(begin, text, key, recursive);
     if ( !newItem  )
     {
-		emit modifiedClasse( parsedItem.classname );
+		//emit modifiedClasse( parsedItem.classname );
         if ( begin )
             newItem = new QTreeWidgetItem( begin );
         else
@@ -786,12 +786,12 @@ void TreeClasses::slotAddNewClassMethod()
     QString implementation = parsedItem.implementation;
     QString declaration = parsedItem.declaration;
     QString classname = parsedItem.name;
-    if ( implementation.isEmpty() )
+    if ( !QFileInfo(implementation.section("|", 0, 0)).isFile() )
     {
         for (int i=0; i<m_itemClicked->childCount(); i++)
         {
             ParsedItem childItem = m_itemClicked->child( i )->data(0, Qt::UserRole).value<ParsedItem>();
-            if ( !childItem.implementation.isEmpty() )
+            if ( QFileInfo(childItem.implementation.section("|", 0, 0)).isFile() )
             {
                 implementation = childItem.implementation;
                 break;
@@ -811,12 +811,12 @@ void TreeClasses::slotAddNewClassVariable()
     QString implementation = parsedItem.implementation;
     QString declaration = parsedItem.declaration;
     QString classname = parsedItem.name;
-    if ( implementation.isEmpty() )
+    if ( !QFileInfo(implementation.section("|", 0, 0)).isFile() )
     {
         for (int i=0; i<m_itemClicked->childCount(); i++)
         {
             ParsedItem childItem = m_itemClicked->child( i )->data(0, Qt::UserRole).value<ParsedItem>();
-            if ( !childItem.implementation.isEmpty() )
+            if ( QFileInfo(childItem.implementation.section("|", 0, 0)).isFile() )
             {
                 implementation = childItem.implementation;
                 break;
@@ -838,12 +838,12 @@ void TreeClasses::slotAddGetSetMethod()
     QString implementation = parsedItemParent.implementation;
     QString declaration = parsedItemParent.declaration;
     QString classname = parsedItemParent.name;
-    if ( implementation.isEmpty() )
+    if ( !QFileInfo(implementation.section("|", 0, 0)).isFile() )
     {
         for (int i=0; i<m_itemClickedParent->childCount(); i++)
         {
             ParsedItem childItem = m_itemClickedParent->child( i )->data(0, Qt::UserRole).value<ParsedItem>();
-            if ( !childItem.implementation.isEmpty() )
+            if ( QFileInfo(childItem.implementation.section("|", 0, 0)).isFile() )
             {
                 implementation = childItem.implementation;
                 break;

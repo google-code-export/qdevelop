@@ -114,7 +114,7 @@ private slots:
 public slots:
 	void updateClasses( QString filename, QString buffer, QStringList parents, QString ext);
 signals:
-	void modifiedClasse(QString);
+	//void modifiedClasse(QString);
 };
 
 #endif

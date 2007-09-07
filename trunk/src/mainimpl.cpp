@@ -319,6 +319,7 @@ void MainImpl::createConnections()
     connect(actionCompile, SIGNAL(triggered()), this, SLOT(slotCompile()) );
     connect(actionBuild, SIGNAL(triggered()), this, SLOT(slotBuild()) );
     connect(actionRebuild, SIGNAL(triggered()), this, SLOT(slotRebuild()) );
+    connect(actionQmake, SIGNAL(triggered()), this, SLOT(slotQmake()) );
     connect(actionStopBuild, SIGNAL(triggered()), this, SLOT(slotStopBuild()) );
     connect(actionClean, SIGNAL(triggered()), this, SLOT(slotClean()) );
     connect(actionCut, SIGNAL(triggered()), this, SLOT(slotCut()) );
@@ -1017,7 +1018,7 @@ bool MainImpl::openProject(QString s)
     	m_buildQtDatabase->wait();
     	delete m_buildQtDatabase;
    	}
-    m_completion = new InitCompletion (this);
+    m_completion = new InitCompletion (this, treeClasses);
     QString includes;
     includes = m_includeDirectory;
 #ifdef WIN32
@@ -1027,7 +1028,7 @@ bool MainImpl::openProject(QString s)
     m_completion->setQtInclude( includes );
     //m_completion->slotInitParse(QString(), QString(), true, false, true, QString(), true);
 	//
-    connect(treeClasses, SIGNAL(modifiedClasse(QString)),  m_completion, SLOT(slotModifiedClasse(QString)) );
+    //connect(treeClasses, SIGNAL(modifiedClasse(QString)),  m_completion, SLOT(slotModifiedClasse(QString)) );
     configureCompletion( QFileInfo(s).absoluteDir().path() );
     m_projectManager = new ProjectManager(this, treeFiles, treeClasses);
     m_projectManager->init(s);
@@ -1460,7 +1461,7 @@ void MainImpl::slotCompile()
     }
 }
 //
-void MainImpl::slotBuild(bool clean, bool build)
+void MainImpl::slotBuild(bool clean, bool build, bool forceQmake)
 {
     bool qmakeNeeded = false;
     if (!m_projectManager)
@@ -1497,7 +1498,7 @@ void MainImpl::slotBuild(bool clean, bool build)
     QString projectName = m_projectManager->projectName( projectDirectory );
 
     QString makefilePath = projectDirectory + "/Makefile";
-    qmakeNeeded = qmakeNeeded || !QFile::exists(makefilePath);
+    qmakeNeeded = qmakeNeeded || !QFile::exists(makefilePath) || forceQmake;
     if ( qmakeNeeded )
     {
         m_configureCompletionNeeded = true;
@@ -2323,7 +2324,7 @@ void MainImpl::slotNewQtVersion()
 //
 void MainImpl::checkQtDatabase()
 {
-    m_buildQtDatabase = new InitCompletion (this);
+    m_buildQtDatabase = new InitCompletion (this, treeClasses);
     connect(m_buildQtDatabase, SIGNAL(finished()), m_buildQtDatabase, SLOT(deleteLater()) );
     QString includes;
     includes = m_includeDirectory;
@@ -2335,3 +2336,9 @@ void MainImpl::checkQtDatabase()
     m_buildQtDatabase->slotInitParse(QString(), QString(), true, false, true, QString(), true);
 	//
 }
+
+void MainImpl::slotQmake()
+{
+	slotBuild(false, false, true);
+}
+

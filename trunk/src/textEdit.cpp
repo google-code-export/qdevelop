@@ -259,14 +259,14 @@ void TextEdit::completeCode()
     emit initParse(m_editor->filename(), c, true, true, false, QString(), false);
 }
 
-void TextEdit::slotCompletionList(TagList TagList)
+void TextEdit::slotCompletionList(TagList tagList )
 {
-    if ( TagList.count() )
+    if ( tagList.count() )
     {
         int w = 0;
         int h = 0;
         m_completionList->clear();
-        foreach(Tag tag, TagList)
+        foreach(Tag tag, tagList)
         {
             w = qMax(w, fontMetrics().width( tag.name+tag.parameters ));
             QListWidgetItem *item = new QListWidgetItem( m_completionList );
@@ -284,7 +284,7 @@ void TextEdit::slotCompletionList(TagList TagList)
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_var.png"));
             m_completionList->addItem(item);
             //m_completionList->addItem( tag.name );
-            //qDebug() << tag.name << tag.longName << tag.parameters << tag.access << tag.kind;
+//qDebug() << tag.name << tag.longName << tag.parameters << tag.access << tag.kind;
         }
         m_completionList->setSelectionMode( QAbstractItemView::SingleSelection );
         QPalette palette;
@@ -328,14 +328,14 @@ void TextEdit::slotCompletionList(TagList TagList)
         m_completionList->hide();
 }
 //
-void TextEdit::slotCompletionHelpList(TagList TagList)
+void TextEdit::slotCompletionHelpList(TagList tagList)
 {
-    if ( TagList.count() )
+    if ( tagList.count() )
     {
         int w = 0;
         int h = 0;
         m_completionList->clear();
-        foreach(Tag tag, TagList)
+        foreach(Tag tag, tagList)
         {
             w = qMax(w, fontMetrics().width( tag.name+tag.parameters ));
             QListWidgetItem *item = new QListWidgetItem( m_completionList );
@@ -1069,11 +1069,11 @@ void TextEdit::slotWordCompletion(QListWidgetItem *item)
     QString text = tag.name;
     wordUnderCursor(QPoint(), true);
     textCursor().insertText( text );
-    if ( m_completion && tag.isFunction && !tag.signature.contains("()") )
+    if ( m_completion && tag.signature.contains("(") && !tag.signature.contains("()") )
     {
         completionHelp();
     }
-    if ( tag.isFunction )
+    if ( tag.signature.contains("(") )
     {
         textCursor().insertText( "()" );
         if ( !tag.signature.contains("()") )

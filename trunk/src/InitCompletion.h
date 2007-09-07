@@ -17,6 +17,7 @@
 #include <QSqlQuery>
 
 class Tree;
+class TreeClasses;
 struct Expression;
 struct Scope;
 
@@ -30,30 +31,20 @@ public:
 	QString kind;
 	QString access;
 	QString signature;
-
+	QString returned;
 	bool isFunction;
 	bool isStatic;
 };
 typedef QList<Tag> TagList;
 //
-/*struct EnqueuedFiles
-{
-public:
-	QString text;
-	bool emitResults;
-	bool showAllResults;
-	QString name;
-	QString filename;
-    bool checkQt;
-};
-typedef QList<EnqueuedFiles> EnqueuedFilesList;*/
+#include <QTime>
 //
 class InitCompletion : public QThread
 {
 	Q_OBJECT
 
 public:
-	InitCompletion (QObject *parent = 0);
+	InitCompletion (QObject *parent, TreeClasses *treeClasses);
 	~InitCompletion();
 	void setCtagsCmdPath (const QString &cmdPath);
 	void addIncludes (QStringList includesPath, QString projectDirectory);
@@ -87,11 +78,14 @@ private:
 	QString includesPathList(const QString &parsedText);
 	void writeInheritanceToDB(QMap<QString, QString> inheritsList, QSqlQuery query);
 
-	TagList readFromDB(TagList &list, Expression exp, QString functionName);
+	TagList readFromDB(TagList list, Expression exp, QString functionName);
 	void writeToDB(Expression exp, TagList list, QSqlQuery query);
 	bool connectQDevelopDB(QString const& dbName);
 	void createTables();
 	void populateQtDatabase();
+	QStringList inheritanceList( const QString classname, QStringList &list );
+	Expression parseLine( QString text );
+	QString returned(QString className, QString function );
 
 	QStringList cpp_includes;
 	QString m_text;
@@ -100,13 +94,12 @@ private:
     bool m_showDuplicateEntries;
     bool m_checkQt;
     QString m_name;
-    //EnqueuedFilesList enqueuedFilesList;
     QString m_projectDirectory;
     QList<QPair<QString, QString> > parsingList;
 	QString m_qtInclude;
 	bool m_stopRequired;
+	TreeClasses *m_treeClasses;
 public slots:
-	void slotModifiedClasse(QString classname);
 	void slotInitParse(QString filename, const QString &text, bool showAllResults, bool emitResults, bool showDuplicateEntries, QString name, bool checkQt);
 signals:
 	void completionList( TagList ); 

@@ -12,19 +12,20 @@
 #include "./QIComplete/readtags.h"
 #include "./QIComplete/tree.h"
 #include "misc.h"
+#include "treeclasses.h"
 
 #include <QDir>
 #include <QProcess>
 #include <QLibraryInfo>
 #include <QMetaType>
-#include <QTemporaryFile> 
-#include <QSqlDatabase> 
-#include <QSqlQuery> 
-#include <QSqlError> 
-#include <QMessageBox> 
-#include <QVariant> 
-#include <QMetaType> 
-#include <QCoreApplication> 
+#include <QTemporaryFile>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QMessageBox>
+#include <QVariant>
+#include <QMetaType>
+#include <QCoreApplication>
 
 #ifdef _WIN32
 #define NEW_LINE "\r\n"
@@ -32,8 +33,8 @@
 #define NEW_LINE "\n"
 #endif
 #include <QDebug>
-InitCompletion::InitCompletion (QObject *parent)
-        : QThread(parent)
+InitCompletion::InitCompletion (QObject *parent, TreeClasses *treeClasses)
+        : QThread(parent), m_treeClasses(treeClasses)
 {
     qRegisterMetaType<TagList>("TagList");
     m_stopRequired = false;
@@ -41,24 +42,24 @@ InitCompletion::InitCompletion (QObject *parent)
 //
 InitCompletion::~InitCompletion()
 {
-	QStringList list = QDir( QDir::tempPath() ).entryList(QStringList() << "qdevelop-completion-*", QDir::Files);
-	foreach(QString file, list)
-	{
-		QFile( QDir::tempPath()+"/"+file ).remove();
-	}
-	if( m_stopRequired )
-	{
-		if( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
-		{
-			return;
-		}
-		createTables();
-		QSqlQuery query;
-		query.exec("BEGIN TRANSACTION;");
-		QString queryString = "delete from tags";
-		query.exec(queryString);
-		query.exec("END TRANSACTION;");
-	}
+    QStringList list = QDir( QDir::tempPath() ).entryList(QStringList() << "qdevelop-completion-*", QDir::Files);
+    foreach(QString file, list)
+    {
+        QFile( QDir::tempPath()+"/"+file ).remove();
+    }
+    if ( m_stopRequired )
+    {
+        if ( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
+        {
+            return;
+        }
+        createTables();
+        QSqlQuery query;
+        query.exec("BEGIN TRANSACTION;");
+        QString queryString = "delete from tags";
+        query.exec(queryString);
+        query.exec("END TRANSACTION;");
+    }
 }
 
 //
@@ -70,8 +71,8 @@ void InitCompletion::slotInitParse(QString filename, const QString &text, bool s
     m_showAllResults = showAllResults;
     m_name = name;
     m_checkQt = checkQt;
-    
-	QString Path = QDir::tempPath();
+
+    QString Path = QDir::tempPath();
     tagsIncludesPath = Path + '/' + "qdevelop-completion-" + QFileInfo(filename).baseName() + "-tags_includes";
     tagsFilePath = Path + '/' + "qdevelop-completion-" + QFileInfo(filename).baseName() + "-tags";
     smallTagsFilePath = Path + '/' + "qdevelop-completion-" + QFileInfo(filename).baseName() + "-small-tags";
@@ -241,91 +242,49 @@ Expression InitCompletion::getExpression(const QString &text, Scope &sc, bool sh
 
 void InitCompletion::run()
 {
-	if( m_checkQt )
-	{
-    	Expression exp;
-    	exp.className = "QString";
-		TagList list;
-		list = readFromDB(list, exp, QString());
-		if( list.count() )
-		{
-			return;
-		}
-		populateQtDatabase();
-		return;			
-	}
+    if ( m_checkQt )
+    {
+        Expression exp;
+        exp.className = "QString";
+        TagList list;
+        list = readFromDB(list, exp, QString());
+        if ( list.count() )
+        {
+            return;
+        }
+        populateQtDatabase();
+        return;
+    }
     Scope sc;
     Expression exp = getExpression(m_text, sc, m_showAllResults);
     /* we have all relevant information, so just list the entries */
-	TagList list, newList, listForDB;
-    if (exp.access != ParseError && ( m_emitResults || m_checkQt ))
+    TagList list, newList, listForDB;
+    if ( m_emitResults )
     {
-		if( !exp.className.isEmpty() )
-		{
-			// Try to read from database
-			list = readFromDB(list, exp, m_name.simplified());
-			// If the list is empty, the classe is not present in database
-			if( list.isEmpty() )
-			{
-				// Populate the list by reading the tag file on disk
-	        	list = Tree::findEntries(&exp, &sc);
-		        for (int i=0; i<list.count(); i++)
-		        {
-		            /* The file created by ctags can contain entries badly created with "Q_REQUIRED_RESULT" in name field.
-		            For these entries, we try to find the good informations in other fields.
-		            */
-		            if ( list[i].name=="Q_REQUIRED_RESULT" )
-		            {
-		                if ( list[i].longName.contains("(") && !list[i].longName.contains("="))
-		                {
-		                    list[i].name = list[i].longName.remove("const ").section(" ", 1, 1).section("(", 0, 0);
-		                    list[i].kind = "function";
-		                    list[i].parameters = list[i].signature = "(" + list[i].longName.section("(", 1, 1).section(")", -2, -2) + ")";
-		                    list[i].access = "public";
-		                    list[i].isFunction = true;
-		                }
-		            }
-		            if ( list[i].name=="Q_REQUIRED_RESULT" )
-		            	continue;
-		            if ( !m_name.simplified().isEmpty() && m_name.simplified() != list[i].name )
-		                continue;
-		            listForDB << list[i];
-		            if ( i+1<list.count() && list[i+1].name == list[i].name && m_name.simplified().isEmpty())
-		            {
-		                continue;
-	            	}
-		            newList << list[i];
-	            }
-	            if( !m_checkQt )
-	            {
-			        if ( m_name.simplified().isEmpty() )
-			            emit completionList( newList );
-			        else
-			            emit completionHelpList( newList );
-            	}
-	        	// Then save list in database to reuse after.
-	        	if( m_name.simplified().isEmpty() )
-	        	{
-				    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
-				    {
-						return;
-			    	}
-					createTables();
-				    QSqlQuery query;
-				    query.exec("BEGIN TRANSACTION;");
-	       			writeToDB(exp, listForDB, query);
-				    query.exec("END TRANSACTION;");
-        		}
-	        }
-	        else
-	        {
-		        if ( m_name.isEmpty() )
-		            emit completionList( list );
-		        else
-		            emit completionHelpList( list );
-        	}
-		}
-	}
+        if ( exp.access == ParseError )
+        {
+            exp = parseLine( m_text );
+        }
+        if (exp.access != ParseError )
+        {
+            if ( !exp.className.isEmpty() )
+            {
+                // Try to read from database
+                list = readFromDB(list, exp, m_name.simplified());
+                // If the list is empty, the classe is not present in database
+                if ( list.isEmpty() )
+                {
+                    // Populate the list by reading the tag file on disk
+                    list = Tree::findEntries(&exp, &sc);
+                }
+                if ( m_name.simplified().isEmpty() )
+                    emit completionList( list );
+                else
+                    emit completionHelpList( list );
+            }
+        }
+
+    }
 }
 
 QString InitCompletion::className(const QString &text)
@@ -380,93 +339,155 @@ QFile* InitCompletion::getFiledescriptor(const QString &filename, QString &fulln
     return NULL;
 }
 //
-TagList InitCompletion::readFromDB(TagList &list, Expression exp, QString functionName)
+TagList InitCompletion::readFromDB(TagList list, Expression exp, QString functionName)
 {
-	if( exp.className.length() > 1 && exp.className.at(0) == 'Q' && exp.className.at(1).isUpper() ) // Certainly a Qt classe
-	{
-		if( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
-		{
-			return TagList();
-		}
-	}
-	else
-	{
-	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
-	    {
-			return TagList();
-    	}
-	}
-	createTables();
+    if ( exp.className.isEmpty() )
+        return TagList();
+    QStringList classes;
+    classes << exp.className;
+    // If the first character is 'Q', we have certainly a Qt classe, read the list of tag from qdevelop.db
+    if ( exp.className.length() > 1 && exp.className.at(0) == 'Q' && exp.className.at(1).isUpper() )
+    {
+        if ( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
+        {
+            return TagList();
+        }
+    }
+    else
+    {
+        /* The first character is not a 'Q', certainly an class created in the project. We read the list
+        from the class browser which have all the classes and members of the project */
+        classes = inheritanceList(exp.className, classes);
+        const QList<ParsedItem> *itemsList = m_treeClasses->treeClassesItems();
+        for (int i = 0; i < itemsList->size(); ++i)
+        {
+            ParsedItem parsedItem = itemsList->at( i );
+            Tag tag;
+            tag.access = parsedItem.access;
+            tag.name = parsedItem.name;
+            tag.parameters = parsedItem.signature;
+            tag.signature = parsedItem.signature;
+            tag.returned = parsedItem.ex_cmd.section(" ", 0, 0);
+            if ( tag.returned.contains("<") )
+                tag.returned = tag.returned.section("<", 0, 0);
+            if ( parsedItem.kind == "f" )
+                tag.kind = "function";
+            else if ( parsedItem.kind == "p" )
+                tag.kind = "prototype";
+            else if ( parsedItem.kind == "e" )
+            {
+                if (  parsedItem.enumname.section(":", 0, 0) != exp.className )
+                    continue;
+                parsedItem.classname = exp.className;
+                tag.parameters = "";
+                tag.kind = "member";
+            }
+            else if ( parsedItem.kind == "m" )
+            {
+                tag.kind = "member";
+                tag.parameters = "";
+            }
+            else
+            {
+                continue;
+            }
+            bool isStatic = parsedItem.ex_cmd.simplified().startsWith("static");
+            if ( !classes.contains( parsedItem.classname ) )
+                continue;
+            else if ( !functionName.isEmpty() && parsedItem.name != functionName )
+                continue;
+            else if ( tag.access != "public" && !m_text.simplified().endsWith("this->") )
+                continue;
+            else if ( (exp.access == AccessStatic && isStatic != true)
+                      || (exp.access != AccessStatic && isStatic == true))
+                continue;
+            list << tag;
+        }
+    }
+    // Continue the reading in qdevelop.db
+    createTables();
     QSqlQuery query;
     query.exec("BEGIN TRANSACTION;");
+    //
     QString queryString = QString()
-                          + "select * from tags where class='"+exp.className+"'";
-    if( !functionName.simplified().isEmpty() )
-    {
-    	queryString += " and name='" + functionName + "'";
-   	}
-    query.exec(queryString);
-    while (query.next())
-    {
-    	Tag tag;
-    	tag.name = query.value(1).toString().replace("$", "'");
-    	tag.parameters = query.value(2).toString().replace("$", "'");
-    	tag.longName = query.value(3).toString().replace("$", "'");
-    	tag.kind = query.value(4).toString().replace("$", "'");
-    	tag.access = query.value(5).toString().replace("$", "'");
-    	tag.signature = query.value(6).toString().replace("$", "'");
-    	tag.isFunction = query.value(7).toInt();
-    	tag.isStatic = query.value(8).toInt();
-    	if( (exp.access == AccessStatic && tag.isStatic != true) 
-    		|| (exp.access != AccessStatic && tag.isStatic == true))
-    		continue;
-    	if( list.count() && functionName.simplified().isEmpty())
-    	{
-	    	Tag lastTag = list.last();
-	    	if( lastTag.name == tag.name )
-	    		list.pop_back();
-   		}
-    	list << tag;
-    }
-    queryString = QString()
                           + "select * from inheritance where child='"+exp.className+"'";
     query.exec(queryString);
     while (query.next())
     {
-	
-    	QString parent = query.value(0).toString().replace("$", "'");
-		if( !parent.isEmpty() )
-		{
-			exp.className = parent;
-			list = readFromDB(list, exp, functionName);
-		}
-	}
-	return list;
+
+        QString parent = query.value(0).toString().replace("$", "'");
+        if ( !parent.isEmpty() )
+        {
+            classes << parent;
+        }
+    }
+    //
+    queryString = QString()
+                  + "select * from tags where class in ( ";
+    foreach(QString c, classes)
+    {
+        queryString = queryString + " '" + c + "',";
+    }
+    queryString = queryString.left( queryString.length()-1 );
+    queryString += " )";
+    if ( !functionName.simplified().isEmpty() )
+    {
+        queryString += " and name='" + functionName + "'";
+    }
+    //
+    query.exec(queryString);
+    while (query.next())
+    {
+        Tag tag;
+        tag.name = query.value(1).toString().replace("$", "'");
+        tag.parameters = query.value(2).toString().replace("$", "'");
+        tag.longName = query.value(3).toString().replace("$", "'");
+        tag.kind = query.value(4).toString().replace("$", "'");
+        tag.access = query.value(5).toString().replace("$", "'");
+        tag.signature = query.value(6).toString().replace("$", "'");
+        tag.returned = query.value(7).toString().replace("$", "'");
+        tag.isFunction = query.value(8).toInt();
+        tag.isStatic = query.value(9).toInt();
+        if ( (exp.access == AccessStatic && tag.isStatic != true)
+                || (exp.access != AccessStatic && tag.isStatic == true))
+            continue;
+        else if ( tag.access != "public" && !m_text.simplified().endsWith("this->") )
+            continue;
+        if ( list.count() && functionName.simplified().isEmpty())
+        {
+            Tag lastTag = list.last();
+            if ( lastTag.name == tag.name )
+                list.pop_back();
+        }
+        list << tag;
+    }
+    return list;
 }
 //
 bool InitCompletion::connectQDevelopDB(QString const& dbName)
 {
-	QSqlDatabase database;
-	
-	if( QSqlDatabase::database().databaseName() != dbName )
-	{
-		database = QSqlDatabase::addDatabase("QSQLITE");
-		database.setDatabaseName(dbName);
-	}
-	else
-	{
-		database = QSqlDatabase::database();
-		if ( database.isOpen() )
-			return true;
-	}
-	//
-    if (!database.open()) {
+    QSqlDatabase database;
+
+    if ( QSqlDatabase::database().databaseName() != dbName )
+    {
+        database = QSqlDatabase::addDatabase("QSQLITE");
+        database.setDatabaseName(dbName);
+    }
+    else
+    {
+        database = QSqlDatabase::database();
+        if ( database.isOpen() )
+            return true;
+    }
+    //
+    if (!database.open())
+    {
         QMessageBox::critical(0, "QDevelop",
-            QObject::tr("Unable to establish a database connection.")+"\n"+
-                     QObject::tr("QDevelop needs SQLite support. Please read "
-                     "the Qt SQL driver documentation for information how "
-                     "to build it."), QMessageBox::Cancel,
-                     QMessageBox::NoButton);
+                              QObject::tr("Unable to establish a database connection.")+"\n"+
+                              QObject::tr("QDevelop needs SQLite support. Please read "
+                                          "the Qt SQL driver documentation for information how "
+                                          "to build it."), QMessageBox::Cancel,
+                              QMessageBox::NoButton);
         return false;
     }
     return true;
@@ -485,8 +506,9 @@ void InitCompletion::writeToDB(Expression exp, TagList list, QSqlQuery query)
                       + "'" + tag.kind.replace("'", "$") + "', "
                       + "'" + tag.access.replace("'", "$") + "', "
                       + "'" + tag.signature.replace("'", "$") + "', "
-                      + "'" + QString::number(tag.isFunction) + "', "
-                      + "'" + QString::number(tag.isStatic) + "')";
+                      + "'" + tag.returned.replace("'", "$") + "', "
+                                        + "'" + QString::number(tag.isFunction) + "', "
+                                        + "'" + QString::number(tag.isStatic) + "')";
         bool rc = query.exec(queryString);
         if (rc == false)
         {
@@ -497,68 +519,39 @@ void InitCompletion::writeToDB(Expression exp, TagList list, QSqlQuery query)
     }
 }
 //
-
-void InitCompletion::slotModifiedClasse(QString classname)
-{
-	if (classname.isEmpty() || classname.isNull() )
-	{
-		qDebug( "trying to init completion on a null class name");
-		return;
-	}
-		
-	if( classname.length() > 1 && classname.at(0) == 'Q' && classname.at(1).isUpper() ) // Certainly a Qt classe
-		if( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
-			return;
-	else
-	    if( !connectDB(m_projectDirectory+"/qdevelop-settings.db") )
-	    	return;
-	createTables();
-    QSqlQuery query;
-    query.exec("BEGIN TRANSACTION;");
-    QString queryString = QString()
-                          + "delete from tags where class='"+classname+"'";
-    bool rc = query.exec(queryString);
-    if (rc == false)
-    {
-        qDebug() << "Failed delete from db" << query.lastError();
-        qDebug() << queryString;
-        return;
-    }
-    query.exec("END TRANSACTION;");
-}
-
 void InitCompletion::createTables()
 {
-	QSqlQuery query;
-	QString queryString = "create table tags ("
-	    "class string,"
-	    "name string,"
-	    "parameters string,"
-	    "longName string,"
-	    "kind string,"
-	    "access string,"
-	    "signature string,"
-	    "isFunction int,"
-	    "isStatic int"
-	    ")";
-	query.exec(queryString);
-	//
-	queryString = "create table inheritance ("
-	    "parent string,"
-	    "child string"
-	    ")";
-	query.exec(queryString);
+    QSqlQuery query;
+    QString queryString = "create table tags ("
+                          "class string,"
+                          "name string,"
+                          "parameters string,"
+                          "longName string,"
+                          "kind string,"
+                          "access string,"
+                          "signature string,"
+                          "returned string,"
+                          "isFunction int,"
+                          "isStatic int"
+                          ")";
+    query.exec(queryString);
+    //
+    queryString = "create table inheritance ("
+                  "parent string,"
+                  "child string"
+                  ")";
+    query.exec(queryString);
 }
 //
 
 void InitCompletion::populateQtDatabase()
 {
-	QString command = ctagsCmdPath + " -R -f \"" + QDir::tempPath()+"/qttags" +
-	                  "\" --language-force=c++ --fields=afiKmsSzn --c++-kinds=cdefgmnpstuvx \""
-	                  + m_qtInclude + '\"';
-	QProcess ctags;
-	ctags.execute(command);
-	ctags.waitForFinished();
+    QString command = ctagsCmdPath + " -R -f \"" + QDir::tempPath()+"/qttags" +
+                      "\" --language-force=c++ --fields=afiKmsSzn --c++-kinds=cdefgmnpstuvx \""
+                      + m_qtInclude + '\"';
+    QProcess ctags;
+    ctags.execute(command);
+    ctags.waitForFinished();
     QFile file(QDir::tempPath()+"/qttags");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
@@ -567,40 +560,50 @@ void InitCompletion::populateQtDatabase()
     file.close();
     file.remove();
 
-	QMap<QString, QString> inheritsList;
-	QMap<QString, TagList> map;
+    QMap<QString, QString> inheritsList;
+    QMap<QString, TagList> map;
     foreach(QString s, read.split("\n", QString::SkipEmptyParts) )
     {
-    	QString classname;
-    	Tag tag;
+        QString classname;
+        Tag tag;
         if ( !s.isEmpty() && s.simplified().at(0) == '!' )
             continue;
         s += '\t';
         tag.name = s.section("\t", 0, 0).simplified();
-        QString ex_cmd = s.section("/^", -1, -1).section("\"", 0, 0).simplified();
+        QString ex_cmd = s.section("/^", -1, -1).section("$/", 0, 0).simplified();
         tag.isStatic = ex_cmd.startsWith("static");
         classname = s.section("class:", -1, -1).section("\t", 0, 0).simplified();
         tag.access =  s.section("access:", -1, -1).section("\t", 0, 0).simplified();
-        if( !QString("public:private:protected").contains( tag.access ) )
-        	tag.access = "public";
+        if ( !QString("public:private:protected").contains( tag.access ) )
+            tag.access = "public";
         tag.longName =  s;
         tag.kind = s.section("kind:", -1, -1).section("\t", 0, 0).simplified();
         if ( classname.isEmpty() )
-        	continue;
+            continue;
         tag.parameters = "(" + tag.longName.section("(", 1, 1).section(")", -2, -2) + ")";
         tag.signature = ex_cmd;
         tag.isFunction = true;
         tag.signature = s.section("signature:", -1, -1).section("\t", 0, 0).simplified();
         tag.kind = s.section("kind:", -1, -1).section("\t", 0, 0).simplified();
+        tag.returned = ex_cmd;
+        if ( tag.returned.startsWith("inline ") )
+            tag.returned = tag.returned.section("inline ", 1);
+        if ( tag.returned.startsWith("const ") )
+            tag.returned = tag.returned.section("const ", 1);
+        if ( tag.returned.startsWith("QT3_SUPPORT ") )
+            tag.returned = tag.returned.section("QT3_SUPPORT ", 1);
+        tag.returned = tag.returned.section(" ", 0, 0);
+        if ( tag.returned.contains("<") )
+            tag.returned = tag.returned.section("<", 0, 0);
         QString inherits;
-		if( s.contains("inherits:") )
-			inherits = s.section("inherits:", -1, -1).section("\t", 0, 0).simplified();
-        if( !inherits.isEmpty() )
+        if ( s.contains("inherits:") )
+            inherits = s.section("inherits:", -1, -1).section("\t", 0, 0).simplified();
+        if ( !inherits.isEmpty() )
         {
-        	inheritsList[ classname ] = inherits;
-       	}
-        if( tag.kind != "prototype" && tag.kind != "function" )
-        	continue;
+            inheritsList[ classname ] = inherits;
+        }
+        if ( tag.kind != "prototype" && tag.kind != "function" )
+            continue;
         if ( tag.name=="Q_REQUIRED_RESULT" )
         {
             if ( tag.longName.contains("(") && !tag.longName.contains("="))
@@ -613,66 +616,209 @@ void InitCompletion::populateQtDatabase()
             }
         }
         if ( tag.name=="Q_REQUIRED_RESULT" )
-        	continue;
+            continue;
         TagList list;
         list = map[classname];
         bool alreadyInserted = false;
         foreach(Tag t, list)
         {
-        	if( t.name == tag.name && t.parameters == tag.parameters )
-        	{
-        		alreadyInserted = true;
-        		break;
-       		}
-       	}
-       	if( !alreadyInserted )
-       	{
-	        list << tag;
-	        map[classname] = list;
-      	}
+            if ( t.name == tag.name && t.parameters == tag.parameters )
+            {
+                alreadyInserted = true;
+                break;
+            }
+        }
+        if ( !alreadyInserted )
+        {
+            list << tag;
+            map[classname] = list;
+        }
     }
-	if( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
-	{
-		return;
-	}
-	createTables();
+    if ( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
+    {
+        return;
+    }
+    createTables();
     QSqlQuery query;
     query.exec("BEGIN TRANSACTION;");
     query.exec("delete from tags");
     QStringList keys = map.keys();
     foreach(QString key, keys)
     {
-    	if( m_stopRequired )
-    		break;
-	 	TagList tagList = map[key];
-	    Expression exp;
-	    exp.className = key;
-    	writeToDB(exp, tagList, query);
-   	}
-   	writeInheritanceToDB(inheritsList, query);
+        if ( m_stopRequired )
+            break;
+        TagList tagList = map[key];
+        Expression exp;
+        exp.className = key;
+        writeToDB(exp, tagList, query);
+    }
+    writeInheritanceToDB(inheritsList, query);
     query.exec("END TRANSACTION;");
 }
 //
 //
 void InitCompletion::writeInheritanceToDB(QMap<QString, QString> inheritsList, QSqlQuery query)
 {
-	QMapIterator<QString, QString> it(inheritsList);
-	while (it.hasNext()) 
-	{
-		it.next();
-		foreach(QString parent, it.value().split(",", QString::SkipEmptyParts ) )
-		{
-	        QString queryString = "insert into inheritance values(";
-	        queryString = queryString
-	                      + "'" + parent.replace("'", "$") + "', "
-	                      + "'" + QString(it.key()).replace("'", "$") + "')";
-	        bool rc = query.exec(queryString);
-	        if (rc == false)
-	        {
-	            qDebug() << "Failed to insert record to db" << query.lastError();
-	            qDebug() << queryString;
-	            return;
-	        }
-		}
-	}
+    QMapIterator<QString, QString> it(inheritsList);
+    while (it.hasNext())
+    {
+        it.next();
+        foreach(QString parent, it.value().split(",", QString::SkipEmptyParts ) )
+        {
+            QString queryString = "insert into inheritance values(";
+            queryString = queryString
+                          + "'" + parent.replace("'", "$") + "', "
+                          + "'" + QString(it.key()).replace("'", "$") + "')";
+            bool rc = query.exec(queryString);
+            if (rc == false)
+            {
+                qDebug() << "Failed to insert record to db" << query.lastError();
+                qDebug() << queryString;
+                return;
+            }
+        }
+    }
 }
+//
+QStringList InitCompletion::inheritanceList( const QString classname, QStringList &list )
+{
+    const QList<ParsedItem> *itemsList = m_treeClasses->treeClassesItems();
+    for (int i = 0; i < itemsList->size(); ++i)
+    {
+        if ( itemsList->at( i ).kind == "c" && itemsList->at( i ).name == classname && itemsList->at( i ).ex_cmd.contains(":") )
+        {
+            QString ex_cmd = itemsList->at( i ).ex_cmd;
+            ex_cmd = ex_cmd.left( ex_cmd.length()-3 );
+            ex_cmd = ex_cmd.section(":", 1);
+            ex_cmd = ex_cmd.remove("public").remove("protected").remove("private").remove(" ");
+            foreach(QString c, ex_cmd.split(",") )
+            {
+                list << c;
+                list = inheritanceList(c, list);
+            }
+        }
+    }
+    return list;
+}
+//
+Expression InitCompletion::parseLine( QString text )
+{
+    Expression exp;
+    Scope sc;
+    exp.access = AccessMembers;
+    int p = 0;
+    int pos = text.length()-1;
+    do
+    {
+        pos--;
+    	if( text[pos]=='(' )
+    		p--;
+    	else if( text[pos]==')' )
+    		p++;
+   	} while ( pos>0 && text[pos]!=';' && text[pos]!='}' && !( text[pos]=='(' && p!=0) );
+    QString varName = text.mid(pos);
+    while ( pos<text.length() && text[pos]!='.' && text[pos]!='>' )
+        pos++;
+    varName = text.left(pos+1).simplified();
+    QString line = text.mid(pos+1).simplified();
+    Expression exp2 = getExpression(varName, sc, m_showAllResults);
+    if ( exp2.access == ParseError )
+        return exp2;
+    QString className = exp2.className;
+    int i = 0;
+    while ( !line.section(".", i, i).isEmpty() || !line.section("-", i, i).isEmpty() )
+    {
+        QString function;
+        if ( !line.section(".", i, i).isEmpty() )
+            function = line.section(".", i, i);
+        else if ( !line.section("->", i, i).isEmpty() )
+            function = line.section("->", i, i);
+        className = returned(className, function);
+        i++;
+    }
+    exp.className = className;
+    return exp;
+}
+//
+QString InitCompletion::returned(QString className, QString function)
+{
+    QStringList classes;
+    classes << className;
+    classes = inheritanceList(className, classes);
+    //
+	function = function.section("(", 0, 0).simplified();
+    const QList<ParsedItem> *itemsList = m_treeClasses->treeClassesItems();
+    for (int i = 0; i < itemsList->size(); ++i)
+    {
+        ParsedItem parsedItem = itemsList->at( i );
+        Tag tag;
+        tag.access = parsedItem.access;
+        tag.name = parsedItem.name;
+        tag.parameters = parsedItem.signature;
+        tag.returned = parsedItem.ex_cmd.section(" ", 0, 0);
+        if ( tag.returned.contains("<") )
+            tag.returned = tag.returned.section("<", 0, 0);
+        if ( parsedItem.kind == "f" )
+            tag.kind = "function";
+        else if ( parsedItem.kind == "p" )
+            tag.kind = "prototype";
+        else if ( parsedItem.kind == "e" )
+        {
+            if (  parsedItem.enumname.section(":", 0, 0) != className )
+                continue;
+            parsedItem.classname = className;
+            tag.parameters = "";
+            tag.kind = "member";
+        }
+        else if ( parsedItem.kind == "m" )
+        {
+            tag.kind = "member";
+            tag.parameters = "";
+        }
+        else
+        {
+            continue;
+        }
+        bool isStatic = parsedItem.ex_cmd.simplified().startsWith("static");
+        if ( !classes.contains( parsedItem.classname ) )
+            continue;
+        if( className == parsedItem.classname && function == parsedItem.name )
+        {
+        	
+        	return tag.returned;
+       	}
+    }
+    // Continue the reading in qdevelop.db
+    createTables();
+    QSqlQuery query;
+    query.exec("BEGIN TRANSACTION;");
+    QString queryString = QString()
+                          + "select * from inheritance where child='"+className+"'";
+    query.exec(queryString);
+    while (query.next())
+    {
+
+        QString parent = query.value(0).toString().replace("$", "'");
+        if ( !parent.isEmpty() )
+        {
+            classes << parent;
+        }
+    }
+    queryString = QString()
+                  + "select * from tags where class in ( ";
+    foreach(QString c, classes)
+    {
+        queryString = queryString + " '" + c + "',";
+    }
+    queryString = queryString.left( queryString.length()-1 );
+    queryString += " )";
+    //
+    queryString += " and name = '" + function + "'";
+    query.exec(queryString);
+    if (query.next())
+    {
+       	return query.value(7).toString().replace("$", "'");
+    }
+	return QString();
+}
+//
