@@ -398,6 +398,7 @@ void MainImpl::createConnections()
     m_projectGroup->addAction( actionClean );
     m_projectGroup->addAction( actionStopBuild );
     m_projectGroup->addAction( actionCompile );
+    m_projectGroup->addAction( actionQmake );
     m_projectGroup->addAction( actionDebug );
     m_projectGroup->addAction( actionStopDebug );
     m_projectGroup->addAction( actionExecuteWithoutDebug );
@@ -2341,4 +2342,5 @@ void MainImpl::slotQmake()
 {
 	slotBuild(false, false, true);
 }
+
 
