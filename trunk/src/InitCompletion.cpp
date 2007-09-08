@@ -779,7 +779,7 @@ QString InitCompletion::returned(QString className, QString function)
         {
             continue;
         }
-        bool isStatic = parsedItem.ex_cmd.simplified().startsWith("static");
+//        bool isStatic = parsedItem.ex_cmd.simplified().startsWith("static");
         if ( !classes.contains( parsedItem.classname ) )
             continue;
         if( className == parsedItem.classname && function == parsedItem.name )

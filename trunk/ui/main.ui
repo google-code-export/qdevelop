@@ -39,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>686</width>
-     <height>25</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu" >
@@ -62,24 +62,6 @@
     <addaction name="actionSwitchHeaderSources" />
     <addaction name="actionToggleBreakpoint" />
     <addaction name="actionMethodsList" />
-   </widget>
-   <widget class="QMenu" name="menuDebug" >
-    <property name="title" >
-     <string>&amp;Debug</string>
-    </property>
-    <addaction name="actionDebug" />
-    <addaction name="actionStopDebug" />
-    <addaction name="actionExecuteWithoutDebug" />
-    <addaction name="separator" />
-    <addaction name="actionParameters" />
-    <addaction name="separator" />
-    <addaction name="actionStepInto" />
-    <addaction name="actionStepOut" />
-    <addaction name="actionStepOver" />
-    <addaction name="separator" />
-    <addaction name="actionBacktraces" />
-    <addaction name="separator" />
-    <addaction name="actionResetExecutablesList" />
    </widget>
    <widget class="QMenu" name="menu_Edit" >
     <property name="title" >
@@ -208,6 +190,24 @@
     <addaction name="actionConfigureShortcuts" />
     <addaction name="actionNewQtVersion" />
     <addaction name="menuPluginsSettings" />
+   </widget>
+   <widget class="QMenu" name="menuDebug" >
+    <property name="title" >
+     <string>&amp;Debug</string>
+    </property>
+    <addaction name="actionDebug" />
+    <addaction name="actionStopDebug" />
+    <addaction name="actionExecuteWithoutDebug" />
+    <addaction name="separator" />
+    <addaction name="actionParameters" />
+    <addaction name="separator" />
+    <addaction name="actionStepInto" />
+    <addaction name="actionStepOut" />
+    <addaction name="actionStepOver" />
+    <addaction name="separator" />
+    <addaction name="actionBacktraces" />
+    <addaction name="separator" />
+    <addaction name="actionResetExecutablesList" />
    </widget>
    <widget class="QMenu" name="menuBuild" >
     <property name="title" >
@@ -1515,11 +1515,16 @@
   </action>
   <action name="actionQmake" >
    <property name="text" >
-    <string>qmake</string>
+    <string>Launch qmake</string>
    </property>
   </action>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>LogBuild</class>
+   <extends>QTextEdit</extends>
+   <header>logbuild.h</header>
+  </customwidget>
   <customwidget>
    <class>TreeClasses</class>
    <extends>QTreeWidget</extends>
@@ -1530,11 +1535,6 @@
    <extends>QWidget</extends>
    <header>treeproject.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>LogBuild</class>
-   <extends>QTextEdit</extends>
-   <header>logbuild.h</header>
   </customwidget>
  </customwidgets>
  <resources>
