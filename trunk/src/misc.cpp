@@ -180,3 +180,132 @@ QString getQDevelopPath(void)
 	return path;
 }
 //
+QString simplifiedText(const QString string)
+{
+    QString m_fileString = string;
+    enum CodeState
+    {
+        NORMAL,
+        NORMAL_GOT_SLASH,
+        COMMENT_SINGLE_LINE,
+        COMMENT_MULTI_LINE,
+        COMMENT_GOT_STAR,
+        COMMENT_GOT_ESCAPE,
+        STRING,
+        STRING_GOT_ESCAPE,
+        CHAR,
+        CHAR_GOT_ESCAPE
+    } state = NORMAL;
+    
+    QChar c;
+    QChar previousChar;
+    int i;
+    for (i = 0; i < m_fileString.count(); i++)
+    {
+        c = m_fileString.at(i);
+        switch (state)
+        {
+            case NORMAL:
+                if (c == '/')
+                {
+                    state = NORMAL_GOT_SLASH;
+                    break;
+                }
+                else if (c == '"' )
+                {
+                    state = STRING;
+                }
+                else if (c == '\'' )
+                {
+                    state = CHAR;
+                }
+                break;
+            case NORMAL_GOT_SLASH:
+                if (c == '/')
+                {
+                    state = COMMENT_SINGLE_LINE;
+	                m_fileString[i-1] = m_fileString[i] = ' ';
+                }
+                else if (c == '*')
+                {
+                    state = COMMENT_MULTI_LINE;
+	                m_fileString[i-1] = m_fileString[i] = ' ';
+                }
+                else
+                {
+                    state = NORMAL;
+                }
+                break;
+            case COMMENT_SINGLE_LINE:
+                if (c == '\n')
+                {
+                    state = NORMAL;
+                }
+                else if (c == '\\')
+                {
+                    state = COMMENT_GOT_ESCAPE;
+                	m_fileString[i] = ' ';
+                }
+                break;
+            case COMMENT_MULTI_LINE:
+                if (c == '*')
+                {
+                    state = COMMENT_GOT_STAR;
+                }
+                m_fileString[i] = ' ';
+                break;
+            case COMMENT_GOT_STAR:
+                if (c == '*')
+                    state = COMMENT_GOT_STAR;
+                else if (c == '/' && previousChar == '*')
+                    state = NORMAL;
+                m_fileString[i] = ' ';
+                break;
+            case COMMENT_GOT_ESCAPE:
+                state = COMMENT_SINGLE_LINE;
+                m_fileString[i] = ' ';
+                break;
+            case STRING:
+                if (c == '\\')
+                {
+                    state = STRING_GOT_ESCAPE;
+	                m_fileString[i] = ' ';
+               	}
+                else if (c == '"')
+                {
+                    state = NORMAL;
+                }
+                else
+	                m_fileString[i] = ' ';
+                break;
+            case CHAR:
+                if (c == '\\')
+                {
+                    state = CHAR_GOT_ESCAPE;
+	                m_fileString[i] = ' ';
+                	
+               	}
+                else if (c == '\'')
+                {
+                    state = NORMAL;
+                }
+                else
+	                m_fileString[i] = ' ';
+                break;
+            case STRING_GOT_ESCAPE:
+                state = STRING;
+                m_fileString[i] = ' ';
+                break;
+            case CHAR_GOT_ESCAPE:
+                state = CHAR;
+                m_fileString[i] = ' ';
+                break;
+        }
+        previousChar = c;
+    }
+    if (state != NORMAL)
+    {
+        return string;
+    }
+    return m_fileString;
+}

@@ -419,7 +419,6 @@ void ProjectManager::loadProjectSettings()
     while (query.next())
     {
         int currentEditor = query.value( 0 ).toInt();
-        //qDebug()<<"currentEditor"<<currentEditor;
         if ( currentEditor != -1 )
             m_parent->tabEditors()->setCurrentIndex( currentEditor );
     }
@@ -437,7 +436,6 @@ void ProjectManager::loadProjectSettings()
         QTreeWidgetItem *itProject = itemProject( projectName );
         setSrcDirectory(itProject, srcDir);
         setUiDirectory(itProject, uiDir);
-        //qDebug()<<"loadProjectSettings"<< srcDir<< uiDir;
     }
 }
 //
@@ -1381,7 +1379,6 @@ void ProjectManager::slotDeleteItem(QTreeWidgetItem *it, bool silentMode)
             childsList(itTemplate, "DATA", list);
             for (int i=0; i<list.count(); i++)
             {
-                //qDebug() << list.at( i )->text(0);
                 if ( list.at( i )->text(0) == "subdirs" )
                     subdirs = true;
             }
@@ -1401,7 +1398,6 @@ void ProjectManager::slotDeleteItem(QTreeWidgetItem *it, bool silentMode)
 
 void ProjectManager::loadProject(QString s, QTreeWidgetItem *newProjectItem)
 {
-//qDebug() << s;
     QTreeWidgetItem *itemProject = newProjectItem;
     QFile file(s);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -1785,7 +1781,6 @@ QString ProjectManager::srcDirectory(QTreeWidgetItem *it)
 QString ProjectManager::projectDirectory(QString projectName)
 {
     QString rep = findData(projectName, "projectDirectory");
-//qDebug()<< rep;
     return rep;
 }
 //
@@ -1841,7 +1836,6 @@ QString ProjectManager::absoluteNameProjectFile(QTreeWidgetItem *it)
 //
 QString ProjectManager::findData(QString projectName, QString key)
 {
-//qDebug()<<projectName<<key;
     QTreeWidgetItem *it = item(0, projectName, Data);
     if ( !it )
         return QString();
@@ -2243,7 +2237,6 @@ bool ProjectManager::eventFilter( QObject *obj, QEvent *ev )
         {
             if ( m_previewForm )
             {
-                //qDebug()<<"DeleteLater "+obj->objectName();
                 m_previewForm->deleteLater();
                 m_previewForm = 0;
             }

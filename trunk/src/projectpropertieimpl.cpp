@@ -239,7 +239,6 @@ void ProjectPropertieImpl::slotCheck(bool activer)
     else
         texteVariable = ((QRadioButton *)objet)->text().simplified();
     nomVariable = objet->objectName().simplified();
-    //qDebug() << classe << nomVariable;
     if ( QString(":app:lib:subdirs:").contains( ":"+nomVariable+":" ) )
     {
         QTreeWidgetItem *itTemplate = subItTemplate( itCombo );
@@ -608,7 +607,6 @@ void ProjectPropertieImpl::parseConfig(QTreeWidgetItem *it)
     {
         QTreeWidgetItem *itemConfig = it->child( i );
         QString donnee = itemConfig->text(0);
-        //qDebug()<<donnee;
         if ( donnee == "debug" )	debug->setChecked(true);
         else if ( donnee == "release" )	release->setChecked(true);
         else if ( donnee == "debug_and_release" )	debug_and_release->setChecked(true);

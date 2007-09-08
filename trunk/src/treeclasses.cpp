@@ -131,7 +131,6 @@ void TreeClasses::slotParseCtags()
         //continue;
         s += '\t';
         s.replace("__anon", pathHash);
-//qDebug()<<s;
         ParsedItem parsedItem;
         parsedItem.parents = parents;
         parsedItem.markedForDelete = false;
@@ -158,7 +157,6 @@ void TreeClasses::slotParseCtags()
         parsedItem.signature = s.section("signature:", -1, -1).section("\t", 0, 0).simplified();
         parsedItem.kind = s.section("kind:", -1, -1).section("\t", 0, 0).simplified();
         //m_parsedItemsList.append( parsedItem );
-//qDebug() << "name="+parsedItem.name<<"implementation="+parsedItem.implementation<<"declaration="+parsedItem.declaration<<"ex_cmd="+parsedItem.ex_cmd<<"language="+parsedItem.language<<"classname="+parsedItem.classname<<"structname="+parsedItem.structname<<"access="+parsedItem.access<<"kind="+parsedItem.kind<<"signature="+parsedItem.signature;
         parse(parsedItem);
     }
     //m_parsedItemsList.clear();
@@ -185,7 +183,6 @@ void TreeClasses::parse(ParsedItem parsedItem)
     int level = 0;
     foreach(QString s, parsedItem.parents)
     {
-//qDebug()<<"Find item parent :"+s;
         itemParent = findAndCreate(itemParent, "", s, "parent:"+QString::number(level++)+":"+s, false, false, ParsedItem());
     }
     if ( parsedItem.classname.count() || parsedItem.structname.count() || parsedItem.enumname.count() )
@@ -242,8 +239,6 @@ void TreeClasses::parse(ParsedItem parsedItem)
         QString pixname;
         if ( parsedItem.classname.isEmpty() )
             pixname = "global_var";
-//qDebug()<< "kind=v" << parsedItem.name;
-//QString tmp = parsedItem.name;
         findAndCreate(itemParent, pixname, parsedItem.name, "variable:"+parsedItem.name, false, true, parsedItem);
     }
     else if ( parsedItem.kind == "s" ) // struct
@@ -279,10 +274,6 @@ void TreeClasses::parse(ParsedItem parsedItem)
         pixname = "namespace";
         findAndCreate(itemParent, pixname, parsedItem.name, "class:"+parsedItem.name, false, true, parsedItem);
     }
-    else
-    {
-        //qDebug()<<parsedItem.kind<<parsedItem.name;
-    }
     // End parsing
 
 }
@@ -316,7 +307,6 @@ void TreeClasses::markForDeletion(QTreeWidgetItem *current, QString filename, QS
 {
     ParsedItem parsedItem = current->data(0, Qt::UserRole).value<ParsedItem>();
     parsedItem.markedForDelete = false;
-//qDebug()<<parsedItem.parents << parents;
     if ( ext==".cpp" && parsedItem.implementation.section("|", 0, 0) == filename && parsedItem.parents == parents)
     {
         if ( !parsedItem.declaration.toLower().endsWith(".h") )
@@ -726,7 +716,6 @@ void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QStrin
     QVariant v;
     v.setValue( parsedItem );
     it->setData(0, Qt::UserRole, v );
-//qDebug() << text << parent->text(0) << parents;
 
     // TODO remove gcc warnings
     tooltip.isNull();

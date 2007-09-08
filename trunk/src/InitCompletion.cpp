@@ -345,64 +345,57 @@ TagList InitCompletion::readFromDB(TagList list, Expression exp, QString functio
         return TagList();
     QStringList classes;
     classes << exp.className;
-    // If the first character is 'Q', we have certainly a Qt classe, read the list of tag from qdevelop.db
-    if ( exp.className.length() > 1 && exp.className.at(0) == 'Q' && exp.className.at(1).isUpper() )
+    if ( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
     {
-        if ( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
-        {
-            return TagList();
-        }
+        return TagList();
     }
-    else
+    /* The first character is not a 'Q', certainly an class created in the project. We read the list
+    from the class browser which have all the classes and members of the project */
+    classes = inheritanceList(exp.className, classes);
+    const QList<ParsedItem> *itemsList = m_treeClasses->treeClassesItems();
+    for (int i = 0; i < itemsList->size(); ++i)
     {
-        /* The first character is not a 'Q', certainly an class created in the project. We read the list
-        from the class browser which have all the classes and members of the project */
-        classes = inheritanceList(exp.className, classes);
-        const QList<ParsedItem> *itemsList = m_treeClasses->treeClassesItems();
-        for (int i = 0; i < itemsList->size(); ++i)
+        ParsedItem parsedItem = itemsList->at( i );
+        Tag tag;
+        tag.access = parsedItem.access;
+        tag.name = parsedItem.name;
+        tag.parameters = parsedItem.signature;
+        tag.signature = parsedItem.signature;
+        tag.returned = parsedItem.ex_cmd.section(" ", 0, 0);
+        if ( tag.returned.contains("<") )
+            tag.returned = tag.returned.section("<", 0, 0);
+        if ( parsedItem.kind == "f" )
+            tag.kind = "function";
+        else if ( parsedItem.kind == "p" )
+            tag.kind = "prototype";
+        else if ( parsedItem.kind == "e" )
         {
-            ParsedItem parsedItem = itemsList->at( i );
-            Tag tag;
-            tag.access = parsedItem.access;
-            tag.name = parsedItem.name;
-            tag.parameters = parsedItem.signature;
-            tag.signature = parsedItem.signature;
-            tag.returned = parsedItem.ex_cmd.section(" ", 0, 0);
-            if ( tag.returned.contains("<") )
-                tag.returned = tag.returned.section("<", 0, 0);
-            if ( parsedItem.kind == "f" )
-                tag.kind = "function";
-            else if ( parsedItem.kind == "p" )
-                tag.kind = "prototype";
-            else if ( parsedItem.kind == "e" )
-            {
-                if (  parsedItem.enumname.section(":", 0, 0) != exp.className )
-                    continue;
-                parsedItem.classname = exp.className;
-                tag.parameters = "";
-                tag.kind = "member";
-            }
-            else if ( parsedItem.kind == "m" )
-            {
-                tag.kind = "member";
-                tag.parameters = "";
-            }
-            else
-            {
+            if (  parsedItem.enumname.section(":", 0, 0) != exp.className )
                 continue;
-            }
-            bool isStatic = parsedItem.ex_cmd.simplified().startsWith("static");
-            if ( !classes.contains( parsedItem.classname ) )
-                continue;
-            else if ( !functionName.isEmpty() && parsedItem.name != functionName )
-                continue;
-            else if ( tag.access != "public" && !m_text.simplified().endsWith("this->") )
-                continue;
-            else if ( (exp.access == AccessStatic && isStatic != true)
-                      || (exp.access != AccessStatic && isStatic == true))
-                continue;
-            list << tag;
+            parsedItem.classname = exp.className;
+            tag.parameters = "";
+            tag.kind = "member";
         }
+        else if ( parsedItem.kind == "m" )
+        {
+            tag.kind = "member";
+            tag.parameters = "";
+        }
+        else
+        {
+            continue;
+        }
+        bool isStatic = parsedItem.ex_cmd.simplified().startsWith("static");
+        if ( !classes.contains( parsedItem.classname ) )
+            continue;
+        else if ( !functionName.isEmpty() && parsedItem.name != functionName )
+            continue;
+        else if ( tag.access != "public" && !m_text.simplified().endsWith("this->") )
+            continue;
+        else if ( (exp.access == AccessStatic && isStatic != true)
+                  || (exp.access != AccessStatic && isStatic == true))
+            continue;
+        list << tag;
     }
     // Continue the reading in qdevelop.db
     createTables();
@@ -685,7 +678,8 @@ QStringList InitCompletion::inheritanceList( const QString classname, QStringLis
     const QList<ParsedItem> *itemsList = m_treeClasses->treeClassesItems();
     for (int i = 0; i < itemsList->size(); ++i)
     {
-        if ( itemsList->at( i ).kind == "c" && itemsList->at( i ).name == classname && itemsList->at( i ).ex_cmd.contains(":") )
+        if ( itemsList->at( i ).kind == "c" && itemsList->at( i ).name == classname 
+        	&& itemsList->at( i ).ex_cmd.contains(":") )
         {
             QString ex_cmd = itemsList->at( i ).ex_cmd;
             ex_cmd = ex_cmd.left( ex_cmd.length()-3 );
@@ -707,6 +701,8 @@ Expression InitCompletion::parseLine( QString text )
     Scope sc;
     exp.access = AccessMembers;
     int p = 0;
+    extern QString simplifiedText( QString );
+    text = simplifiedText( text );
     int pos = text.length()-1;
     do
     {

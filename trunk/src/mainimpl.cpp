@@ -1802,7 +1802,6 @@ bool MainImpl::slotDebug(bool executeOnly)
 //
 void MainImpl::slotDebugVariables( QList<Variable> list)
 {
-    //qDebug()<<"slotDebugVariables"<<list.count();
     while ( tableLocalVariables->rowCount() )
         tableLocalVariables->removeRow(0);
     foreach(Variable var, list )
@@ -1837,7 +1836,6 @@ void MainImpl::slotDebugVariables( QList<Variable> list)
                 }
             }
         }
-        //qDebug() << var.name << var.kind << var.content << var.address;
     }
 }
 //
@@ -1894,7 +1892,6 @@ void MainImpl::slotMessagesDebug(QString message)
     else
     {
         logDebug->append( message );
-        //qDebug()<<message<<"FIN";
     }
 }
 //
