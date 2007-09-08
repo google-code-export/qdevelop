@@ -1216,21 +1216,23 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
 void TextEdit::key_home()
 {
     QTextCursor cursor = textCursor();
-    int col = cursor.columnNumber();
-    
-    cursor.movePosition(QTextCursor::StartOfLine);
     QTextBlock b = cursor.block();
+    QString s = b.text();
+    int col = cursor.columnNumber();
     int firstWordCol = cursor.columnNumber();
-    while ( b.text().at(firstWordCol) == ' ' || b.text().at(firstWordCol) == '\t' )
-    {
-		cursor.movePosition(QTextCursor::NextCharacter);
-        firstWordCol++;
-    }
 
-    if ( col > 0
-	&&   col == firstWordCol )
+    cursor.movePosition(QTextCursor::StartOfLine);
+    if ( firstWordCol < s.length())
     {
-        cursor.movePosition(QTextCursor::StartOfLine);
+        while ( s.at(firstWordCol) == ' ' || s.at(firstWordCol) == '\t' )
+        {
+             cursor.movePosition(QTextCursor::NextCharacter);
+             firstWordCol++;
+        }
+        if ( col > 0 &&   col == firstWordCol )
+        {
+                cursor.movePosition(QTextCursor::StartOfLine);
+        }
     }
 
     setTextCursor( cursor );
