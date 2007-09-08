@@ -51,6 +51,8 @@
 #include <QTextLayout>
 #include <QTextCodec>
 
+extern QString simplifiedText( QString );
+//
 static const char * tabPixmap_img[] = 
 {
 /* width height ncolors cpp [x_hot y_hot] */
@@ -175,7 +177,7 @@ void TextEdit::print()
     }
 }
 
-void TextEdit::printWhiteSpaces( QPainter &p )
+void TextEdit::printWhiteSpacesAndMatching( QPainter &p )
 {		
 	const int contentsY = verticalScrollBar()->value();
 	const qreal pageBottom = contentsY + viewport()->height();
@@ -197,23 +199,43 @@ void TextEdit::printWhiteSpaces( QPainter &p )
 		
 		for ( int i=0; i<len; i++)
 		{
-			QPixmap *p1 = 0;
-			
-			if (txt[i] == ' ' )
-				p1 = &m_spacePixmap;
-			else if (txt[i] == '\t' )
-				p1 = &m_tabPixmap;
-			else 
-				continue;
-			
-			// pixmaps are of size 8x8 pixels
 			QTextCursor cursor = textCursor();
 			cursor.setPosition( block.position() + i, QTextCursor::MoveAnchor);
 			
 			QRect r = cursorRect( cursor );
-			int x = r.x() + 4;
-			int y = r.y() + fm.height() / 2 - 5;
-			p.drawPixmap( x, y, *p1 );
+			if( block.position() + i == m_matchingBegin || block.position() + i == m_matchingEnd )
+			{
+				QTextCursor cursor = textCursor();
+				cursor.setPosition( block.position() + i, QTextCursor::MoveAnchor);
+				QRect r2 = cursorRect( cursor );
+				if( QString("({[").contains( m_plainText.at( block.position() + i ) ) )
+					r2.adjust(r2.width()/3, r2.height()-1, r2.width()/3, 0);
+				else
+					r2.adjust(r2.width()/4, r2.height()-1, r2.width()/4, 0);
+				r2.adjust(2, 0, -2, 0);
+				p.setPen( m_matchingColor );
+				//int x = r2.x() + 4;
+				//int y = r2.y();// + fm.height();// / 2 - 5;
+				p.drawRect(r2);
+			}
+			
+			if( m_showWhiteSpaces )
+			{
+				// pixmaps are of size 8x8 pixels
+				QPixmap *p1 = 0;
+				
+				if (txt[i] == ' ' )
+					p1 = &m_spacePixmap;
+				else if (txt[i] == '\t' )
+					p1 = &m_tabPixmap;
+				else 
+					continue;
+				
+				int x = r.x() + 4;
+				int y = r.y() + fm.height() / 2 - 5;
+				p.drawPixmap( x, y, *p1 );
+					
+			}
 		}
 	}
 }
@@ -284,7 +306,6 @@ void TextEdit::slotCompletionList(TagList tagList )
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_var.png"));
             m_completionList->addItem(item);
             //m_completionList->addItem( tag.name );
-//qDebug() << tag.name << tag.longName << tag.parameters << tag.access << tag.kind;
         }
         m_completionList->setSelectionMode( QAbstractItemView::SingleSelection );
         QPalette palette;
@@ -932,25 +953,10 @@ void TextEdit::paintEvent ( QPaintEvent * event )
         painter.fillRect( r, QBrush( m_currentLineColor ) );
     }
 
-	if (m_showWhiteSpaces)
-		printWhiteSpaces( painter );
+	if (m_showWhiteSpaces || m_matchingBegin != -1)
+		printWhiteSpacesAndMatching( painter );
 		
     QTextEdit::paintEvent( event );
-
-    if ( m_matchingBegin != -1 )
-    {
-        QFont f = font();
-        f.setBold( true );
-        painter.setFont( f );
-        painter.setPen( m_matchingColor );
-        QTextCursor cursor = textCursor();
-        cursor.setPosition(m_matchingBegin+1, QTextCursor::MoveAnchor);
-        QRect r = cursorRect( cursor );
-        painter.drawText(r.x()-2, r.y(), r.width(), r.height(), Qt::AlignLeft | Qt::AlignVCenter, m_plainText.at(m_matchingBegin));
-        cursor.setPosition(m_matchingEnd+1, QTextCursor::MoveAnchor);
-        r = cursorRect( cursor );
-        painter.drawText(r.x()-2, r.y(), r.width(), r.height(), Qt::AlignLeft | Qt::AlignVCenter, m_plainText.at(m_matchingEnd));
-    }
 }
 //
 void TextEdit::mouseMoveEvent( QMouseEvent * event )
@@ -980,79 +986,73 @@ void TextEdit::clearMatch()
 //
 void TextEdit::match()
 {
+	QString matchText =  simplifiedText( m_plainText );
     QTextCursor cursor = textCursor();
     int pos = cursor.position();
+   	m_matchingBegin = -1;
+   	m_matchingEnd = -1;
+    if( pos==-1 || !QString("({[]})").contains( m_plainText.at( pos ) ) )
+    	return;
     QChar car;
     if ( pos != -1 )
     {
         if ( !cursor.atEnd() )
         {
-            car = m_plainText.at( pos );
+            car = matchText.at( pos );
         }
         else
         {
-            car = m_plainText.at( pos - 1);
+            car = matchText.at( pos - 1);
         }
     }
-    if ( QString("({").contains( car ) && !m_editor->inQuotations(pos, m_plainText) )
+    QChar matchCar;
+    long inc = 1;
+    if( car == '(' )
+    	matchCar = ')';
+    else if( car == '{' )
+    	matchCar = '}';
+    else if( car == '[' )
+    	matchCar = ']';
+    else if( car == ')' )
     {
-        // First match
-        m_matchingBegin = pos;
-        // Second match
-        QChar match = ')';
-        if ( car == '{' )
-            match = '}';
-        int nb = 0;
-        for (int i = pos+1;  i < m_plainText.length(); i++)
-        {
-            if ( m_plainText.at(i) ==  car && !m_editor->inQuotations(i, m_plainText) )
-            {
-                nb++;
-            }
-            else if ( m_plainText.at(i) == match && !m_editor->inQuotations(i, m_plainText) )
-            {
-                if ( nb == 0 )
-                {
-                    m_matchingEnd = i;
-                    break;
-                }
-                else
-                {
-                    nb--;
-                }
-            }
-        }
-    }
-    else if ( QString(")}").contains( car ) && !m_editor->inQuotations(pos, m_plainText) )
+    	matchCar = '(';
+    	inc = -1;
+   	}
+    else if( car == '}' )
     {
-        // First match
-        m_matchingEnd = pos;
-        // Second match
-        QChar match = '(';
-        if ( car == '}' )
-            match = '{';
-        int nb = 0;
-        for (int i = pos-1;  i > 0; i--)
-        {
-            if ( m_plainText.at(i) ==  car && !m_editor->inQuotations(i, m_plainText)  )
-            {
-                nb++;
-            }
-            else if ( m_plainText.at(i) == match && !m_editor->inQuotations(i, m_plainText) )
-            {
-                if ( nb == 0 )
-                {
-                    m_matchingBegin = i;
-                    break;
-                }
-                else
-                {
-                    nb--;
-                }
-            }
-        }
-
-    }
+    	matchCar = '{';
+    	inc = -1;
+   	}
+    else if( car == ']' )
+    {
+    	matchCar = '[';
+    	inc = -1;
+   	}
+    else
+    {
+    	return;
+   	}
+    m_matchingBegin = pos;
+    int nb = 0;
+    do
+    {
+    	if( matchText.at( pos ) == car )
+    		nb++;
+    	else if( matchText.at( pos ) == matchCar )
+    	{
+    		nb--;
+    		if( nb == 0 )
+    		{
+    			m_matchingEnd = pos;
+    			break;
+   			}
+   		}
+   		pos += inc;
+   	}
+    while( pos >= 0 && pos < matchText.length() );
+    if( m_matchingBegin > m_matchingEnd )
+    	qSwap(m_matchingBegin, m_matchingEnd );
+    return;
 }
 //
 void TextEdit::slotWordCompletion(QListWidgetItem *item)

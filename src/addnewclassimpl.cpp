@@ -104,7 +104,6 @@ void AddNewClassImpl::on_okButton_clicked()
     }
     QString absoluteNameHeader = QDir( location->text() ).absoluteFilePath( head ) ;
     QString relativeNameHeader = QDir( projectDir ).relativeFilePath( absoluteNameHeader );
-    //qDebug() << projectDir<<absoluteNameImpl <<relativeNameImpl <<absoluteNameHeader<<relativeNameHeader;
     //
     QFile file ( absoluteNameHeader );
     if ( file.exists() )

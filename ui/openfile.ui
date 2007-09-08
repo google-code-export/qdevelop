@@ -57,16 +57,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QLineEdit" name="FilterEdit" >
-   <property name="geometry" >
-    <rect>
-     <x>10</x>
-     <y>340</y>
-     <width>481</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QListWidget" name="FileList" >
    <property name="geometry" >
     <rect>
@@ -81,6 +71,16 @@
    </property>
    <property name="sortingEnabled" >
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="FilterEdit" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>340</y>
+     <width>481</width>
+     <height>22</height>
+    </rect>
    </property>
   </widget>
  </widget>

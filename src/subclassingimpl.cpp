@@ -103,7 +103,6 @@ QStringList SubclassingImpl::signatures(QString header)
                 else if ( param.simplified().contains(" ") )
                     param = param.simplified().left( param.simplified().lastIndexOf(" ")+1 );
                 formattedParams += param + ",";
-                //qDebug()<<param;
             }
             formattedParams = formattedParams.simplified().left( formattedParams.lastIndexOf(",") );
             QString s = name + "(" + formattedParams + ")";

@@ -109,7 +109,7 @@ public:
     void gotoMatchingBracket();
     void textPlugin(TextEditInterface *iTextEdit);
     void print();
-    void printWhiteSpaces( QPainter &p );
+    void printWhiteSpacesAndMatching( QPainter &p );
 
     enum ActionComment
     {
