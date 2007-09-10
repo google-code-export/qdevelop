@@ -39,29 +39,13 @@
      <x>0</x>
      <y>0</y>
      <width>686</width>
-     <height>29</height>
+     <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu" >
+   <widget class="QMenu" name="menuPlugins" >
     <property name="title" >
-     <string>&amp;?</string>
+     <string>Plugins</string>
     </property>
-    <addaction name="actionHelpQtWord" />
-    <addaction name="separator" />
-    <addaction name="actionAbout" />
-    <addaction name="actionAboutQt" />
-   </widget>
-   <widget class="QMenu" name="menuEditors" >
-    <property name="title" >
-     <string>Editors</string>
-    </property>
-    <addaction name="actionsetFocusToEditor" />
-    <addaction name="actionCloseCurrentEditor" />
-    <addaction name="actionNextTab" />
-    <addaction name="actionPreviousTab" />
-    <addaction name="actionSwitchHeaderSources" />
-    <addaction name="actionToggleBreakpoint" />
-    <addaction name="actionMethodsList" />
    </widget>
    <widget class="QMenu" name="menu_Edit" >
     <property name="title" >
@@ -96,49 +80,20 @@
     <addaction name="separator" />
     <addaction name="actionCompleteCode" />
    </widget>
-   <widget class="QMenu" name="menuPlugins" >
-    <property name="title" >
-     <string>Plugins</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menuView" >
     <property name="title" >
      <string>&amp;View</string>
     </property>
     <widget class="QMenu" name="menuToolbar" >
      <property name="title" >
-      <string>Toolbar</string>
+      <string>&amp;Toolbar</string>
      </property>
     </widget>
     <addaction name="menuToolbar" />
    </widget>
-   <widget class="QMenu" name="menu_File" >
-    <property name="title" >
-     <string>&amp;File</string>
-    </property>
-    <widget class="QMenu" name="menuLastsFiles" >
-     <property name="title" >
-      <string>Last Files</string>
-     </property>
-    </widget>
-    <addaction name="actionNewFile" />
-    <addaction name="actionOpen" />
-    <addaction name="separator" />
-    <addaction name="actionSaveFile" />
-    <addaction name="actionSaveFileAs" />
-    <addaction name="separator" />
-    <addaction name="actionSaveAll" />
-    <addaction name="actionCloseAllFiles" />
-    <addaction name="separator" />
-    <addaction name="actionPrint" />
-    <addaction name="separator" />
-    <addaction name="menuLastsFiles" />
-    <addaction name="separator" />
-    <addaction name="actionQuit" />
-   </widget>
    <widget class="QMenu" name="menuBookmarks" >
     <property name="title" >
-     <string>Bookmarks</string>
+     <string>&amp;Bookmarks</string>
     </property>
     <addaction name="actionToggleBookmark" />
     <addaction name="actionNextBookmark" />
@@ -146,50 +101,6 @@
     <addaction name="separator" />
     <addaction name="actionClearAllBookmarks" />
     <addaction name="separator" />
-   </widget>
-   <widget class="QMenu" name="menuProject" >
-    <property name="enabled" >
-     <bool>true</bool>
-    </property>
-    <property name="title" >
-     <string>&amp;Project</string>
-    </property>
-    <widget class="QMenu" name="menuLastsProjects" >
-     <property name="title" >
-      <string>Last Projects</string>
-     </property>
-    </widget>
-    <addaction name="actionNewProject" />
-    <addaction name="actionOpenProject" />
-    <addaction name="actionSaveProject" />
-    <addaction name="actionCloseProject" />
-    <addaction name="separator" />
-    <addaction name="menuLastsProjects" />
-    <addaction name="separator" />
-    <addaction name="actionAddNewItem" />
-    <addaction name="actionAddScope" />
-    <addaction name="actionAddNewClass" />
-    <addaction name="actionAddExistingFiles" />
-    <addaction name="separator" />
-    <addaction name="actionProjectPropertie" />
-   </widget>
-   <widget class="QMenu" name="menuTools" >
-    <property name="title" >
-     <string>Tools</string>
-    </property>
-    <widget class="QMenu" name="menuPluginsSettings" >
-     <property name="title" >
-      <string>Plugins settings</string>
-     </property>
-    </widget>
-    <addaction name="actionFindInFiles" />
-    <addaction name="actionOpenFile" />
-    <addaction name="separator" />
-    <addaction name="actionOptions" />
-    <addaction name="actionExternalTools" />
-    <addaction name="actionConfigureShortcuts" />
-    <addaction name="actionNewQtVersion" />
-    <addaction name="menuPluginsSettings" />
    </widget>
    <widget class="QMenu" name="menuDebug" >
     <property name="title" >
@@ -209,9 +120,74 @@
     <addaction name="separator" />
     <addaction name="actionResetExecutablesList" />
    </widget>
+   <widget class="QMenu" name="menuEditors" >
+    <property name="title" >
+     <string>Ed&amp;itors</string>
+    </property>
+    <addaction name="actionsetFocusToEditor" />
+    <addaction name="actionCloseCurrentEditor" />
+    <addaction name="actionNextTab" />
+    <addaction name="actionPreviousTab" />
+    <addaction name="actionSwitchHeaderSources" />
+    <addaction name="actionToggleBreakpoint" />
+    <addaction name="actionMethodsList" />
+   </widget>
+   <widget class="QMenu" name="menuTools" >
+    <property name="title" >
+     <string>&amp;Tools</string>
+    </property>
+    <widget class="QMenu" name="menuPluginsSettings" >
+     <property name="title" >
+      <string>&amp;Plugins settings</string>
+     </property>
+    </widget>
+    <addaction name="actionFindInFiles" />
+    <addaction name="actionOpenFile" />
+    <addaction name="separator" />
+    <addaction name="actionOptions" />
+    <addaction name="actionExternalTools" />
+    <addaction name="actionConfigureShortcuts" />
+    <addaction name="actionNewQtVersion" />
+    <addaction name="menuPluginsSettings" />
+   </widget>
+   <widget class="QMenu" name="menu" >
+    <property name="title" >
+     <string>&amp;?</string>
+    </property>
+    <addaction name="actionHelpQtWord" />
+    <addaction name="separator" />
+    <addaction name="actionAbout" />
+    <addaction name="actionAboutQt" />
+   </widget>
+   <widget class="QMenu" name="menuProject" >
+    <property name="enabled" >
+     <bool>true</bool>
+    </property>
+    <property name="title" >
+     <string>&amp;Project</string>
+    </property>
+    <widget class="QMenu" name="menuLastsProjects" >
+     <property name="title" >
+      <string>&amp;Last Projects</string>
+     </property>
+    </widget>
+    <addaction name="actionNewProject" />
+    <addaction name="actionOpenProject" />
+    <addaction name="actionSaveProject" />
+    <addaction name="actionCloseProject" />
+    <addaction name="separator" />
+    <addaction name="menuLastsProjects" />
+    <addaction name="separator" />
+    <addaction name="actionAddNewItem" />
+    <addaction name="actionAddScope" />
+    <addaction name="actionAddNewClass" />
+    <addaction name="actionAddExistingFiles" />
+    <addaction name="separator" />
+    <addaction name="actionProjectPropertie" />
+   </widget>
    <widget class="QMenu" name="menuBuild" >
     <property name="title" >
-     <string>&amp;Build</string>
+     <string>B&amp;uild</string>
     </property>
     <addaction name="actionBuild" />
     <addaction name="actionRebuild" />
@@ -221,6 +197,30 @@
     <addaction name="separator" />
     <addaction name="actionCompile" />
     <addaction name="actionQmake" />
+   </widget>
+   <widget class="QMenu" name="menu_File" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <widget class="QMenu" name="menuLastsFiles" >
+     <property name="title" >
+      <string>Las&amp;t Files</string>
+     </property>
+    </widget>
+    <addaction name="actionNewFile" />
+    <addaction name="actionOpen" />
+    <addaction name="separator" />
+    <addaction name="actionSaveFile" />
+    <addaction name="actionSaveFileAs" />
+    <addaction name="separator" />
+    <addaction name="actionSaveAll" />
+    <addaction name="actionCloseAllFiles" />
+    <addaction name="separator" />
+    <addaction name="actionPrint" />
+    <addaction name="separator" />
+    <addaction name="menuLastsFiles" />
+    <addaction name="separator" />
+    <addaction name="actionQuit" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -826,7 +826,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/filesaveas.png</iconset>
    </property>
    <property name="text" >
-    <string>&amp;Save File As...</string>
+    <string>Save File &amp;as...</string>
    </property>
    <property name="shortcut" >
     <string/>
@@ -837,7 +837,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/filesaveall.png</iconset>
    </property>
    <property name="text" >
-    <string>Save All</string>
+    <string>Save A&amp;ll</string>
    </property>
   </action>
   <action name="actionQuit" >
@@ -853,7 +853,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/undo.png</iconset>
    </property>
    <property name="text" >
-    <string>Undo</string>
+    <string>&amp;Undo</string>
    </property>
    <property name="iconText" >
     <string>Undo</string>
@@ -870,7 +870,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/redo.png</iconset>
    </property>
    <property name="text" >
-    <string>Redo</string>
+    <string>&amp;Redo</string>
    </property>
    <property name="iconText" >
     <string>Redo</string>
@@ -887,7 +887,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/editcut.png</iconset>
    </property>
    <property name="text" >
-    <string>Cut</string>
+    <string>Cu&amp;t</string>
    </property>
    <property name="shortcut" >
     <string>Ctrl+X</string>
@@ -898,7 +898,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/editcopy.png</iconset>
    </property>
    <property name="text" >
-    <string>Copy</string>
+    <string>&amp;Copy</string>
    </property>
    <property name="shortcut" >
     <string>Ctrl+C</string>
@@ -909,7 +909,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/editpaste.png</iconset>
    </property>
    <property name="text" >
-    <string>Paste</string>
+    <string>&amp;Paste</string>
    </property>
    <property name="shortcut" >
     <string>Ctrl+V</string>
@@ -928,7 +928,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/find.png</iconset>
    </property>
    <property name="text" >
-    <string>Find...</string>
+    <string>&amp;Find...</string>
    </property>
    <property name="shortcut" >
     <string>Ctrl+F</string>
@@ -936,7 +936,7 @@
   </action>
   <action name="actionReplace" >
    <property name="text" >
-    <string>Replace...</string>
+    <string>&amp;Replace...</string>
    </property>
    <property name="shortcut" >
     <string>Ctrl+R</string>
@@ -944,7 +944,7 @@
   </action>
   <action name="actionFindInFiles" >
    <property name="text" >
-    <string>Find in Files...</string>
+    <string>&amp;Find in Files...</string>
    </property>
    <property name="shortcut" >
     <string>Ctrl+Shift+F</string>
@@ -952,7 +952,7 @@
   </action>
   <action name="actionAddNewItem" >
    <property name="text" >
-    <string>Add New Item...</string>
+    <string>Add New &amp;Item...</string>
    </property>
    <property name="iconText" >
     <string>Add New Item</string>
@@ -966,7 +966,7 @@
   </action>
   <action name="actionAddExistingFiles" >
    <property name="text" >
-    <string>Add Existing Files...</string>
+    <string>Add Existing &amp;Files...</string>
    </property>
    <property name="iconText" >
     <string>Add Existing Files</string>
@@ -985,7 +985,7 @@
     <bool>true</bool>
    </property>
    <property name="text" >
-    <string>Project Properties...</string>
+    <string>Project &amp;Properties...</string>
    </property>
    <property name="iconText" >
     <string>Project Properties</string>
@@ -996,7 +996,7 @@
   </action>
   <action name="actionClean" >
    <property name="text" >
-    <string>Clean</string>
+    <string>&amp;Clean</string>
    </property>
    <property name="iconText" >
     <string>Clean</string>
@@ -1010,7 +1010,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/rebuild.png</iconset>
    </property>
    <property name="text" >
-    <string>Rebuild</string>
+    <string>&amp;Rebuild</string>
    </property>
    <property name="iconText" >
     <string>Rebuild</string>
@@ -1041,7 +1041,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/exec.png</iconset>
    </property>
    <property name="text" >
-    <string>Start Program</string>
+    <string>S&amp;tart Program</string>
    </property>
    <property name="iconText" >
     <string>Start Program</string>
@@ -1058,7 +1058,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/dbgstep.png</iconset>
    </property>
    <property name="text" >
-    <string>Step Into</string>
+    <string>Step &amp;Into</string>
    </property>
    <property name="iconText" >
     <string>Step Into</string>
@@ -1075,7 +1075,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/dbgnext.png</iconset>
    </property>
    <property name="text" >
-    <string>Step Over</string>
+    <string>Step O&amp;ver</string>
    </property>
    <property name="iconText" >
     <string>Step Over</string>
@@ -1089,7 +1089,7 @@
   </action>
   <action name="actionBacktraces" >
    <property name="text" >
-    <string>Calls Stack</string>
+    <string>&amp;Calls Stack</string>
    </property>
    <property name="iconText" >
     <string>Calls Stack</string>
@@ -1100,22 +1100,22 @@
   </action>
   <action name="actionOptions" >
    <property name="text" >
-    <string>Options...</string>
+    <string>&amp;Options...</string>
    </property>
   </action>
   <action name="actionParameters" >
    <property name="text" >
-    <string>Parameters...</string>
+    <string>&amp;Parameters...</string>
    </property>
   </action>
   <action name="actionAbout" >
    <property name="text" >
-    <string>About...</string>
+    <string>&amp;About...</string>
    </property>
   </action>
   <action name="actionAboutQt" >
    <property name="text" >
-    <string>About Qt...</string>
+    <string>About &amp;Qt...</string>
    </property>
   </action>
   <action name="actionOpen" >
@@ -1131,7 +1131,7 @@
   </action>
   <action name="actionFindContinue" >
    <property name="text" >
-    <string>Find Next</string>
+    <string>Find &amp;Next</string>
    </property>
    <property name="shortcut" >
     <string>F3</string>
@@ -1145,7 +1145,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/pause.png</iconset>
    </property>
    <property name="text" >
-    <string>Stop</string>
+    <string>&amp;Stop</string>
    </property>
    <property name="iconText" >
     <string>Stop</string>
@@ -1167,7 +1167,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/buildstop.png</iconset>
    </property>
    <property name="text" >
-    <string>Stop Build</string>
+    <string>&amp;Stop Build</string>
    </property>
   </action>
   <action name="actionIndent" >
@@ -1197,7 +1197,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/helpassistant.png</iconset>
    </property>
    <property name="text" >
-    <string>Help Current Qt Word</string>
+    <string>&amp;Help Current Qt Word</string>
    </property>
    <property name="shortcut" >
     <string>F1</string>
@@ -1205,7 +1205,7 @@
   </action>
   <action name="actionResetExecutablesList" >
    <property name="text" >
-    <string>Reset Executables List</string>
+    <string>&amp;Reset Executables List</string>
    </property>
   </action>
   <action name="actionProjectExplorer" >
@@ -1234,7 +1234,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/dbgrun.png</iconset>
    </property>
    <property name="text" >
-    <string>Debug</string>
+    <string>&amp;Debug</string>
    </property>
   </action>
   <action name="actionBuild" >
@@ -1242,7 +1242,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/build.png</iconset>
    </property>
    <property name="text" >
-    <string>Build</string>
+    <string>&amp;Build</string>
    </property>
    <property name="shortcut" >
     <string>F7</string>
@@ -1253,7 +1253,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/filesave.png</iconset>
    </property>
    <property name="text" >
-    <string>Save Project</string>
+    <string>&amp;Save Project</string>
    </property>
   </action>
   <action name="actionSaveProjectAs" >
@@ -1266,12 +1266,12 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/fileclose.png</iconset>
    </property>
    <property name="text" >
-    <string>Close Project</string>
+    <string>C&amp;lose Project</string>
    </property>
   </action>
   <action name="actionAddScope" >
    <property name="text" >
-    <string>Add Scope...</string>
+    <string>Add &amp;Scope...</string>
    </property>
   </action>
   <action name="actionStepOut" >
@@ -1279,7 +1279,7 @@
     <iconset resource="../resources/resources.qrc" >:/toolbar/images/dbgstepout.png</iconset>
    </property>
    <property name="text" >
-    <string>Step Out</string>
+    <string>Step &amp;Out</string>
    </property>
    <property name="shortcut" >
     <string>Shift+F11</string>
@@ -1287,7 +1287,7 @@
   </action>
   <action name="actionCloseCurrentEditor" >
    <property name="text" >
-    <string>Close Current Editor</string>
+    <string>&amp;Close Current Editor</string>
    </property>
    <property name="shortcut" >
     <string>Ctrl+W</string>
@@ -1298,7 +1298,7 @@
   </action>
   <action name="actionNextTab" >
    <property name="text" >
-    <string>Next Tab</string>
+    <string>&amp;Next Tab</string>
    </property>
    <property name="shortcut" >
     <string>Alt+Right</string>
@@ -1309,7 +1309,7 @@
   </action>
   <action name="actionPreviousTab" >
    <property name="text" >
-    <string>Previous Tab</string>
+    <string>&amp;Previous Tab</string>
    </property>
    <property name="shortcut" >
     <string>Alt+Left</string>
@@ -1320,7 +1320,7 @@
   </action>
   <action name="actionSwitchHeaderSources" >
    <property name="text" >
-    <string>Switch to Header/Sources</string>
+    <string>&amp;Switch to Header/Sources</string>
    </property>
    <property name="shortcut" >
     <string>Shift+F12</string>
@@ -1328,7 +1328,7 @@
   </action>
   <action name="actionsetFocusToEditor" >
    <property name="text" >
-    <string>Set Focus to Editor</string>
+    <string>Set &amp;Focus to Editor</string>
    </property>
    <property name="shortcut" >
     <string>Esc</string>
@@ -1339,7 +1339,7 @@
     <iconset resource="../resources/resources.qrc" >:/divers/images/pointArret.png</iconset>
    </property>
    <property name="text" >
-    <string>Toggle breakpoint</string>
+    <string>Toggle &amp;breakpoint</string>
    </property>
    <property name="shortcut" >
     <string>F9</string>
@@ -1347,17 +1347,17 @@
   </action>
   <action name="actionMethodsList" >
    <property name="text" >
-    <string>Goto Methods List</string>
+    <string>Goto &amp;Methods List</string>
    </property>
   </action>
   <action name="actionConfigureShortcuts" >
    <property name="text" >
-    <string>Configure Shortcuts...</string>
+    <string>Configure &amp;Shortcuts...</string>
    </property>
   </action>
   <action name="actionGotoLine" >
    <property name="text" >
-    <string>Goto Line...</string>
+    <string>&amp;Goto Line...</string>
    </property>
    <property name="shortcut" >
     <string>Ctrl+G</string>
@@ -1365,7 +1365,7 @@
   </action>
   <action name="actionToggleComment" >
    <property name="text" >
-    <string>Toggle Comments</string>
+    <string>Toggle Co&amp;mments</string>
    </property>
    <property name="shortcut" >
     <string>Ctrl+D</string>
@@ -1419,7 +1419,7 @@
   </action>
   <action name="actionExternalTools" >
    <property name="text" >
-    <string>External Tools...</string>
+    <string>E&amp;xternal Tools...</string>
    </property>
   </action>
   <action name="actionNextBookmark" >
@@ -1427,7 +1427,7 @@
     <iconset resource="../resources/resources.qrc" >:/divers/images/bookmarknext.png</iconset>
    </property>
    <property name="text" >
-    <string>Next Bookmark</string>
+    <string>&amp;Next Bookmark</string>
    </property>
    <property name="shortcut" >
     <string>F2</string>
@@ -1438,7 +1438,7 @@
     <iconset resource="../resources/resources.qrc" >:/divers/images/bookmarkprevious.png</iconset>
    </property>
    <property name="text" >
-    <string>Previous Bookmark</string>
+    <string>&amp;Previous Bookmark</string>
    </property>
    <property name="shortcut" >
     <string>Shift+F2</string>
@@ -1446,7 +1446,7 @@
   </action>
   <action name="actionFindPrevious" >
    <property name="text" >
-    <string>Find Previous</string>
+    <string>Find Pr&amp;evious</string>
    </property>
    <property name="shortcut" >
     <string>Shift+F3</string>
@@ -1454,7 +1454,7 @@
   </action>
   <action name="actionGotoMatchingBracket" >
    <property name="text" >
-    <string>Goto matching bracket</string>
+    <string>Goto matching &amp;bracket</string>
    </property>
    <property name="iconText" >
     <string>Goto matching bracket</string>
@@ -1473,7 +1473,7 @@
   </action>
   <action name="actionAddNewClass" >
    <property name="text" >
-    <string>Add New Class...</string>
+    <string>Add New &amp;Class...</string>
    </property>
   </action>
   <action name="actionPrint" >
@@ -1486,7 +1486,7 @@
   </action>
   <action name="actionOpenFile" >
    <property name="text" >
-    <string>Open File in project...</string>
+    <string>Open F&amp;ile in project...</string>
    </property>
    <property name="shortcut" >
     <string>Alt+Shift+O</string>
@@ -1497,7 +1497,7 @@
     <iconset resource="../resources/resources.qrc" >:/treeview/images/cpp.png</iconset>
    </property>
    <property name="text" >
-    <string>Goto Implementation</string>
+    <string>Goto &amp;Implementation</string>
    </property>
   </action>
   <action name="actionGotoDeclaration" >
@@ -1505,17 +1505,17 @@
     <iconset resource="../resources/resources.qrc" >:/treeview/images/h.png</iconset>
    </property>
    <property name="text" >
-    <string>Goto Declaration</string>
+    <string>Goto &amp;Declaration</string>
    </property>
   </action>
   <action name="actionNewQtVersion" >
    <property name="text" >
-    <string>Rebuild Qt classes database</string>
+    <string>&amp;Rebuild Qt classes database</string>
    </property>
   </action>
   <action name="actionQmake" >
    <property name="text" >
-    <string>Launch qmake</string>
+    <string>Launch &amp;qmake</string>
    </property>
   </action>
  </widget>
