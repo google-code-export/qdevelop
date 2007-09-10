@@ -20,7 +20,7 @@ To build QDevelop, we need to create a new subdirectory to build off source, we 
 cmake, and the finally make:
 
 	mkdir cbuild
-	cd build
+	cd cbuild
 	cmake ../
 	make
 	
