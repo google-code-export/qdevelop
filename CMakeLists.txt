@@ -8,10 +8,6 @@
 #	cmake ../
 #	make
 # 
-# On my system, qmake takes 3.13 seconds to build, and using cmake 1.40
-# The final binary is also a little bigger. We shuold test which build system makes the
-# fastest final binary, as this is the only thing important to the user.
-# 
 # Please indent this file using tabs, and set the tabs to 8 spaces. :)
 # 
 # If you don't konw cmake, here are some links for you:
@@ -22,7 +18,21 @@ PROJECT(QDevelop)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 # verbose - off
-#SET( CMAKE_VERBOSE_MAKEFILE  ON )
+# SET( CMAKE_VERBOSE_MAKEFILE  ON )
+
+# do optimizations on GCC based compilers
+# if you want to speed up compilations, set this to -O0,
+# which reduces compilation time from 2:30 to 1:30 on my system :)
+SET( OPTIMIZATION_FLAGS "-O2")
+
+## TODO mmmm....
+# CHECK_C_COMPILER_FLAG( ${OPTIMIZATION_FLAGS} HAS_OPTIMIZATION_FLAGS )
+# if (HAS_OPTIMIZATION_FLAGS)
+# 	ADD_DEFINITIONS( ${OPTIMIZATION_FLAGS} )
+# endif (HAS_OPTIMIZATION_FLAGS)
+
+ADD_DEFINITIONS( ${OPTIMIZATION_FLAGS} )
+
 
 # input files
 SET( qdevelop_UIS
@@ -161,16 +171,17 @@ QT4_AUTOMOC       ( ${qdevelop_SRCS}                            )
 # definitions for the project
 ADD_DEFINITIONS(
 	-Wall 
+	-DQT_NO_DEBUG
 	${QT_DEFINITIONS}
 )
 
 # include directories
-INCLUDE_DIRECTORIES( 
-	${QT_INCLUDES} 
+INCLUDE_DIRECTORIES(
+	${QT_INCLUDES}
 	${QT_INCLUDE_DIR}/QtUiTools
 	${CMAKE_BINARY_DIR}
 	.
-	src 
+	src
 	src/ui 
 )
 
