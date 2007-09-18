@@ -235,36 +235,10 @@ void MainImpl::renameEditor(QString oldName, QString newName)
 void MainImpl::configureCompletion(QString projectDirectory)
 {
     QString QTDIR;
-    QString compilerInclude = "/usr/include";
-    QStringList env = QProcess::systemEnvironment();
-    foreach(QString str, env)
-    {
-#ifdef WIN32
-        if ( str.left(4).toUpper() == "PATH" )
-        {
-            foreach(QString entry, str.section("=", 1, 1).simplified().split(";") )
-            {
-                if ( entry.toLower().contains("mingw") )
-                {
-                    compilerInclude = entry.toLower().section("bin", 0, 0) + "include";
-                    break;
-                }
-            }
-        }
-#endif
-    }
     QStringList includes;
-    includes /*<< QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../include" )*/ << projectDirectory
-#ifdef WIN32
-    << compilerInclude;
-#else
-    << "/usr/include";
-#endif
-    //m_completion->setTempFilePath( QDir::tempPath() );
+    includes << projectDirectory;
     m_completion->setCtagsCmdPath( ctagsName() );
     m_completion->addIncludes( includes, projectDirectory);
-    //m_completion->initParse("", true, false);
-    //m_completion->start();
     m_configureCompletionNeeded = false;
 }
 //
