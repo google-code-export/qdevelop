@@ -85,7 +85,7 @@ private:
 	void populateQtDatabase();
 	QStringList inheritanceList( const QString classname, QStringList &list );
 	Expression parseLine( QString text );
-	QString returned(QString className, QString function );
+	QString returned(QString className, QString function, Expression &exp);
 
 	QStringList cpp_includes;
 	QString m_text;

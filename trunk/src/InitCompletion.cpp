@@ -33,6 +33,9 @@
 #define NEW_LINE "\n"
 #endif
 #include <QDebug>
+
+extern QString simplifiedText( QString );
+
 InitCompletion::InitCompletion (QObject *parent, TreeClasses *treeClasses)
         : QThread(parent), m_treeClasses(treeClasses)
 {
@@ -256,15 +259,11 @@ void InitCompletion::run()
         return;
     }
     Scope sc;
-    Expression exp = getExpression(m_text, sc, m_showAllResults);
+    Expression exp = parseLine( m_text );
     /* we have all relevant information, so just list the entries */
     TagList list, newList, listForDB;
     if ( m_emitResults )
     {
-        if ( exp.access == ParseError )
-        {
-            exp = parseLine( m_text );
-        }
         if (exp.access != ParseError )
         {
             if ( !exp.className.isEmpty() )
@@ -386,9 +385,11 @@ TagList InitCompletion::readFromDB(TagList list, Expression exp, QString functio
             continue;
         }
         bool isStatic = parsedItem.ex_cmd.simplified().startsWith("static");
-        if ( !classes.contains( parsedItem.classname ) )
+        if ( !classes.contains( parsedItem.classname ) && !classes.contains( parsedItem.structname ) )
             continue;
         else if ( !functionName.isEmpty() && parsedItem.name != functionName )
+            continue;
+        else if ( parsedItem.name == parsedItem.classname ||  "~"+parsedItem.name == parsedItem.classname )
             continue;
         else if ( tag.access != "public" && !m_text.simplified().endsWith("this->") )
             continue;
@@ -569,7 +570,7 @@ void InitCompletion::populateQtDatabase()
         tag.access =  s.section("access:", -1, -1).section("\t", 0, 0).simplified();
         if ( !QString("public:private:protected").contains( tag.access ) )
             tag.access = "public";
-        tag.longName =  s;
+        tag.longName =  ex_cmd;
         tag.kind = s.section("kind:", -1, -1).section("\t", 0, 0).simplified();
         if ( classname.isEmpty() )
             continue;
@@ -579,6 +580,8 @@ void InitCompletion::populateQtDatabase()
         tag.signature = s.section("signature:", -1, -1).section("\t", 0, 0).simplified();
         tag.kind = s.section("kind:", -1, -1).section("\t", 0, 0).simplified();
         tag.returned = ex_cmd;
+        if ( tag.returned.startsWith("static ") )
+            tag.returned = tag.returned.section("static ", 1);
         if ( tag.returned.startsWith("inline ") )
             tag.returned = tag.returned.section("inline ", 1);
         if ( tag.returned.startsWith("const ") )
@@ -595,11 +598,11 @@ void InitCompletion::populateQtDatabase()
         {
             inheritsList[ classname ] = inherits;
         }
-        if ( tag.kind != "prototype" && tag.kind != "function" )
+        if ( tag.kind != "prototype" && tag.kind != "function" && tag.kind != "member" )
             continue;
         if ( tag.name=="Q_REQUIRED_RESULT" )
         {
-            if ( tag.longName.contains("(") && !tag.longName.contains("="))
+            if ( tag.longName.contains("(") )
             {
                 tag.name = tag.longName.remove("const ").section(" ", 1, 1).section("(", 0, 0);
                 tag.kind = "function";
@@ -608,8 +611,10 @@ void InitCompletion::populateQtDatabase()
                 tag.isFunction = true;
             }
         }
-        if ( tag.name=="Q_REQUIRED_RESULT" )
+        if ( tag.name=="Q_REQUIRED_RESULT" || tag.name.at(0)=='&' || tag.name.at(0)=='*' )
             continue;
+        if( tag.name == classname || tag.name == "~"+classname )
+        	continue;
         TagList list;
         list = map[classname];
         bool alreadyInserted = false;
@@ -675,6 +680,8 @@ void InitCompletion::writeInheritanceToDB(QMap<QString, QString> inheritsList, Q
 //
 QStringList InitCompletion::inheritanceList( const QString classname, QStringList &list )
 {
+	/* Return a string list with inheritance classes for classname. Work with the classes browser. 
+	For the Qt classes, the inheritance is read in qdevelop.db. */
     const QList<ParsedItem> *itemsList = m_treeClasses->treeClassesItems();
     for (int i = 0; i < itemsList->size(); ++i)
     {
@@ -692,6 +699,21 @@ QStringList InitCompletion::inheritanceList( const QString classname, QStringLis
             }
         }
     }
+    //
+    QSqlQuery query;
+    QString queryString = QString()
+                          + "select * from inheritance where child='"+classname+"'";
+    query.exec(queryString);
+    while (query.next())
+    {
+
+        QString parent = query.value(0).toString().replace("$", "'");
+        if ( !parent.isEmpty() )
+        {
+            list << parent;
+    		list = inheritanceList(parent, list);
+        }
+    }
     return list;
 }
 //
@@ -699,44 +721,62 @@ Expression InitCompletion::parseLine( QString text )
 {
     Expression exp;
     Scope sc;
-    exp.access = AccessMembers;
     int p = 0;
-    extern QString simplifiedText( QString );
-    text = simplifiedText( text );
-    int pos = text.length()-1;
+    QString simplified = simplifiedText( text );
+    int begin = simplified.length()-1;
+    int end = begin;
     do
     {
-        pos--;
-    	if( text[pos]=='(' )
+        begin--;
+    	if( simplified[begin]=='(' )
     		p--;
-    	else if( text[pos]==')' )
+    	else if( simplified[begin]==')' )
     		p++;
-   	} while ( pos>0 && text[pos]!=';' && text[pos]!='}' && !( text[pos]=='(' && p!=0) );
-    QString varName = text.mid(pos);
-    while ( pos<text.length() && text[pos]!='.' && text[pos]!='>' )
-        pos++;
-    varName = text.left(pos+1).simplified();
-    QString line = text.mid(pos+1).simplified();
-    Expression exp2 = getExpression(varName, sc, m_showAllResults);
-    if ( exp2.access == ParseError )
-        return exp2;
-    QString className = exp2.className;
-    int i = 0;
-    while ( !line.section(".", i, i).isEmpty() || !line.section("-", i, i).isEmpty() )
+    	if( p > 0 && !(p == 1 && simplified[begin]==')') )
+    		simplified[begin]=' ';
+   	} while ( begin>0 && !QString(";{}=*/+~&|!^?:").contains(simplified[begin]) && !( simplified[begin]=='(' && p<0) );
+	//
+	QString word = simplified.mid(begin+1).simplified();
+	int posWord = 0;
+	while( posWord<word.length()-1 && (word.at( posWord ).isLetterOrNumber() || word.at( posWord )=='_') )
+		posWord++;
+	word = word.left(posWord);
+	//
+    while ( begin<simplified.length() && simplified[begin]!='.' && simplified[begin]!='>' 
+    		&& !(begin>0 && simplified[begin-1]==':' && simplified[begin]==':' )
+    	)
+        begin++;
+    QString varName = simplified.left(begin+1);
+    QString line = simplified.mid(begin+1);
+    exp = getExpression(varName, sc, m_showAllResults);
+    QString className;
+    if ( exp.access == ParseError )
+    {
+    	className = word;
+    	exp.access = AccessMembers;
+   	}
+    else
+    	className = exp.className;
+    //
+    while ( line.indexOf('.')!=-1 || line.indexOf(">")!=-1  || line.indexOf("::")!=-1 )
     {
         QString function;
-        if ( !line.section(".", i, i).isEmpty() )
-            function = line.section(".", i, i);
-        else if ( !line.section("->", i, i).isEmpty() )
-            function = line.section("->", i, i);
-        className = returned(className, function);
-        i++;
+        int end = 9999;
+        if( line.indexOf('.') != -1 )
+        	end = qMin(end, line.indexOf('.'));
+        if( line.indexOf('>') != -1 )
+        	end = qMin(end, line.indexOf('>'));
+        if( line.indexOf(':') != -1 )
+        	end = qMin(end, line.indexOf(':')+1);
+       	function = line.left(end);
+        line = line.mid(end+1);
+        className = returned(className, function, exp);
     }
     exp.className = className;
     return exp;
 }
 //
-QString InitCompletion::returned(QString className, QString function)
+QString InitCompletion::returned(QString className, QString function, Expression &exp)
 {
     QStringList classes;
     classes << className;
@@ -778,9 +818,10 @@ QString InitCompletion::returned(QString className, QString function)
 //        bool isStatic = parsedItem.ex_cmd.simplified().startsWith("static");
         if ( !classes.contains( parsedItem.classname ) )
             continue;
-        if( className == parsedItem.classname && function == parsedItem.name )
+        if( classes.contains( parsedItem.classname ) && function == parsedItem.name )
         {
         	
+        	exp.access = AccessMembers;
         	return tag.returned;
        	}
     }
@@ -813,6 +854,7 @@ QString InitCompletion::returned(QString className, QString function)
     query.exec(queryString);
     if (query.next())
     {
+      	exp.access = AccessMembers;
        	return query.value(7).toString().replace("$", "'");
     }
 	return QString();

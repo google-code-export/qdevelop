@@ -1027,9 +1027,6 @@ bool MainImpl::openProject(QString s)
 #endif
     m_completion->setCtagsCmdPath( ctagsName() );
     m_completion->setQtInclude( includes );
-    //m_completion->slotInitParse(QString(), QString(), true, false, true, QString(), true);
-	//
-    //connect(treeClasses, SIGNAL(modifiedClasse(QString)),  m_completion, SLOT(slotModifiedClasse(QString)) );
     configureCompletion( QFileInfo(s).absoluteDir().path() );
     m_projectManager = new ProjectManager(this, treeFiles, treeClasses);
     m_projectManager->init(s);

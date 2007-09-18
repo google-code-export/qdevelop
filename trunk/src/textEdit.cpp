@@ -261,7 +261,7 @@ void TextEdit::completeCode()
 	int i;
 	for(i = c.length()-1; i>0; i--)
 	{
-		if( c.at(i) == '\n' || c.at(i) == ';' )
+		if( c.at(i) == QChar('\n') || c.at(i) == QChar(';') )
 		{
 			i++;
 			word = c.mid( i );
@@ -316,8 +316,8 @@ void TextEdit::slotCompletionList(TagList tagList )
         w = qMin(w+20, 550);
         w = qMax(w, 150);
         int posX = qMax(cursorRect().x(), 80);
-        if ( posX+w > width() )
-            posX = width()-220;
+        //if ( posX+w > width() )
+            //posX = width()-220;
         if ( cursorRect().y() > viewport()->height()/2 )
         {
             h = qMin( qMin(h+20, cursorRect().y()), 250);
@@ -457,7 +457,6 @@ bool TextEdit::open(bool silentMode, QString filename, QDateTime &lastModified)
     if ( m_completion  && !m_mainImpl->buildQtDatabase() )
     {
         emit initParse(m_editor->filename(), toPlainText(), true, false, false, QString(), false);
-        //m_completion->start();
     }
     QApplication::restoreOverrideCursor();
     return true;
@@ -1073,7 +1072,7 @@ void TextEdit::slotWordCompletion(QListWidgetItem *item)
     {
         completionHelp();
     }
-    if ( tag.signature.contains("(") )
+    if ( tag.signature.contains("(") && m_plainText.at( textCursor().position() ) != '(' )
     {
         textCursor().insertText( "()" );
         if ( !tag.signature.contains("()") )
@@ -1130,7 +1129,10 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
         else if ( event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter )
             slotWordCompletion( m_completionList->currentItem() );
         else if ( QChar(event->key()).category() == QChar::Other_Control && event->key() != Qt::Key_Backspace )
+        {
             m_completionList->hide();
+            QTextEdit::keyPressEvent ( event );
+       	}
         else
         {
             QTextEdit::keyPressEvent ( event );
@@ -1708,7 +1710,7 @@ void TextEdit::completionHelp()
 {
     if ( !m_completion )
         return;
-    QString c = m_plainText.left(textCursor().position()).simplified();
+    QString c = m_plainText.left( textCursor().position() );
     if( c.right(1) == "(" )
     	c = c.left( c.count()-1 );
     QString name = wordUnderCursor(c);

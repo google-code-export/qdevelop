@@ -27,7 +27,7 @@
 *   MACROS
 */
 #define TAB '\t'
-
+#include <QDebug>
 
 /*
 *   DATA DECLARATIONS
