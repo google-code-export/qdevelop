@@ -15,6 +15,8 @@
 #include "parse.h"
 #include "tree.h"
 
+extern QString simplifiedText( QString );
+
 char* Parse::scanForIdent(const char **expr)
 {
 	static char ident[256];
@@ -105,7 +107,6 @@ QString Parse::getTypeOfToken(const QString &ident, const QString &className,
 	{
 		return scope->scope;
 	}
-
 	Tree *tree = NULL;
 	if (className.length())
 	{
@@ -158,22 +159,8 @@ QString Parse::getTypeOfToken(const QString &ident, const QString &className,
 	return NULL;
 }
 
-QString Parse::extractTypeQualifier(const QString &str, const QString &expr)
+QString Parse::extractTypeQualifier(const QString &str, const QString &varName)
 {
-	/*
-	 * this regexp catches things like:
-	 * a) std::vector<char*> exp1[124] [12], *exp2, expr;
-	 * b) QclassName* expr1, expr2, expr;
-	 * c) int a,b; char r[12] = "test, argument", q[2] = { 't', 'e' }, expr;
-	 *
-	 * it CAN be fooled, if you really want it, but it should
-	 * work for 99% of all situations.
-	 *
-	 * QString
-	 *              var;
-	 * in 2 lines does not work, because //-comments would often bring wrong results
-	 */
-
 #define STRING      "\".*\""
 #define BRACKETEXPR "\\{.*\\}"
 #define IDENT       "[a-zA-Z_][a-zA-Z0-9_]*"
@@ -182,24 +169,43 @@ QString Parse::extractTypeQualifier(const QString &str, const QString &expr)
 #define INITIALIZER "=(" WS IDENT WS ")|=(" WS STRING WS ")|=(" WS BRACKETEXPR WS ")"
 #define CONSTRUCTOR "(\\(" WS IDENT WS "\\))|(\\(" WS STRING WS "\\))"
 #define ARRAY       WS "\\[" WS "[0-9]*" WS "\\]" WS
-
 	QString pattern = "(" IDENT ")"				// the 'std' in example a)
 	                  "(::" IDENT ")*"			// ::vector
 	                  "(" WS "<[^>;]*>)?[ \t\n*&]{1}"	// <char *>
 	                  "(" WS PTR WS IDENT WS "(" ARRAY ")*" WS "((" INITIALIZER ")?|(" CONSTRUCTOR ")?)" WS "," WS ")*" // other variables for the same ident (string i,j,k;)
 	                  "(" WS "[*&])?";			// check again for pointer/reference type
 
-	QRegExp rx(pattern + WS + expr + "[^.-]");
-	QString match;
+	QRegExp rx(pattern + WS + varName + "[^.-\\w]");
 
-	int pos = 0;
-	while ((pos = rx.indexIn(str, pos)) != -1)
+	if( varName.isEmpty() )
+		return QString();
+	QString text = simplifiedText( str );
+	int pos = -1;
+	int begin = -1;
+	long n = -1;
+	while( (pos = text.lastIndexOf(varName, begin) ) != -1 )
 	{
-		match = rx.cap(1);
-		pos += rx.matchedLength();
+		begin = pos;
+		while( begin>0 && text.at(begin)!= '\n' )
+			begin--;
+		int end = pos;
+		while( end<text.length()-1 && text.at(end)!= '\n' )
+			end++;
+		QString line = text.mid(begin, end-begin).simplified();
+		if( !line.isEmpty() )
+		{
+			int pos2 = 0;
+			while ((pos2 = rx.indexIn(line, pos2)) != -1)
+			{
+				if( !QString("|delete|else|endif|throw|return|").contains( "|"+rx.cap(1)+"|" ) )
+				{
+					return rx.cap(1);
+				}
+				pos2 += rx.matchedLength();
+			}
+		}
 	}
-
-	return match;
+	return QString();
 }
 
 bool Parse::getTypeOfExpression(const QString &expr, Expression * exp, Scope * scope)
@@ -336,7 +342,6 @@ bool Parse::getTypeOfExpression(const QString &expr, Expression * exp, Scope * s
 	}
 
 extract:
-		
 	/* ident is the leftmost token, stack[*] the ones to the right
 	 * Example: str.left(2,5).toUpper()
 	 *          ^^^ ^^^^      ^^^^^^^
@@ -604,7 +609,6 @@ bool Parse::getScopeAndLocals(Scope * sc, const QString &expr, const QString &id
 	    ctagsCmdPath +
 	    " --language-force=c++ --sort=no --fields=fKmnsz --c++-kinds=fn -o \"" +
 	    smallTagsFilePath + "\" \"" + parsedFilePath + '\"';
-
 	// I don't process any user input, so system() should be safe enough
 	QProcess ctags;
 	ctags.execute(command);
@@ -644,7 +648,7 @@ bool Parse::getScopeAndLocals(Scope * sc, const QString &expr, const QString &id
 			sc->localdef = "";
 	}
 
-	QFile::remove (smallTagsFilePath);
+	QFile::remove (smallTagsFilePath); 
 	
 	return true;
 }

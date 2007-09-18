@@ -198,8 +198,8 @@ QString simplifiedText(const QString string)
     } state = NORMAL;
     
     QChar c;
-    QChar previousChar;
     int i;
+    bool isAfterSharp = false;
     for (i = 0; i < m_fileString.count(); i++)
     {
         c = m_fileString.at(i);
@@ -219,6 +219,14 @@ QString simplifiedText(const QString string)
                 {
                     state = CHAR;
                 }
+                else if (c == '#' )
+                {
+                    isAfterSharp = true;
+                }
+                else if (c == QChar('\n') )
+                {
+                    isAfterSharp = false;
+                }
                 break;
             case NORMAL_GOT_SLASH:
                 if (c == '/')
@@ -235,6 +243,7 @@ QString simplifiedText(const QString string)
                 {
                     state = NORMAL;
                 }
+                isAfterSharp = false;
                 break;
             case COMMENT_SINGLE_LINE:
                 if (c == '\n')
@@ -246,6 +255,9 @@ QString simplifiedText(const QString string)
                     state = COMMENT_GOT_ESCAPE;
                 	m_fileString[i] = ' ';
                 }
+                else
+                	m_fileString[i] = ' ';
+                isAfterSharp = false;
                 break;
             case COMMENT_MULTI_LINE:
                 if (c == '*')
@@ -253,13 +265,17 @@ QString simplifiedText(const QString string)
                     state = COMMENT_GOT_STAR;
                 }
                 m_fileString[i] = ' ';
+                isAfterSharp = false;
                 break;
             case COMMENT_GOT_STAR:
                 if (c == '*')
                     state = COMMENT_GOT_STAR;
-                else if (c == '/' && previousChar == '*')
+                else if (c == '/')
                     state = NORMAL;
+                else
+                    state = COMMENT_MULTI_LINE;
                 m_fileString[i] = ' ';
+                isAfterSharp = false;
                 break;
             case COMMENT_GOT_ESCAPE:
                 state = COMMENT_SINGLE_LINE;
@@ -275,6 +291,8 @@ QString simplifiedText(const QString string)
                 {
                     state = NORMAL;
                 }
+                else if( isAfterSharp  )
+	                m_fileString[i] = c;
                 else
 	                m_fileString[i] = ' ';
                 break;
@@ -301,11 +319,6 @@ QString simplifiedText(const QString string)
                 m_fileString[i] = ' ';
                 break;
         }
-        previousChar = c;
-    }
-    if (state != NORMAL)
-    {
-        return string;
     }
     return m_fileString;
 }
