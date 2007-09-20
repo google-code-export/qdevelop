@@ -734,7 +734,7 @@ Expression InitCompletion::parseLine( QString text )
     		p++;
     	if( p > 0 && !(p == 1 && simplified[begin]==')') )
     		simplified[begin]=' ';
-   	} while ( begin>0 && !QString(";{}=*/+~&|!^?:").contains(simplified[begin]) && !( simplified[begin]=='(' && p<0) );
+   	} while ( begin>0 && !QString(";{}=*/+~&|!^?:,").contains(simplified[begin]) && !( simplified[begin]=='(' && p<0) );
 	//
 	QString word = simplified.mid(begin+1).simplified();
 	int posWord = 0;
