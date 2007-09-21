@@ -232,13 +232,10 @@ void ProjectPropertieImpl::slotCheck(bool activer)
     QObject *objet = sender();
     QString classe = objet->metaObject()->className();
     QString nomVariable;
-    QString texteVariable;
     QTreeWidgetItem *it;
-    if ( classe == "QCheckBox" )
-        texteVariable = ((QCheckBox *)objet)->text().simplified();
-    else
-        texteVariable = ((QRadioButton *)objet)->text().simplified();
     nomVariable = objet->objectName().simplified();
+    nomVariable = nomVariable.toLower(); // some (actually, one) of the checkboxes have upper characters to avoid name conflicts
+
     if ( QString(":app:lib:subdirs:").contains( ":"+nomVariable+":" ) )
     {
         QTreeWidgetItem *itTemplate = subItTemplate( itCombo );
@@ -253,6 +250,7 @@ void ProjectPropertieImpl::slotCheck(bool activer)
     }
     else if ( QString(":core:gui:network:libopengl:sql:svg:xml:qt3support:").contains( ":"+nomVariable+":" ) )
     {
+        if (nomVariable == "libopengl") nomVariable = "opengl"; // There's both CONFIG += opengl and QT += opengl - the latter widget is called libopengl so the name must be manually replaced here
         QTreeWidgetItem *itQT = subItQT( itCombo );
         if ( !itQT )
         {
@@ -278,14 +276,14 @@ void ProjectPropertieImpl::slotCheck(bool activer)
     if ( activer )
     {
         QTreeWidgetItem *nouvelItem = new QTreeWidgetItem( it );
-        nouvelItem->setText(0, texteVariable);
+        nouvelItem->setText(0, nomVariable);
         nouvelItem->setData(0, Qt::UserRole, m_projectManager->toItem("DATA"));
     }
     else
     {
         for (int i=0; i<it->childCount(); i++)
         {
-            if ( it->child( i )->text( 0 ) == texteVariable )
+            if ( it->child( i )->text( 0 ) == nomVariable )
             {
                 QTreeWidgetItem *parent = it->child( i )->parent();
                 delete it->child( i );
