@@ -184,7 +184,6 @@ QString Parse::extractTypeQualifier(const QString &str, const QString &varName)
 	QString text = simplifiedText( str );
 	int pos = -1;
 	int begin = -1;
-	long n = -1;
 	while( (pos = text.lastIndexOf(varName, begin) ) != -1 )
 	{
 		begin = pos;

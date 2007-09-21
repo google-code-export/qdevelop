@@ -49,8 +49,8 @@ int main(int argc, char *argv[])
 	list_path << dir.absolutePath () << app.libraryPaths ();
 	app.setLibraryPaths( list_path  );
 	//
-	QTranslator translator;
-	QString translationFile = QLocale::languageToString( QLocale::system().language() );
+	QTranslator translatorQDevelop, translatorQt;
+	QString language = QLocale::languageToString( QLocale::system().language() );
 	//
 	QStringList toOpen;
 	for(int i=0; i<QString(app.argv()[ 1 ]).split(" ",QString::SkipEmptyParts).count(); i++)
@@ -58,20 +58,21 @@ int main(int argc, char *argv[])
 		QString s = QString(app.argv()[ 1 ]).split(" ",QString::SkipEmptyParts).at(i);
 		if( s == "-l" )
 		{
-			translationFile = QString(app.argv()[ 2 ]).split(" ",QString::SkipEmptyParts).at(i);
+			language = QString(app.argv()[ 2 ]).split(" ",QString::SkipEmptyParts).at(i);
 			
 			//i++;
 		}
 		else
 			toOpen << QString(app.argv()[ 1 ]).split(" ",QString::SkipEmptyParts).at(i);
 	}
-	translationFile = ":/translations/translations/QDevelop_"+translationFile+".qm";
 	qApp->processEvents();
 	//
 	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Interface translation"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
 	qApp->processEvents();
-	translator.load( translationFile );
-	app.installTranslator( &translator );
+	translatorQDevelop.load( ":/translations/translations/QDevelop_"+language+".qm" );
+	app.installTranslator( &translatorQDevelop );
+	translatorQt.load( ":/translations/translations/Qt_"+language+".qm" );
+	app.installTranslator( &translatorQt );
 	//
 	MainImpl main;
 	main.setGeometry(50,50, 800, 550);

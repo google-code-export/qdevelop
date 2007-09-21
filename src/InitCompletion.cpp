@@ -736,7 +736,6 @@ Expression InitCompletion::parseLine( QString text )
     int p = 0;
     QString simplified = simplifiedText( text );
     int begin = simplified.length()-1;
-    int end = begin;
     do
     {
         begin--;
