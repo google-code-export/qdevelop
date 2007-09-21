@@ -397,7 +397,10 @@ TagList InitCompletion::readFromDB(TagList list, Expression exp, QString functio
             continue;
         }
         bool isStatic = parsedItem.ex_cmd.simplified().startsWith("static");
-        if ( !classes.contains( parsedItem.classname ) && !classes.contains( parsedItem.structname ) )
+        if ( !classes.contains( parsedItem.classname ) 
+        	&& !classes.contains( parsedItem.structname )
+        	&& !classes.contains( parsedItem.structname.section("::", -1) )
+        	 )
             continue;
         else if ( !functionName.isEmpty() && parsedItem.name != functionName )
             continue;
