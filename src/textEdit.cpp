@@ -342,12 +342,7 @@ void TextEdit::slotCompletionList(TagList tagList )
         QString s = wordUnderCursor();
         QList<QListWidgetItem *> listeItems = m_completionList->findItems(s, Qt::MatchExactly);
         listeItems = m_completionList->findItems(s, Qt::MatchStartsWith);
-        if ( listeItems.count()==1 )
-        {
-            m_completionList->setCurrentItem( listeItems.first() );
-            slotWordCompletion( m_completionList->currentItem() );
-        }
-        else if ( listeItems.count()>1 )
+        if ( listeItems.count()>1 )
             m_completionList->setCurrentItem( listeItems.first() );
         //
     }
