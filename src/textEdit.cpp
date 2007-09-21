@@ -51,6 +51,8 @@
 #include <QTextLayout>
 #include <QTextCodec>
 
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
+
 extern QString simplifiedText( QString );
 //
 static const char * tabPixmap_img[] = 
@@ -304,6 +306,10 @@ void TextEdit::slotCompletionList(TagList tagList )
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_meth.png"));
             else if ( tag.kind == "member" )
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_var.png"));
+            else if ( tag.kind == "struct" )
+                item->setIcon(QIcon(":/CV/images/CVstruct.png"));
+            else if ( tag.kind == "class" )
+                item->setIcon(QIcon(":/CV/images/CVclass.png"));
             m_completionList->addItem(item);
             //m_completionList->addItem( tag.name );
         }

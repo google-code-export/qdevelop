@@ -34,6 +34,8 @@
 #endif
 #include <QDebug>
 
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
+
 extern QString simplifiedText( QString );
 
 InitCompletion::InitCompletion (QObject *parent, TreeClasses *treeClasses)
@@ -367,6 +369,11 @@ TagList InitCompletion::readFromDB(TagList list, Expression exp, QString functio
             tag.kind = "function";
         else if ( parsedItem.kind == "p" )
             tag.kind = "prototype";
+        else if ( parsedItem.kind == "c" )
+        {
+            tag.kind = "class";
+            tag.parameters = "";
+        }
         else if ( parsedItem.kind == "e" )
         {
             if (  parsedItem.enumname.section(":", 0, 0) != exp.className )
@@ -378,6 +385,11 @@ TagList InitCompletion::readFromDB(TagList list, Expression exp, QString functio
         else if ( parsedItem.kind == "m" )
         {
             tag.kind = "member";
+            tag.parameters = "";
+        }
+        else if ( parsedItem.kind == "s" )
+        {
+            tag.kind = "struct";
             tag.parameters = "";
         }
         else
@@ -393,7 +405,7 @@ TagList InitCompletion::readFromDB(TagList list, Expression exp, QString functio
             continue;
         else if ( tag.access != "public" && !m_text.simplified().endsWith("this->") )
             continue;
-        else if ( (exp.access == AccessStatic && isStatic != true)
+        else if ( (exp.access == AccessStatic && isStatic != true && tag.kind != "struct" && tag.kind != "class")
                   || (exp.access != AccessStatic && isStatic == true))
             continue;
         list << tag;

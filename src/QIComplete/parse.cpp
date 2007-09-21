@@ -15,6 +15,7 @@
 #include "parse.h"
 #include "tree.h"
 
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
 extern QString simplifiedText( QString );
 
 char* Parse::scanForIdent(const char **expr)
@@ -163,7 +164,8 @@ QString Parse::extractTypeQualifier(const QString &str, const QString &varName)
 {
 #define STRING      "\".*\""
 #define BRACKETEXPR "\\{.*\\}"
-#define IDENT       "[a-zA-Z_][a-zA-Z0-9_]*"
+//#define IDENT       "[a-zA-Z_][a-zA-Z0-9_]*"
+#define IDENT       "[a-zA-Z_:][a-zA-Z0-9_:]*"
 #define WS          "[ \t\r\n]*"
 #define PTR         "[\\*&]?\\*?"
 #define INITIALIZER "=(" WS IDENT WS ")|=(" WS STRING WS ")|=(" WS BRACKETEXPR WS ")"
@@ -378,7 +380,6 @@ extract:
 	}
 	else			/* static member */
 		type = ident;
-	
 	/* copy result into passed Expression argument */
 	if (type!="" && !(exp->access == AccessInFunction))
 	{
