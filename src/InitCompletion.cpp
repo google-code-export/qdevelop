@@ -257,7 +257,9 @@ void InitCompletion::run()
         {
             return;
         }
+   		emit showMessage( tr("The Qt database will be rebuilt now.") );
         populateQtDatabase();
+    	emit showMessage( tr("The Qt classes database build is ended.") );
         return;
     }
     Scope sc;
@@ -559,11 +561,18 @@ void InitCompletion::populateQtDatabase()
                       "\" --language-force=c++ --fields=afiKmsSzn --c++-kinds=cdefgmnpstuvx \""
                       + m_qtInclude + '\"';
     QProcess ctags;
-    ctags.execute(command);
-    ctags.waitForFinished();
+    if( ctags.execute(command) != 0 )
+    {
+    	emit showMessage( tr("Unable to launch %1").arg(command) );
+    	return;
+   	}
+    ctags.waitForFinished(-1);
     QFile file(QDir::tempPath()+"/qttags");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+    	emit showMessage( tr("Unable to open %1").arg(QDir::tempPath()+"/qttags") );
         return;
+   	}
     QString read;
     read = file.readAll();
     file.close();
