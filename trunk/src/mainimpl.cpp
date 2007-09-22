@@ -152,7 +152,6 @@ MainImpl::MainImpl(QWidget * parent)
     //
     menuToolbar->addAction(toolBarFiles->toggleViewAction());
     menuToolbar->addAction(toolBarEdit->toggleViewAction());
-    menuToolbar->addAction(toolBarDebug->toggleViewAction());
     menuToolbar->addAction(toolBarBuild->toggleViewAction());
     //
     for (int i = 0; i < maxRecentsFiles; ++i)
@@ -1416,7 +1415,7 @@ void MainImpl::slotCompile()
         actionBuild->setEnabled( false );
         actionRebuild->setEnabled( false );
         actionCompile->setEnabled( false );
-        toolBarDebug->setEnabled( false );
+        toolBarBuild->setEnabled( false );
         logBuild->clear();
         dockOutputs->setVisible(true);
         if ( m_saveBeforeBuild )
@@ -1455,7 +1454,7 @@ void MainImpl::slotBuild(bool clean, bool build, bool forceQmake)
         actionRebuild->setEnabled( false );
         actionCompile->setEnabled( false );
         actionExecuteWithoutDebug->setEnabled( false );
-        toolBarDebug->setEnabled( false );
+        toolBarBuild->setEnabled( false );
         logBuild->clear();
         dockOutputs->setVisible(true);
         if ( m_saveBeforeBuild )
@@ -1515,7 +1514,7 @@ void MainImpl::slotEndBuild()
         actionRebuild->setEnabled( true );
         actionCompile->setEnabled( true );
         actionExecuteWithoutDebug->setEnabled( true );
-        toolBarDebug->setEnabled( true );
+        toolBarBuild->setEnabled( true );
         if ( m_debugAfterBuild )
             slotDebug( (int)m_debugAfterBuild-1 );
     }
