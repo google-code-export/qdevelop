@@ -104,6 +104,7 @@ public slots:
 signals:
 	void completionList( TagList ); 
 	void completionHelpList( TagList ); 
+	void showMessage( QString );
 };
 
 #endif

@@ -2287,7 +2287,6 @@ void MainImpl::slotNewQtVersion()
 	QSqlDatabase database;
 	QSqlDatabase::database().close();
 	QFile::remove( getQDevelopPath() + "qdevelop.db" );
-   	QMessageBox::information(this, "QDevelop", tr("The Qt database will be rebuilt now."));
 	checkQtDatabase();
 }
 //
@@ -2295,6 +2294,7 @@ void MainImpl::checkQtDatabase()
 {
     m_buildQtDatabase = new InitCompletion (this, treeClasses);
     connect(m_buildQtDatabase, SIGNAL(finished()), m_buildQtDatabase, SLOT(deleteLater()) );
+    connect(m_buildQtDatabase, SIGNAL(showMessage(QString)), this, SLOT(slotShowMessage(QString)) );
     QString includes;
     includes = m_includeDirectory;
 #ifdef WIN32
@@ -2312,3 +2312,8 @@ void MainImpl::slotQmake()
 }
 
 
+
+void MainImpl::slotShowMessage(QString message)
+{
+	QMessageBox::information(this, "QDevelop", message);
+}

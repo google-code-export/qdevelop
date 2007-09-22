@@ -241,6 +241,7 @@ private slots:
 	void slotMethodsList();
 	void slotNewQtVersion();
 public slots:
+	void slotShowMessage(QString message);
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);
 	bool slotCloseAllFiles();
 	void slotToolsControl(bool show=true);
