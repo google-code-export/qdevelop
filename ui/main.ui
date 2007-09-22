@@ -721,39 +721,13 @@
    <addaction name="separator" />
    <addaction name="actionIndent" />
    <addaction name="actionUnindent" />
-  </widget>
-  <widget class="QToolBar" name="toolBarBookmarks" >
-   <property name="orientation" >
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <attribute name="toolBarArea" >
-    <number>4</number>
-   </attribute>
-   <addaction name="actionToggleBookmark" />
-   <addaction name="actionNextBookmark" />
    <addaction name="actionPreviousBookmark" />
+   <addaction name="actionNextBookmark" />
    <addaction name="actionClearAllBookmarks" />
   </widget>
   <widget class="QToolBar" name="toolBarBuild" >
    <property name="windowTitle" >
-    <string>Build Toolbar</string>
-   </property>
-   <property name="orientation" >
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <attribute name="toolBarArea" >
-    <number>4</number>
-   </attribute>
-   <addaction name="actionCompile" />
-   <addaction name="separator" />
-   <addaction name="actionBuild" />
-   <addaction name="actionRebuild" />
-   <addaction name="actionStopBuild" />
-   <addaction name="actionExecuteWithoutDebug" />
-  </widget>
-  <widget class="QToolBar" name="toolBarDebug" >
-   <property name="windowTitle" >
-    <string>Debug Toolbar</string>
+    <string>Build and Debug Toolbar</string>
    </property>
    <property name="orientation" >
     <enum>Qt::Horizontal</enum>
@@ -766,6 +740,12 @@
    <addaction name="actionStepOver" />
    <addaction name="actionStepInto" />
    <addaction name="actionStepOut" />
+   <addaction name="actionCompile" />
+   <addaction name="separator" />
+   <addaction name="actionBuild" />
+   <addaction name="actionRebuild" />
+   <addaction name="actionStopBuild" />
+   <addaction name="actionExecuteWithoutDebug" />
   </widget>
   <action name="actionNewProject" >
    <property name="icon" >
