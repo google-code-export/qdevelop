@@ -109,6 +109,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_includeDirectory = QLibraryInfo::location( QLibraryInfo::HeadersPath );
     m_configureCompletionNeeded = false;
     m_mibCodec = 106; // UTF-8 by default
+    m_buildQtDatabaseAsked = false;
     //
     m_formatPreprocessorText.setForeground(QColor(0,128,0));
     m_formatQtText.setForeground(Qt::blue);
@@ -2286,6 +2287,7 @@ void MainImpl::slotNewQtVersion()
 	QSqlDatabase database;
 	QSqlDatabase::database().close();
 	QFile::remove( getQDevelopPath() + "qdevelop.db" );
+	m_buildQtDatabaseAsked = true;
 	checkQtDatabase();
 }
 //
@@ -2294,6 +2296,8 @@ void MainImpl::checkQtDatabase()
     m_buildQtDatabase = new InitCompletion (this, treeClasses);
     connect(m_buildQtDatabase, SIGNAL(finished()), m_buildQtDatabase, SLOT(deleteLater()) );
     connect(m_buildQtDatabase, SIGNAL(showMessage(QString)), this, SLOT(slotShowMessage(QString)) );
+    if( m_buildQtDatabaseAsked )
+    	connect(m_buildQtDatabase, SIGNAL(finished()), this, SLOT(slotBuildQtDatabaseEnded()) );
     QString includes;
     includes = m_includeDirectory;
 #ifdef WIN32
@@ -2309,10 +2313,14 @@ void MainImpl::slotQmake()
 {
 	slotBuild(false, false, true);
 }
-
-
-
+//
 void MainImpl::slotShowMessage(QString message)
 {
 	QMessageBox::information(this, "QDevelop", message);
 }
+//
+void MainImpl::slotBuildQtDatabaseEnded()
+{
+    QMessageBox::information(this, "QDevelop", tr("The Qt classes database build is ended.") );
+}
+

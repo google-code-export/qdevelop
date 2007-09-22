@@ -22,7 +22,6 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
-#include <QMessageBox>
 #include <QVariant>
 #include <QMetaType>
 #include <QCoreApplication>
@@ -257,9 +256,7 @@ void InitCompletion::run()
         {
             return;
         }
-   		emit showMessage( tr("The Qt database will be rebuilt now.") );
         populateQtDatabase();
-    	emit showMessage( tr("The Qt classes database build is ended.") );
         return;
     }
     Scope sc;
@@ -493,12 +490,10 @@ bool InitCompletion::connectQDevelopDB(QString const& dbName)
     //
     if (!database.open())
     {
-        QMessageBox::critical(0, "QDevelop",
-                              QObject::tr("Unable to establish a database connection.")+"\n"+
+        emit showMessage(	  QObject::tr("Unable to establish a database connection.")+"\n"+
                               QObject::tr("QDevelop needs SQLite support. Please read "
                                           "the Qt SQL driver documentation for information how "
-                                          "to build it."), QMessageBox::Cancel,
-                              QMessageBox::NoButton);
+                                          "to build it.") );
         return false;
     }
     return true;
