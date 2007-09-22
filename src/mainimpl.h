@@ -98,6 +98,7 @@ private:
 	void setCrossButton(bool activate);
 	bool modifiedEditors();
 	// Objects and Variables
+	bool m_buildQtDatabaseAsked;
 	Build *m_builder;
 	Debug *m_debug;
 	ProjectManager *m_projectManager;
@@ -241,6 +242,7 @@ private slots:
 	void slotMethodsList();
 	void slotNewQtVersion();
 public slots:
+	void slotBuildQtDatabaseEnded();
 	void slotShowMessage(QString message);
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);
 	bool slotCloseAllFiles();
