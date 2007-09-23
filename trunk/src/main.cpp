@@ -24,7 +24,6 @@
 #include <QApplication>
 #include <QPlastiqueStyle>
 #include <QProcess>
-#include <QMessageBox>
 #include <QTranslator>
 #include <QLocale>
 #include <QSplashScreen>
@@ -32,6 +31,7 @@
 #include <QDir>
 #include <QProgressBar>
 #include <QDebug>
+#include <QLibraryInfo>
 #include "mainimpl.h"
 //
 QSplashScreen *splash = 0;
@@ -69,10 +69,15 @@ int main(int argc, char *argv[])
 	//
 	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Interface translation"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
 	qApp->processEvents();
+	// load & install QDevelop translation
 	translatorQDevelop.load( ":/translations/translations/QDevelop_"+language+".qm" );
 	app.installTranslator( &translatorQDevelop );
+	// search, load & install Qt translation
 	translatorQt.load( ":/translations/translations/Qt_"+language+".qm" );
-	app.installTranslator( &translatorQt );
+	if (translatorQt.isEmpty())
+		translatorQt.load( QLibraryInfo::location( QLibraryInfo::TranslationsPath) + "/qt_"+QLocale::system().name()+".qm" );
+	if (!translatorQt.isEmpty())
+		app.installTranslator( &translatorQt );
 	//
 	MainImpl main;
 	main.setGeometry(50,50, 800, 550);
