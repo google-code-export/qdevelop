@@ -2064,7 +2064,7 @@ void MainImpl::slotFindInFiles()
     }
 
     dockOutputs->setVisible(true);
-    tabOutputs->setCurrentIndex( 2 );
+    tabOutputs->setCurrentIndex( 4 );
     m_findInFiles->show();
     // Not delete dialog to save options, location and pattern on next showing.
 }
