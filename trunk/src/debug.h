@@ -30,6 +30,7 @@
 #include "projectmanager.h"
 //
 struct Variable;
+class BlockUserData;
 //
 class Debug : public QThread
 {
@@ -64,7 +65,7 @@ signals:
 	void onPause();
 	void debugVariables( QList<Variable> );
 public slots:
-	void slotBreakpoint(QString filename, QPair<bool,unsigned int> breakpointLine);
+	void slotBreakpoint(QString filename, unsigned int line, BlockUserData *);
 protected slots:
 	void slotMessagesDebug();
 	void slotDebugCommand(QString text);

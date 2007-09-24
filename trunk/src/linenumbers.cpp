@@ -35,6 +35,10 @@
 #include <QAbstractTextDocumentLayout>
 #include <QTextBlock>
 #include <QDebug>
+#include <QDialog>
+#include "ui_breakpointcondition.h"
+//
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
 //
 LineNumbers::LineNumbers( TextEdit* edit, Editor *editor)
 	: QWidget( (QWidget *)edit ), m_textEdit( edit ), m_editor( editor )
@@ -90,11 +94,14 @@ void LineNumbers::paintEvent( QPaintEvent* )
 
 		if( blockUserData && blockUserData->breakpoint )
 		{
-			p.drawPixmap( 1, qRound( position.y() ) -contentsY-4,QPixmap(":/divers/images/pointArret.png")/*.scaled(20,20)*/);
+			QPixmap pixmap = QPixmap(":/divers/images/breakpoint.png");
+			if( !blockUserData->breakpointCondition.isEmpty() )
+				pixmap = QPixmap(":/divers/images/breakpoint2.png");
+			p.drawPixmap( 1, qRound( position.y() ) -contentsY-4, pixmap);
 		}
 		if( blockUserData && blockUserData->bookmark )
 		{
-			p.drawPixmap( 3, qRound( position.y() ) -contentsY-6,QPixmap(":/divers/images/bookmark.png")/*.scaled(20,20)*/);
+			p.drawPixmap( 3, qRound( position.y() ) -contentsY-6,QPixmap(":/divers/images/bookmark.png"));
 		}
 
 	}
@@ -159,17 +166,25 @@ void LineNumbers::setDefaultProperties()
 //
 void LineNumbers::mousePressEvent ( QMouseEvent * event )
 {
-	QTextCursor cursor = m_textEdit->cursorForPosition( event->pos() );
-	if( cursor.isNull() )
+	m_cursor = m_textEdit->cursorForPosition( event->pos() );
+	if( m_cursor.isNull() )
 		return;
 	m_currentLine = 1;
-	for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid() && block != cursor.block(); block = block.next(), m_currentLine++ )
+	for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid() && block != m_cursor.block(); block = block.next(), m_currentLine++ )
 		;
 	if( event->button() == Qt::RightButton )
 	{
 		QMenu *menu = new QMenu(this);
 		connect(menu->addAction(QIcon(":/divers/images/bookmark.png"), tr("Toogle Bookmark")), SIGNAL(triggered()), this, SLOT(slotToggleBookmark()) );
-		connect(menu->addAction(QIcon(":/divers/images/pointArret.png"), tr("Toogle Breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
+		connect(menu->addAction(QIcon(":/divers/images/breakpoint.png"), tr("Toogle Breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
+		//
+		BlockUserData *blockUserData = (BlockUserData*)m_cursor.block().userData();
+		if( blockUserData && blockUserData->breakpoint )
+		{
+			menu->addSeparator();
+			connect(menu->addAction(QIcon(":/divers/images/breakpoint2.png"), tr("Breakpoint Condition...")), SIGNAL(triggered()), this, SLOT(slotBreakpointCondition()) );
+		}
+		//
 		menu->exec(event->globalPos());
 		delete menu;
 	}
@@ -179,7 +194,7 @@ void LineNumbers::mousePressEvent ( QMouseEvent * event )
 //
 void LineNumbers::slotToggleBreakpoint() 
 { 
-	m_editor->toggleBreakpoint( m_currentLine );
+	m_editor->toggleBreakpoint( m_currentLine, QString(), true );
 	repaint();
 }
 //
@@ -205,3 +220,33 @@ void LineNumbers::slotResetExecutedLine()
 	else
 		m_executedLine = 0;
 }
+
+void LineNumbers::slotBreakpointCondition()
+{
+	BlockUserData *blockUserData = (BlockUserData*)m_cursor.block().userData();
+	if( m_cursor.isNull() )
+		return;
+	if( blockUserData && blockUserData->breakpoint )
+	{
+	    QDialog *condition = new QDialog;
+	    Ui::BreakpointCondition ui;
+	    ui.setupUi(condition);
+	    ui.condition->setText( blockUserData->breakpointCondition );
+	    ui.checkboxCondition->setChecked( !blockUserData->breakpointCondition.isEmpty() );
+	    if( blockUserData->isTrue )
+	        ui.isTrue->setChecked( true );
+	    else
+	        ui.hasChanged->setChecked( true );
+	    if( condition->exec() == QDialog::Accepted )
+	    {
+			blockUserData->breakpointCondition = ui.condition->text();
+			blockUserData->isTrue = ui.isTrue->isChecked();
+		    m_cursor.block().setUserData( blockUserData );
+			m_editor->toggleBreakpoint( m_currentLine, blockUserData->breakpointCondition, blockUserData->isTrue); // Disable breakpoint
+			m_editor->toggleBreakpoint( m_currentLine, blockUserData->breakpointCondition, blockUserData->isTrue ); // Enable breakpoint
+			repaint();
+	   	}
+	   	delete condition;
+	}
+}
+

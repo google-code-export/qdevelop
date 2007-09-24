@@ -585,20 +585,20 @@ QList<int> Editor::bookmarksList()
     return list;
 }
 //
-QList<int> Editor::breakpointsList()
+QList<QTextBlock> Editor::breakpointsList()
 {
-    QList<int> list;
+    QList<QTextBlock> list;
     int line = 1;
     for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next(), line++ )
     {
         BlockUserData *blockUserData = (BlockUserData*)block.userData();
         if ( blockUserData && blockUserData->breakpoint )
-            list << line;
+            list << block;
     }
     return list;
 }
 //
-void Editor::toggleBreakpoint(int line)
+void Editor::toggleBreakpoint(int line, QString breakpointCondition, bool isTrue)
 {
     QTextCursor save = m_textEdit->textCursor();
     int scroll = verticalScrollBar();
@@ -610,13 +610,16 @@ void Editor::toggleBreakpoint(int line)
         blockUserData = new BlockUserData();
         blockUserData->breakpoint = false;
         blockUserData->bookmark = false;
+        blockUserData->isTrue = false;
     }
-    blockUserData->breakpoint = !blockUserData->breakpoint;
+   	blockUserData->breakpoint = !blockUserData->breakpoint;
+    blockUserData->breakpointCondition = breakpointCondition;
+    blockUserData->isTrue = isTrue;
     cursor.block().setUserData( blockUserData );
     m_textEdit->setTextCursor( cursor );
     m_textEdit->setTextCursor( save );
     setVerticalScrollBar( scroll );
-    emit breakpoint(shortFilename(), QPair<bool,unsigned int>(blockUserData->breakpoint, line));
+    emit breakpoint(shortFilename(), line, blockUserData);
     m_textEdit->lineNumbers()->update();
 }
 //
@@ -627,7 +630,7 @@ void Editor::emitListBreakpoints()
     {
         BlockUserData *blockUserData = (BlockUserData*)block.userData();
         if ( blockUserData && blockUserData->breakpoint )
-            emit breakpoint(shortFilename(), QPair<bool,unsigned int>(true, line));
+		    emit breakpoint(shortFilename(), line, blockUserData);
     }
 }
 //

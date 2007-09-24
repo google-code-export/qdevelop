@@ -63,14 +63,14 @@ QAction* variantToAction( QVariant variant )
 bool connectDB(QString const& dbName)
 {
 	QSqlDatabase database;
-	if( QSqlDatabase::database().databaseName() != dbName )
+	if( QSqlDatabase::database(dbName).databaseName() != dbName )
 	{
-		database = QSqlDatabase::addDatabase("QSQLITE");
+		database = QSqlDatabase::addDatabase("QSQLITE", dbName);
 		database.setDatabaseName(dbName);
 	}
 	else
 	{
-		database = QSqlDatabase::database();
+		database = QSqlDatabase::database(dbName);
 		if ( database.isOpen() )
 			return true;
 	}
@@ -86,7 +86,6 @@ bool connectDB(QString const& dbName)
     }
 	else
 	{
-		QSqlQuery query;
 		QString queryString = "create table classesbrowser ("
 		    "text string,"
 		    "tooltip string,"
@@ -106,6 +105,7 @@ bool connectDB(QString const& dbName)
 		    "kind string"
 		    ")";
 		
+		QSqlQuery query(database);
 		query.exec(queryString);
 		queryString = "create table editors ("
 		    "filename string,"
@@ -122,7 +122,9 @@ bool connectDB(QString const& dbName)
 		//
 		queryString = "create table breakpoints ("
 		    "filename string,"
-		    "numline int"
+		    "numline int,"
+		    "breakpointCondition string,"
+		    "isTrue int"
 		    ")";
 		query.exec(queryString);
 		//

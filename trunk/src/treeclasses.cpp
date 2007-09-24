@@ -534,7 +534,7 @@ void TreeClasses::toDB(QString projectDirectory)
     if ( !topLevelItem(0) )
         return;
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    QSqlQuery query;
+    QSqlQuery query( QSqlDatabase::database( projectDirectory + "/qdevelop-settings.db" ));
     QString queryString = "delete from classesbrowser where 1";
     if (!query.exec(queryString))
     {
@@ -628,7 +628,7 @@ void TreeClasses::fromDB(QString projectDirectory)
 {
     m_treeClassesItems->clear();
     connectDB(projectDirectory+"/qdevelop-settings.db");
-    QSqlQuery query;
+    QSqlQuery query( QSqlDatabase::database( projectDirectory + "/qdevelop-settings.db" ));
     query.exec("BEGIN TRANSACTION;");
     QString queryString = QString()
                           + "select * from classesbrowser where 1";
