@@ -28,6 +28,7 @@
 #define LINENUMBERS_H
 //
 #include <QWidget>
+#include <QTextCursor>
 //
 class QTextEdit;
 class TextEdit;
@@ -65,6 +66,7 @@ private:
 	QColor mBackgroundColor;
 	int m_executedLine;
 	int m_currentLine;
+	QTextCursor m_cursor;
 	//
 signals:	
 	void digitNumbersChanged();
@@ -76,6 +78,7 @@ protected slots:
 private slots:
 	void slotToggleBreakpoint();
 	void slotToggleBookmark();
+	void slotBreakpointCondition();
 public slots:
 	void setDefaultProperties();
 };

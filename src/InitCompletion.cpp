@@ -58,7 +58,7 @@ InitCompletion::~InitCompletion()
             return;
         }
         createTables();
-        QSqlQuery query;
+        QSqlQuery query(QSqlDatabase::database(getQDevelopPath() + "qdevelop.db" ));
         query.exec("BEGIN TRANSACTION;");
         QString queryString = "delete from tags";
         query.exec(queryString);
@@ -254,9 +254,11 @@ void InitCompletion::run()
         list = readFromDB(list, exp, QString());
         if ( list.count() )
         {
+			QSqlDatabase::removeDatabase(getQDevelopPath() + "qdevelop.db");
             return;
         }
         populateQtDatabase();
+		QSqlDatabase::removeDatabase(getQDevelopPath() + "qdevelop.db");
         return;
     }
     Scope sc;
@@ -414,7 +416,7 @@ TagList InitCompletion::readFromDB(TagList list, Expression exp, QString functio
     }
     // Continue the reading in qdevelop.db
     createTables();
-    QSqlQuery query;
+    QSqlQuery query(QSqlDatabase::database(getQDevelopPath() + "qdevelop.db" ));
     query.exec("BEGIN TRANSACTION;");
     //
     QString queryString = QString()
@@ -476,14 +478,14 @@ bool InitCompletion::connectQDevelopDB(QString const& dbName)
 {
     QSqlDatabase database;
 
-    if ( QSqlDatabase::database().databaseName() != dbName )
+    if ( QSqlDatabase::database(dbName).databaseName() != dbName )
     {
-        database = QSqlDatabase::addDatabase("QSQLITE");
+        database = QSqlDatabase::addDatabase("QSQLITE", dbName);
         database.setDatabaseName(dbName);
     }
     else
     {
-        database = QSqlDatabase::database();
+        database = QSqlDatabase::database(dbName);
         if ( database.isOpen() )
             return true;
     }
@@ -527,7 +529,6 @@ void InitCompletion::writeToDB(Expression exp, TagList list, QSqlQuery query)
 //
 void InitCompletion::createTables()
 {
-    QSqlQuery query;
     QString queryString = "create table tags ("
                           "class string,"
                           "name string,"
@@ -540,6 +541,7 @@ void InitCompletion::createTables()
                           "isFunction int,"
                           "isStatic int"
                           ")";
+    QSqlQuery query(QSqlDatabase::database(getQDevelopPath() + "qdevelop.db" ));
     query.exec(queryString);
     //
     queryString = "create table inheritance ("
@@ -651,12 +653,12 @@ void InitCompletion::populateQtDatabase()
             map[classname] = list;
         }
     }
-    if ( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
-    {
-        return;
-    }
-    createTables();
-    QSqlQuery query;
+   // if ( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
+    //{
+        //return;
+    //}
+    //createTables();
+    QSqlQuery query(QSqlDatabase::database(getQDevelopPath() + "qdevelop.db" ));
     query.exec("BEGIN TRANSACTION;");
     query.exec("delete from tags");
     QStringList keys = map.keys();
@@ -719,9 +721,9 @@ QStringList InitCompletion::inheritanceList( const QString classname, QStringLis
         }
     }
     //
-    QSqlQuery query;
     QString queryString = QString()
                           + "select * from inheritance where child='"+classname+"'";
+    QSqlQuery query(QSqlDatabase::database(getQDevelopPath() + "qdevelop.db" ));
     query.exec(queryString);
     while (query.next())
     {
@@ -845,7 +847,7 @@ QString InitCompletion::returned(QString className, QString function, Expression
     }
     // Continue the reading in qdevelop.db
     createTables();
-    QSqlQuery query;
+    QSqlQuery query(QSqlDatabase::database(getQDevelopPath() + "qdevelop.db" ));
     query.exec("BEGIN TRANSACTION;");
     QString queryString = QString()
                           + "select * from inheritance where child='"+className+"'";

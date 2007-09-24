@@ -266,7 +266,7 @@ void ProjectManager::saveProjectSettings()
     QString directory = projectDirectory(m_treeFiles->topLevelItem(0));
     if ( !connectDB( directory + "/qdevelop-settings.db" ) )
         return;
-    QSqlQuery query;
+    QSqlQuery query(QSqlDatabase::database( directory + "/qdevelop-settings.db") );
     QString queryString = "delete from editors where 1";
     if (!query.exec(queryString))
     {
@@ -304,7 +304,7 @@ void ProjectManager::saveProjectSettings()
         if ( editor )
         {
             QString filename = QDir( directory ).relativeFilePath( editor->filename() );
-            QSqlQuery query;
+            QSqlQuery query( QSqlDatabase::database( directory + "/qdevelop-settings.db" ));
             query.prepare("INSERT INTO editors (filename, scrollbar, numline) "
                           "VALUES (:filename, :scrollbar, :numline)");
             query.bindValue(":filename", filename);
@@ -315,7 +315,7 @@ void ProjectManager::saveProjectSettings()
             foreach(int line, editor->bookmarksList())
             {
                 filename = QDir( directory ).relativeFilePath( editor->filename() );
-                QSqlQuery query;
+	            QSqlQuery query( QSqlDatabase::database( directory + "/qdevelop-settings.db" ));
                 query.prepare("INSERT INTO bookmarks (filename, numline) "
                               "VALUES (:filename, :numline)");
                 query.bindValue(":filename", filename);
@@ -323,14 +323,17 @@ void ProjectManager::saveProjectSettings()
                 if ( !query.exec() )
                     qDebug() << query.lastError();
             }
-            foreach(int line, editor->breakpointsList())
+            foreach(QTextBlock block, editor->breakpointsList())
             {
+		        BlockUserData *blockUserData = (BlockUserData*)block.userData();
                 filename = QDir( directory ).relativeFilePath( editor->filename() );
-                QSqlQuery query;
-                query.prepare("INSERT INTO breakpoints (filename, numline) "
-                              "VALUES (:filename, :numline)");
+	            QSqlQuery query( QSqlDatabase::database( directory + "/qdevelop-settings.db" ));
+                query.prepare("INSERT INTO breakpoints (filename, numline, breakpointCondition, isTrue) "
+                              "VALUES (:filename, :numline, :breakpointCondition, :isTrue)");
                 query.bindValue(":filename", filename);
-                query.bindValue(":numline", line);
+                query.bindValue(":numline", editor->currentLineNumber(block));
+                query.bindValue(":breakpointCondition", blockUserData->breakpointCondition);
+                query.bindValue(":isTrue", blockUserData->isTrue);
                 if ( !query.exec() )
                     qDebug() << query.lastError();
             }
@@ -347,7 +350,7 @@ void ProjectManager::saveProjectSettings()
         srcDir = QDir( projectDir ).relativeFilePath( srcDir );
         QString uiDir = uiDirectory( itemProject(projectName) );
         uiDir = QDir( projectDir ).relativeFilePath( uiDir );
-        QSqlQuery query;
+        QSqlQuery query( QSqlDatabase::database( directory + "/qdevelop-settings.db" ));
         query.prepare("INSERT INTO projectsDirectories (projectName, srcDirectory, uiDirectory) "
                       "VALUES (:projectName, :srcDirectory, :uiDirectory)");
         query.bindValue(":projectName", projectName);
@@ -373,7 +376,7 @@ void ProjectManager::loadProjectSettings()
     QString directory = projectDirectory(m_treeFiles->topLevelItem(0));
     if ( !connectDB( directory + "/qdevelop-settings.db" ) )
         return;
-    QSqlQuery query;
+    QSqlQuery query( QSqlDatabase::database( directory + "/qdevelop-settings.db" ));
     query.prepare("select * from editors where 1");
     query.exec();
     while (query.next())
@@ -409,9 +412,11 @@ void ProjectManager::loadProjectSettings()
         QString filename = query.value(0).toString();
         filename = QDir( directory ).absoluteFilePath( filename );
         int line = query.value(1).toInt();
+        QString breakpointCondition = query.value(2).toString();
+        bool isTrue = query.value(3).toBool();
         Editor *editor = m_parent->openFile( QStringList(filename) );
         if ( editor )
-            editor->toggleBreakpoint( line );
+            editor->toggleBreakpoint(line, breakpointCondition, isTrue);
     }
     //
     query.prepare("select * from config where 1");

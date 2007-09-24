@@ -59,6 +59,8 @@ class BlockUserData : public QTextBlockUserData
 public:
 	bool bookmark;
 	bool breakpoint;
+	QString breakpointCondition;
+	bool isTrue;
 	QTextBlock block;
 };
 //
@@ -92,7 +94,7 @@ public:
 	int currentLineNumber(){ return m_textEdit->currentLineNumber(); };
 	int currentLineNumber(QTextBlock block){ return m_textEdit->currentLineNumber(block); };
 	void print(){ m_textEdit->print(); };
-	void toggleBreakpoint(int line);
+	void toggleBreakpoint(int line, QString breakpointCondition, bool isTrue);
 	void setExecutedLine(int line);
 	void emitListBreakpoints();
 	void copy() { m_textEdit->copy(); };
@@ -122,10 +124,10 @@ public:
 	void setActiveEditor(bool b);
 	void setIntervalUpdatingTreeClasses(int i) { m_intervalUpdatingClasses = i*1000;};
 	void setShowTreeClasses(bool s);
-	void toggleBreakpoint() { toggleBreakpoint( m_textEdit->currentLineNumber() ); };
+	void toggleBreakpoint() { toggleBreakpoint( m_textEdit->currentLineNumber(), QString(), false ); };
 	void toggleBookmark() { toggleBookmark( m_textEdit->currentLineNumber() ); };
 	QList<int> bookmarksList();
-	QList<int> breakpointsList();
+	QList<QTextBlock> breakpointsList();
 	bool inQuotations(int position, QString text);
 	QString toPlainText() { return m_textEdit->toPlainText(); };
 	void insertText(QString text, int insertAfterLine) { m_textEdit->insertText(text, insertAfterLine); };
@@ -189,7 +191,7 @@ protected:
 signals:
 	void editorModified(Editor *, bool);
 	void refreshClasses(QString);
-	void breakpoint(QString, QPair<bool,unsigned int>); 
+	void breakpoint(QString, unsigned int, BlockUserData *); 
 	void updateClasses(QString, QString);
 };
 

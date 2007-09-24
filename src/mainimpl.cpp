@@ -109,6 +109,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_includeDirectory = QLibraryInfo::location( QLibraryInfo::HeadersPath );
     m_configureCompletionNeeded = false;
     m_mibCodec = 106; // UTF-8 by default
+    m_buildQtDatabase = 0;
     m_buildQtDatabaseAsked = false;
     //
     m_formatPreprocessorText.setForeground(QColor(0,128,0));
@@ -202,6 +203,7 @@ MainImpl::~MainImpl()
     	m_buildQtDatabase->setStopRequired();
     	m_buildQtDatabase->wait();
     	delete m_buildQtDatabase;
+    	m_buildQtDatabase = 0;
    	}
 }
 
@@ -987,12 +989,6 @@ bool MainImpl::openProject(QString s)
         return false;
     if ( m_completion )
         delete m_completion;
-    if( m_buildQtDatabase )
-    {
-    	m_buildQtDatabase->setStopRequired();
-    	m_buildQtDatabase->wait();
-    	delete m_buildQtDatabase;
-   	}
     m_completion = new InitCompletion (this, treeClasses);
     QString includes;
     includes = m_includeDirectory;
@@ -1268,7 +1264,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     connect(editor, SIGNAL(editorModified(Editor *, bool)), this, SLOT(slotModifiedEditor( Editor *, bool)) );
     connect(editor, SIGNAL(updateClasses(QString, QString)), this, SLOT(slotUpdateClasses(QString, QString)) );
     if ( m_debug )
-        connect(editor, SIGNAL(breakpoint(QString, QPair<bool,unsigned int>)), m_debug, SLOT(slotBreakpoint(QString, QPair<bool,unsigned int>)) );
+        connect(editor, SIGNAL(breakpoint(QString, bool, unsigned int, QString)), m_debug, SLOT(slotBreakpoint(QString, bool, unsigned int, QString)) );
     setCurrentFile(s);
     slotCurrentTabChanged( m_tabEditors->currentIndex() );
 
@@ -1373,11 +1369,6 @@ void MainImpl::slotUpdateClasses(QString filename, QString buffer)
             {
                 QStringList parents = m_projectManager->parents(projectsList.at(nbProjects));
                 treeClasses->updateClasses(QDir::cleanPath(filename), buffer, parents, ext);
-                /*if ( m_completion )
-                {
-                    m_completion->initParse(buffer, true, false);
-                    m_completion->start();
-                }*/
             }
         }
     }
@@ -1753,7 +1744,7 @@ bool MainImpl::slotDebug(bool executeOnly)
         for (int i=0; i<m_tabEditors->count(); i++)
         {
             Editor *editor = givenEditor(i);
-            connect(editor, SIGNAL(breakpoint(QString, QPair<bool,unsigned int>)), m_debug, SLOT(slotBreakpoint(QString, QPair<bool,unsigned int>)) );
+            connect(editor, SIGNAL(breakpoint(QString, unsigned int, BlockUserData *)), m_debug, SLOT(slotBreakpoint(QString, unsigned int, BlockUserData *)) );
             editor->emitListBreakpoints();
         }
         QStringList list;
@@ -2284,8 +2275,7 @@ void MainImpl::slotNewQtVersion()
    		QMessageBox::information(this, "QDevelop", tr("The Qt database building is already in progress."));
    		return;
    	}
-	QSqlDatabase database;
-	QSqlDatabase::database().close();
+	QSqlDatabase::removeDatabase(getQDevelopPath() + "qdevelop.db");
 	QFile::remove( getQDevelopPath() + "qdevelop.db" );
 	m_buildQtDatabaseAsked = true;
 	checkQtDatabase();
@@ -2293,11 +2283,11 @@ void MainImpl::slotNewQtVersion()
 //
 void MainImpl::checkQtDatabase()
 {
+	actionNewQtVersion->setEnabled(false);
     m_buildQtDatabase = new InitCompletion (this, treeClasses);
     connect(m_buildQtDatabase, SIGNAL(finished()), m_buildQtDatabase, SLOT(deleteLater()) );
     connect(m_buildQtDatabase, SIGNAL(showMessage(QString)), this, SLOT(slotShowMessage(QString)) );
-    if( m_buildQtDatabaseAsked )
-    	connect(m_buildQtDatabase, SIGNAL(finished()), this, SLOT(slotBuildQtDatabaseEnded()) );
+    connect(m_buildQtDatabase, SIGNAL(finished()), this, SLOT(slotBuildQtDatabaseEnded()) );
     QString includes;
     includes = m_includeDirectory;
 #ifdef WIN32
@@ -2321,6 +2311,9 @@ void MainImpl::slotShowMessage(QString message)
 //
 void MainImpl::slotBuildQtDatabaseEnded()
 {
-    QMessageBox::information(this, "QDevelop", tr("The Qt classes database build is ended.") );
+	actionNewQtVersion->setEnabled(true);
+	m_buildQtDatabase = 0;
+    if( m_buildQtDatabaseAsked )
+    	QMessageBox::information(this, "QDevelop", tr("The Qt classes database build is ended.") );
 }
 

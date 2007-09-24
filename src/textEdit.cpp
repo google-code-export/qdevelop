@@ -1429,7 +1429,7 @@ void TextEdit::contextMenuEvent(QContextMenuEvent * e)
     connect(menu->addAction(QIcon(":/toolbar/images/find.png"), tr("Find...")), SIGNAL(triggered()), m_editor, SLOT(find()) );
     menu->addSeparator();
     connect(menu->addAction(QIcon(":/divers/images/bookmark.png"), tr("Toggle Bookmark")), SIGNAL(triggered()), this, SLOT(slotToggleBookmark()) );
-    connect(menu->addAction(QIcon(":/divers/images/pointArret.png"), tr("Toggle Breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
+    connect(menu->addAction(QIcon(":/divers/images/breakpoint.png"), tr("Toggle Breakpoint")), SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
     //
     //
     menu->exec(e->globalPos());
@@ -1567,7 +1567,7 @@ void TextEdit::slotToggleBookmark()
 //
 void TextEdit::slotToggleBreakpoint()
 {
-    m_editor->toggleBreakpoint( m_lineNumber );
+    m_editor->toggleBreakpoint( m_lineNumber, QString(), true );
     m_lineNumbers->update();
 }
 void TextEdit::insertText(QString text, int insertAfterLine)

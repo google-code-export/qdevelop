@@ -21,6 +21,7 @@
 *
 */
 #include "debug.h"
+#include "editor.h"
 #include <QProcess>
 #include <QDebug>
 #include <QRegExp>
@@ -412,13 +413,25 @@ void Debug::slotDebugCommand(QString text)
 	messagesToDebugger << text;
 }
 //
-void Debug::slotBreakpoint(QString filename, QPair<bool,unsigned int> breakpointLine)
+void Debug::slotBreakpoint(QString filename, unsigned int line, BlockUserData *blockUserData)
 {
 	QString point;
-	if( breakpointLine.first )
-		point = "break "+filename+":"+QString::number(breakpointLine.second)+"\n";	
+	if( blockUserData->breakpoint )
+	{
+		if( blockUserData->isTrue )
+		{
+		    if( blockUserData->breakpointCondition.isEmpty() )
+			    point = "break "+filename+":"+QString::number(line)+"\n";
+		    else
+			    point = "break "+filename+":"+QString::number(line)+" if "+blockUserData->breakpointCondition+"\n";
+		}
+		else
+		{
+			point = "watch "+blockUserData->breakpointCondition+"\n";
+		}
+	}
 	else
-		point = "clear "+filename+":"+QString::number(breakpointLine.second)+"\n";	
+		point = "clear "+filename+":"+QString::number(line)+"\n";	
 	messagesToDebugger << point;
 }
 //

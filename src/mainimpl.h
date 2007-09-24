@@ -85,7 +85,7 @@ public:
 	void resetDebugAfterBuild();
 	int mibCodec() { return m_mibCodec;	}
 	void checkQtDatabase();
-	QPointer<InitCompletion> buildQtDatabase() { return m_buildQtDatabase; }
+	InitCompletion* buildQtDatabase() { return m_buildQtDatabase; }
 private:
 	// Functions
 	void createConnections();
@@ -157,7 +157,7 @@ private:
 	int m_intervalUpdatingClasses;
 	bool m_showTreeClasses;
 	InitCompletion *m_completion;
-	QPointer<InitCompletion> m_buildQtDatabase;
+	InitCompletion *m_buildQtDatabase;
 	QAction *actionActiveBookmark;
 	int m_mibCodec;
 protected:
