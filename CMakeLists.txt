@@ -44,6 +44,7 @@ SET( qdevelop_UIS
 	ui/addnewclassvariable.ui
 	ui/addsetget.ui
 	ui/addscope.ui
+	ui/breakpointcondition.ui
 	ui/exechoice.ui
 	ui/findfiles.ui
 	ui/findwidget.ui
