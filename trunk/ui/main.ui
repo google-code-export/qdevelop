@@ -710,6 +710,7 @@
    <addaction name="separator" />
    <addaction name="actionIndent" />
    <addaction name="actionUnindent" />
+   <addaction name="separator" />
    <addaction name="actionPreviousBookmark" />
    <addaction name="actionNextBookmark" />
    <addaction name="actionClearAllBookmarks" />
@@ -1306,7 +1307,7 @@
   </action>
   <action name="actionToggleBreakpoint" >
    <property name="icon" >
-    <iconset resource="../resources/resources.qrc" >:/divers/images/pointArret.png</iconset>
+    <iconset resource="../resources/resources.qrc" >:/divers/images/breakpoint.png</iconset>
    </property>
    <property name="text" >
     <string>Toggle &amp;breakpoint</string>

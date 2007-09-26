@@ -524,7 +524,8 @@ void TextEdit::autoIndent()
             break;
     }
     if ( simple.simplified().length() && ((simple.contains("(") && simple.contains(")")
-                                           && QString("if:while:do:switch:foreach").contains( simple.section("(", 0, 0).simplified() ) )
+                                           && QString("if:while:do:switch:foreach").contains( simple.section("(", 0, 0).simplified() )
+                                           && (simple.contains('{') || simple.right(1) != ";" ) )
                                           || QString("else:case:default").indexOf( simple.simplified() ) == 0
                                           || simple.simplified().at(0) == '{' || simple.simplified().at( simple.simplified().length()-1 ) == '{' ))
     {
