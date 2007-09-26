@@ -100,6 +100,10 @@ public:
     {
         m_matchingColor = c;
     };
+    void setShowWhiteSpaces( bool b )
+    {
+        m_showWhiteSpaces = b;
+    }
     int currentLineNumber(QTextCursor cursor=QTextCursor());
     int currentLineNumber(QTextBlock block);
     int linesCount();

@@ -53,6 +53,7 @@ class TabWidget;
 class QComboBox;
 class QTimer;
 class TextEditInterface;
+class QHBoxLayout;
 //
 class BlockUserData : public QTextBlockUserData
 {
@@ -90,7 +91,9 @@ public:
 	void setBackgroundColor( QColor c ){ m_textEdit->setBackgroundColor(c); };
 	void setCurrentLineColor( QColor c ){ m_textEdit->setCurrentLineColor(c); };
 	void setMatchingColor( QColor c ){ m_textEdit->setMatchingColor(c); };
+	void setShowWhiteSpaces( bool b ){ m_textEdit->setShowWhiteSpaces( b ); }
 	void gotoMatchingBracket(){ m_textEdit->gotoMatchingBracket(); };
+	void displayEditorToolbar( bool b );
 	int currentLineNumber(){ return m_textEdit->currentLineNumber(); };
 	int currentLineNumber(QTextBlock block){ return m_textEdit->currentLineNumber(block); };
 	void print(){ m_textEdit->print(); };
@@ -186,6 +189,7 @@ private:
 	quint16 m_checksum;
 	InitCompletion *m_completion;
 	QDateTime m_lastModified;
+	QWidget *m_editorToolbar;
 	void checkBookmarks();
 protected:
 signals:
