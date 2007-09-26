@@ -28,7 +28,7 @@
    <item row="0" column="0" >
     <widget class="QTabWidget" name="tabWidget" >
      <property name="currentIndex" >
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tabGeneral" >
       <attribute name="title" >
@@ -260,6 +260,20 @@
           <property name="spacing" >
            <number>6</number>
           </property>
+          <item row="1" column="0" >
+           <widget class="QCheckBox" name="selectionBorder" >
+            <property name="text" >
+             <string>Selection border</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" >
+           <widget class="QCheckBox" name="brackets" >
+            <property name="text" >
+             <string>Auto-Brackets</string>
+            </property>
+           </widget>
+          </item>
           <item row="3" column="0" >
            <layout class="QHBoxLayout" >
             <property name="margin" >
@@ -314,10 +328,10 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="0" >
-           <widget class="QCheckBox" name="selectionBorder" >
+          <item row="0" column="1" >
+           <widget class="QCheckBox" name="indent" >
             <property name="text" >
-             <string>Selection border</string>
+             <string>Autoindent</string>
             </property>
            </widget>
           </item>
@@ -338,17 +352,17 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="1" >
-           <widget class="QCheckBox" name="indent" >
+          <item row="3" column="1" >
+           <widget class="QCheckBox" name="showEditorToolbars" >
             <property name="text" >
-             <string>Autoindent</string>
+             <string>Display editor toolbars</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1" >
-           <widget class="QCheckBox" name="brackets" >
+          <item row="4" column="0" >
+           <widget class="QCheckBox" name="displayWhiteSpaces" >
             <property name="text" >
-             <string>Auto-Brackets</string>
+             <string>Display white spaces</string>
             </property>
            </widget>
           </item>

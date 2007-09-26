@@ -147,6 +147,8 @@ private:
 	EndLine m_endLine;
 	bool m_tabSpaces;
 	bool m_closeButtonInTabs;
+	bool m_displayEditorToolbars;
+	bool m_displayWhiteSpaces;
 	QToolButton *crossButton;
 	QPointer<QActionGroup> m_projectGroup;
 	QTextCharFormat m_formatPreprocessorText, m_formatQtText, m_formatSingleComments;

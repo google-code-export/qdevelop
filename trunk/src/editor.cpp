@@ -131,8 +131,10 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         {
             m_nameOtherFile += ".h";
         }
-        //
-        gridLayout->addLayout(hboxLayout, vposLayout++, 0, 1, 1);
+        m_editorToolbar = new QWidget( this );
+        m_editorToolbar->setLayout( hboxLayout );
+        //gridLayout->addLayout(editorToolbar, vposLayout++, 0, 1, 1);
+        gridLayout->addWidget(m_editorToolbar, vposLayout++, 0, 1, 1);
     }
     connect(m_textEdit, SIGNAL(editorModified(bool)), this, SLOT(slotModifiedEditor(bool)) );
     //
@@ -596,6 +598,11 @@ QList<QTextBlock> Editor::breakpointsList()
             list << block;
     }
     return list;
+}
+
+void Editor::displayEditorToolbar( bool b )
+{
+	m_editorToolbar->setVisible( b );
 }
 //
 void Editor::toggleBreakpoint(int line, QString breakpointCondition, bool isTrue)

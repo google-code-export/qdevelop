@@ -111,6 +111,9 @@ MainImpl::MainImpl(QWidget * parent)
     m_mibCodec = 106; // UTF-8 by default
     m_buildQtDatabase = 0;
     m_buildQtDatabaseAsked = false;
+    m_displayEditorToolbars = true;
+    m_displayWhiteSpaces = true;
+
     //
     m_formatPreprocessorText.setForeground(QColor(0,128,0));
     m_formatQtText.setForeground(Qt::blue);
@@ -586,7 +589,8 @@ void MainImpl::slotOptions()
                                            m_backgroundColor, m_promptBeforeQuit, m_highlightCurrentLine, m_currentLineColor, m_autobrackets,
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
                                            m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec,
-                                           m_includeDirectory);
+                                           m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces
+     );
 
     if ( options->exec() == QDialog::Accepted )
     {
@@ -626,8 +630,10 @@ void MainImpl::slotOptions()
         m_currentLineColor = options->currentLineColor();
         m_matchingColor = options->matchingColor();
         m_mibCodec = options->mib();
-qDebug() << m_mibCodec;
-        //
+        m_displayEditorToolbars = options->showEditorToolbars->isChecked();
+        m_displayWhiteSpaces = options->displayWhiteSpaces->isChecked();
+
+        // qDebug() << m_mibCodec;
         for (int i=0; i<m_tabEditors->count(); i++)
         {
             Editor *editor = givenEditor(i);
@@ -648,6 +654,8 @@ qDebug() << m_mibCodec;
             editor->setCurrentLineColor( m_currentLineColor );
             editor->setMatchingColor( m_matchingColor );
             editor->setAutobrackets( m_autobrackets );
+            editor->setShowWhiteSpaces( m_displayWhiteSpaces );
+            editor->displayEditorToolbar( m_displayEditorToolbars );
             editor->setSyntaxColors
             (
                 m_formatPreprocessorText,
@@ -705,6 +713,8 @@ void MainImpl::saveINI()
     settings.setValue("m_formatQuotationText", m_formatQuotationText.foreground().color().name());
     settings.setValue("m_formatMethods", m_formatMethods.foreground().color().name());
     settings.setValue("m_formatKeywords", m_formatKeywords.foreground().color().name());
+    settings.setValue("m_displayEditorToolbars", m_displayEditorToolbars);
+    settings.setValue("m_displayWhiteSpaces", m_displayWhiteSpaces);
     settings.endGroup();
 
     // Save shortcuts
@@ -805,6 +815,9 @@ QString MainImpl::loadINI()
     m_makeOptions = settings.value("m_makeOptions", m_makeOptions).toString();
     m_showTreeClasses = settings.value("m_showTreeClasses", m_showTreeClasses).toBool();
     m_closeButtonInTabs = settings.value("m_closeButtonInTabs", m_closeButtonInTabs).toBool();
+    m_displayEditorToolbars = settings.value("m_displayEditorToolbars", m_displayEditorToolbars).toBool();
+    m_displayWhiteSpaces = settings.value("m_displayWhiteSpaces", m_displayWhiteSpaces).toBool();
+
     setCrossButton( !m_closeButtonInTabs );
     m_intervalUpdatingClasses = settings.value("m_intervalUpdatingClasses", m_intervalUpdatingClasses).toInt();
     if ( m_currentLineColor == Qt::black )
@@ -1239,6 +1252,8 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     editor->setHighlightCurrentLine( m_highlightCurrentLine );
     editor->setMatchingColor( m_matchingColor );
     editor->setCurrentLineColor( m_currentLineColor );
+    editor->setShowWhiteSpaces( m_displayWhiteSpaces );
+    editor->displayEditorToolbar( m_displayEditorToolbars );
     editor->setSyntaxColors
     (
         m_formatPreprocessorText,

@@ -37,7 +37,8 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
     QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool tc, int in, QString directory,
-    bool m, QColor mc, bool close, QString pd, QString mo, int mi, QString ic)
+    bool m, QColor mc, bool close, QString pd, QString mo, int mi, QString ic, 
+    bool editorToolbars, bool whiteSpaces )
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -67,6 +68,9 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	pluginsDirectory->setText( pd );
 	includeDirectory->setText( ic );
 	makeOptions->setText( mo );
+	showEditorToolbars->setChecked( editorToolbars );
+	displayWhiteSpaces->setChecked( whiteSpaces );
+	
 	//
 	cppHighLighter = new CppHighlighter( 0 );
 	cppHighLighter->setPreprocessorFormat( pre );
