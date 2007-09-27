@@ -165,11 +165,11 @@ void ProjectManager::parseTreeClasses(bool force)
                 QStringList parentsList = parents(projectsList.at(nbProjects));
                 QString buffer;
                 Editor *editor = 0;
-                for (int i=0; i<m_parent->tabEditors()->count(); i++)
+    			foreach(Editor *ed, m_parent->allEditors() )
                 {
-                    if ( m_parent->givenEditor(i)->filename() == s)
+                    if ( ed->filename() == s)
                     {
-                        editor = m_parent->givenEditor(i);
+                        editor = ed;
                     }
                 }
                 if ( editor )
@@ -298,9 +298,8 @@ void ProjectManager::saveProjectSettings()
         return;
     }
 
-    for (int i=0; i<m_parent->tabEditors()->count(); i++)
+	foreach(Editor *editor, m_parent->allEditors() )
     {
-        Editor *editor = m_parent->givenEditor(i);
         if ( editor )
         {
             QString filename = QDir( directory ).relativeFilePath( editor->filename() );
@@ -1317,9 +1316,8 @@ void ProjectManager::slotRenameItem(QTreeWidgetItem *it)
             m_parent->renameEditor(oldAbsolutePath, newAbsolutePath);
             m_isModifiedProject = true;
             Editor *editor = 0;
-            for (int i=0; i<m_parent->tabEditors()->count(); i++)
+    		foreach(Editor *editor, m_parent->allEditors() )
             {
-                editor = m_parent->givenEditor(i);
                 editor->setNameOtherFile(oldAbsolutePath, newAbsolutePath);
             }
         }

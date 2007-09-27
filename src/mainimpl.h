@@ -51,6 +51,8 @@ class MainImpl : public QMainWindow, Ui::Main
 {
 Q_OBJECT
 public:
+	void keyPressFromEditor(QKeyEvent *event);
+	QList<Editor *> allEditors();
 	MainImpl(QWidget * parent = 0);
 	~MainImpl();
 	enum ExecuteVersion { ExecuteNone, ExecuteRelease, ExecuteDebug};
@@ -162,6 +164,7 @@ private:
 	InitCompletion *m_buildQtDatabase;
 	QAction *actionActiveBookmark;
 	int m_mibCodec;
+	QList<Editor *> m_maximizedEditors;
 protected:
 	void closeEvent( QCloseEvent * event );
 private slots:
@@ -251,6 +254,7 @@ public slots:
 	void slotToolsControl(bool show=true);
 	void slotUpdateClasses(QString filename, QString buffer);
 	bool slotCloseProject(bool hide=false);
+	void slotShowMaximized(Editor *editor=0);
 signals:
 	void debugCommand(QString);
 	void stopBuild();

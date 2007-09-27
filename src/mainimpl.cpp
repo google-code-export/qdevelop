@@ -20,6 +20,8 @@
 * Program URL   : http://qdevelop.org
 *
 */
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
+//
 #include "mainimpl.h"
 #include "editor.h"
 #include "build.h"
@@ -213,7 +215,17 @@ MainImpl::~MainImpl()
 //convenient functions to access editor tabs
 Editor * MainImpl::currentEditor()
 {
-    return (Editor*) (m_tabEditors->currentWidget());
+	Editor *editor = 0;
+    TextEdit *textedit = qobject_cast<TextEdit*>( QApplication::focusWidget() );
+    if( textedit )
+    {
+    	editor = qobject_cast<Editor*>( textedit->parent() );
+   	}
+   	else
+   	{
+    	editor = qobject_cast<Editor*>( m_tabEditors->currentWidget() );
+  	}
+    return editor;
 }
 
 Editor * MainImpl::givenEditor(int i)
@@ -224,13 +236,12 @@ Editor * MainImpl::givenEditor(int i)
 //
 void MainImpl::renameEditor(QString oldName, QString newName)
 {
-    for (int i=0; i<m_tabEditors->count(); i++)
+    foreach(Editor *editor, allEditors() )
     {
-        Editor *editor = givenEditor(i);
         if ( editor->filename() == oldName)
         {
             editor->setFilename( newName );
-            m_tabEditors->setTabText(i, editor->shortFilename()+"   ");
+            slotModifiedEditor(editor, editor->isModified() );
             editor->save();
             break;
         }
@@ -279,8 +290,7 @@ void MainImpl::setCrossButton(bool activate)
 //
 void MainImpl::slotOtherFile()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->slotOtherFile();
 }
@@ -333,6 +343,7 @@ void MainImpl::createConnections()
     connect(actionGotoDeclaration, SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
     connect(actionGotoImplementation, SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
     connect(actionMethodsList, SIGNAL(triggered()), this, SLOT(slotMethodsList()) );
+    connect(actionShowMaximized, SIGNAL(triggered()), this, SLOT(slotShowMaximized()) );
     //
     connect(actionExternalTools, SIGNAL(triggered()), this, SLOT(slotToolsControl()) );
     connect(actionCloseCurrentEditor, SIGNAL(triggered()), this, SLOT(slotCloseCurrentTab()) );
@@ -426,16 +437,14 @@ void MainImpl::slotNewFile()
 //
 void MainImpl::slotSetFocusToEditor()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->setFocus();
 }
 //
 void MainImpl::slotToggleBreakpoint()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->toggleBreakpoint();
 }
@@ -483,64 +492,56 @@ void MainImpl::slotNextBookmark()
 //
 void MainImpl::slotToggleBookmark()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->toggleBookmark();
 }
 //
 void MainImpl::slotToggleComment()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->comment( TextEdit::Toggle );
 }
 //
 void MainImpl::slotComment()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->comment( TextEdit::Comment );
 }
 //
 void MainImpl::slotMethodsList()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->methodsList();
 }
 //
 void MainImpl::slotGotoImplementation()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->gotoImplementation();
 }
 //
 void MainImpl::slotGotoDeclaration()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->gotoDeclaration();
 }
 //
 void MainImpl::slotGotoMatchingBracket()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->gotoMatchingBracket();
 }
 //
 void MainImpl::slotUncomment()
 {
-    int i = m_tabEditors->currentIndex();
-    Editor *editor = givenEditor(i);
+    Editor *editor = currentEditor();
     if ( editor  )
         editor->comment( TextEdit::Uncomment );
 }
@@ -633,9 +634,8 @@ void MainImpl::slotOptions()
         m_displayEditorToolbars = options->showEditorToolbars->isChecked();
         m_displayWhiteSpaces = options->displayWhiteSpaces->isChecked();
 
-        for (int i=0; i<m_tabEditors->count(); i++)
+        foreach(Editor *editor, allEditors() )
         {
-            Editor *editor = givenEditor(i);
             editor->setShowTreeClasses( m_showTreeClasses );
             editor->setIntervalUpdatingTreeClasses( m_intervalUpdatingClasses );
             editor->setFont( m_font );
@@ -836,13 +836,12 @@ QString MainImpl::loadINI()
     m_formatMethods.setForeground( QColor(settings.value("m_formatMethods", m_formatMethods.foreground().color().name()).toString() ) );
     m_formatKeywords.setForeground( QColor(settings.value("m_formatKeywords", m_formatKeywords.foreground().color().name()).toString() ) );
     settings.endGroup();
-    
+
     tabExplorer->setTabEnabled( 1, m_showTreeClasses );
     if (!m_showTreeClasses) //ToolsOptions/General
         tabExplorer->setTabToolTip( 1, tr("Classes explorer is disabled, please enable it in the Options dialog") );
     else
         tabExplorer->setTabToolTip( 1, "" );
-
     // Load shortcuts
     settings.beginGroup("Shortcuts");
     QList<QObject*> childrens;
@@ -926,11 +925,7 @@ void MainImpl::closeEvent( QCloseEvent * event )
 bool MainImpl::slotCloseAllFiles()
 {
     bool ok = true;
-    QList<Editor *> editorList;
-
-    for (int i=0; i<m_tabEditors->count(); i++)
-        editorList.append( givenEditor(i) );
-    foreach(Editor *editor, editorList )
+    foreach(Editor *editor, allEditors() )
     {
         if ( !editor->close() )
             ok = false;
@@ -1041,6 +1036,11 @@ bool MainImpl::openProject(QString s)
 //
 bool MainImpl::slotCloseProject(bool /*hide*/)
 {
+	QList<Editor *> maximized = m_maximizedEditors;
+	foreach(Editor *editor, maximized)
+	{
+		slotShowMaximized( editor );
+	}
     if ( m_projectManager )
         m_projectManager->saveProjectSettings();
     slotClearAllBookmarks();
@@ -1168,9 +1168,8 @@ void MainImpl::closeOtherTab(int numTab)
 //
 void MainImpl::slotClearAllBookmarks()
 {
-    for (int i=0; i<m_tabEditors->count(); i++)
+    foreach(Editor *editor, allEditors() )
     {
-        Editor *editor = givenEditor(i);
         if ( editor )
         {
             editor->clearAllBookmarks();
@@ -1182,9 +1181,8 @@ bool MainImpl::slotSaveAll()
 {
     bool ok = m_projectManager->slotSaveProject();
     ok = true;
-    for (int i=0; i<m_tabEditors->count(); i++)
+    foreach(Editor *editor, allEditors() )
     {
-        Editor *editor = givenEditor(i);
         if ( editor )
         {
             if ( !editor->save() )
@@ -1227,23 +1225,27 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
         return 0;
     }
     // The file is perhaps already opened. Find filename in tabs.
-    for (int i=0; i<m_tabEditors->count(); i++)
+    foreach(Editor *editor, allEditors() )
     {
-        if ( givenEditor(i)->filename() == s)
+        if ( editor->filename() == s)
         {
-            m_tabEditors->setCurrentIndex( i );
+		    for (int i=0; i<m_tabEditors->count(); i++)
+		    {
+		    	if( givenEditor(i)->filename() == s)
+		    	{
+            		m_tabEditors->setCurrentIndex( i );
+	    		}
+		    }
             if ( numLine != -1 )
             {
-                givenEditor(i)->setFocus( /*Qt::OtherFocusReason*/ );
-                givenEditor(i)->gotoLine( numLine, moveTop );
-                slotCurrentTabChanged( i );
+                editor->setFocus();
+                editor->gotoLine( numLine, moveTop );
+                slotCurrentTabChanged( 0 );
             }
             QApplication::restoreOverrideCursor();
-            return givenEditor(i);
+            return editor;
         }
     }
-    //
-    //
     // Not found in tabs, opens really.
     Editor *editor = new Editor(m_tabEditors, this, m_completion ,s);
     editor->setShowTreeClasses( m_showTreeClasses );
@@ -1355,9 +1357,8 @@ void MainImpl::slotActivateBookmark(QAction *action)
     Editor *editor = 0;
     Editor *bookmarkEditor = bookmark.first;
     QTextBlock block = bookmark.second;
-    for (int i=0; i<m_tabEditors->count(); i++)
+    foreach(Editor *edit, allEditors() )
     {
-        Editor *edit = givenEditor(i);
         if ( edit == bookmarkEditor )
         {
             editor = edit;
@@ -1409,9 +1410,19 @@ void MainImpl::slotModifiedEditor( Editor *editor, bool modified)
                 m_tabEditors->setTabText(i, "* "+m_tabEditors->tabText(i) );
             if ( !modified && m_tabEditors->tabText(i).left(1) == "*" )
                 m_tabEditors->setTabText(i, m_tabEditors->tabText(i).mid(2) );
-            break;
+            return;
         }
     }
+    foreach(Editor *e, allEditors() )
+    {
+    	if( e == editor )
+    	{
+            if ( modified && e->windowTitle().left(1) != "*" )
+                e->setWindowTitle("* "+e->windowTitle() );
+            if ( !modified && e->windowTitle().left(1) == "*" )
+                e->setWindowTitle( e->windowTitle().mid(2) );
+   		}
+   	}
 }
 //
 void MainImpl::slotRebuild()
@@ -1575,14 +1586,12 @@ void MainImpl::slotPrint()
         editor->print();
 }
 //
-void MainImpl::slotCurrentTabChanged(int index)
+void MainImpl::slotCurrentTabChanged(int)
 {
-    for (int i=0; i<m_tabEditors->count(); i++)
-    {
-        Editor *editor = givenEditor(i);
-        if ( editor )
-            editor->setActiveEditor(i==index);
-    }
+	foreach(Editor *editor, allEditors() )
+	{
+		editor->setActiveEditor( editor == currentEditor() );
+	}
 }
 //
 void MainImpl::slotCopy()
@@ -1684,9 +1693,8 @@ void MainImpl::slotExecuteWithoutDebug()
 bool MainImpl::modifiedEditors()
 {
     bool modified = false;
-    for (int i=0; i<m_tabEditors->count(); i++)
+    foreach(Editor *editor, allEditors() )
     {
-        Editor *editor = givenEditor(i);
         if ( editor )
         {
             if ( editor->isModified() )
@@ -1766,9 +1774,8 @@ bool MainImpl::slotDebug(bool executeOnly)
     m_debug = new Debug(this, m_gdbName, parameters, exeName, executeOnly);
     if ( !executeOnly )
     {
-        for (int i=0; i<m_tabEditors->count(); i++)
+        foreach(Editor *editor, allEditors() )
         {
-            Editor *editor = givenEditor(i);
             connect(editor, SIGNAL(breakpoint(QString, unsigned int, BlockUserData *)), m_debug, SLOT(slotBreakpoint(QString, unsigned int, BlockUserData *)) );
             editor->emitListBreakpoints();
         }
@@ -2340,5 +2347,61 @@ void MainImpl::slotBuildQtDatabaseEnded()
 	m_buildQtDatabase = 0;
     if( m_buildQtDatabaseAsked )
     	QMessageBox::information(this, "QDevelop", tr("The Qt classes database build is ended.") );
+}
+
+
+void MainImpl::slotShowMaximized(Editor *editor)
+{
+	if( !editor )
+		editor = currentEditor();
+	if( !editor )
+		return;
+	if( m_maximizedEditors.contains( editor ) )
+	{
+		editor->showMaximized();
+		m_maximizedEditors.removeAll( editor );
+	}
+	else
+	{
+		editor->showMaximized();
+		m_maximizedEditors.append( editor );
+	}
+	foreach(Editor *e, allEditors() )
+	{
+		e->setActiveEditor( e == editor );
+	}
+	slotModifiedEditor(editor, editor->isModified());
+}
+
+QList<Editor *> MainImpl::allEditors()
+{
+    QList<Editor *> editorList;
+    for (int i=0; i<m_tabEditors->count(); i++)
+        editorList.append( givenEditor(i) );
+    for (int i=0; i<m_maximizedEditors.count(); i++)
+        editorList.append( m_maximizedEditors.at(i) );
+    return editorList;
+}
+
+
+void MainImpl::keyPressFromEditor(QKeyEvent *event)
+{
+	/* This function is called from Editor and is used to use the shortcuts 
+	when the window is showed maximized */
+	QList<QObject*> childrens = children();
+	QListIterator<QObject*> iterator(childrens);
+	while( iterator.hasNext() )
+	{
+		QObject *object = iterator.next();
+		QAction *action = qobject_cast<QAction*>(object);
+		
+		if (action)
+		{
+			if(  QKeySequence( event->key() | event->modifiers() ) == action->shortcut() )
+			{
+				action->activate(QAction::Trigger);
+			}
+		}
+	}
 }
 

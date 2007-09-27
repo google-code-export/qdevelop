@@ -68,6 +68,8 @@ public:
 class Editor : public QWidget
 {
 Q_OBJECT
+protected slots:
+	void closeEvent(QCloseEvent * event);
 public:
 	Editor(TabWidget *parent, MainImpl *mainimpl, InitCompletion *completion, QString name="");
 	~Editor();
@@ -136,6 +138,7 @@ public:
 	void insertText(QString text, int insertAfterLine) { m_textEdit->insertText(text, insertAfterLine); };
 	void setNameOtherFile(QString oldName, QString newName);
 	void methodsList();
+	void keyPress(QKeyEvent * event);
 	//
 public slots:
 	void gotoLine( int line, bool moveTop);
@@ -155,7 +158,9 @@ public slots:
 	void slotOtherFile();
 	void find();
 	QString selection();
+	void showMaximized();
 private slots:	
+	void slotMaximizeButtonClicked();
 	void slotComboMethods(int index);
 	void slotFindWidget_textChanged(QString text="", bool fromButton=false);
 	void slotFindPrevious();
@@ -171,6 +176,7 @@ private:
 	QTextDocument::FindFlags m_findOptions;
 	QComboBox *m_comboClasses, *m_comboMethods;
 	QToolButton *m_otherFileButton;
+	QToolButton *m_maximizedButton;
 	QToolButton *m_refreshButton;
 	QString m_nameOtherFile;
 	MainImpl *m_mainimpl;

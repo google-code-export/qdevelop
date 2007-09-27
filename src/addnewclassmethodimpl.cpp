@@ -78,11 +78,11 @@ void AddNewClassMethodImpl::on_okButton_clicked()
     // The file is perhaps already opened. Find filename in tabs.
     QStringList lines;
     Editor *editor = 0;
-    for (int i=0; i<m_mainImpl->tabEditors()->count(); i++)
+    foreach(Editor *ed, m_mainImpl->allEditors() )
     {
-        if ( m_mainImpl->givenEditor(i)->filename() == m_declaration.section("|", 0, 0))
+        if ( ed->filename() == m_declaration.section("|", 0, 0))
         {
-            editor = m_mainImpl->givenEditor(i);
+            editor = ed;
         }
     }
     if ( editor )
@@ -180,11 +180,11 @@ void AddNewClassMethodImpl::on_okButton_clicked()
         l_parameters ="(" + formattedParams + ")";
     }
     editor = 0;
-    for (int i=0; i<m_mainImpl->tabEditors()->count(); i++)
+    foreach(Editor *ed, m_mainImpl->allEditors() )
     {
-        if ( m_mainImpl->givenEditor(i)->filename() == m_implementation.section("|", 0, 0))
+        if ( ed->filename() == m_implementation.section("|", 0, 0))
         {
-            editor = m_mainImpl->givenEditor(i);
+            editor = ed;
         }
     }
     insertedText = l_returnType + " " + m_classname + "::" + l_methodName + l_parameters;
