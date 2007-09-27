@@ -633,7 +633,6 @@ void MainImpl::slotOptions()
         m_displayEditorToolbars = options->showEditorToolbars->isChecked();
         m_displayWhiteSpaces = options->displayWhiteSpaces->isChecked();
 
-        // qDebug() << m_mibCodec;
         for (int i=0; i<m_tabEditors->count(); i++)
         {
             Editor *editor = givenEditor(i);
@@ -667,6 +666,11 @@ void MainImpl::slotOptions()
                 m_formatKeywords
             );
         }
+        tabExplorer->setTabEnabled( 1, m_showTreeClasses );
+        if (!m_showTreeClasses) //ToolsOptions/General
+            tabExplorer->setTabToolTip( 1, tr("Classes explorer is disabled, please enable it in the Options dialog") );
+        else
+            tabExplorer->setTabToolTip( 1, "" );
         QApplication::restoreOverrideCursor();
     }
     delete options;
@@ -832,6 +836,12 @@ QString MainImpl::loadINI()
     m_formatMethods.setForeground( QColor(settings.value("m_formatMethods", m_formatMethods.foreground().color().name()).toString() ) );
     m_formatKeywords.setForeground( QColor(settings.value("m_formatKeywords", m_formatKeywords.foreground().color().name()).toString() ) );
     settings.endGroup();
+    
+    tabExplorer->setTabEnabled( 1, m_showTreeClasses );
+    if (!m_showTreeClasses) //ToolsOptions/General
+        tabExplorer->setTabToolTip( 1, tr("Classes explorer is disabled, please enable it in the Options dialog") );
+    else
+        tabExplorer->setTabToolTip( 1, "" );
 
     // Load shortcuts
     settings.beginGroup("Shortcuts");

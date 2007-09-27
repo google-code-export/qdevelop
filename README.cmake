@@ -12,19 +12,17 @@ early beta stage.
 The IDE cannot handle cmake projects yet, but this may change in the future.
 
 You need to use cmake version 2.4.3 (2.4.0 and above shuold work, but only 2.4.3
-has been tested). The compilation was tested under Linux, but I have not managed 
-to compie QDevelop under win32 with it, as cmake just crahsed with various random 
-errors. 
+and above have been tested). The compilation was tested under Linux, and on Win32
+the compilation does work, but QDevelop loads up with a console window.
 
 To build QDevelop, we need to create a new subdirectory to build off source, we call
 cmake, and the finally make:
 
 	mkdir cbuild
 	cd cbuild
-	cmake ../
+	cmake -G "MinGW Makefiles" ../
 	make
 	
-
 Why using cmake?
 ~~~~~~~~~~~~~~~~
 
@@ -33,13 +31,8 @@ you cannot make conditional compile time switches (or at lest not in an automate
 way, when packaging for example). 
 
 Using cmake, you also have a percentage which displays how much the compilation 
-is going on. 
-
-The output is MUCH nicer: by default you do not see the "gcc -c ..." messages, 
-instead you see nice messages saying that the file is being compiled (in color!).
-
-... and my favorite: it's fast!
-On my machine, building QDevelop using qmake+make takes about ~3:40 minutes, and using
-cmake+make it takes... ~2 minutes! 
+is going on. The output is MUCH nicer: by default you do not see the 
+"gcc -c ..." messages, instead you see nice messages saying that the file is being 
+compiled (in color!).
 
 - diego - elcuco@kde.org
