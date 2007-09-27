@@ -286,6 +286,8 @@ void OptionsImpl::slotDefault()
 	endLine->setCurrentIndex( 0 );
 	interval->setValue( 5 );
 	showTreeClasses->setChecked( true );
+	showEditorToolbars->setChecked( true );
+	displayWhiteSpaces->setChecked( true );
 }
 //
 void OptionsImpl::slotChooseProjectsDirectory()
