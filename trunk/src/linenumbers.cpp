@@ -188,6 +188,8 @@ void LineNumbers::mousePressEvent ( QMouseEvent * event )
 		menu->exec(event->globalPos());
 		delete menu;
 	}
+	else if ( event->button() == Qt::MidButton )
+		slotToggleBreakpoint();
 	else
 		slotToggleBookmark();
 }
