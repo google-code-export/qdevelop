@@ -97,11 +97,11 @@ void AddSetGetImpl::insertInDeclaration(QString scope, QString insertedText)
 {
     QStringList lines;
     Editor *editor = 0;
-    for (int i=0; i<m_mainImpl->tabEditors()->count(); i++)
+    foreach(Editor *ed, m_mainImpl->allEditors() )
     {
-        if ( m_mainImpl->givenEditor(i)->filename() == m_declaration.section("|", 0, 0))
+        if ( ed->filename() == m_declaration.section("|", 0, 0))
         {
-            editor = m_mainImpl->givenEditor(i);
+            editor = ed;
         }
     }
     //
@@ -177,11 +177,11 @@ void AddSetGetImpl::insertInImplementation(QString insertedText)
 {
     QStringList lines;
     Editor *editor = 0;
-    for (int i=0; i<m_mainImpl->tabEditors()->count(); i++)
+    foreach(Editor *ed, m_mainImpl->allEditors() )
     {
-        if ( m_mainImpl->givenEditor(i)->filename() == m_implementation.section("|", 0, 0))
+        if ( ed->filename() == m_implementation.section("|", 0, 0))
         {
-            editor = m_mainImpl->givenEditor(i);
+            editor = ed;
         }
     }
     //

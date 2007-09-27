@@ -45,7 +45,10 @@
         <file>images/wrap.png</file>
         <file>images/editclear.png</file>
         <file>images/clear_left.png</file>
-    </qresource>
+        <file>images/window_fullscreen.png</file>
+        <file>images/window_nofullscreen.png</file>
+        <file>images/logoeditor.png</file>
+   </qresource>
     <qresource prefix="/templates" >
         <file>templates/dialog.ui</file>
         <file>templates/impl.cpp.template</file>

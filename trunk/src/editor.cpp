@@ -20,6 +20,8 @@
 * Program URL   : http://qdevelop.org
 *
 */
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
+//
 #include "editor.h"
 #include "mainimpl.h"
 #include "lineedit.h"
@@ -74,6 +76,14 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         hboxLayout->setSpacing(6);
         hboxLayout->setMargin(6);
         hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
+        //
+        m_maximizedButton = 0;
+        m_maximizedButton = new QToolButton(this);
+        m_maximizedButton->setIcon(QIcon(":/divers/images/window_fullscreen.png"));
+        //
+        m_maximizedButton->setToolTip( tr("Show maximized") );
+        connect(m_maximizedButton, SIGNAL(clicked()), this, SLOT(slotMaximizeButtonClicked()));
+        hboxLayout->addWidget(m_maximizedButton);
         //
         m_otherFileButton = 0;
         m_nameOtherFile = m_filename.mid(0, m_filename.lastIndexOf(".") );
@@ -775,3 +785,54 @@ void Editor::methodsList()
     }
 }
 //
+
+void Editor::showMaximized()
+{
+	static int indexOf;
+	bool enable = parent() != 0;
+	if( enable )
+	{
+		indexOf = m_parent->indexOf(this);
+		setParent(0);
+        m_maximizedButton->setIcon(QIcon(":/divers/images/window_nofullscreen.png"));
+    	setWindowIcon(QIcon(":/divers/images/logoeditor.png"));
+    	setWindowTitle( filename() );
+		QWidget::showMaximized();
+	}
+	else
+	{
+		setParent(m_parent);
+        m_maximizedButton->setIcon(QIcon(":/divers/images/window_fullscreen.png"));
+		m_parent->insertTab(indexOf, this, shortFilename()+"   ");
+		m_parent->setCurrentIndex(indexOf);
+		showNormal();
+	}
+}
+
+
+void Editor::closeEvent(QCloseEvent * event)
+{
+	if( parent() != m_parent )
+	{
+		m_mainimpl->slotShowMaximized(this);
+		event->ignore();
+		return;
+	}
+	event->accept();
+}
+
+
+void Editor::slotMaximizeButtonClicked()
+{
+	m_mainimpl->slotShowMaximized(this);
+}
+
+
+void Editor::keyPress(QKeyEvent * event)
+{
+	if( event->nativeModifiers() && event->key() )
+	{
+		m_mainimpl->keyPressFromEditor( event );
+	}
+}
+

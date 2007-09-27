@@ -234,15 +234,15 @@ void TreeProject::mousePressEvent( QMouseEvent * event )
 		connect(showAs->addAction(QIcon(), tr("Krawek")), SIGNAL(triggered()), this, SLOT(slotShowAsKrawek()) );
 		menu->exec(event->globalPos());
 		delete menu;
-	} else if( event->button() == Qt::MidButton )
-	{
-		QString key = m_projectManager->toKey( m_itemClicked->data(0, Qt::UserRole) );
-		if ( (key == "DATA" ) && 
-			( m_projectManager->toKey( m_itemClicked->parent()->data(0, Qt::UserRole) ) == "FORMS" ) )
-		{
-			// show dialog
-			previewForm(m_itemClicked);
-		}
+    } else if( event->button() == Qt::MidButton )
+    {
+        QString key = m_projectManager->toKey( m_itemClicked->data(0, Qt::UserRole) );
+        if ( (key == "DATA" ) &&
+            ( m_projectManager->toKey( m_itemClicked->parent()->data(0, Qt::UserRole) ) == "FORMS" ) )
+        {
+            // show dialog
+            previewForm(m_itemClicked);
+        }
 	}
 	QTreeWidget::mousePressEvent(event);
 }
@@ -372,10 +372,4 @@ void TreeProject::dragEnterEvent(QDragEnterEvent *)
         //event->acceptProposedAction();
 }
 //
-
-
-
-
-
-
 

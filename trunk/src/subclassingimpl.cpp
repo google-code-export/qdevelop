@@ -213,11 +213,11 @@ void SubclassingImpl::on_okButton_clicked()
 
     // Find filename in opened editors
     Editor *editorHeader = 0;
-    for (int i=0; i<m_mainImpl->tabEditors()->count(); i++)
+    foreach(Editor *ed, m_mainImpl->allEditors() )
     {
-        if ( m_mainImpl->givenEditor(i)->filename() == filename+ ".h" )
+        if ( ed->filename() == filename+ ".h" )
         {
-            editorHeader = m_mainImpl->givenEditor(i);
+            editorHeader = ed;
         }
     }
     //
@@ -269,11 +269,11 @@ void SubclassingImpl::on_okButton_clicked()
     // Implementation
     // Find filename in opened editors
     Editor *editorImplementation = 0;
-    for (int i=0; i<m_mainImpl->tabEditors()->count(); i++)
+    foreach(Editor *ed, m_mainImpl->allEditors() )
     {
-        if ( m_mainImpl->givenEditor(i)->filename() == filename+ ".cpp" )
+        if ( ed->filename() == filename+ ".cpp" )
         {
-            editorImplementation = m_mainImpl->givenEditor(i);
+            editorImplementation = ed;
         }
     }
     if ( !editorImplementation )

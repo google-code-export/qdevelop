@@ -20,6 +20,7 @@
 * Program URL   : http://qdevelop.org
 *
 */
+//
 #include "textEdit.h"
 #include "editor.h"
 #include "linenumbers.h"
@@ -1091,6 +1092,7 @@ void TextEdit::slotWordCompletion(QListWidgetItem *item)
 //
 void TextEdit::keyPressEvent ( QKeyEvent * event )
 {
+	m_editor->keyPress( event );
     QTextCursor cursor = textCursor();
     clearMatch();
     setMouseHidden( true );
@@ -1721,8 +1723,3 @@ void TextEdit::completionHelp()
     c = c.section(name, 0, 0);
     emit initParse(m_editor->filename(), c, true, true, true, name, false);
 }
-
-
-
-
-

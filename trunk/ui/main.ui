@@ -39,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>686</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuPlugins" >
@@ -80,17 +80,6 @@
     <addaction name="separator" />
     <addaction name="actionCompleteCode" />
    </widget>
-   <widget class="QMenu" name="menuView" >
-    <property name="title" >
-     <string>&amp;View</string>
-    </property>
-    <widget class="QMenu" name="menuToolbar" >
-     <property name="title" >
-      <string>&amp;Toolbar</string>
-     </property>
-    </widget>
-    <addaction name="menuToolbar" />
-   </widget>
    <widget class="QMenu" name="menuBookmarks" >
     <property name="title" >
      <string>&amp;Bookmarks</string>
@@ -119,18 +108,6 @@
     <addaction name="actionBacktraces" />
     <addaction name="separator" />
     <addaction name="actionResetExecutablesList" />
-   </widget>
-   <widget class="QMenu" name="menuEditors" >
-    <property name="title" >
-     <string>Ed&amp;itors</string>
-    </property>
-    <addaction name="actionsetFocusToEditor" />
-    <addaction name="actionCloseCurrentEditor" />
-    <addaction name="actionNextTab" />
-    <addaction name="actionPreviousTab" />
-    <addaction name="actionSwitchHeaderSources" />
-    <addaction name="actionToggleBreakpoint" />
-    <addaction name="actionMethodsList" />
    </widget>
    <widget class="QMenu" name="menuTools" >
     <property name="title" >
@@ -221,6 +198,30 @@
     <addaction name="menuLastsFiles" />
     <addaction name="separator" />
     <addaction name="actionQuit" />
+   </widget>
+   <widget class="QMenu" name="menuView" >
+    <property name="title" >
+     <string>&amp;View</string>
+    </property>
+    <widget class="QMenu" name="menuToolbar" >
+     <property name="title" >
+      <string>&amp;Toolbar</string>
+     </property>
+    </widget>
+    <addaction name="menuToolbar" />
+   </widget>
+   <widget class="QMenu" name="menuEditors" >
+    <property name="title" >
+     <string>Ed&amp;itors</string>
+    </property>
+    <addaction name="actionShowMaximized" />
+    <addaction name="actionsetFocusToEditor" />
+    <addaction name="actionCloseCurrentEditor" />
+    <addaction name="actionNextTab" />
+    <addaction name="actionPreviousTab" />
+    <addaction name="actionSwitchHeaderSources" />
+    <addaction name="actionToggleBreakpoint" />
+    <addaction name="actionMethodsList" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -1487,6 +1488,14 @@
   <action name="actionQmake" >
    <property name="text" >
     <string>Launch &amp;qmake</string>
+   </property>
+  </action>
+  <action name="actionShowMaximized" >
+   <property name="icon" >
+    <iconset resource="../resources/resources.qrc" >:/divers/images/window_fullscreen.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Show Maximized</string>
    </property>
   </action>
  </widget>
