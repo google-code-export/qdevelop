@@ -44,6 +44,8 @@ class InitCompletion : public QThread
 	Q_OBJECT
 
 public:
+	QString classForFunction(QString classname, QString function);
+	enum Request { Completion,	CheckQtDatabase, ClassName };
 	InitCompletion (QObject *parent, TreeClasses *treeClasses);
 	~InitCompletion();
 	void setCtagsCmdPath (const QString &cmdPath);
@@ -92,7 +94,8 @@ private:
 	bool m_showAllResults;
 	bool m_emitResults;
     bool m_showDuplicateEntries;
-    bool m_checkQt;
+    //bool m_checkQt;
+    Request m_request;
     QString m_name;
     QString m_projectDirectory;
     QList<QPair<QString, QString> > parsingList;
@@ -100,7 +103,7 @@ private:
 	bool m_stopRequired;
 	TreeClasses *m_treeClasses;
 public slots:
-	void slotInitParse(QString filename, const QString &text, bool showAllResults, bool emitResults, bool showDuplicateEntries, QString name, bool checkQt);
+	void slotInitParse(InitCompletion::Request request, QString filename, const QString &text, bool showAllResults, bool emitResults, bool showDuplicateEntries, QString name);
 signals:
 	void completionList( TagList ); 
 	void completionHelpList( TagList ); 

@@ -122,7 +122,7 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));
     connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
     connect( document(), SIGNAL( contentsChange(int, int, int) ), this, SLOT( slotContentsChange(int, int, int) ));
-    connect(this, SIGNAL(initParse(QString, QString, bool, bool, bool, QString, bool)), m_completion, SLOT(slotInitParse(QString, QString, bool, bool, bool, QString, bool)) );
+    connect(this, SIGNAL(initParse(InitCompletion::Request, QString, QString, bool, bool, bool, QString)), m_completion, SLOT(slotInitParse(InitCompletion::Request, QString, QString, bool, bool, bool, QString)) );
     actionToggleBreakpoint = new QAction(this);
     actionToggleBreakpoint->setShortcut( Qt::Key_F9 );
     connect(actionToggleBreakpoint, SIGNAL(triggered()), this, SLOT(slotToggleBreakpoint()) );
@@ -281,7 +281,7 @@ void TextEdit::completeCode()
     {
         c += "this->" + word;
     }
-    emit initParse(m_editor->filename(), c, true, true, false, QString(), false);
+    emit initParse(InitCompletion::Completion, m_editor->filename(), c, true, true, false, QString());
 }
 
 void TextEdit::slotCompletionList(TagList tagList )
@@ -458,7 +458,7 @@ bool TextEdit::open(bool silentMode, QString filename, QDateTime &lastModified)
         m_lineNumbers->setDigitNumbers( QString::number(linesCount()).length() );
     if ( m_completion  && !m_mainImpl->buildQtDatabase() )
     {
-        emit initParse(m_editor->filename(), toPlainText(), true, false, false, QString(), false);
+        emit initParse(InitCompletion::Completion, m_editor->filename(), toPlainText(), true, false, false, QString());
     }
     QApplication::restoreOverrideCursor();
     return true;
@@ -1092,7 +1092,7 @@ void TextEdit::slotWordCompletion(QListWidgetItem *item)
 //
 void TextEdit::keyPressEvent ( QKeyEvent * event )
 {
-	m_editor->keyPress( event );
+	//m_editor->keyPress( event );
     QTextCursor cursor = textCursor();
     clearMatch();
     setMouseHidden( true );
@@ -1721,5 +1721,5 @@ void TextEdit::completionHelp()
 	if( QString(":if:else:for:return:connect:while:do:").contains( name ) )
 		return;
     c = c.section(name, 0, 0);
-    emit initParse(m_editor->filename(), c, true, true, true, name, false);
+    emit initParse(InitCompletion::Completion, m_editor->filename(), c, true, true, true, name);
 }

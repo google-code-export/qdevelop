@@ -67,14 +67,14 @@ InitCompletion::~InitCompletion()
 }
 
 //
-void InitCompletion::slotInitParse(QString filename, const QString &text, bool showAllResults, bool emitResults, bool /*showDuplicateEntries*/, QString name, bool checkQt)
+void InitCompletion::slotInitParse(InitCompletion::Request request, QString filename, const QString &text, bool showAllResults, bool emitResults, bool /*showDuplicateEntries*/, QString name)
 {
 
     m_text = text;
     m_emitResults = emitResults;
     m_showAllResults = showAllResults;
     m_name = name;
-    m_checkQt = checkQt;
+    m_request = request;
 
     QString Path = QDir::tempPath();
     tagsIncludesPath = Path + '/' + "qdevelop-completion-" + QFileInfo(filename).baseName() + "-tags_includes";
@@ -246,7 +246,7 @@ Expression InitCompletion::getExpression(const QString &text, Scope &sc, bool sh
 
 void InitCompletion::run()
 {
-    if ( m_checkQt )
+    if ( m_request == CheckQtDatabase )
     {
         Expression exp;
         exp.className = "QString";
@@ -295,7 +295,6 @@ QString InitCompletion::className(const QString &text)
     Expression exp = getExpression(text, sc);
     if (exp.access == ParseError)
         return QString();
-
     return exp.className;
 }
 
@@ -880,3 +879,35 @@ QString InitCompletion::returned(QString className, QString function, Expression
 	return QString();
 }
 //
+
+QString InitCompletion::classForFunction(QString classname, QString function)
+{
+	/*  Return the name of the first class which contains the function. In
+		a class Foo which inherits QDialog, if the help is called on the function foo->show().
+		We receive Foo as classname and show as function. We find the first class in inheritance list
+		which contains really the function and return it. Here, it's QWidget. Thus Assistant can be called
+		with the right parameters.
+	*/
+    if ( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
+    {
+        return QString();
+    }
+	QStringList list;
+	list << classname;
+	list = inheritanceList(classname, list);
+    createTables();
+    QSqlQuery query(QSqlDatabase::database(getQDevelopPath() + "qdevelop.db" ));
+	foreach(QString name, list)
+	{
+	    QString queryString = QString()
+	                  + "select * from tags where class ='" + name + +"'";
+	    queryString += " and name='" + function + "'";
+	    //
+	    query.exec(queryString);
+	    while (query.next())
+	    {
+	    	return query.value(0).toString().replace("$", "'");
+	    }
+	}
+	return QString();
+}
