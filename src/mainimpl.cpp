@@ -343,7 +343,7 @@ void MainImpl::createConnections()
     connect(actionGotoDeclaration, SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
     connect(actionGotoImplementation, SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
     connect(actionMethodsList, SIGNAL(triggered()), this, SLOT(slotMethodsList()) );
-    connect(actionShowMaximized, SIGNAL(triggered()), this, SLOT(slotShowMaximized()) );
+    //connect(actionShowMaximized, SIGNAL(triggered()), this, SLOT(slotShowMaximized()) );
     //
     connect(actionExternalTools, SIGNAL(triggered()), this, SLOT(slotToolsControl()) );
     connect(actionCloseCurrentEditor, SIGNAL(triggered()), this, SLOT(slotCloseCurrentTab()) );
@@ -1036,11 +1036,11 @@ bool MainImpl::openProject(QString s)
 //
 bool MainImpl::slotCloseProject(bool /*hide*/)
 {
-	QList<Editor *> maximized = m_maximizedEditors;
+	/*QList<Editor *> maximized = m_maximizedEditors;
 	foreach(Editor *editor, maximized)
 	{
 		slotShowMaximized( editor );
-	}
+	}*/
     if ( m_projectManager )
         m_projectManager->saveProjectSettings();
     slotClearAllBookmarks();
@@ -1128,6 +1128,8 @@ void MainImpl::slotHelpQtWord()
         className = editor->classNameUnderCursor();
         if (className.isEmpty() )
             className = word;
+        if( !word.isEmpty() )
+        	className = m_completion->classForFunction(className, word);
     }
     m_assistant->showQtWord(className, word );
 }
@@ -2327,7 +2329,7 @@ void MainImpl::checkQtDatabase()
 #endif
     m_buildQtDatabase->setCtagsCmdPath( ctagsName() );
     m_buildQtDatabase->setQtInclude( includes );
-    m_buildQtDatabase->slotInitParse(QString(), QString(), true, false, true, QString(), true);
+    m_buildQtDatabase->slotInitParse(InitCompletion::CheckQtDatabase, QString(), QString(), true, false, true, QString());
 	//
 }
 
@@ -2350,7 +2352,7 @@ void MainImpl::slotBuildQtDatabaseEnded()
 }
 
 
-void MainImpl::slotShowMaximized(Editor *editor)
+/*void MainImpl::slotShowMaximized(Editor *editor)
 {
 	if( !editor )
 		editor = currentEditor();
@@ -2371,23 +2373,21 @@ void MainImpl::slotShowMaximized(Editor *editor)
 		e->setActiveEditor( e == editor );
 	}
 	slotModifiedEditor(editor, editor->isModified());
-}
+}*/
 
 QList<Editor *> MainImpl::allEditors()
 {
     QList<Editor *> editorList;
     for (int i=0; i<m_tabEditors->count(); i++)
         editorList.append( givenEditor(i) );
-    for (int i=0; i<m_maximizedEditors.count(); i++)
-        editorList.append( m_maximizedEditors.at(i) );
+    //for (int i=0; i<m_maximizedEditors.count(); i++)
+        //editorList.append( m_maximizedEditors.at(i) );
     return editorList;
 }
 
 
-void MainImpl::keyPressFromEditor(QKeyEvent *event)
+/*void MainImpl::keyPressFromEditor(QKeyEvent *event)
 {
-	/* This function is called from Editor and is used to use the shortcuts 
-	when the window is showed maximized */
 	QList<QObject*> childrens = children();
 	QListIterator<QObject*> iterator(childrens);
 	while( iterator.hasNext() )
@@ -2403,5 +2403,5 @@ void MainImpl::keyPressFromEditor(QKeyEvent *event)
 			}
 		}
 	}
-}
+}*/
 

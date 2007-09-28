@@ -77,13 +77,13 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         hboxLayout->setMargin(6);
         hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
         //
-        m_maximizedButton = 0;
+        /*m_maximizedButton = 0;
         m_maximizedButton = new QToolButton(this);
         m_maximizedButton->setIcon(QIcon(":/divers/images/window_fullscreen.png"));
-        //
+        
         m_maximizedButton->setToolTip( tr("Show maximized") );
         connect(m_maximizedButton, SIGNAL(clicked()), this, SLOT(slotMaximizeButtonClicked()));
-        hboxLayout->addWidget(m_maximizedButton);
+        hboxLayout->addWidget(m_maximizedButton);*/
         //
         m_otherFileButton = 0;
         m_nameOtherFile = m_filename.mid(0, m_filename.lastIndexOf(".") );
@@ -786,7 +786,7 @@ void Editor::methodsList()
 }
 //
 
-void Editor::showMaximized()
+/*void Editor::showMaximized()
 {
 	static int indexOf;
 	bool enable = parent() != 0;
@@ -807,10 +807,10 @@ void Editor::showMaximized()
 		m_parent->setCurrentIndex(indexOf);
 		showNormal();
 	}
-}
+}*/
 
 
-void Editor::closeEvent(QCloseEvent * event)
+/*void Editor::closeEvent(QCloseEvent * event)
 {
 	if( parent() != m_parent )
 	{
@@ -835,4 +835,4 @@ void Editor::keyPress(QKeyEvent * event)
 		m_mainimpl->keyPressFromEditor( event );
 	}
 }
-
+*/

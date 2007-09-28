@@ -42,11 +42,6 @@
      <height>25</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuPlugins" >
-    <property name="title" >
-     <string>Plugins</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menu_Edit" >
     <property name="title" >
      <string>&amp;Edit</string>
@@ -108,24 +103,6 @@
     <addaction name="actionBacktraces" />
     <addaction name="separator" />
     <addaction name="actionResetExecutablesList" />
-   </widget>
-   <widget class="QMenu" name="menuTools" >
-    <property name="title" >
-     <string>&amp;Tools</string>
-    </property>
-    <widget class="QMenu" name="menuPluginsSettings" >
-     <property name="title" >
-      <string>&amp;Plugins settings</string>
-     </property>
-    </widget>
-    <addaction name="actionFindInFiles" />
-    <addaction name="actionOpenFile" />
-    <addaction name="separator" />
-    <addaction name="actionOptions" />
-    <addaction name="actionExternalTools" />
-    <addaction name="actionConfigureShortcuts" />
-    <addaction name="actionNewQtVersion" />
-    <addaction name="menuPluginsSettings" />
    </widget>
    <widget class="QMenu" name="menu" >
     <property name="title" >
@@ -210,11 +187,33 @@
     </widget>
     <addaction name="menuToolbar" />
    </widget>
+   <widget class="QMenu" name="menuTools" >
+    <property name="title" >
+     <string>&amp;Tools</string>
+    </property>
+    <widget class="QMenu" name="menuPluginsSettings" >
+     <property name="title" >
+      <string>&amp;Plugins settings</string>
+     </property>
+    </widget>
+    <addaction name="actionFindInFiles" />
+    <addaction name="actionOpenFile" />
+    <addaction name="separator" />
+    <addaction name="actionOptions" />
+    <addaction name="actionExternalTools" />
+    <addaction name="actionConfigureShortcuts" />
+    <addaction name="actionNewQtVersion" />
+    <addaction name="menuPluginsSettings" />
+   </widget>
+   <widget class="QMenu" name="menuPlugins" >
+    <property name="title" >
+     <string>Plugins</string>
+    </property>
+   </widget>
    <widget class="QMenu" name="menuEditors" >
     <property name="title" >
      <string>Ed&amp;itors</string>
     </property>
-    <addaction name="actionShowMaximized" />
     <addaction name="actionsetFocusToEditor" />
     <addaction name="actionCloseCurrentEditor" />
     <addaction name="actionNextTab" />
