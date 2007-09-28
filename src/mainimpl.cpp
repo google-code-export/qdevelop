@@ -109,6 +109,7 @@ MainImpl::MainImpl(QWidget * parent)
     crossButton = 0;
     m_pluginsDirectory = "";
     m_includeDirectory = QLibraryInfo::location( QLibraryInfo::HeadersPath );
+    m_documentationDirectory = QLibraryInfo::location( QLibraryInfo::DocumentationPath );
     m_configureCompletionNeeded = false;
     m_mibCodec = 106; // UTF-8 by default
     m_buildQtDatabase = 0;
@@ -590,7 +591,7 @@ void MainImpl::slotOptions()
                                            m_backgroundColor, m_promptBeforeQuit, m_highlightCurrentLine, m_currentLineColor, m_autobrackets,
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
                                            m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec,
-                                           m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces
+                                           m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces, m_documentationDirectory
      );
 
     if ( options->exec() == QDialog::Accepted )
@@ -616,6 +617,7 @@ void MainImpl::slotOptions()
         m_projectsDirectory = options->projectsDirectory->text();
         m_pluginsDirectory = options->pluginsDirectory->text();
         m_includeDirectory = options->includeDirectory->text();
+        m_documentationDirectory = options->documentationDirectory->text();
         m_makeOptions = options->makeOptions->text();
         m_closeButtonInTabs = options->closeButton->isChecked();
         setCrossButton( !m_closeButtonInTabs );
@@ -671,6 +673,7 @@ void MainImpl::slotOptions()
             tabExplorer->setTabToolTip( 1, tr("Classes explorer is disabled, please enable it in the Options dialog") );
         else
             tabExplorer->setTabToolTip( 1, "" );
+	    m_assistant->setdocumentationDirectory( m_documentationDirectory );
         QApplication::restoreOverrideCursor();
     }
     delete options;
@@ -707,6 +710,7 @@ void MainImpl::saveINI()
     settings.setValue("m_projectsDirectory", m_projectsDirectory);
     settings.setValue("m_pluginsDirectory", m_pluginsDirectory);
     settings.setValue("m_includeDirectory", m_includeDirectory);
+    settings.setValue("m_documentationDirectory", m_documentationDirectory);
     settings.setValue("m_makeOptions", m_makeOptions);
     settings.setValue("m_mibCodec", m_mibCodec);
     //
@@ -816,6 +820,7 @@ QString MainImpl::loadINI()
     m_projectsDirectory = settings.value("m_projectsDirectory", m_projectsDirectory).toString();
     m_pluginsDirectory = settings.value("m_pluginsDirectory", m_pluginsDirectory).toString();
     m_includeDirectory = settings.value("m_includeDirectory", m_includeDirectory).toString();
+    m_documentationDirectory = settings.value("m_documentationDirectory", m_documentationDirectory).toString();
     m_makeOptions = settings.value("m_makeOptions", m_makeOptions).toString();
     m_showTreeClasses = settings.value("m_showTreeClasses", m_showTreeClasses).toBool();
     m_closeButtonInTabs = settings.value("m_closeButtonInTabs", m_closeButtonInTabs).toBool();
@@ -842,6 +847,7 @@ QString MainImpl::loadINI()
         tabExplorer->setTabToolTip( 1, tr("Classes explorer is disabled, please enable it in the Options dialog") );
     else
         tabExplorer->setTabToolTip( 1, "" );
+    m_assistant->setdocumentationDirectory( m_documentationDirectory );
     // Load shortcuts
     settings.beginGroup("Shortcuts");
     QList<QObject*> childrens;
@@ -1130,6 +1136,10 @@ void MainImpl::slotHelpQtWord()
             className = word;
         if( !word.isEmpty() )
         	className = m_completion->classForFunction(className, word);
+        if ( className.isEmpty() && word.startsWith("Q") )
+        {
+        	className = word;
+       	}
     }
     m_assistant->showQtWord(className, word );
 }

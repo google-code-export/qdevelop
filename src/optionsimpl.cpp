@@ -38,7 +38,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
     QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool tc, int in, QString directory,
     bool m, QColor mc, bool close, QString pd, QString mo, int mi, QString ic, 
-    bool editorToolbars, bool whiteSpaces )
+    bool editorToolbars, bool whiteSpaces, QString docDirectory )
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -67,6 +67,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	projectsDirectory->setText( directory );
 	pluginsDirectory->setText( pd );
 	includeDirectory->setText( ic );
+	documentationDirectory->setText( docDirectory );
 	makeOptions->setText( mo );
 	showEditorToolbars->setChecked( editorToolbars );
 	displayWhiteSpaces->setChecked( whiteSpaces );
@@ -122,6 +123,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	connect(chooseProjectsDirectory, SIGNAL(clicked()), this, SLOT(slotChooseProjectsDirectory()));
 	connect(choosePluginsDirectory, SIGNAL(clicked()), this, SLOT(slotChoosePluginsDirectory()));
 	connect(chooseIncludeDirectory, SIGNAL(clicked()), this, SLOT(slotChooseIncludeDirectory()));
+	connect(chooseDocumentationDirectory, SIGNAL(clicked()), this, SLOT(slotChooseDocumentationDirectory()));
 	textEdit->setPlainText( textEdit->toPlainText() );
 
     findCodecs();
@@ -272,6 +274,7 @@ void OptionsImpl::slotDefault()
 	projectsDirectory->setText( QDir::homePath() );
 	pluginsDirectory->setText( "" );
 	includeDirectory->setText( QLibraryInfo::location( QLibraryInfo::HeadersPath ) );
+	documentationDirectory->setText( QLibraryInfo::location( QLibraryInfo::DocumentationPath ) );
 	makeOptions->setText( "" );
 	tabStopWidth->setValue( 4 );
 	tabSpaces->setChecked( false );
@@ -333,6 +336,21 @@ void OptionsImpl::slotChooseIncludeDirectory()
 		return;
 	}
 	includeDirectory->setText( s );
+}
+//
+void OptionsImpl::slotChooseDocumentationDirectory()
+{
+	QString s = QFileDialog::getExistingDirectory(
+		this,
+		tr("Choose the project directory"),
+		documentationDirectory->text(),
+		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
+	if( s.isEmpty() )
+	{
+		// Cancel clicked
+		return;
+	}
+	documentationDirectory->setText( s );
 }
 //
 void OptionsImpl::findCodecs()

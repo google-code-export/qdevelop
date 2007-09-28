@@ -47,7 +47,7 @@ Assistant::~Assistant()
 void Assistant::showQtWord(QString className, QString word)
 {
 	QString lu;
-    QString doc = QDir::cleanPath( QFileInfo(m_assistantName).absoluteDir().path()+"/../doc" ) + "/html/";
+    QString doc = QDir::cleanPath( m_documentationDirectory ) + "/html/";
 	if ( process->state() == QProcess::NotRunning )
 	{
 		process->start(m_assistantName, QStringList() << "-server" );

@@ -129,6 +129,7 @@ private:
 	QString m_projectsDirectory;
 	QString m_pluginsDirectory;
 	QString m_includeDirectory;
+	QString m_documentationDirectory;
 	bool m_lineNumbers, m_selectionBorder, m_autoIndent, m_cppHighlighter;
 	bool m_saveBeforeBuild;
 	bool m_restoreOnStart;

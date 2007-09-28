@@ -36,6 +36,7 @@ public:
 	~Assistant();
 	void showQtWord(QString className, QString word);
     void setName( QString s ) { m_assistantName = s; };
+    void setdocumentationDirectory( QString s ) { m_documentationDirectory = s; };
 	//
 protected:
 	//
@@ -45,6 +46,7 @@ private:
 	QString m_location;
 	quint16 m_port;
     QString m_assistantName;
+    QString m_documentationDirectory;
 signals:	
 protected slots:
 public slots:
