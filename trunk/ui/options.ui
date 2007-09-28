@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>535</width>
-    <height>379</height>
+    <height>515</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -28,7 +28,7 @@
    <item row="0" column="0" >
     <widget class="QTabWidget" name="tabWidget" >
      <property name="currentIndex" >
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tabGeneral" >
       <attribute name="title" >
@@ -53,6 +53,143 @@
           </size>
          </property>
         </spacer>
+       </item>
+       <item row="5" column="0" >
+        <layout class="QGridLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item row="2" column="0" >
+          <widget class="QLabel" name="label_115" >
+           <property name="text" >
+            <string>Qt include directory: </string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" >
+          <widget class="QToolButton" name="chooseProjectsDirectory" >
+           <property name="text" >
+            <string>...</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="label_12" >
+           <property name="text" >
+            <string>Default projects directory: </string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2" >
+          <widget class="QToolButton" name="choosePluginsDirectory" >
+           <property name="text" >
+            <string>...</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1" colspan="2" >
+          <widget class="QLineEdit" name="makeOptions" />
+         </item>
+         <item row="2" column="2" >
+          <widget class="QToolButton" name="chooseIncludeDirectory" >
+           <property name="text" >
+            <string>...</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" >
+          <widget class="QLineEdit" name="projectsDirectory" />
+         </item>
+         <item row="3" column="1" >
+          <widget class="QLineEdit" name="documentationDirectory" />
+         </item>
+         <item row="3" column="0" >
+          <widget class="QLabel" name="label_116" >
+           <property name="text" >
+            <string>Qt documentation directory: </string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" >
+          <widget class="QLabel" name="label_16" >
+           <property name="text" >
+            <string>Make extra parameters:</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" >
+          <widget class="QLineEdit" name="includeDirectory" />
+         </item>
+         <item row="1" column="1" >
+          <widget class="QLineEdit" name="pluginsDirectory" />
+         </item>
+         <item row="3" column="2" >
+          <widget class="QToolButton" name="chooseDocumentationDirectory" >
+           <property name="text" >
+            <string>...</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="QLabel" name="label_15" >
+           <property name="text" >
+            <string>User plugins directory: </string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0" >
+        <widget class="QCheckBox" name="saveAll" >
+         <property name="text" >
+          <string>Save All before Build</string>
+         </property>
+         <property name="checked" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QCheckBox" name="restore" >
+         <property name="text" >
+          <string>Reload last project on start</string>
+         </property>
+         <property name="checked" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QCheckBox" name="promptBeforeQuit" >
+         <property name="text" >
+          <string>Prompt before quit</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QCheckBox" name="closeButton" >
+         <property name="text" >
+          <string>Close button in each tab (not work with all styles)</string>
+         </property>
+        </widget>
        </item>
        <item row="4" column="0" >
         <layout class="QHBoxLayout" >
@@ -115,123 +252,6 @@
             </size>
            </property>
           </spacer>
-         </item>
-        </layout>
-       </item>
-       <item row="3" column="0" >
-        <widget class="QCheckBox" name="closeButton" >
-         <property name="text" >
-          <string>Close button in each tab (not work with all styles)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0" >
-        <widget class="QCheckBox" name="promptBeforeQuit" >
-         <property name="text" >
-          <string>Prompt before quit</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" >
-        <widget class="QCheckBox" name="restore" >
-         <property name="text" >
-          <string>Reload last project on start</string>
-         </property>
-         <property name="checked" >
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" >
-        <widget class="QCheckBox" name="saveAll" >
-         <property name="text" >
-          <string>Save All before Build</string>
-         </property>
-         <property name="checked" >
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0" >
-        <layout class="QGridLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
-         <property name="spacing" >
-          <number>6</number>
-         </property>
-         <item row="0" column="1" >
-          <widget class="QLineEdit" name="projectsDirectory" />
-         </item>
-         <item row="3" column="0" >
-          <widget class="QLabel" name="label_16" >
-           <property name="text" >
-            <string>Make extra parameters:</string>
-           </property>
-           <property name="alignment" >
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" >
-          <widget class="QLabel" name="label_12" >
-           <property name="text" >
-            <string>Default projects directory: </string>
-           </property>
-           <property name="alignment" >
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" >
-          <widget class="QLabel" name="label_15" >
-           <property name="text" >
-            <string>User plugins directory: </string>
-           </property>
-           <property name="alignment" >
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0" >
-          <widget class="QLabel" name="label_115" >
-           <property name="text" >
-            <string>Qt include directory: </string>
-           </property>
-           <property name="alignment" >
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2" >
-          <widget class="QToolButton" name="choosePluginsDirectory" >
-           <property name="text" >
-            <string>...</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="2" >
-          <widget class="QToolButton" name="chooseIncludeDirectory" >
-           <property name="text" >
-            <string>...</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1" >
-          <widget class="QLineEdit" name="makeOptions" />
-         </item>
-         <item row="1" column="1" >
-          <widget class="QLineEdit" name="pluginsDirectory" />
-         </item>
-         <item row="2" column="1" >
-          <widget class="QLineEdit" name="includeDirectory" />
-         </item>
-         <item row="0" column="2" >
-          <widget class="QToolButton" name="chooseProjectsDirectory" >
-           <property name="text" >
-            <string>...</string>
-           </property>
-          </widget>
          </item>
         </layout>
        </item>
