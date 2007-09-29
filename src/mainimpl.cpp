@@ -344,7 +344,6 @@ void MainImpl::createConnections()
     connect(actionGotoDeclaration, SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
     connect(actionGotoImplementation, SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
     connect(actionMethodsList, SIGNAL(triggered()), this, SLOT(slotMethodsList()) );
-    //connect(actionShowMaximized, SIGNAL(triggered()), this, SLOT(slotShowMaximized()) );
     //
     connect(actionExternalTools, SIGNAL(triggered()), this, SLOT(slotToolsControl()) );
     connect(actionCloseCurrentEditor, SIGNAL(triggered()), this, SLOT(slotCloseCurrentTab()) );
@@ -398,6 +397,17 @@ void MainImpl::createConnections()
     m_projectGroup->addAction( actionStepInto );
     m_projectGroup->addAction( actionResetExecutablesList );
     m_projectGroup->setEnabled( false );
+    //
+    m_buildingGroup = new QActionGroup( this );
+    m_buildingGroup->addAction( actionCompile );
+    m_buildingGroup->addAction( actionBuild );
+    m_buildingGroup->addAction( actionRebuild );
+    m_buildingGroup->addAction( actionExecuteWithoutDebug );
+    m_buildingGroup->addAction( actionDebug );
+    m_buildingGroup->addAction( actionStopDebug );
+    m_buildingGroup->addAction( actionStepInto );
+    m_buildingGroup->addAction( actionStepOver );
+    m_buildingGroup->addAction( actionStepOut );
 }
 //
 void MainImpl::slotShortcuts()
@@ -1452,10 +1462,7 @@ void MainImpl::slotCompile()
     Editor *editor = currentEditor();
     if ( editor && Editor::suffixe( editor->filename() ).toLower() == "cpp" )
     {
-        actionBuild->setEnabled( false );
-        actionRebuild->setEnabled( false );
-        actionCompile->setEnabled( false );
-        toolBarBuild->setEnabled( false );
+        m_buildingGroup->setEnabled( false );
         logBuild->clear();
         dockOutputs->setVisible(true);
         if ( m_saveBeforeBuild )
@@ -1490,11 +1497,7 @@ void MainImpl::slotBuild(bool clean, bool build, bool forceQmake)
     qmakeNeeded = m_projectManager->isModifiedProject();
     if ( m_projectsDirectoriesList.count() == 0 )
     {
-        actionBuild->setEnabled( false );
-        actionRebuild->setEnabled( false );
-        actionCompile->setEnabled( false );
-        actionExecuteWithoutDebug->setEnabled( false );
-        toolBarBuild->setEnabled( false );
+        m_buildingGroup->setEnabled( false );
         logBuild->clear();
         dockOutputs->setVisible(true);
         if ( m_saveBeforeBuild )
@@ -1550,11 +1553,7 @@ void MainImpl::slotEndBuild()
         if ( m_builder->nbWarnings() )
             msg += QString::number(m_builder->nbWarnings())+" "+tr("warning(s)")+" ";
         logBuild->slotMessagesBuild( QString("\n---------------------- "+msg+"----------------------\n"), "");
-        actionBuild->setEnabled( true );
-        actionRebuild->setEnabled( true );
-        actionCompile->setEnabled( true );
-        actionExecuteWithoutDebug->setEnabled( true );
-        toolBarBuild->setEnabled( true );
+        m_buildingGroup->setEnabled( true );
         if ( m_debugAfterBuild )
             slotDebug( (int)m_debugAfterBuild-1 );
     }
@@ -1847,10 +1846,7 @@ void MainImpl::slotDebugVariables( QList<Variable> list)
 //
 void MainImpl::slotEndDebug()
 {
-    actionBuild->setEnabled( true );
-    actionRebuild->setEnabled( true );
-    actionCompile->setEnabled( true );
-    actionDebug->setEnabled( true );
+    m_buildingGroup->setEnabled( true );
     actionDebug->setText(tr("Start"));
     actionDebug->setShortcut( tr("F5") );
     actionDebug->setIcon( QIcon(":/toolbar/images/dbgrun.png") );
