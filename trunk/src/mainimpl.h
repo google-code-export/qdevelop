@@ -154,6 +154,7 @@ private:
 	bool m_displayWhiteSpaces;
 	QToolButton *crossButton;
 	QPointer<QActionGroup> m_projectGroup;
+	QPointer<QActionGroup> m_buildingGroup;
 	QTextCharFormat m_formatPreprocessorText, m_formatQtText, m_formatSingleComments;
 	QTextCharFormat m_formatMultilineComments, m_formatQuotationText, m_formatMethods, m_formatKeywords;
 	TabWidget *m_tabEditors;
