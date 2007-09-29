@@ -217,15 +217,9 @@ MainImpl::~MainImpl()
 Editor * MainImpl::currentEditor()
 {
 	Editor *editor = 0;
-    TextEdit *textedit = qobject_cast<TextEdit*>( QApplication::focusWidget() );
-    if( textedit )
-    {
-    	editor = qobject_cast<Editor*>( textedit->parent() );
-   	}
-   	else
-   	{
-    	editor = qobject_cast<Editor*>( m_tabEditors->currentWidget() );
-  	}
+	int currentIndex = m_tabEditors->currentIndex();
+	if( currentIndex != -1 )
+		editor = (Editor*) (m_tabEditors->widget( currentIndex ));
     return editor;
 }
 
@@ -2357,57 +2351,11 @@ void MainImpl::slotBuildQtDatabaseEnded()
     	QMessageBox::information(this, "QDevelop", tr("The Qt classes database build is ended.") );
 }
 
-
-/*void MainImpl::slotShowMaximized(Editor *editor)
-{
-	if( !editor )
-		editor = currentEditor();
-	if( !editor )
-		return;
-	if( m_maximizedEditors.contains( editor ) )
-	{
-		editor->showMaximized();
-		m_maximizedEditors.removeAll( editor );
-	}
-	else
-	{
-		editor->showMaximized();
-		m_maximizedEditors.append( editor );
-	}
-	foreach(Editor *e, allEditors() )
-	{
-		e->setActiveEditor( e == editor );
-	}
-	slotModifiedEditor(editor, editor->isModified());
-}*/
-
 QList<Editor *> MainImpl::allEditors()
 {
     QList<Editor *> editorList;
     for (int i=0; i<m_tabEditors->count(); i++)
         editorList.append( givenEditor(i) );
-    //for (int i=0; i<m_maximizedEditors.count(); i++)
-        //editorList.append( m_maximizedEditors.at(i) );
     return editorList;
 }
-
-
-/*void MainImpl::keyPressFromEditor(QKeyEvent *event)
-{
-	QList<QObject*> childrens = children();
-	QListIterator<QObject*> iterator(childrens);
-	while( iterator.hasNext() )
-	{
-		QObject *object = iterator.next();
-		QAction *action = qobject_cast<QAction*>(object);
-		
-		if (action)
-		{
-			if(  QKeySequence( event->key() | event->modifiers() ) == action->shortcut() )
-			{
-				action->activate(QAction::Trigger);
-			}
-		}
-	}
-}*/
 

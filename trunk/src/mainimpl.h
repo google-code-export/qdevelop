@@ -51,7 +51,6 @@ class MainImpl : public QMainWindow, Ui::Main
 {
 Q_OBJECT
 public:
-	//void keyPressFromEditor(QKeyEvent *event);
 	QList<Editor *> allEditors();
 	MainImpl(QWidget * parent = 0);
 	~MainImpl();
@@ -114,7 +113,6 @@ private:
 	Assistant *m_assistant;
 	Designer *m_designer;
 	QFont m_font;
-	//QTimer *m_timer;
 	int m_tabStopWidth;
 	QString m_qmakeName;
 	QString m_makeName;
