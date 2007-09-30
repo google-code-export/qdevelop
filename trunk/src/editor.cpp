@@ -211,7 +211,10 @@ void Editor::slotTimerUpdateClasses()
         m_checksum = check;
         emit updateClasses( filename(), m_textEdit->toPlainText());
     }
-    m_textEdit->setMouseHidden( true );
+    if( m_textEdit->hasFocus() )
+    	m_textEdit->setMouseHidden( true );
+    else
+    	m_textEdit->setMouseHidden( false );
 }
 //
 void Editor::slotTimerCheckIfModifiedOutside()
