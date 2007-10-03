@@ -141,6 +141,9 @@ public:
 	void methodsList();
 	//void keyPress(QKeyEvent * event);
 	//
+	
+	inline QString getOtherFileToolTip() { return m_otherFileButton->toolTip(); }
+	inline QString getOtherFileIcon() { return m_otherFileIcon; }
 public slots:
 	void gotoLine( int line, bool moveTop);
 	void slotComboClasses(QString text=QString());
@@ -177,6 +180,7 @@ private:
 	QTextDocument::FindFlags m_findOptions;
 	QComboBox *m_comboClasses, *m_comboMethods;
 	QToolButton *m_otherFileButton;
+	QString m_otherFileIcon;
 	//QToolButton *m_maximizedButton;
 	QToolButton *m_refreshButton;
 	QString m_nameOtherFile;

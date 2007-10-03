@@ -130,6 +130,12 @@ MainImpl::MainImpl(QWidget * parent)
     tableLocalVariables->verticalHeader()->hide();
     tableOtherVariables->verticalHeader()->hide();
 
+    separatorOtherFile = toolBarEdit->addSeparator();
+    separatorOtherFile->setVisible(false);
+    actionOtherFile = new QAction(this);
+    actionOtherFile->setVisible(false);
+    toolBarEdit->addAction(actionOtherFile);
+
 #ifdef WIN32
     m_font = QFont("Courier New", 10);
 #else
@@ -140,6 +146,7 @@ MainImpl::MainImpl(QWidget * parent)
     //
     m_tabEditors = new TabWidget( this );
     connect(m_tabEditors, SIGNAL(currentChanged(int)), this, SLOT(slotCurrentTabChanged(int)) );
+    connect(m_tabEditors, SIGNAL(currentChanged(int)), this, SLOT(slotUpdateOtherFileActions()) );
     //
     //
     setCentralWidget( m_tabEditors );
@@ -369,6 +376,7 @@ void MainImpl::createConnections()
     connect(actionClearAllBookmarks, SIGNAL(triggered()), this, SLOT(slotClearAllBookmarks()) );
     connect(actionOpenFile, SIGNAL(triggered()), this, SLOT(slotOpenFile()) );
     connect(actionNewQtVersion, SIGNAL(triggered()), this, SLOT(slotNewQtVersion()) );
+    connect(actionOtherFile, SIGNAL(triggered()), this, SLOT(slotOtherFile()) );
     //
     m_projectGroup = new QActionGroup( this );
     m_projectGroup->addAction( actionCloseProject );
@@ -643,6 +651,7 @@ void MainImpl::slotOptions()
         m_displayEditorToolbars = options->showEditorToolbars->isChecked();
         m_displayWhiteSpaces = options->displayWhiteSpaces->isChecked();
 
+        slotUpdateOtherFileActions();
         foreach(Editor *editor, allEditors() )
         {
             editor->setShowTreeClasses( m_showTreeClasses );
@@ -835,6 +844,7 @@ QString MainImpl::loadINI()
     m_showTreeClasses = settings.value("m_showTreeClasses", m_showTreeClasses).toBool();
     m_closeButtonInTabs = settings.value("m_closeButtonInTabs", m_closeButtonInTabs).toBool();
     m_displayEditorToolbars = settings.value("m_displayEditorToolbars", m_displayEditorToolbars).toBool();
+    slotUpdateOtherFileActions();
     m_displayWhiteSpaces = settings.value("m_displayWhiteSpaces", m_displayWhiteSpaces).toBool();
 
     setCrossButton( !m_closeButtonInTabs );
@@ -1446,6 +1456,7 @@ void MainImpl::slotModifiedEditor( Editor *editor, bool modified)
                 e->setWindowTitle( e->windowTitle().mid(2) );
    		}
    	}
+   	slotUpdateOtherFileActions();
 }
 //
 void MainImpl::slotRebuild()
@@ -2366,3 +2377,17 @@ QList<Editor *> MainImpl::allEditors()
     return editorList;
 }
 
+void MainImpl::slotUpdateOtherFileActions()
+{
+    Editor *editor = currentEditor();
+    if ( m_displayEditorToolbars || !editor ) {
+        separatorOtherFile->setVisible(false);
+        actionOtherFile->setVisible(false);
+    }
+    else {
+        actionOtherFile->setToolTip(editor->getOtherFileToolTip());
+        actionOtherFile->setIcon(QIcon(editor->getOtherFileIcon()));
+        separatorOtherFile->setVisible(true);
+        actionOtherFile->setVisible(true);
+    }
+}

@@ -166,6 +166,7 @@ private:
 	QAction *actionActiveBookmark;
 	int m_mibCodec;
 	//QList<Editor *> m_maximizedEditors;
+	QAction *separatorOtherFile, *actionOtherFile;
 protected:
 	void closeEvent( QCloseEvent * event );
 private slots:
@@ -241,12 +242,13 @@ private slots:
 	void slotGotoMatchingBracket();
 	void slotTextEditPlugin();
 	void slotConfigPlugin();
-    void slotPrint();
+	void slotPrint();
 	void slotOpenFile();
 	void slotGotoDeclaration();
 	void slotGotoImplementation();
 	void slotMethodsList();
 	void slotNewQtVersion();
+	void slotUpdateOtherFileActions();
 public slots:
 	void slotBuildQtDatabaseEnded();
 	void slotShowMessage(QString message);
