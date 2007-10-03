@@ -85,10 +85,9 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         connect(m_maximizedButton, SIGNAL(clicked()), this, SLOT(slotMaximizeButtonClicked()));
         hboxLayout->addWidget(m_maximizedButton);*/
         //
-        m_otherFileButton = 0;
         m_nameOtherFile = m_filename.mid(0, m_filename.lastIndexOf(".") );
         m_otherFileButton = new QToolButton(this);
-        m_otherFileButton->setIcon(QIcon(":/treeview/images/h.png"));
+        m_otherFileIcon = ":/treeview/images/h.png";
         //
         m_otherFileButton->setToolTip( tr("Open %1.cpp").arg(Editor::shortFilename(m_nameOtherFile)) );
         connect(m_otherFileButton, SIGNAL(clicked()), this, SLOT(slotOtherFile()));
@@ -135,12 +134,13 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         if ( (suffixe( m_filename ).toLower() == "h" ) || (suffixe( m_filename ).toLower() == "hpp" ) )
         {
             m_nameOtherFile += ".cpp";
-            m_otherFileButton->setIcon(QIcon(":/treeview/images/cpp.png"));
+            m_otherFileIcon = ":/treeview/images/cpp.png";
         }
         else if ( suffixe( m_filename ).toLower() == "cpp" || suffixe( m_filename ).toLower() == "cc"  || suffixe( m_filename ).toLower() == "c")
         {
             m_nameOtherFile += ".h";
         }
+        m_otherFileButton->setIcon(QIcon(m_otherFileIcon));
         m_editorToolbar = new QWidget( this );
         m_editorToolbar->setLayout( hboxLayout );
         //gridLayout->addLayout(editorToolbar, vposLayout++, 0, 1, 1);
@@ -764,13 +764,16 @@ void Editor::setNameOtherFile(QString oldName, QString newName)
     if ( suffixe( newName ).toLower() == "h" )
     {
         m_otherFileButton->setToolTip( tr("Open %1.h").arg(Editor::shortFilename(m_nameOtherFile)) );
+        m_otherFileIcon = ":/treeview/images/h.png";
         m_nameOtherFile += ".h";
     }
     else
     {
         m_otherFileButton->setToolTip( tr("Open %1.cpp").arg(Editor::shortFilename(m_nameOtherFile)) );
+        m_otherFileIcon = ":/treeview/images/cpp.png";
         m_nameOtherFile += ".cpp";
     }
+    m_otherFileButton->setIcon(QIcon(m_otherFileIcon));
 }
 //
 void Editor::methodsList()

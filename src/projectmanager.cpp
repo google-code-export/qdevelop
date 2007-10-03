@@ -1315,7 +1315,6 @@ void ProjectManager::slotRenameItem(QTreeWidgetItem *it)
             insertFile(itProject, newName);
             m_parent->renameEditor(oldAbsolutePath, newAbsolutePath);
             m_isModifiedProject = true;
-            Editor *editor = 0;
     		foreach(Editor *editor, m_parent->allEditors() )
             {
                 editor->setNameOtherFile(oldAbsolutePath, newAbsolutePath);
