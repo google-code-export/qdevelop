@@ -144,6 +144,7 @@ public:
 	
 	inline QString getOtherFileToolTip() { return m_otherFileButton->toolTip(); }
 	inline QString getOtherFileIcon() { return m_otherFileIcon; }
+	inline bool hasOtherFile() { return !m_nameOtherFile.isEmpty(); }
 public slots:
 	void gotoLine( int line, bool moveTop);
 	void slotComboClasses(QString text=QString());
@@ -202,12 +203,14 @@ private:
 	QDateTime m_lastModified;
 	QWidget *m_editorToolbar;
 	void checkBookmarks();
+	void updateOtherFile(QString currentFile);
 protected:
 signals:
 	void editorModified(Editor *, bool);
 	void refreshClasses(QString);
 	void breakpoint(QString, unsigned int, BlockUserData *); 
 	void updateClasses(QString, QString);
+	void otherFileChanged(void);
 };
 
 #endif

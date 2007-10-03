@@ -59,9 +59,12 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
 
     int vposLayout = 0;
     m_comboClasses = m_comboMethods = 0;
+    m_otherFileButton = m_refreshButton = 0;
+    m_editorToolbar = 0;
     m_textEdit = new TextEdit(this, mainimpl, completion);
     m_backward = false;
     m_activeEditor = false;
+    m_nameOtherFile = "";
     //
     QGridLayout *gridLayout = new QGridLayout(this);
     gridLayout->setSpacing(0);
@@ -85,17 +88,12 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         connect(m_maximizedButton, SIGNAL(clicked()), this, SLOT(slotMaximizeButtonClicked()));
         hboxLayout->addWidget(m_maximizedButton);*/
         //
-        m_nameOtherFile = m_filename.mid(0, m_filename.lastIndexOf(".") );
         m_otherFileButton = new QToolButton(this);
-        m_otherFileIcon = ":/treeview/images/h.png";
-        //
-        m_otherFileButton->setToolTip( tr("Open %1.cpp").arg(Editor::shortFilename(m_nameOtherFile)) );
         connect(m_otherFileButton, SIGNAL(clicked()), this, SLOT(slotOtherFile()));
         hboxLayout->addWidget(m_otherFileButton);
         //
         if  ( (suffixe( m_filename ).toLower() != "h") && (suffixe( m_filename ).toLower() != "hpp") )
         {
-            m_otherFileButton->setToolTip( tr("Open %1.h").arg(Editor::shortFilename(m_nameOtherFile)) );
             m_refreshButton = new QToolButton(this);
             m_refreshButton->setIcon(QIcon(":/toolbar/images/refresh.png"));
             m_refreshButton->setToolTip( tr("Refresh classes and methods lists") );
@@ -131,15 +129,7 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         hboxLayout->addItem(spacerItem);
         //
         //
-        if ( (suffixe( m_filename ).toLower() == "h" ) || (suffixe( m_filename ).toLower() == "hpp" ) )
-        {
-            m_nameOtherFile += ".cpp";
-            m_otherFileIcon = ":/treeview/images/cpp.png";
-        }
-        else if ( suffixe( m_filename ).toLower() == "cpp" || suffixe( m_filename ).toLower() == "cc"  || suffixe( m_filename ).toLower() == "c")
-        {
-            m_nameOtherFile += ".h";
-        }
+        updateOtherFile(m_filename); // Update "other file" button
         m_otherFileButton->setIcon(QIcon(m_otherFileIcon));
         m_editorToolbar = new QWidget( this );
         m_editorToolbar->setLayout( hboxLayout );
@@ -168,6 +158,30 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
     //
     connect(&m_timerUpdateClasses, SIGNAL(timeout()), this, SLOT(slotTimerUpdateClasses()));
     connect(&m_timerCheckLastModified, SIGNAL(timeout()), this, SLOT(slotTimerCheckIfModifiedOutside()));
+}
+//
+void Editor::updateOtherFile(QString currentFile)
+{
+    if ( !m_otherFileButton ) return;
+    QString suffix;
+    QString base = currentFile.left(currentFile.lastIndexOf(".") );
+    m_nameOtherFile = "";
+    if ( suffixe( currentFile ).toLower() == "h" || suffixe( currentFile ).toLower() == "hpp" )
+        suffix = "cpp";
+    else if ( suffixe( m_filename ).toLower() == "cpp" || suffixe( m_filename ).toLower() == "cc"  || suffixe( m_filename ).toLower() == "c")
+        suffix = "h";
+    // if the current file has one of the above suffixes and the other file exists, use it
+    if (!suffix.isEmpty() && QFileInfo(base+"."+suffix).exists()) {
+        m_nameOtherFile = base+"."+suffix;
+        m_otherFileButton->setVisible(true);
+        m_otherFileButton->setToolTip( tr("Open %1").arg(shortFilename(m_nameOtherFile)) );
+        m_otherFileIcon = ":/treeview/images/"+suffix+".png";
+        m_otherFileButton->setIcon(QIcon(m_otherFileIcon));
+    }
+    else // otherwise, don't display the button
+        m_otherFileButton->setVisible(false);
+
+    emit otherFileChanged();
 }
 //
 void Editor::setActiveEditor(bool b)
@@ -414,6 +428,7 @@ QStringList Editor::methodes(QString classe)
 //
 void Editor::slotClassesMethodsList()
 {
+    if ( !m_comboClasses ) return;
     int width = 0;
     const QList<ParsedItem> *list;
     list = m_mainimpl->treeClassesItems();
@@ -615,7 +630,8 @@ QList<QTextBlock> Editor::breakpointsList()
 
 void Editor::displayEditorToolbar( bool b )
 {
-	m_editorToolbar->setVisible( b );
+	if (m_editorToolbar)
+		m_editorToolbar->setVisible( b );
 }
 //
 void Editor::toggleBreakpoint(int line, QString breakpointCondition, bool isTrue)
@@ -694,7 +710,7 @@ void Editor::slotModifiedEditor(bool modified)
 //
 void Editor::slotComboClasses(QString text)
 {
-    if ( m_comboClasses == 0 )
+    if ( !m_comboClasses )
         return;
     if ( text.isEmpty() )
     {
@@ -760,20 +776,7 @@ void Editor::setNameOtherFile(QString oldName, QString newName)
     */
     if ( oldName != m_nameOtherFile )
         return;
-    m_nameOtherFile = newName.mid(0, newName.lastIndexOf(".") );
-    if ( suffixe( newName ).toLower() == "h" )
-    {
-        m_otherFileButton->setToolTip( tr("Open %1.h").arg(Editor::shortFilename(m_nameOtherFile)) );
-        m_otherFileIcon = ":/treeview/images/h.png";
-        m_nameOtherFile += ".h";
-    }
-    else
-    {
-        m_otherFileButton->setToolTip( tr("Open %1.cpp").arg(Editor::shortFilename(m_nameOtherFile)) );
-        m_otherFileIcon = ":/treeview/images/cpp.png";
-        m_nameOtherFile += ".cpp";
-    }
-    m_otherFileButton->setIcon(QIcon(m_otherFileIcon));
+    updateOtherFile(newName);
 }
 //
 void Editor::methodsList()
