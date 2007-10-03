@@ -1323,6 +1323,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
         editor->gotoLine(numLine, moveTop);
     connect(editor, SIGNAL(editorModified(Editor *, bool)), this, SLOT(slotModifiedEditor( Editor *, bool)) );
     connect(editor, SIGNAL(updateClasses(QString, QString)), this, SLOT(slotUpdateClasses(QString, QString)) );
+    connect(editor, SIGNAL(otherFileChanged()), this, SLOT(slotUpdateOtherFileActions()));
     if ( m_debug )
         connect(editor, SIGNAL(breakpoint(QString, bool, unsigned int, QString)), m_debug, SLOT(slotBreakpoint(QString, bool, unsigned int, QString)) );
     setCurrentFile(s);
@@ -1456,7 +1457,6 @@ void MainImpl::slotModifiedEditor( Editor *editor, bool modified)
                 e->setWindowTitle( e->windowTitle().mid(2) );
    		}
    	}
-   	slotUpdateOtherFileActions();
 }
 //
 void MainImpl::slotRebuild()
@@ -2380,14 +2380,14 @@ QList<Editor *> MainImpl::allEditors()
 void MainImpl::slotUpdateOtherFileActions()
 {
     Editor *editor = currentEditor();
-    if ( m_displayEditorToolbars || !editor ) {
-        separatorOtherFile->setVisible(false);
-        actionOtherFile->setVisible(false);
-    }
-    else {
+    if ( !m_displayEditorToolbars && editor && editor->hasOtherFile() ) {
         actionOtherFile->setToolTip(editor->getOtherFileToolTip());
         actionOtherFile->setIcon(QIcon(editor->getOtherFileIcon()));
         separatorOtherFile->setVisible(true);
         actionOtherFile->setVisible(true);
+    }
+    else {
+        separatorOtherFile->setVisible(false);
+        actionOtherFile->setVisible(false);
     }
 }
