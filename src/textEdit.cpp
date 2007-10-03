@@ -1723,3 +1723,12 @@ void TextEdit::completionHelp()
     c = c.section(name, 0, 0);
     emit initParse(InitCompletion::Completion, m_editor->filename(), c, true, true, true, name);
 }
+
+void TextEdit::setTextColor(QColor c)
+{
+	QPalette p = palette();
+	p.setColor( QPalette::Text, c );
+	setPalette(p);     
+	viewport()->update();
+}
+

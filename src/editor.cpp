@@ -788,54 +788,7 @@ void Editor::methodsList()
     }
 }
 //
-
-/*void Editor::showMaximized()
+void Editor::setTextColor(QColor textColor)
 {
-	static int indexOf;
-	bool enable = parent() != 0;
-	if( enable )
-	{
-		indexOf = m_parent->indexOf(this);
-		setParent(0);
-        m_maximizedButton->setIcon(QIcon(":/divers/images/window_nofullscreen.png"));
-    	setWindowIcon(QIcon(":/divers/images/logoeditor.png"));
-    	setWindowTitle( filename() );
-		QWidget::showMaximized();
-	}
-	else
-	{
-		setParent(m_parent);
-        m_maximizedButton->setIcon(QIcon(":/divers/images/window_fullscreen.png"));
-		m_parent->insertTab(indexOf, this, shortFilename()+"   ");
-		m_parent->setCurrentIndex(indexOf);
-		showNormal();
-	}
-}*/
-
-
-/*void Editor::closeEvent(QCloseEvent * event)
-{
-	if( parent() != m_parent )
-	{
-		m_mainimpl->slotShowMaximized(this);
-		event->ignore();
-		return;
-	}
-	event->accept();
+	m_textEdit->setTextColor(textColor);
 }
-
-
-void Editor::slotMaximizeButtonClicked()
-{
-	m_mainimpl->slotShowMaximized(this);
-}
-
-
-void Editor::keyPress(QKeyEvent * event)
-{
-	if( event->nativeModifiers() && event->key() )
-	{
-		m_mainimpl->keyPressFromEditor( event );
-	}
-}
-*/

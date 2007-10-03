@@ -71,6 +71,7 @@ Q_OBJECT
 protected slots:
 	//void closeEvent(QCloseEvent * event);
 public:
+	void setTextColor(QColor textColor);
 	Editor(TabWidget *parent, MainImpl *mainimpl, InitCompletion *completion, QString name="");
 	~Editor();
 	bool open(bool silentMode);

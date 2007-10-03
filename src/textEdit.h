@@ -95,6 +95,7 @@ public:
         m_highlightCurrentLine = b;
     }
     void setBackgroundColor( QColor c );
+	void setTextColor(QColor c);
     void setCurrentLineColor( QColor c );
     void setMatchingColor( QColor c )
     {
