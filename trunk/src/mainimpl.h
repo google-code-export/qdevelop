@@ -88,6 +88,7 @@ public:
 	void checkQtDatabase();
 	InitCompletion* buildQtDatabase() { return m_buildQtDatabase; }
 private:
+	QColor m_textColor;
 	// Functions
 	void createConnections();
 	void updateActionsRecentsFiles();

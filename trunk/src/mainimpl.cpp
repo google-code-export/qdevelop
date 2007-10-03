@@ -94,6 +94,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_match = true;
     m_highlightCurrentLine = true;
     m_backgroundColor = Qt::white;
+    m_textColor = Qt::black;
     m_promptBeforeQuit = false;
     m_currentLineColor = QColor(215,252,255);
     m_matchingColor = Qt::red;
@@ -595,7 +596,8 @@ void MainImpl::slotOptions()
                                            m_backgroundColor, m_promptBeforeQuit, m_highlightCurrentLine, m_currentLineColor, m_autobrackets,
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
                                            m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec,
-                                           m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces, m_documentationDirectory
+                                           m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces, m_documentationDirectory,
+                                           m_textColor
      );
 
     if ( options->exec() == QDialog::Accepted )
@@ -634,6 +636,7 @@ void MainImpl::slotOptions()
         m_formatMethods = options->syntaxe()->functionFormat();
         m_formatKeywords = options->syntaxe()->keywordFormat();
         m_backgroundColor = options->backgroundColor();
+        m_textColor = options->textColor();
         m_currentLineColor = options->currentLineColor();
         m_matchingColor = options->matchingColor();
         m_mibCodec = options->mib();
@@ -656,6 +659,7 @@ void MainImpl::slotOptions()
             editor->setEndLine( m_endLine );
             editor->setTabSpaces( m_tabSpaces );
             editor->setBackgroundColor( m_backgroundColor );
+            editor->setTextColor( m_textColor );
             editor->setCurrentLineColor( m_currentLineColor );
             editor->setMatchingColor( m_matchingColor );
             editor->setAutobrackets( m_autobrackets );
@@ -709,6 +713,7 @@ void MainImpl::saveINI()
     settings.setValue("m_endLine", m_endLine);
     settings.setValue("m_tabSpaces", m_tabSpaces);
     settings.setValue("m_backgroundColor", m_backgroundColor.name());
+    settings.setValue("m_textColor", m_textColor.name());
     settings.setValue("m_currentLineColor", m_currentLineColor.name());
     settings.setValue("m_matchingColor", m_matchingColor.name());
     settings.setValue("m_projectsDirectory", m_projectsDirectory);
@@ -819,6 +824,7 @@ QString MainImpl::loadINI()
     m_match = settings.value("m_match", m_match).toBool();
     m_highlightCurrentLine = settings.value("m_highlightCurrentLine", m_highlightCurrentLine).toBool();
     m_backgroundColor = QColor(settings.value("m_backgroundColor", m_backgroundColor).toString());
+    m_textColor = QColor(settings.value("m_textColor", m_textColor).toString());
     m_currentLineColor = QColor(settings.value("m_currentLineColor", m_currentLineColor).toString());
     m_matchingColor = QColor(settings.value("m_matchingColor", m_matchingColor).toString());
     m_projectsDirectory = settings.value("m_projectsDirectory", m_projectsDirectory).toString();
@@ -1276,6 +1282,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     editor->setAutoCompletion( m_autoCompletion );
     editor->setAutobrackets( m_autobrackets );
     editor->setBackgroundColor( m_backgroundColor );
+    editor->setTextColor( m_textColor );
     editor->setMatch( m_match );
     editor->setHighlightCurrentLine( m_highlightCurrentLine );
     editor->setMatchingColor( m_matchingColor );

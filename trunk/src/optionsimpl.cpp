@@ -38,7 +38,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
     QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
     QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool tc, int in, QString directory,
     bool m, QColor mc, bool close, QString pd, QString mo, int mi, QString ic, 
-    bool editorToolbars, bool whiteSpaces, QString docDirectory )
+    bool editorToolbars, bool whiteSpaces, QString docDirectory, QColor textCol )
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -73,17 +73,6 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	displayWhiteSpaces->setChecked( whiteSpaces );
 	
 	//
-	cppHighLighter = new CppHighlighter( 0 );
-	cppHighLighter->setPreprocessorFormat( pre );
-	cppHighLighter->setClassFormat( qt );
-	cppHighLighter->setSingleLineCommentFormat( commSimples );
-	cppHighLighter->setMultiLineCommentFormat( commMulti );
-	cppHighLighter->setQuotationFormat( guil );
-	cppHighLighter->setFunctionFormat( meth );
-	cppHighLighter->setKeywordFormat( cles );
-	cppHighLighter->setDocument( textEdit->document() );
-
-	//
 	QPixmap pix(25, 25);
 	pix.fill( pre.foreground().color() );
 	preprocessor->setIcon( pix );
@@ -102,12 +91,29 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	pix.fill( back );
 	background->setIcon( pix );
 	m_backgroundColor = back;
+	pix.fill( textCol );
+	text->setIcon( pix );
+	m_textColor = textCol;
 	pix.fill( mc );
 	matching->setIcon( pix );
 	m_matchingColor = mc;
 	pix.fill( lc );
 	lineColor->setIcon( pix );
 	m_colorCurrentLine = lc;
+	//
+	cppHighLighter = new CppHighlighter( 0 );
+	cppHighLighter->setPreprocessorFormat( pre );
+	cppHighLighter->setClassFormat( qt );
+	cppHighLighter->setSingleLineCommentFormat( commSimples );
+	cppHighLighter->setMultiLineCommentFormat( commMulti );
+	cppHighLighter->setQuotationFormat( guil );
+	cppHighLighter->setFunctionFormat( meth );
+	cppHighLighter->setKeywordFormat( cles );
+	cppHighLighter->setDocument( textEdit->document() );
+	QPalette p = textEdit->palette();
+    p.setColor(QPalette::Base, m_backgroundColor);
+	p.setColor( QPalette::Text, m_textColor);
+	textEdit->setPalette(p);     
 	//
 	connect(preprocessor, SIGNAL(clicked()), this, SLOT(slotChangeColor())); 
 	connect(qtWords, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
@@ -117,6 +123,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	connect(methods, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(keywords, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(background, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
+	connect(text, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(lineColor, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(matching, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(defaults, SIGNAL(clicked()), this, SLOT(slotDefault()));
@@ -141,6 +148,11 @@ QFont OptionsImpl::font()
 QColor OptionsImpl::backgroundColor() 
 {
 	return m_backgroundColor;
+}
+//
+QColor OptionsImpl::textColor() 
+{
+	return m_textColor;
 }
 //
 QColor OptionsImpl::currentLineColor() 
@@ -174,6 +186,8 @@ void OptionsImpl::slotChangeColor()
 		color = cppHighLighter->keywordFormat().foreground().color();
 	else if( button == background )
 		color = m_backgroundColor;
+	else if( button == text )
+		color = m_textColor;
 	else if( button == lineColor )
 		color = m_colorCurrentLine;
 	else if( button == matching )
@@ -201,11 +215,17 @@ void OptionsImpl::slotChangeColor()
 			cppHighLighter->setKeywordFormat( format );
 		else if( button == background )
 			m_backgroundColor = color;
+		else if( button == text )
+			m_textColor = color;
 		else if( button == lineColor )
 			m_colorCurrentLine = color;
 		else if( button == matching )
 			m_matchingColor = color;
 		cppHighLighter->setDocument( textEdit->document() );
+		QPalette p = textEdit->palette();
+	    p.setColor(QPalette::Base, m_backgroundColor);
+		p.setColor( QPalette::Text, m_textColor);
+		textEdit->setPalette(p);     
 	}
 }
 //
@@ -250,6 +270,10 @@ void OptionsImpl::slotDefault()
 	pix.fill( Qt::white );
 	m_backgroundColor = Qt::white;
 	background->setIcon( pix );
+	//
+	pix.fill( Qt::black );
+	m_textColor = Qt::black;
+	text->setIcon( pix );
 	//
 	pix.fill( Qt::red );
 	m_matchingColor = Qt::red;
