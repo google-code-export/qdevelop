@@ -229,7 +229,6 @@ private slots:
 	void slotComment();
 	void slotUncomment();
 	void slotParameters();
-	void slotBacktraces();
 	void slotCurrentTabChanged(int index);
 	void slotDebugVariables( QList<Variable> list);
 	void slotAddDebugVariable();

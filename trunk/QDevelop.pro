@@ -23,11 +23,11 @@ FORMS += ui/about.ui \
  ui/promptreplace.ui \
  ui/replace.ui \
  ui/shortcuts.ui \
- ui/stack.ui \
  ui/subclassing.ui \
  ui/toolsControl.ui \
  ui/warning.ui \
- ui/breakpointcondition.ui
+ ui/breakpointcondition.ui \
+ ui/registers.ui
 HEADERS += src/InitCompletion.h \
  src/QIComplete/parse.h \
  src/QIComplete/readtags.h \
@@ -68,7 +68,8 @@ HEADERS += src/InitCompletion.h \
  src/textEdit.h \
  src/toolscontrolimpl.h \
  src/treeclasses.h \
- src/treeproject.h
+ src/treeproject.h \
+ src/registersimpl.h
 INCLUDEPATH += . src src/ui
 MOC_DIR += build/moc
 QT += core gui network sql
@@ -115,7 +116,8 @@ SOURCES += src/InitCompletion.cpp \
  src/textEdit.cpp \
  src/toolscontrolimpl.cpp \
  src/treeclasses.cpp \
- src/treeproject.cpp
+ src/treeproject.cpp \
+ src/registersimpl.cpp
 TARGET = QDevelop
 TEMPLATE = app
 TRANSLATIONS += resources/translations/QDevelop_Chinese.ts \
