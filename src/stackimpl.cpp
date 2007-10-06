@@ -26,16 +26,10 @@
 //
 #include <QDir>
 //
-StackImpl::StackImpl( MainImpl * parent, Qt::WFlags f) 
-	: QDialog(parent, f), m_mainImpl(parent)
+StackImpl::StackImpl( MainImpl * parent, QListWidget *m_list) 
+	: m_mainImpl(parent), m_list(m_list)
 {
-	setupUi(this);
-}
-//
-void StackImpl::closeEvent( QCloseEvent * event )
-{
-	// TODO remove gcc warnings
-	event = NULL;
+	connect(m_list, SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)), this, SLOT(slotCurrentItemChanged(QListWidgetItem *, QListWidgetItem *)) );
 }
 //
 void StackImpl::addLine( const QString line )
@@ -45,10 +39,10 @@ void StackImpl::addLine( const QString line )
 	if( s.contains(" in ") )
 		s = line.section(" in ", -1);
 	s = s.simplified();
-	list->addItem( s );
+	m_list->addItem( s );
 }
 //
-void StackImpl::on_list_currentItemChanged ( QListWidgetItem * item, QListWidgetItem * )
+void StackImpl::slotCurrentItemChanged ( QListWidgetItem * item, QListWidgetItem * )
 {
 	if( !item )
 		return;
@@ -78,3 +72,9 @@ void StackImpl::infoSources(const QString s )
 		}
 	}
 }
+
+void StackImpl::clear()
+{
+	m_list->clear();
+}
+

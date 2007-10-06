@@ -22,6 +22,7 @@
 */
 #include "debug.h"
 #include "editor.h"
+#include "registersimpl.h"
 #include <QProcess>
 #include <QDebug>
 #include <QRegExp>
@@ -33,11 +34,13 @@
 #include <sys/types.h>
 #endif
 //
-Debug::Debug(QObject * parent, QString gdbName, Parameters p, QString exe, bool exeOnly)
-// 	: QThread(parent), m_parent(parent), executableName(exe), m_executeWithoutDebug(exeOnly), m_parameters(p)
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
+//
+Debug::Debug(QObject * parent, RegistersImpl *registersImpl, QString gdbName, Parameters p, QString exe, bool exeOnly)
 	: QThread(parent)
 {
 	m_parent = parent;
+	m_registersImpl = registersImpl;
 	m_gdbName = gdbName;
 	executableName = exe;
 	m_executeWithoutDebug = exeOnly;
@@ -49,6 +52,7 @@ void Debug::run()
 	m_pid = 0;
 	m_request = None;
 	connect(m_parent, SIGNAL(debugCommand(QString)), this, SLOT(slotDebugCommand(QString)) );
+	connect(m_registersImpl, SIGNAL(debugCommand(QString)), this, SLOT(slotDebugCommand(QString)) );
 	connect(m_parent, SIGNAL(stopDebug()), this, SLOT(slotStopDebug()) );
 	connect(m_parent, SIGNAL(pauseDebug()), this, SLOT(slotPauseDebug()) );
 	connect(m_parent, SIGNAL(otherVariables(QStringList)), this, SLOT(slotOtherVariables(QStringList)) );
@@ -110,7 +114,6 @@ void Debug::writeMessagesToDebugger()
 	while( it.hasNext() )
 	{
 		QString msg = it.next();
-//emit message( "writeMessagesToDebugger :" +  msg.toLatin1() );
 		processDebug->write( msg.toLatin1() );
 	}
 	messagesToDebugger.clear();
@@ -118,54 +121,83 @@ void Debug::writeMessagesToDebugger()
 //
 void Debug::slotMessagesDebug()
 {
-//emit message("Entree slotMessagesDebug");
 	char breakpoint[] = { 26, 26, 0x0 };
 	QString messages = processDebug->readAllStandardOutput();
-	QStringList list;
-	list = QString( messages ).split("\n");
-	if( list.count() )
+	if( m_executeWithoutDebug )
 	{
-		foreach(QString s, list)
+		slotMessagesError();
+		return;	
+	}
+	static QString listMessagesDebug;
+	listMessagesDebug += QString( messages );
+	if( !listMessagesDebug.endsWith("(gdb) ") )
+	{
+		return;
+	}
+	while( listMessagesDebug.length() )
+	{
+		QString s = listMessagesDebug.section("\n", 0, 0);
+		listMessagesDebug = listMessagesDebug.section("\n", 1);
+		if( !s.isEmpty() )
 		{
-			//if( s.indexOf("(gdb) ") == 0 && s.length() > 6 )
-				//s.remove("(gdb) ");
-//emit message("s :"+QString::number(m_request)+" :"+s);
-			if( !s.isEmpty() )
+			if( s.indexOf( breakpoint )==0 )
 			{
-				if( s.indexOf( breakpoint )==0 )
+				emit message( QString::fromUtf8(s.toLocal8Bit()) );
+				listVariables.clear();
+				listVariablesToSend.clear();
+				m_request = InfoScope;
+				QString numLine = s.section(":", -4, -4);
+				messagesToDebugger << "info scope "+numLine+"\n";
+				continue;
+			}
+			//
+			if( s.indexOf("Program exited normally.") == 0 )
+			{
+				emit message( QString::fromUtf8(s.toLocal8Bit()) ); 
+				slotStopDebug();
+			}
+			else if( s.indexOf("[New Thread") == 0 && m_pid==0)
+			{
+				m_pid = s.section("(", 1, 1).section(" ", 1, 1).section(")", 0, 0).toInt();
+			}
+			else if( m_request == Registers )
+			{
+				s = "Registers:"+listMessagesDebug;
+				emit message( QString::fromUtf8(s.toLocal8Bit()) ); 
+				listMessagesDebug.clear();
+				messagesToDebugger <<  "info sources\n";
+				m_request = InfoSources;
+			}
+			else if( m_request == InfoSources )
+			{
+				if( s.indexOf("(gdb)") == 0)
 				{
-					emit message( QString::fromUtf8(s.toLocal8Bit()) );
-					listVariables.clear();
-					listVariablesToSend.clear();
-					m_request = InfoScope;
-					QString numLine = s.section(":", -4, -4);
-					messagesToDebugger << "info scope "+numLine+"\n";
-					return;
+					m_request = None;
+					s = "InfoSourcesEnd";
+					messagesToDebugger <<  "bt\n";
 				}
-				//
-				if( s.indexOf("Program exited normally.") == 0 )
+				else
+					s = "InfoSources:"+s;
+				emit message( QString::fromUtf8(s.toLocal8Bit()) ); 
+			}
+			else if( m_request == InfoScope  )
+			{
+				if( s.indexOf("(gdb)") == 0 && listVariables.count() != 0 )
 				{
-					emit message( QString::fromUtf8(s.toLocal8Bit()) ); 
-					slotStopDebug();
-				}
-				else if( s.indexOf("[New Thread") == 0 && m_pid==0)
-				{
-					m_pid = s.section("(", 1, 1).section(" ", 1, 1).section(")", 0, 0).toInt();
-				}
-				else if( m_request == InfoSources )
-				{
-					if( s.indexOf("(gdb)") == 0)
+					foreach(QString s, m_otherVariables)
 					{
-						m_request = None;
-						s = "InfoSourcesEnd";
+						Variable v;
+						v.name = s;
+						v.kind = Debug::OtherArgs;
+						listVariables.append( v );
 					}
-					else
-						s = "InfoSources:"+s;
-					emit message( QString::fromUtf8(s.toLocal8Bit()) ); 
+					m_request = Whatis;
+					Variable variable = listVariables.at(0);
+					messagesToDebugger << "whatis "+variable.name+"\n";
 				}
-				else if( m_request == InfoScope  )
+				else if( s.contains( "No arguments" ) )
 				{
-					if( s.indexOf("(gdb)") == 0 && listVariables.count() != 0 )
+					if( listVariables.count() )
 					{
 						foreach(QString s, m_otherVariables)
 						{
@@ -178,203 +210,159 @@ void Debug::slotMessagesDebug()
 						Variable variable = listVariables.at(0);
 						messagesToDebugger << "whatis "+variable.name+"\n";
 					}
-					else if( s.contains( "No arguments" ) )
+					else
 					{
+						m_request = None;
+					}
+				}
+				else if( s.indexOf("Symbol ") == 0 )
+				{
+					QString name = s.section("Symbol ", 1).section(" ", 0, 0).simplified();
+					if( !name.isEmpty() )
+					{
+						Variable variable;
+						variable.name = name;
+						variable.kind = Local;
+						listVariables.append( variable );
+					}
+				}
+			}
+			else if ( m_request ==  Whatis )
+			{
+				QString type = s.section("type = ", 1).simplified();
+				if( !type.isEmpty() )
+				{
+					Variable variable = listVariables.at(0);
+					listVariables.removeAt( 0 );
+					variable.type = type;
+					listVariables.prepend( variable );
+					m_request = Address;
+					if( type.contains( "*" ) )
+					{
+						messagesToDebugger << "p "+variable.name+"\n";
+					}
+					else
+					{
+						messagesToDebugger << "p &"+variable.name+"\n";
+					}
+				}
+			}
+			else if ( m_request ==  Address )
+			{
+				QString address = s.section(" = ", 1).simplified();
+				if( !address.isEmpty() )
+				{
+					Variable variable = listVariables.at(0);
+					listVariables.removeAt( 0 );
+					variable.address = address;
+					listVariables.prepend( variable );
+					if( variable.type.section(" ", 0, 0) == "QString" )
+					{
+						m_request = Length;
+						messagesToDebugger << "p "+variable.name+"->d.size\n";
+					}
+					else
+					{
+						m_request = Value;
+						messagesToDebugger << "p "+variable.name+"\n";
+					}
+				}
+			}
+			else if ( m_request ==  Length )
+			{
+				if( s.length() && s.at(0) == '$' )
+				{
+					int length = s.section(" = ", 1).simplified().toInt();
+					Variable variable = listVariables.at(0);
+					listVariables.removeAt( 0 );
+					if( length > 0 )
+					{
+						variable.length = qMin(length, 100);
+						listVariables.prepend( variable );
+						m_request = Value;
+						messagesToDebugger << "p "+variable.name+"->d.data[0]\n";
+					}
+					else
+					{
+						listVariablesToSend.append( variable );
 						if( listVariables.count() )
 						{
-							foreach(QString s, m_otherVariables)
-							{
-								Variable v;
-								v.name = s;
-								v.kind = Debug::OtherArgs;
-								listVariables.append( v );
-							}
-							m_request = Whatis;
 							Variable variable = listVariables.at(0);
 							messagesToDebugger << "whatis "+variable.name+"\n";
-						}
-						else
-						{
-							m_request = None;
-						}
-					}
-					//else if( s.contains("Symbol ") && ( s.at(0).isLetterOrNumber() || s.at(0) == '_' ))
-					else if( s.indexOf("Symbol ") == 0 )
-					{
-						QString name = s.section("Symbol ", 1).section(" ", 0, 0).simplified();
-						if( !name.isEmpty() )
-						{
-							Variable variable;
-							variable.name = name;
-							//if( s.contains("is a") )
-							variable.kind = Local;
-							//else if( s.contains("is an argument") )
-								//variable.kind = Arg;
-							listVariables.append( variable );
-						}
-					}
-				}
-				else if ( m_request ==  Whatis )
-				{
-//emit message("Whatis "+s);
-					QString type = s.section("type = ", 1).simplified();
-					if( !type.isEmpty() )
-					{
-						Variable variable = listVariables.at(0);
-						listVariables.removeAt( 0 );
-						variable.type = type;
-						listVariables.prepend( variable );
-						m_request = Address;
-						if( type.contains( "*" ) )
-						{
-//emit message("Demande1 Address "+variable.name);
-							messagesToDebugger << "p "+variable.name+"\n";
-						}
-						else
-						{
-//emit message("Demande2 Address "+variable.name);
-							messagesToDebugger << "p &"+variable.name+"\n";
-						}
-					}
-				}
-				else if ( m_request ==  Address )
-				{
-					QString address = s.section(" = ", 1).simplified();
-					if( !address.isEmpty() )
-					{
-						Variable variable = listVariables.at(0);
-						listVariables.removeAt( 0 );
-						variable.address = address;
-						listVariables.prepend( variable );
-						if( variable.type.section(" ", 0, 0) == "QString" )
-						{
-//emit message("Demande p1 "+variable.name);
-							m_request = Length;
-							messagesToDebugger << "p "+variable.name+"->d.size\n";
-						}
-						else
-						{
-//emit message("Demande p2 "+variable.name);
-							m_request = Value;
-							messagesToDebugger << "p "+variable.name+"\n";
-						}
-					}
-				}
-				else if ( m_request ==  Length )
-				{
-//emit message("Length "+s);
-					if( s.length() && s.at(0) == '$' )
-					{
-						int length = s.section(" = ", 1).simplified().toInt();
-						Variable variable = listVariables.at(0);
-						listVariables.removeAt( 0 );
-//emit message("Longueur de "+variable.name+":"+QString::number(length));
-						if( length > 0 )
-						{
-							variable.length = qMin(length, 100);
-							listVariables.prepend( variable );
-							m_request = Value;
-							messagesToDebugger << "p "+variable.name+"->d.data[0]\n";
-						}
-						else
-						{
-							listVariablesToSend.append( variable );
-							if( listVariables.count() )
-							{
-								Variable variable = listVariables.at(0);
-								messagesToDebugger << "whatis "+variable.name+"\n";
-								m_request = Whatis;
-							}
-							else 
-							{
-								emit debugVariables( listVariablesToSend );
-								listVariablesToSend.clear();
-								m_request = None;
-							}
-						}
-					}
-				}
-				else if ( m_request ==  Value )
-				{
-//emit message("Value1 :"+s);
-					s.remove( "(gdb) ");
-					if( s.length() && s.at(0) == '$' )
-					{
-//emit message("Value2 :"+s);
-						Variable variable = listVariables.at(0);
-						listVariables.removeAt( 0 );
-						QString content = s.section("= ", 1);
-						if( variable.type.section(" ", 0, 0) == "QString" )
-						//if( variable.type.indexOf("QString ") == 0 )
-						{
-							if( variable.length && variable.content.length() < variable.length )
-							{
-								variable.content += QChar( content.toInt() );	
-								m_request = Value;
-								listVariables.prepend( variable );
-								messagesToDebugger << "p "+variable.name+"->d.data["+QString::number(variable.content.length())+"]\n";
-//emit message("Value3 :"+variable.name);
-								continue;
-							}
-							else
-							{
-//emit message("Value4 :"+variable.name);
-								listVariablesToSend.append( variable );
-							}
-						}
-						else
-						{
-							variable.content = QString::fromUtf8(content.toLocal8Bit());
-							listVariablesToSend.append( variable );
-						}
-						if( listVariables.count() )
-						{
-							variable = listVariables.at(0);
-//emit message( "whatis:255 "+variable.name );
-							messagesToDebugger << "whatis "+variable.name+"\n";
 							m_request = Whatis;
 						}
-						else
+						else 
 						{
-//emit message( "None:300 " );
-							m_request = None;
 							emit debugVariables( listVariablesToSend );
 							listVariablesToSend.clear();
+							m_request = None;
 						}
 					}
 				}
-				//else if( m_request == None )
-				//else if( s.indexOf( breakpoint )==0 )
-				else
+			}
+			else if ( m_request ==  Value )
+			{
+				s.remove( "(gdb) ");
+				if( s.length() && s.at(0) == '$' )
 				{
-					if( s != "(gdb) " /*&& s != "Continuing."*/)
-						emit message( QString::fromUtf8(s.toLocal8Bit()) );
-					//listVariables.clear();
-					//listVariablesToSend.clear();
-					//m_request = InfoLocals;
-					//messagesToDebugger << "info locals\n";
+					Variable variable = listVariables.at(0);
+					listVariables.removeAt( 0 );
+					QString content = s.section("= ", 1);
+					if( variable.type.section(" ", 0, 0) == "QString" )
+					{
+						if( variable.length && variable.content.length() < variable.length )
+						{
+							variable.content += QChar( content.toInt() );	
+							m_request = Value;
+							listVariables.prepend( variable );
+							messagesToDebugger << "p "+variable.name+"->d.data["+QString::number(variable.content.length())+"]\n";
+							continue;
+						}
+						else
+						{
+							listVariablesToSend.append( variable );
+						}
+					}
+					else
+					{
+						variable.content = QString::fromUtf8(content.toLocal8Bit());
+						listVariablesToSend.append( variable );
+					}
+					if( listVariables.count() )
+					{
+						variable = listVariables.at(0);
+						messagesToDebugger << "whatis "+variable.name+"\n";
+						m_request = Whatis;
+					}
+					else
+					{
+						m_request = None;
+						emit debugVariables( listVariablesToSend );
+						listVariablesToSend.clear();
+						listMessagesDebug.clear();
+						messagesToDebugger <<  "info register\n";
+						m_request = Registers;
+					}
 				}
-				//else
-					//emit message( QString::fromUtf8(s.toLocal8Bit()) ); 
+			}
+			else
+			{
+				emit message( QString::fromUtf8(s.toLocal8Bit()) );
 			}
 		}
 	}
-	list = QString(processDebug->readAllStandardError()).split("\n");
+	slotMessagesError();
+}
+void Debug::slotMessagesError()
+{
+	QStringList list = QString(processDebug->readAllStandardError()).split("\n");
 	if( list.count() )
 	foreach(QString s, list)
 	{
 		if( !s.isEmpty() )
 		{
-			/*if( s.indexOf("Cannot access" )==0 || 
-				s.indexOf("There is no" )==0 ||
-				s.indexOf("No symbol" )==0
-				
-				)*/
-//emit message( "Error request :"+s );
-
 			if( m_request != None  )
 			{
-//emit message( "Error request :"+s );
 				if( listVariables.count() )
 				{
 					Variable variable = listVariables.at(0);
@@ -392,13 +380,14 @@ void Debug::slotMessagesDebug()
 				{
 					emit debugVariables( listVariablesToSend );
 					listVariablesToSend.clear();
-					m_request = None;
+						m_request = None;
 				}
 			}
 			else
 				emit message( s );
 		}
 	}
+	list.clear();
 }
 //
 void Debug::slotOtherVariables(QStringList list)
@@ -470,3 +459,4 @@ void Debug::configureGdb()
 
 	//
 }
+

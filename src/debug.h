@@ -31,14 +31,15 @@
 //
 struct Variable;
 class BlockUserData;
+class RegistersImpl;
 //
 class Debug : public QThread
 {
 Q_OBJECT
 public:
-	Debug(QObject * parent, QString gdbName, Parameters p, QString exe, bool exeOnly=false);
+	Debug(QObject * parent, RegistersImpl *registersImpl, QString gdbName, Parameters p, QString exe, bool exeOnly=false);
     void run();
-	enum Request { None, InfoSources, InfoScope, Local, OtherArgs, Whatis, Address, Length, Value};
+	enum Request { None, Registers, InfoSources, InfoScope, Local, OtherArgs, Whatis, Address, Length, Value};
 private:
 	// Methods
 	void writeMessagesToDebugger();
@@ -59,6 +60,7 @@ private:
 	QList<Variable> listVariables, listVariablesToSend;
 	QStringList m_otherVariables;
 	QObject * m_parent;
+	RegistersImpl *m_registersImpl;
 signals:
 	void message(QString);
 	void endDebug();
@@ -68,6 +70,7 @@ public slots:
 	void slotBreakpoint(QString filename, unsigned int line, BlockUserData *);
 protected slots:
 	void slotMessagesDebug();
+	void slotMessagesError();
 	void slotDebugCommand(QString text);
 	void slotStopDebug();
 	void slotPauseDebug();

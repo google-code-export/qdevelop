@@ -164,6 +164,8 @@ MainImpl::MainImpl(QWidget * parent)
     menuView->addSeparator();
     menuView->addAction(dockExplorer->toggleViewAction());
     menuView->addAction(dockOutputs->toggleViewAction());
+    menuView->addAction(dockCallsStack->toggleViewAction());
+    menuView->addAction(dockRegisters->toggleViewAction());
     menuView->addSeparator();
     //
     menuToolbar->addAction(toolBarFiles->toggleViewAction());
@@ -192,12 +194,12 @@ MainImpl::MainImpl(QWidget * parent)
     //
     dockExplorer->setFloating( false );
     dockOutputs->setFloating( false );
+    dockCallsStack->setFloating( false );
     //
     dockExplorer->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
     addDockWidget(Qt::LeftDockWidgetArea, dockExplorer);
     //
-    m_stack = new StackImpl( this );
-    m_stack->hide();
+    m_stack = new StackImpl(this, callStacks);
     //
     treeClasses->setCtagsName( m_ctagsName );
     logBuild->setMainImpl( this );
@@ -339,7 +341,6 @@ void MainImpl::createConnections()
     connect(actionUncomment, SIGNAL(triggered()), this, SLOT(slotUncomment()) );
     connect(actionParameters, SIGNAL(triggered()), this, SLOT(slotParameters()) );
     connect(actionGotoMatchingBracket, SIGNAL(triggered()), this, SLOT(slotGotoMatchingBracket()) );
-    connect(actionBacktraces, SIGNAL(triggered()), this, SLOT(slotBacktraces()) );
     connect(addDebugVariable, SIGNAL(clicked()), this, SLOT(slotAddDebugVariable()) );
     connect(removeDebugVariable, SIGNAL(clicked()), this, SLOT(slotRemoveDebugVariable()) );
     connect(actionPrint, SIGNAL(triggered()), this, SLOT(slotPrint()) );
@@ -1788,13 +1789,14 @@ bool MainImpl::slotDebug(bool executeOnly)
     actionStopDebug->setIcon( QIcon(":/toolbar/images/pause.png") );
     actionStopDebug->setEnabled( !executeOnly );
     logDebug->clear();
+    registersImpl->registers(QString());
     dockOutputs->setVisible(true);
     tabOutputs->setCurrentIndex( 1 );
     Parameters parameters = m_projectManager->parameters();
     if ( parameters.workingDirectory.isEmpty() )
         parameters.workingDirectory = m_projectManager->projectDirectoryOfExecutable();
     m_stack->setDirectory( m_projectManager->projectDirectoryOfExecutable() );
-    m_debug = new Debug(this, m_gdbName, parameters, exeName, executeOnly);
+    m_debug = new Debug(this, registersImpl, m_gdbName, parameters, exeName, executeOnly);
     if ( !executeOnly )
     {
         foreach(Editor *editor, allEditors() )
@@ -1819,6 +1821,7 @@ bool MainImpl::slotDebug(bool executeOnly)
 //
 void MainImpl::slotDebugVariables( QList<Variable> list)
 {
+    m_stack->clear();
     while ( tableLocalVariables->rowCount() )
         tableLocalVariables->removeRow(0);
     foreach(Variable var, list )
@@ -1899,6 +1902,10 @@ void MainImpl::slotMessagesDebug(QString message)
     {
         m_stack->infoSources( message );
     }
+    else if ( message.indexOf( "Registers" ) == 0 )
+    {
+        registersImpl->registers( message );
+    }
     else if ( message.indexOf( "Breakpoint" ) == 0 )
     {
         // Nothing
@@ -1948,13 +1955,6 @@ void MainImpl::slotStepOut()
     emit debugCommand("finish\n");
 }
 //
-void MainImpl::slotBacktraces()
-{
-    m_stack->list->clear();
-    m_stack->show();
-    emit debugCommand("info sources\n");
-    emit debugCommand("bt\n");
-}
 //
 void MainImpl::slotEditToGdb(QString texte)
 {
