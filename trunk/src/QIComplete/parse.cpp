@@ -165,6 +165,7 @@ QString Parse::extractTypeQualifier(const QString &str, const QString &varName)
 #define STRING      "\".*\""
 #define BRACKETEXPR "\\{.*\\}"
 //#define IDENT       "[a-zA-Z_][a-zA-Z0-9_]*"
+//#define IDENT       "[a-zA-Z_:][a-zA-Z0-9_:]*"
 #define IDENT       "[a-zA-Z_:][a-zA-Z0-9_:]*"
 #define WS          "[ \t\r\n]*"
 #define PTR         "[\\*&]?\\*?"
@@ -198,7 +199,7 @@ QString Parse::extractTypeQualifier(const QString &str, const QString &varName)
 			int pos2 = 0;
 			while ((pos2 = rx.indexIn(line, pos2)) != -1)
 			{
-				if( !QString("|delete|else|endif|throw|return|").contains( "|"+rx.cap(1)+"|" ) )
+				if( !QString("|delete|else|endif|throw|return|").contains( "|"+rx.cap(1)+"|" ) && rx.cap(1)!=":")
 				{
 					return rx.cap(1);
 				}
