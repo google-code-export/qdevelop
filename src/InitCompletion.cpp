@@ -753,15 +753,21 @@ Expression InitCompletion::parseLine( QString text )
     		p++;
     	if( p > 0 && !(p == 1 && simplified[begin]==')') )
     		simplified[begin]=' ';
-   	} while ( begin>0 && !QString(";{}=*/+~&|!^?:,").contains(simplified[begin]) && !( simplified[begin]=='(' && p<0) );
+   	} while ( begin>0 && !QString(";{}=*/+-~&|!^?:,").contains(simplified[begin]) 
+    		&& !(begin>0 && simplified[begin-1]=='-' && simplified[begin]=='>' )
+   			&& !( simplified[begin]=='(' && p<0) 
+   		);
 	//
 	QString word = simplified.mid(begin+1).simplified();
+//QD << word;
 	int posWord = 0;
 	while( posWord<word.length()-1 && (word.at( posWord ).isLetterOrNumber() || word.at( posWord )=='_') )
 		posWord++;
 	word = word.left(posWord);
+//QD << simplified.left(begin+1);;
 	//
-    while ( begin<simplified.length() && simplified[begin]!='.' && simplified[begin]!='>' 
+    while ( begin<simplified.length() && simplified[begin]!='.'  
+    		&& !(begin>0 && simplified[begin-1]=='-' && simplified[begin]=='>' )
     		&& !(begin>0 && simplified[begin-1]==':' && simplified[begin]==':' )
     	)
         begin++;
@@ -776,6 +782,7 @@ Expression InitCompletion::parseLine( QString text )
    	}
     else
     	className = exp.className;
+//QD << varName << className;
     //
     while ( line.indexOf('.')!=-1 || line.indexOf(">")!=-1  || line.indexOf("::")!=-1 )
     {
@@ -792,6 +799,7 @@ Expression InitCompletion::parseLine( QString text )
         className = returned(className, function, exp);
     }
     exp.className = className;
+//QD << className;
     return exp;
 }
 //

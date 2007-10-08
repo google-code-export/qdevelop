@@ -58,6 +58,7 @@ SET( qdevelop_UIS
 	ui/parameters.ui
 	ui/projectpropertie.ui
 	ui/promptreplace.ui
+	ui/registers.ui
 	ui/replace.ui
 	ui/shortcuts.ui
 	ui/stack.ui
@@ -98,6 +99,7 @@ SET( qdevelop_SRCS
 	src/projectmanager.cpp
 	src/projectpropertieimpl.cpp
 	src/promptreplaceimpl.cpp
+	src/registersimpl.cpp
 	src/replaceimpl.cpp
 	src/selectionborder.cpp
 	src/shortcutsimpl.cpp
@@ -133,6 +135,7 @@ SET( qdevelop_MOC_HDRS
 	src/projectmanager.h
 	src/projectpropertieimpl.h
 	src/promptreplaceimpl.h
+	src/registersimpl.h
 	src/replaceimpl.h
 	src/shortcutsimpl.h
 	src/stackimpl.h
