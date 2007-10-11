@@ -58,15 +58,12 @@ void AddNewImpl::slotDirectoryChoice()
 	location->setText( s );	
 }
 //
-void AddNewImpl::slotComboProjects(QString projectName)
+void AddNewImpl::slotComboProjects(QString /*projectName*/)
 {
 	QVariant variant = comboProjects->itemData( comboProjects->currentIndex() );
 	QTreeWidgetItem *item = (QTreeWidgetItem*)(variantToItem( variant ) );
 	m_projectDirectory = m_projectManager->projectDirectory( item );
 	location->setText( m_projectDirectory );
-
-	// TODO remove gcc warnings
-	projectName.isNull();
 }
 //
 void AddNewImpl::slotFileType()

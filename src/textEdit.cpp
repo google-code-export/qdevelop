@@ -121,7 +121,6 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     
     connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));
     connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
-    connect( document(), SIGNAL( contentsChange(int, int, int) ), this, SLOT( slotContentsChange(int, int, int) ));
     connect(this, SIGNAL(initParse(InitCompletion::Request, QString, QString, bool, bool, bool, QString)), m_completion, SLOT(slotInitParse(InitCompletion::Request, QString, QString, bool, bool, bool, QString)) );
     actionToggleBreakpoint = new QAction(this);
     actionToggleBreakpoint->setShortcut( Qt::Key_F9 );
@@ -151,14 +150,6 @@ void TextEdit::setBackgroundColor( QColor c )
     pal.setColor(QPalette::Base, m_backgroundColor);
     setPalette( pal );
     viewport()->update();
-}
-//
-void TextEdit::slotContentsChange ( int position, int charsRemoved, int charsAdded )
-{
-    // TODO remove gcc warnings
-    position = 0;
-    charsRemoved = 0;
-    charsAdded = 0;
 }
 //
 void TextEdit::setCurrentLineColor( QColor c )

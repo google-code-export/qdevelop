@@ -73,11 +73,8 @@ void SelectionBorder::mouseMoveEvent ( QMouseEvent * event )
 	m_textEdit->selectLines(m_begin, m_end);	
 }
 //
-void SelectionBorder::mouseReleaseEvent ( QMouseEvent * event )
-{
-	// TODO remove gcc warnings
-	event = NULL;
-}
+void SelectionBorder::mouseReleaseEvent ( QMouseEvent * /*event*/ )
+{}
 //
 //
 void SelectionBorder::setBackgroundColor( const QColor& c )
