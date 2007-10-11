@@ -1951,12 +1951,6 @@ QStringList ProjectManager::buildableProjectsDirectories()
     return list;
 }
 //
-void ProjectManager::parseFile(QString file)
-{
-    // TODO remove gcc warnings
-    file.isNull();
-}
-//
 QString ProjectManager::projectVersion(QTreeWidgetItem *it)
 {
     QTreeWidgetItem *itConfig = 0;

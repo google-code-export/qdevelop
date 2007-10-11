@@ -102,7 +102,6 @@ private:
 	// Methods
 	void loadProject(QString s, QTreeWidgetItem *newProjectItem);
 	QString findExecutable( QString projectDirectory, QString preferedVersion );
-	void parseFile(QString file);
 	QString projectVersion(QTreeWidgetItem *it);
 	QTreeWidgetItem *item(QTreeWidgetItem *begin, QString name, findMode type);
 	bool saveDataOfProject(QTreeWidgetItem *item, QTextStream *s, int nbSpace=-1, QString endOfLine="");

@@ -959,6 +959,7 @@ bool MainImpl::slotCloseAllFiles()
         else
             delete editor;
     }
+    slotUpdateOtherFileActions();
     return ok;
 }
 
@@ -1171,6 +1172,7 @@ void MainImpl::slotCloseCurrentTab()
     if ( editor && !editor->close() )
         return;
     delete editor;
+    slotUpdateOtherFileActions();
 }
 //
 void MainImpl::closeTab(int numTab)
@@ -1179,6 +1181,7 @@ void MainImpl::closeTab(int numTab)
     if ( editor && !editor->close() )
         return;
     delete editor;
+    slotUpdateOtherFileActions();
 }
 //
 void MainImpl::closeOtherTab(int numTab)
@@ -1197,6 +1200,7 @@ void MainImpl::closeOtherTab(int numTab)
             delete editor;
         }
     }
+    slotUpdateOtherFileActions();
 }
 //
 void MainImpl::slotClearAllBookmarks()
@@ -1329,6 +1333,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
         connect(editor, SIGNAL(breakpoint(QString, bool, unsigned int, QString)), m_debug, SLOT(slotBreakpoint(QString, bool, unsigned int, QString)) );
     setCurrentFile(s);
     slotCurrentTabChanged( m_tabEditors->currentIndex() );
+    slotUpdateOtherFileActions();
 
     QApplication::restoreOverrideCursor();
     return editor;

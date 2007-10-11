@@ -120,15 +120,12 @@ void AddExistantImpl::slotFilesChoice()
 	filename->setText( line );	
 }
 //
-void AddExistantImpl::slotComboProjects(QString projectName)
+void AddExistantImpl::slotComboProjects(QString /*projectName*/)
 {
 	QVariant variant = comboProjects->itemData( comboProjects->currentIndex() );
 	//QTreeWidgetItem *item = reinterpret_cast<QTreeWidgetItem*>(variant.toUInt());
 	QTreeWidgetItem *item = (QTreeWidgetItem*)variantToItem(variant);
 	m_projectDirectory = m_projectManager->projectDirectory( item );
-
-	// TODO remove gcc warnings
-	projectName.isNull();
 }
 //
 

@@ -583,9 +583,6 @@ void TreeClasses::toDB(QString projectDirectory)
     }
     query.exec("END TRANSACTION;");
     QApplication::restoreOverrideCursor();
-
-    // TODO remove gcc warnings
-    projectDirectory.isNull();
 }
 //
 void TreeClasses::writeItemsInDB(const QTreeWidgetItem *it, QString parents, QSqlQuery query, QString projectDirectory)
@@ -682,7 +679,7 @@ void TreeClasses::fromDB(QString projectDirectory)
 }
 //
 //
-void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QString tooltip, QString parents, ParsedItem parsedItem)
+void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QString /*tooltip*/, QString parents, ParsedItem parsedItem)
 {
     if ( !parent )
     {
@@ -716,9 +713,6 @@ void TreeClasses::createItemFromDB(QTreeWidgetItem *parent, QString text, QStrin
     QVariant v;
     v.setValue( parsedItem );
     it->setData(0, Qt::UserRole, v );
-
-    // TODO remove gcc warnings
-    tooltip.isNull();
 }
 //
 void TreeClasses::mouseDoubleClickEvent ( QMouseEvent * event )

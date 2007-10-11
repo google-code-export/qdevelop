@@ -382,7 +382,7 @@ void ProjectPropertieImpl::slotAccept()
     accept();
 }
 //
-void ProjectPropertieImpl::slotCurrentItemChanged ( QListWidgetItem * current, QListWidgetItem * previous )
+void ProjectPropertieImpl::slotCurrentItemChanged ( QListWidgetItem * current, QListWidgetItem * /*previous*/ )
 {
     valuesList->clear();
     if ( !current )
@@ -394,10 +394,6 @@ void ProjectPropertieImpl::slotCurrentItemChanged ( QListWidgetItem * current, Q
         valuesList->addItem( item->child( nb )->text(0) );
         valuesList->item( valuesList->count()-1 )->setData(Qt::UserRole, addressToVariant(item->child( nb ) ) );
     }
-
-    // TODO remove gcc warnings
-    previous = NULL;
-
 }
 //
 void ProjectPropertieImpl::slotAddVariable()

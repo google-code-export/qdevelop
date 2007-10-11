@@ -35,7 +35,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	bool color, int tab, bool enr, bool res,
 	QTextCharFormat pre, QTextCharFormat qt, QTextCharFormat commSimples, 
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
-    QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
+    QTextCharFormat cles, bool /*autoMask*/, int end, bool spaces, bool complete, 
     QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool tc, int in, QString directory,
     bool m, QColor mc, bool close, QString pd, QString mo, int mi, QString ic, 
     bool editorToolbars, bool whiteSpaces, QString docDirectory, QColor textCol )
@@ -135,9 +135,6 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 
     findCodecs();
     setCodecList(codecs, mi);
-
-	// TODO remove gcc warnings
-	autoMask = false;
 }
 //
 QFont OptionsImpl::font() 
