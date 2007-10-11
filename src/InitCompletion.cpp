@@ -608,6 +608,8 @@ void InitCompletion::populateQtDatabase()
             tag.returned = tag.returned.section("const ", 1);
         if ( tag.returned.startsWith("QT3_SUPPORT ") )
             tag.returned = tag.returned.section("QT3_SUPPORT ", 1);
+        if ( tag.returned.startsWith("virtual ") )
+            tag.returned = tag.returned.section("virtual ", 1);
         tag.returned = tag.returned.section(" ", 0, 0);
         if ( tag.returned.contains("<") )
             tag.returned = tag.returned.section("<", 0, 0);
@@ -753,19 +755,21 @@ Expression InitCompletion::parseLine( QString text )
     		p++;
     	if( p > 0 && !(p == 1 && simplified[begin]==')') )
     		simplified[begin]=' ';
-   	} while ( begin>0 && !QString(";{}=*/+-~&|!^?:,").contains(simplified[begin]) 
-    		&& !(begin>0 && simplified[begin-1]=='-' && simplified[begin]=='>' )
-   			&& !( simplified[begin]=='(' && p<0) 
-   		);
+    	if( QString(";{}=*/+~&|!^?:,").contains(simplified[begin]) )
+    		break;
+    	else if( begin<simplified.length()-1 && simplified[begin]=='-' && simplified[begin+1]!='>' )
+    		break;
+    	else if( ( simplified[begin]=='(' && p<0) )
+    		break;
+   	} while(begin>0);
 	//
 	QString word = simplified.mid(begin+1).simplified();
-//QD << word;
 	int posWord = 0;
 	while( posWord<word.length()-1 && (word.at( posWord ).isLetterOrNumber() || word.at( posWord )=='_') )
 		posWord++;
 	word = word.left(posWord);
-//QD << simplified.left(begin+1);;
 	//
+//QD << simplified.left(begin+1);
     while ( begin<simplified.length() && simplified[begin]!='.'  
     		&& !(begin>0 && simplified[begin-1]=='-' && simplified[begin]=='>' )
     		&& !(begin>0 && simplified[begin-1]==':' && simplified[begin]==':' )
@@ -799,7 +803,6 @@ Expression InitCompletion::parseLine( QString text )
         className = returned(className, function, exp);
     }
     exp.className = className;
-//QD << className;
     return exp;
 }
 //
@@ -807,6 +810,10 @@ QString InitCompletion::returned(QString className, QString function, Expression
 {
     QStringList classes;
     classes << className;
+    if ( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
+    {
+        return QString();
+    }
     classes = inheritanceList(className, classes);
     //
 	function = function.section("(", 0, 0).simplified();
