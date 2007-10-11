@@ -49,7 +49,6 @@ void RegistersImpl::on_applyButton_clicked()
 	QString command;
 	for(int row=0; row<tableWidget->rowCount(); row++ )
 	{
-		QTableWidgetItem *item = tableWidget->item(row, 0);
 		QString name = tableWidget->item(row, 0)->text();
 		QString value1 = tableWidget->item(row, 1)->text();
 		command += "set $" + name + "=" + value1 + "\n";

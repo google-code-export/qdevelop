@@ -1224,23 +1224,16 @@ void TextEdit::key_home()
     QTextCursor cursor = textCursor();
     QTextBlock b = cursor.block();
     QString s = b.text();
-    int col = cursor.columnNumber();
-    int firstWordCol = cursor.columnNumber();
+    int firstWord = 0, oldPos = cursor.columnNumber(); // save the old position, it's used later
 
-    cursor.movePosition(QTextCursor::StartOfLine);
-    if ( firstWordCol < s.length())
-    {
-        while ( s.at(firstWordCol) == ' ' || s.at(firstWordCol) == '\t' )
-        {
-             cursor.movePosition(QTextCursor::NextCharacter);
-             firstWordCol++;
-        }
-        if ( col > 0 &&   col == firstWordCol )
-        {
-                cursor.movePosition(QTextCursor::StartOfLine);
-        }
+    cursor.movePosition( QTextCursor::StartOfLine );
+    while ( s.at(firstWord) == ' ' || s.at(firstWord) == '\t' ) { // while determining the first word, move the cursor to the right - if we encounter that it already was in front of the first word, it'll be moved back later
+         ++firstWord;
+         cursor.movePosition( QTextCursor::NextCharacter );
     }
 
+    if (oldPos <= firstWord) // if tha cursor was in front of the first word, move it back
+        cursor.movePosition( QTextCursor::StartOfLine );
     setTextCursor( cursor );
 }
 
@@ -1386,6 +1379,7 @@ void TextEdit::slotUnindent()
 //
 void TextEdit::mouseDoubleClickEvent( QMouseEvent * event )
 {
+#if 0
     mousePosition = event->pos();
     QTextCursor cursor = textCursor();
     int pos = cursor.position();
@@ -1398,6 +1392,8 @@ void TextEdit::mouseDoubleClickEvent( QMouseEvent * event )
         pos++;
     cursor.setPosition(pos, QTextCursor::KeepAnchor);
     setTextCursor( cursor );
+#endif
+    QTextEdit::mouseDoubleClickEvent(event);
 }
 //
 void TextEdit::setExecutedLine(int line)
