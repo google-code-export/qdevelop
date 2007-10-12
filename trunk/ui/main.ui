@@ -28,7 +28,7 @@
      <x>0</x>
      <y>0</y>
      <width>686</width>
-     <height>29</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_Edit" >
@@ -173,6 +173,7 @@
      </property>
     </widget>
     <addaction name="menuToolbar" />
+    <addaction name="actionEditor_mode" />
    </widget>
    <widget class="QMenu" name="menuTools" >
     <property name="title" >
@@ -1690,6 +1691,17 @@
    </property>
    <property name="text" >
     <string>Show Maximized</string>
+   </property>
+  </action>
+  <action name="actionEditor_mode" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>&amp;Editor mode</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+E</string>
    </property>
   </action>
  </widget>
