@@ -1167,9 +1167,9 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
             QTextEdit::keyPressEvent ( event );
         }
     }
-    else if ( event->key() == Qt::Key_Home && !event->modifiers() )
+    else if ( event->key() == Qt::Key_Home && ( !event->modifiers() || event->modifiers() == Qt::ShiftModifier ) )
     {
-        key_home();
+        key_home( event->modifiers() == Qt::ShiftModifier );
     }
     else if ( m_autoindent && event->key() == '{' || event->key() == '}' )
     {
@@ -1210,21 +1210,22 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
     event->accept();
 }
 //
-void TextEdit::key_home()
+void TextEdit::key_home(bool shift)
 {
     QTextCursor cursor = textCursor();
     QTextBlock b = cursor.block();
     QString s = b.text();
+    QTextCursor::MoveMode moveMode = (shift ? QTextCursor::KeepAnchor : QTextCursor::MoveAnchor);
     int firstWord = 0, oldPos = cursor.columnNumber(); // save the old position, it's used later
 
-    cursor.movePosition( QTextCursor::StartOfLine );
+    cursor.movePosition( QTextCursor::StartOfLine, moveMode );
     while ( s.at(firstWord) == ' ' || s.at(firstWord) == '\t' ) { // while determining the first word, move the cursor to the right - if we encounter that it already was in front of the first word, it'll be moved back later
          ++firstWord;
-         cursor.movePosition( QTextCursor::NextCharacter );
+         cursor.movePosition( QTextCursor::NextCharacter, moveMode );
     }
 
     if (oldPos <= firstWord) // if tha cursor was in front of the first word, move it back
-        cursor.movePosition( QTextCursor::StartOfLine );
+        cursor.movePosition( QTextCursor::StartOfLine, moveMode );
     setTextCursor( cursor );
 }
 
