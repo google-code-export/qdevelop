@@ -2396,3 +2396,13 @@ void MainImpl::slotUpdateOtherFileActions()
         actionOtherFile->setVisible(false);
     }
 }
+
+void MainImpl::on_actionEditor_mode_triggered()
+{
+	QWidget *w;
+	bool editMode = actionEditor_mode->isChecked();
+	QList<QDockWidget*> dockWidgets = findChildren<QDockWidget*>();
+	
+	foreach( w, dockWidgets )
+		w->setVisible( ! editMode );
+}

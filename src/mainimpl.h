@@ -248,6 +248,7 @@ private slots:
 	void slotMethodsList();
 	void slotNewQtVersion();
 	void slotUpdateOtherFileActions();
+	void on_actionEditor_mode_triggered();
 public slots:
 	void slotBuildQtDatabaseEnded();
 	void slotShowMessage(QString message);
