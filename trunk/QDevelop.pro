@@ -118,7 +118,6 @@ SOURCES += src/InitCompletion.cpp \
  src/treeclasses.cpp \
  src/treeproject.cpp \
  src/registersimpl.cpp
-TARGET = QDevelop
 TEMPLATE = app
 TRANSLATIONS += resources/translations/QDevelop_Chinese.ts \
  resources/translations/QDevelop_Czech.ts \
@@ -135,13 +134,20 @@ TRANSLATIONS += resources/translations/QDevelop_Chinese.ts \
  resources/translations/QDevelop_Vietnamese.ts
 UI_DIR += build/ui
 macx {
+ TARGET = QDevelop
  ICON +=  resources/images/qdevelop.icns
  OBJECTS_DIR +=  build/o/mac
 }
 unix {
+ TARGET = qdevelop
  OBJECTS_DIR +=  build/o/unix
+ target.path +=  /usr/bin/
 }
+
 win32 {
+ TARGET = QDevelop
  OBJECTS_DIR +=  build/o/win32
  CONFIG -=  debug_and_release
 }
+
+INSTALLS += target
