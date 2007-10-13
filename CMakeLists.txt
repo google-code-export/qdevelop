@@ -61,7 +61,6 @@ SET( qdevelop_UIS
 	ui/registers.ui
 	ui/replace.ui
 	ui/shortcuts.ui
-	ui/stack.ui
 	ui/subclassing.ui
 	ui/toolsControl.ui
 	ui/warning.ui
