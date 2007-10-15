@@ -404,6 +404,8 @@ void MainImpl::createConnections()
     //
     m_buildingGroup = new QActionGroup( this );
     m_buildingGroup->addAction( actionCompile );
+    m_buildingGroup->addAction( actionQmake );
+    m_buildingGroup->addAction( actionClean );
     m_buildingGroup->addAction( actionBuild );
     m_buildingGroup->addAction( actionRebuild );
     m_buildingGroup->addAction( actionExecuteWithoutDebug );

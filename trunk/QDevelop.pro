@@ -142,6 +142,7 @@ unix {
  TARGET = qdevelop
  OBJECTS_DIR +=  build/o/unix
  target.path +=  /usr/bin/
+ INSTALLS += target
 }
 
 win32 {
@@ -149,5 +150,3 @@ win32 {
  OBJECTS_DIR +=  build/o/win32
  CONFIG -=  debug_and_release
 }
-
-INSTALLS += target
