@@ -126,7 +126,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	connect(text, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(lineColor, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(matching, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
-	connect(defaults, SIGNAL(clicked()), this, SLOT(slotDefault()));
+	connect((QObject *)buttonBox->button(QDialogButtonBox::RestoreDefaults), SIGNAL(clicked()), this, SLOT(slotDefault())); // I don't know why the cast to QObject * is necessary, but gcc doesn't compile without it
 	connect(chooseProjectsDirectory, SIGNAL(clicked()), this, SLOT(slotChooseProjectsDirectory()));
 	connect(choosePluginsDirectory, SIGNAL(clicked()), this, SLOT(slotChoosePluginsDirectory()));
 	connect(chooseIncludeDirectory, SIGNAL(clicked()), this, SLOT(slotChooseIncludeDirectory()));
