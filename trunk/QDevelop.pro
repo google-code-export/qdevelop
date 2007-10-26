@@ -1,8 +1,4 @@
-CONFIG += qt \
- release \
- uitools \
- warn_on \
- console
+CONFIG += qt release uitools warn_on
 DESTDIR += bin
 FORMS += ui/about.ui \
  ui/addexistant.ui \
