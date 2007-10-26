@@ -54,7 +54,7 @@
          </property>
         </spacer>
        </item>
-       <item row="5" column="0" >
+       <item row="6" column="0" >
         <layout class="QGridLayout" >
          <property name="margin" >
           <number>0</number>
@@ -185,13 +185,20 @@
         </widget>
        </item>
        <item row="3" column="0" >
+        <widget class="QCheckBox" name="compileAuto" >
+         <property name="text" >
+          <string>Automatic Compilation</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" >
         <widget class="QCheckBox" name="closeButton" >
          <property name="text" >
           <string>Close button in each tab (not work with all styles)</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0" >
+       <item row="5" column="0" >
         <layout class="QHBoxLayout" >
          <property name="margin" >
           <number>0</number>

@@ -45,6 +45,8 @@ class TextEdit : public QTextEdit
 {
     Q_OBJECT
 public:
+	QString tempFilename();
+	void saveAsTemp();
     TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completion);
     ~TextEdit();
     bool open(bool silentMode, QString filename, QDateTime &lastModified);

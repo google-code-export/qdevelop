@@ -48,6 +48,10 @@
         <file>images/window_fullscreen.png</file>
         <file>images/window_nofullscreen.png</file>
         <file>images/logoeditor.png</file>
+        <file>images/error.png</file>
+        <file>images/warning.png</file>        
+        <file>images/empty-16x16.png</file>
+
    </qresource>
     <qresource prefix="/templates" >
         <file>templates/dialog.ui</file>

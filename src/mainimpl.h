@@ -51,6 +51,7 @@ class MainImpl : public QMainWindow, Ui::Main
 {
 Q_OBJECT
 public:
+	void automaticCompilationState(int state);
 	QList<Editor *> allEditors();
 	MainImpl(QWidget * parent = 0);
 	~MainImpl();
@@ -88,7 +89,6 @@ public:
 	void checkQtDatabase();
 	InitCompletion* buildQtDatabase() { return m_buildQtDatabase; }
 private:
-	QColor m_textColor;
 	// Functions
 	void createConnections();
 	void updateActionsRecentsFiles();
@@ -100,6 +100,8 @@ private:
 	void setCrossButton(bool activate);
 	bool modifiedEditors();
 	// Objects and Variables
+	bool m_automaticCompilation;
+	QColor m_textColor;
 	bool m_buildQtDatabaseAsked;
 	Build *m_builder;
 	Debug *m_debug;
@@ -178,7 +180,6 @@ private slots:
 	void slotSaveFileAs();
 	bool slotSaveAll();
 	void slotBuild(bool clean=false, bool build=true, bool forceQmake=false);
-	void slotCompile();
 	void slotNewProject();
 	void slotRebuild();
 	void slotStopBuild();
@@ -250,6 +251,7 @@ private slots:
 	void slotUpdateOtherFileActions();
 	void on_actionEditor_mode_triggered();
 public slots:
+	void slotCompile(bool automaticCompilation=false);
 	void slotBuildQtDatabaseEnded();
 	void slotShowMessage(QString message);
 	void slotDoubleClickTreeFiles(QTreeWidgetItem *item, int);

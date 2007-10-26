@@ -46,6 +46,7 @@
 #include "cpphighlighter.h"
 #include <QTextDocumentFragment>
 #include <QFileInfo>
+#include <QDir>
 #include <QDebug>
 
 
@@ -224,6 +225,7 @@ void Editor::slotTimerUpdateClasses()
     {
         m_checksum = check;
         emit updateClasses( filename(), m_textEdit->toPlainText());
+        m_mainimpl->slotCompile(true);
     }
     if( m_textEdit->hasFocus() )
     	m_textEdit->setMouseHidden( true );
@@ -588,7 +590,6 @@ void Editor::toggleBookmark(int line)
         blockUserData->breakpoint = false;
         blockUserData->bookmark = false;
         blockUserData->block = cursor.block();
-
     }
     blockUserData->bookmark = !blockUserData->bookmark;
     cursor.block().setUserData( blockUserData );
@@ -798,3 +799,112 @@ void Editor::setTextColor(QColor textColor)
 {
 	m_textEdit->setTextColor(textColor);
 }
+//
+void Editor::slotMessagesBuild(QString list, QString directory)
+{
+    /*  If your language is not translated in QDevelop and if g++ display the errors and warnings in your language, 
+    modify the two strings below "error" and "warning" to adapt in your language.*/
+    bool messageContainsWarnings = false;
+    bool messageContainsErrors = false;
+    foreach(QString message, list.split("\n"))
+    {
+        if ( !message.isEmpty() )
+        {
+        	bool error = false;
+            message.remove( "\r" );
+		    QString filename = message.section(":", 0, 0).replace("\\", "/").replace("//", "/");
+		    int numLine = message.section(":", 1, 1).toInt();
+		    if ( numLine == 0 )
+		        continue;
+		    QString absoluteName = QDir(directory+"/"+filename).absolutePath();
+            if ( (message.toLower().contains("error") || message.toLower().contains( tr("error").toLower() ))
+            	&& !message.contains("------") )
+            {
+                // Error
+                error = true;
+                messageContainsErrors = true;
+                if( message.toLower().contains("error") )
+		            message = message.section("error", 1).simplified();
+		        else if( message.toLower().contains( tr("error").toLower() ) )
+		            message = message.section(tr("error"), 1).simplified();
+            }
+            else if ( message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ) )
+            {
+                // Warning
+                error = false;
+                messageContainsWarnings = true;
+                if( message.toLower().contains("warning") )
+		            message = message.section("warning", 1).simplified();
+		        else if( message.toLower().contains( tr("warning").toLower() ) )
+		            message = message.section(tr("warning"), 1).simplified();
+            }
+            if( message.startsWith(":") )
+            	message = message.section(":", 1);
+		    int line = 1;
+		    for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next(), line++ )
+		    {
+		    	if( line != numLine )
+		    		continue;
+		        BlockUserData *blockUserData = (BlockUserData*)block.userData();
+			    if ( !blockUserData )
+			    {
+			        blockUserData = new BlockUserData();
+			        blockUserData->breakpoint = false;
+			        blockUserData->bookmark = false;
+			        blockUserData->block = block;
+			    }
+			    if( error )
+	        		blockUserData->errorString += message + "\n";
+	        	else
+	        		blockUserData->warningString += message + "\n";
+			    block.setUserData( blockUserData );
+			    break;
+		    }
+        }
+    }
+    m_textEdit->lineNumbers()->update();
+	int state = 0;
+    for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next() )
+    {
+	    BlockUserData *blockUserData = (BlockUserData*)block.userData();
+	    if ( !blockUserData )
+	    {
+	        blockUserData = new BlockUserData();
+	        blockUserData->breakpoint = false;
+	        blockUserData->bookmark = false;
+	        blockUserData->block = block;
+	    }
+	    if( blockUserData && !blockUserData->errorString.isEmpty() )
+	    {
+	    	state = 2;
+	    	break;
+    	}
+	    else if( blockUserData && !blockUserData->warningString.isEmpty() )
+	    	state = 1;
+    }
+   	m_mainimpl->automaticCompilationState( state );
+}
+
+
+void Editor::clearErrorsAndWarnings()
+{
+    int line = 1;
+    for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next(), line++ )
+    {
+        BlockUserData *blockUserData = (BlockUserData*)block.userData();
+        if ( blockUserData  )
+        {
+        	blockUserData->errorString = "";
+        	blockUserData->warningString = "";
+		    block.setUserData( blockUserData );
+       	}
+    }
+    m_textEdit->lineNumbers()->update();
+}
+
+
+void Editor::slotEndBuild()
+{
+	QFile::remove( tempFilename() );
+}
+

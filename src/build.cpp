@@ -27,6 +27,7 @@
 #include <QFileInfo>
 #include <QString>
 #include <QDir>
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
 //
 Build::Build(QObject * parent, QString qmakeName, QString makeName, QString makeOptions, QString absoluteProjectName, bool qmake, bool n, bool g, QString compileFile)
 
@@ -128,10 +129,16 @@ QString Build::buildOnly( QString sourceFile )
 {
 	if( sourceFile.isEmpty() )
 		return QString();
+	bool automaticCompilation = false;
+	if( sourceFile.endsWith("-qdeveloptmp.cpp") )
+	{
+		sourceFile = sourceFile.section("-qdeveloptmp.cpp",0 ,0)+".cpp";
+		automaticCompilation = true;
+	}
 	QString objectFile = sourceFile.mid(0, sourceFile.lastIndexOf("."))+".o";
 #ifndef WIN32
-	QString name = QDir( m_projectDirectory ).relativeFilePath( sourceFile ); 
-	return m_makeName+" "+ name.mid(0, name.lastIndexOf("."))+".o";
+	//QString name = QDir( m_projectDirectory ).relativeFilePath( sourceFile ); 
+	//return m_makeName+" "+ name.mid(0, name.lastIndexOf("."))+".o";
 #endif
 	QString shortObjectFile = objectFile;
 	if( !objectFile.section("/", -1, -1).isEmpty() )
@@ -144,8 +151,8 @@ QString Build::buildOnly( QString sourceFile )
 	while (!makefile.atEnd()) 
 	{
 		QString line = QString( makefile.readLine() );
-		// Partie concernant le fichier Makefile appelant sous Windows Makefile.Debug ou Makefile.Release.
-		// Sans objet sous Linux
+		// This block is for Windows where the Makefile include Makefile.Debug or Makefile.Release.
+		// Not used under Linux
 		if( line.section(" ", 0, 0).simplified() == "first:" && (line.section(" ", 1, 1).simplified()=="debug" || line.section(" ", 1, 1).simplified()=="release"))
 			target = line.section(" ", 1, 1).simplified();
 		if( line.section("=", 0, 0).simplified() == "MAKEFILE" )
@@ -179,6 +186,12 @@ QString Build::buildOnly( QString sourceFile )
 			break;
 		}
 
+	}
+	if( automaticCompilation )
+	{
+		QString s = sourceFile.section(".cpp", 0, 0).section("/", -1);
+		directives.replace(s+".o", s+"-qdeveloptmp.o");
+		directives.replace(s+".cpp", s+"-qdeveloptmp.cpp");
 	}
 	return directives;
 }

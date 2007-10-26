@@ -62,6 +62,8 @@ public:
 	bool breakpoint;
 	QString breakpointCondition;
 	bool isTrue;
+	QString errorString;
+	QString warningString;
 	QTextBlock block;
 };
 //
@@ -71,6 +73,7 @@ Q_OBJECT
 protected slots:
 	//void closeEvent(QCloseEvent * event);
 public:
+	void clearErrorsAndWarnings();
 	void setTextColor(QColor textColor);
 	Editor(TabWidget *parent, MainImpl *mainimpl, InitCompletion *completion, QString name="");
 	~Editor();
@@ -96,6 +99,7 @@ public:
 	void setMatchingColor( QColor c ){ m_textEdit->setMatchingColor(c); };
 	void setShowWhiteSpaces( bool b ){ m_textEdit->setShowWhiteSpaces( b ); }
 	void gotoMatchingBracket(){ m_textEdit->gotoMatchingBracket(); };
+	QString tempFilename(){ return m_textEdit->tempFilename(); };
 	void displayEditorToolbar( bool b );
 	int currentLineNumber(){ return m_textEdit->currentLineNumber(); };
 	int currentLineNumber(QTextBlock block){ return m_textEdit->currentLineNumber(block); };
@@ -123,6 +127,7 @@ public:
 	void setVerticalScrollBar(int s) { m_textEdit->verticalScrollBar()->setValue(s); };
 	void setAutobrackets(bool b) { m_textEdit->setAutobrackets(b); };
 	void setMatch(bool b) { m_textEdit->setMatch(b); };
+	void saveAsTemp() { m_textEdit->saveAsTemp(); };
 	void setHighlightCurrentLine(bool b) { m_textEdit->setHighlightCurrentLine(b); };
 	bool isModified() { return m_textEdit->document()->isModified(); };
 	void setFocus();
@@ -146,6 +151,7 @@ public:
 	inline QString getOtherFileIcon() { return m_otherFileIcon; }
 	inline bool hasOtherFile() { return !m_nameOtherFile.isEmpty(); }
 public slots:
+	void slotEndBuild();
 	void gotoLine( int line, bool moveTop);
 	void slotComboClasses(QString text=QString());
 	void slotModifiedEditor(bool modified);
@@ -163,6 +169,7 @@ public slots:
 	void slotOtherFile();
 	void find();
 	QString selection();
+	void slotMessagesBuild(QString list, QString directory);
 	//void showMaximized();
 private slots:	
 	//void slotMaximizeButtonClicked();
