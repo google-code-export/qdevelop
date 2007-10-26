@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>535</width>
-    <height>515</height>
+    <width>527</width>
+    <height>481</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -41,18 +41,22 @@
        <property name="spacing" >
         <number>6</number>
        </property>
-       <item row="6" column="0" >
-        <spacer>
-         <property name="orientation" >
-          <enum>Qt::Vertical</enum>
+       <item row="0" column="0" >
+        <widget class="QCheckBox" name="saveAll" >
+         <property name="text" >
+          <string>Save All before Build</string>
          </property>
-         <property name="sizeHint" >
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
+         <property name="checked" >
+          <bool>false</bool>
          </property>
-        </spacer>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QCheckBox" name="compileAuto" >
+         <property name="text" >
+          <string>Automatic Compilation</string>
+         </property>
+        </widget>
        </item>
        <item row="6" column="0" >
         <layout class="QGridLayout" >
@@ -157,13 +161,10 @@
          </item>
         </layout>
        </item>
-       <item row="0" column="0" >
-        <widget class="QCheckBox" name="saveAll" >
+       <item row="2" column="0" >
+        <widget class="QCheckBox" name="promptBeforeQuit" >
          <property name="text" >
-          <string>Save All before Build</string>
-         </property>
-         <property name="checked" >
-          <bool>false</bool>
+          <string>Prompt before quit</string>
          </property>
         </widget>
        </item>
@@ -174,27 +175,6 @@
          </property>
          <property name="checked" >
           <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0" >
-        <widget class="QCheckBox" name="promptBeforeQuit" >
-         <property name="text" >
-          <string>Prompt before quit</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0" >
-        <widget class="QCheckBox" name="compileAuto" >
-         <property name="text" >
-          <string>Automatic Compilation</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0" >
-        <widget class="QCheckBox" name="closeButton" >
-         <property name="text" >
-          <string>Close button in each tab (not work with all styles)</string>
          </property>
         </widget>
        </item>
@@ -261,6 +241,26 @@
           </spacer>
          </item>
         </layout>
+       </item>
+       <item row="4" column="0" >
+        <widget class="QCheckBox" name="closeButton" >
+         <property name="text" >
+          <string>Close button in each tab (not work with all styles)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
