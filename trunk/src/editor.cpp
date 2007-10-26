@@ -28,6 +28,7 @@
 #include "replaceimpl.h"
 #include "tabwidget.h"
 #include "linenumbers.h"
+#include "logbuild.h"
 
 #include <QComboBox>
 #include <QTextCursor>
@@ -817,7 +818,7 @@ void Editor::slotMessagesBuild(QString list, QString directory)
 		    if ( numLine == 0 )
 		        continue;
 		    QString absoluteName = QDir(directory+"/"+filename).absolutePath();
-            if ( (message.toLower().contains("error") || message.toLower().contains( tr("error").toLower() ))
+            if ( (message.toLower().contains("error") || message.toLower().contains( LogBuild::tr("error").toLower() ))
             	&& !message.contains("------") )
             {
                 // Error
@@ -825,18 +826,18 @@ void Editor::slotMessagesBuild(QString list, QString directory)
                 messageContainsErrors = true;
                 if( message.toLower().contains("error") )
 		            message = message.section("error", 1).simplified();
-		        else if( message.toLower().contains( tr("error").toLower() ) )
-		            message = message.section(tr("error"), 1).simplified();
+		        else if( message.toLower().contains( LogBuild::tr("error").toLower() ) )
+		            message = message.section(LogBuild::tr("error"), 1).simplified();
             }
-            else if ( message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ) )
+            else if ( message.toLower().contains( "warning") || message.toLower().contains( LogBuild::tr("warning").toLower() ) )
             {
                 // Warning
                 error = false;
                 messageContainsWarnings = true;
                 if( message.toLower().contains("warning") )
 		            message = message.section("warning", 1).simplified();
-		        else if( message.toLower().contains( tr("warning").toLower() ) )
-		            message = message.section(tr("warning"), 1).simplified();
+		        else if( message.toLower().contains( LogBuild::tr("warning").toLower() ) )
+		            message = message.section(LogBuild::tr("warning"), 1).simplified();
             }
             if( message.startsWith(":") )
             	message = message.section(":", 1);
