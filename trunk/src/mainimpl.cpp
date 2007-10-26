@@ -747,6 +747,7 @@ void MainImpl::saveINI()
     settings.setValue("m_formatKeywords", m_formatKeywords.foreground().color().name());
     settings.setValue("m_displayEditorToolbars", m_displayEditorToolbars);
     settings.setValue("m_displayWhiteSpaces", m_displayWhiteSpaces);
+    settings.setValue("editorMode", actionEditor_mode->isChecked() );
     settings.endGroup();
 
     // Save shortcuts
@@ -797,6 +798,12 @@ void MainImpl::saveINI()
     settings.setValue("state", saveState()); // Toolbar and DockWidget state.
     settings.setValue("tabExplorer", tabExplorer->currentIndex());
     settings.endGroup();
+
+	settings.beginGroup("editormode");
+	QList<QDockWidget*> dockWidgets = findChildren<QDockWidget*>();
+	foreach( QWidget *w, dockWidgets )
+		settings.setValue( w->objectName(), toolbarStatus[w] );;
+	settings.endGroup();
 }
 //
 void MainImpl::slotNewProject()
@@ -873,6 +880,7 @@ QString MainImpl::loadINI()
     m_formatQuotationText.setForeground( QColor(settings.value("m_formatQuotationText", m_formatQuotationText.foreground().color().name()).toString() ) );
     m_formatMethods.setForeground( QColor(settings.value("m_formatMethods", m_formatMethods.foreground().color().name()).toString() ) );
     m_formatKeywords.setForeground( QColor(settings.value("m_formatKeywords", m_formatKeywords.foreground().color().name()).toString() ) );
+    actionEditor_mode->setChecked( settings.value("editorMode", actionEditor_mode->isChecked()).toBool() );
     settings.endGroup();
 
     tabExplorer->setTabEnabled( 1, m_showTreeClasses );
@@ -930,6 +938,13 @@ QString MainImpl::loadINI()
     restoreState(settings.value("state", saveState()).toByteArray()); // Toolbar and DockWidget state.
     tabExplorer->setCurrentIndex( settings.value("tabExplorer", 0).toInt() );
     settings.endGroup();
+
+	settings.beginGroup("editormode");
+	QList<QDockWidget*> dockWidgets = findChildren<QDockWidget*>();
+	foreach( QWidget *w, dockWidgets )
+		toolbarStatus[w] = settings.value(w->objectName(),w->isVisible()).toBool();
+	settings.endGroup();
+
     return projectName;
 }
 
@@ -2442,7 +2457,15 @@ void MainImpl::on_actionEditor_mode_triggered()
 	QList<QDockWidget*> dockWidgets = findChildren<QDockWidget*>();
 	
 	foreach( w, dockWidgets )
-		w->setVisible( ! editMode );
+	{
+		if (editMode)
+		{
+			toolbarStatus[w] = w->isVisible();
+			w->setVisible( false );
+		}
+		else
+			w->setVisible( toolbarStatus[w] );
+	}
 }
 
 void MainImpl::automaticCompilationState(int state)
