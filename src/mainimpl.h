@@ -169,6 +169,7 @@ private:
 	int m_mibCodec;
 	//QList<Editor *> m_maximizedEditors;
 	QAction *separatorOtherFile, *actionOtherFile;
+	QHash<QWidget*,bool> toolbarStatus;
 protected:
 	void closeEvent( QCloseEvent * event );
 private slots:
