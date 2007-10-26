@@ -48,7 +48,8 @@ LineNumbers::LineNumbers( TextEdit* edit, Editor *editor)
 	connect( m_textEdit->document()->documentLayout(), SIGNAL( update( const QRectF& ) ), this, SLOT( update() ) );
 	connect( m_textEdit->verticalScrollBar(), SIGNAL( valueChanged( int ) ), this, SLOT( update() ) );
 	m_executedLine = 0;
-	setDefaultProperties();
+	setDefaultProperties();	
+	setMouseTracking( true );
 }
 //
 void LineNumbers::paintEvent( QPaintEvent* )
@@ -103,8 +104,16 @@ void LineNumbers::paintEvent( QPaintEvent* )
 		{
 			p.drawPixmap( 3, qRound( position.y() ) -contentsY-6,QPixmap(":/divers/images/bookmark.png"));
 		}
-
+		if( blockUserData && !blockUserData->errorString.isEmpty() )
+		{
+			p.drawPixmap( width()-18, qRound( position.y() ) -contentsY-2,QPixmap(":/divers/images/error.png") );
+		}
+		else if( blockUserData && !blockUserData->warningString.isEmpty() )
+		{
+			p.drawPixmap( width()-18, qRound( position.y() ) -contentsY-2,QPixmap(":/divers/images/warning.png") );
+		}
 	}
+	p.end();
 }
 // PROPERTIES
 void LineNumbers::setDigitNumbers( int i )
@@ -162,6 +171,29 @@ void LineNumbers::setDefaultProperties()
 	setTextColor( QColor( Qt::black ) );
 	//setTextColor( QColor( "#aaaaff" ) );
 	setDigitNumbers( 4 );
+}
+void LineNumbers::mouseMoveEvent ( QMouseEvent * event )
+{
+	m_cursor = m_textEdit->cursorForPosition( event->pos() );
+	if( m_cursor.isNull() )
+	{
+		setToolTip("");
+		return;
+	}
+	BlockUserData *blockUserData = (BlockUserData*)m_cursor.block().userData();
+	QString tooltip;
+	if( blockUserData && !blockUserData->errorString.isEmpty() )
+	{
+		tooltip = blockUserData->errorString.left(blockUserData->errorString.length()-1);
+	}
+	else if( blockUserData && !blockUserData->warningString.isEmpty() )
+	{
+		tooltip = blockUserData->warningString.left(blockUserData->warningString.length()-1);
+	}
+	else
+		tooltip = "";
+	setToolTip( tooltip );
+	QWidget::mouseMoveEvent( event );
 }
 //
 void LineNumbers::mousePressEvent ( QMouseEvent * event )

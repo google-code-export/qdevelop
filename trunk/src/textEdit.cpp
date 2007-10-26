@@ -51,6 +51,7 @@
 #include <QPrinter>
 #include <QTextLayout>
 #include <QTextCodec>
+#include <QDir>
 
 #define QD qDebug() << __FILE__ << __LINE__ << ":"
 
@@ -1718,5 +1719,24 @@ void TextEdit::setTextColor(QColor c)
 	p.setColor( QPalette::Text, c );
 	setPalette(p);     
 	viewport()->update();
+}
+
+
+void TextEdit::saveAsTemp()
+{
+	QString filename = m_editor->filename().section(".cpp", 0, 0) + "-qdeveloptmp.cpp";
+    QFile file( filename );
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        return;
+    }
+    QTextStream out(&file);
+    out << toPlainText();
+    file.close();
+}
+
+QString TextEdit::tempFilename()
+{
+	return m_editor->filename().section(".cpp", 0, 0) + "-qdeveloptmp.cpp";
 }
 

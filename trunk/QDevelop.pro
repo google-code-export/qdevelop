@@ -1,4 +1,8 @@
-CONFIG += qt release uitools warn_on
+CONFIG += qt \
+ release \
+ uitools \
+ warn_on \
+ console
 DESTDIR += bin
 FORMS += ui/about.ui \
  ui/addexistant.ui \
@@ -134,19 +138,18 @@ TRANSLATIONS += resources/translations/QDevelop_Chinese.ts \
  resources/translations/QDevelop_Vietnamese.ts
 UI_DIR += build/ui
 macx {
- TARGET = QDevelop
+ TARGET =  QDevelop
  ICON +=  resources/images/qdevelop.icns
  OBJECTS_DIR +=  build/o/mac
 }
 unix {
- TARGET = qdevelop
+ TARGET =  qdevelop
  OBJECTS_DIR +=  build/o/unix
  target.path +=  /usr/bin/
- INSTALLS += target
+ INSTALLS +=  target
 }
-
 win32 {
- TARGET = QDevelop
+ TARGET =  QDevelop
  OBJECTS_DIR +=  build/o/win32
  CONFIG -=  debug_and_release
 }

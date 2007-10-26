@@ -117,6 +117,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_buildQtDatabaseAsked = false;
     m_displayEditorToolbars = true;
     m_displayWhiteSpaces = true;
+    m_automaticCompilation = true;
 
     //
     m_formatPreprocessorText.setForeground(QColor(0,128,0));
@@ -608,13 +609,14 @@ void MainImpl::slotOptions()
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
                                            m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec,
                                            m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces, m_documentationDirectory,
-                                           m_textColor
+                                           m_textColor, m_automaticCompilation
      );
 
     if ( options->exec() == QDialog::Accepted )
     {
         QApplication::setOverrideCursor(Qt::WaitCursor);
         m_showTreeClasses = options->showTreeClasses->isChecked();
+        m_automaticCompilation = options->compileAuto->isChecked();
         m_intervalUpdatingClasses = options->interval->value();
         m_font = QFont( options->font().family(), options->font().pointSize() );
         m_tabStopWidth = options->tabStopWidth->value();
@@ -707,7 +709,8 @@ void MainImpl::saveINI()
     settings.beginGroup("Options");
     settings.setValue("m_showTreeClasses", m_showTreeClasses);
     settings.setValue("m_intervalUpdatingClasses", m_intervalUpdatingClasses);
-    settings.setValue("m_font", m_font.toString());
+    settings.setValue("m_automaticCompilation", m_automaticCompilation);
+	settings.setValue("m_font", m_font.toString());
     settings.setValue("m_tabStopWidth", m_tabStopWidth);
     settings.setValue("m_cppHighlighter", m_cppHighlighter);
     settings.setValue("m_lineNumbers", m_lineNumbers);
@@ -821,6 +824,7 @@ QString MainImpl::loadINI()
     m_font.fromString(s);
     m_tabStopWidth = settings.value("m_tabStopWidth", m_tabStopWidth).toInt();
     m_cppHighlighter = settings.value("m_cppHighlighter", m_cppHighlighter).toBool();
+    m_automaticCompilation = settings.value("m_automaticCompilation", m_automaticCompilation).toBool();
     m_lineNumbers = settings.value("m_lineNumbers", m_lineNumbers).toBool();
     m_autoIndent = settings.value("m_autoIndent", m_autoIndent).toBool();
     m_autoCompletion = settings.value("m_autoCompletion", m_autoCompletion).toBool();
@@ -849,7 +853,13 @@ QString MainImpl::loadINI()
     m_displayEditorToolbars = settings.value("m_displayEditorToolbars", m_displayEditorToolbars).toBool();
     slotUpdateOtherFileActions();
     m_displayWhiteSpaces = settings.value("m_displayWhiteSpaces", m_displayWhiteSpaces).toBool();
-
+	
+	if( !QDir().exists(m_includeDirectory) )
+	{
+		QMessageBox::warning(0, 
+			"QDevelop", tr("The Include Qt directory doesn't exists,\nYou can change in Options dialog."),	tr("Ok") );
+	
+	}
     setCrossButton( !m_closeButtonInTabs );
     m_intervalUpdatingClasses = settings.value("m_intervalUpdatingClasses", m_intervalUpdatingClasses).toInt();
     if ( m_currentLineColor == Qt::black )
@@ -1477,24 +1487,48 @@ void MainImpl::slotClean()
     slotBuild(true, false);
 }
 //
-void MainImpl::slotCompile()
+void MainImpl::slotCompile(bool automaticCompilation)
 {
+	if( automaticCompilation && !m_automaticCompilation )
+		return;
     Editor *editor = currentEditor();
     if ( editor && Editor::suffixe( editor->filename() ).toLower() == "cpp" )
     {
-        m_buildingGroup->setEnabled( false );
-        logBuild->clear();
-        dockOutputs->setVisible(true);
-        if ( m_saveBeforeBuild )
+    	if( automaticCompilation )
+    	{
+    		editor->saveAsTemp();
+    		editor->clearErrorsAndWarnings();
+   		}
+    	if( !automaticCompilation )
+    	{
+        	m_buildingGroup->setEnabled( false );
+	        logBuild->clear();
+	        dockOutputs->setVisible(true);
+   		}
+        if ( m_saveBeforeBuild && !automaticCompilation)
             slotSaveAll();
-        tabOutputs->setCurrentIndex( 0 );
-        m_projectsDirectoriesList << editor->directory();
+        if ( !automaticCompilation )
+        {
+        	tabOutputs->setCurrentIndex( 0 );
+	        m_projectsDirectoriesList << editor->directory();
+       	}
         QString projectDirectory = m_projectManager->fileDirectory(editor->filename() );
-        m_builder = new Build(this, m_qmakeName, m_makeName, m_makeOptions, projectDirectory+"/", false, false, true, editor->filename());
+		QString filename = editor->filename();
+		if( automaticCompilation )
+			filename = editor->tempFilename();
+        m_builder = new Build(this, m_qmakeName, m_makeName, m_makeOptions, projectDirectory+"/", false, false, true, filename);
 
-        connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
         connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
-        connect(m_builder, SIGNAL(message(QString, QString)), logBuild, SLOT(slotMessagesBuild(QString, QString)) );
+        if( automaticCompilation )
+        {
+        	connect(m_builder, SIGNAL(finished()), editor, SLOT(slotEndBuild()) );
+       		connect(m_builder, SIGNAL(message(QString, QString)), editor, SLOT(slotMessagesBuild(QString, QString)) );
+       	}
+        else
+        {
+        	connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
+        	connect(m_builder, SIGNAL(message(QString, QString)), logBuild, SLOT(slotMessagesBuild(QString, QString)) );
+       	}
         m_builder->start();
     }
 }
@@ -2342,6 +2376,8 @@ void MainImpl::slotNewQtVersion()
 //
 void MainImpl::checkQtDatabase()
 {
+	if( !QFile::exists(ctagsName()) )
+		return;
 	actionNewQtVersion->setEnabled(false);
     m_buildQtDatabase = new InitCompletion (this, treeClasses);
     connect(m_buildQtDatabase, SIGNAL(finished()), m_buildQtDatabase, SLOT(deleteLater()) );
@@ -2408,3 +2444,14 @@ void MainImpl::on_actionEditor_mode_triggered()
 	foreach( w, dockWidgets )
 		w->setVisible( ! editMode );
 }
+
+void MainImpl::automaticCompilationState(int state)
+{
+	if( state == 2 )
+		m_tabEditors->setTabIcon(m_tabEditors->indexOf(currentEditor()), QPixmap(":/divers/images/error.png"));
+	else if( state == 1 )
+		m_tabEditors->setTabIcon(m_tabEditors->indexOf(currentEditor()), QPixmap(":/divers/images/warning.png"));
+	else
+		m_tabEditors->setTabIcon(m_tabEditors->indexOf(currentEditor()), QPixmap(":/divers/images/empty-16x16.png"));
+}
+
