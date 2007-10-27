@@ -106,11 +106,11 @@ void LineNumbers::paintEvent( QPaintEvent* )
 		}
 		if( blockUserData && !blockUserData->errorString.isEmpty() )
 		{
-			p.drawPixmap( width()-18, qRound( position.y() ) -contentsY-2,QPixmap(":/divers/images/error.png") );
+			p.drawPixmap( 3, qRound( position.y() ) -contentsY-2,QPixmap(":/divers/images/error.png") );
 		}
 		else if( blockUserData && !blockUserData->warningString.isEmpty() )
 		{
-			p.drawPixmap( width()-18, qRound( position.y() ) -contentsY-2,QPixmap(":/divers/images/warning.png") );
+			p.drawPixmap( 3, qRound( position.y() ) -contentsY-2,QPixmap(":/divers/images/warning.png") );
 		}
 	}
 	p.end();

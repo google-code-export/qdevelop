@@ -1566,6 +1566,10 @@ void MainImpl::slotBuild(bool clean, bool build, bool forceQmake)
     qmakeNeeded = m_projectManager->isModifiedProject();
     if ( m_projectsDirectoriesList.count() == 0 )
     {
+	    foreach(Editor *editor, allEditors() )
+	    {
+	    	editor->clearErrorsAndWarnings();
+    	}
         m_buildingGroup->setEnabled( false );
         logBuild->clear();
         dockOutputs->setVisible(true);
@@ -1593,6 +1597,10 @@ void MainImpl::slotBuild(bool clean, bool build, bool forceQmake)
     connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
     connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
     connect(m_builder, SIGNAL(message(QString, QString)), logBuild, SLOT(slotMessagesBuild(QString, QString)) );
+    foreach(Editor *editor, allEditors() )
+    {
+    	connect(m_builder, SIGNAL(message(QString, QString)), editor, SLOT(slotMessagesBuild(QString, QString)) );
+   	}
     m_builder->start();
 }
 //
@@ -2468,13 +2476,13 @@ void MainImpl::on_actionEditor_mode_triggered()
 	}
 }
 
-void MainImpl::automaticCompilationState(int state)
+void MainImpl::automaticCompilationState(Editor *editor, int state)
 {
 	if( state == 2 )
-		m_tabEditors->setTabIcon(m_tabEditors->indexOf(currentEditor()), QPixmap(":/divers/images/error.png"));
+		m_tabEditors->setTabIcon(m_tabEditors->indexOf(editor), QPixmap(":/divers/images/error.png"));
 	else if( state == 1 )
-		m_tabEditors->setTabIcon(m_tabEditors->indexOf(currentEditor()), QPixmap(":/divers/images/warning.png"));
+		m_tabEditors->setTabIcon(m_tabEditors->indexOf(editor), QPixmap(":/divers/images/warning.png"));
 	else
-		m_tabEditors->setTabIcon(m_tabEditors->indexOf(currentEditor()), QPixmap(":/divers/images/empty-16x16.png"));
+		m_tabEditors->setTabIcon(m_tabEditors->indexOf(editor), QPixmap(":/divers/images/empty-16x16.png"));
 }
 

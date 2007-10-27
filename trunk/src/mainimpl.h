@@ -51,7 +51,7 @@ class MainImpl : public QMainWindow, Ui::Main
 {
 Q_OBJECT
 public:
-	void automaticCompilationState(int state);
+	void automaticCompilationState(Editor *editor, int state);
 	QList<Editor *> allEditors();
 	MainImpl(QWidget * parent = 0);
 	~MainImpl();

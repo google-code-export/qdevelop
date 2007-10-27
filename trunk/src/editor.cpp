@@ -818,6 +818,10 @@ void Editor::slotMessagesBuild(QString list, QString directory)
 		    if ( numLine == 0 )
 		        continue;
 		    QString absoluteName = QDir(directory+"/"+filename).absolutePath();
+		    if( absoluteName.endsWith("-qdeveloptmp.cpp") )
+		    	absoluteName = absoluteName.section("-qdeveloptmp.cpp", 0, 0) + ".cpp";
+		    if( absoluteName != m_filename )
+		    	continue;
             if ( (message.toLower().contains("error") || message.toLower().contains( LogBuild::tr("error").toLower() ))
             	&& !message.contains("------") )
             {
@@ -840,7 +844,7 @@ void Editor::slotMessagesBuild(QString list, QString directory)
 		            message = message.section(LogBuild::tr("warning"), 1).simplified();
             }
             if( message.startsWith(":") )
-            	message = message.section(":", 1);
+            	message = message.section(":", 1).simplified();
 		    int line = 1;
 		    for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next(), line++ )
 		    {
@@ -854,9 +858,9 @@ void Editor::slotMessagesBuild(QString list, QString directory)
 			        blockUserData->bookmark = false;
 			        blockUserData->block = block;
 			    }
-			    if( error )
+			    if( error && !blockUserData->errorString.contains(message) )
 	        		blockUserData->errorString += message + "\n";
-	        	else
+	        	else if( !error && !blockUserData->warningString.contains(message) )
 	        		blockUserData->warningString += message + "\n";
 			    block.setUserData( blockUserData );
 			    break;
@@ -883,7 +887,7 @@ void Editor::slotMessagesBuild(QString list, QString directory)
 	    else if( blockUserData && !blockUserData->warningString.isEmpty() )
 	    	state = 1;
     }
-   	m_mainimpl->automaticCompilationState( state );
+   	m_mainimpl->automaticCompilationState(this, state);
 }
 
 
