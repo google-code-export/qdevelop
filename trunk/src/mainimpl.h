@@ -173,6 +173,9 @@ private:
 protected:
 	void closeEvent( QCloseEvent * event );
 private slots:
+	void slotClearAllWarningsErrors();
+	void slotPreviousWarningError();
+	void slotNextWarningError();
 	void slotQmake();
 	void slotOpen();
 	void slotOpenProject();

@@ -28,7 +28,7 @@
      <x>0</x>
      <y>0</y>
      <width>686</width>
-     <height>21</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_Edit" >
@@ -138,6 +138,7 @@
     <addaction name="separator" />
     <addaction name="actionCompile" />
     <addaction name="actionQmake" />
+    <addaction name="separator" />
    </widget>
    <widget class="QMenu" name="menu_File" >
     <property name="title" >
@@ -209,6 +210,10 @@
     <addaction name="actionSwitchHeaderSources" />
     <addaction name="actionToggleBreakpoint" />
     <addaction name="actionMethodsList" />
+    <addaction name="separator" />
+    <addaction name="actionNextWarningError" />
+    <addaction name="actionPreviousWarningError" />
+    <addaction name="actionClearAllWarningsErrors" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -1702,6 +1707,21 @@
    </property>
    <property name="shortcut" >
     <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionNextWarningError" >
+   <property name="text" >
+    <string>Next Warning/Error</string>
+   </property>
+  </action>
+  <action name="actionPreviousWarningError" >
+   <property name="text" >
+    <string>Previous Warning/Error</string>
+   </property>
+  </action>
+  <action name="actionClearAllWarningsErrors" >
+   <property name="text" >
+    <string>Clear all Warnings/Errors</string>
    </property>
   </action>
  </widget>

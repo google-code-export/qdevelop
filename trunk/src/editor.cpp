@@ -913,3 +913,34 @@ void Editor::slotEndBuild()
 	QFile::remove( tempFilename() );
 }
 
+
+void Editor::nextWarningError()
+{
+    int line = 1;
+    for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next(), line++ )
+    {
+        BlockUserData *blockUserData = (BlockUserData*)block.userData();
+        if ( line>currentLineNumber() && blockUserData && (!blockUserData->errorString.isEmpty() || !blockUserData->warningString.isEmpty()) )
+        {
+        	gotoLine(line, true);
+        	break;
+       	}
+    }
+}
+
+
+void Editor::previousWarningError()
+{
+    int line = currentLineNumber();
+    for ( QTextBlock block = m_textEdit->textCursor().block(); block.isValid(); block = block.previous(), line-- )
+    {
+        BlockUserData *blockUserData = (BlockUserData*)block.userData();
+        if ( line<currentLineNumber() && blockUserData && (!blockUserData->errorString.isEmpty() || !blockUserData->warningString.isEmpty()) )
+        {
+        	gotoLine(line, true);
+        	break;
+       	}
+    }
+}
+
+
