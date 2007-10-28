@@ -1713,10 +1713,16 @@
    <property name="text" >
     <string>Next Warning/Error</string>
    </property>
+   <property name="shortcut" >
+    <string>F4</string>
+   </property>
   </action>
   <action name="actionPreviousWarningError" >
    <property name="text" >
     <string>Previous Warning/Error</string>
+   </property>
+   <property name="shortcut" >
+    <string>Shift+F4</string>
    </property>
   </action>
   <action name="actionClearAllWarningsErrors" >
