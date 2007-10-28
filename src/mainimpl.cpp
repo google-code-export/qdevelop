@@ -348,6 +348,9 @@ void MainImpl::createConnections()
     connect(actionGotoDeclaration, SIGNAL(triggered()), this, SLOT(slotGotoDeclaration()) );
     connect(actionGotoImplementation, SIGNAL(triggered()), this, SLOT(slotGotoImplementation()) );
     connect(actionMethodsList, SIGNAL(triggered()), this, SLOT(slotMethodsList()) );
+    connect(actionNextWarningError, SIGNAL(triggered()), this, SLOT(slotNextWarningError()) );
+    connect(actionPreviousWarningError, SIGNAL(triggered()), this, SLOT(slotPreviousWarningError()) );
+    connect(actionClearAllWarningsErrors, SIGNAL(triggered()), this, SLOT(slotClearAllWarningsErrors()) );
     //
     connect(actionExternalTools, SIGNAL(triggered()), this, SLOT(slotToolsControl()) );
     connect(actionCloseCurrentEditor, SIGNAL(triggered()), this, SLOT(slotCloseCurrentTab()) );
@@ -2484,5 +2487,29 @@ void MainImpl::automaticCompilationState(Editor *editor, int state)
 		m_tabEditors->setTabIcon(m_tabEditors->indexOf(editor), QPixmap(":/divers/images/warning.png"));
 	else
 		m_tabEditors->setTabIcon(m_tabEditors->indexOf(editor), QPixmap(":/divers/images/empty-16x16.png"));
+}
+
+
+void MainImpl::slotNextWarningError()
+{
+	if( currentEditor() )
+		currentEditor()->nextWarningError();
+}
+
+
+void MainImpl::slotPreviousWarningError()
+{
+	if( currentEditor() )
+		currentEditor()->previousWarningError();
+}
+
+
+void MainImpl::slotClearAllWarningsErrors()
+{
+	foreach(Editor *editor, allEditors() )
+	{
+		editor->clearErrorsAndWarnings();
+		automaticCompilationState(editor, 0);
+	}
 }
 
