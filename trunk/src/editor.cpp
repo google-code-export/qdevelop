@@ -804,7 +804,7 @@ void Editor::setTextColor(QColor textColor)
 void Editor::slotMessagesBuild(QString list, QString directory)
 {
     /*  If your language is not translated in QDevelop and if g++ display the errors and warnings in your language, 
-    modify the two strings below "error" and "warning" to adapt in your language.*/
+    modify the two strings below "error" and "warning" to adapt in your language. Also have a look at logbuild.cpp */
     bool messageContainsWarnings = false;
     bool messageContainsErrors = false;
     foreach(QString message, list.split("\n"))
@@ -822,8 +822,7 @@ void Editor::slotMessagesBuild(QString list, QString directory)
 		    	absoluteName = absoluteName.section("-qdeveloptmp.cpp", 0, 0) + ".cpp";
 		    if( absoluteName != m_filename )
 		    	continue;
-            if ( (message.toLower().contains("error") || message.toLower().contains( LogBuild::tr("error").toLower() ))
-            	&& !message.contains("------") )
+            if ( LogBuild::containsError(message) )
             {
                 // Error
                 error = true;
@@ -833,7 +832,7 @@ void Editor::slotMessagesBuild(QString list, QString directory)
 		        else if( message.toLower().contains( LogBuild::tr("error").toLower() ) )
 		            message = message.section(LogBuild::tr("error"), 1).simplified();
             }
-            else if ( message.toLower().contains( "warning") || message.toLower().contains( LogBuild::tr("warning").toLower() ) )
+            else if ( LogBuild::containsWarning(message) )
             {
                 // Warning
                 error = false;

@@ -44,9 +44,7 @@ void LogBuild::mouseDoubleClickEvent( QMouseEvent * /*event*/ )
         return;
     QString projectDirectory = blockUserData->directory();
     QString text = cursor.block().text();
-    if ( !text.toLower().contains("error") && !text.toLower().contains("warning")
-            // Modify the two strings below "error" and "warning" to adapt in your language.
-            && !text.toLower().contains( tr("error").toLower() ) && !text.toLower().contains( tr("warning").toLower() ) )
+    if ( !containsError(text) && !containsWarning(text) )
         return;
     QString filename = text.section(":", 0, 0).replace("\\", "/").replace("//", "/");
     int numLine = text.section(":", 1, 1).toInt();
@@ -58,23 +56,20 @@ void LogBuild::mouseDoubleClickEvent( QMouseEvent * /*event*/ )
 //
 void LogBuild::slotMessagesBuild(QString list, QString directory)
 {
-    /*  If your language is not translated in QDevelop and if g++ display the errors and warnings in your language, 
-    modify the two strings below "error" and "warning" to adapt in your language.*/
     foreach(QString message, list.split("\n"))
     {
         if ( !message.isEmpty() )
         {
             message.remove( "\r" );
             setTextColor( Qt::black );
-            if ( (message.toLower().contains("error") || message.toLower().contains( tr("error").toLower() ))
-            	&& !message.contains("------") )
+            if ( containsError(message) )
             {
                 setTextColor( Qt::red );
                 m_mainImpl->resetProjectsDirectoriesList();
                 m_mainImpl->resetDebugAfterBuild();
                 emit incErrors();
             }
-            else if ( message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ) )
+            else if ( containsWarning(message) )
             {
                 setTextColor( Qt::blue );
                 emit incWarnings();
@@ -93,5 +88,17 @@ void LogBuild::slotMessagesBuild(QString list, QString directory)
     QTextCursor cursor = textCursor();
     cursor.movePosition(QTextCursor::End, QTextCursor::MoveAnchor);
     setTextCursor( cursor );
+}
+//
+/*  If your language is not translated in QDevelop and if g++ display the errors and warnings in your language, 
+modify the two strings below "error" and "warning" to adapt in your language. Also have a look at editor.cpp*/
+inline bool LogBuild::containsError(QString message)
+{
+	return ( (message.toLower().contains("error") || message.toLower().contains( tr("error").toLower() ))
+            	&& !message.contains("------") );
+}
+inline bool LogBuild::containsWarning(QString message)
+{
+	return ( message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ) );
 }
 //
