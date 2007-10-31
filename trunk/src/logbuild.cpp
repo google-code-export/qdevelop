@@ -44,9 +44,9 @@ void LogBuild::mouseDoubleClickEvent( QMouseEvent * /*event*/ )
         return;
     QString projectDirectory = blockUserData->directory();
     QString text = cursor.block().text();
-    if ( !text.contains("error") && !text.contains("warning")
+    if ( !text.toLower().contains("error") && !text.toLower().contains("warning")
             // Modify the two strings below "error" and "warning" to adapt in your language.
-            && !text.contains( tr("error").toLower() ) && !text.contains( tr("warning").toLower() ) )
+            && !text.toLower().contains( tr("error").toLower() ) && !text.toLower().contains( tr("warning").toLower() ) )
         return;
     QString filename = text.section(":", 0, 0).replace("\\", "/").replace("//", "/");
     int numLine = text.section(":", 1, 1).toInt();
