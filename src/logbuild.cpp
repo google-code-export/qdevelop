@@ -92,12 +92,13 @@ void LogBuild::slotMessagesBuild(QString list, QString directory)
 //
 /*  If your language is not translated in QDevelop and if g++ display the errors and warnings in your language, 
 modify the two strings below "error" and "warning" to adapt in your language. Also have a look at editor.cpp*/
-inline bool LogBuild::containsError(QString message)
+bool LogBuild::containsError(QString message)
 {
 	return ( (message.toLower().contains("error") || message.toLower().contains( tr("error").toLower() ))
             	&& !message.contains("------") );
 }
-inline bool LogBuild::containsWarning(QString message)
+
+bool LogBuild::containsWarning(QString message)
 {
 	return ( message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ) );
 }

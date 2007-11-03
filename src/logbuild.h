@@ -53,8 +53,8 @@ public:
 	* Called by the mainimpl to set the pointer with the address of the main window.
 	*/
 	void setMainImpl( MainImpl *mainImpl ) { m_mainImpl = mainImpl; }
-	inline static bool containsError(QString message);
-	inline static bool containsWarning(QString message);
+	static bool containsError(QString message);
+	static bool containsWarning(QString message);
 protected:	
 	/**
 	* When the user double-click on a error or warning line, the file is opened in a editor.
