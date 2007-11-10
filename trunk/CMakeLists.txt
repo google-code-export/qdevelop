@@ -8,7 +8,7 @@
 #	cmake ../
 #	make
 # 
-# Please indent this file using tabs, and set the tabs to 8 spaces. :)
+# Please indent this file using tabs, and set the tabs to 8 spaces :)
 # 
 # If you don't konw cmake, here are some links for you:
 # 	http://wiki.qtcentre.org/index.php?title=Compiling_Qt4_apps_with_CMake
@@ -16,13 +16,14 @@
 
 PROJECT(QDevelop)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
+SET(QDEV	"qdevelop"	CACHE STRING "Name of the executeable")
 
 # verbose - off
 # SET( CMAKE_VERBOSE_MAKEFILE  ON )
 
 # do optimizations on GCC based compilers
 # if you want to speed up compilations, set this to -O0,
-# which reduces compilation time from 2:30 to 1:30 on my system :)
+# which reduces compilation time from 2:30 to 1:30 on my system
 SET( OPTIMIZATION_FLAGS "-O2")
 
 ## TODO mmmm....
@@ -150,7 +151,7 @@ SET( qdevelop_RCS
 	QDevelop.rc
 )
 
-SET( qdevelop_RESOUCES
+SET( qdevelop_RESOURCES
 	resources/resources.qrc
 )
 
@@ -168,7 +169,7 @@ SET( QT_USE_QTUITOOLS )
 # qt4 definitinos
 QT4_WRAP_UI       ( qdevelop_UIS_H        ${qdevelop_UIS}       )
 QT4_WRAP_CPP      ( qdevelop_MOC_SRCS     ${qdevelop_MOC_HDRS}  )
-QT4_ADD_RESOURCES ( qtsourceview_RC_SRCS  ${qdevelop_RESOUCES}  )
+QT4_ADD_RESOURCES ( qdevelop_RESOURCES    ${qdevelop_RESOURCES} )
 QT4_AUTOMOC       ( ${qdevelop_SRCS}                            )
 
 # definitions for the project
@@ -188,20 +189,32 @@ INCLUDE_DIRECTORIES(
 	src/ui 
 )
 
+IF( MINGW )
+	# resource compilation for MinGW
+	ADD_CUSTOM_COMMAND( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/qdevelop_ico.o
+		COMMAND windres.exe -I${CMAKE_CURRENT_SOURCE_DIR} -i${CMAKE_CURRENT_SOURCE_DIR}/QDevelop.rc 
+			-o ${CMAKE_CURRENT_BINARY_DIR}/qdevelop_ico.o )
+	SET( qdevelop_SRCS ${qdevelop_SRCS} ${CMAKE_CURRENT_BINARY_DIR}/qdevelop_ico.o)
+	SET( QT_UITOOLSLIB QtUiTools QtDesigner4  )
+ELSE( MINGW )
+	SET(qdevelop_SRCS	${qdevelop_SRCS} QDevelop.rc)
+	SET(QT_UITOOLSLIB	${QT_QTUITOOLS_LIBRARY} QtDesigner )
+ENDIF( MINGW )
+
 # the main build target
-ADD_EXECUTABLE(QDevelop	
+ADD_EXECUTABLE( ${QDEV}
 	${qdevelop_SRCS} 
 	${qdevelop_UIS_H} 
 	${qdevelop_MOC_SRCS} 
 	${qdevelop_UIS} 
-	${qtsourceview_RC_SRCS} 
+	${qdevelop_RESOURCES} 
 )
 
-# libraries to be linked to the project
-#SET( QT_UITOOLSLIB   ${QT_QTUITOOLS_LIBRARY_RELEASE} )
-SET( QT_UITOOLSLIB   QtUiTools QtDesigner  )
+IF( MINGW )
+	SET_TARGET_PROPERTIES( ${QDEV} PROPERTIES LINK_FLAGS "-mwindows" )
+ENDIF( MINGW )
 
-TARGET_LINK_LIBRARIES(QDevelop
+TARGET_LINK_LIBRARIES( ${QDEV}
 	${QT_UITOOLSLIB} 
 	${QT_QTSQL_LIBRARY}
 	${QT_LIBRARIES}
