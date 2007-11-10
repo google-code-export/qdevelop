@@ -1336,7 +1336,7 @@ void ProjectManager::slotDeleteItem(QTreeWidgetItem *it, bool silentMode)
     if ( it == m_treeFiles->topLevelItem ( 0 ) )
     {
         QMessageBox::warning(0,
-                             "QDevelop", tr("Unable to delete the main project."),
+                             "QDevelop", tr("Cannot remove the main project."),
                              tr("Ok") );
         return;
     }
@@ -1344,7 +1344,7 @@ void ProjectManager::slotDeleteItem(QTreeWidgetItem *it, bool silentMode)
     if ( !silentMode )
     {
         rep = QMessageBox::question(0, "QDevelop",
-                                    tr("Do you want to delete \"%1\" on project ?").arg(it->text(0)),
+                                    tr("Do you want to remove \"%1\" from the project ?").arg(it->text(0)),
                                     tr("Yes"), tr("No") );
     }
     if ( rep == 1 )

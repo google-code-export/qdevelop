@@ -213,14 +213,14 @@ void TreeProject::mousePressEvent( QMouseEvent * event )
 			}
 			else
 				connect(menu->addAction(QIcon(":/toolbar/images/edit.png"), tr("Open")), SIGNAL(triggered()), this, SLOT(slotOpen()) );
-            connect(menu->addAction(QIcon(), tr("Rename...")), SIGNAL(triggered()), this, SLOT(slotRenameItem()) );
+			connect(menu->addAction(QIcon(), tr("Rename...")), SIGNAL(triggered()), this, SLOT(slotRenameItem()) );
 		}
 		else if( QString("FORMS:HEADERS:RESOURCES:SOURCES:TRANSLATIONS").contains(key) )
 		{
 			connect(menu->addAction(QIcon(), tr("Add New Item...")), SIGNAL(triggered()), this, SLOT(slotAddNewItem()) );
 		}
 		connect(menu->addAction(QIcon(), tr("Sort")), SIGNAL(triggered()), this, SLOT(slotSort()) );
-		connect(menu->addAction(QIcon(":/toolbar/images/editdelete.png"), tr("Delete")), SIGNAL(triggered()), this, SLOT(slotDeleteItem()) );
+		connect(menu->addAction(QIcon(":/toolbar/images/editdelete.png"), tr("Remove from project")), SIGNAL(triggered()), this, SLOT(slotDeleteItem()) );
 		menu->addSeparator();
 		QTreeWidgetItem *tmp = m_itemClicked;
 		while( tmp && m_projectManager->toKey( tmp->data(0, Qt::UserRole) ) != "PROJECT" )
