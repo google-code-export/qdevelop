@@ -73,7 +73,7 @@
 //
 
 #define PROJECT_NAME "QDevelop"
-#define VERSION "0.25-svn"
+#define VERSION "0.25"
 
 MainImpl::MainImpl(QWidget * parent)
         : QMainWindow(parent)

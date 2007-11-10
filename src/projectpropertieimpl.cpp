@@ -49,7 +49,6 @@ ProjectPropertieImpl::ProjectPropertieImpl(ProjectManager * parent, QTreeWidget 
         m_copyItProject = m_copyItProject->parent();
     setWindowTitle( tr("Properties of %1").arg(m_projectName) );
     populateComboScope();
-    advancedMode->setChecked( false );
     resize(10,10);
 }
 //
