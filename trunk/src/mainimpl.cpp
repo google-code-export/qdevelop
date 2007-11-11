@@ -867,7 +867,7 @@ QString MainImpl::loadINI()
 	if( !QDir().exists(m_includeDirectory) )
 	{
 		QMessageBox::warning(0, 
-			"QDevelop", tr("The Include Qt directory doesn't exists,\nYou can change in Options dialog."),	tr("Ok") );
+			"QDevelop", tr("The Qt include directory doesn't exist,\nYou can change in Options dialog."), tr("Ok") );
 	
 	}
     setCrossButton( !m_closeButtonInTabs );
