@@ -68,7 +68,11 @@ void Build::run()
 	if( m_qmake )
 	{
 		emit message( QString(tr("Update project"))+" (qmake "+m_projectName+")..." );
+#ifdef Q_WS_MAC
+		m_buildProcess->start(m_qmakeName, QStringList() <<"-spec"<< "macx-g++" << m_projectName);
+#else
 		m_buildProcess->start(m_qmakeName, QStringList() << m_projectName);
+#endif
     	if (!m_buildProcess->waitForFinished(800000))
 		{
 			m_buildProcess->deleteLater();
