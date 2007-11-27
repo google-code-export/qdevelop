@@ -755,7 +755,7 @@ Expression InitCompletion::parseLine( QString text )
     		p++;
     	if( p > 0 && !(p == 1 && simplified[begin]==')') )
     		simplified[begin]=' ';
-    	if( QString(";{}=*/+~&|!^?:,").contains(simplified[begin]) )
+    	if( QString(";{}=*/+~&|!^?:,<>").contains(simplified[begin]) )
     		break;
     	else if( begin<simplified.length()-1 && simplified[begin]=='-' && simplified[begin+1]!='>' )
     		break;

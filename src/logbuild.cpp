@@ -95,11 +95,12 @@ modify the two strings below "error" and "warning" to adapt in your language. Al
 bool LogBuild::containsError(QString message)
 {
 	return ( (message.toLower().contains("error") || message.toLower().contains( tr("error").toLower() ))
-            	&& !message.contains("------") );
+            	&& !message.contains("------") && !message.startsWith("make:"));
 }
 
 bool LogBuild::containsWarning(QString message)
 {
-	return ( message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ) );
+	return ( (message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ))
+			  && !message.startsWith("make:"));
 }
 //

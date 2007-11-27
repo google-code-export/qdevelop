@@ -1534,20 +1534,22 @@ void MainImpl::slotCompile(bool automaticCompilation)
 		QString filename = editor->filename();
 		if( automaticCompilation )
 			filename = editor->tempFilename();
-        m_builder = new Build(this, m_qmakeName, m_makeName, m_makeOptions, projectDirectory+"/", false, false, true, filename);
+        Build* builder = new Build(this, m_qmakeName, m_makeName, m_makeOptions, projectDirectory+"/", false, false, true, filename);
 
-        connect(m_builder, SIGNAL(finished()), m_builder, SLOT(deleteLater()) );
+        connect(builder, SIGNAL(finished()), builder, SLOT(deleteLater()) );
         if( automaticCompilation )
         {
-        	connect(m_builder, SIGNAL(finished()), editor, SLOT(slotEndBuild()) );
-       		connect(m_builder, SIGNAL(message(QString, QString)), editor, SLOT(slotMessagesBuild(QString, QString)) );
+        	connect(builder, SIGNAL(finished()), editor, SLOT(slotEndBuild()) );
+       		connect(builder, SIGNAL(message(QString, QString)), editor, SLOT(slotMessagesBuild(QString, QString)) );
        	}
         else
         {
-        	connect(m_builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
-        	connect(m_builder, SIGNAL(message(QString, QString)), logBuild, SLOT(slotMessagesBuild(QString, QString)) );
+        	connect(builder, SIGNAL(finished()), this, SLOT(slotEndBuild()) );
+        	connect(builder, SIGNAL(message(QString, QString)), logBuild, SLOT(slotMessagesBuild(QString, QString)) );
        	}
-        m_builder->start();
+	    connect(logBuild, SIGNAL(incErrors()), builder, SLOT(slotIncErrors()) );
+	    connect(logBuild, SIGNAL(incWarnings()), builder, SLOT(slotIncWarnings()) );
+        builder->start();
     }
 }
 //
@@ -1624,14 +1626,15 @@ void MainImpl::slotEndBuild()
     else
     {
         QString msg;
-        if ( m_builder->nbErrors()==0 && m_builder->nbWarnings()==0 )
+		Build* builder = (Build *)sender();
+        if ( builder->nbErrors()==0 && builder->nbWarnings()==0 )
             msg = tr("Build finished without error");
         else
             msg = tr("Build finished with")+" ";
-        if ( m_builder->nbErrors() )
-            msg += QString::number(m_builder->nbErrors())+" "+tr("error(s)")+ (m_builder->nbWarnings() ? " "+tr("and")+ " " : QString(" "));
-        if ( m_builder->nbWarnings() )
-            msg += QString::number(m_builder->nbWarnings())+" "+tr("warning(s)")+" ";
+        if ( builder->nbErrors() )
+            msg += QString::number(builder->nbErrors())+" "+tr("error(s)")+ (builder->nbWarnings() ? " "+tr("and")+ " " : QString(" "));
+        if ( builder->nbWarnings() )
+            msg += QString::number(builder->nbWarnings())+" "+tr("warning(s)")+" ";
         logBuild->slotMessagesBuild( QString("\n---------------------- "+msg+"----------------------\n"), "");
         m_buildingGroup->setEnabled( true );
         if ( m_debugAfterBuild )
