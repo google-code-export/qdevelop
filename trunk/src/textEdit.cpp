@@ -1198,11 +1198,15 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
     }
     else if ( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutUndo() )
     {
-        document()->undo();
+        QTextCursor cursor = textCursor();
+        document()->undo(&cursor);
+        setTextCursor(cursor);
     }
     else if ( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutRedo() )
     {
-        document()->redo();
+        QTextCursor cursor = textCursor();
+        document()->redo(&cursor);
+        setTextCursor(cursor);
     }
     else
     {
