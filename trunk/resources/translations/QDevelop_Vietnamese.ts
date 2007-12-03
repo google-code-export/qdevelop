@@ -9,12 +9,12 @@
 </translation>
     </message>
     <message>
-        <location filename="../../ui/about.ui" line="155"/>
+        <location filename="../../ui/about.ui" line="156"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Version&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/about.ui" line="190"/>
+        <location filename="../../ui/about.ui" line="191"/>
         <source>OK</source>
         <translation>Chấp nhận</translation>
     </message>
@@ -30,15 +30,16 @@ p, li { white-space: pre-wrap; }
         <location filename="../../ui/about.ui" line="133"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#000000;&quot;&gt;Main Developper: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:elcuco@kde.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager : Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Phiên bản mã mở - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#000000;&quot;&gt;Nha2 phát triển chính: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:elcuco@kde.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developper : Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager : Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:elcuco@kde.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -301,22 +302,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddNewClassImpl</name>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="30"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="53"/>
         <source>Choose the file location</source>
         <translation>Chọn vị trí tập tin</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="116"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="138"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="115"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="137"/>
         <source>Unable to create file.</source>
         <translation>Không thể tạo tập tin.</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="108"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="130"/>
         <source>The file &quot;%1&quot;
  already exists.</source>
         <translation>Tập tin &quot;%1&quot;
@@ -469,22 +470,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddNewClassMethodImpl</name>
     <message>
-        <location filename="../../src/addnewclassmethodimpl.cpp" line="14"/>
+        <location filename="../../src/addnewclassmethodimpl.cpp" line="37"/>
         <source>Add New Method in class %1</source>
         <translation>Thêm hàm mới vào lớp %1</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassmethodimpl.cpp" line="37"/>
+        <location filename="../../src/addnewclassmethodimpl.cpp" line="60"/>
         <source>An implementation file is required.</source>
         <translation>Cần 1 tập tin thực hiện.</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassmethodimpl.cpp" line="50"/>
+        <location filename="../../src/addnewclassmethodimpl.cpp" line="73"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassmethodimpl.cpp" line="49"/>
+        <location filename="../../src/addnewclassmethodimpl.cpp" line="72"/>
         <source>%1 already exists in class %2.</source>
         <translation>%1 đã tồn tại trong lớp %2.</translation>
     </message>
@@ -615,12 +616,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddNewClassVariableImpl</name>
     <message>
-        <location filename="../../src/addnewclassvariableimpl.cpp" line="44"/>
+        <location filename="../../src/addnewclassvariableimpl.cpp" line="67"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassvariableimpl.cpp" line="43"/>
+        <location filename="../../src/addnewclassvariableimpl.cpp" line="66"/>
         <source>%1 already exists in class %2.</source>
         <translation>%1 đã có trong lớp %2.</translation>
     </message>
@@ -633,32 +634,32 @@ p, li { white-space: pre-wrap; }
         <translation>Chọn vị trí tập tin</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="121"/>
+        <location filename="../../src/addnewimpl.cpp" line="118"/>
         <source>The suffix of the file is not correct.</source>
         <translation>Đuôi tên tập tin sai.</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="135"/>
+        <location filename="../../src/addnewimpl.cpp" line="132"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="127"/>
+        <location filename="../../src/addnewimpl.cpp" line="124"/>
         <source>header</source>
         <translation>tiêu đề</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="135"/>
+        <location filename="../../src/addnewimpl.cpp" line="132"/>
         <source>Yes</source>
         <translation>Vâng</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="135"/>
+        <location filename="../../src/addnewimpl.cpp" line="132"/>
         <source>No</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location filename="../../src/addnewimpl.cpp" line="135"/>
+        <location filename="../../src/addnewimpl.cpp" line="132"/>
         <source>Also create the file %1 in same location ?</source>
         <translation>Cũng sẽ tạo tập tin %1 trong cùng 1 nơi?</translation>
     </message>
@@ -762,35 +763,58 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddSetGetImpl</name>
     <message>
-        <location filename="../../src/addsetgetimpl.cpp" line="34"/>
+        <location filename="../../src/addsetgetimpl.cpp" line="57"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
 </context>
 <context>
+    <name>BreakpointCondition</name>
+    <message>
+        <location filename="../../ui/breakpointcondition.ui" line="13"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/breakpointcondition.ui" line="25"/>
+        <source>Condition :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/breakpointcondition.ui" line="39"/>
+        <source>is true (breakpoint)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/breakpointcondition.ui" line="52"/>
+        <source>has changed (watchpoint)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Build</name>
     <message>
-        <location filename="../../src/build.cpp" line="67"/>
+        <location filename="../../src/build.cpp" line="70"/>
         <source>Update project</source>
         <translation>Cập nhật dự án</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="79"/>
+        <location filename="../../src/build.cpp" line="86"/>
         <source>Clean Project</source>
         <translation>Dọn sạch dự án</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="98"/>
+        <location filename="../../src/build.cpp" line="105"/>
         <source>Build</source>
         <translation>Khởi tạo</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="120"/>
+        <location filename="../../src/build.cpp" line="127"/>
         <source>Build stopped</source>
         <translation>Việc khởi tạo bị dừng</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="94"/>
+        <location filename="../../src/build.cpp" line="101"/>
         <source>
 Compilation of %1...
 </source>
@@ -802,27 +826,27 @@ Việc biên dịch của %1...
 <context>
     <name>Debug</name>
     <message>
-        <location filename="../../src/debug.cpp" line="62"/>
+        <location filename="../../src/debug.cpp" line="67"/>
         <source>Running...</source>
         <translation>Đang chạy...</translation>
     </message>
     <message>
-        <location filename="../../src/debug.cpp" line="76"/>
+        <location filename="../../src/debug.cpp" line="81"/>
         <source>Exited normally</source>
         <translation>Thoát bình thường</translation>
     </message>
     <message>
-        <location filename="../../src/debug.cpp" line="82"/>
+        <location filename="../../src/debug.cpp" line="87"/>
         <source>Debug...</source>
         <translation>Tìm lỗi...</translation>
     </message>
     <message>
-        <location filename="../../src/debug.cpp" line="97"/>
+        <location filename="../../src/debug.cpp" line="102"/>
         <source>Debug exited</source>
         <translation>Việc tìm lỗi kết thúc</translation>
     </message>
     <message>
-        <location filename="../../src/debug.cpp" line="380"/>
+        <location filename="../../src/debug.cpp" line="369"/>
         <source>Error: Unable to evaluate value</source>
         <translation>Lỗi: không thể xác định giá trị</translation>
     </message>
@@ -830,37 +854,27 @@ Việc biên dịch của %1...
 <context>
     <name>Editor</name>
     <message>
-        <location filename="../../src/editor.cpp" line="90"/>
+        <location filename="../../src/editor.cpp" line="101"/>
         <source>Refresh classes and methods lists</source>
         <translation>Làm mới danh sách các lớp và hàm</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="210"/>
+        <location filename="../../src/editor.cpp" line="245"/>
         <source>What do you want to do?</source>
         <translation>Bạn muốn làm gì?</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="211"/>
+        <location filename="../../src/editor.cpp" line="246"/>
         <source>Overwrite</source>
         <translation>Ghi đè lên</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="211"/>
+        <location filename="../../src/editor.cpp" line="246"/>
         <source>Reload File</source>
         <translation>Tải lại tập tin</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="745"/>
-        <source>Open %1.cpp</source>
-        <translation>Mở %1.cpp</translation>
-    </message>
-    <message>
-        <location filename="../../src/editor.cpp" line="740"/>
-        <source>Open %1.h</source>
-        <translation>Mở %1.h</translation>
-    </message>
-    <message>
-        <location filename="../../src/editor.cpp" line="209"/>
+        <location filename="../../src/editor.cpp" line="244"/>
         <source>The file &quot;%1&quot;
 was modified outside editor.
 
@@ -869,6 +883,11 @@ was modified outside editor.
 đã được thay đổi bên ngoài trình biên soạn.
 
 </translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="179"/>
+        <source>Open %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -965,27 +984,27 @@ was modified outside editor.
 <context>
     <name>FindFileImpl</name>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="50"/>
+        <location filename="../../src/findfileimpl.cpp" line="76"/>
         <source>Choose a directory</source>
         <translation>Chọn thư mục</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="141"/>
+        <location filename="../../src/findfileimpl.cpp" line="176"/>
         <source>Line</source>
         <translation>Dòng</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="147"/>
+        <location filename="../../src/findfileimpl.cpp" line="183"/>
         <source>File</source>
         <translation>Tập tin</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="92"/>
+        <location filename="../../src/findfileimpl.cpp" line="118"/>
         <source>&amp;Find</source>
         <translation>&amp;Tìm</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="74"/>
+        <location filename="../../src/findfileimpl.cpp" line="100"/>
         <source>&amp;Stop</source>
         <translation>&amp;Dừng</translation>
     </message>
@@ -1047,27 +1066,45 @@ was modified outside editor.
     </message>
 </context>
 <context>
+    <name>InitCompletion</name>
+    <message>
+        <location filename="../../src/InitCompletion.cpp" line="562"/>
+        <source>Unable to launch %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/InitCompletion.cpp" line="569"/>
+        <source>Unable to open %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LineNumbers</name>
     <message>
-        <location filename="../../src/linenumbers.cpp" line="171"/>
+        <location filename="../../src/linenumbers.cpp" line="210"/>
         <source>Toogle Bookmark</source>
         <translation>Bật tắt thẻ đánh dấu</translation>
     </message>
     <message>
-        <location filename="../../src/linenumbers.cpp" line="172"/>
+        <location filename="../../src/linenumbers.cpp" line="211"/>
         <source>Toogle Breakpoint</source>
         <translation>Bật tắt điếm dừng</translation>
+    </message>
+    <message>
+        <location filename="../../src/linenumbers.cpp" line="217"/>
+        <source>Breakpoint Condition...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/logbuild.cpp" line="46"/>
+        <location filename="../../src/logbuild.cpp" line="97"/>
         <source>error</source>
         <translation>lỗi</translation>
     </message>
     <message>
-        <location filename="../../src/logbuild.cpp" line="54"/>
+        <location filename="../../src/logbuild.cpp" line="103"/>
         <source>warning</source>
         <translation>cảnh báo</translation>
     </message>
@@ -1075,900 +1112,1000 @@ was modified outside editor.
 <context>
     <name>Main</name>
     <message>
-        <location filename="../../ui/main.ui" line="21"/>
+        <location filename="../../ui/main.ui" line="19"/>
         <source>QDevelop</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="47"/>
+        <location filename="../../ui/main.ui" line="96"/>
         <source>&amp;?</source>
         <translation>&amp;?</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="140"/>
-        <source>Toolbar</source>
-        <translation>Thanh công cụ</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="171"/>
-        <source>Tools</source>
-        <translation>Công cụ</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1230"/>
-        <source>Debug</source>
-        <translation>Tìm lỗi</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1238"/>
+        <location filename="../../ui/main.ui" line="286"/>
         <source>Build</source>
         <translation>Khởi tạo</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="98"/>
+        <location filename="../../ui/main.ui" line="36"/>
         <source>&amp;Edit</source>
         <translation>&amp;Biên soạn</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="147"/>
+        <location filename="../../ui/main.ui" line="145"/>
         <source>&amp;File</source>
         <translation>&amp;Tập tin</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="206"/>
-        <source>Last Projects</source>
-        <translation>Dự án vừa qua</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="151"/>
-        <source>Last Files</source>
-        <translation>Tập tin vừa qua</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1217"/>
+        <location filename="../../ui/main.ui" line="1396"/>
         <source>Outputs</source>
         <translation>Kết quả</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1222"/>
+        <location filename="../../ui/main.ui" line="1401"/>
         <source>Files</source>
         <translation>Tập tin</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="676"/>
+        <location filename="../../ui/main.ui" line="777"/>
         <source>Files toolbar</source>
         <translation>Thanh công cụ tập tin</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="700"/>
+        <location filename="../../ui/main.ui" line="804"/>
         <source>Edit Toolbar</source>
         <translation>Thanh công cụ biên soạn</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="732"/>
-        <source>Build Toolbar</source>
-        <translation>Thanh công cụ khởi tạo</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="749"/>
-        <source>Debug Toolbar</source>
-        <translation>Thanh công cụ tìm lỗi</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="768"/>
+        <location filename="../../ui/main.ui" line="947"/>
         <source>&amp;New Project...</source>
         <translation>&amp;Dự án mới...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="787"/>
+        <location filename="../../ui/main.ui" line="966"/>
         <source>&amp;File...</source>
         <translation>&amp;Tập tin...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="803"/>
+        <location filename="../../ui/main.ui" line="982"/>
         <source>&amp;Close All Files</source>
         <translation>Đón&amp;g tất cả các tập tin</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="811"/>
+        <location filename="../../ui/main.ui" line="990"/>
         <source>&amp;Save File</source>
         <translation>&amp;Lưu tập tin</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="814"/>
+        <location filename="../../ui/main.ui" line="993"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="822"/>
-        <source>&amp;Save File As...</source>
-        <translation>Lưu tập tin &amp;như...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="833"/>
-        <source>Save All</source>
-        <translation>Lưu tất cả</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="841"/>
+        <location filename="../../ui/main.ui" line="1020"/>
         <source>&amp;Quit</source>
         <translation>Th&amp;oát</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="858"/>
+        <location filename="../../ui/main.ui" line="1037"/>
         <source>Ctrl+Z</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="875"/>
+        <location filename="../../ui/main.ui" line="1054"/>
         <source>Ctrl+Shift+Z</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="883"/>
-        <source>Cut</source>
-        <translation>Cắt</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="886"/>
+        <location filename="../../ui/main.ui" line="1065"/>
         <source>Ctrl+X</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="894"/>
-        <source>Copy</source>
-        <translation>Copy</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="897"/>
+        <location filename="../../ui/main.ui" line="1076"/>
         <source>Ctrl+C</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="905"/>
-        <source>Paste</source>
-        <translation>Dán</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="908"/>
+        <location filename="../../ui/main.ui" line="1087"/>
         <source>Ctrl+V</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="913"/>
+        <location filename="../../ui/main.ui" line="1092"/>
         <source>Select All</source>
         <translation>Chọn tất cả</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="924"/>
-        <source>Find...</source>
-        <translation>Tìm...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="927"/>
+        <location filename="../../ui/main.ui" line="1106"/>
         <source>Ctrl+F</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="932"/>
-        <source>Replace...</source>
-        <translation>Thay thế...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="948"/>
-        <source>Add New Item...</source>
-        <translation>Thêm mục mới...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="954"/>
+        <location filename="../../ui/main.ui" line="1133"/>
         <source>Add New Item</source>
         <translation>Thêm mục mới</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="962"/>
-        <source>Add Existing Files...</source>
-        <translation>Thêm tập tin sẵn có...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="968"/>
+        <location filename="../../ui/main.ui" line="1147"/>
         <source>Add Existing Files</source>
         <translation>Thêm tập tin sẵn có</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="973"/>
+        <location filename="../../ui/main.ui" line="1152"/>
         <source>New Folder</source>
         <translation>Thư mục mới</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="981"/>
-        <source>Project Properties...</source>
-        <translation>Đặc tính của dự án...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="987"/>
+        <location filename="../../ui/main.ui" line="1166"/>
         <source>Project Properties</source>
         <translation>Đặc tính của dự án</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1241"/>
+        <location filename="../../ui/main.ui" line="1420"/>
         <source>F7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="998"/>
+        <location filename="../../ui/main.ui" line="1177"/>
         <source>Clean</source>
         <translation>Dọn sạch</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1012"/>
+        <location filename="../../ui/main.ui" line="1191"/>
         <source>Rebuild</source>
         <translation>Tái khởi tạo</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1029"/>
+        <location filename="../../ui/main.ui" line="1208"/>
         <source>Shift+F7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1043"/>
+        <location filename="../../ui/main.ui" line="1222"/>
         <source>Start Program</source>
         <translation>Khởi động chương trình</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1046"/>
+        <location filename="../../ui/main.ui" line="1225"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1060"/>
+        <location filename="../../ui/main.ui" line="1239"/>
         <source>Step Into</source>
         <translation>Bước vào</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1063"/>
+        <location filename="../../ui/main.ui" line="1242"/>
         <source>F11</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1077"/>
+        <location filename="../../ui/main.ui" line="1256"/>
         <source>Step Over</source>
         <translation>Bước qua</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1080"/>
+        <location filename="../../ui/main.ui" line="1259"/>
         <source>F10</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1096"/>
-        <source>Options...</source>
-        <translation>Tùy chọn...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1106"/>
-        <source>About...</source>
-        <translation>Giới thiệu...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1111"/>
-        <source>About Qt...</source>
-        <translation>Giới thiệu Qt...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1119"/>
+        <location filename="../../ui/main.ui" line="1298"/>
         <source>&amp;Open...</source>
         <translation>&amp;Mở...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1127"/>
-        <source>Find Next</source>
-        <translation>Tìm tiếp</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1130"/>
+        <location filename="../../ui/main.ui" line="1309"/>
         <source>F3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1147"/>
+        <location filename="../../ui/main.ui" line="1326"/>
         <source>Stop</source>
         <translation>Dừng</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1150"/>
+        <location filename="../../ui/main.ui" line="1329"/>
         <source>F6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1155"/>
+        <location filename="../../ui/main.ui" line="1334"/>
         <source>Breakpoints...</source>
         <translation>Điểm dừng...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1163"/>
-        <source>Stop Build</source>
-        <translation>Dừng khởi tạo</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1171"/>
+        <location filename="../../ui/main.ui" line="1350"/>
         <source>Indent selection</source>
         <translation>Chọn thụt vào</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1174"/>
+        <location filename="../../ui/main.ui" line="1353"/>
         <source>Tab</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1182"/>
+        <location filename="../../ui/main.ui" line="1361"/>
         <source>Unindent selection</source>
         <translation>Hủy bỏ thụt vào</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1185"/>
+        <location filename="../../ui/main.ui" line="1364"/>
         <source>Shift+Tab</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1193"/>
-        <source>Help Current Qt Word</source>
-        <translation>Giúp từ khóa Qt hiện hành</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1196"/>
+        <location filename="../../ui/main.ui" line="1375"/>
         <source>F1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1201"/>
-        <source>Reset Executables List</source>
-        <translation>Cài đặt lại danh sách tập tin thực thi</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1212"/>
+        <location filename="../../ui/main.ui" line="1391"/>
         <source>Project Explorer</source>
         <translation>Bộ quản lý dự án</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1249"/>
-        <source>Save Project</source>
-        <translation>Lưu dự án</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1254"/>
+        <location filename="../../ui/main.ui" line="1433"/>
         <source>Save Project As...</source>
         <translation>Lưu dự án như...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1262"/>
-        <source>Close Project</source>
-        <translation>Đóng dự án</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1267"/>
-        <source>Add Scope...</source>
-        <translation>Thêm Phạm vi...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1275"/>
-        <source>Step Out</source>
-        <translation>Bước ra</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1026"/>
+        <location filename="../../ui/main.ui" line="1205"/>
         <source>Compile File</source>
         <translation>Biên dịch tập tin</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1283"/>
-        <source>Close Current Editor</source>
-        <translation>Đóng trình biên soạn hiện hành</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1286"/>
+        <location filename="../../ui/main.ui" line="1465"/>
         <source>Ctrl+W</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1294"/>
-        <source>Next Tab</source>
-        <translation>Tab kế đến</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1297"/>
+        <location filename="../../ui/main.ui" line="1476"/>
         <source>Alt+Right</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1305"/>
-        <source>Previous Tab</source>
-        <translation>Tab phía trước</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1308"/>
+        <location filename="../../ui/main.ui" line="1487"/>
         <source>Alt+Left</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="56"/>
-        <source>Editors</source>
-        <translation>Trình biên soạn</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1316"/>
-        <source>Switch to Header/Sources</source>
-        <translation>Chuyển qua tiêu đề/nguồn</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1319"/>
+        <location filename="../../ui/main.ui" line="1498"/>
         <source>Shift+F12</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1278"/>
+        <location filename="../../ui/main.ui" line="1457"/>
         <source>Shift+F11</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1324"/>
-        <source>Set Focus to Editor</source>
-        <translation>Tập trung vào Trình biên soạn</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1327"/>
+        <location filename="../../ui/main.ui" line="1506"/>
         <source>Esc</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="855"/>
+        <location filename="../../ui/main.ui" line="1034"/>
         <source>Undo</source>
         <translation>Hủy động tác</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="872"/>
+        <location filename="../../ui/main.ui" line="1051"/>
         <source>Redo</source>
         <translation>Làm lại</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1335"/>
-        <source>Toggle breakpoint</source>
-        <translation>Bật tắt điểm dừng</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1338"/>
+        <location filename="../../ui/main.ui" line="1517"/>
         <source>F9</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1348"/>
-        <source>Configure Shortcuts...</source>
-        <translation>Điều chỉnh các phím tắc...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="136"/>
+        <location filename="../../ui/main.ui" line="169"/>
         <source>&amp;View</source>
         <translation>&amp;Xem</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="202"/>
+        <location filename="../../ui/main.ui" line="108"/>
         <source>&amp;Project</source>
         <translation>&amp;Dự án</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="86"/>
+        <location filename="../../ui/main.ui" line="1417"/>
         <source>&amp;Build</source>
         <translation>&amp;Khởi tạo</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="68"/>
+        <location filename="../../ui/main.ui" line="1409"/>
         <source>&amp;Debug</source>
         <translation>&amp;Tìm lỗi</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="916"/>
+        <location filename="../../ui/main.ui" line="1095"/>
         <source>Ctrl+A</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1122"/>
+        <location filename="../../ui/main.ui" line="1301"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1353"/>
-        <source>Goto Line...</source>
-        <translation>Đến dòng...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1356"/>
+        <location filename="../../ui/main.ui" line="1535"/>
         <source>Ctrl+G</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="935"/>
+        <location filename="../../ui/main.ui" line="1114"/>
         <source>Ctrl+R</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1379"/>
+        <location filename="../../ui/main.ui" line="1558"/>
         <source>Complete Code</source>
         <translation>Hoàn thành mã lệnh</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1382"/>
+        <location filename="../../ui/main.ui" line="1561"/>
         <source>Ctrl+Space</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="528"/>
+        <location filename="../../ui/main.ui" line="575"/>
         <source>Find in Files</source>
         <translation>Tìm trong các tập tin</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="940"/>
-        <source>Find in Files...</source>
-        <translation>Tìm trong các tập tin...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1364"/>
+        <location filename="../../ui/main.ui" line="1543"/>
         <source>Ctrl+D</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="776"/>
+        <location filename="../../ui/main.ui" line="955"/>
         <source>&amp;New File...</source>
         <translation>&amp;Tập tin mới...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="782"/>
+        <location filename="../../ui/main.ui" line="961"/>
         <source>New File</source>
         <translation>Tập tin mới</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1361"/>
-        <source>Toggle Comments</source>
-        <translation>Bật tắt chú thích</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1369"/>
+        <location filename="../../ui/main.ui" line="1548"/>
         <source>Comment</source>
         <translation>Chú thích</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1374"/>
+        <location filename="../../ui/main.ui" line="1553"/>
         <source>Uncomment</source>
         <translation>Hủy chú thích</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1101"/>
-        <source>Parameters...</source>
-        <translation>Thông số...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="655"/>
+        <location filename="../../ui/main.ui" line="738"/>
         <source>Classes</source>
         <translation>Lớp</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1091"/>
+        <location filename="../../ui/main.ui" line="1270"/>
         <source>Calls Stack</source>
         <translation>Gọi stack</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="369"/>
-        <source>Local Variables</source>
-        <translation>Biến số địa phương</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="498"/>
+        <location filename="../../ui/main.ui" line="549"/>
         <source>Name</source>
         <translation>Tên</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="503"/>
+        <location filename="../../ui/main.ui" line="554"/>
         <source>Type</source>
         <translation>Loại</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="508"/>
+        <location filename="../../ui/main.ui" line="559"/>
         <source>Address</source>
         <translation>Địa chỉ</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="513"/>
+        <location filename="../../ui/main.ui" line="564"/>
         <source>Value</source>
         <translation>Giá trị</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="412"/>
-        <source>Other Variables</source>
-        <translation>Các biến số khác</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="466"/>
+        <location filename="../../ui/main.ui" line="517"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="188"/>
-        <source>Bookmarks</source>
-        <translation>Thẻ đánh dấu</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1390"/>
+        <location filename="../../ui/main.ui" line="1569"/>
         <source>Toggle &amp;Bookmark</source>
         <translation>&amp;Bật tắt thẻ đánh dấu</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1396"/>
+        <location filename="../../ui/main.ui" line="1575"/>
         <source>Toggle Bookmark</source>
         <translation>Bật tắt thẻ đánh dấu</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1399"/>
+        <location filename="../../ui/main.ui" line="1578"/>
         <source>Ctrl+B</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1407"/>
+        <location filename="../../ui/main.ui" line="1586"/>
         <source>Clear &amp;All Bookmarks</source>
         <translation>&amp;Xóa tất cả thẻ đánh dấu</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1415"/>
-        <source>External Tools...</source>
-        <translation>Công cụ bên ngoài...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1423"/>
-        <source>Next Bookmark</source>
-        <translation>Thẻ đánh dấu kế tiếp</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1434"/>
-        <source>Previous Bookmark</source>
-        <translation>Thẻ đánh dấu phía trước</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="795"/>
+        <location filename="../../ui/main.ui" line="974"/>
         <source>&amp;Open Project...</source>
         <translation>&amp;Mở Dự án...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1410"/>
+        <location filename="../../ui/main.ui" line="1589"/>
         <source>Ctrl+F2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1426"/>
+        <location filename="../../ui/main.ui" line="1605"/>
         <source>F2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1437"/>
+        <location filename="../../ui/main.ui" line="1616"/>
         <source>Shift+F2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1442"/>
-        <source>Find Previous</source>
-        <translation>Tìm về trước</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1445"/>
+        <location filename="../../ui/main.ui" line="1624"/>
         <source>Shift+F3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="131"/>
+        <location filename="../../ui/main.ui" line="199"/>
         <source>Plugins</source>
         <translation>Chương trình cắm vào</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="175"/>
-        <source>Plugins settings</source>
-        <translation>Điều chỉnh chương trình cắm vào</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="957"/>
+        <location filename="../../ui/main.ui" line="1136"/>
         <source>Ctrl+N</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1456"/>
+        <location filename="../../ui/main.ui" line="1635"/>
         <source>Goto matching bracket</source>
         <translation>Đến dấu ngoặc cùng cặp</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1459"/>
+        <location filename="../../ui/main.ui" line="1638"/>
         <source>Ctrl+[</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1464"/>
+        <location filename="../../ui/main.ui" line="1643"/>
         <source>Foo</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1469"/>
-        <source>Add New Class...</source>
-        <translation>Thêm lớp mới...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1477"/>
+        <location filename="../../ui/main.ui" line="1656"/>
         <source>&amp;Print...</source>
         <translation>&amp;In ấn...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="943"/>
+        <location filename="../../ui/main.ui" line="1122"/>
         <source>Ctrl+Shift+F</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1343"/>
-        <source>Goto Methods List</source>
-        <translation>Đến danh sách các hàm</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1482"/>
-        <source>Open File in project...</source>
-        <translation>Mở tập tin trong dự án...</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1485"/>
+        <location filename="../../ui/main.ui" line="1664"/>
         <source>Alt+Shift+O</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1493"/>
-        <source>Goto Implementation</source>
-        <translation>Đến phần thực hiện</translation>
+        <location filename="../../ui/main.ui" line="69"/>
+        <source>&amp;Bookmarks</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1501"/>
-        <source>Goto Declaration</source>
-        <translation>Đến phần khai báo</translation>
+        <location filename="../../ui/main.ui" line="112"/>
+        <source>&amp;Last Projects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="131"/>
+        <source>B&amp;uild</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="149"/>
+        <source>Las&amp;t Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="173"/>
+        <source>&amp;Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="181"/>
+        <source>&amp;Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="185"/>
+        <source>&amp;Plugins settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="204"/>
+        <source>Ed&amp;itors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="378"/>
+        <source>Local variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="436"/>
+        <source>Other variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="763"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="831"/>
+        <source>Build and Debug Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="857"/>
+        <source>Call Stacks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="890"/>
+        <source>Registers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1001"/>
+        <source>Save File &amp;as...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1012"/>
+        <source>Save A&amp;ll</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1028"/>
+        <source>&amp;Undo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1045"/>
+        <source>&amp;Redo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1062"/>
+        <source>Cu&amp;t</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1073"/>
+        <source>&amp;Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1084"/>
+        <source>&amp;Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1103"/>
+        <source>&amp;Find...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1111"/>
+        <source>&amp;Replace...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1119"/>
+        <source>&amp;Find in Files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1127"/>
+        <source>Add New &amp;Item...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1141"/>
+        <source>Add Existing &amp;Files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1160"/>
+        <source>Project &amp;Properties...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1171"/>
+        <source>&amp;Clean</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1185"/>
+        <source>&amp;Rebuild</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1216"/>
+        <source>S&amp;tart Program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1233"/>
+        <source>Step &amp;Into</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1250"/>
+        <source>Step O&amp;ver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1264"/>
+        <source>&amp;Calls Stack</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1275"/>
+        <source>&amp;Options...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1280"/>
+        <source>&amp;Parameters...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1285"/>
+        <source>&amp;About...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1290"/>
+        <source>About &amp;Qt...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1306"/>
+        <source>Find &amp;Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1320"/>
+        <source>&amp;Stop</source>
+        <translation type="unfinished">&amp;Dừng</translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1342"/>
+        <source>&amp;Stop Build</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1372"/>
+        <source>&amp;Help Current Qt Word</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1380"/>
+        <source>&amp;Reset Executables List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1428"/>
+        <source>&amp;Save Project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1441"/>
+        <source>C&amp;lose Project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1446"/>
+        <source>Add &amp;Scope...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1454"/>
+        <source>Step &amp;Out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1462"/>
+        <source>&amp;Close Current Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1473"/>
+        <source>&amp;Next Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1484"/>
+        <source>&amp;Previous Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1495"/>
+        <source>&amp;Switch to Header/Sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1503"/>
+        <source>Set &amp;Focus to Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1514"/>
+        <source>Toggle &amp;breakpoint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1522"/>
+        <source>Goto &amp;Methods List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1527"/>
+        <source>Configure &amp;Shortcuts...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1532"/>
+        <source>&amp;Goto Line...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1540"/>
+        <source>Toggle Co&amp;mments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1594"/>
+        <source>E&amp;xternal Tools...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1602"/>
+        <source>&amp;Next Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1613"/>
+        <source>&amp;Previous Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1621"/>
+        <source>Find Pr&amp;evious</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1629"/>
+        <source>Goto matching &amp;bracket</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1648"/>
+        <source>Add New &amp;Class...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1661"/>
+        <source>Open F&amp;ile in project...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1672"/>
+        <source>Goto &amp;Implementation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1680"/>
+        <source>Goto &amp;Declaration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1685"/>
+        <source>&amp;Rebuild Qt classes database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1690"/>
+        <source>Execute &amp;qmake</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1698"/>
+        <source>Show Maximized</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1706"/>
+        <source>&amp;Editor mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1709"/>
+        <source>Ctrl+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1714"/>
+        <source>Next Warning/Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1717"/>
+        <source>F4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1722"/>
+        <source>Previous Warning/Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1725"/>
+        <source>Shift+F4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1730"/>
+        <source>Clear all Warnings/Errors</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2272"/>
+        <location filename="../../src/mainimpl.cpp" line="2242"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1077"/>
+        <location filename="../../src/mainimpl.cpp" line="1008"/>
         <source>Choose a file to open</source>
         <translation>Chọn mở tập tin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1217"/>
+        <location filename="../../src/mainimpl.cpp" line="1165"/>
         <source>Choose the file to create</source>
         <translation>Chọn tạo tập tin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1219"/>
+        <location filename="../../src/mainimpl.cpp" line="1167"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>Tập tin (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1863"/>
+        <location filename="../../src/mainimpl.cpp" line="1856"/>
         <source>Stop</source>
         <translation>Dừng</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1946"/>
+        <location filename="../../src/mainimpl.cpp" line="1935"/>
         <source>Start</source>
         <translation>Bắt đầu</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1821"/>
+        <location filename="../../src/mainimpl.cpp" line="1814"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Dự án đã bị thay đổi, bạn có muốn lưu lại các thay đổi không?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1838"/>
+        <location filename="../../src/mainimpl.cpp" line="1831"/>
         <source>Yes</source>
         <translation>Vâng</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1838"/>
+        <location filename="../../src/mainimpl.cpp" line="1831"/>
         <source>No</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1850"/>
+        <location filename="../../src/mainimpl.cpp" line="1843"/>
         <source>run Build.</source>
         <translation>thực hiện việc khởi tạo.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1850"/>
+        <location filename="../../src/mainimpl.cpp" line="1843"/>
         <source>Ok</source>
         <translation>Chấp nhận</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1837"/>
+        <location filename="../../src/mainimpl.cpp" line="1830"/>
         <source>Stop debugging ?</source>
         <translation>Dừng việc tìm lỗi ?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2012"/>
+        <location filename="../../src/mainimpl.cpp" line="2004"/>
         <source>Abort</source>
         <translation>Dứt bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2054"/>
+        <location filename="../../src/mainimpl.cpp" line="2039"/>
         <source>Continue</source>
         <translation>Tiếp tục</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2120"/>
+        <location filename="../../src/mainimpl.cpp" line="2097"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1028"/>
+        <location filename="../../src/mainimpl.cpp" line="960"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>Bạn có muốn thoát khỏi QDevelop không ?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1865"/>
+        <location filename="../../src/mainimpl.cpp" line="1858"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1947"/>
+        <location filename="../../src/mainimpl.cpp" line="1936"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1667"/>
-        <source>File</source>
-        <translation>Tập tin</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="412"/>
+        <location filename="../../src/mainimpl.cpp" line="436"/>
         <source>Files</source>
         <translation>Tập tin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1079"/>
+        <location filename="../../src/mainimpl.cpp" line="1010"/>
         <source>Sources</source>
         <translation>Nguồn</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1107"/>
+        <location filename="../../src/mainimpl.cpp" line="1039"/>
         <source>Projects</source>
         <translation>Dự án</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1081"/>
+        <location filename="../../src/mainimpl.cpp" line="1012"/>
         <source>Texts</source>
         <translation>Văn bản</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1082"/>
+        <location filename="../../src/mainimpl.cpp" line="1013"/>
         <source>All Files</source>
         <translation>Tất cả các tập tin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2005"/>
+        <location filename="../../src/mainimpl.cpp" line="1997"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Không thể dừng trong Windows. Hãy đặt điểm dừng.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="803"/>
-        <source>The project cannot be created</source>
-        <translation>Không thể tạo dư án</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="2262"/>
+        <location filename="../../src/mainimpl.cpp" line="2232"/>
         <source>New Variable:</source>
         <translation>Biến số mới:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1105"/>
+        <location filename="../../src/mainimpl.cpp" line="1037"/>
         <source>Choose a project to open</source>
         <translation>Chọn mở dự án</translation>
     </message>
@@ -1998,43 +2135,59 @@ was modified outside editor.
         <translation>cảnh báo</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="422"/>
+        <location filename="../../src/mainimpl.cpp" line="446"/>
         <source>The file &quot;%1&quot;
  already exists in directory.</source>
         <translation>Tập tin &quot;%1&quot;
  đã tồn tại trong thư mục.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="428"/>
+        <location filename="../../src/mainimpl.cpp" line="452"/>
         <source>Unable to create %1</source>
         <translation>Không thể tạo %1</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="795"/>
-        <source>The directory &quot;%1&quot; cannot be created</source>
-        <translation>Không thể tạo thư mục &quot;%1&quot;</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="1128"/>
+        <location filename="../../src/mainimpl.cpp" line="1060"/>
         <source>The project %1 doesn&apos;t exist.</source>
         <translation>Dự án %1 không tồn tại.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1198"/>
+        <location filename="../../src/mainimpl.cpp" line="1146"/>
         <source>Properties of %1...</source>
         <translation>Đặc tính của %1...</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1849"/>
+        <location filename="../../src/mainimpl.cpp" line="1842"/>
         <source>The program doesn&apos;t exist,</source>
         <translation>Chương trình không tồn tại,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2271"/>
+        <location filename="../../src/mainimpl.cpp" line="2241"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation>Biến số &quot;%1&quot;
  đã có sẵn.</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="891"/>
+        <source>Classes explorer is disabled, please enable it in the Options dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="870"/>
+        <source>The Qt include directory doesn&apos;t exist,
+You can change in Options dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="2397"/>
+        <source>The Qt database building is already in progress.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="2441"/>
+        <source>The Qt classes database build is ended.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2121,11 +2274,6 @@ was modified outside editor.
         <location filename="../../ui/newproject.ui" line="36"/>
         <source>Template</source>
         <translation>Mẫu</translation>
-    </message>
-    <message>
-        <location filename="../../ui/newproject.ui" line="48"/>
-        <source>Empty project</source>
-        <translation>Dự án rổng</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="55"/>
@@ -2248,51 +2396,101 @@ Tập tin thực thi:</translation>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Subclass:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
+    <message>
+        <location filename="../../ui/newproject.ui" line="48"/>
+        <source>Empty or master project</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewProjectImpl</name>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="46"/>
+        <location filename="../../src/newprojectimpl.cpp" line="45"/>
         <source>Choose the project directory</source>
         <translation>Chọn thư mục cho dự án</translation>
+    </message>
+    <message>
+        <location filename="../../src/newprojectimpl.cpp" line="120"/>
+        <source>The directory &quot;%1&quot; cannot be created</source>
+        <translation type="unfinished">Không thể tạo thư mục &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <location filename="../../src/newprojectimpl.cpp" line="129"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Hủy bỏ</translation>
+    </message>
+    <message>
+        <location filename="../../src/newprojectimpl.cpp" line="128"/>
+        <source>The project cannot be created</source>
+        <translation type="unfinished">Không thể tạo dư án</translation>
     </message>
 </context>
 <context>
     <name>NewVariable</name>
     <message>
-        <location filename="../../ui/newvariable.ui" line="16"/>
+        <location filename="../../ui/newvariable.ui" line="13"/>
         <source>Dialog</source>
         <translation>Bản đối thoại</translation>
     </message>
     <message>
-        <location filename="../../ui/newvariable.ui" line="57"/>
+        <location filename="../../ui/newvariable.ui" line="184"/>
         <source>OK</source>
         <translation>Chấp nhận</translation>
     </message>
     <message>
-        <location filename="../../ui/newvariable.ui" line="64"/>
+        <location filename="../../ui/newvariable.ui" line="191"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../ui/newvariable.ui" line="73"/>
+        <location filename="../../ui/newvariable.ui" line="55"/>
         <source>Qt Variables</source>
         <translation>Các biến số của Qt</translation>
     </message>
     <message>
-        <location filename="../../ui/newvariable.ui" line="91"/>
+        <location filename="../../ui/newvariable.ui" line="73"/>
         <source>User Variable</source>
         <translation>Các biến số của người dùng</translation>
     </message>
     <message>
-        <location filename="../../ui/newvariable.ui" line="109"/>
+        <location filename="../../ui/newvariable.ui" line="91"/>
         <source>Variable :</source>
         <translation>Biến số :</translation>
     </message>
     <message>
-        <location filename="../../ui/newvariable.ui" line="130"/>
+        <location filename="../../ui/newvariable.ui" line="33"/>
         <source>New Variable :</source>
         <translation>Biến số mới :</translation>
+    </message>
+    <message>
+        <location filename="../../ui/newvariable.ui" line="112"/>
+        <source>Operator :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/newvariable.ui" line="120"/>
+        <source>=</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/newvariable.ui" line="125"/>
+        <source>+=</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/newvariable.ui" line="130"/>
+        <source>-=</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/newvariable.ui" line="135"/>
+        <source>*=</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/newvariable.ui" line="140"/>
+        <source>~=</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2321,187 +2519,232 @@ Tập tin thực thi:</translation>
         <translation>Tùy chọn</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="35"/>
+        <location filename="../../ui/options.ui" line="47"/>
         <source>General</source>
         <translation>Tổng quát</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="55"/>
-        <source>Save All before Build</source>
-        <translation>Lưu tất cả trước khi Khởi tạo</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="65"/>
-        <source>Reload last project on start</source>
-        <translation>Tải lại dự án vừa qua khi bắt đầu</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="243"/>
+        <location filename="../../ui/options.ui" line="314"/>
         <source>Editor</source>
         <translation>Trình biên soạn</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="328"/>
+        <location filename="../../ui/options.ui" line="455"/>
         <source>Line numbers</source>
         <translation>Số dòng</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="321"/>
+        <location filename="../../ui/options.ui" line="362"/>
         <source>Selection border</source>
         <translation>Chọn đường biên</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="345"/>
+        <location filename="../../ui/options.ui" line="448"/>
         <source>Autoindent</source>
         <translation>Tự động thụt vào</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="565"/>
+        <location filename="../../ui/options.ui" line="809"/>
         <source>Syntax highlighting</source>
         <translation>Làm nổi bật cú pháp</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="606"/>
+        <location filename="../../ui/options.ui" line="880"/>
         <source>Function/method names :</source>
         <translation>Tên hàm :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="613"/>
+        <location filename="../../ui/options.ui" line="887"/>
         <source>Preprocessor :</source>
         <translation>Từ khóa tiền xử lý :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="620"/>
+        <location filename="../../ui/options.ui" line="894"/>
         <source>Qt words :</source>
         <translation>Từ khóa riêng của Qt :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="627"/>
+        <location filename="../../ui/options.ui" line="901"/>
         <source>Keywords :</source>
         <translation>Từ khóa của C và C++ :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="634"/>
+        <location filename="../../ui/options.ui" line="908"/>
         <source>Single comments :</source>
         <translation>Chú thích đơn :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="641"/>
+        <location filename="../../ui/options.ui" line="915"/>
         <source>Multiline comments :</source>
         <translation>Chú thích trên nhiều dòng :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="648"/>
+        <location filename="../../ui/options.ui" line="922"/>
         <source>Quotation strings :</source>
         <translation>Chuỗi trích dẫn :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="707"/>
+        <location filename="../../ui/options.ui" line="990"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="771"/>
+        <location filename="../../ui/options.ui" line="637"/>
         <source>Default</source>
         <translation>Mặc định</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="791"/>
-        <source>OK</source>
-        <translation>Chấp nhận</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="798"/>
-        <source>Cancel</source>
-        <translation>Hủy bỏ</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="491"/>
+        <location filename="../../ui/options.ui" line="675"/>
         <source>Replace Tab by spaces</source>
         <translation>Thay Tab bằng các khoảng trống</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="467"/>
+        <location filename="../../ui/options.ui" line="642"/>
         <source>Unix</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="472"/>
+        <location filename="../../ui/options.ui" line="647"/>
         <source>Dos/Windows</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="314"/>
+        <location filename="../../ui/options.ui" line="441"/>
         <source>Complete Code</source>
         <translation>Hoàn thành Mã lệnh</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="75"/>
+        <location filename="../../ui/options.ui" line="203"/>
         <source>Prompt before quit</source>
         <translation>Báo trước khi thoát</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="391"/>
+        <location filename="../../ui/options.ui" line="536"/>
         <source>Font:</source>
         <translation>Phông chữ:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="398"/>
+        <location filename="../../ui/options.ui" line="543"/>
         <source>End of line</source>
         <translation>Cuối dòng</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="255"/>
+        <location filename="../../ui/options.ui" line="338"/>
         <source>options</source>
         <translation>tùy chọn</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="352"/>
+        <location filename="../../ui/options.ui" line="369"/>
         <source>Auto-Brackets</source>
         <translation>Tự động đóng ngoặc</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="405"/>
+        <location filename="../../ui/options.ui" line="550"/>
         <source>Tab size</source>
         <translation>Kích thước Tab</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="412"/>
+        <location filename="../../ui/options.ui" line="564"/>
         <source>Current line background</source>
         <translation>Màu nền của dòng hiện hành</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="419"/>
+        <location filename="../../ui/options.ui" line="571"/>
         <source>Text background</source>
         <translation>Màu nền của văn bản</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="97"/>
+        <location filename="../../ui/options.ui" line="237"/>
         <source>Show classes explorer</source>
         <translation>Mở bộ quản lý dự án</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="117"/>
+        <location filename="../../ui/options.ui" line="257"/>
         <source>Interval between updates:</source>
         <translation>Thời gian giữa các lần cập nhật:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="131"/>
+        <location filename="../../ui/options.ui" line="271"/>
         <source>seconds</source>
         <translation>giây</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="169"/>
+        <location filename="../../ui/options.ui" line="125"/>
         <source>Default projects directory: </source>
         <translation>Thư mục mặc định của dự án:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="735"/>
+        <location filename="../../ui/options.ui" line="393"/>
+        <source>Matching ( and {</source>
+        <translation>Đối xứng cặp ( và {</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="191"/>
+        <source>User plugins directory: </source>
+        <translation>Thư mục trình cắm vào của người dùng:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="71"/>
+        <source>Save all before build</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="81"/>
+        <source>Automatic compilation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="108"/>
+        <source>Qt include directory: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="158"/>
+        <source>Qt documentation directory: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="168"/>
+        <source>Make extra parameters:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="210"/>
+        <source>Reload last project when the application starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="293"/>
+        <source>Close button in each tab (does not work with all styles)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="472"/>
+        <source>Display editor toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="479"/>
+        <source>Display white spaces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="557"/>
+        <source>Files encoding:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="578"/>
+        <source>Text color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="1018"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;/*&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* Multi-lines&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* Multi-line&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* comments &lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;*/&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
@@ -2515,28 +2758,13 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;/*&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* Multi-lines&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;*/&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;// Single line comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;{&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QApplication app(argc, argv);&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QString chaine = &quot;between quotations&quot;;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QDialog *main = new QDialog;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="275"/>
-        <source>Matching ( and {</source>
-        <translation>Đối xứng cặp ( và {</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="82"/>
-        <source>Close button in each tab (not work with all styles)</source>
-        <translation>Nút đóng lại trên mỗi tab (không áp dụng cho mọi kiểu)</translation>
-    </message>
-    <message>
-        <location filename="../../ui/options.ui" line="176"/>
-        <source>User plugins directory: </source>
-        <translation>Thư mục trình cắm vào của người dùng:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/optionsimpl.cpp" line="287"/>
+        <location filename="../../src/optionsimpl.cpp" line="368"/>
         <source>Choose the project directory</source>
         <translation>Chọn thư mục cho dự án</translation>
     </message>
@@ -2617,17 +2845,17 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ParametersImpl</name>
     <message>
-        <location filename="../../src/parametersimpl.cpp" line="71"/>
+        <location filename="../../src/parametersimpl.cpp" line="94"/>
         <source>Choose the project location</source>
         <translation>Chọn vị trí của dự án</translation>
     </message>
     <message>
-        <location filename="../../src/parametersimpl.cpp" line="92"/>
+        <location filename="../../src/parametersimpl.cpp" line="115"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/parametersimpl.cpp" line="91"/>
+        <location filename="../../src/parametersimpl.cpp" line="114"/>
         <source>The variable &quot;%1&quot; already exists.</source>
         <translation>Biến số &quot;%1&quot; đã có sẵn.</translation>
     </message>
@@ -2635,87 +2863,77 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1201"/>
+        <location filename="../../src/projectmanager.cpp" line="1175"/>
         <source>Save project changes ?</source>
         <translation>Lưu các thay đổi của dự án ?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1376"/>
+        <location filename="../../src/projectmanager.cpp" line="1348"/>
         <source>Yes</source>
         <translation>Vâng</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1376"/>
+        <location filename="../../src/projectmanager.cpp" line="1348"/>
         <source>No</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1353"/>
+        <location filename="../../src/projectmanager.cpp" line="1325"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="737"/>
+        <location filename="../../src/projectmanager.cpp" line="750"/>
         <source>Forms:</source>
         <translation>Khuôn mẫu:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="797"/>
+        <location filename="../../src/projectmanager.cpp" line="810"/>
         <source>Unable to create file.</source>
         <translation>Không thể tạo tập tin.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1368"/>
+        <location filename="../../src/projectmanager.cpp" line="1340"/>
         <source>Ok</source>
         <translation>Nhận</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="919"/>
+        <location filename="../../src/projectmanager.cpp" line="932"/>
         <source>Sub-project creation</source>
         <translation>Tạo dự án con</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="951"/>
-        <source>Unable to create project.</source>
-        <translation>Không thể tạo dự án.</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="988"/>
+        <location filename="../../src/projectmanager.cpp" line="968"/>
         <source>Sub-Projects</source>
         <translation>Dự án con</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1367"/>
-        <source>Unable to delete the main project.</source>
-        <translation>Không thể xóa dự án chính.</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="1515"/>
+        <location filename="../../src/projectmanager.cpp" line="1493"/>
         <source>Sub-projects</source>
         <translation>Dự án con</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1613"/>
+        <location filename="../../src/projectmanager.cpp" line="1599"/>
         <source>Headers</source>
         <translation>Tiêu đề</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1618"/>
+        <location filename="../../src/projectmanager.cpp" line="1604"/>
         <source>Sources</source>
         <translation>Nguồn</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1623"/>
+        <location filename="../../src/projectmanager.cpp" line="1609"/>
         <source>Dialogs</source>
         <translation>Bản đối thoại</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1628"/>
+        <location filename="../../src/projectmanager.cpp" line="1614"/>
         <source>Translations</source>
         <translation>Dịch</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1633"/>
+        <location filename="../../src/projectmanager.cpp" line="1619"/>
         <source>Resources</source>
         <translation>Tài nguyên</translation>
     </message>
@@ -2725,412 +2943,403 @@ p, li { white-space: pre-wrap; }
         <translation>Phân tích dự án</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1317"/>
+        <location filename="../../src/projectmanager.cpp" line="1291"/>
         <source>New name:</source>
         <translation>Tên mới:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1323"/>
+        <location filename="../../src/projectmanager.cpp" line="1297"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Tên tập tin mới và cũ thuộc loại khác nhau !</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1324"/>
+        <location filename="../../src/projectmanager.cpp" line="1298"/>
         <source>Rename</source>
         <translation>Đổi tên</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="724"/>
+        <location filename="../../src/projectmanager.cpp" line="737"/>
         <source>The file already exists in directory.</source>
         <translation>Tập tin đã tồn tại trong thư mục.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="845"/>
+        <location filename="../../src/projectmanager.cpp" line="858"/>
         <source>The file already exists.</source>
         <translation>Tập tin đã có sẵn.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="856"/>
+        <location filename="../../src/projectmanager.cpp" line="869"/>
         <source>This file is not permitted.</source>
         <translation>Tập tin này không có phép.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="936"/>
-        <source>Unable to create &quot;%1&quot; directory</source>
-        <translation>Không thể tạo thư mục &quot;%1&quot;</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="944"/>
-        <source>The project &quot;%1&quot;
- already exists in directory.</source>
-        <translation>Dự án &quot;%1&quot;
- đã tồn tại trong thư mục.</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="1275"/>
+        <location filename="../../src/projectmanager.cpp" line="1249"/>
         <source>The file  &quot;%1&quot; </source>
         <translation>Tập tin  &quot;%1&quot; </translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1353"/>
+        <location filename="../../src/projectmanager.cpp" line="1325"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Không thể đổi tên tập tin thành &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1375"/>
-        <source>Do you want to delete &quot;%1&quot; on project ?</source>
-        <translation>Bạn có muốn xóa &quot;%1&quot; khỏi dự án không?</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectmanager.cpp" line="2040"/>
+        <location filename="../../src/projectmanager.cpp" line="2015"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>Chỉ có phiên bản duy nhất %2 cho &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2041"/>
+        <location filename="../../src/projectmanager.cpp" line="2016"/>
         <source>Run on %1</source>
         <translation>Thực thi trên %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="1339"/>
+        <source>Cannot remove the main project.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp" line="1347"/>
+        <source>Do you want to remove &quot;%1&quot; from the project ?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertie</name>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="21"/>
+        <location filename="../../ui/projectpropertie.ui" line="19"/>
         <source>Dialog</source>
         <translation>Bản hội thoại</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="196"/>
+        <location filename="../../ui/projectpropertie.ui" line="240"/>
         <source>Configuration</source>
         <translation>Điều chỉnh</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="232"/>
+        <location filename="../../ui/projectpropertie.ui" line="315"/>
         <source>General :</source>
         <translation>Tổng quát :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="255"/>
+        <location filename="../../ui/projectpropertie.ui" line="356"/>
         <source>Version</source>
         <translation>Phiên bản</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="267"/>
+        <location filename="../../ui/projectpropertie.ui" line="380"/>
         <source>build_all</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="274"/>
+        <location filename="../../ui/projectpropertie.ui" line="387"/>
         <source>debug</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="284"/>
+        <location filename="../../ui/projectpropertie.ui" line="397"/>
         <source>release</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="291"/>
+        <location filename="../../ui/projectpropertie.ui" line="404"/>
         <source>debug_and_release</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="324"/>
+        <location filename="../../ui/projectpropertie.ui" line="449"/>
         <source>Warnings</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="336"/>
+        <location filename="../../ui/projectpropertie.ui" line="473"/>
         <source>warn_off</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="343"/>
+        <location filename="../../ui/projectpropertie.ui" line="480"/>
         <source>warn_on</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="379"/>
+        <location filename="../../ui/projectpropertie.ui" line="525"/>
         <source>Qt Libraries</source>
         <translation>Thư viện của Qt</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="407"/>
+        <location filename="../../ui/projectpropertie.ui" line="583"/>
         <source>core</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="414"/>
+        <location filename="../../ui/projectpropertie.ui" line="590"/>
         <source>network</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="421"/>
+        <location filename="../../ui/projectpropertie.ui" line="597"/>
         <source>sql</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="428"/>
+        <location filename="../../ui/projectpropertie.ui" line="604"/>
         <source>xml</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="445"/>
+        <location filename="../../ui/projectpropertie.ui" line="630"/>
         <source>gui</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="616"/>
+        <location filename="../../ui/projectpropertie.ui" line="1132"/>
         <source>opengl</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="459"/>
+        <location filename="../../ui/projectpropertie.ui" line="644"/>
         <source>svg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="466"/>
+        <location filename="../../ui/projectpropertie.ui" line="651"/>
         <source>qt3support</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="514"/>
+        <location filename="../../ui/projectpropertie.ui" line="982"/>
         <source>Advanced Options</source>
         <translation>Tùy chọn Cao cấp</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="550"/>
+        <location filename="../../ui/projectpropertie.ui" line="1057"/>
         <source>app_bundle</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="557"/>
+        <location filename="../../ui/projectpropertie.ui" line="1064"/>
         <source>assistant</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="564"/>
+        <location filename="../../ui/projectpropertie.ui" line="1071"/>
         <source>console</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="571"/>
+        <location filename="../../ui/projectpropertie.ui" line="1078"/>
         <source>designer</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="578"/>
+        <location filename="../../ui/projectpropertie.ui" line="1085"/>
         <source>dll</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="595"/>
+        <location filename="../../ui/projectpropertie.ui" line="1111"/>
         <source>exceptions</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="602"/>
+        <location filename="../../ui/projectpropertie.ui" line="1118"/>
         <source>lib_bundle</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="609"/>
+        <location filename="../../ui/projectpropertie.ui" line="1125"/>
         <source>no_lflags_merge</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="623"/>
+        <location filename="../../ui/projectpropertie.ui" line="1139"/>
         <source>plugin</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="640"/>
+        <location filename="../../ui/projectpropertie.ui" line="1165"/>
         <source>ppc</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="647"/>
+        <location filename="../../ui/projectpropertie.ui" line="1172"/>
         <source>qaxcontainer</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="654"/>
+        <location filename="../../ui/projectpropertie.ui" line="1179"/>
         <source>qaxserver</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="661"/>
+        <location filename="../../ui/projectpropertie.ui" line="1186"/>
         <source>qt</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="688"/>
+        <location filename="../../ui/projectpropertie.ui" line="1222"/>
         <source>resources</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="695"/>
+        <location filename="../../ui/projectpropertie.ui" line="1229"/>
         <source>rtti</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="702"/>
+        <location filename="../../ui/projectpropertie.ui" line="1236"/>
         <source>staticlib</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="709"/>
+        <location filename="../../ui/projectpropertie.ui" line="1243"/>
         <source>stl</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="716"/>
+        <location filename="../../ui/projectpropertie.ui" line="1250"/>
         <source>thread</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="733"/>
+        <location filename="../../ui/projectpropertie.ui" line="1276"/>
         <source>uic3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="740"/>
+        <location filename="../../ui/projectpropertie.ui" line="1283"/>
         <source>uitools</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="747"/>
+        <location filename="../../ui/projectpropertie.ui" line="1290"/>
         <source>windows</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="754"/>
+        <location filename="../../ui/projectpropertie.ui" line="1297"/>
         <source>x11</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="761"/>
+        <location filename="../../ui/projectpropertie.ui" line="1304"/>
         <source>x86</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="780"/>
-        <source>Free CONFIG
-variables :</source>
-        <translation>Biến CONFIG
-tự do :</translation>
-    </message>
-    <message>
-        <location filename="../../ui/projectpropertie.ui" line="801"/>
+        <location filename="../../ui/projectpropertie.ui" line="715"/>
         <source>Variables</source>
         <translation>Biến số</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="845"/>
+        <location filename="../../ui/projectpropertie.ui" line="796"/>
         <source>Variable :</source>
         <translation>Biến số :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="972"/>
+        <location filename="../../ui/projectpropertie.ui" line="944"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="925"/>
+        <location filename="../../ui/projectpropertie.ui" line="890"/>
         <source>Values :</source>
         <translation>Giá trị :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="55"/>
+        <location filename="../../ui/projectpropertie.ui" line="72"/>
         <source>Project Template</source>
         <translation>Khuôn mẫu dự án</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="84"/>
+        <location filename="../../ui/projectpropertie.ui" line="113"/>
         <source>subdirs</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="77"/>
+        <location filename="../../ui/projectpropertie.ui" line="106"/>
         <source>lib</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="67"/>
+        <location filename="../../ui/projectpropertie.ui" line="96"/>
         <source>app</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="110"/>
+        <location filename="../../ui/projectpropertie.ui" line="146"/>
         <source>Project or Scope :</source>
         <translation>Dự án hoặc Phạm vi :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1070"/>
-        <source>Advanced mode</source>
-        <translation>Chế độ Cao cấp</translation>
-    </message>
-    <message>
-        <location filename="../../ui/projectpropertie.ui" line="1052"/>
+        <location filename="../../ui/projectpropertie.ui" line="1413"/>
         <source>OK</source>
         <translation>Chấp nhận</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1059"/>
+        <location filename="../../ui/projectpropertie.ui" line="1420"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="135"/>
+        <location filename="../../ui/projectpropertie.ui" line="169"/>
         <source>Default directories</source>
         <translation>Thư mục mặc định</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="147"/>
+        <location filename="../../ui/projectpropertie.ui" line="193"/>
         <source>Dialogs:</source>
         <translation>Bản đối thoại:</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="174"/>
+        <location filename="../../ui/projectpropertie.ui" line="220"/>
         <source>Sources:</source>
         <translation>Nguồn:</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="671"/>
+        <location filename="../../ui/projectpropertie.ui" line="1196"/>
         <source>qtestlib</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../../ui/projectpropertie.ui" line="976"/>
+        <source>Advanced options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/projectpropertie.ui" line="1345"/>
+        <source>Free CONFIG variables :</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertieImpl</name>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="530"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="520"/>
         <source>New Value:</source>
         <translation>Giá trị mới:</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="537"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="527"/>
         <source>delete spaces or put quotes.</source>
         <translation>xóa các khoảng trống hoặc đoạn trích.</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="538"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="528"/>
         <source>Modify</source>
         <translation>Sửa</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="538"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="528"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="772"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="761"/>
         <source>Choose the sources location</source>
         <translation>Chọn vị trí của nguồn</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="786"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="775"/>
         <source>Choose the dialogs location</source>
         <translation>Chọn vị trí của bản đối thoại</translation>
     </message>
@@ -3140,7 +3349,7 @@ tự do :</translation>
         <translation>Đặc tính của %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="536"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="526"/>
         <source>The spaces aren&apos;t correctly parsed by qmake</source>
         <translation>qmake không thể phân tích đúng các khoảng trắng</translation>
     </message>
@@ -3186,37 +3395,37 @@ tự do :</translation>
         <translation>Không thể chạy trình Assistant !</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="103"/>
+        <location filename="../../src/main.cpp" line="110"/>
         <source>Loading:</source>
         <translation>Tải:</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="71"/>
+        <location filename="../../src/main.cpp" line="70"/>
         <source>Interface translation</source>
         <translation>Giao diện phiên dịch</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="81"/>
+        <location filename="../../src/main.cpp" line="87"/>
         <source>Environment control</source>
         <translation>Điều khiển môi trường</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="85"/>
+        <location filename="../../src/main.cpp" line="91"/>
         <source>Files on editor</source>
         <translation>Tập tin trong trình biên soạn</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="107"/>
+        <location filename="../../src/main.cpp" line="114"/>
         <source>Main Window creation</source>
         <translation>Tạo cửa sổ chính</translation>
     </message>
     <message>
-        <location filename="../../src/misc.cpp" line="53"/>
+        <location filename="../../src/misc.cpp" line="80"/>
         <source>Unable to establish a database connection.</source>
         <translation>Không thể thiết lập kết nối cơ sở dữ liệu.</translation>
     </message>
     <message>
-        <location filename="../../src/misc.cpp" line="56"/>
+        <location filename="../../src/misc.cpp" line="83"/>
         <source>QDevelop needs SQLite support. Please read the Qt SQL driver documentation for information how to build it.</source>
         <translation>QDevelop cần có hổ trợ của SQLite. Vui lòng đọc tài liệu trình điều khiển của Qt SQL để biết cách xây dựng.</translation>
     </message>
@@ -3226,7 +3435,7 @@ tự do :</translation>
         <translation>Phân tích dự án hiện tại</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="103"/>
+        <location filename="../../src/main.cpp" line="110"/>
         <source>Plugins</source>
         <translation>Trình cắm vào</translation>
     </message>
@@ -3234,6 +3443,29 @@ tự do :</translation>
         <location filename="../../src/designer.cpp" line="65"/>
         <source>Unable to start Designer !</source>
         <translation>Không thể chạy trình Designer !</translation>
+    </message>
+</context>
+<context>
+    <name>Registers</name>
+    <message>
+        <location filename="../../ui/registers.ui" line="13"/>
+        <source>Form</source>
+        <translation type="unfinished">Khuôn mẫu</translation>
+    </message>
+    <message>
+        <location filename="../../ui/registers.ui" line="38"/>
+        <source>Name</source>
+        <translation type="unfinished">Tên</translation>
+    </message>
+    <message>
+        <location filename="../../ui/registers.ui" line="48"/>
+        <source>Value</source>
+        <translation type="unfinished">Giá trị</translation>
+    </message>
+    <message>
+        <location filename="../../ui/registers.ui" line="69"/>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3297,42 +3529,42 @@ tự do :</translation>
 <context>
     <name>ReplaceImpl</name>
     <message>
-        <location filename="../../src/replaceimpl.cpp" line="67"/>
+        <location filename="../../src/replaceimpl.cpp" line="90"/>
         <source>Beginning of document reached.</source>
         <translation>Đã đến đầu tài liệu.</translation>
     </message>
     <message>
-        <location filename="../../src/replaceimpl.cpp" line="67"/>
+        <location filename="../../src/replaceimpl.cpp" line="90"/>
         <source>Continue from the end</source>
         <translation>Tiếp tục đến cuối</translation>
     </message>
     <message>
-        <location filename="../../src/replaceimpl.cpp" line="69"/>
+        <location filename="../../src/replaceimpl.cpp" line="92"/>
         <source>End of document reached.</source>
         <translation>Đã đến cuối tài liệu.</translation>
     </message>
     <message>
-        <location filename="../../src/replaceimpl.cpp" line="69"/>
+        <location filename="../../src/replaceimpl.cpp" line="92"/>
         <source>Continue from the beginning</source>
         <translation>Tiếp tục lại từ đầu</translation>
     </message>
     <message>
-        <location filename="../../src/replaceimpl.cpp" line="72"/>
+        <location filename="../../src/replaceimpl.cpp" line="95"/>
         <source>Replace</source>
         <translation>Thay thế</translation>
     </message>
     <message>
-        <location filename="../../src/replaceimpl.cpp" line="73"/>
+        <location filename="../../src/replaceimpl.cpp" line="96"/>
         <source>replacement(s) made.</source>
         <translation>thay thế được thực hiện.</translation>
     </message>
     <message>
-        <location filename="../../src/replaceimpl.cpp" line="75"/>
+        <location filename="../../src/replaceimpl.cpp" line="98"/>
         <source>&amp;Continue</source>
         <translation>&amp;Tiếp tục</translation>
     </message>
     <message>
-        <location filename="../../src/replaceimpl.cpp" line="75"/>
+        <location filename="../../src/replaceimpl.cpp" line="98"/>
         <source>&amp;Stop</source>
         <translation>&amp;Dừng</translation>
     </message>
@@ -3368,14 +3600,6 @@ tự do :</translation>
         <location filename="../../ui/shortcuts.ui" line="86"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
-    </message>
-</context>
-<context>
-    <name>Stack</name>
-    <message>
-        <location filename="../../ui/stack.ui" line="16"/>
-        <source>Backtraces</source>
-        <translation>Dấu vết</translation>
     </message>
 </context>
 <context>
@@ -3424,24 +3648,29 @@ tự do :</translation>
 <context>
     <name>SubclassingImpl</name>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="488"/>
+        <location filename="../../src/subclassingimpl.cpp" line="487"/>
         <source>Choose the file location</source>
         <translation>Chọn vị trí tập tin</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="404"/>
+        <location filename="../../src/subclassingimpl.cpp" line="403"/>
         <source>&amp;Update</source>
         <translation>&amp;Cập nhật</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="408"/>
+        <location filename="../../src/subclassingimpl.cpp" line="407"/>
         <source>C&amp;reate</source>
         <translation>&amp;Tạo</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="412"/>
+        <location filename="../../src/subclassingimpl.cpp" line="411"/>
         <source>(.h and .cpp)</source>
         <translation>(.h và .cpp)</translation>
+    </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="50"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3465,89 +3694,95 @@ tự do :</translation>
 <context>
     <name>TextEdit</name>
     <message>
-        <location filename="../../src/textEdit.cpp" line="536"/>
+        <location filename="../../src/textEdit.cpp" line="665"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="536"/>
+        <location filename="../../src/textEdit.cpp" line="665"/>
         <source>Yes</source>
         <translation>Vâng</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="536"/>
+        <location filename="../../src/textEdit.cpp" line="665"/>
         <source>No</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1269"/>
+        <location filename="../../src/textEdit.cpp" line="1415"/>
         <source>Cut</source>
         <translation>Cắt</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1270"/>
+        <location filename="../../src/textEdit.cpp" line="1416"/>
         <source>Copy</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1271"/>
+        <location filename="../../src/textEdit.cpp" line="1417"/>
         <source>Paste</source>
         <translation>Dán</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1273"/>
+        <location filename="../../src/textEdit.cpp" line="1419"/>
         <source>Selection Indent</source>
         <translation>Chọn thụt vào</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1274"/>
+        <location filename="../../src/textEdit.cpp" line="1420"/>
         <source>Selection Unindent</source>
         <translation>Hủy bỏ thụt vào</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1277"/>
+        <location filename="../../src/textEdit.cpp" line="1423"/>
         <source>Select All</source>
         <translation>Chọn tất cả</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1279"/>
+        <location filename="../../src/textEdit.cpp" line="1425"/>
         <source>Find...</source>
         <translation>Tìm...</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1281"/>
+        <location filename="../../src/textEdit.cpp" line="1427"/>
         <source>Toggle Bookmark</source>
         <translation>Bật tắt thẻ đánh dấu</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1282"/>
+        <location filename="../../src/textEdit.cpp" line="1428"/>
         <source>Toggle Breakpoint</source>
         <translation>Bật tắt điểm dừng</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="312"/>
+        <location filename="../../src/textEdit.cpp" line="435"/>
         <source>The file &quot;%1&quot; could not be loaded.</source>
         <translation>Không thể nạp tập tin &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="536"/>
+        <location filename="../../src/textEdit.cpp" line="665"/>
         <source>Save &quot;%1&quot;</source>
         <translation>Lưu &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="555"/>
+        <location filename="../../src/textEdit.cpp" line="684"/>
         <source>Unable to save %1</source>
         <translation>Không thể lưu %1</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1264"/>
+        <location filename="../../src/textEdit.cpp" line="1410"/>
         <source>Goto Implementation</source>
         <translation>Đến phần thực hiện</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1265"/>
+        <location filename="../../src/textEdit.cpp" line="1411"/>
         <source>Goto Declaration</source>
         <translation>Đến phần khai báo</translation>
+    </message>
+    <message>
+        <location filename="../../src/textEdit.cpp" line="243"/>
+        <source>The Qt database building is in progress.
+Try to complete code later.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3558,77 +3793,67 @@ tự do :</translation>
         <translation>Công cụ bên ngoài</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="355"/>
+        <location filename="../../ui/toolsControl.ui" line="285"/>
         <source>qmake:</source>
         <translation>qmake:</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="392"/>
+        <location filename="../../ui/toolsControl.ui" line="322"/>
         <source>make:</source>
         <translation>make:</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="263"/>
+        <location filename="../../ui/toolsControl.ui" line="193"/>
         <source>gdb:</source>
         <translation>gdb:</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="120"/>
+        <location filename="../../ui/toolsControl.ui" line="50"/>
         <source>ctags:</source>
         <translation>ctags:</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="144"/>
+        <location filename="../../ui/toolsControl.ui" line="74"/>
         <source>linguist:</source>
         <translation>linguist:</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="341"/>
+        <location filename="../../ui/toolsControl.ui" line="271"/>
         <source>lupdate:</source>
         <translation>lupdate:</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="348"/>
+        <location filename="../../ui/toolsControl.ui" line="278"/>
         <source>lrelease:</source>
         <translation>lrelease:</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="287"/>
+        <location filename="../../ui/toolsControl.ui" line="217"/>
         <source>designer:</source>
         <translation>designer:</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="409"/>
+        <location filename="../../ui/toolsControl.ui" line="339"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="59"/>
+        <location filename="../../ui/toolsControl.ui" line="382"/>
         <source>&amp;Test</source>
         <translation>&amp;Kiểm tra</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="79"/>
-        <source>OK</source>
-        <translation>Chấp nhận</translation>
-    </message>
-    <message>
-        <location filename="../../ui/toolsControl.ui" line="86"/>
-        <source>Cancel</source>
-        <translation>Hủy bỏ</translation>
-    </message>
-    <message>
-        <location filename="../../ui/toolsControl.ui" line="95"/>
+        <location filename="../../ui/toolsControl.ui" line="25"/>
         <source>Please enter the path to the external programs:</source>
         <translation>Vui lòng nhập đường dẫn đến chương trình bên ngoài:</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="41"/>
+        <location filename="../../ui/toolsControl.ui" line="364"/>
         <source>Check environment on start</source>
         <translation>Kiểm tra môi trường khi bắt đầu</translation>
     </message>
     <message>
-        <location filename="../../ui/toolsControl.ui" line="219"/>
+        <location filename="../../ui/toolsControl.ui" line="149"/>
         <source>assistant:</source>
         <translation>assistant:</translation>
     </message>
@@ -3636,17 +3861,17 @@ tự do :</translation>
 <context>
     <name>ToolsControlImpl</name>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="70"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="90"/>
         <source>Please designe the program</source>
         <translation>Vui lòng chọn chương trình</translation>
     </message>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="140"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="160"/>
         <source>Ctags was detected in path %1, but this version is too old.</source>
         <translation>Ctags được tìn thấy ở %1, nhưng phiên bản này quá cũ.</translation>
     </message>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="141"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="161"/>
         <source>Ok</source>
         <translation>Chấp nhận</translation>
     </message>
@@ -3654,32 +3879,32 @@ tự do :</translation>
 <context>
     <name>TreeClasses</name>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="491"/>
+        <location filename="../../src/treeclasses.cpp" line="483"/>
         <source>Open Declaration</source>
         <translation>Mở phần khai báo</translation>
     </message>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="493"/>
+        <location filename="../../src/treeclasses.cpp" line="485"/>
         <source>Open Implementation</source>
         <translation>Mở phần thực thi</translation>
     </message>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="509"/>
+        <location filename="../../src/treeclasses.cpp" line="501"/>
         <source>Refresh contents</source>
         <translation>Cập nhật nội dung</translation>
     </message>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="497"/>
+        <location filename="../../src/treeclasses.cpp" line="489"/>
         <source>Add Method...</source>
         <translation>Thêm hàm mới...</translation>
     </message>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="498"/>
+        <location filename="../../src/treeclasses.cpp" line="490"/>
         <source>Add Variable...</source>
         <translation>Thêm biến mới...</translation>
     </message>
     <message>
-        <location filename="../../src/treeclasses.cpp" line="502"/>
+        <location filename="../../src/treeclasses.cpp" line="494"/>
         <source>Add get/set Methods...</source>
         <translation>Thêm các hàm get/set...</translation>
     </message>
@@ -3692,7 +3917,7 @@ tự do :</translation>
         <translation>Thêm dự án con...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="195"/>
+        <location filename="../../src/treeproject.cpp" line="220"/>
         <source>Add New Item...</source>
         <translation>Thêm mục mới...</translation>
     </message>
@@ -3742,27 +3967,22 @@ tự do :</translation>
         <translation>Mở</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="218"/>
+        <location filename="../../src/treeproject.cpp" line="222"/>
         <source>Sort</source>
         <translation>Xếp thứ tự</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="219"/>
-        <source>Delete</source>
-        <translation>Xóa</translation>
-    </message>
-    <message>
-        <location filename="../../src/treeproject.cpp" line="228"/>
+        <location filename="../../src/treeproject.cpp" line="232"/>
         <source>Show As</source>
         <translation>Cho xem theo</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="229"/>
+        <location filename="../../src/treeproject.cpp" line="233"/>
         <source>Normal</source>
         <translation>Thông thường</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="230"/>
+        <location filename="../../src/treeproject.cpp" line="234"/>
         <source>Krawek</source>
         <translation>Danh sách kiểu Krawek</translation>
     </message>
@@ -3777,9 +3997,14 @@ tự do :</translation>
         <translation>Đổi tên...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="225"/>
+        <location filename="../../src/treeproject.cpp" line="229"/>
         <source>Properties of %1...</source>
         <translation>Đặc tính của %1...</translation>
+    </message>
+    <message>
+        <location filename="../../src/treeproject.cpp" line="223"/>
+        <source>Remove from project</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
