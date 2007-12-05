@@ -1,3 +1,32 @@
+December ??? 2007 Version 0.25:
+  - Display white spaces on text editors (revisions 192, 236, 237)
+  - Open dialog remembers filter used (revision 193)
+  - Support for extra parameters for make (revision 194)
+  - Improve creation of sub-projects, speed updates to the text editor under some Linux versions of Qt4 (revision 194)
+  - Added encoding support to load/save files, defaults to UTF8 (revision 198)
+  - Improvement of the code completion (revisions 199, 200, 203, 208, 210-213, 220-223, 225, 251-252 )
+  - In "Options Dialog", allow to define the Qt include directory used to build the Qt classes database. (revision 204)
+  - The "Find in Files" function shows the filenames with the relative names in the window of files found. Thanks to Simon Viennot <krazwer@gmail.com>. (revision 209)
+  - CMake support: QDevelop can be built using cmake (revisions 216, 219, 238, 257, 272)
+  - Added shortcuts to most GUI items (revisions 217, 
+  - GUI has been simplified to reduce space screen (revision 227, 231, 235, 249, 263)
+  - Added conditional breakpoints in debugging functions. (revision 230)
+  - Now it's possible to disable the editor toolbars (revision 236)
+  - Middle click on line numbers makes a break point, left click a bookmark (revision 237)
+  - Middle click on a dialog in the project explorer will preview the dialog (revision 238)
+  - New shortcut to hide all dock widgets, and display only the editor - Control+E (revisions 
+  - On text editors, hide the mouse cursor only if the editor has the focus. (revision 244)
+  - Fixed segfault when opening a non-sourcecode file (i.e. a file where the inner editor toolbar is not displayed) (revision 248)
+  - Added functionality to modify registers (revision 249, 250)
+  - Changed home key: It now first moves the cursor to the first character of the current line, and after pressing it again, to the beginning of the line (revisions 253, 255)
+  - New feature: Editor mode. It will toggle the display visibility state of all dockwidgets and 
+    display only the editor. Shortcut control+E (revisions 256, 264)
+  - English "translations" updated (revisions 271,273)
+  - A new feature allows to compile automatically (every 5 seconds) the files (.cpp) edited. This 
+    compilation is made in background in a temporary file. The warnings and errors are marqued in 
+    the column numbers by the yellow and red warning panels. If the mouse is moved in a panel, a tooltip 
+    is showed and gives the message given from the compiler. (revisions 261-262, 265-270)
+
 August 11 2007 Version 0.24:
  
 Corrections and improvements:
@@ -158,7 +187,7 @@ August 12 2006 Version 0.17
 Corrections :
 - Some small defaults.
 Adds :
-- Code completion available thanks to Frédéric Julian and his excellent work. Completion need ctags under Linux and Windows. On Linux it is normaly installed with package developement. On Windows it should be downloaded on the site of ctags: http://ctags.sourceforge.net/
+- Code completion available thanks to Frï¿½dï¿½ric Julian and his excellent work. Completion need ctags under Linux and Windows. On Linux it is normaly installed with package developement. On Windows it should be downloaded on the site of ctags: http://ctags.sourceforge.net/
 - Possibility to change background color of editors in options dialog.
 - Goto line dialog.
 - Replace dialog.
