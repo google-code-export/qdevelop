@@ -11,14 +11,13 @@ December ??? 2007 Version 0.25:
   - Added shortcuts to most GUI items (revisions 217, 
   - GUI has been simplified to reduce space screen (revision 227, 231, 235, 249, 263)
   - Added conditional breakpoints in debugging functions. (revision 230)
-  - Now it's possible to disable the editor toolbars (revision 236)
+  - Now it's possible to disable the editor toolbars. The button to switch to header/source is instead displayed in the outer editor toolbar. (revision 236)
   - Middle click on line numbers makes a break point, left click a bookmark (revision 237)
   - Middle click on a dialog in the project explorer will preview the dialog (revision 238)
-  - New shortcut to hide all dock widgets, and display only the editor - Control+E (revisions 
   - On text editors, hide the mouse cursor only if the editor has the focus. (revision 244)
   - Fixed segfault when opening a non-sourcecode file (i.e. a file where the inner editor toolbar is not displayed) (revision 248)
   - Added functionality to modify registers (revision 249, 250)
-  - Changed home key: It now first moves the cursor to the first character of the current line, and after pressing it again, to the beginning of the line (revisions 253, 255)
+  - Changed home key: It now first moves the cursor to the first character of the current line, and after pressing it again, to the beginning of the line. The same behaviour is used for shift+home. (revisions 253, 255)
   - New feature: Editor mode. It will toggle the display visibility state of all dockwidgets and 
     display only the editor. Shortcut control+E (revisions 256, 264)
   - English "translations" updated (revisions 271,273)
