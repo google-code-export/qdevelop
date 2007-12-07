@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="fr_FR">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -38,7 +39,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:elcuco@kde.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -772,22 +773,22 @@ già esiste.</translation>
     <message>
         <location filename="../../ui/breakpointcondition.ui" line="13"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <location filename="../../ui/breakpointcondition.ui" line="25"/>
         <source>Condition :</source>
-        <translation type="unfinished"></translation>
+        <translation>Condizioni :</translation>
     </message>
     <message>
         <location filename="../../ui/breakpointcondition.ui" line="39"/>
         <source>is true (breakpoint)</source>
-        <translation type="unfinished"></translation>
+        <translation>È vero (Punto d&apos;arresto)</translation>
     </message>
     <message>
         <location filename="../../ui/breakpointcondition.ui" line="52"/>
         <source>has changed (watchpoint)</source>
-        <translation type="unfinished"></translation>
+        <translation>È cambiato (watchpoint)</translation>
     </message>
 </context>
 <context>
@@ -886,7 +887,7 @@ stata modificata fuori del editor.
     <message>
         <location filename="../../src/editor.cpp" line="179"/>
         <source>Open %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri %1</translation>
     </message>
 </context>
 <context>
@@ -1069,12 +1070,12 @@ stata modificata fuori del editor.
     <message>
         <location filename="../../src/InitCompletion.cpp" line="562"/>
         <source>Unable to launch %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile lanciare %1</translation>
     </message>
     <message>
         <location filename="../../src/InitCompletion.cpp" line="569"/>
         <source>Unable to open %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile aprire %1</translation>
     </message>
 </context>
 <context>
@@ -1092,7 +1093,7 @@ stata modificata fuori del editor.
     <message>
         <location filename="../../src/linenumbers.cpp" line="217"/>
         <source>Breakpoint Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Punti d&apos;arresto condizioni...</translation>
     </message>
 </context>
 <context>
@@ -1603,377 +1604,377 @@ stata modificata fuori del editor.
     <message>
         <location filename="../../ui/main.ui" line="69"/>
         <source>&amp;Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Segnalibro</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="112"/>
         <source>&amp;Last Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>U&amp;ltima Progetti</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="131"/>
         <source>B&amp;uild</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Genera</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="149"/>
         <source>Las&amp;t Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ul&amp;tima files</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="173"/>
         <source>&amp;Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Barra</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="181"/>
         <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Utilità</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="185"/>
         <source>&amp;Plugins settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Estensioni im&amp;postazioni</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="204"/>
         <source>Ed&amp;itors</source>
-        <translation type="unfinished"></translation>
+        <translation>Ed&amp;itor</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="378"/>
         <source>Local variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabili locali</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="436"/>
         <source>Other variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Altre variabili</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="763"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="831"/>
         <source>Build and Debug Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Genera e debug barra</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="857"/>
         <source>Call Stacks</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiamata Stacks</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="890"/>
         <source>Registers</source>
-        <translation type="unfinished"></translation>
+        <translation>Registri</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1001"/>
         <source>Save File &amp;as...</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;alva file con nome...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1012"/>
         <source>Save A&amp;ll</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;alva Tutto</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1028"/>
         <source>&amp;Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Annulla</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1045"/>
         <source>&amp;Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rifai</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1062"/>
         <source>Cu&amp;t</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Taglia</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1073"/>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Copia</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1084"/>
         <source>&amp;Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Incolla</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1103"/>
         <source>&amp;Find...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cerca...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1111"/>
         <source>&amp;Replace...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sostituisci...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1119"/>
         <source>&amp;Find in Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cerca nei File...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1127"/>
         <source>Add New &amp;Item...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi &amp;nuovo elemento...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1141"/>
         <source>Add Existing &amp;Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi &amp;file esistenti...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1160"/>
         <source>Project &amp;Properties...</source>
-        <translation type="unfinished"></translation>
+        <translation>Proprietà del &amp;Progetto...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1171"/>
         <source>&amp;Clean</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Cancella</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1185"/>
         <source>&amp;Rebuild</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rigenera</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1216"/>
         <source>S&amp;tart Program</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Avvia il Programma</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1233"/>
         <source>Step &amp;Into</source>
-        <translation type="unfinished"></translation>
+        <translation>Passo &amp;dentro</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1250"/>
         <source>Step O&amp;ver</source>
-        <translation type="unfinished"></translation>
+        <translation>Passo &amp;oltre</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1264"/>
         <source>&amp;Calls Stack</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Chiamata Stack</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1275"/>
         <source>&amp;Options...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Opzioni...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1280"/>
         <source>&amp;Parameters...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Parametri...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1285"/>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;About...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1290"/>
         <source>About &amp;Qt...</source>
-        <translation type="unfinished"></translation>
+        <translation>About &amp;Qt...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1306"/>
         <source>Find &amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Ricerva &amp;Successiva</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1320"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished">&amp;Ferma</translation>
+        <translation>&amp;Ferma</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1342"/>
         <source>&amp;Stop Build</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ferma Generazione</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1372"/>
         <source>&amp;Help Current Qt Word</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Aiuto attuale Qt parole</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1380"/>
         <source>&amp;Reset Executables List</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Reimpostare eseguibili lista</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1428"/>
         <source>&amp;Save Project</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Salva il Progetto</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1441"/>
         <source>C&amp;lose Project</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Chiudi Progetto</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1446"/>
         <source>Add &amp;Scope...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi &amp;Contesto...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1454"/>
         <source>Step &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Passo fu&amp;ori</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1462"/>
         <source>&amp;Close Current Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Chiudi attuale editor</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1473"/>
         <source>&amp;Next Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Successivo Barrra</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1484"/>
         <source>&amp;Previous Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Precedente Barra</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1495"/>
         <source>&amp;Switch to Header/Sources</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Passa a Intestazioni/Sorgenti</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1503"/>
         <source>Set &amp;Focus to Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta atten&amp;zione al editor</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1514"/>
         <source>Toggle &amp;breakpoint</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserisci/Togli &amp;Punto d&apos;arresto</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1522"/>
         <source>Goto &amp;Methods List</source>
-        <translation type="unfinished"></translation>
+        <translation>Vai &amp;metodi lista</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1527"/>
         <source>Configure &amp;Shortcuts...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configura &amp;scorciatoie...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1532"/>
         <source>&amp;Goto Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Vai alla Linea...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1540"/>
         <source>Toggle Co&amp;mments</source>
-        <translation type="unfinished"></translation>
+        <translation>Co&amp;mmento singolo</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1594"/>
         <source>E&amp;xternal Tools...</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilità e&amp;sterne...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1602"/>
         <source>&amp;Next Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Prossimo &amp;Segnalibro</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1613"/>
         <source>&amp;Previous Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Precedente Segnalibro</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1621"/>
         <source>Find Pr&amp;evious</source>
-        <translation type="unfinished"></translation>
+        <translation>Ricerva Pr&amp;ecedente</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1629"/>
         <source>Goto matching &amp;bracket</source>
-        <translation type="unfinished"></translation>
+        <translation>Vai alla &amp;parentesi corrispondenti</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1648"/>
         <source>Add New &amp;Class...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi nuova &amp;Classe...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1661"/>
         <source>Open F&amp;ile in project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aprire f&amp;ile nel Progetto...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1672"/>
         <source>Goto &amp;Implementation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vai alla &amp;Implementazione</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1680"/>
         <source>Goto &amp;Declaration</source>
-        <translation type="unfinished"></translation>
+        <translation>Vai alla &amp;Dichiarazione</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1685"/>
         <source>&amp;Rebuild Qt classes database</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rigenera Qt classi di database</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1690"/>
         <source>Execute &amp;qmake</source>
-        <translation type="unfinished"></translation>
+        <translation>Eseguibile &amp;qmake</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1698"/>
         <source>Show Maximized</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualizza Massimizzato</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1706"/>
         <source>&amp;Editor mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Metodo &amp;Editor</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1709"/>
         <source>Ctrl+E</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1714"/>
         <source>Next Warning/Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Successivo Avvertimenti/Errori</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1717"/>
         <source>F4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1722"/>
         <source>Previous Warning/Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Precedente Avvertimenti/Errori</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1725"/>
         <source>Shift+F4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1730"/>
         <source>Clear all Warnings/Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella tutti i Avvertimenti/Errori </translation>
     </message>
 </context>
 <context>
@@ -2170,23 +2171,23 @@ già esiste.</translation>
     <message>
         <location filename="../../src/mainimpl.cpp" line="891"/>
         <source>Classes explorer is disabled, please enable it in the Options dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Clases explorador está desactivado, por favor, que éste en el cuadro de diálogo Opciones</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="870"/>
         <source>The Qt include directory doesn&apos;t exist,
 You can change in Options dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>El Qt Include cartella non existe,  Puede cambiar it el cuadro di diálogo Opciones.</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="2397"/>
         <source>The Qt database building is already in progress.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt database build è già in corso. </translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="2441"/>
         <source>The Qt classes database build is ended.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt classe database build è chiuso. </translation>
     </message>
 </context>
 <context>
@@ -2397,7 +2398,7 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/newproject.ui" line="48"/>
         <source>Empty or master project</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoto o master progetto</translation>
     </message>
 </context>
 <context>
@@ -2410,17 +2411,17 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../src/newprojectimpl.cpp" line="120"/>
         <source>The directory &quot;%1&quot; cannot be created</source>
-        <translation type="unfinished">Impossibile creare &quot;%1&quot; Elenco</translation>
+        <translation>Il cartelle &quot;%1&quot; non può essere creato</translation>
     </message>
     <message>
         <location filename="../../src/newprojectimpl.cpp" line="129"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location filename="../../src/newprojectimpl.cpp" line="128"/>
         <source>The project cannot be created</source>
-        <translation type="unfinished">Il progetto non è stato creato</translation>
+        <translation>Il progetto non può essere creato</translation>
     </message>
 </context>
 <context>
@@ -2463,32 +2464,32 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/newvariable.ui" line="112"/>
         <source>Operator :</source>
-        <translation type="unfinished"></translation>
+        <translation>Operator :</translation>
     </message>
     <message>
         <location filename="../../ui/newvariable.ui" line="120"/>
         <source>=</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newvariable.ui" line="125"/>
         <source>+=</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newvariable.ui" line="130"/>
         <source>-=</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newvariable.ui" line="135"/>
         <source>*=</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/newvariable.ui" line="140"/>
         <source>~=</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2684,57 +2685,57 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/options.ui" line="71"/>
         <source>Save all before build</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvare prima di build</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="81"/>
         <source>Automatic compilation</source>
-        <translation type="unfinished"></translation>
+        <translation>Compilazione automatica</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="108"/>
         <source>Qt include directory: </source>
-        <translation type="unfinished"></translation>
+        <translation>Qt include cartella: </translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="158"/>
         <source>Qt documentation directory: </source>
-        <translation type="unfinished"></translation>
+        <translation>Qt documentazione cartella: </translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="168"/>
         <source>Make extra parameters:</source>
-        <translation type="unfinished"></translation>
+        <translation>Make parametri aggiuntivi:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="210"/>
         <source>Reload last project when the application starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Recargar último proyecto cuando la aplicación se inicie</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="293"/>
         <source>Close button in each tab (does not work with all styles)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulsante Chiudi in ciascuna tab (non funziona con tutti gli stili)</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="472"/>
         <source>Display editor toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra barre di editor</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="479"/>
         <source>Display white spaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualizzare spazi bianchi</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="557"/>
         <source>Files encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>File di codifica:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="578"/>
         <source>Text color</source>
-        <translation type="unfinished"></translation>
+        <translation>Texto colore</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="1018"/>
@@ -2756,7 +2757,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;/*&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* Multi-line&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;*/&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;// Single line comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;{&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QApplication app(argc, argv);&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QString chaine = &quot;between quotations&quot;;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QDialog *main = new QDialog;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -2993,12 +2994,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="1339"/>
         <source>Cannot remove the main project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non può rimuovere il progetto principale.</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1347"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoi rimuovere &quot;%1&quot; dal progetto ?</translation>
     </message>
 </context>
 <context>
@@ -3301,12 +3302,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/projectpropertie.ui" line="976"/>
         <source>Advanced options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opzioni avanzate</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="1345"/>
         <source>Free CONFIG variables :</source>
-        <translation type="unfinished"></translation>
+        <translation>Libero CONFIG variabili :</translation>
     </message>
 </context>
 <context>
@@ -3448,22 +3449,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/registers.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished">Finestra</translation>
+        <translation>Finestra</translation>
     </message>
     <message>
         <location filename="../../ui/registers.ui" line="38"/>
         <source>Name</source>
-        <translation type="unfinished">Nome</translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <location filename="../../ui/registers.ui" line="48"/>
         <source>Value</source>
-        <translation type="unfinished">Valore</translation>
+        <translation>Valore</translation>
     </message>
     <message>
         <location filename="../../ui/registers.ui" line="69"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Applicare</translation>
     </message>
 </context>
 <context>
@@ -3668,7 +3669,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/subclassingimpl.cpp" line="50"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3780,7 +3781,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/textEdit.cpp" line="243"/>
         <source>The Qt database building is in progress.
 Try to complete code later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt database build è in corso. 
+Tentare per completare il codice più tardi.</translation>
     </message>
 </context>
 <context>
@@ -4002,7 +4004,7 @@ Try to complete code later.</source>
     <message>
         <location filename="../../src/treeproject.cpp" line="223"/>
         <source>Remove from project</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovere dal Progetto</translation>
     </message>
 </context>
 <context>
