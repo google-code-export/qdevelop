@@ -1,12 +1,12 @@
 Summary		: A Development Environment for Qt4
 Name		: qdevelop
-Version		: 0.24
+Version		: 0.25
 Release		: 1
 License		: GPL
 Group		: Development/C++
 URL		: http://qdevelop.org/
 Source		: %{name}-%{version}.tar.gz
-Packager	: Diego Iastrubni <elcuco@kde.org>
+Packager	: Diego Iastrubni <diegoiast@gmail.com>
 BuildRoot	: %{_tmppath}/%{name}-%{version}-%{release}-builtroot
 BuildRequires	: cmake libqt4-devel
 Requires	: libqt4-devel ctags gdb
@@ -57,5 +57,5 @@ rm -fr cbuild
 %{instaldir_bin}/*
 
 %changelog
-* Wed Jun 6 2007 Diego Iastrubni <diego.iastrubni@xorcom.com> - 0.24-1
+* Sat Dec 8 2007 Diego Iastrubni <diegoiast@gmail.com> - 0.25-1
  - first package version

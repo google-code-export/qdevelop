@@ -35,4 +35,4 @@ is going on. The output is MUCH nicer: by default you do not see the
 "gcc -c ..." messages, instead you see nice messages saying that the file is being 
 compiled (in color!).
 
-- diego - elcuco@kde.org
+- diego - diegoiast@gmail.com
