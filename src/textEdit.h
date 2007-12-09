@@ -155,6 +155,7 @@ private:
     int lineNumber(QTextBlock b);
     int lineNumber(QPoint point);
     void key_home(bool shift);
+    void key_end(bool shift);
     QPoint mousePosition;
     Editor *m_editor;
     MainImpl *m_mainImpl;
