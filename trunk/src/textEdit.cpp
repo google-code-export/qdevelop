@@ -1172,6 +1172,10 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
     {
         key_home( event->modifiers() == Qt::ShiftModifier );
     }
+    else if ( event->key() == Qt::Key_End && ( !event->modifiers() || event->modifiers() == Qt::ShiftModifier ) )
+    {
+        key_end( event->modifiers() == Qt::ShiftModifier );
+    }
     else if ( m_autoindent && event->key() == '{' || event->key() == '}' )
     {
         QTextEdit::keyPressEvent ( event );
@@ -1229,11 +1233,31 @@ void TextEdit::key_home(bool shift)
          cursor.movePosition( QTextCursor::NextCharacter, moveMode );
     }
 
-    if (oldPos <= firstWord) // if tha cursor was in front of the first word, move it back
+    if (oldPos <= firstWord && oldPos > 0) // if the cursor was in front of the first word, move it to the beginning. However, if it was at the beginning of the line, let it where it is (first character)
         cursor.movePosition( QTextCursor::StartOfLine, moveMode );
     setTextCursor( cursor );
 }
+//
+void TextEdit::key_end(bool shift)
+{
+    QTextCursor cursor = textCursor();
+    QTextBlock b = cursor.block();
+    QString s = b.text();
+    QTextCursor::MoveMode moveMode = (shift ? QTextCursor::KeepAnchor : QTextCursor::MoveAnchor);
+    int lastWord, endOfLine, oldPos = cursor.columnNumber(); // save the old position, it's used later
 
+    cursor.movePosition( QTextCursor::EndOfLine, moveMode );
+    lastWord = endOfLine = cursor.columnNumber()-1;
+    while ( s.at(lastWord) == ' ' || s.at(lastWord) == '\t' ) { // while determining the last word, move the cursor to the right - if we encounter that it already was in front of the first word, it'll be moved back later
+         --lastWord;
+         cursor.movePosition( QTextCursor::PreviousCharacter, moveMode );
+    }
+
+    if (oldPos >= lastWord && oldPos < endOfLine) // if the cursor was after the last word, move it to the end. However, if it was at the end of the line, let it where it is (last character)
+        cursor.movePosition( QTextCursor::EndOfLine, moveMode );
+    setTextCursor( cursor );
+}
+//
 void TextEdit::textPlugin(TextEditInterface *iTextEdit)
 {
     QApplication::setOverrideCursor(Qt::WaitCursor);
