@@ -1212,6 +1212,16 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
         document()->redo(&cursor);
         setTextCursor(cursor);
     }
+    if ((event->key() == Qt::Key_Down) && (QApplication::keyboardModifiers().testFlag(Qt::ControlModifier)))
+    {
+        verticalScrollBar()->triggerAction( QAbstractSlider::SliderSingleStepAdd );
+        event->accept();
+    }
+    if ((event->key() == Qt::Key_Up) && (QApplication::keyboardModifiers().testFlag(Qt::ControlModifier)))
+    {
+        verticalScrollBar()->triggerAction( QAbstractSlider::SliderSingleStepSub );
+        event->accept();
+    }
     else
     {
         QTextEdit::keyPressEvent ( event );
