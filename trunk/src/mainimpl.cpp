@@ -2218,12 +2218,11 @@ void MainImpl::slotToolsControl(bool show)
 //
 void MainImpl::slotAbout()
 {
-    QDialog *about = new QDialog;
+    QDialog about;
     Ui::About ui;
-    ui.setupUi(about);
-    ui.version->setText( QString("Version ")+VERSION );
-    about->exec();
-    delete about;
+    ui.setupUi( &about );
+    ui.version->setText( tr("Version %1").arg(VERSION) );
+    about.exec();
 }
 //
 void MainImpl::slotAddDebugVariable()
