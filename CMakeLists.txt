@@ -121,6 +121,7 @@ SET( qdevelop_MOC_HDRS
 	src/addnewclassvariableimpl.h
 	src/addscopeimpl.h
 	src/addsetgetimpl.h
+	src/assistant.h
 	src/build.h
 	src/debug.h
 	src/editor.h
