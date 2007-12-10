@@ -31,6 +31,7 @@ class QTcpSocket;
 //
 class Assistant : public QObject
 {
+Q_OBJECT
 public:
 	Assistant();
 	~Assistant();

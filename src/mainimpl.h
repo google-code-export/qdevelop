@@ -47,7 +47,7 @@ class InitCompletion;
 typedef QPair<Editor *, QTextBlock> Bookmark;
 Q_DECLARE_METATYPE(Bookmark)
 //
-class MainImpl : public QMainWindow, Ui::Main
+class MainImpl : public QMainWindow, public Ui::Main
 {
 Q_OBJECT
 public:

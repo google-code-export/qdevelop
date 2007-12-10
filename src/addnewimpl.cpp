@@ -125,7 +125,7 @@ void AddNewImpl::slotAccept()
 		QString autreSuffixe = "h";
 		if( suffixe == "h" || suffixe == "hpp")
 		{
-			type = "source";
+			type = tr("source");
 			autreSuffixe = "cpp";
 		}
 		int rep = QMessageBox::question(0, "QDevelop", 
