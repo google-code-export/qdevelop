@@ -1,4 +1,4 @@
-December ??? 2007 Version 0.25:
+December 12 2007 Version 0.25:
   - Display white spaces on text editors (revisions 192, 236, 237)
   - Open dialog remembers filter used (revision 193)
   - Support for extra parameters for make (revision 194)

@@ -1,6 +1,6 @@
     QDevelop - A Development Environment for Qt4
 
-    (C) 2006 Jean-Luc Biord <jl.biord@free.fr>
+    (C) 2006-2007 Jean-Luc Biord <jl.biord@free.fr>
 
 Installation
 ~~~~~~~~~~~~
@@ -48,13 +48,12 @@ Documentation
 ~~~~~~~~~~~~~
 
 Up to date documentation can be found at:
-http://develop.org
+http://qdevelop.org
 
 License
 ~~~~~~~~~~~~~
 
-Copyright (C) 2006 Jean-Luc Biord <jlbiord@qtfr.org>
-Code completion Copyright (C) 2006 Frédéric Julian <fred.julian@gmail.com> and IComplete Team.
+Copyright (C) 2006-2007 Jean-Luc Biord <jl.biord@free.fr>
 
 QDevelop is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
