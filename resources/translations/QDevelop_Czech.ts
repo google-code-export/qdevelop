@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="cs_CZ">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -886,7 +887,7 @@ Kompilace %1...
     <message>
         <location filename="../../src/debug.cpp" line="102"/>
         <source>Debug exited</source>
-        <translation>Ladění okončeno</translation>
+        <translation>Ladění ukončeno</translation>
     </message>
     <message>
         <location filename="../../src/debug.cpp" line="369"/>
@@ -1482,7 +1483,7 @@ byl upraven mimo editor.
     <message>
         <location filename="../../ui/main.ui" line="1353"/>
         <source>Tab</source>
-        <translation>Tabulátor</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1361"/>
@@ -1492,7 +1493,7 @@ byl upraven mimo editor.
     <message>
         <location filename="../../ui/main.ui" line="1364"/>
         <source>Shift+Tab</source>
-        <translation>Shift+Tabulátor</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1375"/>
@@ -1522,12 +1523,12 @@ byl upraven mimo editor.
     <message>
         <location filename="../../ui/main.ui" line="1476"/>
         <source>Alt+Right</source>
-        <translation>Alt+Vpravo</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1487"/>
         <source>Alt+Left</source>
-        <translation>Alt+Vlevo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1498"/>
@@ -1572,7 +1573,7 @@ byl upraven mimo editor.
     <message>
         <location filename="../../ui/main.ui" line="1561"/>
         <source>Ctrl+Space</source>
-        <translation>Ctrl+Mezerník</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1569"/>
@@ -1697,7 +1698,7 @@ byl upraven mimo editor.
     <message>
         <location filename="../../ui/main.ui" line="763"/>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="831"/>
@@ -1812,7 +1813,7 @@ byl upraven mimo editor.
     <message>
         <location filename="../../ui/main.ui" line="1275"/>
         <source>&amp;Options...</source>
-        <translation>Nastavení Pr&amp;ostředí...</translation>
+        <translation>Nastavení pr&amp;ostředí...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1280"/>
@@ -2624,7 +2625,7 @@ Můžete jej změnit v dialogu s nastavením prostředí.</translation>
     <message>
         <location filename="../../ui/options.ui" line="362"/>
         <source>Selection border</source>
-        <translation>Pozadí výběru</translation>
+        <translation>Okraj pro výběr řádku</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="455"/>
@@ -2844,17 +2845,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/parameters.ui" line="90"/>
         <source>Working directory (leave empty to use project directory):</source>
-        <translation type="unfinished">Pracovní složka (ponechte prázdné, chcete-li použít složku s projektem):</translation>
+        <translation>Pracovní složka (ponechte prázdné, chcete-li použít složku s projektem):</translation>
     </message>
     <message>
         <location filename="../../ui/parameters.ui" line="108"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/parameters.ui" line="127"/>
         <source>Environment variables (NAME=value):</source>
-        <translation type="unfinished">Proměnné prostředí (JMÉNO=hodnota):</translation>
+        <translation>Proměnné prostředí (JMÉNO=hodnota):</translation>
     </message>
     <message>
         <location filename="../../ui/parameters.ui" line="148"/>
@@ -3015,7 +3016,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="1619"/>
         <source>Resources</source>
-        <translation>Resource soubor</translation>
+        <translation>Resource soubory</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="737"/>
