@@ -1,0 +1,122 @@
+<ui version="4.0" >
+ <class>BreakpointCondition</class>
+ <widget class="QDialog" name="BreakpointCondition" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>251</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item row="1" column="0" >
+    <widget class="QCheckBox" name="checkboxCondition" >
+     <property name="text" >
+      <string>Condition :</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" >
+    <widget class="QLineEdit" name="condition" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" >
+    <widget class="QRadioButton" name="isTrue" >
+     <property name="text" >
+      <string>is true (breakpoint)</string>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" >
+    <widget class="QRadioButton" name="hasChanged" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="text" >
+      <string>has changed (watchpoint)</string>
+     </property>
+     <property name="checked" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" >
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>BreakpointCondition</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>199</x>
+     <y>183</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>199</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>BreakpointCondition</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>199</x>
+     <y>183</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>199</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkboxCondition</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>condition</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>199</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>199</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

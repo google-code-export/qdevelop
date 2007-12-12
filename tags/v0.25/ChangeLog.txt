@@ -1,0 +1,265 @@
+December 12 2007 Version 0.25:
+  - Display white spaces on text editors (revisions 192, 236, 237)
+  - Open dialog remembers filter used (revision 193)
+  - Support for extra parameters for make (revision 194)
+  - Improve creation of sub-projects, speed updates to the text editor under some Linux versions of Qt4 (revision 194)
+  - Added encoding support to load/save files, defaults to UTF8 (revision 198)
+  - Improvement of the code completion (revisions 199, 200, 203, 208, 210-213, 220-223, 225, 251-252 )
+  - In "Options Dialog", allow to define the Qt include directory used to build the Qt classes database. (revision 204)
+  - The "Find in Files" function shows the filenames with the relative names in the window of files found. Thanks to Simon Viennot <krazwer@gmail.com>. (revision 209)
+  - CMake support: QDevelop can be built using cmake (revisions 216, 219, 238, 257, 272)
+  - Added shortcuts to most GUI items (revisions 217, 
+  - GUI has been simplified to reduce space screen (revision 227, 231, 235, 249, 263)
+  - Added conditional breakpoints in debugging functions. (revision 230)
+  - Now it's possible to disable the editor toolbars. The button to switch to header/source is instead displayed in the outer editor toolbar. (revision 236)
+  - Middle click on line numbers makes a break point, left click a bookmark (revision 237)
+  - Middle click on a dialog in the project explorer will preview the dialog (revision 238)
+  - On text editors, hide the mouse cursor only if the editor has the focus. (revision 244)
+  - Fixed segfault when opening a non-sourcecode file (i.e. a file where the inner editor toolbar is not displayed) (revision 248)
+  - Added functionality to modify registers (revision 249, 250)
+  - Changed home key: It now first moves the cursor to the first character of the current line, and after pressing it again, to the beginning of the line. The same behaviour is used for shift+home. (revisions 253, 255)
+  - New feature: Editor mode. It will toggle the display visibility state of all dockwidgets and 
+    display only the editor. Shortcut control+E (revisions 256, 264)
+  - English "translations" updated (revisions 271,273)
+  - A new feature allows to compile automatically (every 5 seconds) the files (.cpp) edited. This 
+    compilation is made in background in a temporary file. The warnings and errors are marqued in 
+    the column numbers by the yellow and red warning panels. If the mouse is moved in a panel, a tooltip 
+    is showed and gives the message given from the compiler. (revisions 261-262, 265-270)
+
+August 11 2007 Version 0.24:
+ 
+Corrections and improvements:
+  - Source/header navigation after files are renamed is working once more (fixes issue 137)
+  - Updated translations for 
+      * Chinese (Henri Girard <henrigirard@free.fr>) 
+      * Vietnamese (Chuong.Nguyen@eng.monash.edu.au)
+      * Italian (Rafael Venancio <rafael.venan@free.fr>)
+      * Portuguese (Rafael Venancio <rafael.venan@free.fr>)
+      * Spanish (Jorge Daniel Sampayo Vargas <jdsampayo@gmail.com>)
+      * Turkish (fatih.asici@gmail.com)
+      * German (Ralf Jung <ralfjung-e@gmx.de>)
+  - The build log window is now a sub-class of QTextEdit. It is possible to copy and paste by right-click the texts in 
+    this window (fixes issue 136 and 141)
+  - Make moving up/down in files explorer equivalent to clicking items, and Return equivalent to clicking Open (fixes issue 154)
+  - Updated the shape of the tabs on the output dock window (revisions 182, 183)
+  - Improove handleing of pro files (revision 185,187)
+  - Fixed various crashes related for the code completion (revision 184,188)
+  - The list of include directories is parsed by the code completion each time it is necessary (fixes issue 145)
+  - Commet/Uncomment line fixes, thanks to Simon Viennot <krazwer@gmail.com>  (fixes issues 101, 113 and 131).
+  - Fixed function/method names color bug (fixes issues 77 and 96)
+  - Line numbers are consistant with text editor, improved undo/redo behavior, enhanced find in document behavior,
+    Removed Undo and Redo from editor context menu and moved Goto Implementation and Goto Declaration to the top. Thanks
+    to Branimir Karadzic <branimirkaradzic@gmail.com> (revision 144)
+  - Fixed templates for win32-msvc2005 target. Thanks to Branimir Karadzic <branimirkaradzic@gmail.com>. (revision 145) 
+  - Find in files funtions has been improoved (revision 147).
+  - Completion improvement: If a function has many overloaded versions, the code completion choose the version with the biggest 
+    number of parameters, overcome some problems with ctags and Qt macros (revision 151)
+  - When adding files to a project if the directories do not exixt, create them (revision 154)
+  - New text format used in the source, which allows to translate more easily. Thanks to Simon Viennot <krazwer@gmail.com>. (revision 155)
+  - Indentation should be working once more (fixes issue 18)
+  - When creating a new dialog, the template will use by default QDialogButtonBox (fixes issue 83)
+  - Order of widgets in tools control is revised, also use QDialogButtonBox instead of normal buttons (fixes issue 89)
+  - Improved save and restore of MainWindow position, size and state (fixes issue 103).
+  - Break IDE closing with Cancel button if project changes are not saved (fixes issue 107)
+Adds:
+  - Add "Goto Declaration" and "Goto Implementation" entries in the popup menu showed by right-click in an editor. After the right-click on a word, the program find the member object or function and his class then, if possible allows to go to the implementation and the declaration files.  
+  - Since Qt 4.3.0, Designer can be controlled  as Assistant by socket. That allows to open all UI files with one instance of Designer.
+  - Added an entry to the main menu to open class methods combo box for fast lookup without using mouse. Thanks to Branimir Karadzic <branimirkaradzic@gmail.com>. (revision 146)
+  - Hide mouse cursor while typing code (fixes issue 24)
+  
+May 29 2007 Version 0.23
+
+Corrections:
+- Prevents the opening of the same file in several tab.
+The code completion works now with the classes created in the project.
+When the IDE auto-completes some code, it also add the "()" after the cursor, and place the cursor in the best position
+possible.
+- Fix a problem with packaged versions of QDevelop. With these versions, the code completion did not work.
+
+Adds:
+- Add Portuguese translation thanks to Giuliano Santana
+- Add Vietnamese translation. Thanks to Chuong Nguyen
+- In subclassing, the code is now added in editor if the file is opened in tab (before, the code was added always in files on disk, even with the file opened).
+
+April 11 2007 Version 0.22
+
+Corrections:
+- Fixed cmake compilation. Now executable is called QDevelop. I think I will have to revert this for UNIX* environemtns, in which the binary should be named qdevelop.
+- Update the code to accept the plugins in subdirectory of executable directory.
+- Fix the kind for field implementation (int to string) in table classesbrowser in database.
+- Fix items alignment default in projectpropertie.ui
+- In project database, opened files are now saved with relative paths to the project directory. If project directory is moved to other path, the files are correctly reopened. This commit saves relative paths for files in classes browser too.
+- Fix a crash when "Refresh contents" is called on tree browser without project opened.
+
+Adds:
+- Add  czech translation language.
+- Add Ukrainian translation.
+- The application accept now "GNU make" as previously but also others like "FreeBSD make".
+- With a right-click on a class name in classes browser, it is possible to:
+   - Add a new method to the class (can be a slot or a signal)
+   - Add a new variable member
+- With a right-click on a member variable of a class in classes browser, it is possible to:
+   - Add set and get methods for this variable member.
+
+Version 0.21-svn
+Adds:
+- Colorized matching for ( and {
+
+October 26 2006 Version 0.20
+Name:
+- QIde becomes QDevelop at October 4, 2006
+Corrections:
+- A crash if a file is opened without project
+- Bug in classes explorer when a sub-project have a name identical of the main project.
+- Deletion of Auto-Hide docks, not working with Qt 4.2
+- The settings are now written in qdevelop.ini file in the user home directory.
+- The database of project is named "qdevelop-settings.db" in project directory.
+- New C++ highlighter
+Adds:
+- The Default projects directory can be set in options dialog.
+- Bookmarks. Bookmarks can be toggled on menu bar and by right-click in margin number or editor. 
+- Add "Next Bookmark" and "Previous Bookmark" to menu Bookmark.
+- Add Bookmarks toolbar.
+- Save bookmarks and breakpoints in project settings
+- Add "console" to CONFIG variable in (.pro) file for new projects to have qDebug() written on debug console under Windows. 
+- Modification of the class browser to understand functions overloading.
+- When a project is closed, the content of class browser is saved in database project.db. With this database, the content is reloaded very quickly during the loading of the project. This feature require to have the SQL driver sqlite enable. On build enter the option -qt-sql-sqlite after the configure command.
+- Moving tabs with mouse to switch between us
+- Detection when a file was modified by another program and ask for save or reload.
+- Two tabs to show debugged variables program. Deletion of line edit "Debug command", obsolete with new tabs.
+- Templates to create a project (based on dialog or main window).
+- The code completion list contains the name and signature of functions.
+- Entries "Close Other Tabs" and "Close All Tabs" in popup menu showed by right-click on editor Tab.
+- Add Polish, Spanish, Chinese and Russian translations
+- The application can be build using cmake (experimental!)
+
+September 25 2006 Version 0.19
+Corrections:
+- The code is entirely translated in English, variables, function names and file names. 
+- Improvement of completion, much faster (5 or 6 times). An improved code increases its reliability.
+- The location of qmake is determined in this order:
+   1. Read in INI file the lasted saved location. If it not saved, use : QLibraryInfo::location( QLibraryInfo::BinariesPath )+"/qmake";
+   2. Test if the location finded on 1 is good, otherwise display a dialog for choose qmake location
+   In options dialog, it is possible to change the location of qmake anytime.
+Adds:
+- The classes explorer to navigate into classes and members. By right-click, each item can display the two files of a member or function: implementation and declaration. The double-click shows the implementation if available. The items are updated in real time when the text in editor is modified and the interval between two updates can be configured in options dialog. This new feature require ctags.
+- The project QIde is now a single project without plugin projects (dockplugin, lineedithistoplugin and treeprojectplugin), not requires to build the application.
+- On close, "Replace" and "Find in files" dialogs saves their options to reuse on next showing.
+- Menu "Debug | Parameters" to configure the arguments of program, his working directory and environment variables.
+- Menu "Debug | Calls Stack" to show all functions called. Is equivalent to the 'backtrace' gdb command. In the dialog, when a line is activated, the file is opened on good line.
+
+August 28 2006 Version 0.18-a 
+Corrections:
+- A crash when "Edit | Toggle comment" is choose on unselected line.
+- A crash when Enter key is pressed in a header.
+- Widgets in preview dialogs are now connected.
+- Audo-hide dock does not work on Qt 4.2.x and this feature is disabled for this version.
+- Problem if current line color is disabled in options dialog.
+Adds:
+- Actions "Comment" and "Uncomment".
+
+August 27 2006 Version 0.18
+
+Corrections :
+- Now detect translated "error" and "warning" strings in gcc logs to show lines on red and blue and to permit the double-click to open editors.
+- Crash on starts when last project is not present 
+- Rewriting of cpp syntax highlighter. Work well and more quickly. Highlighting is now enabled only for .c, .cpp, .cc and .h files only.
+- Remove stranges characters in Build Log window.
+- The location of qmake is set during QIde compilation then used to call qmake. But sometimes this location is not good thus in options dialog it is possible configure it.  
+- Rewriting of parser who populates the combo classes and methods. Now requires ctags and normally works with all styles of code.
+Adds :
+- Auto brackets in editor. When "{" is pressed, "}" gets added to the text automatically and text between is indented.
+- Highlight current line
+- On dialogs, a right-click on item preview the dialog, without opening Designer. Each widget shows a tooltip containing his name and classname.
+- Dutch translation
+- Find in files
+- Improvement of the Qt contextual help. When F1 is pressed on word in editor, Assistant is launched. 
+		- If the word is an Qt object, the corresponding page is displayed (qstring.html if the word is QString). 
+		- If the word is a function, the page called is the class of this function and in the page the anchor corresponding
+		of the word is displayed. Example : in code : QString foo="ab"; foo = foo.remove("a"); If F1 is pressed
+		on the word "remove", Assistant shows the page qstring.html at the place of the anchor "remove". That does not work every time because the anchor names are not always identical to the names of functions.  
+- The Project explorer have now two view modes accessible by right click then choose "Show As".
+- Close a tab by right-click on it even if it is not the currrent tab.
+
+August 12 2006 Version 0.17
+
+Corrections :
+- Some small defaults.
+Adds :
+- Code completion available thanks to Fr�d�ric Julian and his excellent work. Completion need ctags under Linux and Windows. On Linux it is normaly installed with package developement. On Windows it should be downloaded on the site of ctags: http://ctags.sourceforge.net/
+- Possibility to change background color of editors in options dialog.
+- Goto line dialog.
+- Replace dialog.
+- Find works like in Firefox at bottom of editors.
+
+August 6 2006 Version 0.16
+
+Corrections :
+- Add good templates (QDialog, QMainWindow and QWidget) for forms (.ui) append.
+- The find method of executable name was rewritten and work better.
+- Shortcuts dialog was rewritten to delete empty lines.
+- Good compatibility 64bits.
+Adds :
+- On editor, the tabs can be replaced by spaces.
+- The end-of-line can be configured to Default, Unix or Windows mode. In Linux mode, the lines are terminated by "\n". In Windows by "\r\n". In default mode, the end-of-line terminators are translated to the local encoding.
+- By right-clic on Dialog (.ui) on "Project Explorer", it is possible to create or update the files subclassed. The auto-connect slots can be selected and created on implementation files.
+
+July 18 2006 Version 0.15
+
+Corrections :
+- Complete rewriting of the auto-hide docks. The docks have now a button to make them maskable, like VS.
+Adds :
+- A dialog to configure all shortcuts.
+- Compatibility 64bits. Without guarantee of working fine currently.
+
+July 16 2006 Version 0.14
+
+Corrections :
+- The number margin correctly adapts its size to number digits
+Adds :
+- To maximize the size of editors, the docks "Explorer of project" and "Outputs" are automatically masked.
+- The project configuration dialog has two modes: normal (by default) and advanced.
+- In project configuration dialog, a list of Qt variables is proposed when a variable is added.
+- The application accepts a list of files or project in parameter which are automatically open.
+- Some short cuts keyboard :
+- F9 : Toggled breakpoint on editor
+
+July 15, 2006 Version 0.13
+
+Corrections :
+- Better management of the long files in the editor
+Adds :
+- Translation in German. Thanks to Adrian Debbeler
+- Some short cuts keyboard :
+- Shift+F5 : Stop program debugging
+- Shift+F11 : In debugging, step out
+- Esc : Return and set focus to current editor.
+- Find box says when the text is not found, like Kate.
+
+July 13, 2006 Version 0.12
+
+Corrections:
+- Maximum Size for the combo ?Methods?. Problem with the too long methods.  
+Adds 
+- Checking of the version debug or release before execute a program. With warning when the editing version is not available. 
+- The interface is now in English. Addition of the French translation. 
+- Some short cuts keyboard: 
+- Shift+F12 Switch between header and sources 
+- Ctrl+W Close the current editor 
+- Alt+Right Next Tab 
+- Alt+Left Previous Tab
+
+July 12, 2006 Version 0.11   
+
+Corrections: 
+- Pb with the : character on string. In particular on Windows paths 
+- Modification of the module ?Property of project? for better managing the scopes. 
+Adds: 
+- Possibility of changing the colors of editor. 
+- When user double-click on file name, DEPENDPATH variable is read to find file.
+- With right-click on project explorer, run lupdate and lrelease directly. 
+
+July 9, 2006: 0.10 Beta 
+
+June 1, 2006: Beginning of the development 
+ 
