@@ -949,7 +949,7 @@ void TextEdit::paintEvent ( QPaintEvent * event )
 
 	if (m_showWhiteSpaces || m_matchingBegin != -1)
 		printWhiteSpacesAndMatching( painter );
-		
+	painter.end();
     QTextEdit::paintEvent( event );
 }
 //
