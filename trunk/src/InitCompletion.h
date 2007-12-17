@@ -102,6 +102,7 @@ private:
 	QString m_qtInclude;
 	bool m_stopRequired;
 	TreeClasses *m_treeClasses;
+	QStringList filesList(QString directory, QStringList files);
 public slots:
 	void slotInitParse(InitCompletion::Request request, QString filename, const QString &text, bool showAllResults, bool emitResults, bool showDuplicateEntries, QString name);
 signals:
