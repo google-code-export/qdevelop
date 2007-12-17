@@ -551,11 +551,37 @@ void InitCompletion::createTables()
 }
 //
 
+QStringList InitCompletion::filesList(QString directory, QStringList files)
+{
+    QDir dir(directory);
+    QString filterNames = "q*.h;Q*.h";
+    QFileInfoList list = dir.entryInfoList(filterNames.split(";"), QDir::AllDirs | QDir::Files | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+    foreach(QFileInfo fileInfo, list)
+    {
+        if ( fileInfo.isFile() ) // Header file
+        {
+            files << fileInfo.absoluteFilePath();
+        }
+        else // Directory
+        {
+            files = filesList(fileInfo.absoluteFilePath(), files);
+        }
+    }
+    return files;
+}
+//
 void InitCompletion::populateQtDatabase()
 {
-    QString command = ctagsCmdPath + " -R -f \"" + QDir::tempPath()+"/qttags" +
+   QString command = ctagsCmdPath + " -L "+QDir::tempPath()+"/qdevelopfilenames -f \"" + QDir::tempPath()+"/qttags" +
                       "\" --language-force=c++ --fields=afiKmsSzn --c++-kinds=cdefgmnpstuvx \""
                       + m_qtInclude + '\"';
+    QStringList files;
+    files = filesList(m_qtInclude, files);
+     QFile f(QDir::tempPath()+"/qdevelopfilenames");
+     if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+         return;
+     f.write( files.join("\n").toAscii() );
+    f.close();
     QProcess ctags;
     if( ctags.execute(command) != 0 )
     {
@@ -573,7 +599,7 @@ void InitCompletion::populateQtDatabase()
     read = file.readAll();
     file.close();
     file.remove();
-
+    f.remove();
     QMap<QString, QString> inheritsList;
     QMap<QString, TagList> map;
     foreach(QString s, read.split("\n", QString::SkipEmptyParts) )
