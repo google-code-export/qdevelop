@@ -319,13 +319,13 @@ void TextEdit::slotCompletionList(TagList tagList )
             //posX = width()-220;
         if ( cursorRect().y() > viewport()->height()/2 )
         {
-            h = qMin( qMin(h+20, cursorRect().y()), 250);
+            h = qMin( qMin(h+20, cursorRect().y()), 500);
             m_completionList->setGeometry(posX, cursorRect().y()-h, w, h);
 
         }
         else
         {
-            h = qMin( qMin(h+20, viewport()->height()-22-cursorRect().y()), 250);
+            h = qMin( qMin(h+20, viewport()->height()-22-cursorRect().y()), 500);
             m_completionList->setGeometry(posX, cursorRect().y()+fontMetrics().height(), w, h);
 
         }
