@@ -34,6 +34,12 @@ AddNewClassMethodImpl::AddNewClassMethodImpl( MainImpl * parent, TreeClasses *tr
         : QDialog(parent), m_mainImpl(parent), m_treeClasses(treeClasses), m_implementation(implementation), m_declaration(declaration), m_classname(classname)
 {
     setupUi(this);
+    scope->addItems(QStringList() << "public" << "protected" << "private" << "public slots" << "protected slots" << "private slots" << "signals");
+    returnType->addItems(QStringList() << "void" << "bool" << "char" << "short"
+    	<< "long" << "int" << "signed"
+    	<< "unsigned " << "float" << "double"
+    	<< "QString" 
+    );
     setWindowTitle ( tr("Add New Method in class %1").arg(m_classname) );
 }
 //

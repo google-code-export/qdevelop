@@ -34,6 +34,12 @@ AddNewClassVariableImpl::AddNewClassVariableImpl( MainImpl * parent, TreeClasses
         : QDialog(parent), m_mainImpl(parent), m_treeClasses(treeClasses), m_treeWidget(treeWidget), m_declaration(declaration), m_implementation(implementation), m_classname(classname)
 {
     setupUi(this);
+    scope->addItems(QStringList() << "public" << "protected" << "private");
+    type->addItems(QStringList() << "bool" << "char" << "short"
+    	<< "long" << "int" << "signed"
+    	<< "unsigned " << "float" << "double"
+    	<< "QString" << "void"
+    );
 }
 //
 
