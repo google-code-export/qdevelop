@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="en_US">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -76,7 +77,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addexistant.ui" line="44"/>
         <source>Project or Scope :</source>
-        <translation>工程或组 :</translation>
+        <translation>工程或域 :</translation>
     </message>
     <message>
         <location filename="../../ui/addexistant.ui" line="54"/>
@@ -177,7 +178,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnew.ui" line="131"/>
         <source>Project or Scope:</source>
-        <translation>工程或组:</translation>
+        <translation>工程或域:</translation>
     </message>
     <message>
         <location filename="../../ui/addnew.ui" line="141"/>
@@ -255,12 +256,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclass.ui" line="150"/>
         <source>Ancestor&apos;s include filename:</source>
-        <translation>祖先包含文件:</translation>
+        <translation>祖先的include文件:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="157"/>
         <source>Scope:</source>
-        <translation>组:</translation>
+        <translation>域:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="167"/>
@@ -290,7 +291,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclass.ui" line="298"/>
         <source>Project or Scope:</source>
-        <translation>工程或组:</translation>
+        <translation>工程或域:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="308"/>
@@ -305,7 +306,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclass.ui" line="348"/>
         <source>Virtual destructor</source>
-        <translation>虚拟破坏器</translation>
+        <translation>虚拟析构函数</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="13"/>
@@ -342,12 +343,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="13"/>
         <source>Add New Method</source>
-        <translation>添加新函数</translation>
+        <translation>添加新方法</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="41"/>
         <source>Method Name:</source>
-        <translation>Method名:</translation>
+        <translation>方法名:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="48"/>
@@ -362,7 +363,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="62"/>
         <source>Scope:</source>
-        <translation>组:</translation>
+        <translation>域:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="94"/>
@@ -457,7 +458,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="252"/>
         <source>Virtual</source>
-        <translation>虚拟的</translation>
+        <translation>Virtual</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassmethod.ui" line="259"/>
@@ -513,7 +514,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="25"/>
         <source>Create get/set methods</source>
-        <translation>创建 get/set methods</translation>
+        <translation>创建 get/set 方法</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="56"/>
@@ -523,12 +524,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="73"/>
         <source>set method</source>
-        <translation>set method</translation>
+        <translation>set 方法</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="87"/>
         <source>get method</source>
-        <translation>get method</translation>
+        <translation>get 方法</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="131"/>
@@ -553,7 +554,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="177"/>
         <source>Scope:</source>
-        <translation>组:</translation>
+        <translation>域:</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclassvariable.ui" line="209"/>
@@ -682,12 +683,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addscope.ui" line="16"/>
         <source>Add New Scope</source>
-        <translation>添加新组</translation>
+        <translation>添加新域</translation>
     </message>
     <message>
         <location filename="../../ui/addscope.ui" line="31"/>
         <source>New Scope</source>
-        <translation>新组</translation>
+        <translation>新域</translation>
     </message>
     <message>
         <location filename="../../ui/addscope.ui" line="67"/>
@@ -722,7 +723,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addscope.ui" line="179"/>
         <source>Project or Scope :</source>
-        <translation>工程或组:</translation>
+        <translation>工程或域 :</translation>
     </message>
     <message>
         <location filename="../../ui/addscope.ui" line="236"/>
@@ -740,7 +741,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addsetget.ui" line="13"/>
         <source>Add get/set methods</source>
-        <translation>添加get/set methods</translation>
+        <translation>添加get/set 方法</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="59"/>
@@ -755,7 +756,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addsetget.ui" line="75"/>
         <source>Create get/set methods for</source>
-        <translation>为创建get/set methods</translation>
+        <translation>为创建get/set 方法</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="106"/>
@@ -765,12 +766,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addsetget.ui" line="123"/>
         <source>set method</source>
-        <translation>set method</translation>
+        <translation>set 方法</translation>
     </message>
     <message>
         <location filename="../../ui/addsetget.ui" line="140"/>
         <source>get method</source>
-        <translation>get method</translation>
+        <translation>get 方法</translation>
     </message>
 </context>
 <context>
@@ -918,7 +919,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/exechoice.ui" line="76"/>
         <source>Choose program to Debug :</source>
-        <translation>选择要调试的程序：</translation>
+        <translation>选择要调试的程序:</translation>
     </message>
     <message>
         <location filename="../../ui/exechoice.ui" line="86"/>
@@ -966,17 +967,17 @@ was modified outside editor.
     <message>
         <location filename="../../ui/findfiles.ui" line="171"/>
         <source>Files:</source>
-        <translation>文件：</translation>
+        <translation>文件:</translation>
     </message>
     <message>
         <location filename="../../ui/findfiles.ui" line="190"/>
         <source>...</source>
-        <translation></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../ui/findfiles.ui" line="197"/>
         <source>Find in:</source>
-        <translation>查找的目录：</translation>
+        <translation>查找的目录:</translation>
     </message>
     <message>
         <location filename="../../ui/findfiles.ui" line="261"/>
@@ -1122,7 +1123,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="19"/>
         <source>QDevelop</source>
-        <translation></translation>
+        <translation>QDevelop</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="96"/>
@@ -1257,7 +1258,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="993"/>
         <source>Ctrl+S</source>
-        <translation></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1020"/>
@@ -1272,7 +1273,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1037"/>
         <source>Ctrl+Z</source>
-        <translation></translation>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1051"/>
@@ -1282,22 +1283,22 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1054"/>
         <source>Ctrl+Shift+Z</source>
-        <translation></translation>
+        <translation>Ctrl+Shift+Z</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1065"/>
         <source>Ctrl+X</source>
-        <translation></translation>
+        <translation>Ctrl+X</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1076"/>
         <source>Ctrl+C</source>
-        <translation></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1087"/>
         <source>Ctrl+V</source>
-        <translation></translation>
+        <translation>Ctrl+V</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1092"/>
@@ -1307,17 +1308,17 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1095"/>
         <source>Ctrl+A</source>
-        <translation></translation>
+        <translation>Ctrl+A</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1106"/>
         <source>Ctrl+F</source>
-        <translation></translation>
+        <translation>Ctrl+F</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1114"/>
         <source>Ctrl+R</source>
-        <translation></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1133"/>
@@ -1357,7 +1358,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1208"/>
         <source>Shift+F7</source>
-        <translation></translation>
+        <translation>Shift+F7</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1222"/>
@@ -1367,7 +1368,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1225"/>
         <source>Shift+F5</source>
-        <translation></translation>
+        <translation>Shift+F5</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1239"/>
@@ -1377,7 +1378,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1242"/>
         <source>F11</source>
-        <translation></translation>
+        <translation>F11</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1256"/>
@@ -1387,7 +1388,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1259"/>
         <source>F10</source>
-        <translation></translation>
+        <translation>F10</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1270"/>
@@ -1402,12 +1403,12 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1301"/>
         <source>Ctrl+O</source>
-        <translation></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1309"/>
         <source>F3</source>
-        <translation></translation>
+        <translation>F3</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1326"/>
@@ -1417,7 +1418,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1329"/>
         <source>F6</source>
-        <translation></translation>
+        <translation>F6</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1334"/>
@@ -1432,7 +1433,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1353"/>
         <source>Tab</source>
-        <translation></translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1361"/>
@@ -1442,12 +1443,12 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1364"/>
         <source>Shift+Tab</source>
-        <translation></translation>
+        <translation>Shift+Tab</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1375"/>
         <source>F1</source>
-        <translation></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1433"/>
@@ -1457,47 +1458,47 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1457"/>
         <source>Shift+F11</source>
-        <translation></translation>
+        <translation>Shift+F11</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1465"/>
         <source>Ctrl+W</source>
-        <translation></translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1476"/>
         <source>Alt+Right</source>
-        <translation></translation>
+        <translation>Alt+Right</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1487"/>
         <source>Alt+Left</source>
-        <translation></translation>
+        <translation>Alt+Left</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1498"/>
         <source>Shift+F12</source>
-        <translation></translation>
+        <translation>Shift+F12</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1506"/>
         <source>Esc</source>
-        <translation></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1517"/>
         <source>F9</source>
-        <translation></translation>
+        <translation>F9</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1535"/>
         <source>Ctrl+G</source>
-        <translation></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1543"/>
         <source>Ctrl+D</source>
-        <translation></translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1548"/>
@@ -1517,7 +1518,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1561"/>
         <source>Ctrl+Space</source>
-        <translation></translation>
+        <translation>Ctrl+Space</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1569"/>
@@ -1532,7 +1533,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1578"/>
         <source>Ctrl+B</source>
-        <translation></translation>
+        <translation>Ctrl+B</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1586"/>
@@ -1547,27 +1548,27 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1589"/>
         <source>Ctrl+F2</source>
-        <translation></translation>
+        <translation>Ctrl+F2</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1605"/>
         <source>F2</source>
-        <translation></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1616"/>
         <source>Shift+F2</source>
-        <translation></translation>
+        <translation>Shift+F2</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1624"/>
         <source>Shift+F3</source>
-        <translation></translation>
+        <translation>Shift+F3</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1136"/>
         <source>Ctrl+N</source>
-        <translation></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1635"/>
@@ -1577,7 +1578,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1638"/>
         <source>Ctrl+[</source>
-        <translation></translation>
+        <translation>Ctrl+[</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="199"/>
@@ -1587,12 +1588,12 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1420"/>
         <source>F7</source>
-        <translation></translation>
+        <translation>F7</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1643"/>
         <source>Foo</source>
-        <translation></translation>
+        <translation>Foo</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1656"/>
@@ -1622,7 +1623,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="131"/>
         <source>B&amp;uild</source>
-        <translation>编(&amp;B)译</translation>
+        <translation>编译(&amp;B)</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="149"/>
@@ -1677,7 +1678,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="890"/>
         <source>Registers</source>
-        <translation>登记</translation>
+        <translation>寄存器</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1001"/>
@@ -1687,7 +1688,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1012"/>
         <source>Save A&amp;ll</source>
-        <translation>全保存(&amp;A)</translation>
+        <translation>保存全部(&amp;A)</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1028"/>
@@ -1942,7 +1943,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1690"/>
         <source>Execute &amp;qmake</source>
-        <translation>执行制作(&amp;Q)</translation>
+        <translation>执行qmake(&amp;Q)</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1698"/>
@@ -2075,17 +2076,17 @@ was modified outside editor.
     <message>
         <location filename="../../src/mainimpl.cpp" line="1843"/>
         <source>Ok</source>
-        <translation></translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1858"/>
         <source>Shift+F5</source>
-        <translation></translation>
+        <translation>Shift+F5</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1936"/>
         <source>F5</source>
-        <translation></translation>
+        <translation>F5</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="2004"/>
@@ -2095,7 +2096,7 @@ was modified outside editor.
     <message>
         <location filename="../../src/mainimpl.cpp" line="1997"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
-        <translation>窗口中无法停下，请设置断点。</translation>
+        <translation>Windows中无法停下，请设置断点。</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="2039"/>
@@ -2329,12 +2330,12 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/newproject.ui" line="333"/>
         <source>ui</source>
-        <translation></translation>
+        <translation>ui</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="340"/>
         <source>bin</source>
-        <translation></translation>
+        <translation>bin</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="367"/>
@@ -2349,12 +2350,12 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/newproject.ui" line="397"/>
         <source>src</source>
-        <translation></translation>
+        <translation>src</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="404"/>
         <source>build</source>
-        <translation></translation>
+        <translation>build</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="418"/>
@@ -2369,7 +2370,7 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/newproject.ui" line="445"/>
         <source>DialogImpl</source>
-        <translation></translation>
+        <translation>DialogImpl</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="472"/>
@@ -2379,12 +2380,12 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/newproject.ui" line="492"/>
         <source>dialog</source>
-        <translation></translation>
+        <translation>dialog</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="499"/>
         <source>dialogimpl</source>
-        <translation></translation>
+        <translation>dialogimpl</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="526"/>
@@ -2394,12 +2395,12 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/newproject.ui" line="546"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Dialog:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>对话框:</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="556"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Subclass:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>子类</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="48"/>
@@ -2561,7 +2562,7 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/options.ui" line="543"/>
         <source>End of line</source>
-        <translation>文件尾</translation>
+        <translation>行尾</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="550"/>
@@ -2586,12 +2587,12 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/options.ui" line="642"/>
         <source>Unix</source>
-        <translation></translation>
+        <translation>Unix</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="647"/>
         <source>Dos/Windows</source>
-        <translation></translation>
+        <translation>Dos/Windows</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="675"/>
@@ -2681,7 +2682,7 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/options.ui" line="393"/>
         <source>Matching ( and {</source>
-        <translation>匹配括号</translation>
+        <translation>匹配括号 ( 与 {</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="191"/>
@@ -2711,12 +2712,12 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/options.ui" line="168"/>
         <source>Make extra parameters:</source>
-        <translation>制作额外参数:</translation>
+        <translation>make额外参数:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="210"/>
         <source>Reload last project when the application starts</source>
-        <translation>当应用开始时下载前一工程</translation>
+        <translation>当应用程序开始时载入前一工程</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="293"/>
@@ -2736,7 +2737,7 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/options.ui" line="557"/>
         <source>Files encoding:</source>
-        <translation>文件编码中:</translation>
+        <translation>文件编码:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="578"/>
@@ -2900,7 +2901,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectmanager.cpp" line="1340"/>
         <source>Ok</source>
-        <translation></translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="932"/>
@@ -3313,7 +3314,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/projectpropertie.ui" line="1345"/>
         <source>Free CONFIG variables :</source>
-        <translation>Free CONFIG可变的 :</translation>
+        <translation>自定义CONFIG变量 :</translation>
     </message>
 </context>
 <context>
@@ -3675,7 +3676,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/subclassingimpl.cpp" line="50"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3901,7 +3902,7 @@ Try to complete code later.</source>
     <message>
         <location filename="../../src/treeclasses.cpp" line="489"/>
         <source>Add Method...</source>
-        <translation>添加 Method...</translation>
+        <translation>添加方法...</translation>
     </message>
     <message>
         <location filename="../../src/treeclasses.cpp" line="490"/>
@@ -3911,7 +3912,7 @@ Try to complete code later.</source>
     <message>
         <location filename="../../src/treeclasses.cpp" line="494"/>
         <source>Add get/set Methods...</source>
-        <translation>添加 get/set Methods...</translation>
+        <translation>添加get/set 方法...</translation>
     </message>
 </context>
 <context>
@@ -3929,7 +3930,7 @@ Try to complete code later.</source>
     <message>
         <location filename="../../src/treeproject.cpp" line="196"/>
         <source>Add Scope...</source>
-        <translation>添加组...</translation>
+        <translation>添加域...</translation>
     </message>
     <message>
         <location filename="../../src/treeproject.cpp" line="198"/>
