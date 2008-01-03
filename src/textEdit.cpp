@@ -308,9 +308,7 @@ void TextEdit::slotCompletionList(TagList tagList )
         }
         m_completionList->setSelectionMode( QAbstractItemView::SingleSelection );
         QPalette palette;
-        QBrush brush(QColor(255, 255, 255, 255));
-        brush.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette.setBrush(QPalette::Active, QPalette::Base, m_backgroundColor);
         m_completionList->setPalette(palette);
         w = qMin(w+20, 550);
         w = qMax(w, 150);
@@ -366,9 +364,7 @@ void TextEdit::slotCompletionHelpList(TagList tagList)
         }
         m_completionList->setSelectionMode( QAbstractItemView::NoSelection );
         QPalette palette;
-        QBrush brush(QColor(255, 255, 127, 255));
-        brush.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette.setBrush(QPalette::Active, QPalette::Base, m_backgroundColor);
         m_completionList->setPalette(palette);
         w = qMin(w+20, 550);
         w = qMax(w, 150);
