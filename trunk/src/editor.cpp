@@ -348,6 +348,13 @@ void Editor::gotoLine( int line, bool moveTop )
 void Editor::slotFindPrevious()
 {
     m_backward = true;
+    if ( m_textEdit->textCursor().selectedText().length() )
+    {
+    	QTextCursor cursor = m_textEdit->textCursor();
+	    cursor.movePosition(QTextCursor::Left, QTextCursor::MoveAnchor, cursor.selectedText().length());
+	    cursor.movePosition(QTextCursor::NoMove, QTextCursor::KeepAnchor);
+	    m_textEdit->setTextCursor(cursor);
+   	}
     slotFindWidget_textChanged(uiFind.editFind->text(), true);
 }
 //
