@@ -28,6 +28,7 @@
 
 #include "tabwidget.h"
 #include "mainimpl.h"
+#include "editor.h"
 //
 TabWidget::TabWidget(MainImpl *parent)
         : QTabWidget(parent), m_mainImpl( parent )
@@ -136,6 +137,11 @@ bool TabWidget::eventFilter(QObject *obj, QEvent *event)
             }
         }
     }
+    Editor *editor = m_mainImpl->givenEditor(m_clickedItem);
+    QString filename;
+    if( editor )
+    	filename = editor->filename();
+    tabBar()->setToolTip(filename);
     return QTabWidget::eventFilter( obj, event);
 }
 //

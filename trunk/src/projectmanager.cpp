@@ -1619,6 +1619,10 @@ QTreeWidgetItem * ProjectManager::insertItem(QTreeWidgetItem *parent, QString ke
         it->setText(0, begin + tr("Resources"));
         it->setIcon(0, QIcon(":/treeview/images/qrc.png"));
     }
+    else
+    {
+	    it->setToolTip(0, data);
+   	}
     QTreeWidgetItem *itemParent = it->parent();
     bool hide = true;
     for (int i = 0; i < itemParent->childCount(); i++ )
