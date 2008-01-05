@@ -137,7 +137,7 @@ public:
 	void setActiveEditor(bool b);
 	void setIntervalUpdatingTreeClasses(int i) { m_intervalUpdatingClasses = i*1000;};
 	void setShowTreeClasses(bool s);
-	void toggleBreakpoint() { toggleBreakpoint( m_textEdit->currentLineNumber(), QString(), false ); };
+	void toggleBreakpoint() { toggleBreakpoint( m_textEdit->currentLineNumber(), QString(), true ); };
 	void toggleBookmark() { toggleBookmark( m_textEdit->currentLineNumber() ); };
 	QList<int> bookmarksList();
 	QList<QTextBlock> breakpointsList();
