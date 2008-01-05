@@ -1360,7 +1360,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     connect(editor, SIGNAL(updateClasses(QString, QString)), this, SLOT(slotUpdateClasses(QString, QString)) );
     connect(editor, SIGNAL(otherFileChanged()), this, SLOT(slotUpdateOtherFileActions()));
     if ( m_debug )
-        connect(editor, SIGNAL(breakpoint(QString, bool, unsigned int, QString)), m_debug, SLOT(slotBreakpoint(QString, bool, unsigned int, QString)) );
+	    connect(editor, SIGNAL(breakpoint(QString, unsigned int, BlockUserData *)), m_debug, SLOT(slotBreakpoint(QString, unsigned int, BlockUserData *)) );
     setCurrentFile(s);
     slotCurrentTabChanged( m_tabEditors->currentIndex() );
     slotUpdateOtherFileActions();
