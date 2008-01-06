@@ -163,7 +163,7 @@ void CppHighlighter::setupRegexTable()
              << "union" << "unsigned" << "using" << "virtual" << "void"
              << "volatile" << "wchar_t" << "while"
              // BK - Added Qt keywords
-             << "slots" << "signals" << "SIGNAL" << "SLOT" << "connect";
+             << "slots" << "signals" << "SIGNAL" << "SLOT" << "connect" << "disconnect";
 
    	//functions and methods
 	item.regex = QRegExp("\\b[a-zA-Z_][a-zA-Z0-9_]+\\s*(?=\\()");
