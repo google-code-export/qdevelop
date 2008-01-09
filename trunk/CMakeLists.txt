@@ -58,9 +58,8 @@ SET( qdevelop_UIS
 	ui/openfile.ui
 	ui/parameters.ui
 	ui/projectpropertie.ui
-	ui/promptreplace.ui
 	ui/registers.ui
-	ui/replace.ui
+	ui/replacewidget.ui
 	ui/shortcuts.ui
 	ui/subclassing.ui
 	ui/toolsControl.ui
@@ -98,9 +97,7 @@ SET( qdevelop_SRCS
 	src/parametersimpl.cpp
 	src/projectmanager.cpp
 	src/projectpropertieimpl.cpp
-	src/promptreplaceimpl.cpp
 	src/registersimpl.cpp
-	src/replaceimpl.cpp
 	src/selectionborder.cpp
 	src/shortcutsimpl.cpp
 	src/stackimpl.cpp
@@ -135,9 +132,7 @@ SET( qdevelop_MOC_HDRS
 	src/parametersimpl.h
 	src/projectmanager.h
 	src/projectpropertieimpl.h
-	src/promptreplaceimpl.h
 	src/registersimpl.h
-	src/replaceimpl.h
 	src/shortcutsimpl.h
 	src/stackimpl.h
 	src/subclassingimpl.h
