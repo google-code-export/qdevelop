@@ -29,6 +29,7 @@
 #include "mainimpl.h"
 #include "InitCompletion.h"
 #include "ui_findwidget.h"
+#include "ui_replacewidget.h"
 //
 typedef QMap<QString, QStringList> classesMethodsList;
 //
@@ -126,7 +127,7 @@ public:
     void setMouseHidden( bool hidden );
 public slots:
     void gotoLine( int line, bool moveTop );
-    void slotFind(Ui::FindWidget ui, QString ttf=0,  QTextDocument::FindFlags options=0, bool fromButton=false);
+    void slotFind(Ui::FindWidget uiFind, Ui::ReplaceWidget uiReplace, QString ttf=0,  QTextDocument::FindFlags options=0, bool fromButton=false);
     void slotIndent(bool indent=true);
     void slotUnindent();
     void comment(ActionComment action);

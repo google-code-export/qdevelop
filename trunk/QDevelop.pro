@@ -20,8 +20,7 @@ FORMS += ui/about.ui \
  ui/options.ui \
  ui/parameters.ui \
  ui/projectpropertie.ui \
- ui/promptreplace.ui \
- ui/replace.ui \
+ ui/replacewidget.ui \
  ui/shortcuts.ui \
  ui/subclassing.ui \
  ui/toolsControl.ui \
@@ -58,8 +57,6 @@ HEADERS += src/InitCompletion.h \
  src/pluginsinterfaces.h \
  src/projectmanager.h \
  src/projectpropertieimpl.h \
- src/promptreplaceimpl.h \
- src/replaceimpl.h \
  src/selectionborder.h \
  src/shortcutsimpl.h \
  src/stackimpl.h \
@@ -106,8 +103,6 @@ SOURCES += src/InitCompletion.cpp \
  src/parametersimpl.cpp \
  src/projectmanager.cpp \
  src/projectpropertieimpl.cpp \
- src/promptreplaceimpl.cpp \
- src/replaceimpl.cpp \
  src/selectionborder.cpp \
  src/shortcutsimpl.cpp \
  src/stackimpl.cpp \

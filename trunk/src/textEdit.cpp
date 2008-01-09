@@ -888,12 +888,12 @@ void TextEdit::gotoMatchingBracket()
     }
 }
 //
-void TextEdit::slotFind(Ui::FindWidget ui, QString ttf,QTextDocument::FindFlags options, bool fromButton)
+void TextEdit::slotFind(Ui::FindWidget uiFind, Ui::ReplaceWidget uiReplace, QString ttf,QTextDocument::FindFlags options, bool fromButton)
 {
     QTextDocument *doc = document();
-    QString oldText = ui.editFind->text();
+    QString oldText = uiFind.editFind->text();
     QTextCursor c = textCursor();
-    QPalette p = ui.editFind->palette();
+    QPalette p = uiFind.editFind->palette();
     p.setColor(QPalette::Active, QPalette::Base, Qt::white);
 
     if (c.hasSelection())
@@ -910,7 +910,8 @@ void TextEdit::slotFind(Ui::FindWidget ui, QString ttf,QTextDocument::FindFlags 
     if (!ttf.isEmpty())
     {
         newCursor = doc->find(ttf, c, options);
-        ui.labelWrapped->hide();
+        uiFind.labelWrapped->hide();
+        uiReplace.labelWrapped->hide();
 
         if (newCursor.isNull())
         {
@@ -924,12 +925,15 @@ void TextEdit::slotFind(Ui::FindWidget ui, QString ttf,QTextDocument::FindFlags 
                 newCursor = c;
             }
             else
-                ui.labelWrapped->show();
+            {
+                uiFind.labelWrapped->show();
+                uiReplace.reached->setText(tr("Reached end of page, continued from top"));
+                uiReplace.labelWrapped->show();
+           	}
         }
     }
-
     setTextCursor(newCursor);
-    ui.editFind->setPalette(p);
+    uiFind.editFind->setPalette(p);
 }
 //
 void TextEdit::paintEvent ( QPaintEvent * event )
