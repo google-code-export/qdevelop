@@ -25,7 +25,6 @@
 #include "editor.h"
 #include "mainimpl.h"
 #include "lineedit.h"
-#include "replaceimpl.h"
 #include "tabwidget.h"
 #include "linenumbers.h"
 #include "logbuild.h"
@@ -82,14 +81,6 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         hboxLayout->setMargin(6);
         hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
         //
-        /*m_maximizedButton = 0;
-        m_maximizedButton = new QToolButton(this);
-        m_maximizedButton->setIcon(QIcon(":/divers/images/window_fullscreen.png"));
-        
-        m_maximizedButton->setToolTip( tr("Show maximized") );
-        connect(m_maximizedButton, SIGNAL(clicked()), this, SLOT(slotMaximizeButtonClicked()));
-        hboxLayout->addWidget(m_maximizedButton);*/
-        //
         m_otherFileButton = new QToolButton(this);
         connect(m_otherFileButton, SIGNAL(clicked()), this, SLOT(slotOtherFile()));
         hboxLayout->addWidget(m_otherFileButton);
@@ -135,7 +126,6 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
         m_otherFileButton->setIcon(QIcon(m_otherFileIcon));
         m_editorToolbar = new QWidget( this );
         m_editorToolbar->setLayout( hboxLayout );
-        //gridLayout->addLayout(editorToolbar, vposLayout++, 0, 1, 1);
         gridLayout->addWidget(m_editorToolbar, vposLayout++, 0, 1, 1);
     }
     connect(m_textEdit, SIGNAL(editorModified(bool)), this, SLOT(slotModifiedEditor(bool)) );
@@ -149,14 +139,32 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
     connect(uiFind.toolNext, SIGNAL(clicked()), this, SLOT(slotFindNext()) );
     //
     autoHideTimer = new QTimer(this);
-    autoHideTimer->setInterval(5000);
+    //
+    m_replaceWidget = new QWidget;
+    uiReplace.setupUi(m_replaceWidget);
+    uiReplace.replace->hide();
+    connect(uiReplace.toolClose, SIGNAL(clicked()), m_replaceWidget, SLOT(hide()) );
+    connect(uiReplace.textFind, SIGNAL(editTextChanged(QString)), uiFind.editFind, SLOT(setText(QString)) );
+    connect(uiReplace.textFind, SIGNAL(editTextChanged(QString)), this, SLOT(slotFindWidget_textChanged(QString)) );
+    connect(uiReplace.textReplace, SIGNAL(editTextChanged(QString)), autoHideTimer, SLOT(start()) );
+    connect(uiReplace.toolPrevious, SIGNAL(clicked()), this, SLOT(slotFindPrevious()) );
+    connect(uiReplace.toolNext, SIGNAL(clicked()), this, SLOT(slotFindNext()) );
+    connect(uiReplace.replace, SIGNAL(clicked()), this, SLOT(slotReplace()) );
+    connect(uiReplace.checkCase, SIGNAL(toggled(bool)), uiFind.checkCase, SLOT(setChecked(bool)) );
+    connect(uiReplace.checkWholeWords, SIGNAL(toggled(bool)), uiFind.checkWholeWords, SLOT(setChecked(bool)) );
+    //
+    autoHideTimer->setInterval(10000);
     autoHideTimer->setSingleShot(true);
     connect(autoHideTimer, SIGNAL(timeout()), m_findWidget, SLOT(hide()));
+    connect(autoHideTimer, SIGNAL(timeout()), m_replaceWidget, SLOT(hide()));
     //
     gridLayout->addWidget(m_textEdit, vposLayout++, 0, 1, 1);
     gridLayout->addWidget(m_findWidget, vposLayout++, 0, 1, 1);
+    gridLayout->addWidget(m_replaceWidget, vposLayout++, 0, 1, 1);
     uiFind.labelWrapped->setVisible(false);
+    uiReplace.labelWrapped->setVisible(false);
     m_findWidget->hide();
+    m_replaceWidget->hide();
     //
     connect(&m_timerUpdateClasses, SIGNAL(timeout()), this, SLOT(slotTimerUpdateClasses()));
     connect(&m_timerCheckLastModified, SIGNAL(timeout()), this, SLOT(slotTimerCheckIfModifiedOutside()));
@@ -296,14 +304,6 @@ void Editor::clearAllBookmarks()
 Editor::~Editor()
 {}
 //
-void Editor::replace()
-{
-    ReplaceImpl *dialog = new ReplaceImpl(this, m_textEdit, m_replaceOptions);
-    dialog->exec();
-    m_replaceOptions = dialog->replaceOptions();
-    delete dialog;
-}
-//
 bool Editor::open(bool silentMode)
 {
     bool ret = m_textEdit->open(silentMode, m_filename, m_lastModified);
@@ -367,6 +367,7 @@ void Editor::slotFindNext()
 void Editor::find()
 {
     autoHideTimer->stop();
+    m_replaceWidget->hide();
     m_findWidget->show();
     uiFind.editFind->setFocus(Qt::ShortcutFocusReason);
     if ( m_textEdit->textCursor().selectedText().length() )
@@ -374,6 +375,56 @@ void Editor::find()
     else
         uiFind.editFind->setText( m_textEdit->wordUnderCursor() );
     uiFind.editFind->selectAll();
+    autoHideTimer->start();
+}
+//
+void Editor::slotReplace()
+{
+	bool replaced;
+	int nbFound = 0;
+	do
+	{
+		replaced = false;
+		if( ( 
+				m_textEdit->textCursor().selectedText() == uiReplace.textFind->currentText() 
+				|| ( m_textEdit->textCursor().selectedText().toLower() == uiReplace.textFind->currentText().toLower() && !uiReplace.checkCase->isChecked() )
+			)
+			&& uiReplace.textFind->currentText() != uiReplace.textReplace->currentText())
+		{
+			m_textEdit->textCursor().removeSelectedText();
+			m_textEdit->textCursor().insertText( uiReplace.textReplace->currentText() );
+			replaced = true;
+			nbFound++;
+			if( m_backward )
+				slotFindPrevious();
+			else
+				slotFindNext();
+		}
+	} while( replaced && !uiReplace.prompt->isChecked() );
+    uiReplace.reached->setText(tr("%1 replacement(s) made.").arg(nbFound));
+    uiReplace.labelWrapped->setVisible( true );
+	if( uiReplace.textFind->findText( uiReplace.textFind->currentText() ) == -1 )
+		uiReplace.textFind->addItem(  uiReplace.textFind->currentText() );
+	if( uiReplace.textReplace->findText( uiReplace.textReplace->currentText() ) == -1 )
+		uiReplace.textReplace->addItem(  uiReplace.textReplace->currentText() );
+}
+//
+void Editor::replace()
+{
+    /*ReplaceImpl *dialog = new ReplaceImpl(this, m_textEdit, m_replaceOptions);
+    dialog->exec();
+    m_replaceOptions = dialog->replaceOptions();
+    delete dialog;*/
+    m_findWidget->hide();
+    uiReplace.labelWrapped->setVisible(false);
+    autoHideTimer->stop();
+    m_replaceWidget->show();
+    uiReplace.textFind->setFocus(Qt::ShortcutFocusReason);
+    if ( m_textEdit->textCursor().selectedText().length() )
+        uiReplace.textFind->setEditText( m_textEdit->textCursor().selectedText() );
+    else
+        uiReplace.textFind->setEditText( m_textEdit->wordUnderCursor() );
+    uiReplace.textFind->lineEdit()->selectAll();
     autoHideTimer->start();
 }
 
@@ -390,6 +441,7 @@ QString Editor::selection()
 void Editor::setFocus()
 {
     m_findWidget->hide();
+    m_replaceWidget->hide();
     m_textEdit->setFocus(Qt::OtherFocusReason);
 }
 //
@@ -413,7 +465,11 @@ void Editor::slotFindWidget_textChanged(QString text, bool fromButton)
         options |= QTextDocument::FindWholeWords;
     if ( uiFind.checkCase->isChecked() )
         options |= QTextDocument::FindCaseSensitively;
-    m_textEdit->slotFind(uiFind, text, (QTextDocument::FindFlags)options,fromButton);
+    m_textEdit->slotFind(uiFind, uiReplace, text, (QTextDocument::FindFlags)options,fromButton);
+    if( m_textEdit->textCursor().selectedText().length() )
+    	uiReplace.replace->setVisible( true );
+    else
+    	uiReplace.replace->setVisible( false );
     autoHideTimer->start();
 }
 //
@@ -948,5 +1004,4 @@ void Editor::previousWarningError()
        	}
     }
 }
-
-
+//

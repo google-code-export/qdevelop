@@ -26,6 +26,7 @@
 #include "textEdit.h"
 #include "mainimpl.h"
 #include "ui_findwidget.h"
+#include "ui_replacewidget.h"
 #include <QTextDocument>
 #include <QTextEdit>
 #include <QPointer>
@@ -174,6 +175,7 @@ public slots:
 	void slotMessagesBuild(QString list, QString directory);
 	//void showMaximized();
 private slots:	
+	void slotReplace();
 	//void slotMaximizeButtonClicked();
 	void slotComboMethods(int index);
 	void slotFindWidget_textChanged(QString text="", bool fromButton=false);
@@ -196,9 +198,11 @@ private:
 	QString m_nameOtherFile;
 	MainImpl *m_mainimpl;
 	QWidget *m_findWidget;
+	QWidget *m_replaceWidget;
 	TextEdit *m_textEdit;
 	QString m_filename;
 	Ui::FindWidget uiFind;
+	Ui::ReplaceWidget uiReplace;
 	QTimer *autoHideTimer;
 	bool m_backward;
 	ReplaceOptions m_replaceOptions;
