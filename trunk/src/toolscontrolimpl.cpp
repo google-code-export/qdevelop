@@ -47,12 +47,22 @@ ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
     setupUi(this);
     QSettings settings( getQDevelopPath() + "qdevelop.ini" , QSettings::IniFormat);
     settings.beginGroup("Options");
-    qmake->setText( settings.value("m_qmakeName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"qmake"+suffix).toString() );
-    linguist->setText( settings.value("m_linguistName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"linguist"+suffix).toString() );
-    lupdate->setText ( settings.value("m_lupdateName" , QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lupdate" +suffix).toString() );
-    lrelease->setText( settings.value("m_lreleaseName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"lrelease"+suffix).toString() );
-    designer->setText( settings.value("m_designerName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"designer"+suffix).toString() );
-    assistant->setText( settings.value("m_assistantName", QLibraryInfo::location( QLibraryInfo::BinariesPath )+dirDelimiter+"assistant"+suffix).toString() );
+
+    QString bindir = QLibraryInfo::location( QLibraryInfo::BinariesPath );
+    bindir.append( dirDelimiter );
+
+    qmake->setText( settings.value("m_qmakeName", bindir+"qmake"+suffix).toString() );
+    lupdate->setText ( settings.value("m_lupdateName" , bindir+"lupdate" +suffix).toString() );
+    lrelease->setText( settings.value("m_lreleaseName", bindir+"lrelease"+suffix).toString() );
+#ifdef Q_OS_MACX
+    linguist->setText( settings.value("m_linguistName", bindir+"linguist.app").toString() );
+    designer->setText( settings.value("m_designerName", bindir+"Designer.app").toString() );
+    assistant->setText( settings.value("m_assistantName", bindir+"Assistant.app").toString() );
+#else
+    linguist->setText( settings.value("m_linguistName", bindir+"linguist"+suffix).toString() );
+    designer->setText( settings.value("m_designerName", bindir+"designer"+suffix).toString() );
+    assistant->setText( settings.value("m_assistantName", bindir+"assistant"+suffix).toString() );
+#endif
 
 #ifdef Q_OS_WIN32
     make->setText( settings.value("m_makeName").toString() );
