@@ -137,8 +137,11 @@ MainImpl::MainImpl(QWidget * parent)
     actionOtherFile->setVisible(false);
     toolBarEdit->addAction(actionOtherFile);
 
-#ifdef WIN32
+#ifdef Q_WS_WIN
     m_font = QFont("Courier New", 10);
+#elif defined Q_WS_MACX
+    m_font = QFont("Monaco", 12);
+    setUnifiedTitleAndToolBarOnMac(true);
 #else
     m_font = QFont("Monospace", 10);
 #endif
