@@ -166,10 +166,15 @@ MainImpl::MainImpl(QWidget * parent)
     treeClasses->setMainImpl( this );
     //
     menuView->addSeparator();
-    menuView->addAction(dockExplorer->toggleViewAction());
-    menuView->addAction(dockOutputs->toggleViewAction());
-    menuView->addAction(dockCallsStack->toggleViewAction());
-    menuView->addAction(dockRegisters->toggleViewAction());
+    menuView->addAction(dockFiles->toggleViewAction() );
+    menuView->addAction(dockClasses->toggleViewAction() );
+    menuView->addAction(dockBuild->toggleViewAction() );
+    menuView->addAction(dockOutputs->toggleViewAction() );
+    menuView->addAction(dockVariables->toggleViewAction() );
+    menuView->addAction(dockOtherVariables->toggleViewAction() );
+    menuView->addAction(dockFindInFiles->toggleViewAction() );
+    menuView->addAction(dockRegisters->toggleViewAction() );
+    menuView->addAction(dockCallsStack->toggleViewAction() );
     menuView->addSeparator();
     //
     menuToolbar->addAction(toolBarFiles->toggleViewAction());
@@ -195,16 +200,37 @@ MainImpl::MainImpl(QWidget * parent)
     updateActionsRecentsProjects();
     createConnections();
     setMouseTracking( true );
-    //
-    dockExplorer->setFloating( false );
-    dockOutputs->setFloating( false );
-    dockCallsStack->setFloating( false );
-    //
-    dockExplorer->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
-    addDockWidget(Qt::LeftDockWidgetArea, dockExplorer);
-    //
+
+    logBuild->zoomOut( 2 );
+    logDebug->zoomOut( 2 );
+    
+    setCorner( Qt::TopLeftCorner, Qt::LeftDockWidgetArea );
+    setCorner( Qt::TopRightCorner, Qt::RightDockWidgetArea );
+    setCorner( Qt::BottomLeftCorner, Qt::LeftDockWidgetArea );
+    setCorner( Qt::BottomRightCorner, Qt::RightDockWidgetArea );
+
+    addDockWidget( Qt::BottomDockWidgetArea, dockBuild  );
+    addDockWidget( Qt::BottomDockWidgetArea, dockOutputs );
+    addDockWidget( Qt::BottomDockWidgetArea, dockVariables );
+    addDockWidget( Qt::BottomDockWidgetArea, dockOtherVariables );
+    addDockWidget( Qt::BottomDockWidgetArea, dockFindInFiles  );
+    addDockWidget( Qt::LeftDockWidgetArea  , dockFiles  );
+    addDockWidget( Qt::LeftDockWidgetArea  , dockClasses  );
+    addDockWidget( Qt::RightDockWidgetArea , dockCallsStack  );
+    addDockWidget( Qt::RightDockWidgetArea , dockRegisters );
+
+    tabifyDockWidget( dockBuild, dockOutputs );
+    tabifyDockWidget( dockBuild, dockVariables );
+    tabifyDockWidget( dockBuild, dockOtherVariables );
+    tabifyDockWidget( dockBuild, dockFindInFiles );
+    tabifyDockWidget( dockFiles, dockClasses );
+    tabifyDockWidget( dockCallsStack, dockRegisters );
+
+    dockBuild->raise();
+    dockFiles->raise();
+    dockCallsStack->raise();
+
     m_stack = new StackImpl(this, callStacks);
-    //
     treeClasses->setCtagsName( m_ctagsName );
     logBuild->setMainImpl( this );
 }
@@ -234,7 +260,7 @@ Editor * MainImpl::currentEditor()
 	int currentIndex = m_tabEditors->currentIndex();
 	if( currentIndex != -1 )
 		editor = (Editor*) (m_tabEditors->widget( currentIndex ));
-    return editor;
+	return editor;
 }
 
 Editor * MainImpl::givenEditor(int i)
@@ -272,7 +298,8 @@ void MainImpl::gotoFileInProject(QString& filename)
     if ( !m_projectManager )
         return;
 
-    tabExplorer->setCurrentIndex(0);
+    dockFiles->show();
+    dockFiles->raise();
     m_projectManager->setCurrentItem(filename);
 }
 //
@@ -696,12 +723,14 @@ void MainImpl::slotOptions()
                 m_formatKeywords
             );
         }
-        tabExplorer->setTabEnabled( 1, m_showTreeClasses );
+	/* TODO
         if (!m_showTreeClasses) //ToolsOptions/General
             tabExplorer->setTabToolTip( 1, tr("Classes explorer is disabled, please enable it in the Options dialog") );
         else
             tabExplorer->setTabToolTip( 1, "" );
-	    m_assistant->setdocumentationDirectory( m_documentationDirectory );
+	*/
+	 
+	m_assistant->setdocumentationDirectory( m_documentationDirectory );
         QApplication::restoreOverrideCursor();
     }
     delete options;
@@ -778,7 +807,6 @@ void MainImpl::saveINI()
     }
     settings.endGroup();
 
-    //
     //if ( !m_projectManager )
     //return;
 
@@ -802,7 +830,6 @@ void MainImpl::saveINI()
     settings.setValue("fullscreen", isFullScreen());
     settings.setValue("geometry", saveGeometry()); // Window geometry and state (only needed for Windows!).
     settings.setValue("state", saveState()); // Toolbar and DockWidget state.
-    settings.setValue("tabExplorer", tabExplorer->currentIndex());
     settings.endGroup();
 
 	settings.beginGroup("editormode");
@@ -889,11 +916,12 @@ QString MainImpl::loadINI()
     actionEditor_mode->setChecked( settings.value("editorMode", actionEditor_mode->isChecked()).toBool() );
     settings.endGroup();
 
-    tabExplorer->setTabEnabled( 1, m_showTreeClasses );
+    /* TODO
     if (!m_showTreeClasses) //ToolsOptions/General
         tabExplorer->setTabToolTip( 1, tr("Classes explorer is disabled, please enable it in the Options dialog") );
     else
         tabExplorer->setTabToolTip( 1, "" );
+    */
     m_assistant->setdocumentationDirectory( m_documentationDirectory );
     // Load shortcuts
     settings.beginGroup("Shortcuts");
@@ -942,7 +970,6 @@ QString MainImpl::loadINI()
         setWindowState(windowState() | Qt::WindowFullScreen);
 #endif
     restoreState(settings.value("state", saveState()).toByteArray()); // Toolbar and DockWidget state.
-    tabExplorer->setCurrentIndex( settings.value("tabExplorer", 0).toInt() );
     settings.endGroup();
 
 	settings.beginGroup("editormode");
@@ -1524,13 +1551,15 @@ void MainImpl::slotCompile(bool automaticCompilation)
     	{
         	m_buildingGroup->setEnabled( false );
 	        logBuild->clear();
-	        dockOutputs->setVisible(true);
+		dockBuild->show();
+		dockBuild->raise();
    		}
         if ( m_saveBeforeBuild && !automaticCompilation)
             slotSaveAll();
         if ( !automaticCompilation )
         {
-        	tabOutputs->setCurrentIndex( 0 );
+// 		// TODO should we raise the dockBuild ?
+//         	tabOutputs->setCurrentIndex( 0 );
 	        m_projectsDirectoriesList << editor->directory();
        	}
         QString projectDirectory = m_projectManager->fileDirectory(editor->filename() );
@@ -1580,11 +1609,11 @@ void MainImpl::slotBuild(bool clean, bool build, bool forceQmake)
     	}
         m_buildingGroup->setEnabled( false );
         logBuild->clear();
-        dockOutputs->setVisible(true);
         if ( m_saveBeforeBuild )
             slotSaveAll();
-        tabOutputs->setCurrentIndex( 0 );
-        //
+	dockBuild->show();
+	dockBuild->raise();
+	//
         m_projectsDirectoriesList = m_projectManager->buildableProjectsDirectories();
         m_clean = clean;
         m_build = build;
@@ -1863,8 +1892,8 @@ bool MainImpl::slotDebug(bool executeOnly)
     actionStopDebug->setEnabled( !executeOnly );
     logDebug->clear();
     registersImpl->registers(QString());
-    dockOutputs->setVisible(true);
-    tabOutputs->setCurrentIndex( 1 );
+    dockOutputs->show();
+    dockOutputs->raise();
     Parameters parameters = m_projectManager->parameters();
     if ( parameters.workingDirectory.isEmpty() )
         parameters.workingDirectory = m_projectManager->projectDirectoryOfExecutable();
@@ -2188,8 +2217,8 @@ void MainImpl::slotFindInFiles()
         m_findInFiles->setDefaultWord(editor->selection());
     }
 
-    dockOutputs->setVisible(true);
-    tabOutputs->setCurrentIndex( 4 );
+    dockFindInFiles->show();
+    dockFindInFiles->raise();
     m_findInFiles->show();
     // Not delete dialog to save options, location and pattern on next showing.
 }
