@@ -164,23 +164,21 @@ MainImpl::MainImpl(QWidget * parent)
     treeClasses->setColumnCount(1);
     treeClasses->setHeaderLabels(QStringList(""));
     treeClasses->setMainImpl( this );
-    //
-    menuView->addSeparator();
-    menuView->addAction(dockFiles->toggleViewAction() );
-    menuView->addAction(dockClasses->toggleViewAction() );
-    menuView->addAction(dockBuild->toggleViewAction() );
-    menuView->addAction(dockOutputs->toggleViewAction() );
-    menuView->addAction(dockVariables->toggleViewAction() );
-    menuView->addAction(dockOtherVariables->toggleViewAction() );
-    menuView->addAction(dockFindInFiles->toggleViewAction() );
-    menuView->addAction(dockRegisters->toggleViewAction() );
-    menuView->addAction(dockCallsStack->toggleViewAction() );
-    menuView->addSeparator();
-    //
+
+    menuDockWindows->addAction(dockFiles->toggleViewAction() );
+    menuDockWindows->addAction(dockClasses->toggleViewAction() );
+    menuDockWindows->addAction(dockBuild->toggleViewAction() );
+    menuDockWindows->addAction(dockOutputs->toggleViewAction() );
+    menuDockWindows->addAction(dockVariables->toggleViewAction() );
+    menuDockWindows->addAction(dockOtherVariables->toggleViewAction() );
+    menuDockWindows->addAction(dockFindInFiles->toggleViewAction() );
+    menuDockWindows->addAction(dockRegisters->toggleViewAction() );
+    menuDockWindows->addAction(dockCallsStack->toggleViewAction() );
+
     menuToolbar->addAction(toolBarFiles->toggleViewAction());
     menuToolbar->addAction(toolBarEdit->toggleViewAction());
     menuToolbar->addAction(toolBarBuild->toggleViewAction());
-    //
+
     for (int i = 0; i < maxRecentsFiles; ++i)
     {
         actionsRecentsFiles[i] = new QAction(this);
@@ -201,38 +199,13 @@ MainImpl::MainImpl(QWidget * parent)
     createConnections();
     setMouseTracking( true );
 
-    logBuild->zoomOut( 2 );
-    logDebug->zoomOut( 2 );
-    
-    setCorner( Qt::TopLeftCorner, Qt::LeftDockWidgetArea );
-    setCorner( Qt::TopRightCorner, Qt::RightDockWidgetArea );
-    setCorner( Qt::BottomLeftCorner, Qt::LeftDockWidgetArea );
-    setCorner( Qt::BottomRightCorner, Qt::RightDockWidgetArea );
-
-    addDockWidget( Qt::BottomDockWidgetArea, dockBuild  );
-    addDockWidget( Qt::BottomDockWidgetArea, dockOutputs );
-    addDockWidget( Qt::BottomDockWidgetArea, dockVariables );
-    addDockWidget( Qt::BottomDockWidgetArea, dockOtherVariables );
-    addDockWidget( Qt::BottomDockWidgetArea, dockFindInFiles  );
-    addDockWidget( Qt::LeftDockWidgetArea  , dockFiles  );
-    addDockWidget( Qt::LeftDockWidgetArea  , dockClasses  );
-    addDockWidget( Qt::RightDockWidgetArea , dockCallsStack  );
-    addDockWidget( Qt::RightDockWidgetArea , dockRegisters );
-
-    tabifyDockWidget( dockBuild, dockOutputs );
-    tabifyDockWidget( dockBuild, dockVariables );
-    tabifyDockWidget( dockBuild, dockOtherVariables );
-    tabifyDockWidget( dockBuild, dockFindInFiles );
-    tabifyDockWidget( dockFiles, dockClasses );
-    tabifyDockWidget( dockCallsStack, dockRegisters );
-
-    dockBuild->raise();
-    dockFiles->raise();
-    dockCallsStack->raise();
-
+    logBuild->zoomOut( 1 );
+    logDebug->zoomOut( 1 );
     m_stack = new StackImpl(this, callStacks);
     treeClasses->setCtagsName( m_ctagsName );
     logBuild->setMainImpl( this );
+    
+    on_actionFullDocksView_triggered();
 }
 //
 MainImpl::~MainImpl()
@@ -265,7 +238,8 @@ Editor * MainImpl::currentEditor()
 
 Editor * MainImpl::givenEditor(int i)
 {
-    return (Editor*) (m_tabEditors->widget(i));
+	return qobject_cast<Editor*> (m_tabEditors->widget(i));
+	//return (Editor*) (m_tabEditors->widget(i));
 }
 
 //
@@ -2511,6 +2485,111 @@ void MainImpl::on_actionEditor_mode_triggered()
 		else
 			w->setVisible( toolbarStatus[w] );
 	}
+}
+
+// set up the main window for "full view"
+// docks on the left, right and bottom, all tabified
+// tabs in the sides "win" over the bottom group, as I think
+// it looks better.
+void MainImpl::on_actionFullDocksView_triggered()
+{
+	setUpdatesEnabled( false );
+	blockSignals( true );
+
+	setCorner( Qt::TopLeftCorner, Qt::LeftDockWidgetArea );
+	setCorner( Qt::TopRightCorner, Qt::RightDockWidgetArea );
+	setCorner( Qt::BottomLeftCorner, Qt::LeftDockWidgetArea );
+	setCorner( Qt::BottomRightCorner, Qt::RightDockWidgetArea );
+	
+	addDockWidget( Qt::BottomDockWidgetArea, dockBuild  );
+	addDockWidget( Qt::BottomDockWidgetArea, dockOutputs );
+	addDockWidget( Qt::BottomDockWidgetArea, dockVariables );
+	addDockWidget( Qt::BottomDockWidgetArea, dockOtherVariables );
+	addDockWidget( Qt::BottomDockWidgetArea, dockFindInFiles );
+	addDockWidget( Qt::LeftDockWidgetArea  , dockFiles );
+	addDockWidget( Qt::LeftDockWidgetArea  , dockClasses );
+	addDockWidget( Qt::RightDockWidgetArea , dockCallsStack );
+	addDockWidget( Qt::RightDockWidgetArea , dockRegisters );
+	
+	// left docks
+	tabifyDockWidget( dockFiles, dockClasses );
+	// bottom docks
+	tabifyDockWidget( dockBuild, dockOutputs );
+	tabifyDockWidget( dockBuild, dockVariables );
+	tabifyDockWidget( dockBuild, dockOtherVariables );
+	tabifyDockWidget( dockBuild, dockFindInFiles );
+	// right docks
+	tabifyDockWidget( dockCallsStack, dockRegisters );
+
+	foreach( QDockWidget *dock, findChildren<QDockWidget *>() )
+	{
+		dock->setFloating( false );
+		dock->show();
+	}
+	
+	// raise the first tabs in each group
+	dockBuild->raise();
+	dockFiles->raise();
+	dockCallsStack->raise();
+	
+	// just in case :)
+	actionEditor_mode->setChecked( false );
+
+	blockSignals( false );
+	setUpdatesEnabled( true );
+}
+
+// this is my favorite display mode, it gets it's own method
+// and menu item :)
+void MainImpl::on_actionMinimalDocksView_triggered()
+{
+	setUpdatesEnabled( false );
+	blockSignals( true );
+	
+	setCorner( Qt::TopLeftCorner, Qt::LeftDockWidgetArea );
+	setCorner( Qt::TopRightCorner, Qt::RightDockWidgetArea );
+	setCorner( Qt::BottomLeftCorner, Qt::LeftDockWidgetArea );
+	setCorner( Qt::BottomRightCorner, Qt::RightDockWidgetArea );
+	
+	addDockWidget( Qt::BottomDockWidgetArea, dockBuild  );
+	addDockWidget( Qt::BottomDockWidgetArea, dockOutputs );
+	addDockWidget( Qt::BottomDockWidgetArea, dockVariables );
+	addDockWidget( Qt::BottomDockWidgetArea, dockOtherVariables );
+	addDockWidget( Qt::BottomDockWidgetArea, dockFindInFiles );
+	addDockWidget( Qt::LeftDockWidgetArea  , dockFiles );
+	addDockWidget( Qt::LeftDockWidgetArea  , dockClasses );
+	addDockWidget( Qt::RightDockWidgetArea , dockCallsStack );
+	addDockWidget( Qt::RightDockWidgetArea , dockRegisters );
+	
+	// left docks
+	splitDockWidget( dockFiles, dockClasses, Qt::Vertical );
+	// bottom docks
+	tabifyDockWidget( dockBuild, dockOutputs );
+	tabifyDockWidget( dockBuild, dockVariables );
+	tabifyDockWidget( dockBuild, dockOtherVariables );
+	tabifyDockWidget( dockBuild, dockFindInFiles );
+	// right docks
+	splitDockWidget( dockCallsStack, dockRegisters, Qt::Vertical );
+
+	foreach( QDockWidget *dock, findChildren<QDockWidget *>() )
+	{
+		dock->setFloating( false );
+		dock->hide();
+	}
+	
+	dockBuild->raise();
+	
+	// just in case :)
+	actionEditor_mode->setChecked( false );
+
+	// only visible docks in this mode
+	dockBuild->show();
+	dockOutputs->show();
+	dockFiles->show();
+	dockClasses->show();
+	
+	setUpdatesEnabled( true );
+	blockSignals( false );
 }
 
 void MainImpl::automaticCompilationState(Editor *editor, int state)
