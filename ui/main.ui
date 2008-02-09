@@ -37,7 +37,7 @@
      <x>0</x>
      <y>0</y>
      <width>718</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_Edit" >
@@ -178,11 +178,32 @@
      <string>&amp;View</string>
     </property>
     <widget class="QMenu" name="menuToolbar" >
+     <property name="tearOffEnabled" >
+      <bool>true</bool>
+     </property>
      <property name="title" >
-      <string>&amp;Toolbar</string>
+      <string>&amp;Toolbars</string>
+     </property>
+     <property name="separatorsCollapsible" >
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QMenu" name="menuDockWindows" >
+     <property name="tearOffEnabled" >
+      <bool>true</bool>
+     </property>
+     <property name="title" >
+      <string>Dock windows</string>
+     </property>
+     <property name="separatorsCollapsible" >
+      <bool>true</bool>
      </property>
     </widget>
     <addaction name="menuToolbar" />
+    <addaction name="menuDockWindows" />
+    <addaction name="separator" />
+    <addaction name="actionFullDocksView" />
+    <addaction name="actionMinimalDocksView" />
     <addaction name="actionEditor_mode" />
    </widget>
    <widget class="QMenu" name="menuTools" >
@@ -1656,6 +1677,36 @@
   <action name="actionClearAllWarningsErrors" >
    <property name="text" >
     <string>Clear all Warnings/Errors</string>
+   </property>
+  </action>
+  <action name="actionFullDocksView" >
+   <property name="text" >
+    <string>Full view</string>
+   </property>
+  </action>
+  <action name="actionMinimalDocksView" >
+   <property name="text" >
+    <string>Minimal view</string>
+   </property>
+  </action>
+  <action name="actionDocksWindow" >
+   <property name="text" >
+    <string>DocksWindow</string>
+   </property>
+  </action>
+  <action name="actionDock_Windows" >
+   <property name="text" >
+    <string>Dock Windows</string>
+   </property>
+  </action>
+  <action name="actionNew_submenu" >
+   <property name="text" >
+    <string>New submenu ></string>
+   </property>
+  </action>
+  <action name="actionA" >
+   <property name="text" >
+    <string>a</string>
    </property>
   </action>
  </widget>

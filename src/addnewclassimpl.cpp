@@ -29,6 +29,7 @@
 #include <QComboBox>
 #include <QMessageBox>
 #include <QDebug>
+
 //
 AddNewClassImpl::AddNewClassImpl(ProjectManager * parent)
         : QDialog(0), m_projectManager(parent)
@@ -220,7 +221,3 @@ void AddNewClassImpl::on_comboProjects_currentIndexChanged(int index)
     QString projectDirectory = m_projectManager->srcDirectory( item );
     location->setText( projectDirectory );
 }
-
-
-
-

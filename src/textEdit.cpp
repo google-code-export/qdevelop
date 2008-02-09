@@ -1192,26 +1192,6 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
     {
         QTextEdit::keyPressEvent ( event );
     }
-    else if ( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutCut() )
-    {
-        cut();
-    }
-    else if ( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutPaste() )
-    {
-        paste();
-    }
-    else if ( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutUndo() )
-    {
-        QTextCursor cursor = textCursor();
-        document()->undo(&cursor);
-        setTextCursor(cursor);
-    }
-    else if ( QKeySequence(event->key() | event->modifiers()) == m_mainImpl->shortcutRedo() )
-    {
-        QTextCursor cursor = textCursor();
-        document()->redo(&cursor);
-        setTextCursor(cursor);
-    }
     else if ((event->key() == Qt::Key_Down) && (QApplication::keyboardModifiers().testFlag(Qt::ControlModifier)))
     {
         verticalScrollBar()->triggerAction( QAbstractSlider::SliderSingleStepAdd );

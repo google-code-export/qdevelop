@@ -67,10 +67,6 @@ public:
 	enum EndLine { Default, Unix, Windows };
 	TabWidget *tabEditors() const { return m_tabEditors; };
 	bool ctagsIsPresent() { return m_ctagsIsPresent; };
-	QKeySequence shortcutCut() { return actionCut->shortcut(); };
-	QKeySequence shortcutPaste() { return actionPaste->shortcut(); };
-	QKeySequence shortcutUndo() { return actionUndo->shortcut(); };
-	QKeySequence shortcutRedo() { return actionRedo->shortcut(); };
 	void closeTab(int numTab);
 	void closeOtherTab(int numTab);
 	bool showTreeClasses() { return m_showTreeClasses; };
@@ -254,6 +250,8 @@ private slots:
 	void slotNewQtVersion();
 	void slotUpdateOtherFileActions();
 	void on_actionEditor_mode_triggered();
+	void on_actionFullDocksView_triggered();
+	void on_actionMinimalDocksView_triggered();
 public slots:
 	void slotCompile(bool automaticCompilation=false);
 	void slotBuildQtDatabaseEnded();
