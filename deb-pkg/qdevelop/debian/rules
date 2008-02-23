@@ -6,14 +6,6 @@
 
 -include /usr/share/dpatch/dpatch.make
 
-# needed for get-orig-source
-NAME		= 	qdevelop
-VERSION_RELEASE =	0.24
-TMP_DIR		:=	$(shell mktemp /tmp/svn-export.XXXXXXXXXX -d -q)
-SVN_RELEASE	:=	$(shell svn info | grep Revision | awk '{ print $$2 }' )
-OUTPUT_DIR_NAME	=	$(TMP_DIR)/$(NAME)-$(VERSION_RELEASE)
-FILE_NAME	=	$(NAME)_$(VERSION_RELEASE).orig.tar.gz 
-
 CFLAGS = -Wall -g
 
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
@@ -25,32 +17,32 @@ endif
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
-	pwd
-	mkdir -p cbuild
-	cd cbuild; cmake ../
+	qmake-qt4
 	touch configure-stamp
 
 
 build: build-stamp
 
-build-stamp: patch-stamp configure-stamp 
+patch-stamp: patch
+
+build-stamp: patch-stamp configure-stamp
 	dh_testdir
-	cd cbuild
-	$(MAKE) -C cbuild
-	cp cbuild/QDevelop cbuild/qdevelop
+	$(MAKE)
 	touch $@
 
 clean: unpatch
 	dh_testdir
 	dh_testroot
-	rm -fr cbuild
+	[ ! -f Makefile ] || $(MAKE) distclean
+	rm -f Makefile
 	rm -f build-stamp configure-stamp
-	dh_clean 
+	rm -fr build bin
+	dh_clean
 
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k 
+	dh_clean -k
 	dh_installdirs
 
 # Build architecture-independent files here.
@@ -63,10 +55,8 @@ binary-arch: build install
 	dh_testroot
 	dh_installchangelogs ChangeLog.txt
 	dh_installdocs
-	dh_installexamples
 	dh_install
 	dh_installmenu
-	dh_installman
 	dh_link
 	dh_strip
 	dh_compress
@@ -76,26 +66,6 @@ binary-arch: build install
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
-
-get-svn-source:
-	rm -fr $(TMP_DIR)
-	mkdir -p $(TMP_DIR)
-	svn export ../../trunk $(TMP_DIR)/trunk
-	#cd $(OUTPUT_DIR_NAME) && doxygen
-	mv $(TMP_DIR)/trunk $(TMP_DIR)/QDevelop-$(VERSION_RELEASE)
-	tar -czf ../tarballs/$(FILE_NAME) -C $(TMP_DIR)/ .
-	rm -fr $(TMP_DIR)
-
-# download upstream source, and repackage from zip to tar.gz
-get-orig-source:
-	rm -fr $(TMP_DIR)
-	mkdir -p $(TMP_DIR)
-#	wget -q -nc  -O  $(TMP_DIR)/qdevelop-upstream.zip  http://qdevelop.org/download/compteur.php3?soft=qdevelop-$(VERSION_RELEASE).zip
-	wget -q -nc  -O  $(TMP_DIR)/qdevelop-upstream.zip  http://qdevelop.org/download/$(name)_$(VERSION_RELEASE).zip
-	unzip -q $(TMP_DIR)/qdevelop-upstream.zip -d $(TMP_DIR)
-	rm -f $(TMP_DIR)/qdevelop-upstream.zip
-	tar -czf ../tarballs/$(FILE_NAME) -C $(TMP_DIR)/ .
-	rm -fr $(TMP_DIR)
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install configure patch unpatch

@@ -3,7 +3,8 @@ Section: devel
 Priority: extra
 Maintainer: Diego Iastrubni <elcuco@kde.org>
 Standards-Version: 3.7.2
-Build-Depends: debhelper (>= 5), libqt4-dev, cmake, unzip
+Build-Depends: debhelper (>= 5), libqt4-dev, dpatch
+Homepage: http://qdevelop.org
 
 Package: qdevelop
 Architecture: any
@@ -12,14 +13,11 @@ Recommends: gdb, exuberant-ctags, qt4-doc
 Description: A Development Environment for Qt4
  QDevelop is a development environment entirely dedicated to Qt4. 
  .
- QDevelop requires Qt4, gcc under Linux or MinGW under Windows, possibly gdb 
- for program debugging and exuberant-ctags for code completion.
- .
- QDevelop is available in English, French, German, Dutch, Polish, Spanish, 
- Chinese, Russian, Italian, Ukrainian, Czech and Portuguese. If you want to 
+ QDevelop is available in English, French, German, Dutch, Polish, Spanish,
+ Chinese, Russian, Italian, Ukrainian, Czech and Portuguese. If you want to
  translate in your language, please contact the authors.
  .
- QDevelop is not a KDevelop like or reduced. It's an independent IDE dedicated 
- to Qt and is totally independent of KDevelop. Less complete, but faster, light 
- and especially multi-platforms. QDevelop and KDevelop have different code 
+ QDevelop is not a KDevelop like or reduced. It's an independent IDE dedicated
+ to Qt and is totally independent of KDevelop. Less complete, but faster, light
+ and especially multi-platforms. QDevelop and KDevelop have different code
  sources.

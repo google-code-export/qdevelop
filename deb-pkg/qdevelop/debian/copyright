@@ -3,13 +3,26 @@ Wed,  6 Jun 2007 17:05:30 +0300.
 
 It was downloaded from http://qdevelop.org/download/
 
-Upstream Author: <put author(s) name and email here>
+Upstream Author: Jean-Luc Biord <jl.biord@free.fr>
 
-Copyright: <put the year(s) of the copyright, and the names of the
-            copyright holder(s) here>
+Copyright: This software is copyright (C) 2006-2007
+           Jean-Luc Biord <jl.biord@free.fr>
 
 License:
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
 
-The application is distributed under the terms of the GPL,
-see `/usr/share/common-licenses/GPL'.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,  MA 02110-1301, USA.
+
+
+On Debian systems, the complete text of the GNU General Public
+License can be found in /usr/share/common-licenses/GPL file.
