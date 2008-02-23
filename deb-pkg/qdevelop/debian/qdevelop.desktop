@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=QDevelop
+Comment=Development environment for Qt4
+Exec=qdevelop
+Terminal=false
+Type=Application
+Icon=qdevelop
+Categories=Qt;Development;
+StartupNotify=false

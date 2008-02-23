@@ -1,1 +1,3 @@
-bin/qdevelop usr/bin/
+bin/qdevelop			usr/bin/
+debian/qdevelop.xpm		usr/share/pixmaps/
+debian/qdevelop.desktop		usr/share/applications/

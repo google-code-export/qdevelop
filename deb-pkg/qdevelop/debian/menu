@@ -1,2 +1,6 @@
-?package(qdevelop):needs="X11" section="Apps/Programming"\
-  title="QDevelop" command="/usr/bin/qdevelop"
+?package(qdevelop): \
+   needs="X11" \
+   section="Applications/Programming" \
+   title="QDevelop" \
+   icon="/usr/share/pixmaps/qdevelop.xpm" \
+   command="qdevelop"
