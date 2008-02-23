@@ -1,6 +1,6 @@
 ?package(qdevelop): \
    needs="X11" \
-   section="Applications/Programming" \
+   section="Apps/Programming"\
    title="QDevelop" \
    icon="/usr/share/pixmaps/qdevelop.xpm" \
-   command="qdevelop"
+   command="/usr/bin/qdevelop"

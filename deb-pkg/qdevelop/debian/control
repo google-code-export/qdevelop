@@ -1,7 +1,8 @@
 Source: qdevelop
 Section: devel
 Priority: extra
-Maintainer: Diego Iastrubni <elcuco@kde.org>
+Maintainer: Mohammed Sameer <msameer@debian.org>
+Uploaders: Daniel Rocher <daniel.rocher@adella.org>,  Diego Iastrubni <elcuco@kde.org>
 Standards-Version: 3.7.2
 Build-Depends: debhelper (>= 5), libqt4-dev, dpatch
 Homepage: http://qdevelop.org
