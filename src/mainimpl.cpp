@@ -1070,10 +1070,10 @@ bool MainImpl::openProject(QString s)
     if ( m_completion )
         delete m_completion;
     m_completion = new InitCompletion (this, treeClasses);
-    QString includes;
-    includes = m_includeDirectory;
+    QStringList includes;
+    includes << m_includeDirectory;
 #ifdef WIN32
-    includes += "\" \"" + QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../src" ) ;
+    includes << QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../src" ) ;
 #endif
     m_completion->setCtagsCmdPath( ctagsName() );
     m_completion->setQtInclude( includes );
@@ -2417,10 +2417,10 @@ void MainImpl::checkQtDatabase()
     connect(m_buildQtDatabase, SIGNAL(finished()), m_buildQtDatabase, SLOT(deleteLater()) );
     connect(m_buildQtDatabase, SIGNAL(showMessage(QString)), this, SLOT(slotShowMessage(QString)) );
     connect(m_buildQtDatabase, SIGNAL(finished()), this, SLOT(slotBuildQtDatabaseEnded()) );
-    QString includes;
-    includes = m_includeDirectory;
+    QStringList includes;
+    includes << m_includeDirectory;
 #ifdef WIN32
-    includes += "\" \"" + QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../src" ) ;
+    includes << QDir::cleanPath( QFileInfo(m_qmakeName).absoluteDir().path()+"/../src" ) ;
 #endif
     m_buildQtDatabase->setCtagsCmdPath( ctagsName() );
     m_buildQtDatabase->setQtInclude( includes );
