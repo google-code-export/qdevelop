@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>506</width>
-    <height>517</height>
+    <width>573</width>
+    <height>546</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -649,6 +649,13 @@
                          <widget class="QCheckBox" name="qt3support" >
                           <property name="text" >
                            <string>qt3support</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="webkit" >
+                          <property name="text" >
+                           <string>webkit</string>
                           </property>
                          </widget>
                         </item>
