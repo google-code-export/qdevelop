@@ -58,7 +58,7 @@ public:
 		* @return: the file descriptor (fd) and stores
 		*          "/usr/include/string.h" in fullname
 	*/
-	void setQtInclude(QString value) { m_qtInclude = value; }
+	void setQtInclude(QStringList value) { m_qtInclude = value; }
 	QFile* getFiledescriptor(const QString &filename, QString &fullname);
 	void setStopRequired() { m_stopRequired = true;}
 	QString tagsFilePath,
@@ -99,7 +99,7 @@ private:
     QString m_name;
     QString m_projectDirectory;
     QList<QPair<QString, QString> > parsingList;
-	QString m_qtInclude;
+	QStringList m_qtInclude;
 	bool m_stopRequired;
 	TreeClasses *m_treeClasses;
 	QStringList filesList(QString directory, QStringList files);

@@ -572,10 +572,13 @@ QStringList InitCompletion::filesList(QString directory, QStringList files)
 void InitCompletion::populateQtDatabase()
 {
    QString command = ctagsCmdPath + " -L "+QDir::tempPath()+"/qdevelopfilenames -f \"" + QDir::tempPath()+"/qttags" +
-                      "\" --language-force=c++ --fields=afiKmsSzn --c++-kinds=cdefgmnpstuvx \""
-                      + m_qtInclude + '\"';
+                      "\" --language-force=c++ --fields=afiKmsSzn --c++-kinds=cdefgmnpstuvx";
+
     QStringList files;
-    files = filesList(m_qtInclude, files);
+    foreach(QString incDir, m_qtInclude)
+    {
+    	files += filesList(incDir, files);
+   	}
      QFile f(QDir::tempPath()+"/qdevelopfilenames");
      if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
          return;
