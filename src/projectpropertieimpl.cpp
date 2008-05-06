@@ -161,6 +161,7 @@ void ProjectPropertieImpl::connections()
     connect(app, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     connect(lib, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     connect(subdirs, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
+    connect(webkit, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     //
     connect(srcDirectoryButton, SIGNAL(clicked()), this, SLOT(slotSrcDirectory()) );
     connect(uiDirectoryButton, SIGNAL(clicked()), this, SLOT(slotUiDirectory()) );
@@ -221,6 +222,7 @@ void ProjectPropertieImpl::unconnections()
     disconnect(app, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     disconnect(lib, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     disconnect(subdirs, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
+    disconnect(webkit, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
 }
 //
 void ProjectPropertieImpl::slotCheck(bool activer)
@@ -247,7 +249,7 @@ void ProjectPropertieImpl::slotCheck(bool activer)
         }
         it = itTemplate;
     }
-    else if ( QString(":core:gui:network:libopengl:sql:svg:xml:qt3support:").contains( ":"+nomVariable+":" ) )
+    else if ( QString(":core:gui:network:libopengl:sql:svg:xml:qt3support:webkit:").contains( ":"+nomVariable+":" ) )
     {
         if (nomVariable == "libopengl") nomVariable = "opengl"; // There's both CONFIG += opengl and QT += opengl - the latter widget is called libopengl so the name must be manually replaced here
         QTreeWidgetItem *itQT = subItQT( itCombo );
@@ -654,6 +656,7 @@ void ProjectPropertieImpl::parseQT(QTreeWidgetItem *it)
         if ( donnee == "opengl" )	libopengl->setChecked(true);
         if ( donnee == "svg" )	svg->setChecked(true);
         if ( donnee == "qt3support" )	qt3support->setChecked(true);
+        if ( donnee == "webkit" )	webkit->setChecked(true);
     }
 }
 //
