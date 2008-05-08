@@ -239,7 +239,6 @@ Editor * MainImpl::currentEditor()
 Editor * MainImpl::givenEditor(int i)
 {
 	return qobject_cast<Editor*> (m_tabEditors->widget(i));
-	//return (Editor*) (m_tabEditors->widget(i));
 }
 
 //

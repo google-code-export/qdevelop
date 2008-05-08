@@ -51,6 +51,7 @@ bool TabWidget::eventFilter(QObject *obj, QEvent *event)
 {
     if (obj==tabBar())
     {
+        // this code handles the tab movement
         if (event->type() == QEvent::Leave)
         {
             QPoint point = cross->mapToGlobal( QPoint(0, 0) );
@@ -137,13 +138,28 @@ bool TabWidget::eventFilter(QObject *obj, QEvent *event)
             }
         }
     }
-    Editor *editor = m_mainImpl->givenEditor(m_clickedItem);
-    QString filename;
-    if( editor )
-    	filename = editor->filename();
-    tabBar()->setToolTip(filename);
     return QTabWidget::eventFilter( obj, event);
 }
+
+/**
+ * \brief set the tooltip of a recently inserted tab
+ * 
+ * When a new tab is inserted, a tooltip is set to that tab.
+ * In the past this code was in the event filter, which worked
+ * until Qt 4.4, but since it triggers an infinite loop.
+ * 
+ * This is also the correct way of handling this.
+ * \since 0.26
+ */
+void TabWidget::tabInserted ( int index )
+{
+    Editor *editor = m_mainImpl->givenEditor(index);
+    QString filename;
+    if( editor )
+        filename = editor->filename();
+    tabBar()->setTabToolTip(index,filename);
+}
+
 //
 void TabWidget::setCloseButtonInTabs(bool b) 
 { 
@@ -192,3 +208,6 @@ void TabWidget::slotCloseOtherTab()
     m_mainImpl->closeOtherTab( m_clickedItem );
 }
 //
+
+// kate: space-indent on; tab-indent off; tab-width 4; indent-width 4; mixedindent off; indent-mode cstyle; 
+// kate: end-of-line: unix
