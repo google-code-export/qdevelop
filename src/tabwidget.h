@@ -38,6 +38,7 @@ public:
 protected:
     //void mousePressEvent( QMouseEvent * event );
     bool eventFilter(QObject *obj, QEvent *event);
+    void tabInserted ( int index );
 private:
     bool swapTabs(int index1, int index2);
     int m_clickedItem;
@@ -50,4 +51,8 @@ private slots:
     void slotCloseOtherTab();
     void slotCloseAllTab();
 };
+
 #endif
+
+// kate: space-indent on; tab-indent off; tab-width 4; indent-width 4; mixedindent off; indent-mode cstyle; 
+// kate: end-of-line: unix
