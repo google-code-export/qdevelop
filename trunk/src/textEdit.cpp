@@ -1252,7 +1252,9 @@ void TextEdit::textPlugin(TextEditInterface *iTextEdit)
 {
     QApplication::setOverrideCursor(Qt::WaitCursor);
     QTextCursor cursor = textCursor();
-    QString s = iTextEdit->text(m_plainText, cursor.selection().toPlainText());
+    int mib = m_mainImpl->mibCodec();
+    QTextCodec *codec = QTextCodec::codecForMib(mib);
+    QString s = iTextEdit->text(m_plainText, cursor.selection().toPlainText(), codec);
     if (s.isEmpty())
     {
         QApplication::restoreOverrideCursor();
