@@ -8,6 +8,7 @@
  ********************************************************************************************************/
 #include <QRegExp>
 
+#include <stdlib.h>
 #include "tree.h"
 #include "parse.h"
 #include "readtags.h"
