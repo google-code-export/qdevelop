@@ -1187,6 +1187,8 @@ void MainImpl::slotHelpQtWord()
     {
         word = editor->wordUnderCursor();
         className = editor->classNameUnderCursor();
+		if( word == editor->firstWordUnderCursor() )
+			word = className;
         if (className.isEmpty() )
             className = word;
         if( !word.isEmpty() )
@@ -2216,6 +2218,7 @@ void MainImpl::slotToolsControl(bool show)
     m_checkEnvironmentOnStartup = toolsControlImpl->checkEnvOnStartup();
     m_assistant->setName( toolsControlImpl->assistantName() );
     m_designer->setName( toolsControlImpl->designerName() );
+	m_assistant->setqVersion( toolsControlImpl->qVersion() );
     delete toolsControlImpl;
     treeClasses->setCtagsIsPresent( m_ctagsIsPresent );
     treeClasses->setCtagsName( m_ctagsName );

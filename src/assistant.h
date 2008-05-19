@@ -38,6 +38,7 @@ public:
 	void showQtWord(QString className, QString word);
     void setName( QString s ) { m_assistantName = s; };
     void setdocumentationDirectory( QString s ) { m_documentationDirectory = s; };
+    void setqVersion(QString s) { m_qVersion = s; };
 	//
 protected:
 	//
@@ -48,6 +49,7 @@ private:
 	quint16 m_port;
     QString m_assistantName;
     QString m_documentationDirectory;
+	QString m_qVersion;
 signals:	
 protected slots:
 public slots:

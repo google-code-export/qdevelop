@@ -63,6 +63,7 @@ public:
     void selectLines(int debut, int fin);
     QString wordUnderCursor(const QPoint & pos=QPoint(), bool select=false);
     QString wordUnderCursor(const QString text);
+    QString firstWordUnderCursor();
     QString classNameUnderCursor(const QPoint & pos=QPoint(), bool addThis=true);
     void activateLineNumbers(bool activate);
     void setSelectionBorder(bool activate);

@@ -43,6 +43,7 @@ public:
 	QString assistantName() { return assistant->text(); };
 	bool ctagsIsPresent()  { return m_ctagsIsPresent; };
 	bool  checkEnvOnStartup() { return checkEnvironmentOnStartup->isChecked(); };
+	QString qVersion();
 private slots:
 	void on_assistantLocation_clicked();
 	void on_linguistLocation_clicked();
@@ -58,6 +59,7 @@ private slots:
 	void chooseLocation(QLineEdit *dest);
 private:
 	bool m_ctagsIsPresent;
+	QString m_qVersion;
 };
 #endif
 
