@@ -124,6 +124,7 @@ public:
 	void gotoImplementation() { m_textEdit->slotGotoImplementation(); };
 	void gotoDeclaration() { m_textEdit->slotGotoDeclaration(); };
 	QString wordUnderCursor() { return m_textEdit->wordUnderCursor(); };
+	QString firstWordUnderCursor() { return m_textEdit->firstWordUnderCursor(); };
 	void textPlugin(TextEditInterface *iTextEdit) { m_textEdit->textPlugin(iTextEdit); };
 	QString classNameUnderCursor() { return m_textEdit->classNameUnderCursor(); };
 	int verticalScrollBar() { return m_textEdit->verticalScrollBar()->value(); };

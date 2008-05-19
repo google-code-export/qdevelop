@@ -28,7 +28,9 @@
 #include <QtNetwork/QTcpSocket>
 #include <QLibraryInfo>
 #include <QDir>
+#include <QUrl>
 #include <QDebug>
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
 //
 Assistant::Assistant()
 {
@@ -50,18 +52,24 @@ void Assistant::showQtWord(QString className, QString word)
     QString doc = QDir::cleanPath( m_documentationDirectory ) + "/html/";
 	if ( process->state() == QProcess::NotRunning )
 	{
-		process->start(m_assistantName, QStringList() << "-server" );
-		process->waitForFinished(3000);
-		lu = process->readAll();
-		if ( lu.isEmpty() )
-		{
-			QMessageBox::information(0, "QDevelop", QObject::tr("Unable to start Assistant !") );
-			return;
-		}
+		if( m_qVersion.left(5).remove(".").toInt() >= 440 )
+			process->start(m_assistantName, QStringList() << "-enableRemoteControl" );
 		else
 		{
-			m_port = lu.toUShort();
-			socket->connectToHost( "localhost", m_port );
+			process->start(m_assistantName, QStringList() << "-server" );
+			process->waitForFinished(3000);
+			lu = process->readAll();
+			if ( lu.isEmpty() )
+			{
+				QMessageBox::information(0, "QDevelop", QObject::tr("Unable to start Assistant !") );
+				return;
+			}
+			else
+			{
+				m_port = lu.toUShort();
+				socket->connectToHost( "localhost", m_port );
+			}
+				
 		}
 	}
 	QTextStream os( socket );
@@ -69,12 +77,25 @@ void Assistant::showQtWord(QString className, QString word)
     {
     	if( className == word )
     	{
-    		os << doc+className.toLower()+".html" << "\n";
+			if( m_qVersion.left(5).remove(".").toInt() >= 440 )
+	    	{
+	    		QTextStream str(process);
+	    		str << QString("setsource qthelp://com.trolltech.qt."+m_qVersion+"/qdoc/"+className.toLower()+".html") << endl;
+    		}
+	    	else
+	    		os << doc+className.toLower()+".html" << "\n";
     	}
     	else
     	{
-    		os << doc+className.toLower()+".html#"+word << "\n";
+			if( m_qVersion.left(5).remove(".").toInt() >= 440 )
+	    	{
+	    		QTextStream str(process);
+	    		str << QString("setsource qthelp://com.trolltech.qt."+m_qVersion+"/qdoc/"+className.toLower()+".html#"+word) << endl;
+    		}
+	    	else
+	    		os << doc+className.toLower()+".html#"+word << "\n";
     	}
     }
-	os.flush();
+	if( m_qVersion.left(5).remove(".").toInt() < 440 )
+		os.flush();
 }

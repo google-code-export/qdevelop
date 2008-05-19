@@ -32,6 +32,7 @@
 #include <QFileDialog>
 #include <QFile>
 #include <QDebug>
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
 
 //
 ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
@@ -127,6 +128,7 @@ bool ToolsControlImpl::toolsControl() {
     testqmake->start(qmake->text(), QStringList("-v"));
     testqmake->waitForFinished(5000);
     lu = testqmake->readAll();
+    m_qVersion = lu.section("Using Qt version", 1, 1).section("in ", 0, 0).simplified();
     if ( lu.remove(":").left(15) != "QMake version 2" ) {
         qmakeIcon->setPixmap( QPixmap(":/divers/images/nogood.png") );
         result = false;
@@ -261,4 +263,13 @@ void ToolsControlImpl::on_assistantLocation_clicked() {
 }
 
 
+
+
+QString ToolsControlImpl::qVersion()
+{
+	if( m_qVersion.isEmpty() )
+		return QString(qVersion()).left(5);
+	else
+		return m_qVersion;
+}
 

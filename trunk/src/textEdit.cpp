@@ -1488,6 +1488,28 @@ QString TextEdit::wordUnderCursor(const QPoint & pos, bool select)
     return word;
 }
 //
+QString TextEdit::firstWordUnderCursor()
+{
+    QTextCursor save(textCursor());
+    QTextCursor cursor;
+    cursor = textCursor();
+    //
+    int curpos = cursor.position();
+    while ( curpos>0  && !QString(";").contains( m_plainText.at( curpos-1 ).toUpper()  ) )
+        curpos--;
+    while ( curpos < m_plainText.length()  && !QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( m_plainText.at( curpos ).toUpper()  ) )
+        curpos++;
+    cursor.setPosition(curpos, QTextCursor::MoveAnchor);
+    setTextCursor( cursor );
+    //
+    while ( curpos < m_plainText.length()  && QString("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_").contains( m_plainText.at( curpos ).toUpper()  ) )
+        curpos++;
+    cursor.setPosition(curpos, QTextCursor::KeepAnchor);
+    QString word = cursor.selectedText().simplified();
+    //
+    setTextCursor( save );
+    return word;
+}
 QString TextEdit::wordUnderCursor(const QString text)
 {
     int begin = text.length();
@@ -1509,6 +1531,29 @@ QString TextEdit::classNameUnderCursor(const QPoint & pos, bool addThis)
     else
         cursor = cursorForPosition ( pos );
     QString c = m_plainText.left(cursor.position());
+    for(int i=c.length(); i>0; i--)
+    {
+    	if( c.at(i) == '.' )
+    	{
+    		c = c.left(i) + "." + m_editor->wordUnderCursor();
+    		break;
+   		}
+    	else if( c.at(i) == ';' || c.at(i) == '}' )
+    	{
+    		c = c.left(i) + c.at(i) + m_editor->wordUnderCursor() + ".";
+    		break;
+   		}
+    	else if( c.mid(i, 2) == "->" )
+    	{
+    		c = c.left(i+1) + "->" + m_editor->wordUnderCursor();
+    		break;
+   		}
+    	else if( c.mid(i, 2) == "::" )
+    	{
+    		c = c.left(i) + "::";
+    		break;
+   		}
+   	}
     QString classname = m_completion->className(c);
     if ( classname.isEmpty() && addThis )
     {

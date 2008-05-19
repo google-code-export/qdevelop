@@ -291,8 +291,11 @@ void InitCompletion::run()
 
 QString InitCompletion::className(const QString &text)
 {
-    Scope sc;
-    Expression exp = getExpression(text, sc);
+    if ( !connectQDevelopDB( getQDevelopPath() + "qdevelop.db" ) )
+    {
+        return QString();
+    }
+    Expression exp = parseLine( text );
     if (exp.access == ParseError)
         return QString();
     return exp.className;
