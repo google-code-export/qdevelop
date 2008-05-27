@@ -124,7 +124,8 @@
         <file>translations/QDevelop_Portuguese.qm</file>
         <file>translations/QDevelop_Vietnamese.qm</file>
         <file>translations/QDevelop_Turkish.qm</file>
-    </qresource>
+        <file>translations/QDevelop_Hungarian.qm</file>
+   </qresource>
     <qresource prefix="/treeview" >
         <file>images/cpp.png</file>
         <file>images/designer.png</file>
