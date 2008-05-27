@@ -202,16 +202,11 @@ void TextEdit::printWhiteSpacesAndMatching( QPainter &p )
 			{
 				QTextCursor cursor = textCursor();
 				cursor.setPosition( block.position() + i, QTextCursor::MoveAnchor);
+				QRect r1 = cursorRect( cursor );
+				cursor.movePosition( QTextCursor::Right, QTextCursor::MoveAnchor, 1);
 				QRect r2 = cursorRect( cursor );
-				if( QString("({[").contains( m_plainText.at( block.position() + i ) ) )
-					r2.adjust(r2.width()/3, r2.height()-1, r2.width()/3, 0);
-				else
-					r2.adjust(r2.width()/4, r2.height()-1, r2.width()/4, 0);
-				r2.adjust(2, 0, -2, 0);
-				p.setPen( m_matchingColor );
-				//int x = r2.x() + 4;
-				//int y = r2.y();// + fm.height();// / 2 - 5;
-				p.drawRect(r2);
+				p.setPen( QPen(m_matchingColor, 2) );
+				p.drawLine( r1.x()+r1.width()/2, r1.y()+r1.height()-2, r2.x()+r2.width()/2, r2.y()+r2.height()-2);
 			}
 			
 			if( m_showWhiteSpaces )
