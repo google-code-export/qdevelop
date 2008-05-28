@@ -1287,7 +1287,7 @@ void TextEdit::dropEvent( QDropEvent * event )
         setTextCursor( save );
     }
     QTextEdit::dropEvent( event );
-    if ( event->keyboardModifiers() == Qt::NoModifier )
+    if ( event->dropAction() == Qt::CopyAction )
     {
         QTextCursor cursor = textCursor();
         int pos = textCursor().position();
