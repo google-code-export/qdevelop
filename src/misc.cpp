@@ -136,7 +136,8 @@ bool connectDB(QString const& dbName)
 		query.exec(queryString);
 		//
 		queryString = "create table config ("
-		    "currentEditor int"
+		    "key string,"
+		    "value string"
 		    ")";
 		query.exec(queryString);
 		//

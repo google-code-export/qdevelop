@@ -141,6 +141,7 @@ TreeProject::TreeProject(QWidget * parent) : QTreeWidget(parent)
     //setAcceptDrops(true);
     //setDropIndicatorShown(true);
 	//setAcceptDrops ( true );
+	krawekItemDelegate = 0;
 	setup(); 
 }
 
@@ -272,10 +273,11 @@ void TreeProject::slotShowAsNormal()
 	header()->hide();
 	setRootIsDecorated(true);
 	setAlternatingRowColors(false);
-	#if QT_VERSION >= 0x040200
-		//setAnimationsEnabled(false);
-		//setAnimated(false)
-	#endif
+	if( krawekItemDelegate )
+	{
+		delete krawekItemDelegate;
+		krawekItemDelegate = 0;
+	}
 }
 //
 void TreeProject::slotShowAsKrawek()
@@ -286,10 +288,6 @@ void TreeProject::slotShowAsKrawek()
 	setRootIsDecorated(false);
 	setItemDelegate( krawekItemDelegate );
 	setAlternatingRowColors(true);
-	#if QT_VERSION >= 0x040200
-		//setAnimationsEnabled(true);
-		//setAnimated(true)
-	#endif
 }
 //
 void TreeProject::slotAddNewItem()

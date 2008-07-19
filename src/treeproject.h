@@ -36,7 +36,7 @@ public:
 	TreeProject(QWidget * parent = 0);
 	~TreeProject();
 	void setProjectManager( QPointer<ProjectManager> g ) { m_projectManager = g; };
-	
+	bool showAsKrawek() { return krawekItemDelegate != 0; };
 private:
 	void setup();
 protected:
@@ -64,8 +64,9 @@ private slots:
 	void slotSort();
 	void slotSubclassing();
 	void slotShowAsNormal();
-	void slotShowAsKrawek();
 	void slotPreviewForm();
+public slots:
+	void slotShowAsKrawek();
 signals:
 	void addNewItem(QTreeWidgetItem *, QString);
 	void addExistingsFiles(QTreeWidgetItem *);
