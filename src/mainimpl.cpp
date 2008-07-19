@@ -1514,6 +1514,8 @@ void MainImpl::slotCompile(bool automaticCompilation)
 {
 	if( automaticCompilation && !m_automaticCompilation )
 		return;
+	if( !m_projectManager )
+		return;
     Editor *editor = currentEditor();
     if ( editor && Editor::suffixe( editor->filename() ).toLower() == "cpp" )
     {
