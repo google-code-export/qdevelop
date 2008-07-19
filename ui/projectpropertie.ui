@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>573</width>
-    <height>546</height>
+    <height>554</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -605,6 +605,20 @@
                           </property>
                          </widget>
                         </item>
+                        <item>
+                         <widget class="QCheckBox" name="gui" >
+                          <property name="text" >
+                           <string>gui</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="script" >
+                          <property name="text" >
+                           <string>script</string>
+                          </property>
+                         </widget>
+                        </item>
                        </layout>
                       </item>
                       <item>
@@ -624,13 +638,6 @@
                         <property name="bottomMargin" >
                          <number>0</number>
                         </property>
-                        <item>
-                         <widget class="QCheckBox" name="gui" >
-                          <property name="text" >
-                           <string>gui</string>
-                          </property>
-                         </widget>
-                        </item>
                         <item>
                          <widget class="QCheckBox" name="libopengl" >
                           <property name="text" >
@@ -656,6 +663,20 @@
                          <widget class="QCheckBox" name="webkit" >
                           <property name="text" >
                            <string>webkit</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="phonon" >
+                          <property name="text" >
+                           <string>phonon</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="xmlpatterns" >
+                          <property name="text" >
+                           <string>xmlpatterns</string>
                           </property>
                          </widget>
                         </item>
