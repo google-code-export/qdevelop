@@ -162,6 +162,9 @@ void ProjectPropertieImpl::connections()
     connect(lib, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     connect(subdirs, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     connect(webkit, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
+    connect(phonon, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
+    connect(xmlpatterns, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
+    connect(script, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     //
     connect(srcDirectoryButton, SIGNAL(clicked()), this, SLOT(slotSrcDirectory()) );
     connect(uiDirectoryButton, SIGNAL(clicked()), this, SLOT(slotUiDirectory()) );
@@ -223,6 +226,9 @@ void ProjectPropertieImpl::unconnections()
     disconnect(lib, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     disconnect(subdirs, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     disconnect(webkit, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
+    disconnect(phonon, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
+    disconnect(xmlpatterns, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
+    disconnect(script, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
 }
 //
 void ProjectPropertieImpl::slotCheck(bool activer)
@@ -249,7 +255,7 @@ void ProjectPropertieImpl::slotCheck(bool activer)
         }
         it = itTemplate;
     }
-    else if ( QString(":core:gui:network:libopengl:sql:svg:xml:qt3support:webkit:").contains( ":"+nomVariable+":" ) )
+    else if ( QString(":core:gui:network:libopengl:sql:svg:xml:qt3support:webkit:phonon:xmlpatterns:script:").contains( ":"+nomVariable+":" ) )
     {
         if (nomVariable == "libopengl") nomVariable = "opengl"; // There's both CONFIG += opengl and QT += opengl - the latter widget is called libopengl so the name must be manually replaced here
         QTreeWidgetItem *itQT = subItQT( itCombo );
@@ -414,7 +420,15 @@ void ProjectPropertieImpl::slotAddVariable()
     bool ok = newVariable->exec();
     if (ok)
     {
-        if ( ui.groupUserVariable->isChecked() && !ui.userVariable->text().isEmpty() )
+    	if( QString("|TEMPLATE|CONFIG|QT|").contains(ui.userVariable->text()) )
+    	{
+            QMessageBox::warning(0, "QDevelop",
+	            tr("A new variable can not be \"QT\", \"CONFIG\" or \"TEMPLATE\""),
+	            tr("Cancel") );
+            delete newVariable;
+    		return;
+   		}
+        else if ( ui.groupUserVariable->isChecked() && !ui.userVariable->text().isEmpty() )
             nouvelleVariable = ui.userVariable->text();
         else if ( !ui.groupUserVariable->isChecked() )
             nouvelleVariable = ui.comboVariables->itemData(ui.comboVariables->currentIndex(), Qt::UserRole).toString();
@@ -657,6 +671,9 @@ void ProjectPropertieImpl::parseQT(QTreeWidgetItem *it)
         if ( donnee == "svg" )	svg->setChecked(true);
         if ( donnee == "qt3support" )	qt3support->setChecked(true);
         if ( donnee == "webkit" )	webkit->setChecked(true);
+        if ( donnee == "phonon" )	phonon->setChecked(true);
+        if ( donnee == "xmlpatterns" )	xmlpatterns->setChecked(true);
+        if ( donnee == "script" )	script->setChecked(true);
     }
 }
 //
