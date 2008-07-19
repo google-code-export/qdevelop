@@ -264,7 +264,10 @@ void Debug::slotMessagesDebug()
 					else
 					{
 						m_request = Value;
-						messagesToDebugger << "p "+variable.name+"\n";
+						if( variable.type.section(" ", 0, 0) == "string" )
+							messagesToDebugger << "p "+variable.name+".c_str()\n";
+						else
+							messagesToDebugger << "p "+variable.name+"\n";
 					}
 				}
 			}
