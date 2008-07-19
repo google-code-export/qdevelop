@@ -7,6 +7,8 @@
  * COMMENTARY   : Modified file (with qt) of the icomplete project
  ********************************************************************************************************/
 #include <QRegExp>
+#include <QDebug>
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
 
 #include <stdlib.h>
 #include "tree.h"
@@ -122,17 +124,20 @@ Tree* Tree::buildInheritanceTree(const QString &className)
 						if (!strcmp(entry.fields.list[i].key, "inherits"))
 						{
 							/* split the inherits string to single classNamees for multiple inheritance */
-							char *allinherits = strdup(entry.fields.list[i].value);
+							//char *allinherits = strdup(entry.fields.list[i].value);
+							QString allinherits = entry.fields.list[i].value;
 							char *buffer = NULL;
-							char *inherit = strtok(allinherits, ",");
+							//char *inherit = strtok(allinherits, ",");
+							QString inherit = allinherits.section(",", 0, 0);
 							while (inherit != NULL)
 							{
 								tree->addTreeChild(inherit);
 
 								/* next token */
-								inherit = strtok(buffer, ",");
+								//inherit = strtok(buffer, ",");
+								inherit = QString(buffer).section(",", 0, 0);
 							}
-							free(allinherits);
+							//free(allinherits);
 							goto end;
 						}
 					}
