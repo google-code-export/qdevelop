@@ -359,12 +359,17 @@ void ProjectManager::saveProjectSettings()
             qDebug()<<"projectsDirectories" << query.lastError();
     }
     //
-    query.prepare("INSERT INTO config (currentEditor) "
-                  "VALUES (:currentEditor)");
+    query.prepare("INSERT INTO config (key, value) "
+                  "VALUES (:key, :value)");
+    query.bindValue(":key", "currentEditor");
     if ( m_parent->tabEditors()->count() )
-        query.bindValue(":currentEditor", m_parent->tabEditors()->currentIndex());
+        query.bindValue(":value", QString::number( m_parent->tabEditors()->currentIndex()) );
     else
-        query.bindValue(":currentEditor", -1);
+        query.bindValue(":value", "-1");
+    if ( !query.exec() )
+        qDebug()<<"config" << query.lastError();
+    query.bindValue(":key", "showAsKrawek");
+    query.bindValue(":value", QString::number( m_treeFiles->showAsKrawek() ) );
     if ( !query.exec() )
         qDebug()<<"config" << query.lastError();
 }
@@ -422,9 +427,20 @@ void ProjectManager::loadProjectSettings()
     query.exec();
     while (query.next())
     {
-        int currentEditor = query.value( 0 ).toInt();
-        if ( currentEditor != -1 )
-            m_parent->tabEditors()->setCurrentIndex( currentEditor );
+        int currentEditor = -1;
+        QString key  = query.value( 0 ).toString();
+        if( key == "currentEditor" )
+        {
+        	currentEditor = query.value( 1 ).toString().toInt();
+	        if ( currentEditor != -1 )
+	            m_parent->tabEditors()->setCurrentIndex( currentEditor );
+       	}
+        else if( key == "showAsKrawek" )
+        {
+        	bool showAsKrawek = query.value( 1 ).toString().toInt();
+        	if( showAsKrawek )
+        		m_treeFiles->slotShowAsKrawek();
+       	}
     }
     //
     query.prepare("select * from projectsDirectories where 1");
