@@ -2751,7 +2751,7 @@ du kannst es in den Optionen ändern.</translation>
     <message>
         <location filename="../../ui/openfile.ui" line="13"/>
         <source>Open File in Project</source>
-        <translation>ÖÖffne Datei des Projekts</translation>
+        <translation>Öffne Datei des Projekts</translation>
     </message>
     <message>
         <location filename="../../ui/openfile.ui" line="47"/>
