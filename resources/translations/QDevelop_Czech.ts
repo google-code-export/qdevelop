@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="cs_CZ">
-<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -28,34 +27,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../ui/about.ui" line="191"/>
         <source>OK</source>
         <translation>OK</translation>
-    </message>
-    <message>
-        <location filename="../../ui/about.ui" line="133"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;diegoiast@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Hlavní Vývojář: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Doplňování kódu: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Vývojář: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;diegoiast@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Vývojář: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Vývojář: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Vývojář: Ralf Jung &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Český překlad: Tomáš Hanák &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:tomas.hanak@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;tomas.hanak@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Sestavení instalací: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/about.ui" line="133"/>
@@ -346,22 +317,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddNewClassImpl</name>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="53"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="54"/>
         <source>Choose the file location</source>
         <translation>Vyberte umístění souboru</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="138"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="139"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="137"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="138"/>
         <source>Unable to create file.</source>
         <translation>Nelze vytvořit soubor.</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="130"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="131"/>
         <source>The file &quot;%1&quot;
  already exists.</source>
         <translation>Soubor &quot;%1&quot;
@@ -376,137 +347,52 @@ p, li { white-space: pre-wrap; }
         <translation>Přidat novou metodu</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="41"/>
+        <location filename="../../ui/addnewclassmethod.ui" line="71"/>
         <source>Method Name:</source>
         <translation>Jméno metody:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="48"/>
+        <location filename="../../ui/addnewclassmethod.ui" line="78"/>
         <source>Return type:</source>
         <translation>Návratový typ:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="55"/>
+        <location filename="../../ui/addnewclassmethod.ui" line="85"/>
         <source>Parameters:</source>
         <translation>Parametry:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="62"/>
+        <location filename="../../ui/addnewclassmethod.ui" line="92"/>
         <source>Scope:</source>
         <translation>Kontext:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="94"/>
-        <source>void</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="99"/>
-        <source>bool</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="104"/>
-        <source>char</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="109"/>
-        <source>short</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="114"/>
-        <source>long</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="119"/>
-        <source>int</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="124"/>
-        <source>signed</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="129"/>
-        <source>unsigned</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="134"/>
-        <source>float</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="139"/>
-        <source>double</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="180"/>
-        <source>public</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="185"/>
-        <source>protected</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="190"/>
-        <source>private</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="195"/>
-        <source>public slots</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="200"/>
-        <source>protected slots</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="205"/>
-        <source>private slots</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="210"/>
-        <source>signals</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="245"/>
+        <location filename="../../ui/addnewclassmethod.ui" line="226"/>
         <source>Inline</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="252"/>
+        <location filename="../../ui/addnewclassmethod.ui" line="233"/>
         <source>Virtual</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="259"/>
+        <location filename="../../ui/addnewclassmethod.ui" line="240"/>
         <source>Static</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="266"/>
+        <location filename="../../ui/addnewclassmethod.ui" line="247"/>
         <source>Pure</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="296"/>
+        <location filename="../../ui/addnewclassmethod.ui" line="286"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassmethod.ui" line="303"/>
+        <location filename="../../ui/addnewclassmethod.ui" line="293"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
@@ -514,22 +400,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddNewClassMethodImpl</name>
     <message>
-        <location filename="../../src/addnewclassmethodimpl.cpp" line="73"/>
+        <location filename="../../src/addnewclassmethodimpl.cpp" line="79"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassmethodimpl.cpp" line="37"/>
+        <location filename="../../src/addnewclassmethodimpl.cpp" line="43"/>
         <source>Add New Method in class %1</source>
         <translation>Přidat novou metodu do třídy %1</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassmethodimpl.cpp" line="60"/>
+        <location filename="../../src/addnewclassmethodimpl.cpp" line="66"/>
         <source>An implementation file is required.</source>
         <translation>Je požadován nějaký zdrojový soubor.</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassmethodimpl.cpp" line="72"/>
+        <location filename="../../src/addnewclassmethodimpl.cpp" line="78"/>
         <source>%1 already exists in class %2.</source>
         <translation>%1 už existuje ve třídě %2.</translation>
     </message>
@@ -542,130 +428,60 @@ p, li { white-space: pre-wrap; }
         <translation>Přidat novou proměnnou</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="25"/>
+        <location filename="../../ui/addnewclassvariable.ui" line="37"/>
         <source>Create get/set methods</source>
         <translation>Vytvořit get/set metody</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="56"/>
+        <location filename="../../ui/addnewclassvariable.ui" line="80"/>
         <source>inline</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="73"/>
+        <location filename="../../ui/addnewclassvariable.ui" line="97"/>
         <source>set method</source>
         <translation>set metoda</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="87"/>
+        <location filename="../../ui/addnewclassvariable.ui" line="111"/>
         <source>get method</source>
         <translation>get metoda</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="131"/>
+        <location filename="../../ui/addnewclassvariable.ui" line="164"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="138"/>
+        <location filename="../../ui/addnewclassvariable.ui" line="171"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="163"/>
+        <location filename="../../ui/addnewclassvariable.ui" line="214"/>
         <source>Variable Name:</source>
         <translation>Jméno proměnné:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="170"/>
+        <location filename="../../ui/addnewclassvariable.ui" line="221"/>
         <source>Type:</source>
         <translation>Typ:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="177"/>
+        <location filename="../../ui/addnewclassvariable.ui" line="228"/>
         <source>Scope:</source>
         <translation>Viditelnost:</translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="209"/>
-        <source>bool</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="214"/>
-        <source>char</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="219"/>
-        <source>short</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="224"/>
-        <source>long</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="229"/>
-        <source>int</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="234"/>
-        <source>signed</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="239"/>
-        <source>unsigned</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="244"/>
-        <source>float</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="249"/>
-        <source>double</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="254"/>
-        <source>QString</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="259"/>
-        <source>void</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="297"/>
-        <source>private</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="302"/>
-        <source>protected</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclassvariable.ui" line="307"/>
-        <source>public</source>
-        <translation></translation>
     </message>
 </context>
 <context>
     <name>AddNewClassVariableImpl</name>
     <message>
-        <location filename="../../src/addnewclassvariableimpl.cpp" line="67"/>
+        <location filename="../../src/addnewclassvariableimpl.cpp" line="73"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassvariableimpl.cpp" line="66"/>
+        <location filename="../../src/addnewclassvariableimpl.cpp" line="72"/>
         <source>%1 already exists in class %2.</source>
         <translation>%1 už existuje ve třídě %2.</translation>
     </message>
@@ -706,6 +522,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/addnewimpl.cpp" line="132"/>
         <source>Also create the file %1 in same location ?</source>
         <translation>Vytvořit soubor %1 ve stejném adresáři ?</translation>
+    </message>
+    <message>
+        <location filename="../../src/addnewimpl.cpp" line="128"/>
+        <source>source</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -890,7 +711,7 @@ Kompilace %1...
         <translation>Ladění ukončeno</translation>
     </message>
     <message>
-        <location filename="../../src/debug.cpp" line="369"/>
+        <location filename="../../src/debug.cpp" line="372"/>
         <source>Error: Unable to evaluate value</source>
         <translation>Chyba: Není možné určit hodnotu</translation>
     </message>
@@ -898,27 +719,27 @@ Kompilace %1...
 <context>
     <name>Editor</name>
     <message>
-        <location filename="../../src/editor.cpp" line="101"/>
+        <location filename="../../src/editor.cpp" line="92"/>
         <source>Refresh classes and methods lists</source>
         <translation>Obnovit seznamy tříd a metod</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="245"/>
+        <location filename="../../src/editor.cpp" line="253"/>
         <source>What do you want to do?</source>
         <translation>Co chcete provést?</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="246"/>
+        <location filename="../../src/editor.cpp" line="254"/>
         <source>Overwrite</source>
         <translation>Přepsat</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="246"/>
+        <location filename="../../src/editor.cpp" line="254"/>
         <source>Reload File</source>
         <translation>Znovu nahrát</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="244"/>
+        <location filename="../../src/editor.cpp" line="252"/>
         <source>The file &quot;%1&quot;
 was modified outside editor.
 
@@ -929,9 +750,14 @@ byl upraven mimo editor.
 </translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="179"/>
+        <location filename="../../src/editor.cpp" line="187"/>
         <source>Open %1</source>
         <translation>Otevřít %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="404"/>
+        <source>%1 replacement(s) made.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1112,12 +938,12 @@ byl upraven mimo editor.
 <context>
     <name>InitCompletion</name>
     <message>
-        <location filename="../../src/InitCompletion.cpp" line="562"/>
+        <location filename="../../src/InitCompletion.cpp" line="593"/>
         <source>Unable to launch %1</source>
         <translation>Nelze spustit %1</translation>
     </message>
     <message>
-        <location filename="../../src/InitCompletion.cpp" line="569"/>
+        <location filename="../../src/InitCompletion.cpp" line="600"/>
         <source>Unable to open %1</source>
         <translation>Nelze otevřít %1</translation>
     </message>
@@ -1161,1078 +987,1113 @@ byl upraven mimo editor.
         <translation>QDevelop</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="96"/>
+        <location filename="../../ui/main.ui" line="105"/>
         <source>&amp;?</source>
         <translation>&amp;?</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1409"/>
+        <location filename="../../ui/main.ui" line="1358"/>
         <source>&amp;Debug</source>
         <translation>&amp;Ladění</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1417"/>
+        <location filename="../../ui/main.ui" line="1366"/>
         <source>&amp;Build</source>
         <translation>&amp;Sestavit</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="36"/>
+        <location filename="../../ui/main.ui" line="45"/>
         <source>&amp;Edit</source>
         <translation>Ú&amp;pravy</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="199"/>
+        <location filename="../../ui/main.ui" line="229"/>
         <source>Plugins</source>
         <translation>Pluginy</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="169"/>
+        <location filename="../../ui/main.ui" line="178"/>
         <source>&amp;View</source>
         <translation>&amp;Zobrazení</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="108"/>
+        <location filename="../../ui/main.ui" line="117"/>
         <source>&amp;Project</source>
         <translation>&amp;Projekt</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="145"/>
+        <location filename="../../ui/main.ui" line="154"/>
         <source>&amp;File</source>
         <translation>&amp;Soubor</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1396"/>
+        <location filename="../../ui/main.ui" line="1345"/>
         <source>Outputs</source>
         <translation>Výstupy</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="286"/>
+        <location filename="../../ui/main.ui" line="433"/>
         <source>Build</source>
         <translation>Sestavování</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="549"/>
+        <location filename="../../ui/main.ui" line="718"/>
         <source>Name</source>
         <translation>Jméno</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="554"/>
+        <location filename="../../ui/main.ui" line="723"/>
         <source>Type</source>
         <translation>Typ</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="559"/>
+        <location filename="../../ui/main.ui" line="728"/>
         <source>Address</source>
         <translation>Adresa</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="564"/>
+        <location filename="../../ui/main.ui" line="733"/>
         <source>Value</source>
         <translation>Hodnota</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="517"/>
+        <location filename="../../ui/main.ui" line="686"/>
         <source>...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="575"/>
-        <source>Find in Files</source>
-        <translation>Najít v souborech</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="1391"/>
+        <location filename="../../ui/main.ui" line="1340"/>
         <source>Project Explorer</source>
         <translation>Projekt explorer</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1401"/>
+        <location filename="../../ui/main.ui" line="1350"/>
         <source>Files</source>
         <translation>Soubory</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="738"/>
+        <location filename="../../ui/main.ui" line="857"/>
         <source>Classes</source>
         <translation>Třídy</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="777"/>
+        <location filename="../../ui/main.ui" line="263"/>
         <source>Files toolbar</source>
         <translation>Lišta souborů</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="804"/>
+        <location filename="../../ui/main.ui" line="290"/>
         <source>Edit Toolbar</source>
         <translation>Lišta editoru</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="947"/>
+        <location filename="../../ui/main.ui" line="896"/>
         <source>&amp;New Project...</source>
         <translation>&amp;Nový projekt...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="955"/>
+        <location filename="../../ui/main.ui" line="904"/>
         <source>&amp;New File...</source>
         <translation>&amp;Nový soubor...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="961"/>
+        <location filename="../../ui/main.ui" line="910"/>
         <source>New File</source>
         <translation>Nový soubor</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="966"/>
+        <location filename="../../ui/main.ui" line="915"/>
         <source>&amp;File...</source>
         <translation>&amp;Soubor...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="974"/>
+        <location filename="../../ui/main.ui" line="923"/>
         <source>&amp;Open Project...</source>
         <translation>&amp;Otevřít projekt...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="982"/>
+        <location filename="../../ui/main.ui" line="931"/>
         <source>&amp;Close All Files</source>
         <translation>&amp;Zavřít všechny soubory</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="990"/>
+        <location filename="../../ui/main.ui" line="939"/>
         <source>&amp;Save File</source>
         <translation>Uložit &amp;soubor</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="993"/>
+        <location filename="../../ui/main.ui" line="942"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1020"/>
+        <location filename="../../ui/main.ui" line="969"/>
         <source>&amp;Quit</source>
         <translation>&amp;Konec</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1034"/>
+        <location filename="../../ui/main.ui" line="983"/>
         <source>Undo</source>
         <translation>Zpět</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1037"/>
+        <location filename="../../ui/main.ui" line="986"/>
         <source>Ctrl+Z</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1051"/>
+        <location filename="../../ui/main.ui" line="1000"/>
         <source>Redo</source>
         <translation>Opakovat</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1054"/>
+        <location filename="../../ui/main.ui" line="1003"/>
         <source>Ctrl+Shift+Z</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1065"/>
+        <location filename="../../ui/main.ui" line="1014"/>
         <source>Ctrl+X</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1076"/>
+        <location filename="../../ui/main.ui" line="1025"/>
         <source>Ctrl+C</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1087"/>
+        <location filename="../../ui/main.ui" line="1036"/>
         <source>Ctrl+V</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1092"/>
+        <location filename="../../ui/main.ui" line="1041"/>
         <source>Select All</source>
         <translation>Vybrat vše</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1095"/>
+        <location filename="../../ui/main.ui" line="1044"/>
         <source>Ctrl+A</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1106"/>
+        <location filename="../../ui/main.ui" line="1055"/>
         <source>Ctrl+F</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1114"/>
+        <location filename="../../ui/main.ui" line="1063"/>
         <source>Ctrl+R</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1133"/>
+        <location filename="../../ui/main.ui" line="1082"/>
         <source>Add New Item</source>
         <translation>Přidat novou položku</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1136"/>
+        <location filename="../../ui/main.ui" line="1085"/>
         <source>Ctrl+N</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1147"/>
+        <location filename="../../ui/main.ui" line="1096"/>
         <source>Add Existing Files</source>
         <translation>Přidat existující soubory</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1152"/>
+        <location filename="../../ui/main.ui" line="1101"/>
         <source>New Folder</source>
         <translation>Nová složka</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1166"/>
+        <location filename="../../ui/main.ui" line="1115"/>
         <source>Project Properties</source>
         <translation>Vlastnosti projektu</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1177"/>
+        <location filename="../../ui/main.ui" line="1126"/>
         <source>Clean</source>
         <translation>Vyčistit</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1191"/>
+        <location filename="../../ui/main.ui" line="1140"/>
         <source>Rebuild</source>
         <translation>Sestavit znovu</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1205"/>
+        <location filename="../../ui/main.ui" line="1154"/>
         <source>Compile File</source>
         <translation>Kompilovat soubor</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1208"/>
+        <location filename="../../ui/main.ui" line="1157"/>
         <source>Shift+F7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1222"/>
+        <location filename="../../ui/main.ui" line="1171"/>
         <source>Start Program</source>
         <translation>Spustit program</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1225"/>
+        <location filename="../../ui/main.ui" line="1174"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1239"/>
+        <location filename="../../ui/main.ui" line="1188"/>
         <source>Step Into</source>
         <translation>Krok dovnitř</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1242"/>
+        <location filename="../../ui/main.ui" line="1191"/>
         <source>F11</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1256"/>
+        <location filename="../../ui/main.ui" line="1205"/>
         <source>Step Over</source>
         <translation>Krok přes</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1259"/>
+        <location filename="../../ui/main.ui" line="1208"/>
         <source>F10</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1270"/>
+        <location filename="../../ui/main.ui" line="1219"/>
         <source>Calls Stack</source>
         <translation>Zásobník volání</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1298"/>
+        <location filename="../../ui/main.ui" line="1247"/>
         <source>&amp;Open...</source>
         <translation>&amp;Otevřít...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1301"/>
+        <location filename="../../ui/main.ui" line="1250"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1309"/>
+        <location filename="../../ui/main.ui" line="1258"/>
         <source>F3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1326"/>
+        <location filename="../../ui/main.ui" line="1275"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1329"/>
+        <location filename="../../ui/main.ui" line="1278"/>
         <source>F6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1334"/>
+        <location filename="../../ui/main.ui" line="1283"/>
         <source>Breakpoints...</source>
         <translation>Zarážky...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1350"/>
+        <location filename="../../ui/main.ui" line="1299"/>
         <source>Indent selection</source>
         <translation>Zvětšit odsazení</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1353"/>
+        <location filename="../../ui/main.ui" line="1302"/>
         <source>Tab</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1361"/>
+        <location filename="../../ui/main.ui" line="1310"/>
         <source>Unindent selection</source>
         <translation>Zmenšit odsazení</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1364"/>
+        <location filename="../../ui/main.ui" line="1313"/>
         <source>Shift+Tab</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1375"/>
+        <location filename="../../ui/main.ui" line="1324"/>
         <source>F1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1420"/>
+        <location filename="../../ui/main.ui" line="1369"/>
         <source>F7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1433"/>
+        <location filename="../../ui/main.ui" line="1382"/>
         <source>Save Project As...</source>
         <translation>Uložit projekt jako...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1457"/>
+        <location filename="../../ui/main.ui" line="1406"/>
         <source>Shift+F11</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1465"/>
+        <location filename="../../ui/main.ui" line="1414"/>
         <source>Ctrl+W</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1476"/>
+        <location filename="../../ui/main.ui" line="1425"/>
         <source>Alt+Right</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1487"/>
+        <location filename="../../ui/main.ui" line="1436"/>
         <source>Alt+Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1498"/>
+        <location filename="../../ui/main.ui" line="1447"/>
         <source>Shift+F12</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1506"/>
+        <location filename="../../ui/main.ui" line="1455"/>
         <source>Esc</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1517"/>
+        <location filename="../../ui/main.ui" line="1466"/>
         <source>F9</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1535"/>
+        <location filename="../../ui/main.ui" line="1484"/>
         <source>Ctrl+G</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1543"/>
+        <location filename="../../ui/main.ui" line="1492"/>
         <source>Ctrl+D</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1548"/>
+        <location filename="../../ui/main.ui" line="1497"/>
         <source>Comment</source>
         <translation>Zakomentovat</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1553"/>
+        <location filename="../../ui/main.ui" line="1502"/>
         <source>Uncomment</source>
         <translation>Zrušit komentář</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1558"/>
+        <location filename="../../ui/main.ui" line="1507"/>
         <source>Complete Code</source>
         <translation>Dokončit kód</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1561"/>
+        <location filename="../../ui/main.ui" line="1510"/>
         <source>Ctrl+Space</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1569"/>
+        <location filename="../../ui/main.ui" line="1518"/>
         <source>Toggle &amp;Bookmark</source>
         <translation>Vložit/zrušit &amp;záložku</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1575"/>
+        <location filename="../../ui/main.ui" line="1524"/>
         <source>Toggle Bookmark</source>
         <translation>Vložit/zrušit záložku</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1578"/>
+        <location filename="../../ui/main.ui" line="1527"/>
         <source>Ctrl+B</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1586"/>
+        <location filename="../../ui/main.ui" line="1535"/>
         <source>Clear &amp;All Bookmarks</source>
         <translation>Vym&amp;azat všechny záložky</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1589"/>
+        <location filename="../../ui/main.ui" line="1538"/>
         <source>Ctrl+F2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1605"/>
+        <location filename="../../ui/main.ui" line="1554"/>
         <source>F2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1616"/>
+        <location filename="../../ui/main.ui" line="1565"/>
         <source>Shift+F2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1624"/>
+        <location filename="../../ui/main.ui" line="1573"/>
         <source>Shift+F3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1635"/>
+        <location filename="../../ui/main.ui" line="1584"/>
         <source>Goto matching bracket</source>
         <translation>Najít párovou závorku</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1638"/>
+        <location filename="../../ui/main.ui" line="1587"/>
         <source>Ctrl+[</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1643"/>
+        <location filename="../../ui/main.ui" line="1592"/>
         <source>Foo</source>
         <translation>Foo</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1656"/>
+        <location filename="../../ui/main.ui" line="1605"/>
         <source>&amp;Print...</source>
         <translation>&amp;Tisk...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1122"/>
+        <location filename="../../ui/main.ui" line="1071"/>
         <source>Ctrl+Shift+F</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1664"/>
+        <location filename="../../ui/main.ui" line="1613"/>
         <source>Alt+Shift+O</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="69"/>
+        <location filename="../../ui/main.ui" line="78"/>
         <source>&amp;Bookmarks</source>
         <translation>&amp;Záložky</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="112"/>
+        <location filename="../../ui/main.ui" line="121"/>
         <source>&amp;Last Projects</source>
         <translation>Pos&amp;lední projekty</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="131"/>
+        <location filename="../../ui/main.ui" line="140"/>
         <source>B&amp;uild</source>
         <translation>&amp;Sestavení</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="149"/>
+        <location filename="../../ui/main.ui" line="158"/>
         <source>Las&amp;t Files</source>
         <translation>Posle&amp;dní soubory</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="173"/>
-        <source>&amp;Toolbar</source>
-        <translation>Lišty nás&amp;trojů</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="181"/>
+        <location filename="../../ui/main.ui" line="211"/>
         <source>&amp;Tools</source>
         <translation>&amp;Nástroje</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="185"/>
+        <location filename="../../ui/main.ui" line="215"/>
         <source>&amp;Plugins settings</source>
         <translation>Nastavení &amp;pluginů</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="204"/>
+        <location filename="../../ui/main.ui" line="234"/>
         <source>Ed&amp;itors</source>
         <translation>Ed&amp;itory</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="378"/>
-        <source>Local variables</source>
-        <translation>Lokální proměnné</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="436"/>
-        <source>Other variables</source>
-        <translation>Ostatní proměnné</translation>
-    </message>
-    <message>
-        <location filename="../../ui/main.ui" line="763"/>
+        <location filename="../../ui/main.ui" line="883"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="831"/>
+        <location filename="../../ui/main.ui" line="317"/>
         <source>Build and Debug Toolbar</source>
         <translation>Lišta sestavování a ladění</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="857"/>
+        <location filename="../../ui/main.ui" line="343"/>
         <source>Call Stacks</source>
         <translation>Zásobník volání</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="890"/>
+        <location filename="../../ui/main.ui" line="376"/>
         <source>Registers</source>
         <translation>Registry</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1001"/>
+        <location filename="../../ui/main.ui" line="950"/>
         <source>Save File &amp;as...</source>
         <translation>Uložit soubor j&amp;ako...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1012"/>
+        <location filename="../../ui/main.ui" line="961"/>
         <source>Save A&amp;ll</source>
         <translation>U&amp;ložit vše</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1028"/>
+        <location filename="../../ui/main.ui" line="977"/>
         <source>&amp;Undo</source>
         <translation>&amp;Zpět</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1045"/>
+        <location filename="../../ui/main.ui" line="994"/>
         <source>&amp;Redo</source>
         <translation>&amp;Opakovat</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1062"/>
+        <location filename="../../ui/main.ui" line="1011"/>
         <source>Cu&amp;t</source>
         <translation>Vyjmou&amp;t</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1073"/>
+        <location filename="../../ui/main.ui" line="1022"/>
         <source>&amp;Copy</source>
         <translation>&amp;Kopírovat</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1084"/>
+        <location filename="../../ui/main.ui" line="1033"/>
         <source>&amp;Paste</source>
         <translation>&amp;Vložit</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1103"/>
+        <location filename="../../ui/main.ui" line="1052"/>
         <source>&amp;Find...</source>
         <translation>&amp;Najít...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1111"/>
+        <location filename="../../ui/main.ui" line="1060"/>
         <source>&amp;Replace...</source>
         <translation>Nah&amp;radit...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1119"/>
+        <location filename="../../ui/main.ui" line="1068"/>
         <source>&amp;Find in Files...</source>
         <translation>&amp;Najít v souborech...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1127"/>
+        <location filename="../../ui/main.ui" line="1076"/>
         <source>Add New &amp;Item...</source>
         <translation>Přidat novou &amp;položku...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1141"/>
+        <location filename="../../ui/main.ui" line="1090"/>
         <source>Add Existing &amp;Files...</source>
         <translation>Přidat existující &amp;soubory...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1160"/>
+        <location filename="../../ui/main.ui" line="1109"/>
         <source>Project &amp;Properties...</source>
         <translation>Vlastnosti &amp;projektu...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1171"/>
+        <location filename="../../ui/main.ui" line="1120"/>
         <source>&amp;Clean</source>
         <translation>&amp;Vyčistit</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1185"/>
+        <location filename="../../ui/main.ui" line="1134"/>
         <source>&amp;Rebuild</source>
         <translation>Sestavit &amp;znovu</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1216"/>
+        <location filename="../../ui/main.ui" line="1165"/>
         <source>S&amp;tart Program</source>
         <translation>Spus&amp;tit program</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1233"/>
+        <location filename="../../ui/main.ui" line="1182"/>
         <source>Step &amp;Into</source>
         <translation>Krok &amp;dovnitř</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1250"/>
+        <location filename="../../ui/main.ui" line="1199"/>
         <source>Step O&amp;ver</source>
         <translation>Krok &amp;přes</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1264"/>
+        <location filename="../../ui/main.ui" line="1213"/>
         <source>&amp;Calls Stack</source>
         <translation>&amp;Zásobník volání</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1275"/>
+        <location filename="../../ui/main.ui" line="1224"/>
         <source>&amp;Options...</source>
         <translation>Nastavení pr&amp;ostředí...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1280"/>
+        <location filename="../../ui/main.ui" line="1229"/>
         <source>&amp;Parameters...</source>
         <translation>&amp;Parametry...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1285"/>
+        <location filename="../../ui/main.ui" line="1234"/>
         <source>&amp;About...</source>
         <translation>O progr&amp;amu...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1290"/>
+        <location filename="../../ui/main.ui" line="1239"/>
         <source>About &amp;Qt...</source>
         <translation>O &amp;Qt...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1306"/>
+        <location filename="../../ui/main.ui" line="1255"/>
         <source>Find &amp;Next</source>
         <translation>Najít &amp;další</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1320"/>
+        <location filename="../../ui/main.ui" line="1269"/>
         <source>&amp;Stop</source>
         <translation>Za&amp;stavit</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1342"/>
+        <location filename="../../ui/main.ui" line="1291"/>
         <source>&amp;Stop Build</source>
         <translation>Přerušit &amp;sestavování</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1372"/>
+        <location filename="../../ui/main.ui" line="1321"/>
         <source>&amp;Help Current Qt Word</source>
         <translation>&amp;Nápověda pro stávající klíčové slovo Qt</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1380"/>
+        <location filename="../../ui/main.ui" line="1329"/>
         <source>&amp;Reset Executables List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1428"/>
+        <location filename="../../ui/main.ui" line="1377"/>
         <source>&amp;Save Project</source>
         <translation>&amp;Uložit projekt</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1441"/>
+        <location filename="../../ui/main.ui" line="1390"/>
         <source>C&amp;lose Project</source>
         <translation>&amp;Zavřít projekt</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1446"/>
+        <location filename="../../ui/main.ui" line="1395"/>
         <source>Add &amp;Scope...</source>
         <translation>Přidat &amp;kontext...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1454"/>
+        <location filename="../../ui/main.ui" line="1403"/>
         <source>Step &amp;Out</source>
         <translation>Krok &amp;ven</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1462"/>
+        <location filename="../../ui/main.ui" line="1411"/>
         <source>&amp;Close Current Editor</source>
         <translation>&amp;Zavřít stávající editor</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1473"/>
+        <location filename="../../ui/main.ui" line="1422"/>
         <source>&amp;Next Tab</source>
         <translation>&amp;Další panel</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1484"/>
+        <location filename="../../ui/main.ui" line="1433"/>
         <source>&amp;Previous Tab</source>
         <translation>&amp;Předchozí panel</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1495"/>
+        <location filename="../../ui/main.ui" line="1444"/>
         <source>&amp;Switch to Header/Sources</source>
         <translation>Přejít na hlavičkový/zdrojový &amp;soubor</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1503"/>
+        <location filename="../../ui/main.ui" line="1452"/>
         <source>Set &amp;Focus to Editor</source>
         <translation>Předat &amp;fokus editoru</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1514"/>
+        <location filename="../../ui/main.ui" line="1463"/>
         <source>Toggle &amp;breakpoint</source>
         <translation>Vložit/zrušit &amp;zarážku</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1522"/>
+        <location filename="../../ui/main.ui" line="1471"/>
         <source>Goto &amp;Methods List</source>
         <translation>Přejít na seznam &amp;metod</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1527"/>
+        <location filename="../../ui/main.ui" line="1476"/>
         <source>Configure &amp;Shortcuts...</source>
         <translation>Nastavit klávesové &amp;zkratky...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1532"/>
+        <location filename="../../ui/main.ui" line="1481"/>
         <source>&amp;Goto Line...</source>
         <translation>&amp;Jít na řádek...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1540"/>
+        <location filename="../../ui/main.ui" line="1489"/>
         <source>Toggle Co&amp;mments</source>
         <translation>Vložit/zrušit ko&amp;mentář</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1594"/>
+        <location filename="../../ui/main.ui" line="1543"/>
         <source>E&amp;xternal Tools...</source>
         <translation>E&amp;xterní nástroje...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1602"/>
+        <location filename="../../ui/main.ui" line="1551"/>
         <source>&amp;Next Bookmark</source>
         <translation>&amp;Další záložka</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1613"/>
+        <location filename="../../ui/main.ui" line="1562"/>
         <source>&amp;Previous Bookmark</source>
         <translation>&amp;Předchozí záložka</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1621"/>
+        <location filename="../../ui/main.ui" line="1570"/>
         <source>Find Pr&amp;evious</source>
         <translation>Najít &amp;předchozí</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1629"/>
+        <location filename="../../ui/main.ui" line="1578"/>
         <source>Goto matching &amp;bracket</source>
         <translation>Jít na odpovídající &amp;závorku</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1648"/>
+        <location filename="../../ui/main.ui" line="1597"/>
         <source>Add New &amp;Class...</source>
         <translation>Přidat novou &amp;třídu...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1661"/>
+        <location filename="../../ui/main.ui" line="1610"/>
         <source>Open F&amp;ile in project...</source>
         <translation>Otevřít so&amp;ubor v projektu...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1672"/>
+        <location filename="../../ui/main.ui" line="1621"/>
         <source>Goto &amp;Implementation</source>
         <translation>Jít k &amp;implementaci</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1680"/>
+        <location filename="../../ui/main.ui" line="1629"/>
         <source>Goto &amp;Declaration</source>
         <translation>Jít k &amp;deklaraci</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1685"/>
+        <location filename="../../ui/main.ui" line="1634"/>
         <source>&amp;Rebuild Qt classes database</source>
         <translation>Aktualizovat &amp;databázi Qt tříd</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1690"/>
+        <location filename="../../ui/main.ui" line="1639"/>
         <source>Execute &amp;qmake</source>
         <translation>Spustit &amp;qmake</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1698"/>
+        <location filename="../../ui/main.ui" line="1647"/>
         <source>Show Maximized</source>
         <translation>Ukázat maximalizované</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1706"/>
+        <location filename="../../ui/main.ui" line="1655"/>
         <source>&amp;Editor mode</source>
         <translation>Mód &amp;editoru</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1709"/>
+        <location filename="../../ui/main.ui" line="1658"/>
         <source>Ctrl+E</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1714"/>
+        <location filename="../../ui/main.ui" line="1663"/>
         <source>Next Warning/Error</source>
         <translation>Další varování/chyba</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1717"/>
+        <location filename="../../ui/main.ui" line="1666"/>
         <source>F4</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1722"/>
+        <location filename="../../ui/main.ui" line="1671"/>
         <source>Previous Warning/Error</source>
         <translation>Předchozí varování/chyba</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1725"/>
+        <location filename="../../ui/main.ui" line="1674"/>
         <source>Shift+F4</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1730"/>
+        <location filename="../../ui/main.ui" line="1679"/>
         <source>Clear all Warnings/Errors</source>
         <translation>Vymazat všechny varování/chyby</translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="185"/>
+        <source>&amp;Toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="196"/>
+        <source>Dock windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="538"/>
+        <source>Local Variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="601"/>
+        <source>Other Variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="748"/>
+        <source>Find in files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1684"/>
+        <source>Full view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1689"/>
+        <source>Minimal view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1694"/>
+        <source>DocksWindow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1699"/>
+        <source>Dock Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1704"/>
+        <source>New submenu &gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1709"/>
+        <source>a</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1165"/>
+        <location filename="../../src/mainimpl.cpp" line="1168"/>
         <source>Choose the file to create</source>
         <translation>Vyberte soubor, který chcete vytvořit</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="436"/>
+        <location filename="../../src/mainimpl.cpp" line="439"/>
         <source>Files</source>
         <translation>Soubory</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2242"/>
+        <location filename="../../src/mainimpl.cpp" line="2251"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="960"/>
+        <location filename="../../src/mainimpl.cpp" line="963"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>Chcete ukončit QDevelop?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1831"/>
+        <location filename="../../src/mainimpl.cpp" line="1840"/>
         <source>Yes</source>
         <translation>Ano</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1831"/>
+        <location filename="../../src/mainimpl.cpp" line="1840"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1008"/>
+        <location filename="../../src/mainimpl.cpp" line="1011"/>
         <source>Choose a file to open</source>
         <translation>Vyberte soubor, který chcete otevřít</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1010"/>
+        <location filename="../../src/mainimpl.cpp" line="1013"/>
         <source>Sources</source>
         <translation>Zdrojové soubory</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1039"/>
+        <location filename="../../src/mainimpl.cpp" line="1042"/>
         <source>Projects</source>
         <translation>Projekty</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1012"/>
+        <location filename="../../src/mainimpl.cpp" line="1015"/>
         <source>Texts</source>
         <translation>Textové soubory</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1013"/>
+        <location filename="../../src/mainimpl.cpp" line="1016"/>
         <source>All Files</source>
         <translation>Všechny soubory</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1037"/>
+        <location filename="../../src/mainimpl.cpp" line="1040"/>
         <source>Choose a project to open</source>
         <translation>Vyberte projekt, který chcete otevřít</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1167"/>
+        <location filename="../../src/mainimpl.cpp" line="1170"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>Soubory (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1856"/>
+        <location filename="../../src/mainimpl.cpp" line="1865"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1631"/>
+        <location filename="../../src/mainimpl.cpp" line="1640"/>
         <source>Build finished without error</source>
         <translation>Sestavování dokončeno bez chyb</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1633"/>
+        <location filename="../../src/mainimpl.cpp" line="1642"/>
         <source>Build finished with</source>
         <translation>Sestavování dokončeno s</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1635"/>
+        <location filename="../../src/mainimpl.cpp" line="1644"/>
         <source>error(s)</source>
         <translation>chybami (chybou)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1635"/>
+        <location filename="../../src/mainimpl.cpp" line="1644"/>
         <source>and</source>
         <translation>a</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1637"/>
+        <location filename="../../src/mainimpl.cpp" line="1646"/>
         <source>warning(s)</source>
         <translation>varováním(i)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1935"/>
+        <location filename="../../src/mainimpl.cpp" line="1944"/>
         <source>Start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1814"/>
+        <location filename="../../src/mainimpl.cpp" line="1823"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Projekt byl pozměněn, chcete své změny uložit?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1830"/>
+        <location filename="../../src/mainimpl.cpp" line="1839"/>
         <source>Stop debugging ?</source>
         <translation>Ukončit ladění?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1843"/>
+        <location filename="../../src/mainimpl.cpp" line="1852"/>
         <source>run Build.</source>
         <translation>Proveďte jeho sestavení.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1843"/>
+        <location filename="../../src/mainimpl.cpp" line="1852"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1858"/>
+        <location filename="../../src/mainimpl.cpp" line="1867"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1936"/>
+        <location filename="../../src/mainimpl.cpp" line="1945"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2004"/>
+        <location filename="../../src/mainimpl.cpp" line="2013"/>
         <source>Abort</source>
         <translation>Přerušit</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1997"/>
+        <location filename="../../src/mainimpl.cpp" line="2006"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Přerušení není po Windows možné. Použijte zarážky.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2039"/>
+        <location filename="../../src/mainimpl.cpp" line="2048"/>
         <source>Continue</source>
         <translation>Pokračovat</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2097"/>
+        <location filename="../../src/mainimpl.cpp" line="2106"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2232"/>
+        <location filename="../../src/mainimpl.cpp" line="2241"/>
         <source>New Variable:</source>
         <translation>Nová proměnná:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="446"/>
+        <location filename="../../src/mainimpl.cpp" line="449"/>
         <source>The file &quot;%1&quot;
  already exists in directory.</source>
         <translation>Soubor &quot;%1&quot;
  už v adresáři existuje.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="452"/>
+        <location filename="../../src/mainimpl.cpp" line="455"/>
         <source>Unable to create %1</source>
         <translation>Nelze vytvořit %1</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1060"/>
+        <location filename="../../src/mainimpl.cpp" line="1063"/>
         <source>The project %1 doesn&apos;t exist.</source>
         <translation>Projekt %1 neexistuje.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1146"/>
+        <location filename="../../src/mainimpl.cpp" line="1149"/>
         <source>Properties of %1...</source>
         <translation>Vlastnosti %1...</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1842"/>
+        <location filename="../../src/mainimpl.cpp" line="1851"/>
         <source>The program doesn&apos;t exist,</source>
         <translation>Program neexistuje,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2241"/>
+        <location filename="../../src/mainimpl.cpp" line="2250"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation>Proměnná &quot;%1&quot;
  už existuje.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="891"/>
-        <source>Classes explorer is disabled, please enable it in the Options dialog</source>
-        <translation>Prohlížeč tříd je zakázán, prosím povolte jej v dialogu Možnosti</translation>
-    </message>
-    <message>
-        <location filename="../../src/mainimpl.cpp" line="870"/>
+        <location filename="../../src/mainimpl.cpp" line="873"/>
         <source>The Qt include directory doesn&apos;t exist,
 You can change in Options dialog.</source>
         <translation>Adresář s hlavičkovými soubory Qt neexistuje.
 Můžete jej změnit v dialogu s nastavením prostředí.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2397"/>
+        <location filename="../../src/mainimpl.cpp" line="2406"/>
         <source>The Qt database building is already in progress.</source>
         <translation>Databáze Qt tříd se právě vytváří.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2441"/>
+        <location filename="../../src/mainimpl.cpp" line="2450"/>
         <source>The Qt classes database build is ended.</source>
         <translation>Vytváření databáze Qt tříd bylo dokončeno.</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="2234"/>
+        <source>Version %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2929,137 +2790,137 @@ p, li { white-space: pre-wrap; }
         <translation>Analýza projektu</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1175"/>
+        <location filename="../../src/projectmanager.cpp" line="1191"/>
         <source>Save project changes ?</source>
         <translation>Uložit změny v projektu ?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1348"/>
+        <location filename="../../src/projectmanager.cpp" line="1364"/>
         <source>Yes</source>
         <translation>Ano</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1348"/>
+        <location filename="../../src/projectmanager.cpp" line="1364"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1325"/>
+        <location filename="../../src/projectmanager.cpp" line="1341"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="750"/>
+        <location filename="../../src/projectmanager.cpp" line="766"/>
         <source>Forms:</source>
         <translation>Formuláře:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="810"/>
+        <location filename="../../src/projectmanager.cpp" line="826"/>
         <source>Unable to create file.</source>
         <translation>Nelze vytvořit soubor.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1340"/>
+        <location filename="../../src/projectmanager.cpp" line="1356"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="932"/>
+        <location filename="../../src/projectmanager.cpp" line="948"/>
         <source>Sub-project creation</source>
         <translation>Vytvoření podprojektu</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="968"/>
+        <location filename="../../src/projectmanager.cpp" line="984"/>
         <source>Sub-Projects</source>
         <translation>Podprojekty</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1291"/>
+        <location filename="../../src/projectmanager.cpp" line="1307"/>
         <source>New name:</source>
         <translation>Nové jméno:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1297"/>
+        <location filename="../../src/projectmanager.cpp" line="1313"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Přípona nového a starého souboru se nehodují !</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1298"/>
+        <location filename="../../src/projectmanager.cpp" line="1314"/>
         <source>Rename</source>
         <translation>Přejmenovat</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1493"/>
+        <location filename="../../src/projectmanager.cpp" line="1509"/>
         <source>Sub-projects</source>
         <translation>Podprojekty</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1599"/>
+        <location filename="../../src/projectmanager.cpp" line="1615"/>
         <source>Headers</source>
         <translation>Hlavičkové soubory</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1604"/>
+        <location filename="../../src/projectmanager.cpp" line="1620"/>
         <source>Sources</source>
         <translation>Zdrojové soubory</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1609"/>
+        <location filename="../../src/projectmanager.cpp" line="1625"/>
         <source>Dialogs</source>
         <translation>Dialogy</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1614"/>
+        <location filename="../../src/projectmanager.cpp" line="1630"/>
         <source>Translations</source>
         <translation>Překlady</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1619"/>
+        <location filename="../../src/projectmanager.cpp" line="1635"/>
         <source>Resources</source>
         <translation>Resource soubory</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="737"/>
+        <location filename="../../src/projectmanager.cpp" line="753"/>
         <source>The file already exists in directory.</source>
         <translation>Soubor už v adresáři existuje.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="858"/>
+        <location filename="../../src/projectmanager.cpp" line="874"/>
         <source>The file already exists.</source>
         <translation>Soubor už existuje.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="869"/>
+        <location filename="../../src/projectmanager.cpp" line="885"/>
         <source>This file is not permitted.</source>
         <translation>Tento soubor není povolen.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1249"/>
+        <location filename="../../src/projectmanager.cpp" line="1265"/>
         <source>The file  &quot;%1&quot; </source>
         <translation>Soubor  &quot;%1&quot; </translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1325"/>
+        <location filename="../../src/projectmanager.cpp" line="1341"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Soubor nelze přejmenovat na &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2015"/>
+        <location filename="../../src/projectmanager.cpp" line="2035"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>Jediná dostupná verze pro &quot;%1&quot; je %2</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2016"/>
+        <location filename="../../src/projectmanager.cpp" line="2036"/>
         <source>Run on %1</source>
         <translation>Spustit %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1339"/>
+        <location filename="../../src/projectmanager.cpp" line="1355"/>
         <source>Cannot remove the main project.</source>
         <translation>Nelze odebrat hlavní projekt.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1347"/>
+        <location filename="../../src/projectmanager.cpp" line="1363"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>Chcete odebrat &quot;%1&quot; z projektu?</translation>
     </message>
@@ -3107,7 +2968,7 @@ p, li { white-space: pre-wrap; }
         <translation>Dialogy:</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="944"/>
+        <location filename="../../ui/projectpropertie.ui" line="972"/>
         <source>...</source>
         <translation></translation>
     </message>
@@ -3192,215 +3053,235 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="630"/>
+        <location filename="../../ui/projectpropertie.ui" line="611"/>
         <source>gui</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1132"/>
+        <location filename="../../ui/projectpropertie.ui" line="1160"/>
         <source>opengl</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="644"/>
+        <location filename="../../ui/projectpropertie.ui" line="651"/>
         <source>svg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="651"/>
+        <location filename="../../ui/projectpropertie.ui" line="658"/>
         <source>qt3support</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="982"/>
+        <location filename="../../ui/projectpropertie.ui" line="1010"/>
         <source>Advanced Options</source>
         <translation>Rozšířené volby</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1057"/>
+        <location filename="../../ui/projectpropertie.ui" line="1085"/>
         <source>app_bundle</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1064"/>
+        <location filename="../../ui/projectpropertie.ui" line="1092"/>
         <source>assistant</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1071"/>
+        <location filename="../../ui/projectpropertie.ui" line="1099"/>
         <source>console</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1078"/>
+        <location filename="../../ui/projectpropertie.ui" line="1106"/>
         <source>designer</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1085"/>
+        <location filename="../../ui/projectpropertie.ui" line="1113"/>
         <source>dll</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1111"/>
+        <location filename="../../ui/projectpropertie.ui" line="1139"/>
         <source>exceptions</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1118"/>
+        <location filename="../../ui/projectpropertie.ui" line="1146"/>
         <source>lib_bundle</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1125"/>
+        <location filename="../../ui/projectpropertie.ui" line="1153"/>
         <source>no_lflags_merge</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1139"/>
+        <location filename="../../ui/projectpropertie.ui" line="1167"/>
         <source>plugin</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1165"/>
+        <location filename="../../ui/projectpropertie.ui" line="1193"/>
         <source>ppc</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1172"/>
+        <location filename="../../ui/projectpropertie.ui" line="1200"/>
         <source>qaxcontainer</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1179"/>
+        <location filename="../../ui/projectpropertie.ui" line="1207"/>
         <source>qaxserver</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1186"/>
+        <location filename="../../ui/projectpropertie.ui" line="1214"/>
         <source>qt</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1196"/>
+        <location filename="../../ui/projectpropertie.ui" line="1224"/>
         <source>qtestlib</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1222"/>
+        <location filename="../../ui/projectpropertie.ui" line="1250"/>
         <source>resources</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1229"/>
+        <location filename="../../ui/projectpropertie.ui" line="1257"/>
         <source>rtti</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1236"/>
+        <location filename="../../ui/projectpropertie.ui" line="1264"/>
         <source>staticlib</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1243"/>
+        <location filename="../../ui/projectpropertie.ui" line="1271"/>
         <source>stl</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1250"/>
+        <location filename="../../ui/projectpropertie.ui" line="1278"/>
         <source>thread</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1276"/>
+        <location filename="../../ui/projectpropertie.ui" line="1304"/>
         <source>uic3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1283"/>
+        <location filename="../../ui/projectpropertie.ui" line="1311"/>
         <source>uitools</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1290"/>
+        <location filename="../../ui/projectpropertie.ui" line="1318"/>
         <source>windows</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1297"/>
+        <location filename="../../ui/projectpropertie.ui" line="1325"/>
         <source>x11</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1304"/>
+        <location filename="../../ui/projectpropertie.ui" line="1332"/>
         <source>x86</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="715"/>
+        <location filename="../../ui/projectpropertie.ui" line="743"/>
         <source>Variables</source>
         <translation>Proměnné</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="796"/>
+        <location filename="../../ui/projectpropertie.ui" line="824"/>
         <source>Variable :</source>
         <translation>Proměnná:</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="890"/>
+        <location filename="../../ui/projectpropertie.ui" line="918"/>
         <source>Values :</source>
         <translation>Hodnoty:</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1413"/>
+        <location filename="../../ui/projectpropertie.ui" line="1441"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1420"/>
+        <location filename="../../ui/projectpropertie.ui" line="1448"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="976"/>
+        <location filename="../../ui/projectpropertie.ui" line="1004"/>
         <source>Advanced options</source>
         <translation>Rozšířené volby</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1345"/>
+        <location filename="../../ui/projectpropertie.ui" line="1373"/>
         <source>Free CONFIG variables :</source>
         <translation>Další CONFIG proměnné:</translation>
+    </message>
+    <message>
+        <location filename="../../ui/projectpropertie.ui" line="618"/>
+        <source>script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/projectpropertie.ui" line="665"/>
+        <source>webkit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/projectpropertie.ui" line="672"/>
+        <source>phonon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/projectpropertie.ui" line="679"/>
+        <source>xmlpatterns</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertieImpl</name>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="520"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="536"/>
         <source>New Value:</source>
         <translation>Nová hodnota:</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="527"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="543"/>
         <source>delete spaces or put quotes.</source>
         <translation>Vymažte mezery nebo vložte do uvozovek.</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="528"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="544"/>
         <source>Modify</source>
         <translation>Upravit</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="528"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="544"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="761"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="781"/>
         <source>Choose the sources location</source>
         <translation>Vyberte složku pro zdrojové soubory</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="775"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="795"/>
         <source>Choose the dialogs location</source>
         <translation>Vyberte složku pro soubory s dialogy</translation>
     </message>
@@ -3410,48 +3291,20 @@ p, li { white-space: pre-wrap; }
         <translation>Vlastnosti %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="526"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="542"/>
         <source>The spaces aren&apos;t correctly parsed by qmake</source>
         <translation>Mezery nejsou zpracovávány korektně pomocí qmake</translation>
     </message>
-</context>
-<context>
-    <name>PromptReplace</name>
     <message>
-        <location filename="../../ui/promptreplace.ui" line="16"/>
-        <source>Confirmation</source>
-        <translation>Potvrzení</translation>
-    </message>
-    <message>
-        <location filename="../../ui/promptreplace.ui" line="36"/>
-        <source>Found an occurence of your search term. What do you want to do?</source>
-        <translation>Nalezen Vámi hledaný výraz. Co si přejete provést?</translation>
-    </message>
-    <message>
-        <location filename="../../ui/promptreplace.ui" line="54"/>
-        <source>&amp;Replace</source>
-        <translation>Nah&amp;radit</translation>
-    </message>
-    <message>
-        <location filename="../../ui/promptreplace.ui" line="61"/>
-        <source>Replace &amp;All</source>
-        <translation>N&amp;ahradit všechny</translation>
-    </message>
-    <message>
-        <location filename="../../ui/promptreplace.ui" line="68"/>
-        <source>&amp;Find Next</source>
-        <translation>&amp;Najít další</translation>
-    </message>
-    <message>
-        <location filename="../../ui/promptreplace.ui" line="75"/>
-        <source>&amp;Close</source>
-        <translation>&amp;Zavřít</translation>
+        <location filename="../../src/projectpropertieimpl.cpp" line="426"/>
+        <source>A new variable can not be &quot;QT&quot;, &quot;CONFIG&quot; or &quot;TEMPLATE&quot;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/assistant.cpp" line="58"/>
+        <location filename="../../src/assistant.cpp" line="64"/>
         <source>Unable to start Assistant !</source>
         <translation>Nelze spustit Assistant !</translation>
     </message>
@@ -3530,104 +3383,56 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>Replace</name>
+    <name>ReplaceWidget</name>
     <message>
-        <location filename="../../ui/replace.ui" line="13"/>
-        <source>Replace Text</source>
-        <translation>Nahradit text</translation>
+        <location filename="../../ui/replacewidget.ui" line="13"/>
+        <source>Form</source>
+        <translation type="unfinished">Formulář</translation>
     </message>
     <message>
-        <location filename="../../ui/replace.ui" line="25"/>
-        <source>Find and Replace</source>
-        <translation>Najít a nahradit</translation>
+        <location filename="../../ui/replacewidget.ui" line="67"/>
+        <source>find:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/replace.ui" line="53"/>
-        <source>Text to find:</source>
-        <translation>Najít text:</translation>
+        <location filename="../../ui/replacewidget.ui" line="96"/>
+        <source>Replacement:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/replace.ui" line="63"/>
-        <source>Replacement text:</source>
-        <translation>Nahradit textem:</translation>
-    </message>
-    <message>
-        <location filename="../../ui/replace.ui" line="153"/>
+        <location filename="../../ui/replacewidget.ui" line="125"/>
         <source>&amp;Replace</source>
-        <translation>Nah&amp;radit</translation>
+        <translation type="unfinished">Nah&amp;radit</translation>
     </message>
     <message>
-        <location filename="../../ui/replace.ui" line="160"/>
-        <source>&amp;Close</source>
-        <translation>&amp;Zavřít</translation>
+        <location filename="../../ui/replacewidget.ui" line="132"/>
+        <source>Previous</source>
+        <translation type="unfinished">Předchozí</translation>
     </message>
     <message>
-        <location filename="../../ui/replace.ui" line="169"/>
-        <source>Options</source>
-        <translation>Volby</translation>
+        <location filename="../../ui/replacewidget.ui" line="154"/>
+        <source>Next</source>
+        <translation type="unfinished">Další</translation>
     </message>
     <message>
-        <location filename="../../ui/replace.ui" line="181"/>
-        <source>Prompt on replace</source>
-        <translation>Dotázat se před nahrazením</translation>
+        <location filename="../../ui/replacewidget.ui" line="173"/>
+        <source>Case Sensitive</source>
+        <translation type="unfinished">Rozlišovat velikost</translation>
     </message>
     <message>
-        <location filename="../../ui/replace.ui" line="191"/>
-        <source>Whole words only</source>
-        <translation>Jen celá slova</translation>
+        <location filename="../../ui/replacewidget.ui" line="183"/>
+        <source>Whole words</source>
+        <translation type="unfinished">Celá slova</translation>
     </message>
     <message>
-        <location filename="../../ui/replace.ui" line="198"/>
-        <source>Case sensitive</source>
-        <translation>Rozlišovat velikost</translation>
+        <location filename="../../ui/replacewidget.ui" line="190"/>
+        <source>Prompt</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/replace.ui" line="205"/>
-        <source>Find backwards</source>
-        <translation>Hledat pozpátku</translation>
-    </message>
-</context>
-<context>
-    <name>ReplaceImpl</name>
-    <message>
-        <location filename="../../src/replaceimpl.cpp" line="90"/>
-        <source>Beginning of document reached.</source>
-        <translation>Dosaženo začátku dokumentu.</translation>
-    </message>
-    <message>
-        <location filename="../../src/replaceimpl.cpp" line="90"/>
-        <source>Continue from the end</source>
-        <translation>Pokračovat od konce</translation>
-    </message>
-    <message>
-        <location filename="../../src/replaceimpl.cpp" line="92"/>
-        <source>End of document reached.</source>
-        <translation>Dosaženo konce dokumentu.</translation>
-    </message>
-    <message>
-        <location filename="../../src/replaceimpl.cpp" line="92"/>
-        <source>Continue from the beginning</source>
-        <translation>Pokračovat od začátku</translation>
-    </message>
-    <message>
-        <location filename="../../src/replaceimpl.cpp" line="95"/>
-        <source>Replace</source>
-        <translation>Nahradit</translation>
-    </message>
-    <message>
-        <location filename="../../src/replaceimpl.cpp" line="96"/>
-        <source>replacement(s) made.</source>
-        <translation>nahrazení provedeno.</translation>
-    </message>
-    <message>
-        <location filename="../../src/replaceimpl.cpp" line="98"/>
-        <source>&amp;Continue</source>
-        <translation>&amp;Pokračovat</translation>
-    </message>
-    <message>
-        <location filename="../../src/replaceimpl.cpp" line="98"/>
-        <source>&amp;Stop</source>
-        <translation>&amp;Stop</translation>
+        <location filename="../../ui/replacewidget.ui" line="257"/>
+        <source>Reached end of page, continued from top</source>
+        <translation type="unfinished">Dosažen konec souboru, pokračuje se od začátku</translation>
     </message>
 </context>
 <context>
@@ -3737,17 +3542,17 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TabWidget</name>
     <message>
-        <location filename="../../src/tabwidget.cpp" line="99"/>
+        <location filename="../../src/tabwidget.cpp" line="101"/>
         <source>Close Tab</source>
         <translation>Zavřít panel</translation>
     </message>
     <message>
-        <location filename="../../src/tabwidget.cpp" line="100"/>
+        <location filename="../../src/tabwidget.cpp" line="102"/>
         <source>Close Other Tabs</source>
         <translation>Zavřít ostatní panely</translation>
     </message>
     <message>
-        <location filename="../../src/tabwidget.cpp" line="101"/>
+        <location filename="../../src/tabwidget.cpp" line="103"/>
         <source>Close All Tabs</source>
         <translation>Zavřít všechny panely</translation>
     </message>
@@ -3755,96 +3560,101 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TextEdit</name>
     <message>
-        <location filename="../../src/textEdit.cpp" line="665"/>
+        <location filename="../../src/textEdit.cpp" line="656"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="665"/>
+        <location filename="../../src/textEdit.cpp" line="656"/>
         <source>Yes</source>
         <translation>Ano</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="665"/>
+        <location filename="../../src/textEdit.cpp" line="656"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1415"/>
+        <location filename="../../src/textEdit.cpp" line="1426"/>
         <source>Cut</source>
         <translation>Vyjmout</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1416"/>
+        <location filename="../../src/textEdit.cpp" line="1427"/>
         <source>Copy</source>
         <translation>Kopírovat</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1417"/>
+        <location filename="../../src/textEdit.cpp" line="1428"/>
         <source>Paste</source>
         <translation>Vložit</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1419"/>
+        <location filename="../../src/textEdit.cpp" line="1430"/>
         <source>Selection Indent</source>
         <translation>Zvětšit odsazení</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1420"/>
+        <location filename="../../src/textEdit.cpp" line="1431"/>
         <source>Selection Unindent</source>
         <translation>Zmenšit odsazení</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1423"/>
+        <location filename="../../src/textEdit.cpp" line="1434"/>
         <source>Select All</source>
         <translation>Vybrat vše</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1425"/>
+        <location filename="../../src/textEdit.cpp" line="1436"/>
         <source>Find...</source>
         <translation>Najít...</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1427"/>
+        <location filename="../../src/textEdit.cpp" line="1438"/>
         <source>Toggle Bookmark</source>
         <translation>Vložit/zrušit záložku</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1428"/>
+        <location filename="../../src/textEdit.cpp" line="1439"/>
         <source>Toggle Breakpoint</source>
         <translation>Vložit/zrušit zarážku</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="435"/>
+        <location filename="../../src/textEdit.cpp" line="426"/>
         <source>The file &quot;%1&quot; could not be loaded.</source>
         <translation>Soubor &quot;%1&quot; nelze nahrát.</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="665"/>
+        <location filename="../../src/textEdit.cpp" line="656"/>
         <source>Save &quot;%1&quot;</source>
         <translation>Uložit &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="684"/>
+        <location filename="../../src/textEdit.cpp" line="675"/>
         <source>Unable to save %1</source>
         <translation>Nelze uložit %1</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1410"/>
+        <location filename="../../src/textEdit.cpp" line="1421"/>
         <source>Goto Implementation</source>
         <translation>Jít k implementaci</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1411"/>
+        <location filename="../../src/textEdit.cpp" line="1422"/>
         <source>Goto Declaration</source>
         <translation>Jít k deklaraci</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="243"/>
+        <location filename="../../src/textEdit.cpp" line="238"/>
         <source>The Qt database building is in progress.
 Try to complete code later.</source>
         <translation>Qt databáze se právě vytváří.
 Zkuste použít doplňování kódu později.</translation>
+    </message>
+    <message>
+        <location filename="../../src/textEdit.cpp" line="925"/>
+        <source>Reached end of page, continued from top</source>
+        <translation type="unfinished">Dosažen konec souboru, pokračuje se od začátku</translation>
     </message>
 </context>
 <context>
@@ -3923,17 +3733,17 @@ Zkuste použít doplňování kódu později.</translation>
 <context>
     <name>ToolsControlImpl</name>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="90"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="101"/>
         <source>Please designe the program</source>
         <translation>Vyberte program</translation>
     </message>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="161"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="173"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="160"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="172"/>
         <source>Ctags was detected in path %1, but this version is too old.</source>
         <translation>Ctags byl nalezen v %1, ale tato verze je příliš stará.</translation>
     </message>
@@ -3974,97 +3784,97 @@ Zkuste použít doplňování kódu později.</translation>
 <context>
     <name>TreeProject</name>
     <message>
-        <location filename="../../src/treeproject.cpp" line="188"/>
+        <location filename="../../src/treeproject.cpp" line="189"/>
         <source>Add sub-project...</source>
         <translation>Přidat podprojekt...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="220"/>
+        <location filename="../../src/treeproject.cpp" line="221"/>
         <source>Add New Item...</source>
         <translation>Přidat novou položku...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="196"/>
+        <location filename="../../src/treeproject.cpp" line="197"/>
         <source>Add Scope...</source>
         <translation>Přidat kontext...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="197"/>
+        <location filename="../../src/treeproject.cpp" line="198"/>
         <source>Add New Class...</source>
         <translation>Přidat novou třídu...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="198"/>
+        <location filename="../../src/treeproject.cpp" line="199"/>
         <source>Add Existing Files...</source>
         <translation>Přidat existující soubory...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="204"/>
+        <location filename="../../src/treeproject.cpp" line="205"/>
         <source>Open in Linguist</source>
         <translation>Otevřít pomocí Linquist</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="205"/>
+        <location filename="../../src/treeproject.cpp" line="206"/>
         <source>Refresh translation files</source>
         <translation>Aktualizovat soubory s překladem</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="206"/>
+        <location filename="../../src/treeproject.cpp" line="207"/>
         <source>Build release translation files</source>
         <translation>Přeložit soubory s překladem</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="210"/>
+        <location filename="../../src/treeproject.cpp" line="211"/>
         <source>Open in Designer</source>
         <translation>Otevřít pomocí Designer</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="211"/>
+        <location filename="../../src/treeproject.cpp" line="212"/>
         <source>Dialog Subclassing...</source>
         <translation>Subclassing dialogu...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="212"/>
+        <location filename="../../src/treeproject.cpp" line="213"/>
         <source>Dialog Preview</source>
         <translation>Náhled na dialog</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="215"/>
+        <location filename="../../src/treeproject.cpp" line="216"/>
         <source>Open</source>
         <translation>Otevřít</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="216"/>
+        <location filename="../../src/treeproject.cpp" line="217"/>
         <source>Rename...</source>
         <translation>Přejmenovat...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="222"/>
+        <location filename="../../src/treeproject.cpp" line="223"/>
         <source>Sort</source>
         <translation>Setřídit</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="232"/>
+        <location filename="../../src/treeproject.cpp" line="233"/>
         <source>Show As</source>
         <translation>Zobraz jako</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="233"/>
+        <location filename="../../src/treeproject.cpp" line="234"/>
         <source>Normal</source>
         <translation>Normálně</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="234"/>
+        <location filename="../../src/treeproject.cpp" line="235"/>
         <source>Krawek</source>
         <translation>Krawek</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="229"/>
+        <location filename="../../src/treeproject.cpp" line="230"/>
         <source>Properties of %1...</source>
         <translation>Vlastnosti %1...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="223"/>
+        <location filename="../../src/treeproject.cpp" line="224"/>
         <source>Remove from project</source>
         <translation>Odebrat z projektu</translation>
     </message>
