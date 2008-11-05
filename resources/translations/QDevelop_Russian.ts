@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ru_RU">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -38,7 +39,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Основной разработчик: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Автозавершение кода: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Разработчик: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Разработчик: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Разработчик: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Создатель пакетов: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -509,7 +510,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewimpl.cpp" line="128"/>
         <source>source</source>
-        <translation type="unfinished"></translation>
+        <translation>исходник</translation>
     </message>
 </context>
 <context>
@@ -733,12 +734,12 @@ was modified outside editor.
     <message>
         <location filename="../../src/editor.cpp" line="187"/>
         <source>Open %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть %1</translation>
     </message>
     <message>
         <location filename="../../src/editor.cpp" line="404"/>
         <source>%1 replacement(s) made.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 замен(а/ы) сделано.</translation>
     </message>
 </context>
 <context>
@@ -1750,97 +1751,97 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="883"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="343"/>
         <source>Call Stacks</source>
-        <translation type="unfinished"></translation>
+        <translation>Стеки вызовов</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="376"/>
         <source>Registers</source>
-        <translation type="unfinished"></translation>
+        <translation>Регистры</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1639"/>
         <source>Execute &amp;qmake</source>
-        <translation type="unfinished"></translation>
+        <translation>Запустить &amp;qmake</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1647"/>
         <source>Show Maximized</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать увеличенным</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1655"/>
         <source>&amp;Editor mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Режим редактирования</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1658"/>
         <source>Ctrl+E</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+E</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1663"/>
         <source>Next Warning/Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Следующее замечание/ошибка</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1666"/>
         <source>F4</source>
-        <translation type="unfinished">F4</translation>
+        <translation>F4</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1671"/>
         <source>Previous Warning/Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Предыдущее замечание/ошибка</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1674"/>
         <source>Shift+F4</source>
-        <translation type="unfinished">Shift+F4</translation>
+        <translation>Shift+F4</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1679"/>
         <source>Clear all Warnings/Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистить все замечания/ошибки</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="185"/>
         <source>&amp;Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Панели</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="196"/>
         <source>Dock windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Док-окна</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="538"/>
         <source>Local Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Локальные переменные</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="601"/>
         <source>Other Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Прочие переменные</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="748"/>
         <source>Find in files</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск в файлах</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1684"/>
         <source>Full view</source>
-        <translation type="unfinished"></translation>
+        <translation>Полный Вид</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1689"/>
         <source>Minimal view</source>
-        <translation type="unfinished"></translation>
+        <translation>Минимальный Вид</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1694"/>
@@ -1850,17 +1851,17 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1699"/>
         <source>Dock Windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Док-окна</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1704"/>
         <source>New submenu &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Новое подменю &gt;</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1709"/>
         <source>a</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">?</translation>
     </message>
 </context>
 <context>

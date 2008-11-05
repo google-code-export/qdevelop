@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="vi_VN">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -510,7 +511,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewimpl.cpp" line="128"/>
         <source>source</source>
-        <translation type="unfinished"></translation>
+        <translation>nguồn</translation>
     </message>
 </context>
 <context>
@@ -741,7 +742,7 @@ was modified outside editor.
     <message>
         <location filename="../../src/editor.cpp" line="404"/>
         <source>%1 replacement(s) made.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 thay thế được thực hiện.</translation>
     </message>
 </context>
 <context>
@@ -1508,12 +1509,12 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="950"/>
         <source>Save File &amp;as...</source>
-        <translation>&amp;Lưu  tập tin như...</translation>
+        <translation>Lưu  tập tin &amp;như...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="961"/>
         <source>Save A&amp;ll</source>
-        <translation>Lưu &amp;tất cả</translation>
+        <translation>Lưu tất &amp;cả</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="977"/>
@@ -1528,7 +1529,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1011"/>
         <source>Cu&amp;t</source>
-        <translation>Cắ&amp;t</translation>
+        <translation>C&amp;ắt</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1022"/>
@@ -1548,12 +1549,12 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1060"/>
         <source>&amp;Replace...</source>
-        <translation>T&amp;hay thế...</translation>
+        <translation>Th&amp;ay thế...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1068"/>
         <source>&amp;Find in Files...</source>
-        <translation>Tìm trong &amp;các tập tin...</translation>
+        <translation>&amp;Tìm trong các tập tin...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1076"/>
@@ -1573,7 +1574,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1120"/>
         <source>&amp;Clean</source>
-        <translation>&amp;Dọn sạch</translation>
+        <translation>Dọn &amp;sạch</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1134"/>
@@ -1603,12 +1604,12 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1224"/>
         <source>&amp;Options...</source>
-        <translation>&amp;Tùy chọn...</translation>
+        <translation>Tùy &amp;chọn...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1229"/>
         <source>&amp;Parameters...</source>
-        <translation>Các &amp;thông số...</translation>
+        <translation>Các thông &amp;số...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1234"/>
@@ -1623,7 +1624,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1255"/>
         <source>Find &amp;Next</source>
-        <translation>Tìm &amp;tiếp</translation>
+        <translation>Tìm tiế&amp;p</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1269"/>
@@ -1638,7 +1639,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1321"/>
         <source>&amp;Help Current Qt Word</source>
-        <translation>&amp;Giúp đỡ về từ khóa của Qt</translation>
+        <translation>Giú&amp;p đỡ về từ khóa của Qt</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1329"/>
@@ -1653,7 +1654,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1390"/>
         <source>C&amp;lose Project</source>
-        <translation>Đóng &amp;dự án</translation>
+        <translation>Đón&amp;g dự án</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1395"/>
@@ -1668,7 +1669,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1411"/>
         <source>&amp;Close Current Editor</source>
-        <translation>Đóng &amp;trình biên soạn hiện hành</translation>
+        <translation>Đóng trình biên &amp;soạn hiện hành</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1422"/>
@@ -1708,7 +1709,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1481"/>
         <source>&amp;Goto Line...</source>
-        <translation>Đến &amp;dòng...</translation>
+        <translation>Đến dòn&amp;g...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1489"/>
@@ -1718,7 +1719,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1543"/>
         <source>E&amp;xternal Tools...</source>
-        <translation>&amp;Công cụ bên ngoài...</translation>
+        <translation>Công cụ &amp;bên ngoài...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1551"/>
@@ -1733,17 +1734,17 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1570"/>
         <source>Find Pr&amp;evious</source>
-        <translation>Tìm về &amp;trước</translation>
+        <translation>Tìm &amp;về trước</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1578"/>
         <source>Goto matching &amp;bracket</source>
-        <translation>Đến &amp;dấu ngoặc cùng cặp</translation>
+        <translation>Đến dấu &amp;ngoặc cùng cặp</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1597"/>
         <source>Add New &amp;Class...</source>
-        <translation>Thêm &amp;lớp mới...</translation>
+        <translation>Thêm lớp mớ&amp;i...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1610"/>
@@ -1763,7 +1764,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1634"/>
         <source>&amp;Rebuild Qt classes database</source>
-        <translation>&amp;Tái khởi tạo dữ liệu lớp của Qt</translation>
+        <translation>Tái &amp;khởi tạo dữ liệu lớp của Qt</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1639"/>
@@ -1778,7 +1779,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1655"/>
         <source>&amp;Editor mode</source>
-        <translation>Thức &amp;soạn thảo</translation>
+        <translation type="unfinished">Chế độ &amp;soạn thảo</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1658"/>
@@ -1813,57 +1814,57 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="185"/>
         <source>&amp;Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Công cụ</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="196"/>
         <source>Dock windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Gắn các cửa sổ</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="538"/>
         <source>Local Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Biến địa phương</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="601"/>
         <source>Other Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Các biến khác</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="748"/>
         <source>Find in files</source>
-        <translation type="unfinished"></translation>
+        <translation>Tìm trong các tập tin</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1684"/>
         <source>Full view</source>
-        <translation type="unfinished"></translation>
+        <translation>Vùng nhìn tối đa</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1689"/>
         <source>Minimal view</source>
-        <translation type="unfinished"></translation>
+        <translation>Vùng nhìn tối thiểu</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1694"/>
         <source>DocksWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Cửa sổ được gắn</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1699"/>
         <source>Dock Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Cửa sổ được gắn</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1704"/>
         <source>New submenu &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Menu con mới &gt;</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1709"/>
         <source>a</source>
-        <translation type="unfinished"></translation>
+        <translation>một</translation>
     </message>
 </context>
 <context>
@@ -1876,12 +1877,12 @@ was modified outside editor.
     <message>
         <location filename="../../src/mainimpl.cpp" line="1011"/>
         <source>Choose a file to open</source>
-        <translation>Chọn mở tập tin</translation>
+        <translation>Mở tập tin</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1168"/>
         <source>Choose the file to create</source>
-        <translation>Chọn tạo tập tin</translation>
+        <translation>Tạo tập tin</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1170"/>
@@ -1996,7 +1997,7 @@ was modified outside editor.
     <message>
         <location filename="../../src/mainimpl.cpp" line="1040"/>
         <source>Choose a project to open</source>
-        <translation>Chọn mở dự án</translation>
+        <translation>Mở dự án</translation>
     </message>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1640"/>
@@ -2077,7 +2078,7 @@ Bạn có thể sửa đổi trong bản đối thoại Tùy Chọn.</translatio
     <message>
         <location filename="../../src/mainimpl.cpp" line="2234"/>
         <source>Version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Phiên bản %1</translation>
     </message>
 </context>
 <context>
@@ -3203,22 +3204,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/projectpropertie.ui" line="618"/>
         <source>script</source>
-        <translation type="unfinished"></translation>
+        <translation>script</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="665"/>
         <source>webkit</source>
-        <translation type="unfinished"></translation>
+        <translation>webkit</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="672"/>
         <source>phonon</source>
-        <translation type="unfinished"></translation>
+        <translation>phonon</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="679"/>
         <source>xmlpatterns</source>
-        <translation type="unfinished"></translation>
+        <translation>xmlpatterns</translation>
     </message>
 </context>
 <context>
@@ -3266,7 +3267,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="426"/>
         <source>A new variable can not be &quot;QT&quot;, &quot;CONFIG&quot; or &quot;TEMPLATE&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Biến mới không thể là &quot;QT&quot;, &quot;CONFIG&quot; hay &quot;TEMPLATE&quot;</translation>
     </message>
 </context>
 <context>
@@ -3355,52 +3356,52 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/replacewidget.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished">Khuôn mẫu</translation>
+        <translation>Khuôn mẫu</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="67"/>
         <source>find:</source>
-        <translation type="unfinished"></translation>
+        <translation>tìm:</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="96"/>
         <source>Replacement:</source>
-        <translation type="unfinished"></translation>
+        <translation>Thay thế:</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="125"/>
         <source>&amp;Replace</source>
-        <translation type="unfinished">&amp;Thay thế</translation>
+        <translation>&amp;Thay thế</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="132"/>
         <source>Previous</source>
-        <translation type="unfinished">Về trước</translation>
+        <translation>Về trước</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="154"/>
         <source>Next</source>
-        <translation type="unfinished">Về sau</translation>
+        <translation>Về sau</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="173"/>
         <source>Case Sensitive</source>
-        <translation type="unfinished">Phân biệt chữ hoa và thường</translation>
+        <translation>Phân biệt chữ hoa và thường</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="183"/>
         <source>Whole words</source>
-        <translation type="unfinished">Nguyên từ</translation>
+        <translation>Nguyên từ</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="190"/>
         <source>Prompt</source>
-        <translation type="unfinished"></translation>
+        <translation>Dấu nhắc</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="257"/>
         <source>Reached end of page, continued from top</source>
-        <translation type="unfinished">Hết trang, tiếp tục lên đầu </translation>
+        <translation>Hết trang, tiếp tục lên đầu </translation>
     </message>
 </context>
 <context>
@@ -3504,7 +3505,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/subclassingimpl.cpp" line="50"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3622,7 +3623,7 @@ Hãy cố gắng hoàn thành mã lệnh sau đó.</translation>
     <message>
         <location filename="../../src/textEdit.cpp" line="925"/>
         <source>Reached end of page, continued from top</source>
-        <translation type="unfinished">Hết trang, tiếp tục lên đầu </translation>
+        <translation>Đến hết trang, trở lại từ đầu </translation>
     </message>
 </context>
 <context>

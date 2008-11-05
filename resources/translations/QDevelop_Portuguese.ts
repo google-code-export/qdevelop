@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fr_FR">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -41,7 +42,8 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -513,7 +515,7 @@ existe já.</translation>
     <message>
         <location filename="../../src/addnewimpl.cpp" line="128"/>
         <source>source</source>
-        <translation type="unfinished"></translation>
+        <translation>fonte</translation>
     </message>
 </context>
 <context>
@@ -743,7 +745,7 @@ foi modificada fora do editor.</translation>
     <message>
         <location filename="../../src/editor.cpp" line="404"/>
         <source>%1 replacement(s) made.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 substituto (ções) feita.</translation>
     </message>
 </context>
 <context>
@@ -1221,7 +1223,7 @@ erro </translation>
     <message>
         <location filename="../../ui/main.ui" line="1188"/>
         <source>Step Into</source>
-        <translation>Passo dentro</translation>
+        <translation>Passo a passo detalhados </translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1191"/>
@@ -1231,7 +1233,7 @@ erro </translation>
     <message>
         <location filename="../../ui/main.ui" line="1205"/>
         <source>Step Over</source>
-        <translation>Passo sobre</translation>
+        <translation>Passo a passo principal </translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1208"/>
@@ -1816,57 +1818,57 @@ erro </translation>
     <message>
         <location filename="../../ui/main.ui" line="185"/>
         <source>&amp;Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Barra de ferramentas</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="196"/>
         <source>Dock windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Dock janelas</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="538"/>
         <source>Local Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Local variâveis</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="601"/>
         <source>Other Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Outras variáveis</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="748"/>
         <source>Find in files</source>
-        <translation type="unfinished"></translation>
+        <translation>Procurar nos arquivos</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1684"/>
         <source>Full view</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualização completa</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1689"/>
         <source>Minimal view</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimal vista</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1694"/>
         <source>DocksWindow</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1699"/>
         <source>Dock Windows</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1704"/>
         <source>New submenu &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo submenu &gt;</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1709"/>
         <source>a</source>
-        <translation type="unfinished"></translation>
+        <translation>um</translation>
     </message>
 </context>
 <context>
@@ -2080,7 +2082,7 @@ Você pode mudar no diálogo Opções.</translation>
     <message>
         <location filename="../../src/mainimpl.cpp" line="2234"/>
         <source>Version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Versão %1</translation>
     </message>
 </context>
 <context>
@@ -3205,22 +3207,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/projectpropertie.ui" line="618"/>
         <source>script</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="665"/>
         <source>webkit</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="672"/>
         <source>phonon</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="679"/>
         <source>xmlpatterns</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3268,7 +3270,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="426"/>
         <source>A new variable can not be &quot;QT&quot;, &quot;CONFIG&quot; or &quot;TEMPLATE&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Uma nova variâvel não pode ser &quot;QT&quot;, &quot;CONFIG&quot; ou &quot;TEMPLATE&quot;</translation>
     </message>
 </context>
 <context>
@@ -3357,52 +3359,52 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/replacewidget.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished">Formulário</translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="67"/>
         <source>find:</source>
-        <translation type="unfinished"></translation>
+        <translation>procurar:</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="96"/>
         <source>Replacement:</source>
-        <translation type="unfinished"></translation>
+        <translation>Substituição:</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="125"/>
         <source>&amp;Replace</source>
-        <translation type="unfinished">&amp;Substituir</translation>
+        <translation>&amp;Substituir</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="132"/>
         <source>Previous</source>
-        <translation type="unfinished">Anterior</translation>
+        <translation>Anterior</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="154"/>
         <source>Next</source>
-        <translation type="unfinished">Seguinte</translation>
+        <translation>Seguinte</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="173"/>
         <source>Case Sensitive</source>
-        <translation type="unfinished">Distinguir maiúsculas de minúsculas</translation>
+        <translation>Distinguir maiúsculas de minúsculas</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="183"/>
         <source>Whole words</source>
-        <translation type="unfinished">Palavras completas</translation>
+        <translation>Palavras completas</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="190"/>
         <source>Prompt</source>
-        <translation type="unfinished"></translation>
+        <translation>Perguntar</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="257"/>
         <source>Reached end of page, continued from top</source>
-        <translation type="unfinished">Final da página alcançado, continuar do início</translation>
+        <translation>Final da página alcançado, continuar do início</translation>
     </message>
 </context>
 <context>
@@ -3506,7 +3508,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/subclassingimpl.cpp" line="50"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3624,7 +3626,7 @@ Tente mais tarde para completar código.</translation>
     <message>
         <location filename="../../src/textEdit.cpp" line="925"/>
         <source>Reached end of page, continued from top</source>
-        <translation type="unfinished">Final da página alcançado, continuar do início</translation>
+        <translation>Final da página alcançado, continuar do início</translation>
     </message>
 </context>
 <context>

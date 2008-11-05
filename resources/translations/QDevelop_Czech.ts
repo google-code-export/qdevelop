@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="cs_CZ">
+<!DOCTYPE TS><TS version="1.1" language="cs">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -526,7 +527,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addnewimpl.cpp" line="128"/>
         <source>source</source>
-        <translation type="unfinished"></translation>
+        <translation>zdrojový soubor</translation>
     </message>
 </context>
 <context>
@@ -757,7 +758,7 @@ byl upraven mimo editor.
     <message>
         <location filename="../../src/editor.cpp" line="404"/>
         <source>%1 replacement(s) made.</source>
-        <translation type="unfinished"></translation>
+        <translation>Provedeno %1 nahrazení.</translation>
     </message>
 </context>
 <context>
@@ -1349,7 +1350,7 @@ byl upraven mimo editor.
     <message>
         <location filename="../../ui/main.ui" line="1436"/>
         <source>Alt+Left</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1447"/>
@@ -1504,7 +1505,7 @@ byl upraven mimo editor.
     <message>
         <location filename="../../ui/main.ui" line="883"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="317"/>
@@ -1829,57 +1830,57 @@ byl upraven mimo editor.
     <message>
         <location filename="../../ui/main.ui" line="185"/>
         <source>&amp;Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Lišty nás&amp;trojů</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="196"/>
         <source>Dock windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokovací okna</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="538"/>
         <source>Local Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokální proměnné</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="601"/>
         <source>Other Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Ostatní proměnné</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="748"/>
         <source>Find in files</source>
-        <translation type="unfinished"></translation>
+        <translation>Najít v souborech</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1684"/>
         <source>Full view</source>
-        <translation type="unfinished"></translation>
+        <translation>Plný pohled</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1689"/>
         <source>Minimal view</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimální pohled</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1694"/>
         <source>DocksWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokovací okna</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1699"/>
         <source>Dock Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokovací okna</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1704"/>
         <source>New submenu &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Nové podmenu &gt;</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1709"/>
         <source>a</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2093,7 +2094,7 @@ Můžete jej změnit v dialogu s nastavením prostředí.</translation>
     <message>
         <location filename="../../src/mainimpl.cpp" line="2234"/>
         <source>Version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Verze %1</translation>
     </message>
 </context>
 <context>
@@ -3235,22 +3236,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/projectpropertie.ui" line="618"/>
         <source>script</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="665"/>
         <source>webkit</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="672"/>
         <source>phonon</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="679"/>
         <source>xmlpatterns</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3298,7 +3299,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="426"/>
         <source>A new variable can not be &quot;QT&quot;, &quot;CONFIG&quot; or &quot;TEMPLATE&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Nová proměnná nemůže být &quot;QT&quot;, &quot;CONFIG&quot; nebo &quot;TEMPLATE&quot;</translation>
     </message>
 </context>
 <context>
@@ -3387,52 +3388,52 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/replacewidget.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished">Formulář</translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="67"/>
         <source>find:</source>
-        <translation type="unfinished"></translation>
+        <translation>Najít:</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="96"/>
         <source>Replacement:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahradit:</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="125"/>
         <source>&amp;Replace</source>
-        <translation type="unfinished">Nah&amp;radit</translation>
+        <translation>Nah&amp;radit</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="132"/>
         <source>Previous</source>
-        <translation type="unfinished">Předchozí</translation>
+        <translation>Předchozí</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="154"/>
         <source>Next</source>
-        <translation type="unfinished">Další</translation>
+        <translation>Další</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="173"/>
         <source>Case Sensitive</source>
-        <translation type="unfinished">Rozlišovat velikost</translation>
+        <translation>Rozlišovat velikost</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="183"/>
         <source>Whole words</source>
-        <translation type="unfinished">Celá slova</translation>
+        <translation>Celá slova</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="190"/>
         <source>Prompt</source>
-        <translation type="unfinished"></translation>
+        <translation>Dotazovat se</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="257"/>
         <source>Reached end of page, continued from top</source>
-        <translation type="unfinished">Dosažen konec souboru, pokračuje se od začátku</translation>
+        <translation>Dosažen konec souboru, pokračuje se od začátku</translation>
     </message>
 </context>
 <context>
@@ -3532,11 +3533,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/subclassingimpl.cpp" line="487"/>
         <source>Choose the file location</source>
         <translation>Vyberte umístění souboru</translation>
-    </message>
-    <message>
-        <location filename="../../src/subclassingimpl.cpp" line="50"/>
-        <source></source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3654,7 +3650,7 @@ Zkuste použít doplňování kódu později.</translation>
     <message>
         <location filename="../../src/textEdit.cpp" line="925"/>
         <source>Reached end of page, continued from top</source>
-        <translation type="unfinished">Dosažen konec souboru, pokračuje se od začátku</translation>
+        <translation>Dosažen konec souboru, pokračuje se od začátku</translation>
     </message>
 </context>
 <context>

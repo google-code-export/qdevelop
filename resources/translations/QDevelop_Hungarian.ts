@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="hu_HU">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -694,7 +695,7 @@ Compilation of %1...
         <translation>A program kilépett</translation>
     </message>
     <message>
-        <location filename="../../src/debug.cpp" line="372"/>
+        <location filename="../../src/debug.cpp" line="369"/>
         <source>Error: Unable to evaluate value</source>
         <translation>HIba: nem lehet a változó értékét meghatározni</translation>
     </message>
@@ -1884,7 +1885,7 @@ módosult a programon kívül.
         <translation>A %1 fájl már létezik a könyvtárban.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2251"/>
+        <location filename="../../src/mainimpl.cpp" line="2249"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
     </message>
@@ -1901,7 +1902,7 @@ You can change in Options dialog.</source>
 Állítsd be az Opcióknál.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1852"/>
+        <location filename="../../src/mainimpl.cpp" line="1850"/>
         <source>Ok</source>
         <translation>Rendben</translation>
     </message>
@@ -1911,12 +1912,12 @@ You can change in Options dialog.</source>
         <translation>Valóban ki akarsz lépni a QDevelopból?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1840"/>
+        <location filename="../../src/mainimpl.cpp" line="1838"/>
         <source>Yes</source>
         <translation>Igen</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1840"/>
+        <location filename="../../src/mainimpl.cpp" line="1838"/>
         <source>No</source>
         <translation>Nem</translation>
     </message>
@@ -1966,114 +1967,114 @@ You can change in Options dialog.</source>
         <translation>Fájlok  (*.cpp *.h *.txt)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1865"/>
+        <location filename="../../src/mainimpl.cpp" line="1863"/>
         <source>Stop</source>
         <translation>Megállít</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1640"/>
+        <location filename="../../src/mainimpl.cpp" line="1638"/>
         <source>Build finished without error</source>
         <translation>A build hiba nélkül lefutott</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1642"/>
+        <location filename="../../src/mainimpl.cpp" line="1640"/>
         <source>Build finished with</source>
         <translation>A build lefutott némi </translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1644"/>
+        <location filename="../../src/mainimpl.cpp" line="1642"/>
         <source>error(s)</source>
         <translation>hibával</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1644"/>
+        <location filename="../../src/mainimpl.cpp" line="1642"/>
         <source>and</source>
         <translation>és</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1646"/>
+        <location filename="../../src/mainimpl.cpp" line="1644"/>
         <source>warning(s)</source>
         <translation>figyelmeztetéssel</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1944"/>
+        <location filename="../../src/mainimpl.cpp" line="1942"/>
         <source>Start</source>
         <translation>Indít</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1823"/>
+        <location filename="../../src/mainimpl.cpp" line="1821"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>A projekt megváltozott, kívánod menteni?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1839"/>
+        <location filename="../../src/mainimpl.cpp" line="1837"/>
         <source>Stop debugging ?</source>
         <translation>Valóban leállítsam a hibakeresést?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1851"/>
+        <location filename="../../src/mainimpl.cpp" line="1849"/>
         <source>The program doesn&apos;t exist,</source>
         <translation>A program már nem fut, </translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1852"/>
+        <location filename="../../src/mainimpl.cpp" line="1850"/>
         <source>run Build.</source>
         <translation>nyomd meg a Buildet.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1867"/>
+        <location filename="../../src/mainimpl.cpp" line="1865"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1945"/>
+        <location filename="../../src/mainimpl.cpp" line="1943"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2013"/>
+        <location filename="../../src/mainimpl.cpp" line="2011"/>
         <source>Abort</source>
         <translation>Megszakít</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2006"/>
+        <location filename="../../src/mainimpl.cpp" line="2004"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>A program megállítása nem lehetséges Winfos alatt. Használj breakpontokat.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2048"/>
+        <location filename="../../src/mainimpl.cpp" line="2046"/>
         <source>Continue</source>
         <translation>Folytatás</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2106"/>
+        <location filename="../../src/mainimpl.cpp" line="2104"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2234"/>
+        <location filename="../../src/mainimpl.cpp" line="2232"/>
         <source>Version %1</source>
         <translation>%1-es verzió</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2241"/>
+        <location filename="../../src/mainimpl.cpp" line="2239"/>
         <source>New Variable:</source>
         <translation>Új változó:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2250"/>
+        <location filename="../../src/mainimpl.cpp" line="2248"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation>A &quot;%1&quot; változó
 már létezik.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2406"/>
+        <location filename="../../src/mainimpl.cpp" line="2404"/>
         <source>The Qt database building is already in progress.</source>
         <translation>A Qt osztályadatbázis létrehozása folyamatban.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2450"/>
+        <location filename="../../src/mainimpl.cpp" line="2448"/>
         <source>The Qt classes database build is ended.</source>
         <translation>A Qt osztályadatbázis létrehozása befejeződött.</translation>
     </message>
@@ -2755,137 +2756,137 @@ p, li { white-space: pre-wrap; }
         <translation>Projekt elemzés</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1191"/>
+        <location filename="../../src/projectmanager.cpp" line="1175"/>
         <source>Save project changes ?</source>
         <translation>Mented a projekt változásait?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1364"/>
+        <location filename="../../src/projectmanager.cpp" line="1348"/>
         <source>Yes</source>
         <translation>Igen</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1364"/>
+        <location filename="../../src/projectmanager.cpp" line="1348"/>
         <source>No</source>
         <translation>Nem</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1341"/>
+        <location filename="../../src/projectmanager.cpp" line="1325"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="753"/>
+        <location filename="../../src/projectmanager.cpp" line="737"/>
         <source>The file already exists in directory.</source>
         <translation>A  fájl már létezik a könyvtárban.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="766"/>
+        <location filename="../../src/projectmanager.cpp" line="750"/>
         <source>Forms:</source>
         <translation>Formok:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="826"/>
+        <location filename="../../src/projectmanager.cpp" line="810"/>
         <source>Unable to create file.</source>
         <translation>Nem lehet a fájlt létrehozni.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="874"/>
+        <location filename="../../src/projectmanager.cpp" line="858"/>
         <source>The file already exists.</source>
         <translation>A fájl már létezik.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="885"/>
+        <location filename="../../src/projectmanager.cpp" line="869"/>
         <source>This file is not permitted.</source>
         <translation>Nincs jogod a fájl megnyitásához.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1356"/>
+        <location filename="../../src/projectmanager.cpp" line="1340"/>
         <source>Ok</source>
         <translation>Rendben</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="948"/>
+        <location filename="../../src/projectmanager.cpp" line="932"/>
         <source>Sub-project creation</source>
         <translation>Alprojekt létrehozása</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="984"/>
+        <location filename="../../src/projectmanager.cpp" line="968"/>
         <source>Sub-Projects</source>
         <translation>Al-projektek</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1265"/>
+        <location filename="../../src/projectmanager.cpp" line="1249"/>
         <source>The file  &quot;%1&quot; </source>
         <translation>A fájl &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1307"/>
+        <location filename="../../src/projectmanager.cpp" line="1291"/>
         <source>New name:</source>
         <translation>Új név: </translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1313"/>
+        <location filename="../../src/projectmanager.cpp" line="1297"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Az új és a régi  fájl kiterjesztése különbözik !</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1314"/>
+        <location filename="../../src/projectmanager.cpp" line="1298"/>
         <source>Rename</source>
         <translation>Átnevezés</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1341"/>
+        <location filename="../../src/projectmanager.cpp" line="1325"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Nem lehet a fájlt átnevezni &quot;%1&quot; -re</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1355"/>
+        <location filename="../../src/projectmanager.cpp" line="1339"/>
         <source>Cannot remove the main project.</source>
         <translation>A főprojektet nem lehet eltávolítani.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1363"/>
+        <location filename="../../src/projectmanager.cpp" line="1347"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>Valóban el akarod távolítani a &quot;%1&quot; -t a projektből?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1509"/>
+        <location filename="../../src/projectmanager.cpp" line="1493"/>
         <source>Sub-projects</source>
         <translation>Al-projektek</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1615"/>
+        <location filename="../../src/projectmanager.cpp" line="1599"/>
         <source>Headers</source>
         <translation>Fejlécek</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1620"/>
+        <location filename="../../src/projectmanager.cpp" line="1604"/>
         <source>Sources</source>
         <translation>Források</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1625"/>
+        <location filename="../../src/projectmanager.cpp" line="1609"/>
         <source>Dialogs</source>
         <translation>Dialógusok</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1630"/>
+        <location filename="../../src/projectmanager.cpp" line="1614"/>
         <source>Translations</source>
         <translation>Fordítások</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1635"/>
+        <location filename="../../src/projectmanager.cpp" line="1619"/>
         <source>Resources</source>
         <translation>Erőforrások</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2035"/>
+        <location filename="../../src/projectmanager.cpp" line="2019"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>Az %2 elérhető verziója %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2036"/>
+        <location filename="../../src/projectmanager.cpp" line="2020"/>
         <source>Run on %1</source>
         <translation>Futtatás %1-en</translation>
     </message>
@@ -2933,7 +2934,7 @@ p, li { white-space: pre-wrap; }
         <translation>Dialógusok:</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="972"/>
+        <location filename="../../ui/projectpropertie.ui" line="951"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -3018,204 +3019,189 @@ p, li { white-space: pre-wrap; }
         <translation>xml</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="611"/>
+        <location filename="../../ui/projectpropertie.ui" line="630"/>
         <source>gui</source>
         <translation>gui</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1160"/>
+        <location filename="../../ui/projectpropertie.ui" line="1139"/>
         <source>opengl</source>
         <translation>opengl</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="651"/>
+        <location filename="../../ui/projectpropertie.ui" line="644"/>
         <source>svg</source>
         <translation>svg</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="658"/>
+        <location filename="../../ui/projectpropertie.ui" line="651"/>
         <source>qt3support</source>
         <translation>qt3support</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="665"/>
+        <location filename="../../ui/projectpropertie.ui" line="658"/>
         <source>webkit</source>
         <translation>webkit</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="743"/>
+        <location filename="../../ui/projectpropertie.ui" line="722"/>
         <source>Variables</source>
         <translation>Változók</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="824"/>
+        <location filename="../../ui/projectpropertie.ui" line="803"/>
         <source>Variable :</source>
         <translation>Változó :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="918"/>
+        <location filename="../../ui/projectpropertie.ui" line="897"/>
         <source>Values :</source>
         <translation>Értékek :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1004"/>
+        <location filename="../../ui/projectpropertie.ui" line="983"/>
         <source>Advanced options</source>
         <translation>Több beállítás</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1010"/>
+        <location filename="../../ui/projectpropertie.ui" line="989"/>
         <source>Advanced Options</source>
         <translation>Több beállítás</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1085"/>
+        <location filename="../../ui/projectpropertie.ui" line="1064"/>
         <source>app_bundle</source>
         <translation>app_bundle</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1092"/>
+        <location filename="../../ui/projectpropertie.ui" line="1071"/>
         <source>assistant</source>
         <translation>assistant</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1099"/>
+        <location filename="../../ui/projectpropertie.ui" line="1078"/>
         <source>console</source>
         <translation>console</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1106"/>
+        <location filename="../../ui/projectpropertie.ui" line="1085"/>
         <source>designer</source>
         <translation>designer</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1113"/>
+        <location filename="../../ui/projectpropertie.ui" line="1092"/>
         <source>dll</source>
         <translation>dll</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1139"/>
+        <location filename="../../ui/projectpropertie.ui" line="1118"/>
         <source>exceptions</source>
         <translation>kivételek</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1146"/>
+        <location filename="../../ui/projectpropertie.ui" line="1125"/>
         <source>lib_bundle</source>
         <translation>lib_bundle</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1153"/>
+        <location filename="../../ui/projectpropertie.ui" line="1132"/>
         <source>no_lflags_merge</source>
         <translation>no_lflags_merge</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1167"/>
+        <location filename="../../ui/projectpropertie.ui" line="1146"/>
         <source>plugin</source>
         <translation>plugin</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1193"/>
+        <location filename="../../ui/projectpropertie.ui" line="1172"/>
         <source>ppc</source>
         <translation>ppc</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1200"/>
+        <location filename="../../ui/projectpropertie.ui" line="1179"/>
         <source>qaxcontainer</source>
         <translation>qaxcontainer</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1207"/>
+        <location filename="../../ui/projectpropertie.ui" line="1186"/>
         <source>qaxserver</source>
         <translation>qaxserver</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1214"/>
+        <location filename="../../ui/projectpropertie.ui" line="1193"/>
         <source>qt</source>
         <translation>qt</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1224"/>
+        <location filename="../../ui/projectpropertie.ui" line="1203"/>
         <source>qtestlib</source>
         <translation>qtestlib</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1250"/>
+        <location filename="../../ui/projectpropertie.ui" line="1229"/>
         <source>resources</source>
         <translation>resources</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1257"/>
+        <location filename="../../ui/projectpropertie.ui" line="1236"/>
         <source>rtti</source>
         <translation>rtti</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1264"/>
+        <location filename="../../ui/projectpropertie.ui" line="1243"/>
         <source>staticlib</source>
         <translation>staticlib</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1271"/>
+        <location filename="../../ui/projectpropertie.ui" line="1250"/>
         <source>stl</source>
         <translation>slt</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1278"/>
+        <location filename="../../ui/projectpropertie.ui" line="1257"/>
         <source>thread</source>
         <translation>thread</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1304"/>
+        <location filename="../../ui/projectpropertie.ui" line="1283"/>
         <source>uic3</source>
         <translation>uic3</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1311"/>
+        <location filename="../../ui/projectpropertie.ui" line="1290"/>
         <source>uitools</source>
         <translation>uitools</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1318"/>
+        <location filename="../../ui/projectpropertie.ui" line="1297"/>
         <source>windows</source>
         <translation>windows</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1325"/>
+        <location filename="../../ui/projectpropertie.ui" line="1304"/>
         <source>x11</source>
         <translation>x11</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1332"/>
+        <location filename="../../ui/projectpropertie.ui" line="1311"/>
         <source>x86</source>
         <translation>x86</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1373"/>
+        <location filename="../../ui/projectpropertie.ui" line="1352"/>
         <source>Free CONFIG variables :</source>
         <translation>Egyéb CONFIG változók :</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1441"/>
+        <location filename="../../ui/projectpropertie.ui" line="1420"/>
         <source>OK</source>
         <translation>Rendben</translation>
     </message>
     <message>
-        <location filename="../../ui/projectpropertie.ui" line="1448"/>
+        <location filename="../../ui/projectpropertie.ui" line="1427"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
-    </message>
-    <message>
-        <location filename="../../ui/projectpropertie.ui" line="618"/>
-        <source>script</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/projectpropertie.ui" line="672"/>
-        <source>phonon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui/projectpropertie.ui" line="679"/>
-        <source>xmlpatterns</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3226,44 +3212,39 @@ p, li { white-space: pre-wrap; }
         <translation>%1 tulajdonságai</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="536"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="522"/>
         <source>New Value:</source>
         <translation>Új érték :</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="542"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="528"/>
         <source>The spaces aren&apos;t correctly parsed by qmake</source>
         <translation>A szóközöket nem rendesen ellenőrízte a qmake</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="543"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="529"/>
         <source>delete spaces or put quotes.</source>
         <translation>töröld a szóközöket vagy használj idézőjeleket.</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="544"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="530"/>
         <source>Modify</source>
         <translation>Módosít</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="544"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="530"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="781"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="764"/>
         <source>Choose the sources location</source>
         <translation>Vállaszd ki a forrás elérési útját</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="795"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="778"/>
         <source>Choose the dialogs location</source>
         <translation>Vállaszd ki a dilaógus elérési útját</translation>
-    </message>
-    <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="426"/>
-        <source>A new variable can not be &quot;QT&quot;, &quot;CONFIG&quot; or &quot;TEMPLATE&quot;</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3520,99 +3501,99 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TextEdit</name>
     <message>
-        <location filename="../../src/textEdit.cpp" line="238"/>
+        <location filename="../../src/textEdit.cpp" line="243"/>
         <source>The Qt database building is in progress.
 Try to complete code later.</source>
         <translation>A Qt osztályadatbázis létrehozása folyamatban.
 Várj a kódkiegészítéssel amíg befejeződik.</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="426"/>
+        <location filename="../../src/textEdit.cpp" line="431"/>
         <source>The file &quot;%1&quot; could not be loaded.</source>
         <translation>A %1 fájlt nem lehet betölteni.</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="661"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="661"/>
         <source>Save &quot;%1&quot;</source>
         <translation>&quot;%1&quot; mentése</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="661"/>
         <source>Yes</source>
         <translation>Igen</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="661"/>
         <source>No</source>
         <translation>Nem</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="675"/>
+        <location filename="../../src/textEdit.cpp" line="680"/>
         <source>Unable to save %1</source>
         <translation>%1 mentése sikertelen</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="925"/>
+        <location filename="../../src/textEdit.cpp" line="930"/>
         <source>Reached end of page, continued from top</source>
         <translation>Elértem a fájl végét, kezdem az elejéről</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1421"/>
+        <location filename="../../src/textEdit.cpp" line="1426"/>
         <source>Goto Implementation</source>
         <translation>Ugrás az implementációhoz</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1422"/>
+        <location filename="../../src/textEdit.cpp" line="1427"/>
         <source>Goto Declaration</source>
         <translation>Ugrás az deklarációhoz</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1426"/>
+        <location filename="../../src/textEdit.cpp" line="1431"/>
         <source>Cut</source>
         <translation>Kivágás</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1427"/>
+        <location filename="../../src/textEdit.cpp" line="1432"/>
         <source>Copy</source>
         <translation>Másolás</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1428"/>
+        <location filename="../../src/textEdit.cpp" line="1433"/>
         <source>Paste</source>
         <translation>Beillesztés</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1430"/>
+        <location filename="../../src/textEdit.cpp" line="1435"/>
         <source>Selection Indent</source>
         <translation>Azonosak kijelölése</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1431"/>
+        <location filename="../../src/textEdit.cpp" line="1436"/>
         <source>Selection Unindent</source>
         <translation>Kijelölés megszűntetése</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1434"/>
+        <location filename="../../src/textEdit.cpp" line="1439"/>
         <source>Select All</source>
         <translation>Mindet kijelöl</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1436"/>
+        <location filename="../../src/textEdit.cpp" line="1441"/>
         <source>Find...</source>
         <translation>Keres...</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1438"/>
+        <location filename="../../src/textEdit.cpp" line="1443"/>
         <source>Toggle Bookmark</source>
         <translation>Jelzőke ki-bekapcsolása</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1439"/>
+        <location filename="../../src/textEdit.cpp" line="1444"/>
         <source>Toggle Breakpoint</source>
         <translation>Breakpoint ki-bekapcsolása</translation>
     </message>
@@ -3744,97 +3725,97 @@ Várj a kódkiegészítéssel amíg befejeződik.</translation>
 <context>
     <name>TreeProject</name>
     <message>
-        <location filename="../../src/treeproject.cpp" line="189"/>
+        <location filename="../../src/treeproject.cpp" line="188"/>
         <source>Add sub-project...</source>
         <translation>Alprojekt hozzáadása...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="221"/>
+        <location filename="../../src/treeproject.cpp" line="220"/>
         <source>Add New Item...</source>
         <translation>Új elem hozzáadása...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="197"/>
+        <location filename="../../src/treeproject.cpp" line="196"/>
         <source>Add Scope...</source>
         <translation>Feladat hozzáadása...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="198"/>
+        <location filename="../../src/treeproject.cpp" line="197"/>
         <source>Add New Class...</source>
         <translation>Új osztály hozzáadása...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="199"/>
+        <location filename="../../src/treeproject.cpp" line="198"/>
         <source>Add Existing Files...</source>
         <translation>Létező fájlok hozzáadása...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="205"/>
+        <location filename="../../src/treeproject.cpp" line="204"/>
         <source>Open in Linguist</source>
         <translation>Megnyitás Linguist-al</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="206"/>
+        <location filename="../../src/treeproject.cpp" line="205"/>
         <source>Refresh translation files</source>
         <translation>Nyelvi fájlok frissítése</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="207"/>
+        <location filename="../../src/treeproject.cpp" line="206"/>
         <source>Build release translation files</source>
         <translation>Kiadási nyelvi fordítások generálása</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="211"/>
+        <location filename="../../src/treeproject.cpp" line="210"/>
         <source>Open in Designer</source>
         <translation>Megnyitás Designerben</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="212"/>
+        <location filename="../../src/treeproject.cpp" line="211"/>
         <source>Dialog Subclassing...</source>
         <translation>Alosztály képzése a dialógusból...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="213"/>
+        <location filename="../../src/treeproject.cpp" line="212"/>
         <source>Dialog Preview</source>
         <translation>Dialógus előnézet</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="216"/>
+        <location filename="../../src/treeproject.cpp" line="215"/>
         <source>Open</source>
         <translation>Megnyitás</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="217"/>
+        <location filename="../../src/treeproject.cpp" line="216"/>
         <source>Rename...</source>
         <translation>Átnevezés...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="223"/>
+        <location filename="../../src/treeproject.cpp" line="222"/>
         <source>Sort</source>
         <translation>Rendezés</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="224"/>
+        <location filename="../../src/treeproject.cpp" line="223"/>
         <source>Remove from project</source>
         <translation>Eltávolítás a projektből</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="230"/>
+        <location filename="../../src/treeproject.cpp" line="229"/>
         <source>Properties of %1...</source>
         <translation>%1 tulajdonságai...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="233"/>
+        <location filename="../../src/treeproject.cpp" line="232"/>
         <source>Show As</source>
         <translation>Mutasd </translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="234"/>
+        <location filename="../../src/treeproject.cpp" line="233"/>
         <source>Normal</source>
         <translation>mezei módban</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="235"/>
+        <location filename="../../src/treeproject.cpp" line="234"/>
         <source>Krawek</source>
         <translation>Krawek módban</translation>
     </message>
