@@ -1,3 +1,10 @@
+November 05 2008 Version 0.26:
+  - Fix many issues
+  - The Replace widget is now embeded in editors as the Find widget.
+  - Mac OS enhancements
+  - Update the gui, now all dock windows are QDockWidget, and not widgets
+  - Assistant can be started and controled with the version 4.4.0 of Qt. Works also with previous versions.
+
 December 12 2007 Version 0.25:
   - Display white spaces on text editors (revisions 192, 236, 237)
   - Open dialog remembers filter used (revision 193)

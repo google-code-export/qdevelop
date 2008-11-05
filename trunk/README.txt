@@ -1,13 +1,13 @@
     QDevelop - A Development Environment for Qt4
 
-    (C) 2006-2007 Jean-Luc Biord <jl.biord@free.fr>
+    (C) 2006-2008 Jean-Luc Biord <jl.biord@free.fr>
 
 Installation
 ~~~~~~~~~~~~
 
 Download is available from http://qdevelop.org, the official website.
 
-You need Qt (from Trolltech) at least version 4.0 to be able to compile
+You need Qt (from Trolltech) at least version 4.3 to be able to compile
 QDevelop. Most Linux distributions normally already package the latest
 version of Qt, so it is likely that you need to worry about this. However,
 you need the development package as well (sometimes named as qt-devel or
@@ -17,7 +17,7 @@ The simplest way to compile QDevelop package is:
 
 1. Extract the source zip.
 2.`cd' to the directory containing the package's source code and type
-     `qmake' (`qmake -recursive' with Qt 4.2.x) to generate the Makefile for your system.
+     `qmake' (`qmake -recursive' with Qt 4.3.x) to generate the Makefile for your system.
 3. Type `make' on Linux or `mingw32-make` on Windows to compile the package.
 4. The executable file QDevelop (QDevelop.exe under Windows) is built on bin/ directory.
 
@@ -53,7 +53,7 @@ http://qdevelop.org
 License
 ~~~~~~~~~~~~~
 
-Copyright (C) 2006-2007 Jean-Luc Biord <jl.biord@free.fr>
+Copyright (C) 2006-2008 Jean-Luc Biord <jl.biord@free.fr>
 
 QDevelop is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
