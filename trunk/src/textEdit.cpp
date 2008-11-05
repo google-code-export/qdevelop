@@ -541,7 +541,7 @@ void TextEdit::comment(ActionComment action)
 	if ( startPos != endPos && cursor.atBlockStart()) {
 		endBlock = document()->findBlock(endPos).previous();
 	}
-	
+
 	int firstLine = lineNumber( startBlock );
     int lastLine = lineNumber( endBlock );
     QTextBlock block = startBlock;
@@ -552,8 +552,9 @@ void TextEdit::comment(ActionComment action)
         QString text = block.text();
         if (!text.isEmpty()) {
 	        int i = 0;
-	        while (i < text.length() && text.at(i).isSpace())
+	        while (i < text.length() && (text.at(i).isSpace()))
 	            i++;
+
 	        if (action == Comment)
 	        {
 	            if (text.mid(i, 2) != "//")
@@ -571,8 +572,12 @@ void TextEdit::comment(ActionComment action)
 	            else
 	                text.insert(i, "//");
 	        }
-	        cursor.movePosition(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
-	        cursor.movePosition(QTextCursor::EndOfLine, QTextCursor::KeepAnchor);
+	        cursor.movePosition(QTextCursor::StartOfBlock, QTextCursor::MoveAnchor);
+	        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+	        cursor.select(QTextCursor::BlockUnderCursor);
+	        qWarning() << cursor.selectedText();
+	        cursor.removeSelectedText();
+	        text.prepend("\n");
 	        cursor.insertText(text);
 		}
         cursor.movePosition(QTextCursor::NextBlock);
@@ -1799,4 +1804,5 @@ QString TextEdit::tempFilename()
 {
 	return m_editor->filename().section(".cpp", 0, 0) + "-qdeveloptmp.cpp";
 }
+
 
