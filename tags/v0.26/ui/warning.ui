@@ -1,0 +1,212 @@
+<ui version="4.0" >
+ <author></author>
+ <comment></comment>
+ <exportmacro></exportmacro>
+ <class>Warning</class>
+ <widget class="QDialog" name="Warning" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>329</width>
+    <height>172</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy>
+    <hsizetype>4</hsizetype>
+    <vsizetype>4</vsizetype>
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item row="0" column="0" >
+    <layout class="QVBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>4</hsizetype>
+             <vsizetype>5</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="pixmap" >
+            <pixmap resource="../resources/resources.qrc" >:/divers/images/qmessagebox-warn.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="message" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>1</hsizetype>
+           <vsizetype>5</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text" >
+          <string>TextLabel</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="okButton" >
+         <property name="text" >
+          <string>OK</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <widget class="QCheckBox" name="dontShowAnymore" >
+         <property name="text" >
+          <string>Don't show anymore</string>
+         </property>
+         <property name="checked" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <pixmapfunction></pixmapfunction>
+ <resources>
+  <include location="../resources/resources.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>okButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Warning</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>179</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>6</x>
+     <y>5</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
