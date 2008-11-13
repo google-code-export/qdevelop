@@ -42,6 +42,8 @@ ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
     suffix = ".exe";
     QChar dirDelimiter = '\\';
 #else
+    if ( QFileInfo("/etc/debian_version").exists() )
+        suffix = "-qt4";
     QChar dirDelimiter = '/';
 #endif
 
