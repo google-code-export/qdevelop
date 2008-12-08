@@ -268,7 +268,8 @@ void ToolsControlImpl::on_assistantLocation_clicked() {
 QString ToolsControlImpl::qVersion()
 {
 	if( m_qVersion.isEmpty() )
-		return QString(qVersion()).left(5);
+		//return QString(qVersion()).left(5);
+                return QString(QT_VERSION_STR).left(5);
 	else
 		return m_qVersion;
 }
