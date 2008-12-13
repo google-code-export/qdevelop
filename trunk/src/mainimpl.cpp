@@ -2320,7 +2320,7 @@ void MainImpl::loadPlugins()
         {
             entryList += dir.absoluteFilePath(fileName);
         }
-        dir = QDir("~/.qdevelop/plugins");
+	dir = QDir(QDir::homePath() + "/.qdevelop/plugins");
         foreach(QString fileName, dir.entryList(QDir::Files) )
         {
             entryList += dir.absoluteFilePath(fileName);
