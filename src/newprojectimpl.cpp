@@ -114,9 +114,25 @@ void NewProjectImpl::on_okButton_clicked()
     QString l_subclassObjectName = subclassObjectName->text();
     m_absoluteProjectName = projectDirectory + "/" + m_filename ;
     QDir dir;
-    if ( !dir.mkdir(projectDirectory) )
+    if (dir.exists(projectDirectory))
     {
-        QMessageBox::warning(0,
+    	if (QFile::exists(m_absoluteProjectName))
+    	{
+    		QMessageBox::warning(this,
+                "QDevelop", tr("Project file \"%1\" already exists").arg(m_absoluteProjectName),
+                tr("Cancel") );
+            return;
+   		}
+   		else if ( QMessageBox::question(this, "QDevelop", 
+    		tr("The directory \"%1\" already exists. Do you want to create project anyway?").arg(projectDirectory),
+    		QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::No )
+   		{
+   			return;
+  		}
+   	}
+   	else if ( !dir.mkpath(projectDirectory) )
+    {
+        QMessageBox::warning(this,
                              "QDevelop", tr("The directory \"%1\" cannot be created").arg(projectDirectory),
                              tr("Cancel") );
         return;
@@ -124,7 +140,7 @@ void NewProjectImpl::on_okButton_clicked()
     QFile projectFile ( m_absoluteProjectName );
     if ( !projectFile.open(QIODevice::WriteOnly | QIODevice::Text) )
     {
-        QMessageBox::warning(0,
+        QMessageBox::warning(this,
                              "QDevelop", tr("The project cannot be created"),
                              tr("Cancel") );
         return;
