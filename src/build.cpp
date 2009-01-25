@@ -27,6 +27,8 @@
 #include <QFileInfo>
 #include <QString>
 #include <QDir>
+#include <QLocale>
+#include <QTextCodec>
 #define QD qDebug() << __FILE__ << __LINE__ << ":"
 //
 Build::Build(QObject * parent, QString qmakeName, QString makeName, QString makeOptions, QString absoluteProjectName, bool qmake, bool n, bool g, QString compileFile)
@@ -117,8 +119,23 @@ void Build::run()
 //
 void Build::slotBuildMessages()
 {
+	#ifdef Q_OS_WIN32
+	// Divius: workaround for Windows: console use IBM 866 but system locale is CP1251
+	static QTextCodec *codec = QTextCodec::codecForName("IBM 866");
+	if (QLocale::system().language() == QLocale::Russian && codec)
+	{
+		emit message( codec->toUnicode(m_buildProcess->readAllStandardOutput()), m_projectDirectory );
+		emit message( codec->toUnicode(m_buildProcess->readAllStandardError()), m_projectDirectory );
+	}
+	else
+	{
+		emit message( QString::fromLocal8Bit(m_buildProcess->readAllStandardOutput()), m_projectDirectory );
+		emit message( QString::fromLocal8Bit(m_buildProcess->readAllStandardError()), m_projectDirectory );
+	}
+	#else
 	emit message( QString::fromLocal8Bit(m_buildProcess->readAllStandardOutput()), m_projectDirectory );
 	emit message( QString::fromLocal8Bit(m_buildProcess->readAllStandardError()), m_projectDirectory );
+	#endif
 }
 //
 void Build::slotStopBuild()
