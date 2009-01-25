@@ -420,7 +420,9 @@ void ProjectPropertieImpl::slotAddVariable()
     bool ok = newVariable->exec();
     if (ok)
     {
-    	if( QString("|TEMPLATE|CONFIG|QT|").contains(ui.userVariable->text()) )
+    	if ( !ui.groupUserVariable->isChecked() )
+            nouvelleVariable = ui.comboVariables->itemData(ui.comboVariables->currentIndex(), Qt::UserRole).toString();
+        else if( (QStringList() << "TEMPLATE" << "CONFIG" << "QT").contains(ui.userVariable->text()) )
     	{
             QMessageBox::warning(0, "QDevelop",
 	            tr("A new variable can not be \"QT\", \"CONFIG\" or \"TEMPLATE\""),
@@ -430,9 +432,7 @@ void ProjectPropertieImpl::slotAddVariable()
    		}
         else if ( ui.groupUserVariable->isChecked() && !ui.userVariable->text().isEmpty() )
             nouvelleVariable = ui.userVariable->text();
-        else if ( !ui.groupUserVariable->isChecked() )
-            nouvelleVariable = ui.comboVariables->itemData(ui.comboVariables->currentIndex(), Qt::UserRole).toString();
-        else
+        else 
         {
             delete newVariable;
             return;
