@@ -94,13 +94,19 @@ void LogBuild::slotMessagesBuild(QString list, QString directory)
 modify the two strings below "error" and "warning" to adapt in your language. Also have a look at editor.cpp*/
 bool LogBuild::containsError(QString message)
 {
-	return ( (message.toLower().contains("error") || message.toLower().contains( tr("error").toLower() ))
-            	&& !message.contains("------") && !message.startsWith("make:"));
+	/*return ( (message.toLower().contains("error") || message.toLower().contains( tr("error").toLower() ))
+            	&& !message.contains("------") && !message.startsWith("make:"));*/
+    return !message.startsWith("make") && !message.contains("------") &&
+    	(QRegExp("^.+:\\s*\\d+\\s*:\\s*error\\s*:").indexIn(message) > -1 ||
+    	QRegExp("^.+:\\s*\\d+\\s*:\\s*"+tr("error").toLower()+"\\s*:").indexIn(message) > -1);
 }
 
 bool LogBuild::containsWarning(QString message)
 {
-	return ( (message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ))
-			  && !message.startsWith("make:"));
+	/*return ( (message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ))
+			  && !message.startsWith("make:"));*/
+	return !message.startsWith("make") && !message.contains("------") &&
+    	(QRegExp("^.+:\\s*\\d+\\s*:\\s*warning\\s*:").indexIn(message) > -1 ||
+    	QRegExp("^.+:\\s*\\d+\\s*:\\s*"+tr("warning").toLower()+"\\s*:").indexIn(message) > -1);
 }
 //
