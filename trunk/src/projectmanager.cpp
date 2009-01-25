@@ -729,7 +729,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it, QString kind)
     {
         QString line = window->filename->text();
         filesList = line.split(",");
-        repCreation = window->location->text();
+        repCreation = window->location->text().replace("\\", "/");
         variant = window->comboProjects->itemData( window->comboProjects->currentIndex() );
         delete window;
     }
@@ -740,12 +740,14 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it, QString kind)
     }
     QTreeWidgetItem *item = (QTreeWidgetItem*)variantToItem(variant);
     projectDir = projectDirectory( item );
+    QDir projectDirObj(projectDir);
     setQmake( projectFilename( item ) );
     foreach(QString filename, filesList)
     {
-        absoluteFilename = repCreation+"/"+filename.remove("\"").simplified();
-        QDir( projectDir ).mkdir( repCreation );
-        filename = QDir(projectDir).relativeFilePath(absoluteFilename).replace("\\", "/");
+        absoluteFilename = projectDirObj.absoluteFilePath(repCreation)+"/"+filename.remove("\"").simplified();
+        absoluteFilename = QDir::cleanPath(absoluteFilename);
+        projectDirObj.mkdir( repCreation );
+        filename = projectDirObj.relativeFilePath(absoluteFilename);
         QFile file ( absoluteFilename );
         if ( file.exists() )
         {
