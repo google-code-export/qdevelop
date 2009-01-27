@@ -1195,16 +1195,10 @@ void MainImpl::slotHelpQtWord()
     {
         word = editor->wordUnderCursor();
         className = editor->classNameUnderCursor();
-		if( word == editor->firstWordUnderCursor() )
-			word = className;
         if (className.isEmpty() )
             className = word;
         if( !word.isEmpty() )
         	className = m_completion->classForFunction(className, word);
-        if ( className.isEmpty() && word.startsWith("Q") )
-        {
-        	className = word;
-       	}
     }
     m_assistant->showQtWord(className, word );
 }

@@ -80,7 +80,7 @@ void Assistant::showQtWord(QString className, QString word)
 			if( m_qVersion.left(5).remove(".").toInt() >= 440 )
 	    	{
 	    		QTextStream str(process);
-	    		str << QString("setsource qthelp://com.trolltech.qt."+m_qVersion+"/qdoc/"+className.toLower()+".html") << endl;
+	    		str << QString("activateIdentifier "+className) << endl;
     		}
 	    	else
 	    		os << doc+className.toLower()+".html" << "\n";
@@ -89,8 +89,16 @@ void Assistant::showQtWord(QString className, QString word)
     	{
 			if( m_qVersion.left(5).remove(".").toInt() >= 440 )
 	    	{
-	    		QTextStream str(process);
-	    		str << QString("setsource qthelp://com.trolltech.qt."+m_qVersion+"/qdoc/"+className.toLower()+".html#"+word) << endl;
+ 	    		if (!className.isEmpty())
+	    		{
+	    			QTextStream str(process);
+	    			str << QString("activateIdentifier "+className+"::"+word) << endl;
+    			}
+	    		else
+	    		{
+	    			QTextStream str(process);
+	    			str << QString("activateKeyword "+word) << endl;
+    			}
     		}
 	    	else
 	    		os << doc+className.toLower()+".html#"+word << "\n";
