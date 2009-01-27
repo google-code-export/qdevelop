@@ -943,6 +943,16 @@ QString InitCompletion::classForFunction(QString classname, QString function)
 	list = inheritanceList(classname, list);
     createTables();
     QSqlQuery query(QSqlDatabase::database(getQDevelopPath() + "qdevelop.db" ));
+    QStringList listcopy = list;
+    listcopy.removeAll(classname);
+    if (!listcopy.size())
+    {
+    	QString sql = "select count(*) from tags where class ='" + classname +"'";
+		if (!query.exec(sql) || !query.first() || query.value(0).toInt() == 0)
+		{
+			return QString();
+		}
+   	}
 	foreach(QString name, list)
 	{
 	    QString queryString = QString()
@@ -955,5 +965,5 @@ QString InitCompletion::classForFunction(QString classname, QString function)
 	    	return query.value(0).toString().replace("$", "'");
 	    }
 	}
-	return QString();
+	return classname;
 }

@@ -1542,16 +1542,11 @@ QString TextEdit::classNameUnderCursor(const QPoint & pos, bool addThis)
     else
         cursor = cursorForPosition ( pos );
     QString c = m_plainText.left(cursor.position());
-    for(int i=c.length(); i>0; i--)
+    for(int i=c.length()-1; i>=0; i--)
     {
     	if( c.at(i) == '.' )
     	{
     		c = c.left(i) + "." + m_editor->wordUnderCursor();
-    		break;
-   		}
-    	else if( c.at(i) == ';' || c.at(i) == '}' )
-    	{
-    		c = c.left(i) + c.at(i) + m_editor->wordUnderCursor() + ".";
     		break;
    		}
     	else if( c.mid(i, 2) == "->" )
