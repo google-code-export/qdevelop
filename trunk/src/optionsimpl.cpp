@@ -38,7 +38,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
     QTextCharFormat cles, bool /*autoMask*/, int end, bool spaces, bool complete, 
     QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool tc, int in, QString directory,
     bool m, QColor mc, bool close, QString pd, QString mo, int mi, QString ic, 
-    bool editorToolbars, bool whiteSpaces, QString docDirectory, QColor textCol, bool ac )
+    bool editorToolbars, bool whiteSpaces, int rightMargin, QString docDirectory, QColor textCol, bool ac )
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -72,6 +72,8 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	makeOptions->setText( mo );
 	showEditorToolbars->setChecked( editorToolbars );
 	displayWhiteSpaces->setChecked( whiteSpaces );
+	rightMarginLine->setChecked( rightMargin > 0 );
+	rightMarginPos->setValue( rightMargin > 0 ? rightMargin : 80 );
 	
 	//
 	QPixmap pix(25, 25);
@@ -314,6 +316,8 @@ void OptionsImpl::slotDefault()
 	showTreeClasses->setChecked( true );
 	showEditorToolbars->setChecked( true );
 	displayWhiteSpaces->setChecked( true );
+	rightMarginLine->setChecked( true );
+	rightMarginPos->setValue( 80 );
 }
 //
 void OptionsImpl::slotChooseProjectsDirectory()

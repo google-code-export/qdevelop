@@ -39,7 +39,7 @@ public:
 		QTextCharFormat cles, bool autoMask, int end, bool spaces, bool complete, 
 		QColor back, bool prompt, bool hcl, QColor lc, bool bk, 
 		bool tc, int in, QString directory, bool m, QColor mc, bool close, QString pd, QString mo, int mi,
-		QString ic, bool editorToolbars, bool whiteSpaces, QString docDirectory, QColor textCol,
+		QString ic, bool editorToolbars, bool whiteSpaces, int rightMargin, QString docDirectory, QColor textCol,
 		bool ac
 		);
 	QFont font();
