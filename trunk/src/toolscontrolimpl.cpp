@@ -153,7 +153,7 @@ bool ToolsControlImpl::toolsControl() {
     delete testMake;
     // gdb control
     QProcess *testGdb = new QProcess(this);
-    testGdb->start(gdb->text()+" -v");
+    testGdb->start(gdb->text(), QStringList("-v"));
     testGdb->waitForFinished(5000);
     lu = testGdb->readAll();
     if ( lu.left(7) != "GNU gdb" ) {
@@ -166,7 +166,7 @@ bool ToolsControlImpl::toolsControl() {
     // ctags control
     // ctags control
     QProcess *testCtags = new QProcess(this);
-    testCtags->start(ctags->text()+" --version");
+    testCtags->start(ctags->text(), QStringList("--version"));
     testCtags->waitForFinished(5000);
     lu = testCtags->readAll();
     m_ctagsIsPresent = true;
