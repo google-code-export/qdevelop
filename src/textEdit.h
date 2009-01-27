@@ -109,6 +109,10 @@ public:
     {
         m_showWhiteSpaces = b;
     }
+    void setRightMarginColumn( int c )
+    {
+        m_rightMarginColumn = c;
+    }
     int currentLineNumber(QTextCursor cursor=QTextCursor());
     int currentLineNumber(QTextBlock block);
     int linesCount();
@@ -176,6 +180,7 @@ private:
     bool m_match;
     bool m_highlightCurrentLine;
     bool m_showWhiteSpaces;
+    int m_rightMarginColumn;
     QColor m_backgroundColor;
     QColor m_currentLineColor;
     QColor m_matchingColor;

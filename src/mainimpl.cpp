@@ -117,6 +117,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_buildQtDatabaseAsked = false;
     m_displayEditorToolbars = true;
     m_displayWhiteSpaces = true;
+    m_rightMarginLine = 80;
     m_automaticCompilation = true;
 
     //
@@ -614,7 +615,7 @@ void MainImpl::slotOptions()
                                            m_backgroundColor, m_promptBeforeQuit, m_highlightCurrentLine, m_currentLineColor, m_autobrackets,
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
                                            m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec,
-                                           m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces, m_documentationDirectory,
+                                           m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces, m_rightMarginLine, m_documentationDirectory,
                                            m_textColor, m_automaticCompilation
      );
 
@@ -661,6 +662,10 @@ void MainImpl::slotOptions()
         m_mibCodec = options->mib();
         m_displayEditorToolbars = options->showEditorToolbars->isChecked();
         m_displayWhiteSpaces = options->displayWhiteSpaces->isChecked();
+        if (options->rightMarginLine->isChecked())
+            m_rightMarginLine = options->rightMarginPos->value();
+        else
+            m_rightMarginLine = 0;
 
         slotUpdateOtherFileActions();
         foreach(Editor *editor, allEditors() )
@@ -684,6 +689,7 @@ void MainImpl::slotOptions()
             editor->setMatchingColor( m_matchingColor );
             editor->setAutobrackets( m_autobrackets );
             editor->setShowWhiteSpaces( m_displayWhiteSpaces );
+            editor->setRightMargin( m_rightMarginLine );
             editor->displayEditorToolbar( m_displayEditorToolbars );
             editor->setSyntaxColors
             (
@@ -755,6 +761,7 @@ void MainImpl::saveINI()
     settings.setValue("m_formatKeywords", m_formatKeywords.foreground().color().name());
     settings.setValue("m_displayEditorToolbars", m_displayEditorToolbars);
     settings.setValue("m_displayWhiteSpaces", m_displayWhiteSpaces);
+    settings.setValue("m_rightMarginLine", m_rightMarginLine);
     settings.setValue("editorMode", actionEditor_mode->isChecked() );
     settings.endGroup();
 
@@ -866,6 +873,7 @@ QString MainImpl::loadINI()
     m_displayEditorToolbars = settings.value("m_displayEditorToolbars", m_displayEditorToolbars).toBool();
     slotUpdateOtherFileActions();
     m_displayWhiteSpaces = settings.value("m_displayWhiteSpaces", m_displayWhiteSpaces).toBool();
+    m_rightMarginLine = settings.value("m_rightMarginLine", m_rightMarginLine).toInt();
 	
 	if( !QDir().exists(m_includeDirectory) )
 	{
@@ -1338,6 +1346,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     editor->setMatchingColor( m_matchingColor );
     editor->setCurrentLineColor( m_currentLineColor );
     editor->setShowWhiteSpaces( m_displayWhiteSpaces );
+    editor->setRightMargin( m_rightMarginLine );
     editor->displayEditorToolbar( m_displayEditorToolbars );
     editor->setSyntaxColors
     (

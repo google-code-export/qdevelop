@@ -118,6 +118,7 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_tabPixmap		= QPixmap( tabPixmap_img ); 
 	m_spacePixmap		= QPixmap( spacePixmap_img ); 
 	m_showWhiteSpaces	= true;
+	m_rightMarginColumn	= 80;
 
     
     connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));
@@ -949,6 +950,16 @@ void TextEdit::paintEvent ( QPaintEvent * event )
 
 	if (m_showWhiteSpaces || m_matchingBegin != -1)
 		printWhiteSpacesAndMatching( painter );
+
+	if (m_rightMarginColumn > 0)
+	{
+		int x = m_rightMarginColumn * painter.fontMetrics().maxWidth()
+		  - horizontalScrollBar()->value();
+		QLine l = QLine( x, 0, x, viewport()->height() );
+		painter.setPen( Qt::black );
+		painter.drawLine( l );
+	}
+
 	painter.end();
     QTextEdit::paintEvent( event );
 }
