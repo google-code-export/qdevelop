@@ -30,6 +30,7 @@
 #include <QProcess>
 #include <QMessageBox>
 #include <QFileDialog>
+#include <QDir>
 #include <QFile>
 #include <QDebug>
 #define QD qDebug() << __FILE__ << __LINE__ << ":"
@@ -100,12 +101,12 @@ void ToolsControlImpl::on_ctagsLocation_clicked() {
 void ToolsControlImpl::chooseLocation(QLineEdit *dest) {
     QString s = QFileDialog::getOpenFileName(
                     this,
-                    tr("Please designe the program"),
+                    tr("Please select the program"),
                     QDir::cleanPath(dest->text()),
                     "*" );
     if ( !s.isEmpty() ) // Ok clicked
     {
-        dest->setText( s );
+        dest->setText( QDir::toNativeSeparators ( s ) );
     }
 }
 //
