@@ -132,6 +132,7 @@ void ProjectPropertieImpl::connections()
     connect(dll, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     connect(exceptions, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     connect(lib_bundle, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
+    connect(link_pkgconfig, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     connect(no_lflags_merge, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     connect(opengl, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     connect(plugin, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
@@ -196,6 +197,7 @@ void ProjectPropertieImpl::unconnections()
     disconnect(dll, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     disconnect(exceptions, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     disconnect(lib_bundle, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
+    disconnect(link_pkgconfig, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     disconnect(no_lflags_merge, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     disconnect(opengl, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
     disconnect(plugin, SIGNAL(toggled(bool)), this, SLOT(slotCheck(bool)) );
@@ -629,6 +631,7 @@ void ProjectPropertieImpl::parseConfig(QTreeWidgetItem *it)
         else if ( donnee == "dll" )	dll->setChecked(true);
         else if ( donnee == "exceptions" )	exceptions->setChecked(true);
         else if ( donnee == "lib_bundle" )	lib_bundle->setChecked(true);
+        else if ( donnee == "link_pkgconfig" )	link_pkgconfig->setChecked(true);
         else if ( donnee == "no_lflags_merge" )	no_lflags_merge->setChecked(true);
         else if ( donnee == "opengl" )	opengl->setChecked(true);
         else if ( donnee == "plugin" ) plugin->setChecked(true);
