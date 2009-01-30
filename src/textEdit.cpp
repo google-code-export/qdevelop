@@ -581,7 +581,9 @@ void TextEdit::comment(ActionComment action)
 	        text.prepend("\n");
 	        cursor.insertText(text);
 		}
-        cursor.movePosition(QTextCursor::NextBlock);
+		if( !cursor.movePosition(QTextCursor::NextBlock) ) {
+			break;
+		}
         block = cursor.block();
     }
 	cursor.endEditBlock();
