@@ -112,7 +112,7 @@ void AddNewImpl::slotAccept()
 	{
 		suffixeSaisi = filename->text().mid( filename->text().lastIndexOf(".")+1 );
 	}
-	if( suffixeSaisi != suffixe )
+	if( suffixeSaisi != suffixe && !(suffixe == "h" && suffixeSaisi == "hpp") )
 	{
 		QMessageBox::warning(this, 
 			"QDevelop", tr("The suffix of the file is not correct."),
@@ -128,8 +128,10 @@ void AddNewImpl::slotAccept()
 			type = tr("source");
 			autreSuffixe = "cpp";
 		}
-		int rep = QMessageBox::question(0, "QDevelop", 
-			tr("Also create the file %1 in same location ?").arg(type), tr("Yes"), tr("No"), tr("Cancel"), 0, 2 );
+		int rep = 1;
+		if (suffixeSaisi != "hpp")
+			rep = QMessageBox::question(0, "QDevelop", 
+				tr("Also create the file %1 in same location ?").arg(type), tr("Yes"), tr("No"), tr("Cancel"), 0, 2 );
 		if( rep == 2 )
 			return;
 		if( rep == 0 )
