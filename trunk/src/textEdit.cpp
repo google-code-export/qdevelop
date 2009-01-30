@@ -1553,7 +1553,7 @@ QString TextEdit::classNameUnderCursor(const QPoint & pos, bool addThis)
    		}
     	else if( c.mid(i, 2) == "->" )
     	{
-    		c = c.left(i+1) + "->" + m_editor->wordUnderCursor();
+    		c = c.left(i) + "->" + m_editor->wordUnderCursor();
     		break;
    		}
     	else if( c.mid(i, 2) == "::" )
