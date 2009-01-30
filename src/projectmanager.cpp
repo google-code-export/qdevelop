@@ -1223,11 +1223,11 @@ void ProjectManager::slotPreviewForm(QTreeWidgetItem *it)
     QFile file(uiName);
     file.open(QFile::ReadOnly);
     m_previewForm = builder.load(&file, 0);
-    m_previewForm->setWhatsThis( filename );
     file.close();
     //
     if ( m_previewForm )
     {
+    	m_previewForm->setWhatsThis( filename );
         // Set tooltip for all widgets in form
         QString name = m_previewForm->objectName();
         QString className = m_previewForm->metaObject()->className();
@@ -1264,7 +1264,7 @@ void ProjectManager::slotPreviewForm(QTreeWidgetItem *it)
     }
     else
     {
-        QString error = tr("The file  \"%1\" ").arg(uiName);
+        QString error = tr("File not found: \"%1\"").arg(uiName);
         QMessageBox::warning(0,
                              "QDevelop", error,
                              tr("Cancel") );
