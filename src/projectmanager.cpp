@@ -2220,6 +2220,7 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
             int pos = exe.indexOf("#");
             if ( pos > -1 )
                 exe = exe.left(pos);
+            exe = exe.replace("\\ ", " ");
             exe = QDir::cleanPath(projectDirectory + "/" + exe );
             if ( !QString("so:dll:a").contains(exe.section(".", -1, -1).toLower() ) && QDir().exists(exe) )
                 exeName = exe;
@@ -2231,7 +2232,6 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
             int pos = exe.indexOf("#");
             if ( pos > -1 )
                 exe = exe.left(pos);
-            exe = exe.replace("\\ ", " ");
             exe = exe.replace("\\ ", " ");
             exe = QDir::cleanPath(projectDirectory + "/" + exe );
             if ( !QString("so:dll:a").contains(exe.section(".", -1, -1).toLower() ) && QDir().exists(exe) )

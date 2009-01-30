@@ -72,13 +72,18 @@ void Debug::executeWithoutDebug()
 	setEnvironment( processDebug );
 
 	//processDebug->start("\""+executableName+"\"",  QStringList() << m_parameters.arguments);
-	processDebug->start(executableName,  QStringList() << m_parameters.arguments);
-    processDebug->waitForFinished(500); // On attend un peu pour passer en �at Running
+	//processDebug->start(executableName,  QStringList() << m_parameters.arguments);
+	// Divius: previous implementation will wrap all arguments in quotes
+	processDebug->start("\""+executableName+"\"" + " " + m_parameters.arguments);
+	processDebug->waitForFinished(500); // On attend un peu pour passer en �at Running
 	while( processDebug->state() == QProcess::Running )
 	{
      	processDebug->waitForFinished(5);
 	}
-	emit message( "---------------------- "+tr("Exited normally")+" ----------------------" );
+	if (processDebug->exitCode() == 0)
+		emit message( "---------------------- "+tr("Exited normally")+" ----------------------" );
+	else
+		emit message( "---------------------- "+tr("Exited with error code %1").arg(processDebug->exitCode())+" ----------------------" );
 	emit endDebug();
 }
 //
