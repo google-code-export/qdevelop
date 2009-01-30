@@ -783,7 +783,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it, QString kind)
             else
                 return;
         }
-        else if ( filename.section(".", -1, -1) == "h" )
+        else if ( filename.section(".", -1, -1) == "h" || filename.section(".", -1, -1) == "hpp" )
         {
             // add a default content for *.h files
             QString defString = filename.toUpper().section("/", -1, -1);
@@ -880,7 +880,7 @@ void ProjectManager::insertFile(QTreeWidgetItem *it, QString filename, bool sile
     }
     else
     {
-        if ( !QString("ui|cpp|h|qrc|ts").contains( kindFile ) )
+        if ( !(QStringList() << "ui" << "cpp" << "h" << "hpp" << "qrc" << "ts").contains(kindFile) )
         {
             if ( !silentMode)
                 QMessageBox::warning(0,
@@ -896,7 +896,7 @@ void ProjectManager::insertFile(QTreeWidgetItem *it, QString filename, bool sile
         {
             parentKey = "SOURCES";
         }
-        else if ( kindFile == "h" )
+        else if ( kindFile == "h" || kindFile == "hpp" )
         {
             parentKey = "HEADERS";
 
@@ -926,7 +926,7 @@ void ProjectManager::insertFile(QTreeWidgetItem *it, QString filename, bool sile
         while ( (parent = parent->parent()) );
     }
     //
-    if ( kindFile == "cpp" || kindFile == "h")
+    if ( kindFile == "cpp" || kindFile == "h" || kindFile == "hpp")
     {
         QString projectDir = projectDirectory(newItem);
         QString absoluteName = QDir(projectDir+"/"+filename).absolutePath();

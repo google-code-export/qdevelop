@@ -106,7 +106,7 @@ void AddExistantImpl::slotFilesChoice()
 		this,
 		tr("Choose the file to add"),
 		m_projectDirectory,
-		tr("Files (*.cpp *.h *.ui *.qrc *.ts)") );
+		tr("Files (*.cpp *.h *.hpp *.ui *.qrc *.ts)") );
 	if( s.isEmpty() )
 	{
 		// Cancel is clicked

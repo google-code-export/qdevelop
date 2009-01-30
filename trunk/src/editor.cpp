@@ -330,7 +330,7 @@ bool Editor::close()
 //
 void Editor::setSyntaxHighlight(bool activate)
 {
-    if ( activate && !QString(":c:cpp:cc:h:").contains( ":"+m_filename.section(".", -1, -1).toLower()+":" ) )
+    if ( activate && !QString(":c:cpp:cc:h:hpp:").contains( ":"+m_filename.section(".", -1, -1).toLower()+":" ) )
         return;
     m_textEdit->setSyntaxHighlight(activate);
 }
