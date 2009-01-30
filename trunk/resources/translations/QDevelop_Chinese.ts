@@ -30,7 +30,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2008&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
@@ -38,7 +38,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;diegoiast@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;diegoiast@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {8p?} {10p?} {2006-2008&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?}</translation>
     </message>
 </context>
 <context>
@@ -642,27 +642,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Build</name>
     <message>
-        <location filename="../../src/build.cpp" line="70"/>
+        <location filename="../../src/build.cpp" line="72"/>
         <source>Update project</source>
         <translation>更新工程</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="86"/>
+        <location filename="../../src/build.cpp" line="88"/>
         <source>Clean Project</source>
         <translation>清理工程</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="105"/>
+        <location filename="../../src/build.cpp" line="107"/>
         <source>Build</source>
         <translation>编译</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="127"/>
+        <location filename="../../src/build.cpp" line="144"/>
         <source>Build stopped</source>
         <translation>编译已停止</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="101"/>
+        <location filename="../../src/build.cpp" line="103"/>
         <source>
 Compilation of %1...
 </source>
@@ -947,12 +947,12 @@ was modified outside editor.
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/logbuild.cpp" line="97"/>
+        <location filename="../../src/logbuild.cpp" line="101"/>
         <source>error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../../src/logbuild.cpp" line="103"/>
+        <location filename="../../src/logbuild.cpp" line="110"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
@@ -1863,210 +1863,210 @@ was modified outside editor.
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1168"/>
+        <location filename="../../src/mainimpl.cpp" line="1176"/>
         <source>Choose the file to create</source>
         <translation>选择要创建的文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="439"/>
+        <location filename="../../src/mainimpl.cpp" line="440"/>
         <source>Files</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2251"/>
+        <location filename="../../src/mainimpl.cpp" line="2254"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="963"/>
+        <location filename="../../src/mainimpl.cpp" line="971"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>你要退出QDevelop吗?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1840"/>
+        <location filename="../../src/mainimpl.cpp" line="1843"/>
         <source>Yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1840"/>
+        <location filename="../../src/mainimpl.cpp" line="1843"/>
         <source>No</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1011"/>
+        <location filename="../../src/mainimpl.cpp" line="1019"/>
         <source>Choose a file to open</source>
         <translation>选择要打开的文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1013"/>
+        <location filename="../../src/mainimpl.cpp" line="1021"/>
         <source>Sources</source>
         <translation>源文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1042"/>
+        <location filename="../../src/mainimpl.cpp" line="1050"/>
         <source>Projects</source>
         <translation>工程</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1015"/>
+        <location filename="../../src/mainimpl.cpp" line="1023"/>
         <source>Texts</source>
         <translation>文本</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1016"/>
+        <location filename="../../src/mainimpl.cpp" line="1024"/>
         <source>All Files</source>
         <translation>所有文件</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1170"/>
+        <location filename="../../src/mainimpl.cpp" line="1178"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>文件 (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1865"/>
+        <location filename="../../src/mainimpl.cpp" line="1868"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1944"/>
+        <location filename="../../src/mainimpl.cpp" line="1947"/>
         <source>Start</source>
         <translation>开始</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1823"/>
+        <location filename="../../src/mainimpl.cpp" line="1826"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>工程已经被更改，你愿意保存改动吗?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1839"/>
+        <location filename="../../src/mainimpl.cpp" line="1842"/>
         <source>Stop debugging ?</source>
         <translation>停止调试?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1852"/>
+        <location filename="../../src/mainimpl.cpp" line="1855"/>
         <source>run Build.</source>
         <translation>运行编译。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1852"/>
+        <location filename="../../src/mainimpl.cpp" line="1855"/>
         <source>Ok</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1867"/>
+        <location filename="../../src/mainimpl.cpp" line="1870"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1945"/>
+        <location filename="../../src/mainimpl.cpp" line="1948"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2013"/>
+        <location filename="../../src/mainimpl.cpp" line="2016"/>
         <source>Abort</source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2006"/>
+        <location filename="../../src/mainimpl.cpp" line="2009"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Windows中无法停下，请设置断点。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2048"/>
+        <location filename="../../src/mainimpl.cpp" line="2051"/>
         <source>Continue</source>
         <translation>继续</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2106"/>
+        <location filename="../../src/mainimpl.cpp" line="2109"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2241"/>
+        <location filename="../../src/mainimpl.cpp" line="2244"/>
         <source>New Variable:</source>
         <translation>新变量:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1040"/>
+        <location filename="../../src/mainimpl.cpp" line="1048"/>
         <source>Choose a project to open</source>
         <translation>选择要打开的工程</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1640"/>
+        <location filename="../../src/mainimpl.cpp" line="1643"/>
         <source>Build finished without error</source>
         <translation>编译结束没有错误</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1642"/>
+        <location filename="../../src/mainimpl.cpp" line="1645"/>
         <source>Build finished with</source>
         <translation>编译结束</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1644"/>
+        <location filename="../../src/mainimpl.cpp" line="1647"/>
         <source>error(s)</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1644"/>
+        <location filename="../../src/mainimpl.cpp" line="1647"/>
         <source>and</source>
         <translation>和</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1646"/>
+        <location filename="../../src/mainimpl.cpp" line="1649"/>
         <source>warning(s)</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="449"/>
+        <location filename="../../src/mainimpl.cpp" line="450"/>
         <source>The file &quot;%1&quot;
  already exists in directory.</source>
         <translation>文件 &quot;%1&quot; 在目录里已经存在.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="455"/>
+        <location filename="../../src/mainimpl.cpp" line="456"/>
         <source>Unable to create %1</source>
         <translation>不能创建%1</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1063"/>
+        <location filename="../../src/mainimpl.cpp" line="1071"/>
         <source>The project %1 doesn&apos;t exist.</source>
         <translation>工程%1不存在.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1149"/>
+        <location filename="../../src/mainimpl.cpp" line="1157"/>
         <source>Properties of %1...</source>
         <translation>%1属性...</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1851"/>
+        <location filename="../../src/mainimpl.cpp" line="1854"/>
         <source>The program doesn&apos;t exist,</source>
         <translation>程序不存在,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2250"/>
+        <location filename="../../src/mainimpl.cpp" line="2253"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation>变量 &quot;%1&quot; 已经存在.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="873"/>
+        <location filename="../../src/mainimpl.cpp" line="881"/>
         <source>The Qt include directory doesn&apos;t exist,
 You can change in Options dialog.</source>
         <translation>Qt包含文件夹不存在,你可以在选项对话框里修改.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2406"/>
+        <location filename="../../src/mainimpl.cpp" line="2409"/>
         <source>The Qt database building is already in progress.</source>
         <translation>Qt数据库正在创建中.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2450"/>
+        <location filename="../../src/mainimpl.cpp" line="2453"/>
         <source>The Qt classes database build is ended.</source>
         <translation>Qt类数据库创建结束.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2234"/>
+        <location filename="../../src/mainimpl.cpp" line="2237"/>
         <source>Version %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2117,167 +2117,167 @@ You can change in Options dialog.</source>
         <translation>新建工程</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="36"/>
+        <location filename="../../ui/newproject.ui" line="35"/>
         <source>Template</source>
         <translation>模板</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="55"/>
+        <location filename="../../ui/newproject.ui" line="54"/>
         <source>Application with Dialog</source>
         <translation>带对话框的工程</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="65"/>
+        <location filename="../../ui/newproject.ui" line="64"/>
         <source>Application with Main Window</source>
         <translation>带主窗口的工程</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="78"/>
+        <location filename="../../ui/newproject.ui" line="77"/>
         <source>Properties</source>
         <translation>属性</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="114"/>
+        <location filename="../../ui/newproject.ui" line="113"/>
         <source>Parent project :</source>
         <translation>父工程:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="124"/>
+        <location filename="../../ui/newproject.ui" line="123"/>
         <source>Project name :</source>
         <translation>工程名:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="134"/>
+        <location filename="../../ui/newproject.ui" line="133"/>
         <source>Location :</source>
         <translation>位置:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="175"/>
+        <location filename="../../ui/newproject.ui" line="174"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="188"/>
+        <location filename="../../ui/newproject.ui" line="187"/>
         <source>Project creation on : </source>
         <translation>工程创建于:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="200"/>
+        <location filename="../../ui/newproject.ui" line="199"/>
         <source>Version</source>
         <translation>版本</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="212"/>
+        <location filename="../../ui/newproject.ui" line="211"/>
         <source>Debug Version</source>
         <translation>Debug版本</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="222"/>
+        <location filename="../../ui/newproject.ui" line="221"/>
         <source>Release Version</source>
         <translation>Release版本</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="259"/>
+        <location filename="../../ui/newproject.ui" line="258"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="266"/>
+        <location filename="../../ui/newproject.ui" line="265"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="275"/>
+        <location filename="../../ui/newproject.ui" line="274"/>
         <source>Sub-directories</source>
         <translation>子目录</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="303"/>
+        <location filename="../../ui/newproject.ui" line="302"/>
         <source>Dialogs:</source>
         <translation>对话框:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="313"/>
+        <location filename="../../ui/newproject.ui" line="312"/>
         <source>Executable:</source>
         <translation>可执行文件:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="333"/>
+        <location filename="../../ui/newproject.ui" line="332"/>
         <source>ui</source>
         <translation>ui</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="340"/>
+        <location filename="../../ui/newproject.ui" line="339"/>
         <source>bin</source>
         <translation>bin</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="367"/>
+        <location filename="../../ui/newproject.ui" line="366"/>
         <source>sources:</source>
         <translation>源文件:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="377"/>
+        <location filename="../../ui/newproject.ui" line="376"/>
         <source>Objects:</source>
         <translation>对象:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="397"/>
+        <location filename="../../ui/newproject.ui" line="396"/>
         <source>src</source>
         <translation>src</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="404"/>
+        <location filename="../../ui/newproject.ui" line="403"/>
         <source>build</source>
         <translation>build</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="418"/>
+        <location filename="../../ui/newproject.ui" line="417"/>
         <source>Inheritance subclassing</source>
         <translation>继承子类</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="438"/>
+        <location filename="../../ui/newproject.ui" line="437"/>
         <source>Dialog</source>
         <translation>对话框</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="445"/>
+        <location filename="../../ui/newproject.ui" line="444"/>
         <source>DialogImpl</source>
         <translation>DialogImpl</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="472"/>
+        <location filename="../../ui/newproject.ui" line="471"/>
         <source>Object name:</source>
         <translation>对象名:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="492"/>
+        <location filename="../../ui/newproject.ui" line="491"/>
         <source>dialog</source>
         <translation>dialog</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="499"/>
+        <location filename="../../ui/newproject.ui" line="498"/>
         <source>dialogimpl</source>
         <translation>dialogimpl</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="526"/>
+        <location filename="../../ui/newproject.ui" line="525"/>
         <source>File name:</source>
         <translation>文件名:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="546"/>
+        <location filename="../../ui/newproject.ui" line="545"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Dialog:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>对话框:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="556"/>
+        <location filename="../../ui/newproject.ui" line="555"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Subclass:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>子类</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="48"/>
+        <location filename="../../ui/newproject.ui" line="47"/>
         <source>Empty or master project</source>
         <translation>空或主要工程</translation>
     </message>
@@ -2290,19 +2290,29 @@ You can change in Options dialog.</source>
         <translation>选择工程目录</translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="120"/>
+        <location filename="../../src/newprojectimpl.cpp" line="136"/>
         <source>The directory &quot;%1&quot; cannot be created</source>
         <translation>不能创建目录&quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="129"/>
+        <location filename="../../src/newprojectimpl.cpp" line="145"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="128"/>
+        <location filename="../../src/newprojectimpl.cpp" line="144"/>
         <source>The project cannot be created</source>
         <translation>工程不能被创建</translation>
+    </message>
+    <message>
+        <location filename="../../src/newprojectimpl.cpp" line="122"/>
+        <source>Project file &quot;%1&quot; already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/newprojectimpl.cpp" line="127"/>
+        <source>The directory &quot;%1&quot; already exists. Do you want to create project anyway?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2429,52 +2439,52 @@ You can change in Options dialog.</source>
         <translation>编辑器</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="536"/>
+        <location filename="../../ui/options.ui" line="590"/>
         <source>Font:</source>
         <translation>字体:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="543"/>
+        <location filename="../../ui/options.ui" line="597"/>
         <source>End of line</source>
         <translation>行尾</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="550"/>
+        <location filename="../../ui/options.ui" line="604"/>
         <source>Tab size</source>
         <translation>Tab键长度</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="564"/>
+        <location filename="../../ui/options.ui" line="618"/>
         <source>Current line background</source>
         <translation>当前行背景色</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="571"/>
+        <location filename="../../ui/options.ui" line="625"/>
         <source>Text background</source>
         <translation>文字背景色</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="637"/>
+        <location filename="../../ui/options.ui" line="691"/>
         <source>Default</source>
         <translation>默认</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="642"/>
+        <location filename="../../ui/options.ui" line="696"/>
         <source>Unix</source>
         <translation>Unix</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="647"/>
+        <location filename="../../ui/options.ui" line="701"/>
         <source>Dos/Windows</source>
         <translation>Dos/Windows</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="675"/>
+        <location filename="../../ui/options.ui" line="729"/>
         <source>Replace Tab by spaces</source>
         <translation>把Tab替换成空格</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="990"/>
+        <location filename="../../ui/options.ui" line="1044"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -2489,7 +2499,7 @@ You can change in Options dialog.</source>
         <translation>行号</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="809"/>
+        <location filename="../../ui/options.ui" line="863"/>
         <source>Syntax highlighting</source>
         <translation>代码高亮</translation>
     </message>
@@ -2514,37 +2524,37 @@ You can change in Options dialog.</source>
         <translation>自动缩进</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="880"/>
+        <location filename="../../ui/options.ui" line="934"/>
         <source>Function/method names :</source>
         <translation>函数/方法名:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="887"/>
+        <location filename="../../ui/options.ui" line="941"/>
         <source>Preprocessor :</source>
         <translation>预处理器:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="894"/>
+        <location filename="../../ui/options.ui" line="948"/>
         <source>Qt words :</source>
         <translation>Qt关键字:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="901"/>
+        <location filename="../../ui/options.ui" line="955"/>
         <source>Keywords :</source>
         <translation>关键字:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="908"/>
+        <location filename="../../ui/options.ui" line="962"/>
         <source>Single comments :</source>
         <translation>单行注释:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="915"/>
+        <location filename="../../ui/options.ui" line="969"/>
         <source>Multiline comments :</source>
         <translation>多行注释:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="922"/>
+        <location filename="../../ui/options.ui" line="976"/>
         <source>Quotation strings :</source>
         <translation>引号内字符串:</translation>
     </message>
@@ -2609,17 +2619,17 @@ You can change in Options dialog.</source>
         <translation>显示白色空间</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="557"/>
+        <location filename="../../ui/options.ui" line="611"/>
         <source>Files encoding:</source>
         <translation>文件编码:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="578"/>
+        <location filename="../../ui/options.ui" line="632"/>
         <source>Text color</source>
         <translation>文字颜色</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1018"/>
+        <location filename="../../ui/options.ui" line="1072"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -2640,11 +2650,21 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;/*&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* Multi-line&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;*/&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;// Single line comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;{&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QApplication app(argc, argv);&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QString chaine = &quot;between quotations&quot;;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QDialog *main = new QDialog;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <location filename="../../ui/options.ui" line="488"/>
+        <source>Right margin line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="497"/>
+        <source>Column:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/optionsimpl.cpp" line="368"/>
+        <location filename="../../src/optionsimpl.cpp" line="372"/>
         <source>Choose the project directory</source>
         <translation>选择工程目录</translation>
     </message>
@@ -2743,77 +2763,77 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1191"/>
+        <location filename="../../src/projectmanager.cpp" line="1193"/>
         <source>Save project changes ?</source>
         <translation>保存工程的改动?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1364"/>
+        <location filename="../../src/projectmanager.cpp" line="1366"/>
         <source>Yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1364"/>
+        <location filename="../../src/projectmanager.cpp" line="1366"/>
         <source>No</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1341"/>
+        <location filename="../../src/projectmanager.cpp" line="1343"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="766"/>
+        <location filename="../../src/projectmanager.cpp" line="768"/>
         <source>Forms:</source>
         <translation>表单:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="826"/>
+        <location filename="../../src/projectmanager.cpp" line="828"/>
         <source>Unable to create file.</source>
         <translation>不能创建文件。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1356"/>
+        <location filename="../../src/projectmanager.cpp" line="1358"/>
         <source>Ok</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="948"/>
+        <location filename="../../src/projectmanager.cpp" line="950"/>
         <source>Sub-project creation</source>
         <translation>创建子工程</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="984"/>
+        <location filename="../../src/projectmanager.cpp" line="986"/>
         <source>Sub-Projects</source>
         <translation>子工程</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1509"/>
+        <location filename="../../src/projectmanager.cpp" line="1511"/>
         <source>Sub-projects</source>
         <translation>子工程</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1615"/>
+        <location filename="../../src/projectmanager.cpp" line="1617"/>
         <source>Headers</source>
         <translation>头文件</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1620"/>
+        <location filename="../../src/projectmanager.cpp" line="1622"/>
         <source>Sources</source>
         <translation>源文件</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1625"/>
+        <location filename="../../src/projectmanager.cpp" line="1627"/>
         <source>Dialogs</source>
         <translation>对话框</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1630"/>
+        <location filename="../../src/projectmanager.cpp" line="1632"/>
         <source>Translations</source>
         <translation>翻译</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1635"/>
+        <location filename="../../src/projectmanager.cpp" line="1637"/>
         <source>Resources</source>
         <translation>资源</translation>
     </message>
@@ -2823,62 +2843,62 @@ p, li { white-space: pre-wrap; }
         <translation>工程解析</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1307"/>
+        <location filename="../../src/projectmanager.cpp" line="1309"/>
         <source>New name:</source>
         <translation>新命名:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1313"/>
+        <location filename="../../src/projectmanager.cpp" line="1315"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>新文件名和旧文件名类型不同!</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1314"/>
+        <location filename="../../src/projectmanager.cpp" line="1316"/>
         <source>Rename</source>
         <translation>重新命名</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="753"/>
+        <location filename="../../src/projectmanager.cpp" line="755"/>
         <source>The file already exists in directory.</source>
         <translation>文件在目录已经存在.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="874"/>
+        <location filename="../../src/projectmanager.cpp" line="876"/>
         <source>The file already exists.</source>
         <translation>文件已经存在.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="885"/>
+        <location filename="../../src/projectmanager.cpp" line="887"/>
         <source>This file is not permitted.</source>
         <translation>文件不准许.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1265"/>
+        <location filename="../../src/projectmanager.cpp" line="1267"/>
         <source>The file  &quot;%1&quot; </source>
         <translation>文件  &quot;%1&quot; </translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1341"/>
+        <location filename="../../src/projectmanager.cpp" line="1343"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>不能重新命名文件为&quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2035"/>
+        <location filename="../../src/projectmanager.cpp" line="2037"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>唯一的变量版本&quot;%1&quot; 是 %2</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2036"/>
+        <location filename="../../src/projectmanager.cpp" line="2038"/>
         <source>Run on %1</source>
         <translation>启动 %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1355"/>
+        <location filename="../../src/projectmanager.cpp" line="1357"/>
         <source>Cannot remove the main project.</source>
         <translation>不能移动主工程.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1363"/>
+        <location filename="../../src/projectmanager.cpp" line="1365"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>你想从工程中删除&quot;%1&quot; ?</translation>
     </message>
@@ -3254,7 +3274,7 @@ p, li { white-space: pre-wrap; }
         <translation>空格没有被qmake正确解析</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="426"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="428"/>
         <source>A new variable can not be &quot;QT&quot;, &quot;CONFIG&quot; or &quot;TEMPLATE&quot;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3491,11 +3511,6 @@ p, li { white-space: pre-wrap; }
         <source>(.h and .cpp)</source>
         <translation></translation>
     </message>
-    <message>
-        <location filename="../../src/subclassingimpl.cpp" line="50"/>
-        <source></source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>TabWidget</name>
@@ -3518,98 +3533,98 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TextEdit</name>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="664"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="664"/>
         <source>Yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="664"/>
         <source>No</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1426"/>
+        <location filename="../../src/textEdit.cpp" line="1444"/>
         <source>Cut</source>
         <translation>剪切</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1427"/>
+        <location filename="../../src/textEdit.cpp" line="1445"/>
         <source>Copy</source>
         <translation>复制</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1428"/>
+        <location filename="../../src/textEdit.cpp" line="1446"/>
         <source>Paste</source>
         <translation>粘贴</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1430"/>
+        <location filename="../../src/textEdit.cpp" line="1448"/>
         <source>Selection Indent</source>
         <translation>缩进选中的文字</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1431"/>
+        <location filename="../../src/textEdit.cpp" line="1449"/>
         <source>Selection Unindent</source>
         <translation>反缩进选中的文字</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1434"/>
+        <location filename="../../src/textEdit.cpp" line="1452"/>
         <source>Select All</source>
         <translation>选择所有</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1436"/>
+        <location filename="../../src/textEdit.cpp" line="1454"/>
         <source>Find...</source>
         <translation>查找...</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1438"/>
+        <location filename="../../src/textEdit.cpp" line="1456"/>
         <source>Toggle Bookmark</source>
         <translation>添加/去除书签</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1439"/>
+        <location filename="../../src/textEdit.cpp" line="1457"/>
         <source>Toggle Breakpoint</source>
         <translation>添加/去除断点</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="426"/>
+        <location filename="../../src/textEdit.cpp" line="427"/>
         <source>The file &quot;%1&quot; could not be loaded.</source>
         <translation>文件&quot;%1&quot;不能被加载.</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="664"/>
         <source>Save &quot;%1&quot;</source>
         <translation>保存&quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="675"/>
+        <location filename="../../src/textEdit.cpp" line="683"/>
         <source>Unable to save %1</source>
         <translation>不能保存%1</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1421"/>
+        <location filename="../../src/textEdit.cpp" line="1439"/>
         <source>Goto Implementation</source>
         <translation>跳到实现</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1422"/>
+        <location filename="../../src/textEdit.cpp" line="1440"/>
         <source>Goto Declaration</source>
         <translation>跳到声明</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="238"/>
+        <location filename="../../src/textEdit.cpp" line="239"/>
         <source>The Qt database building is in progress.
 Try to complete code later.</source>
         <translation>Qt数据库正在创建中.请稍后完成编码.</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="925"/>
+        <location filename="../../src/textEdit.cpp" line="933"/>
         <source>Reached end of page, continued from top</source>
         <translation type="unfinished">到达页尾，从头开始</translation>
     </message>
@@ -3690,19 +3705,19 @@ Try to complete code later.</source>
 <context>
     <name>ToolsControlImpl</name>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="101"/>
-        <source>Please designe the program</source>
-        <translation>请设计程序</translation>
-    </message>
-    <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="172"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="175"/>
         <source>Ctags was detected in path %1, but this version is too old.</source>
         <translation>ctags 已经在路径%1里被检测到，但是版本太旧了.</translation>
     </message>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="173"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="176"/>
         <source>Ok</source>
         <translation>确定</translation>
+    </message>
+    <message>
+        <location filename="../../src/toolscontrolimpl.cpp" line="104"/>
+        <source>Please select the program</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="tr_TR">
-<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -31,7 +30,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2008&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
@@ -39,7 +38,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Açık Kodlu Sürüm - Telif Hakkı (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Ana Geliştirici: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Kod tamamlama: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Geliştirici: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;diegoiast@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Geliştirici: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Geliştirici: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Geliştirici: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Paketleyici: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Açık Kodlu Sürüm - Telif Hakkı (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Ana Geliştirici: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Kod tamamlama: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Geliştirici: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;diegoiast@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Geliştirici: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Geliştirici: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Geliştirici: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Paketleyici: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {8p?} {10p?} {2006-2008&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?}</translation>
     </message>
 </context>
 <context>
@@ -644,27 +643,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Build</name>
     <message>
-        <location filename="../../src/build.cpp" line="70"/>
+        <location filename="../../src/build.cpp" line="72"/>
         <source>Update project</source>
         <translation>Projeyi güncelle</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="86"/>
+        <location filename="../../src/build.cpp" line="88"/>
         <source>Clean Project</source>
         <translation>Projeyi Temizle</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="105"/>
+        <location filename="../../src/build.cpp" line="107"/>
         <source>Build</source>
         <translation>İnşa Et</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="127"/>
+        <location filename="../../src/build.cpp" line="144"/>
         <source>Build stopped</source>
         <translation>İnşa durdu</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="101"/>
+        <location filename="../../src/build.cpp" line="103"/>
         <source>
 Compilation of %1...
 </source>
@@ -951,12 +950,12 @@ editör dışında bir yerde değiştirilmiş.</translation>
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/logbuild.cpp" line="97"/>
+        <location filename="../../src/logbuild.cpp" line="101"/>
         <source>error</source>
         <translation>hata</translation>
     </message>
     <message>
-        <location filename="../../src/logbuild.cpp" line="103"/>
+        <location filename="../../src/logbuild.cpp" line="110"/>
         <source>warning</source>
         <translation>uyarı</translation>
     </message>
@@ -1867,213 +1866,213 @@ editör dışında bir yerde değiştirilmiş.</translation>
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1168"/>
+        <location filename="../../src/mainimpl.cpp" line="1176"/>
         <source>Choose the file to create</source>
         <translation>Oluşturulacak dosyayı seçin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="439"/>
+        <location filename="../../src/mainimpl.cpp" line="440"/>
         <source>Files</source>
         <translation>Dosyalar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2251"/>
+        <location filename="../../src/mainimpl.cpp" line="2254"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="963"/>
+        <location filename="../../src/mainimpl.cpp" line="971"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>QDevelop&apos;tan çıkmak istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1840"/>
+        <location filename="../../src/mainimpl.cpp" line="1843"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1840"/>
+        <location filename="../../src/mainimpl.cpp" line="1843"/>
         <source>No</source>
         <translation>Hayır</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1011"/>
+        <location filename="../../src/mainimpl.cpp" line="1019"/>
         <source>Choose a file to open</source>
         <translation>Açmak için bir dosya seçin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1013"/>
+        <location filename="../../src/mainimpl.cpp" line="1021"/>
         <source>Sources</source>
         <translation>Kaynaklar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1042"/>
+        <location filename="../../src/mainimpl.cpp" line="1050"/>
         <source>Projects</source>
         <translation>Projeler</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1015"/>
+        <location filename="../../src/mainimpl.cpp" line="1023"/>
         <source>Texts</source>
         <translation>Metinler</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1016"/>
+        <location filename="../../src/mainimpl.cpp" line="1024"/>
         <source>All Files</source>
         <translation>Tüm Dosyalar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1040"/>
+        <location filename="../../src/mainimpl.cpp" line="1048"/>
         <source>Choose a project to open</source>
         <translation>Açmak için bir proje seçin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1170"/>
+        <location filename="../../src/mainimpl.cpp" line="1178"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>Dosyalar (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1865"/>
+        <location filename="../../src/mainimpl.cpp" line="1868"/>
         <source>Stop</source>
         <translation>Dur</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1640"/>
+        <location filename="../../src/mainimpl.cpp" line="1643"/>
         <source>Build finished without error</source>
         <translation>İnşa hatasız bitti</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1642"/>
+        <location filename="../../src/mainimpl.cpp" line="1645"/>
         <source>Build finished with</source>
         <translation>İnşa sonuçları</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1644"/>
+        <location filename="../../src/mainimpl.cpp" line="1647"/>
         <source>error(s)</source>
         <translation>hata</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1644"/>
+        <location filename="../../src/mainimpl.cpp" line="1647"/>
         <source>and</source>
         <translation>ve</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1646"/>
+        <location filename="../../src/mainimpl.cpp" line="1649"/>
         <source>warning(s)</source>
         <translation>uyarı</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1944"/>
+        <location filename="../../src/mainimpl.cpp" line="1947"/>
         <source>Start</source>
         <translation>Başla</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1823"/>
+        <location filename="../../src/mainimpl.cpp" line="1826"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Proje değiştirildi. Değişiklikleri kaydetmek istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1839"/>
+        <location filename="../../src/mainimpl.cpp" line="1842"/>
         <source>Stop debugging ?</source>
         <translation>Hata ayıklama sonlansın mı?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1852"/>
+        <location filename="../../src/mainimpl.cpp" line="1855"/>
         <source>run Build.</source>
         <translation>İnşayı başlat.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1852"/>
+        <location filename="../../src/mainimpl.cpp" line="1855"/>
         <source>Ok</source>
         <translation>Tamam</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1867"/>
+        <location filename="../../src/mainimpl.cpp" line="1870"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1945"/>
+        <location filename="../../src/mainimpl.cpp" line="1948"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2013"/>
+        <location filename="../../src/mainimpl.cpp" line="2016"/>
         <source>Abort</source>
         <translation>Durdur</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2006"/>
+        <location filename="../../src/mainimpl.cpp" line="2009"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Windows altında durdurmak mümkün değil. Kesme noktaları koyun.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2048"/>
+        <location filename="../../src/mainimpl.cpp" line="2051"/>
         <source>Continue</source>
         <translation>Devam</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2106"/>
+        <location filename="../../src/mainimpl.cpp" line="2109"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2241"/>
+        <location filename="../../src/mainimpl.cpp" line="2244"/>
         <source>New Variable:</source>
         <translation>Yeni Değişken:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="449"/>
+        <location filename="../../src/mainimpl.cpp" line="450"/>
         <source>The file &quot;%1&quot;
  already exists in directory.</source>
         <translation>&quot;%1&quot; dosyası 
  dizin içinde zaten mevcut.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="455"/>
+        <location filename="../../src/mainimpl.cpp" line="456"/>
         <source>Unable to create %1</source>
         <translation>%1 oluşturulamadı</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1063"/>
+        <location filename="../../src/mainimpl.cpp" line="1071"/>
         <source>The project %1 doesn&apos;t exist.</source>
         <translation>%1 projesi mevcut değil.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1149"/>
+        <location filename="../../src/mainimpl.cpp" line="1157"/>
         <source>Properties of %1...</source>
         <translation>%1 Özellikleri...</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1851"/>
+        <location filename="../../src/mainimpl.cpp" line="1854"/>
         <source>The program doesn&apos;t exist,</source>
         <translation>Program mevcut değil,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2250"/>
+        <location filename="../../src/mainimpl.cpp" line="2253"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation>&quot;%1&quot; değişkeni 
  zaten mevcut.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="873"/>
+        <location filename="../../src/mainimpl.cpp" line="881"/>
         <source>The Qt include directory doesn&apos;t exist,
 You can change in Options dialog.</source>
         <translation>Qt include dizini mevcut değil. 
 Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2406"/>
+        <location filename="../../src/mainimpl.cpp" line="2409"/>
         <source>The Qt database building is already in progress.</source>
         <translation>Qt veritabanı şu an zaten oluşturulmakta.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2450"/>
+        <location filename="../../src/mainimpl.cpp" line="2453"/>
         <source>The Qt classes database build is ended.</source>
         <translation>Qt veritabanı oluşturma işlemi bitti.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2234"/>
+        <location filename="../../src/mainimpl.cpp" line="2237"/>
         <source>Version %1</source>
         <translation>Sürüm %1</translation>
     </message>
@@ -2124,167 +2123,167 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation>Yeni proje oluşturma</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="36"/>
+        <location filename="../../ui/newproject.ui" line="35"/>
         <source>Template</source>
         <translation>Şablon</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="55"/>
+        <location filename="../../ui/newproject.ui" line="54"/>
         <source>Application with Dialog</source>
         <translation>Diyaloglu Uygulama</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="65"/>
+        <location filename="../../ui/newproject.ui" line="64"/>
         <source>Application with Main Window</source>
         <translation>Ana Pencereli Uygulama</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="78"/>
+        <location filename="../../ui/newproject.ui" line="77"/>
         <source>Properties</source>
         <translation>Özellikler</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="114"/>
+        <location filename="../../ui/newproject.ui" line="113"/>
         <source>Parent project :</source>
         <translation>Üst proje :</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="124"/>
+        <location filename="../../ui/newproject.ui" line="123"/>
         <source>Project name :</source>
         <translation>Proje adı :</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="134"/>
+        <location filename="../../ui/newproject.ui" line="133"/>
         <source>Location :</source>
         <translation>Konum :</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="175"/>
+        <location filename="../../ui/newproject.ui" line="174"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="188"/>
+        <location filename="../../ui/newproject.ui" line="187"/>
         <source>Project creation on : </source>
         <translation>Projenin oluşturulacağı yer:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="200"/>
+        <location filename="../../ui/newproject.ui" line="199"/>
         <source>Version</source>
         <translation>Sürüm</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="212"/>
+        <location filename="../../ui/newproject.ui" line="211"/>
         <source>Debug Version</source>
         <translation>Hata Ayıklama Sürümü</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="222"/>
+        <location filename="../../ui/newproject.ui" line="221"/>
         <source>Release Version</source>
         <translation>Yayımlanma Sürümü</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="259"/>
+        <location filename="../../ui/newproject.ui" line="258"/>
         <source>OK</source>
         <translation>Tamam</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="266"/>
+        <location filename="../../ui/newproject.ui" line="265"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="275"/>
+        <location filename="../../ui/newproject.ui" line="274"/>
         <source>Sub-directories</source>
         <translation>Alt dizinler</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="303"/>
+        <location filename="../../ui/newproject.ui" line="302"/>
         <source>Dialogs:</source>
         <translation>Diyaloglar:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="313"/>
+        <location filename="../../ui/newproject.ui" line="312"/>
         <source>Executable:</source>
         <translation>Çalışabilir dosya:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="333"/>
+        <location filename="../../ui/newproject.ui" line="332"/>
         <source>ui</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="340"/>
+        <location filename="../../ui/newproject.ui" line="339"/>
         <source>bin</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="367"/>
+        <location filename="../../ui/newproject.ui" line="366"/>
         <source>sources:</source>
         <translation>kaynaklar:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="377"/>
+        <location filename="../../ui/newproject.ui" line="376"/>
         <source>Objects:</source>
         <translation>Nesneler:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="397"/>
+        <location filename="../../ui/newproject.ui" line="396"/>
         <source>src</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="404"/>
+        <location filename="../../ui/newproject.ui" line="403"/>
         <source>build</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="418"/>
+        <location filename="../../ui/newproject.ui" line="417"/>
         <source>Inheritance subclassing</source>
         <translation>Kalıtım alt sınıflama</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="438"/>
+        <location filename="../../ui/newproject.ui" line="437"/>
         <source>Dialog</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="445"/>
+        <location filename="../../ui/newproject.ui" line="444"/>
         <source>DialogImpl</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="472"/>
+        <location filename="../../ui/newproject.ui" line="471"/>
         <source>Object name:</source>
         <translation>Nesne adı:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="492"/>
+        <location filename="../../ui/newproject.ui" line="491"/>
         <source>dialog</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="499"/>
+        <location filename="../../ui/newproject.ui" line="498"/>
         <source>dialogimpl</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="526"/>
+        <location filename="../../ui/newproject.ui" line="525"/>
         <source>File name:</source>
         <translation>Dosya adı:</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="546"/>
+        <location filename="../../ui/newproject.ui" line="545"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Dialog:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Diyalog:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="556"/>
+        <location filename="../../ui/newproject.ui" line="555"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Subclass:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Alt Sınıf:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="48"/>
+        <location filename="../../ui/newproject.ui" line="47"/>
         <source>Empty or master project</source>
         <translation>Boş ya da temel proje</translation>
     </message>
@@ -2297,19 +2296,29 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation>Proje dizinini seçin</translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="120"/>
+        <location filename="../../src/newprojectimpl.cpp" line="136"/>
         <source>The directory &quot;%1&quot; cannot be created</source>
         <translation>&quot;%1&quot; dizini oluşturulamadı</translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="129"/>
+        <location filename="../../src/newprojectimpl.cpp" line="145"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="128"/>
+        <location filename="../../src/newprojectimpl.cpp" line="144"/>
         <source>The project cannot be created</source>
         <translation>Proje oluşturulamıyor</translation>
+    </message>
+    <message>
+        <location filename="../../src/newprojectimpl.cpp" line="122"/>
+        <source>Project file &quot;%1&quot; already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/newprojectimpl.cpp" line="127"/>
+        <source>The directory &quot;%1&quot; already exists. Do you want to create project anyway?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2441,7 +2450,7 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation>Kullanıcı eklentileri dizini: </translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="990"/>
+        <location filename="../../ui/options.ui" line="1044"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -2476,7 +2485,7 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation>Satır numaraları</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="809"/>
+        <location filename="../../ui/options.ui" line="863"/>
         <source>Syntax highlighting</source>
         <translation>Söz dizimi renklendirmesi</translation>
     </message>
@@ -2491,82 +2500,82 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation>Oto-Parantezler</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="536"/>
+        <location filename="../../ui/options.ui" line="590"/>
         <source>Font:</source>
         <translation>Yazı tipi:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="543"/>
+        <location filename="../../ui/options.ui" line="597"/>
         <source>End of line</source>
         <translation>Satır sonu</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="550"/>
+        <location filename="../../ui/options.ui" line="604"/>
         <source>Tab size</source>
         <translation>Sekme boyutu</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="564"/>
+        <location filename="../../ui/options.ui" line="618"/>
         <source>Current line background</source>
         <translation>Geçerli satır arkaplanı</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="571"/>
+        <location filename="../../ui/options.ui" line="625"/>
         <source>Text background</source>
         <translation>Metin arkaplanı</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="637"/>
+        <location filename="../../ui/options.ui" line="691"/>
         <source>Default</source>
         <translation>Öntanımlı</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="642"/>
+        <location filename="../../ui/options.ui" line="696"/>
         <source>Unix</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="647"/>
+        <location filename="../../ui/options.ui" line="701"/>
         <source>Dos/Windows</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="675"/>
+        <location filename="../../ui/options.ui" line="729"/>
         <source>Replace Tab by spaces</source>
         <translation>Sekmeleri boşlukla değiştir</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="880"/>
+        <location filename="../../ui/options.ui" line="934"/>
         <source>Function/method names :</source>
         <translation>İşlev/metod adları :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="887"/>
+        <location filename="../../ui/options.ui" line="941"/>
         <source>Preprocessor :</source>
         <translation>Önişlemci :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="894"/>
+        <location filename="../../ui/options.ui" line="948"/>
         <source>Qt words :</source>
         <translation>Qt sözcükleri :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="901"/>
+        <location filename="../../ui/options.ui" line="955"/>
         <source>Keywords :</source>
         <translation>Anahtar sözcükler :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="908"/>
+        <location filename="../../ui/options.ui" line="962"/>
         <source>Single comments :</source>
         <translation>Tek satırlık yorumlar :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="915"/>
+        <location filename="../../ui/options.ui" line="969"/>
         <source>Multiline comments :</source>
         <translation>Çok satırlı yorumlar :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="922"/>
+        <location filename="../../ui/options.ui" line="976"/>
         <source>Quotation strings :</source>
         <translation>Tırnakla kapalı dizgiler :</translation>
     </message>
@@ -2616,17 +2625,17 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation>Görünmez karakterleri belirt</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="557"/>
+        <location filename="../../ui/options.ui" line="611"/>
         <source>Files encoding:</source>
         <translation>Dosya kodlaması:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="578"/>
+        <location filename="../../ui/options.ui" line="632"/>
         <source>Text color</source>
         <translation>Metin rengi</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="1018"/>
+        <location filename="../../ui/options.ui" line="1072"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -2647,11 +2656,21 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;/*&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* Çok satırlı&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* yorumlar &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;*/&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;// Tek satırlık yorumlar &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;{&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QApplication app(argc, argv);&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QString chaine = &quot;tırnak araları&quot;;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QDialog *main = new QDialog;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <location filename="../../ui/options.ui" line="488"/>
+        <source>Right margin line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="497"/>
+        <source>Column:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/optionsimpl.cpp" line="368"/>
+        <location filename="../../src/optionsimpl.cpp" line="372"/>
         <source>Choose the project directory</source>
         <translation>Proje dizinini seçin</translation>
     </message>
@@ -2755,137 +2774,137 @@ p, li { white-space: pre-wrap; }
         <translation>Proje ayrıştırma</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1191"/>
+        <location filename="../../src/projectmanager.cpp" line="1193"/>
         <source>Save project changes ?</source>
         <translation>Proje değişiklikleri kaydedilsin mi?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1364"/>
+        <location filename="../../src/projectmanager.cpp" line="1366"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1364"/>
+        <location filename="../../src/projectmanager.cpp" line="1366"/>
         <source>No</source>
         <translation>Hayır</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1341"/>
+        <location filename="../../src/projectmanager.cpp" line="1343"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="766"/>
+        <location filename="../../src/projectmanager.cpp" line="768"/>
         <source>Forms:</source>
         <translation>Formlar:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="826"/>
+        <location filename="../../src/projectmanager.cpp" line="828"/>
         <source>Unable to create file.</source>
         <translation>Dosya oluşturulamıyor.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1356"/>
+        <location filename="../../src/projectmanager.cpp" line="1358"/>
         <source>Ok</source>
         <translation>Tamam</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="948"/>
+        <location filename="../../src/projectmanager.cpp" line="950"/>
         <source>Sub-project creation</source>
         <translation>Alt-proje oluşturma</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="984"/>
+        <location filename="../../src/projectmanager.cpp" line="986"/>
         <source>Sub-Projects</source>
         <translation>Alt-Projeler</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1307"/>
+        <location filename="../../src/projectmanager.cpp" line="1309"/>
         <source>New name:</source>
         <translation>Yeni ad:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1313"/>
+        <location filename="../../src/projectmanager.cpp" line="1315"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Yeni ve eski dosya adları değişik türdeler!</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1314"/>
+        <location filename="../../src/projectmanager.cpp" line="1316"/>
         <source>Rename</source>
         <translation>Yeniden adlandır</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1509"/>
+        <location filename="../../src/projectmanager.cpp" line="1511"/>
         <source>Sub-projects</source>
         <translation>Alt-projeler</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1615"/>
+        <location filename="../../src/projectmanager.cpp" line="1617"/>
         <source>Headers</source>
         <translation>Başlıklar</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1620"/>
+        <location filename="../../src/projectmanager.cpp" line="1622"/>
         <source>Sources</source>
         <translation>Kaynaklar</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1625"/>
+        <location filename="../../src/projectmanager.cpp" line="1627"/>
         <source>Dialogs</source>
         <translation>Diyaloglar</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1630"/>
+        <location filename="../../src/projectmanager.cpp" line="1632"/>
         <source>Translations</source>
         <translation>Çeviriler</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1635"/>
+        <location filename="../../src/projectmanager.cpp" line="1637"/>
         <source>Resources</source>
         <translation>Veri Kaynakları</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="753"/>
+        <location filename="../../src/projectmanager.cpp" line="755"/>
         <source>The file already exists in directory.</source>
         <translation>Dosya zaten dizinde mevcut.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="874"/>
+        <location filename="../../src/projectmanager.cpp" line="876"/>
         <source>The file already exists.</source>
         <translation>Dosya zaten var.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="885"/>
+        <location filename="../../src/projectmanager.cpp" line="887"/>
         <source>This file is not permitted.</source>
         <translation>Bu dosya için yetki yetersiz.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1265"/>
+        <location filename="../../src/projectmanager.cpp" line="1267"/>
         <source>The file  &quot;%1&quot; </source>
         <translation>&quot;%1&quot; dosyası </translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1341"/>
+        <location filename="../../src/projectmanager.cpp" line="1343"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Dosya &quot;%1&quot; olarak yeniden adlandırılamadı</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2035"/>
+        <location filename="../../src/projectmanager.cpp" line="2037"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>&quot;%1&quot; için tek uygun sürüm %2</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2036"/>
+        <location filename="../../src/projectmanager.cpp" line="2038"/>
         <source>Run on %1</source>
         <translation>%1 üzerinde çalıştır</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1355"/>
+        <location filename="../../src/projectmanager.cpp" line="1357"/>
         <source>Cannot remove the main project.</source>
         <translation>Ana proje silinemez.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1363"/>
+        <location filename="../../src/projectmanager.cpp" line="1365"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>&quot;%1&quot; adlı öğeyi projeden silmek istiyor musunuz?</translation>
     </message>
@@ -3261,7 +3280,7 @@ p, li { white-space: pre-wrap; }
         <translation>Boşluklar qmake tarafından düzgün bir şekilde ayrıştırılamıyor</translation>
     </message>
     <message>
-        <location filename="../../src/projectpropertieimpl.cpp" line="426"/>
+        <location filename="../../src/projectpropertieimpl.cpp" line="428"/>
         <source>A new variable can not be &quot;QT&quot;, &quot;CONFIG&quot; or &quot;TEMPLATE&quot;</source>
         <translation>Yeni değişken &quot;QT&quot;, &quot;CONFIG&quot; veya &quot;TEMPLATE&quot; olamaz</translation>
     </message>
@@ -3498,11 +3517,6 @@ p, li { white-space: pre-wrap; }
         <source>Choose the file location</source>
         <translation>Dosya konumunu seçin</translation>
     </message>
-    <message>
-        <location filename="../../src/subclassingimpl.cpp" line="50"/>
-        <source></source>
-        <translation></translation>
-    </message>
 </context>
 <context>
     <name>TabWidget</name>
@@ -3525,99 +3539,99 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TextEdit</name>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="664"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="664"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="664"/>
         <source>No</source>
         <translation>Hayır</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1421"/>
+        <location filename="../../src/textEdit.cpp" line="1439"/>
         <source>Goto Implementation</source>
         <translation>Tanıma Git</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1422"/>
+        <location filename="../../src/textEdit.cpp" line="1440"/>
         <source>Goto Declaration</source>
         <translation>Duyuruya Git</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1426"/>
+        <location filename="../../src/textEdit.cpp" line="1444"/>
         <source>Cut</source>
         <translation>Kes</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1427"/>
+        <location filename="../../src/textEdit.cpp" line="1445"/>
         <source>Copy</source>
         <translation>Kopyala</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1428"/>
+        <location filename="../../src/textEdit.cpp" line="1446"/>
         <source>Paste</source>
         <translation>Yapıştır</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1430"/>
+        <location filename="../../src/textEdit.cpp" line="1448"/>
         <source>Selection Indent</source>
         <translation>Seçimi Girintile</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1431"/>
+        <location filename="../../src/textEdit.cpp" line="1449"/>
         <source>Selection Unindent</source>
         <translation>Seçim Girintisini Azalt</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1434"/>
+        <location filename="../../src/textEdit.cpp" line="1452"/>
         <source>Select All</source>
         <translation>Tümünü Seç</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1436"/>
+        <location filename="../../src/textEdit.cpp" line="1454"/>
         <source>Find...</source>
         <translation>Bul...</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1438"/>
+        <location filename="../../src/textEdit.cpp" line="1456"/>
         <source>Toggle Bookmark</source>
         <translation>Yer İmi Ekle/Kaldır</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1439"/>
+        <location filename="../../src/textEdit.cpp" line="1457"/>
         <source>Toggle Breakpoint</source>
         <translation>Kesme Noktası Ekle/Kaldır</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="426"/>
+        <location filename="../../src/textEdit.cpp" line="427"/>
         <source>The file &quot;%1&quot; could not be loaded.</source>
         <translation>&quot;%1&quot; dosyası yüklenemedi.</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="656"/>
+        <location filename="../../src/textEdit.cpp" line="664"/>
         <source>Save &quot;%1&quot;</source>
         <translation>&quot;%1&quot; Dosyasını Kaydet</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="675"/>
+        <location filename="../../src/textEdit.cpp" line="683"/>
         <source>Unable to save %1</source>
         <translation>%1 kaydedilemiyor</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="238"/>
+        <location filename="../../src/textEdit.cpp" line="239"/>
         <source>The Qt database building is in progress.
 Try to complete code later.</source>
         <translation>Qt veritabanı oluşturma işlemi şu an sürüyor. 
 Kod tamamlamayı sonra deneyin.</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="925"/>
+        <location filename="../../src/textEdit.cpp" line="933"/>
         <source>Reached end of page, continued from top</source>
         <translation>Sayfa sonuna ulaşıldı, baştan devam ediliyor</translation>
     </message>
@@ -3698,19 +3712,19 @@ Kod tamamlamayı sonra deneyin.</translation>
 <context>
     <name>ToolsControlImpl</name>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="101"/>
-        <source>Please designe the program</source>
-        <translation>Lütfen programı tasarlayın</translation>
-    </message>
-    <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="173"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="176"/>
         <source>Ok</source>
         <translation>Tamam</translation>
     </message>
     <message>
-        <location filename="../../src/toolscontrolimpl.cpp" line="172"/>
+        <location filename="../../src/toolscontrolimpl.cpp" line="175"/>
         <source>Ctags was detected in path %1, but this version is too old.</source>
         <translation>Ctags %1 dizininde algılandı; fakat bu sürüm çok eski.</translation>
+    </message>
+    <message>
+        <location filename="../../src/toolscontrolimpl.cpp" line="104"/>
+        <source>Please select the program</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
