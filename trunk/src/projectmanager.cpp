@@ -689,7 +689,7 @@ void ProjectManager::slotAddNewItem(QTreeWidgetItem *it, QString kind)
         if ( ajouter )
         {
             window->comboProjects->addItem( projectName,  addressToVariant(projectsList.at(nbProjects)));
-            if ( projectsList.at(nbProjects) == it )
+            if ( projectsList.at(nbProjects) == it || projectsList.at(nbProjects) == it->parent() )
                 window->comboProjects->setCurrentIndex( window->comboProjects->count()-1);
             QList<QTreeWidgetItem *> listeScope;
             childsList(projectsList.at(nbProjects), "SCOPE", listeScope);
