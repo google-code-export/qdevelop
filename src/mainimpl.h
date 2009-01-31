@@ -137,6 +137,9 @@ private:
 	bool m_autoMaskDocks;
 	bool m_autoCompletion;
 	bool m_autobrackets;
+	// Divius: comments autoclose
+	bool m_autocomments;
+	//
 	bool m_match;
 	bool m_highlightCurrentLine;
 	bool m_ctagsIsPresent;

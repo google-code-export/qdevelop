@@ -6,35 +6,24 @@
     <x>0</x>
     <y>0</y>
     <width>527</width>
-    <height>481</height>
+    <height>518</height>
    </rect>
   </property>
   <property name="windowTitle" >
    <string>Options</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resources/resources.qrc" >:/divers/images/logo.png</iconset>
+   <iconset resource="../resources/resources.qrc" >
+    <normaloff>:/divers/images/logo.png</normaloff>:/divers/images/logo.png</iconset>
   </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
   </property>
   <layout class="QGridLayout" >
-   <property name="leftMargin" >
+   <property name="margin" >
     <number>9</number>
    </property>
-   <property name="topMargin" >
-    <number>9</number>
-   </property>
-   <property name="rightMargin" >
-    <number>9</number>
-   </property>
-   <property name="bottomMargin" >
-    <number>9</number>
-   </property>
-   <property name="horizontalSpacing" >
-    <number>6</number>
-   </property>
-   <property name="verticalSpacing" >
+   <property name="spacing" >
     <number>6</number>
    </property>
    <item row="0" column="0" >
@@ -47,22 +36,10 @@
        <string>General</string>
       </attribute>
       <layout class="QGridLayout" >
-       <property name="leftMargin" >
+       <property name="margin" >
         <number>9</number>
        </property>
-       <property name="topMargin" >
-        <number>9</number>
-       </property>
-       <property name="rightMargin" >
-        <number>9</number>
-       </property>
-       <property name="bottomMargin" >
-        <number>9</number>
-       </property>
-       <property name="horizontalSpacing" >
-        <number>6</number>
-       </property>
-       <property name="verticalSpacing" >
+       <property name="spacing" >
         <number>6</number>
        </property>
        <item row="0" column="0" >
@@ -84,22 +61,10 @@
        </item>
        <item row="6" column="0" >
         <layout class="QGridLayout" >
-         <property name="leftMargin" >
+         <property name="margin" >
           <number>0</number>
          </property>
-         <property name="topMargin" >
-          <number>0</number>
-         </property>
-         <property name="rightMargin" >
-          <number>0</number>
-         </property>
-         <property name="bottomMargin" >
-          <number>0</number>
-         </property>
-         <property name="horizontalSpacing" >
-          <number>6</number>
-         </property>
-         <property name="verticalSpacing" >
+         <property name="spacing" >
           <number>6</number>
          </property>
          <item row="2" column="0" >
@@ -219,16 +184,7 @@
          <property name="spacing" >
           <number>6</number>
          </property>
-         <property name="leftMargin" >
-          <number>0</number>
-         </property>
-         <property name="topMargin" >
-          <number>0</number>
-         </property>
-         <property name="rightMargin" >
-          <number>0</number>
-         </property>
-         <property name="bottomMargin" >
+         <property name="margin" >
           <number>0</number>
          </property>
          <item>
@@ -243,7 +199,7 @@
            <property name="orientation" >
             <enum>Qt::Horizontal</enum>
            </property>
-           <property name="sizeHint" >
+           <property name="sizeHint" stdset="0" >
             <size>
              <width>40</width>
              <height>20</height>
@@ -277,7 +233,7 @@
            <property name="orientation" >
             <enum>Qt::Horizontal</enum>
            </property>
-           <property name="sizeHint" >
+           <property name="sizeHint" stdset="0" >
             <size>
              <width>40</width>
              <height>20</height>
@@ -299,7 +255,7 @@
          <property name="orientation" >
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" >
+         <property name="sizeHint" stdset="0" >
           <size>
            <width>20</width>
            <height>40</height>
@@ -314,22 +270,10 @@
        <string>Editor</string>
       </attribute>
       <layout class="QGridLayout" >
-       <property name="leftMargin" >
+       <property name="margin" >
         <number>9</number>
        </property>
-       <property name="topMargin" >
-        <number>9</number>
-       </property>
-       <property name="rightMargin" >
-        <number>9</number>
-       </property>
-       <property name="bottomMargin" >
-        <number>9</number>
-       </property>
-       <property name="horizontalSpacing" >
-        <number>6</number>
-       </property>
-       <property name="verticalSpacing" >
+       <property name="spacing" >
         <number>6</number>
        </property>
        <item row="1" column="0" >
@@ -338,22 +282,10 @@
           <string>options</string>
          </property>
          <layout class="QGridLayout" >
-          <property name="leftMargin" >
+          <property name="margin" >
            <number>9</number>
           </property>
-          <property name="topMargin" >
-           <number>9</number>
-          </property>
-          <property name="rightMargin" >
-           <number>9</number>
-          </property>
-          <property name="bottomMargin" >
-           <number>9</number>
-          </property>
-          <property name="horizontalSpacing" >
-           <number>6</number>
-          </property>
-          <property name="verticalSpacing" >
+          <property name="spacing" >
            <number>6</number>
           </property>
           <item row="1" column="0" >
@@ -370,21 +302,12 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="0" >
+          <item row="4" column="0" >
            <layout class="QHBoxLayout" >
             <property name="spacing" >
              <number>6</number>
             </property>
-            <property name="leftMargin" >
-             <number>0</number>
-            </property>
-            <property name="topMargin" >
-             <number>0</number>
-            </property>
-            <property name="rightMargin" >
-             <number>0</number>
-            </property>
-            <property name="bottomMargin" >
+            <property name="margin" >
              <number>0</number>
             </property>
             <item>
@@ -399,16 +322,7 @@
               <property name="spacing" >
                <number>6</number>
               </property>
-              <property name="leftMargin" >
-               <number>0</number>
-              </property>
-              <property name="topMargin" >
-               <number>0</number>
-              </property>
-              <property name="rightMargin" >
-               <number>0</number>
-              </property>
-              <property name="bottomMargin" >
+              <property name="margin" >
                <number>0</number>
               </property>
               <item>
@@ -423,7 +337,7 @@
                 <property name="orientation" >
                  <enum>Qt::Horizontal</enum>
                 </property>
-                <property name="sizeHint" >
+                <property name="sizeHint" stdset="0" >
                  <size>
                   <width>40</width>
                   <height>20</height>
@@ -435,7 +349,7 @@
             </item>
            </layout>
           </item>
-          <item row="2" column="0" >
+          <item row="3" column="0" >
            <widget class="QCheckBox" name="completion" >
             <property name="text" >
              <string>Complete Code</string>
@@ -456,7 +370,7 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="1" >
+          <item row="3" column="1" >
            <widget class="QCheckBox" name="highlight" >
             <property name="text" >
              <string>Syntax highlighting</string>
@@ -466,21 +380,21 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="1" >
+          <item row="4" column="1" >
            <widget class="QCheckBox" name="showEditorToolbars" >
             <property name="text" >
              <string>Display editor toolbars</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="1" >
+          <item row="5" column="1" >
            <widget class="QCheckBox" name="displayWhiteSpaces" >
             <property name="text" >
              <string>Display white spaces</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="0" >
+          <item row="5" column="0" >
            <layout class="QHBoxLayout" name="horizontalLayout" >
             <item>
              <widget class="QCheckBox" name="rightMarginLine" >
@@ -534,6 +448,13 @@
             </item>
            </layout>
           </item>
+          <item row="2" column="1" >
+           <widget class="QCheckBox" name="comments" >
+            <property name="text" >
+             <string>Auto-Comments</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -542,7 +463,7 @@
          <property name="orientation" >
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" >
+         <property name="sizeHint" stdset="0" >
           <size>
            <width>20</width>
            <height>40</height>
@@ -555,16 +476,7 @@
          <property name="spacing" >
           <number>6</number>
          </property>
-         <property name="leftMargin" >
-          <number>0</number>
-         </property>
-         <property name="topMargin" >
-          <number>0</number>
-         </property>
-         <property name="rightMargin" >
-          <number>0</number>
-         </property>
-         <property name="bottomMargin" >
+         <property name="margin" >
           <number>0</number>
          </property>
          <item>
@@ -572,16 +484,7 @@
            <property name="spacing" >
             <number>6</number>
            </property>
-           <property name="leftMargin" >
-            <number>0</number>
-           </property>
-           <property name="topMargin" >
-            <number>0</number>
-           </property>
-           <property name="rightMargin" >
-            <number>0</number>
-           </property>
-           <property name="bottomMargin" >
+           <property name="margin" >
             <number>0</number>
            </property>
            <item>
@@ -640,16 +543,7 @@
            <property name="spacing" >
             <number>6</number>
            </property>
-           <property name="leftMargin" >
-            <number>0</number>
-           </property>
-           <property name="topMargin" >
-            <number>0</number>
-           </property>
-           <property name="rightMargin" >
-            <number>0</number>
-           </property>
-           <property name="bottomMargin" >
+           <property name="margin" >
             <number>0</number>
            </property>
            <item>
@@ -657,16 +551,7 @@
              <property name="spacing" >
               <number>6</number>
              </property>
-             <property name="leftMargin" >
-              <number>0</number>
-             </property>
-             <property name="topMargin" >
-              <number>0</number>
-             </property>
-             <property name="rightMargin" >
-              <number>0</number>
-             </property>
-             <property name="bottomMargin" >
+             <property name="margin" >
               <number>0</number>
              </property>
              <item>
@@ -708,16 +593,7 @@
              <property name="spacing" >
               <number>6</number>
              </property>
-             <property name="leftMargin" >
-              <number>0</number>
-             </property>
-             <property name="topMargin" >
-              <number>0</number>
-             </property>
-             <property name="rightMargin" >
-              <number>0</number>
-             </property>
-             <property name="bottomMargin" >
+             <property name="margin" >
               <number>0</number>
              </property>
              <item>
@@ -740,16 +616,7 @@
              <property name="spacing" >
               <number>6</number>
              </property>
-             <property name="leftMargin" >
-              <number>0</number>
-             </property>
-             <property name="topMargin" >
-              <number>0</number>
-             </property>
-             <property name="rightMargin" >
-              <number>0</number>
-             </property>
-             <property name="bottomMargin" >
+             <property name="margin" >
               <number>0</number>
              </property>
              <item>
@@ -764,7 +631,7 @@
                <property name="orientation" >
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint" >
+               <property name="sizeHint" stdset="0" >
                 <size>
                  <width>40</width>
                  <height>20</height>
@@ -779,16 +646,7 @@
              <property name="spacing" >
               <number>6</number>
              </property>
-             <property name="leftMargin" >
-              <number>0</number>
-             </property>
-             <property name="topMargin" >
-              <number>0</number>
-             </property>
-             <property name="rightMargin" >
-              <number>0</number>
-             </property>
-             <property name="bottomMargin" >
+             <property name="margin" >
               <number>0</number>
              </property>
              <item>
@@ -803,7 +661,7 @@
                <property name="orientation" >
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint" >
+               <property name="sizeHint" stdset="0" >
                 <size>
                  <width>40</width>
                  <height>20</height>
@@ -818,16 +676,7 @@
              <property name="spacing" >
               <number>6</number>
              </property>
-             <property name="leftMargin" >
-              <number>0</number>
-             </property>
-             <property name="topMargin" >
-              <number>0</number>
-             </property>
-             <property name="rightMargin" >
-              <number>0</number>
-             </property>
-             <property name="bottomMargin" >
+             <property name="margin" >
               <number>0</number>
              </property>
              <item>
@@ -842,7 +691,7 @@
                <property name="orientation" >
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint" >
+               <property name="sizeHint" stdset="0" >
                 <size>
                  <width>40</width>
                  <height>20</height>
@@ -863,22 +712,10 @@
        <string>Syntax highlighting</string>
       </attribute>
       <layout class="QGridLayout" >
-       <property name="leftMargin" >
+       <property name="margin" >
         <number>9</number>
        </property>
-       <property name="topMargin" >
-        <number>9</number>
-       </property>
-       <property name="rightMargin" >
-        <number>9</number>
-       </property>
-       <property name="bottomMargin" >
-        <number>9</number>
-       </property>
-       <property name="horizontalSpacing" >
-        <number>6</number>
-       </property>
-       <property name="verticalSpacing" >
+       <property name="spacing" >
         <number>6</number>
        </property>
        <item row="1" column="1" >
@@ -886,7 +723,7 @@
          <property name="orientation" >
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" >
+         <property name="sizeHint" stdset="0" >
           <size>
            <width>20</width>
            <height>40</height>
@@ -899,16 +736,7 @@
          <property name="spacing" >
           <number>6</number>
          </property>
-         <property name="leftMargin" >
-          <number>0</number>
-         </property>
-         <property name="topMargin" >
-          <number>0</number>
-         </property>
-         <property name="rightMargin" >
-          <number>0</number>
-         </property>
-         <property name="bottomMargin" >
+         <property name="margin" >
           <number>0</number>
          </property>
          <item>
@@ -916,16 +744,7 @@
            <property name="spacing" >
             <number>6</number>
            </property>
-           <property name="leftMargin" >
-            <number>0</number>
-           </property>
-           <property name="topMargin" >
-            <number>0</number>
-           </property>
-           <property name="rightMargin" >
-            <number>0</number>
-           </property>
-           <property name="bottomMargin" >
+           <property name="margin" >
             <number>0</number>
            </property>
            <item>
@@ -984,16 +803,7 @@
            <property name="spacing" >
             <number>6</number>
            </property>
-           <property name="leftMargin" >
-            <number>0</number>
-           </property>
-           <property name="topMargin" >
-            <number>0</number>
-           </property>
-           <property name="rightMargin" >
-            <number>0</number>
-           </property>
-           <property name="bottomMargin" >
+           <property name="margin" >
             <number>0</number>
            </property>
            <item>
@@ -1069,7 +879,8 @@
           <bool>true</bool>
          </property>
          <property name="html" >
-          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:400; font-style:normal;">
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS'; font-size:8pt;">&lt;span style=" font-size:10pt;">/*&lt;/span>&lt;/p>
@@ -1099,16 +910,7 @@ p, li { white-space: pre-wrap; }
      <property name="spacing" >
       <number>6</number>
      </property>
-     <property name="leftMargin" >
-      <number>0</number>
-     </property>
-     <property name="topMargin" >
-      <number>0</number>
-     </property>
-     <property name="rightMargin" >
-      <number>0</number>
-     </property>
-     <property name="bottomMargin" >
+     <property name="margin" >
       <number>0</number>
      </property>
      <item>
@@ -1117,7 +919,7 @@ p, li { white-space: pre-wrap; }
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="standardButtons" >
-        <set>QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok|QDialogButtonBox::RestoreDefaults</set>
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::RestoreDefaults</set>
        </property>
       </widget>
      </item>

@@ -476,6 +476,23 @@ void TextEdit::autobrackets()
     cursor.movePosition(QTextCursor::EndOfLine );
     setTextCursor( cursor );
 }
+// Divius: comments autoclose
+void TextEdit::autocomments(bool start)
+{
+	if (start)
+	{
+		textCursor().insertText( " * \n */" );
+		
+		setTextCursor( getLineCursor(currentLineNumber()-1) );
+		QTextCursor cursor = textCursor();
+		cursor.movePosition(QTextCursor::EndOfLine );
+		setTextCursor( cursor );
+	}
+	else
+	{
+		textCursor().insertText( "* " );
+	}
+}
 //
 void TextEdit::autoIndent()
 {
@@ -509,10 +526,10 @@ void TextEdit::autoIndent()
             break;
     }
     if ( simple.simplified().length() && ((simple.contains("(") && simple.contains(")")
-                                           && QString("if:while:do:switch:foreach").contains( simple.section("(", 0, 0).simplified() )
-                                           && (simple.contains('{') || simple.right(1) != ";" ) )
-                                          || QString("else:case:default").indexOf( simple.simplified() ) == 0
-                                          || simple.simplified().at(0) == '{' || simple.simplified().at( simple.simplified().length()-1 ) == '{' ))
+            && QString("if:while:do:switch:foreach").contains( simple.section("(", 0, 0).simplified() )
+            && (simple.contains('{') || simple.right(1) != ";" ) )
+           || QString("else:case:default").indexOf( simple.simplified() ) == 0
+           || simple.simplified().at(0) == '{' || simple.simplified().at( simple.simplified().length()-1 ) == '{' ))
     {
         if ( m_tabSpaces )
         {
@@ -1180,6 +1197,35 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
         {
             QTextEdit::keyPressEvent ( event );
         }
+        // Divius: comments autoclose
+        if (m_autocomments)
+        {
+	        QTextBlock commentBlock = getLineCursor(currentLineNumber()-1).block();
+	        QString prevLine = commentBlock.text();
+	        if (prevLine.endsWith("/*") || prevLine.endsWith("/**") || prevLine.endsWith("/*!"))
+	        {
+	            autocomments(true);
+	       	}
+	       	else if (prevLine.simplified().startsWith("*") && !prevLine.simplified().startsWith("*/")) 
+	       		while (commentBlock.isValid())
+		       	{
+		       		prevLine = commentBlock.text();
+		       		if (prevLine.simplified().startsWith("/*"))
+		       		{
+		       			autocomments(false);
+		       			break;
+		      		}
+		      		else if (prevLine.simplified().startsWith("*") && !prevLine.simplified().startsWith("*/"))
+		      		{
+		      			commentBlock = commentBlock.previous();
+	      			}
+	      			else
+	      			{
+	      				break;
+	     			}
+		      	}
+       	}
+        //
     }
     else if ( event->key() == Qt::Key_Home && ( !event->modifiers() || event->modifiers() == Qt::ShiftModifier ) )
     {
