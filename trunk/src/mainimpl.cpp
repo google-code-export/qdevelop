@@ -91,6 +91,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_tabSpaces = false;
     m_autoCompletion = true;
     m_autobrackets = true;
+    m_autocomments = true;
     m_match = true;
     m_highlightCurrentLine = true;
     m_backgroundColor = Qt::white;
@@ -612,7 +613,7 @@ void MainImpl::slotOptions()
                                            m_formatPreprocessorText, m_formatQtText, m_formatSingleComments,
                                            m_formatMultilineComments, m_formatQuotationText, m_formatMethods,
                                            m_formatKeywords, m_autoMaskDocks, m_endLine, m_tabSpaces, m_autoCompletion,
-                                           m_backgroundColor, m_promptBeforeQuit, m_highlightCurrentLine, m_currentLineColor, m_autobrackets,
+                                           m_backgroundColor, m_promptBeforeQuit, m_highlightCurrentLine, m_currentLineColor, m_autobrackets, m_autocomments,
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
                                            m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec,
                                            m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces, m_rightMarginLine, m_documentationDirectory,
@@ -637,6 +638,9 @@ void MainImpl::slotOptions()
         m_tabSpaces = options->tabSpaces->isChecked();
         m_autoCompletion = options->completion->isChecked();
         m_autobrackets = options->brackets->isChecked();
+        // Divius: comments autoclose
+        m_autocomments = options->comments->isChecked();
+        //
         m_match = options->match->isChecked();
         m_highlightCurrentLine = options->groupHighlightCurrentLine->isChecked();
         m_promptBeforeQuit = options->promptBeforeQuit->isChecked();
@@ -688,6 +692,7 @@ void MainImpl::slotOptions()
             editor->setCurrentLineColor( m_currentLineColor );
             editor->setMatchingColor( m_matchingColor );
             editor->setAutobrackets( m_autobrackets );
+            editor->setAutocomments( m_autocomments );
             editor->setShowWhiteSpaces( m_displayWhiteSpaces );
             editor->setRightMargin( m_rightMarginLine );
             editor->displayEditorToolbar( m_displayEditorToolbars );
@@ -735,6 +740,9 @@ void MainImpl::saveINI()
     settings.setValue("m_promptBeforeQuit", m_promptBeforeQuit);
     settings.setValue("m_autoCompletion", m_autoCompletion);
     settings.setValue("m_autobrackets", m_autobrackets);
+    // Divius: comments autoclose
+    settings.setValue("m_autocomments", m_autocomments);
+    //
     settings.setValue("m_closeButtonInTabs", m_closeButtonInTabs);
     settings.setValue("m_match", m_match);
     settings.setValue("m_highlightCurrentLine", m_highlightCurrentLine);
@@ -849,6 +857,9 @@ QString MainImpl::loadINI()
     m_autoIndent = settings.value("m_autoIndent", m_autoIndent).toBool();
     m_autoCompletion = settings.value("m_autoCompletion", m_autoCompletion).toBool();
     m_autobrackets = settings.value("m_autobrackets", m_autobrackets).toBool();
+    // Divius: comments autoclose
+    m_autocomments = settings.value("m_autocomments", m_autocomments).toBool();
+    //
     m_selectionBorder = settings.value("m_selectionBorder", m_selectionBorder).toBool();
     m_saveBeforeBuild = settings.value("m_saveBeforeBuild", m_saveBeforeBuild).toBool();
     m_restoreOnStart = settings.value("m_restoreOnStart", m_restoreOnStart).toBool();
@@ -1333,6 +1344,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     editor->setTabSpaces( m_tabSpaces );
     editor->setAutoCompletion( m_autoCompletion );
     editor->setAutobrackets( m_autobrackets );
+    editor->setAutocomments( m_autocomments );
     editor->setBackgroundColor( m_backgroundColor );
     editor->setTextColor( m_textColor );
     editor->setMatch( m_match );

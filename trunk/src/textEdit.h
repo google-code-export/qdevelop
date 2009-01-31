@@ -90,6 +90,12 @@ public:
     {
         m_autobrackets = b;
     };
+    // Divius: comments autoclose
+    void setAutocomments(bool b)
+    {
+        m_autocomments = b;
+    };
+    //
     void setMatch(bool b)
     {
         m_match = b;
@@ -168,6 +174,9 @@ private:
     bool m_autoindent;
     void autoIndent();
     void autobrackets();
+    // Divius: comments autoclose
+    void autocomments(bool start = true);
+    //
     void autoUnindent();
     void match();
     void clearMatch();
@@ -177,6 +186,9 @@ private:
     QListWidget *m_completionList;
     bool m_autoCompletion;
     bool m_autobrackets;
+    // Divius: comments autoclose
+    bool m_autocomments;
+    //
     bool m_match;
     bool m_highlightCurrentLine;
     bool m_showWhiteSpaces;

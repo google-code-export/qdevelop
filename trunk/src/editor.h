@@ -131,6 +131,9 @@ public:
 	int verticalScrollBar() { return m_textEdit->verticalScrollBar()->value(); };
 	void setVerticalScrollBar(int s) { m_textEdit->verticalScrollBar()->setValue(s); };
 	void setAutobrackets(bool b) { m_textEdit->setAutobrackets(b); };
+	// Divius: comments autoclose
+	void setAutocomments(bool c) { m_textEdit->setAutocomments(c); };
+	//
 	void setMatch(bool b) { m_textEdit->setMatch(b); };
 	void saveAsTemp() { m_textEdit->saveAsTemp(); };
 	void setHighlightCurrentLine(bool b) { m_textEdit->setHighlightCurrentLine(b); };

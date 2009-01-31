@@ -36,7 +36,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	QTextCharFormat pre, QTextCharFormat qt, QTextCharFormat commSimples, 
 	QTextCharFormat commMulti, QTextCharFormat guil, QTextCharFormat meth, 
     QTextCharFormat cles, bool /*autoMask*/, int end, bool spaces, bool complete, 
-    QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool tc, int in, QString directory,
+    QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool comm, bool tc, int in, QString directory,
     bool m, QColor mc, bool close, QString pd, QString mo, int mi, QString ic, 
     bool editorToolbars, bool whiteSpaces, int rightMargin, QString docDirectory, QColor textCol, bool ac )
 	: QDialog(parent)
@@ -59,6 +59,9 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	completion->setChecked( complete );
 	promptBeforeQuit->setChecked( prompt );
 	brackets->setChecked( bk );
+	// Divius: comments autoclose
+	comments->setChecked( comm );
+	//
 	showTreeClasses->setChecked( tc );
 	interval->setValue( in );
 	interval->setEnabled( tc );
@@ -294,6 +297,9 @@ void OptionsImpl::slotDefault()
 	completion->setChecked( true );
 	indent->setChecked( true );
 	brackets->setChecked( true );
+	// Divius: comments autoclose
+	comments->setChecked( true );
+	//
 	highlight->setChecked( true );
 	match->setChecked( true );
 	projectsDirectory->setText( QDir::homePath() );
