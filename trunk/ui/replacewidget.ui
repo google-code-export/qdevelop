@@ -5,47 +5,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>893</width>
-    <height>29</height>
+    <width>700</width>
+    <height>75</height>
    </rect>
   </property>
   <property name="windowTitle" >
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" >
-   <property name="leftMargin" >
-    <number>0</number>
-   </property>
-   <property name="topMargin" >
-    <number>0</number>
-   </property>
-   <property name="rightMargin" >
-    <number>0</number>
-   </property>
-   <property name="bottomMargin" >
-    <number>0</number>
-   </property>
-   <property name="horizontalSpacing" >
-    <number>0</number>
-   </property>
-   <property name="verticalSpacing" >
-    <number>0</number>
-   </property>
-   <item row="0" column="0" >
+  <layout class="QVBoxLayout" name="verticalLayout" >
+   <item>
     <layout class="QHBoxLayout" >
      <property name="spacing" >
       <number>3</number>
      </property>
-     <property name="leftMargin" >
-      <number>0</number>
-     </property>
-     <property name="topMargin" >
-      <number>0</number>
-     </property>
-     <property name="rightMargin" >
-      <number>0</number>
-     </property>
-     <property name="bottomMargin" >
+     <property name="margin" >
       <number>0</number>
      </property>
      <item>
@@ -54,7 +27,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/resources.qrc" >:/toolbar/images/cross.png</iconset>
+        <iconset resource="../resources/resources.qrc" >
+         <normaloff>:/toolbar/images/cross.png</normaloff>:/toolbar/images/cross.png</iconset>
        </property>
        <property name="autoRaise" >
         <bool>true</bool>
@@ -132,7 +106,8 @@
         <string>Previous</string>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/resources.qrc" >:/divers/images/previous.png</iconset>
+        <iconset resource="../resources/resources.qrc" >
+         <normaloff>:/divers/images/previous.png</normaloff>:/divers/images/previous.png</iconset>
        </property>
        <property name="toolButtonStyle" >
         <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -154,7 +129,8 @@
         <string>Next</string>
        </property>
        <property name="icon" >
-        <iconset resource="../resources/resources.qrc" >:/divers/images/next.png</iconset>
+        <iconset resource="../resources/resources.qrc" >
+         <normaloff>:/divers/images/next.png</normaloff>:/divers/images/next.png</iconset>
        </property>
        <property name="toolButtonStyle" >
         <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -167,6 +143,10 @@
        </property>
       </widget>
      </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" >
      <item>
       <widget class="QCheckBox" name="checkCase" >
        <property name="text" >
@@ -195,6 +175,19 @@
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacer" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QFrame" name="labelWrapped" >
        <property name="frameShape" >
         <enum>QFrame::Box</enum>
@@ -205,40 +198,19 @@
        <property name="lineWidth" >
         <number>0</number>
        </property>
-       <layout class="QGridLayout" >
-        <property name="leftMargin" >
+       <layout class="QGridLayout" name="_2" >
+        <property name="margin" >
          <number>0</number>
         </property>
-        <property name="topMargin" >
-         <number>0</number>
-        </property>
-        <property name="rightMargin" >
-         <number>0</number>
-        </property>
-        <property name="bottomMargin" >
-         <number>0</number>
-        </property>
-        <property name="horizontalSpacing" >
-         <number>0</number>
-        </property>
-        <property name="verticalSpacing" >
+        <property name="spacing" >
          <number>0</number>
         </property>
         <item row="0" column="0" >
-         <layout class="QHBoxLayout" >
+         <layout class="QHBoxLayout" name="_3" >
           <property name="spacing" >
            <number>6</number>
           </property>
-          <property name="leftMargin" >
-           <number>0</number>
-          </property>
-          <property name="topMargin" >
-           <number>0</number>
-          </property>
-          <property name="rightMargin" >
-           <number>0</number>
-          </property>
-          <property name="bottomMargin" >
+          <property name="margin" >
            <number>0</number>
           </property>
           <item>
@@ -263,22 +235,11 @@
        </layout>
       </widget>
      </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>41</width>
-         <height>21</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
     </layout>
    </item>
   </layout>
+  <zorder>horizontalLayoutWidget</zorder>
+  <zorder>label</zorder>
  </widget>
  <resources>
   <include location="../resources/resources.qrc" />

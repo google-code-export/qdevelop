@@ -34,11 +34,6 @@ SET( OPTIMIZATION_FLAGS "-O2")
 
 ADD_DEFINITIONS( ${OPTIMIZATION_FLAGS} )
 
-IF (UNIX)
-	SET( CMAKE_INSTALL_PREFIX "/usr" )
-ENDIF (UNIX)
-
-
 # input files
 SET( qdevelop_UIS
 	ui/about.ui 
