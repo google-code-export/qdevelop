@@ -876,12 +876,12 @@ was modified outside editor.
     <message>
         <location filename="../../ui/findwidget.ui" line="67"/>
         <source>Previous</source>
-        <translation>Предыдущ</translation>
+        <translation>Предыдущее</translation>
     </message>
     <message>
         <location filename="../../ui/findwidget.ui" line="89"/>
         <source>Next</source>
-        <translation>Следующ</translation>
+        <translation>Следующее</translation>
     </message>
     <message>
         <location filename="../../ui/findwidget.ui" line="108"/>
@@ -896,7 +896,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/findwidget.ui" line="158"/>
         <source>Reached end of page, continued from top</source>
-        <translation>По достижении конца страницы ищет сначала</translation>
+        <translation>Поиск с начала страницы</translation>
     </message>
 </context>
 <context>
@@ -3433,7 +3433,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/replacewidget.ui" line="257"/>
         <source>Reached end of page, continued from top</source>
-        <translation type="unfinished">По достижении конца страницы ищет сначала</translation>
+        <translation>Поиск с начала страницы</translation>
     </message>
 </context>
 <context>
@@ -3650,7 +3650,7 @@ Try to complete code later.</source>
     <message>
         <location filename="../../src/textEdit.cpp" line="950"/>
         <source>Reached end of page, continued from top</source>
-        <translation type="unfinished">По достижении конца страницы ищет сначала</translation>
+        <translation>Поиск с начала страницы</translation>
     </message>
 </context>
 <context>

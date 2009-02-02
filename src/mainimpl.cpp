@@ -2330,7 +2330,7 @@ void MainImpl::loadPlugins()
 #else
     if ( m_pluginsDirectory.isEmpty() )
     {
-        QDir dir = QDir("/usr/lib/qdevelop/plugins");
+        QDir dir = QDir(qApp->applicationDirPath()+"/../lib/qdevelop/plugins/");
         foreach(QString fileName, dir.entryList(QDir::Files) )
         {
             entryList += dir.absoluteFilePath(fileName);
