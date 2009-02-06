@@ -154,6 +154,7 @@ private:
 	bool m_displayWhiteSpaces;
 	int m_rightMarginLine;
 	bool m_wordWrap;
+	int m_hideFindReplace;
 	QToolButton *crossButton;
 	QPointer<QActionGroup> m_projectGroup;
 	QPointer<QActionGroup> m_buildingGroup;

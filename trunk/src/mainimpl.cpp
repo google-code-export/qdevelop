@@ -121,7 +121,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_displayWhiteSpaces = true;
     m_rightMarginLine = 80;
     m_automaticCompilation = true;
-
+    m_hideFindReplace = 10;
     //
     m_formatPreprocessorText.setForeground(QColor(0,128,0));
     m_formatQtText.setForeground(Qt::blue);
@@ -618,7 +618,7 @@ void MainImpl::slotOptions()
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
                                            m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec,
                                            m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces, m_rightMarginLine, m_documentationDirectory,
-                                           m_textColor, m_automaticCompilation, m_wordWrap
+                                           m_textColor, m_automaticCompilation, m_wordWrap, m_hideFindReplace
      );
 
     if ( options->exec() == QDialog::Accepted )
@@ -672,6 +672,10 @@ void MainImpl::slotOptions()
         else
             m_rightMarginLine = 0;
         m_wordWrap = options->wordwrap->isChecked();
+        if (options->hideFindReplace->isChecked())
+        	m_hideFindReplace = options->findReplaceDelay->value();
+        else
+        	m_hideFindReplace = 0;
 
         slotUpdateOtherFileActions();
         foreach(Editor *editor, allEditors() )
@@ -709,6 +713,7 @@ void MainImpl::slotOptions()
                 m_formatKeywords
             );
             editor->setWordWrap(m_wordWrap);
+            editor->setHideFindReplace(m_hideFindReplace);
         }
 	/* TODO
         if (!m_showTreeClasses) //ToolsOptions/General
@@ -775,6 +780,7 @@ void MainImpl::saveINI()
     settings.setValue("m_rightMarginLine", m_rightMarginLine);
     settings.setValue("editorMode", actionEditor_mode->isChecked() );
     settings.setValue("m_wordWrap", m_wordWrap);
+    settings.setValue("m_hideFindReplace", m_hideFindReplace);
     settings.endGroup();
 
     // Save shortcuts
@@ -890,6 +896,7 @@ QString MainImpl::loadINI()
     m_displayWhiteSpaces = settings.value("m_displayWhiteSpaces", m_displayWhiteSpaces).toBool();
     m_rightMarginLine = settings.value("m_rightMarginLine", m_rightMarginLine).toInt();
     m_wordWrap = settings.value("m_wordWrap", m_wordWrap).toBool();
+    m_hideFindReplace = settings.value("m_hideFindReplace", m_hideFindReplace).toInt();
 	
 	if( !QDir().exists(m_includeDirectory) )
 	{
@@ -1370,6 +1377,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
         m_formatKeywords
     );
     editor->setWordWrap(m_wordWrap);
+    editor->setHideFindReplace(m_hideFindReplace);
 
     if ( !editor->open(silentMode) )
     {

@@ -66,6 +66,7 @@ Editor::Editor(TabWidget * parent, MainImpl *mainimpl, InitCompletion *completio
     m_backward = false;
     m_activeEditor = false;
     m_nameOtherFile = "";
+    m_hideFindReplace = 10;
     //
     QGridLayout *gridLayout = new QGridLayout(this);
     gridLayout->setSpacing(0);
@@ -375,7 +376,11 @@ void Editor::find()
     else
         uiFind.editFind->setText( m_textEdit->wordUnderCursor() );
     uiFind.editFind->selectAll();
-    autoHideTimer->start();
+    if (m_hideFindReplace > 0)
+    {
+    	autoHideTimer->setInterval(m_hideFindReplace*1000);
+    	autoHideTimer->start();
+   	}
 }
 //
 void Editor::slotReplace()
@@ -425,7 +430,11 @@ void Editor::replace()
     else
         uiReplace.textFind->setEditText( m_textEdit->wordUnderCursor() );
     uiReplace.textFind->lineEdit()->selectAll();
-    autoHideTimer->start();
+    if (m_hideFindReplace > 0)
+    {
+    	autoHideTimer->setInterval(m_hideFindReplace*1000);
+    	autoHideTimer->start();
+   	}
 }
 
 //return current selected text or word under cursor

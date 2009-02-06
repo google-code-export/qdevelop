@@ -713,27 +713,27 @@ Compilação de %1...
 <context>
     <name>Editor</name>
     <message>
-        <location filename="../../src/editor.cpp" line="92"/>
+        <location filename="../../src/editor.cpp" line="93"/>
         <source>Refresh classes and methods lists</source>
         <translation>Atualizar classes e listas de métodos</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="253"/>
+        <location filename="../../src/editor.cpp" line="254"/>
         <source>What do you want to do?</source>
         <translation>O que você quer fazer?</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="254"/>
+        <location filename="../../src/editor.cpp" line="255"/>
         <source>Overwrite</source>
         <translation>Sobrescrever</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="254"/>
+        <location filename="../../src/editor.cpp" line="255"/>
         <source>Reload File</source>
         <translation>Recarregar arquivo</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="252"/>
+        <location filename="../../src/editor.cpp" line="253"/>
         <source>The file &quot;%1&quot;
 was modified outside editor.
 
@@ -742,12 +742,12 @@ was modified outside editor.
 foi modificada fora do editor.</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="187"/>
+        <location filename="../../src/editor.cpp" line="188"/>
         <source>Open %1</source>
         <translation>Abrir %1</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="404"/>
+        <location filename="../../src/editor.cpp" line="409"/>
         <source>%1 replacement(s) made.</source>
         <translation>%1 substituto (ções) feita.</translation>
     </message>
@@ -1878,7 +1878,7 @@ erro </translation>
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1192"/>
+        <location filename="../../src/mainimpl.cpp" line="1199"/>
         <source>Choose the file to create</source>
         <translation>Selecione o arquivo a criar</translation>
     </message>
@@ -1888,147 +1888,147 @@ erro </translation>
         <translation>Arquivos</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2272"/>
+        <location filename="../../src/mainimpl.cpp" line="2280"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="987"/>
+        <location filename="../../src/mainimpl.cpp" line="994"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>Deseja realmente sair do QDevelop?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1861"/>
+        <location filename="../../src/mainimpl.cpp" line="1869"/>
         <source>Yes</source>
         <translation>Sim</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1861"/>
+        <location filename="../../src/mainimpl.cpp" line="1869"/>
         <source>No</source>
         <translation>Não</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1035"/>
+        <location filename="../../src/mainimpl.cpp" line="1042"/>
         <source>Choose a file to open</source>
         <translation>Selecione o arquivo a abrir</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1037"/>
+        <location filename="../../src/mainimpl.cpp" line="1044"/>
         <source>Sources</source>
         <translation>Fontes</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1066"/>
+        <location filename="../../src/mainimpl.cpp" line="1073"/>
         <source>Projects</source>
         <translation>Projetos</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1039"/>
+        <location filename="../../src/mainimpl.cpp" line="1046"/>
         <source>Texts</source>
         <translation>Textos</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1040"/>
+        <location filename="../../src/mainimpl.cpp" line="1047"/>
         <source>All Files</source>
         <translation>Todos os arquivos</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1194"/>
+        <location filename="../../src/mainimpl.cpp" line="1201"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>Arquivos (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1886"/>
+        <location filename="../../src/mainimpl.cpp" line="1894"/>
         <source>Stop</source>
         <translation>Parar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1965"/>
+        <location filename="../../src/mainimpl.cpp" line="1973"/>
         <source>Start</source>
         <translation>Iniciar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1844"/>
+        <location filename="../../src/mainimpl.cpp" line="1852"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>O projeto foi modificado, quer salvar as alterações?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1860"/>
+        <location filename="../../src/mainimpl.cpp" line="1868"/>
         <source>Stop debugging ?</source>
         <translation>Para depuração?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1873"/>
+        <location filename="../../src/mainimpl.cpp" line="1881"/>
         <source>run Build.</source>
         <translation>execute a compilação.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1873"/>
+        <location filename="../../src/mainimpl.cpp" line="1881"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1888"/>
+        <location filename="../../src/mainimpl.cpp" line="1896"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1966"/>
+        <location filename="../../src/mainimpl.cpp" line="1974"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2034"/>
+        <location filename="../../src/mainimpl.cpp" line="2042"/>
         <source>Abort</source>
         <translation>Abortar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2027"/>
+        <location filename="../../src/mainimpl.cpp" line="2035"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Não é possível parar no Windows. Coloque pontos de parada.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2069"/>
+        <location filename="../../src/mainimpl.cpp" line="2077"/>
         <source>Continue</source>
         <translation>Continuar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2127"/>
+        <location filename="../../src/mainimpl.cpp" line="2135"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2262"/>
+        <location filename="../../src/mainimpl.cpp" line="2270"/>
         <source>New Variable:</source>
         <translation>Nova variável:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1064"/>
+        <location filename="../../src/mainimpl.cpp" line="1071"/>
         <source>Choose a project to open</source>
         <translation>Selecione o projeto a abrir</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1661"/>
+        <location filename="../../src/mainimpl.cpp" line="1669"/>
         <source>Build finished without error</source>
         <translation>Compilação concluída sem erros</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1663"/>
+        <location filename="../../src/mainimpl.cpp" line="1671"/>
         <source>Build finished with</source>
         <translation>Compilação concluída com</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1665"/>
+        <location filename="../../src/mainimpl.cpp" line="1673"/>
         <source>error(s)</source>
         <translation>erro(s)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1665"/>
+        <location filename="../../src/mainimpl.cpp" line="1673"/>
         <source>and</source>
         <translation>e</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1667"/>
+        <location filename="../../src/mainimpl.cpp" line="1675"/>
         <source>warning(s)</source>
         <translation>advertência(s)</translation>
     </message>
@@ -2045,46 +2045,46 @@ existe já no diretório.</translation>
         <translation>Impossível criar %1</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1087"/>
+        <location filename="../../src/mainimpl.cpp" line="1094"/>
         <source>The project %1 doesn&apos;t exist.</source>
         <translation>O projeto &quot;%1&quot; não existe.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1173"/>
+        <location filename="../../src/mainimpl.cpp" line="1180"/>
         <source>Properties of %1...</source>
         <translation>Propriedades do %1...</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1872"/>
+        <location filename="../../src/mainimpl.cpp" line="1880"/>
         <source>The program doesn&apos;t exist,</source>
         <translation>O programa não existe,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2271"/>
+        <location filename="../../src/mainimpl.cpp" line="2279"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation>O arquivo &quot;%1&quot; 
 existe já.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="897"/>
+        <location filename="../../src/mainimpl.cpp" line="904"/>
         <source>The Qt include directory doesn&apos;t exist,
 You can change in Options dialog.</source>
         <translation>O Qt include diretório não existir,
 Você pode mudar no diálogo Opções.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2427"/>
+        <location filename="../../src/mainimpl.cpp" line="2435"/>
         <source>The Qt database building is already in progress.</source>
         <translation>O Qt banco de dados edifício já está em andamento.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2471"/>
+        <location filename="../../src/mainimpl.cpp" line="2479"/>
         <source>The Qt classes database build is ended.</source>
         <translation>O Qt banco de dados classes edifício é encerrado.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2255"/>
+        <location filename="../../src/mainimpl.cpp" line="2263"/>
         <source>Version %1</source>
         <translation>Versão %1</translation>
     </message>
@@ -2457,52 +2457,52 @@ Você pode mudar no diálogo Opções.</translation>
         <translation>Editore</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="500"/>
+        <location filename="../../ui/options.ui" line="559"/>
         <source>Font:</source>
         <translation>Fonte:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="507"/>
+        <location filename="../../ui/options.ui" line="566"/>
         <source>End of line</source>
         <translation>Final de linha</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="514"/>
+        <location filename="../../ui/options.ui" line="573"/>
         <source>Tab size</source>
         <translation>Tamanho do TAB</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="528"/>
+        <location filename="../../ui/options.ui" line="587"/>
         <source>Current line background</source>
         <translation>Fundo da linha atual</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="535"/>
+        <location filename="../../ui/options.ui" line="594"/>
         <source>Text background</source>
         <translation>Fundo do texto</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="583"/>
+        <location filename="../../ui/options.ui" line="642"/>
         <source>Default</source>
         <translation>Padrão</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="588"/>
+        <location filename="../../ui/options.ui" line="647"/>
         <source>Unix</source>
         <translation>Unix</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="593"/>
+        <location filename="../../ui/options.ui" line="652"/>
         <source>Dos/Windows</source>
         <translation>Dos/Windows</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="612"/>
+        <location filename="../../ui/options.ui" line="671"/>
         <source>Replace Tab by spaces</source>
         <translation>Substituir TAB por espaços</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="861"/>
+        <location filename="../../ui/options.ui" line="920"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -2517,7 +2517,7 @@ Você pode mudar no diálogo Opções.</translation>
         <translation>Números de linha</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="719"/>
+        <location filename="../../ui/options.ui" line="778"/>
         <source>Syntax highlighting</source>
         <translation>Realce de sintaxe</translation>
     </message>
@@ -2542,37 +2542,37 @@ Você pode mudar no diálogo Opções.</translation>
         <translation>Indentar automaticamente</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="760"/>
+        <location filename="../../ui/options.ui" line="819"/>
         <source>Function/method names :</source>
         <translation>Nomes de funções/métodos:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="767"/>
+        <location filename="../../ui/options.ui" line="826"/>
         <source>Preprocessor :</source>
         <translation>Pre-processador:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="774"/>
+        <location filename="../../ui/options.ui" line="833"/>
         <source>Qt words :</source>
         <translation>Palavras do Qt:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="781"/>
+        <location filename="../../ui/options.ui" line="840"/>
         <source>Keywords :</source>
         <translation>Palavras chave:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="788"/>
+        <location filename="../../ui/options.ui" line="847"/>
         <source>Single comments :</source>
         <translation>Comentários simples:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="795"/>
+        <location filename="../../ui/options.ui" line="854"/>
         <source>Multiline comments :</source>
         <translation>Comentários multi-linhas:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="802"/>
+        <location filename="../../ui/options.ui" line="861"/>
         <source>Quotation strings :</source>
         <translation>Quebra de textos:</translation>
     </message>
@@ -2637,12 +2637,12 @@ Você pode mudar no diálogo Opções.</translation>
         <translation>Display branco espaços</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="521"/>
+        <location filename="../../ui/options.ui" line="580"/>
         <source>Files encoding:</source>
         <translation>Arquivos codificação:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="542"/>
+        <location filename="../../ui/options.ui" line="601"/>
         <source>Text color</source>
         <translation>Cor do texto</translation>
     </message>
@@ -2662,7 +2662,7 @@ Você pode mudar no diálogo Opções.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="889"/>
+        <location filename="../../ui/options.ui" line="948"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -2685,15 +2685,25 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="461"/>
+        <location filename="../../ui/options.ui" line="508"/>
         <source>Word wrap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="463"/>
+        <source>Hide Find/Replace panels after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="486"/>
+        <source>sec.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/optionsimpl.cpp" line="380"/>
+        <location filename="../../src/optionsimpl.cpp" line="384"/>
         <source>Choose the project directory</source>
         <translation>Selecione o diretório para o projeto</translation>
     </message>
@@ -3544,6 +3554,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/subclassingimpl.cpp" line="411"/>
         <source>(.h and .cpp)</source>
         <translation>(.h e .cpp)</translation>
+    </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="50"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
