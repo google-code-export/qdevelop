@@ -52,18 +52,24 @@ int main(int argc, char *argv[])
 	QTranslator translatorQDevelop, translatorQt;
 	QString language = QLocale::languageToString( QLocale::system().language() );
 	//
-	QStringList toOpen;
-	for(int i=0; i<QString(app.argv()[ 1 ]).split(" ",QString::SkipEmptyParts).count(); i++)
+	QStringList toOpen, args = QCoreApplication::arguments();
+	if (!args.isEmpty()) args.removeFirst();
+	bool nextArgIsLanguage = false;
+	foreach (QString arg, args)
 	{
-		QString s = QString(app.argv()[ 1 ]).split(" ",QString::SkipEmptyParts).at(i);
-		if( s == "-l" )
+		if (arg.simplified() == "-l")
 		{
-			language = QString(app.argv()[ 2 ]).split(" ",QString::SkipEmptyParts).at(i);
-			
-			//i++;
+			nextArgIsLanguage = true;
+		}
+		else if (nextArgIsLanguage)
+		{
+			language = arg.simplified();
+			nextArgIsLanguage = false;
 		}
 		else
-			toOpen << QString(app.argv()[ 1 ]).split(" ",QString::SkipEmptyParts).at(i);
+		{
+			toOpen << arg;
+		}
 	}
 	qApp->processEvents();
 	//
