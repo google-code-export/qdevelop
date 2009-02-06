@@ -28,6 +28,7 @@
 #include <QListWidget>
 #include <QTextStream>
 #include <QDebug>
+#include <QDateTime>
 
 //
 FindFileImpl::FindFileImpl( QWidget * parent, QStringList directories, QListWidget *listResult, QListWidget *findLines)
@@ -37,6 +38,7 @@ FindFileImpl::FindFileImpl( QWidget * parent, QStringList directories, QListWidg
 
     // BK - store last entered search on the top.
     textFind->setInsertPolicy(QComboBox::InsertAtTop);
+    textReplace->setInsertPolicy(QComboBox::InsertAtTop);
 
     for (int i=0; i<directories.count(); i++)
         comboFindIn->addItem(directories.at(i)+"/");
@@ -153,8 +155,30 @@ void FindFileImpl::find( QString directory )
 void FindFileImpl::findInFile( QString filename )
 {
     QFile file(filename);
+    bool replace = checkReplace->isChecked();
+    
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
+    
+    QString tempFileName = QDir::tempPath() + QDir::separator() + 
+    	"qdtemp-" + QDateTime::currentDateTime().toString("yyMMddmmss") +
+    	QFileInfo(filename).fileName();
+    
+    QFile tempFile(tempFileName);
+    QTextStream tempStream;
+    if (replace)
+    {
+    	if (!tempFile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
+    	{
+    		qDebug() << tr("Cannot open temporary file %1").arg(tempFileName);
+    		replace = false;
+   		}
+   		else
+   		{
+   			tempStream.setDevice(&tempFile);
+  		}
+   	}
+   	
     //
     QRegExp exp;
     if ( checkWholeWords->isChecked() )
@@ -171,13 +195,29 @@ void FindFileImpl::findInFile( QString filename )
     {
         numLine++;
         QString line = in.readLine();
+        
+        if (replace)
+        {
+        	line = line.replace(exp, textReplace->currentText());
+        	tempStream << line << endl;
+       	}
+        
         if ( line.contains(exp) )
         {
             lines << tr("Line")+" "+QString::number(numLine)+" : "+line;
         }
     }
+    if (tempFile.isOpen()) tempFile.close();
     file.close();
-    if ( lines.count() )
+    
+    if (replace)
+    {
+    	QFile::remove(filename);
+    	QFile::copy(tempFileName, filename);
+    	QFile::remove(tempFileName);
+   	}
+   	
+   	if ( lines.count() )
     {
         //display only the relative path
         m_listResult->addItem( tr("File")+" : "+filename.mid(m_searchDirectory.size()) );

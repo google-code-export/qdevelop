@@ -786,87 +786,102 @@ was modified outside editor.
         <translation>在多个文件中查找</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="41"/>
+        <location filename="../../ui/findfiles.ui" line="27"/>
         <source>Pattern:</source>
         <translation>模式:</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="86"/>
+        <location filename="../../ui/findfiles.ui" line="70"/>
         <source>Case Sensitive</source>
         <translation>大小写敏感</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="93"/>
+        <location filename="../../ui/findfiles.ui" line="77"/>
         <source>Whole words</source>
         <translation>整词匹配</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="100"/>
+        <location filename="../../ui/findfiles.ui" line="84"/>
         <source>Recursive </source>
         <translation>递归查找</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="158"/>
+        <location filename="../../ui/findfiles.ui" line="140"/>
         <source>*.cpp; *.h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="163"/>
+        <location filename="../../ui/findfiles.ui" line="145"/>
         <source>*.ui; *.qrc; *.txt</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="171"/>
+        <location filename="../../ui/findfiles.ui" line="153"/>
         <source>Files:</source>
         <translation>文件:</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="190"/>
+        <location filename="../../ui/findfiles.ui" line="170"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="197"/>
+        <location filename="../../ui/findfiles.ui" line="177"/>
         <source>Find in:</source>
         <translation>查找的目录:</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="261"/>
+        <location filename="../../ui/findfiles.ui" line="278"/>
         <source>&amp;Find</source>
         <translation>查找(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="268"/>
+        <location filename="../../ui/findfiles.ui" line="285"/>
         <source>&amp;Close</source>
         <translation>关闭(&amp;C)</translation>
+    </message>
+    <message>
+        <location filename="../../ui/findfiles.ui" line="199"/>
+        <source>Replace found text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/findfiles.ui" line="214"/>
+        <source>Replace with:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FindFileImpl</name>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="76"/>
+        <location filename="../../src/findfileimpl.cpp" line="78"/>
         <source>Choose a directory</source>
         <translation>选择目录</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="118"/>
+        <location filename="../../src/findfileimpl.cpp" line="120"/>
         <source>&amp;Find</source>
         <translation>查找(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="100"/>
+        <location filename="../../src/findfileimpl.cpp" line="102"/>
         <source>&amp;Stop</source>
         <translation>停止(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="176"/>
+        <location filename="../../src/findfileimpl.cpp" line="207"/>
         <source>Line</source>
         <translation>行</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="183"/>
+        <location filename="../../src/findfileimpl.cpp" line="223"/>
         <source>File</source>
         <translation>文件</translation>
+    </message>
+    <message>
+        <location filename="../../src/findfileimpl.cpp" line="173"/>
+        <source>Cannot open temporary file %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3548,6 +3563,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/subclassingimpl.cpp" line="411"/>
         <source>(.h and .cpp)</source>
         <translation>(.h and .cpp)</translation>
+    </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="50"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

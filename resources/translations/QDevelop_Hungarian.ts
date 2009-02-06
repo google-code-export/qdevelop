@@ -784,87 +784,102 @@ módosult a programon kívül.
         <translation>Keresés a fájlokban</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="41"/>
+        <location filename="../../ui/findfiles.ui" line="27"/>
         <source>Pattern:</source>
         <translation>Minta:</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="86"/>
+        <location filename="../../ui/findfiles.ui" line="70"/>
         <source>Case Sensitive</source>
         <translation>Kis-nagybetű érzékeny</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="93"/>
+        <location filename="../../ui/findfiles.ui" line="77"/>
         <source>Whole words</source>
         <translation>Teljes szóra</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="100"/>
+        <location filename="../../ui/findfiles.ui" line="84"/>
         <source>Recursive </source>
         <translation>Rekurzívan </translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="158"/>
+        <location filename="../../ui/findfiles.ui" line="140"/>
         <source>*.cpp; *.h</source>
         <translation>*.cpp; *.h</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="163"/>
+        <location filename="../../ui/findfiles.ui" line="145"/>
         <source>*.ui; *.qrc; *.txt</source>
         <translation>*.ui; *.qrc; *.txt</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="171"/>
+        <location filename="../../ui/findfiles.ui" line="153"/>
         <source>Files:</source>
         <translation>Fájlok:</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="190"/>
+        <location filename="../../ui/findfiles.ui" line="170"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="197"/>
+        <location filename="../../ui/findfiles.ui" line="177"/>
         <source>Find in:</source>
         <translation>Keresés ebben:</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="261"/>
+        <location filename="../../ui/findfiles.ui" line="278"/>
         <source>&amp;Find</source>
         <translation>&amp;Keres</translation>
     </message>
     <message>
-        <location filename="../../ui/findfiles.ui" line="268"/>
+        <location filename="../../ui/findfiles.ui" line="285"/>
         <source>&amp;Close</source>
         <translation>&amp;Becsuk</translation>
+    </message>
+    <message>
+        <location filename="../../ui/findfiles.ui" line="199"/>
+        <source>Replace found text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/findfiles.ui" line="214"/>
+        <source>Replace with:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FindFileImpl</name>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="76"/>
+        <location filename="../../src/findfileimpl.cpp" line="78"/>
         <source>Choose a directory</source>
         <translation>Vállassz könyvtárat</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="118"/>
+        <location filename="../../src/findfileimpl.cpp" line="120"/>
         <source>&amp;Find</source>
         <translation>&amp;Keres</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="100"/>
+        <location filename="../../src/findfileimpl.cpp" line="102"/>
         <source>&amp;Stop</source>
         <translation>&amp;Megállít</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="176"/>
+        <location filename="../../src/findfileimpl.cpp" line="207"/>
         <source>Line</source>
         <translation>Sor</translation>
     </message>
     <message>
-        <location filename="../../src/findfileimpl.cpp" line="183"/>
+        <location filename="../../src/findfileimpl.cpp" line="223"/>
         <source>File</source>
         <translation>Fájl</translation>
+    </message>
+    <message>
+        <location filename="../../src/findfileimpl.cpp" line="173"/>
+        <source>Cannot open temporary file %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3548,6 +3563,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/subclassingimpl.cpp" line="487"/>
         <source>Choose the file location</source>
         <translation>Vállaszd ki a fájlt</translation>
+    </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="50"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
