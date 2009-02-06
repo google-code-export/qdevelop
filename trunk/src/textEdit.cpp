@@ -119,7 +119,7 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
 	m_spacePixmap		= QPixmap( spacePixmap_img ); 
 	m_showWhiteSpaces	= true;
 	m_rightMarginColumn	= 80;
-
+	m_autocomments = false;
     
     connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));
     connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
