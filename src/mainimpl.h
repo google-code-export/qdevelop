@@ -153,6 +153,7 @@ private:
 	bool m_displayEditorToolbars;
 	bool m_displayWhiteSpaces;
 	int m_rightMarginLine;
+	bool m_wordWrap;
 	QToolButton *crossButton;
 	QPointer<QActionGroup> m_projectGroup;
 	QPointer<QActionGroup> m_buildingGroup;

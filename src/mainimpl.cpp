@@ -106,6 +106,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_completion = 0;
     m_projectsDirectory = QDir::homePath();
     m_closeButtonInTabs = false;
+    m_wordWrap = false;
     m_assistant = 0;
     m_designer = 0;
     crossButton = 0;
@@ -617,7 +618,7 @@ void MainImpl::slotOptions()
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
                                            m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec,
                                            m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces, m_rightMarginLine, m_documentationDirectory,
-                                           m_textColor, m_automaticCompilation
+                                           m_textColor, m_automaticCompilation, m_wordWrap
      );
 
     if ( options->exec() == QDialog::Accepted )
@@ -670,6 +671,7 @@ void MainImpl::slotOptions()
             m_rightMarginLine = options->rightMarginPos->value();
         else
             m_rightMarginLine = 0;
+        m_wordWrap = options->wordwrap->isChecked();
 
         slotUpdateOtherFileActions();
         foreach(Editor *editor, allEditors() )
@@ -706,6 +708,7 @@ void MainImpl::slotOptions()
                 m_formatMethods,
                 m_formatKeywords
             );
+            editor->setWordWrap(m_wordWrap);
         }
 	/* TODO
         if (!m_showTreeClasses) //ToolsOptions/General
@@ -771,6 +774,7 @@ void MainImpl::saveINI()
     settings.setValue("m_displayWhiteSpaces", m_displayWhiteSpaces);
     settings.setValue("m_rightMarginLine", m_rightMarginLine);
     settings.setValue("editorMode", actionEditor_mode->isChecked() );
+    settings.setValue("m_wordWrap", m_wordWrap);
     settings.endGroup();
 
     // Save shortcuts
@@ -885,6 +889,7 @@ QString MainImpl::loadINI()
     slotUpdateOtherFileActions();
     m_displayWhiteSpaces = settings.value("m_displayWhiteSpaces", m_displayWhiteSpaces).toBool();
     m_rightMarginLine = settings.value("m_rightMarginLine", m_rightMarginLine).toInt();
+    m_wordWrap = settings.value("m_wordWrap", m_wordWrap).toBool();
 	
 	if( !QDir().exists(m_includeDirectory) )
 	{
@@ -1364,6 +1369,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
         m_formatMethods,
         m_formatKeywords
     );
+    editor->setWordWrap(m_wordWrap);
 
     if ( !editor->open(silentMode) )
     {

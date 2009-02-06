@@ -119,6 +119,10 @@ public:
     {
         m_rightMarginColumn = c;
     }
+    void setWordWrap( bool w )
+    {
+    	if (w) setLineWrapMode(QTextEdit::WidgetWidth); else setLineWrapMode(QTextEdit::NoWrap);
+   	}
     int currentLineNumber(QTextCursor cursor=QTextCursor());
     int currentLineNumber(QTextBlock block);
     int linesCount();
@@ -201,7 +205,6 @@ private:
     bool m_mouseHidden;
 	QPixmap	m_tabPixmap;
 	QPixmap m_spacePixmap;
-
 protected:
     void resizeEvent( QResizeEvent* );
     void keyPressEvent ( QKeyEvent * event );

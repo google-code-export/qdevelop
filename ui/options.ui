@@ -29,7 +29,7 @@
    <item row="0" column="0" >
     <widget class="QTabWidget" name="tabWidget" >
      <property name="currentIndex" >
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tabGeneral" >
       <attribute name="title" >
@@ -452,6 +452,13 @@
            <widget class="QCheckBox" name="comments" >
             <property name="text" >
              <string>Auto-Comments</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" >
+           <widget class="QCheckBox" name="wordwrap" >
+            <property name="text" >
+             <string>Word wrap</string>
             </property>
            </widget>
           </item>

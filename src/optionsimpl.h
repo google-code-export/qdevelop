@@ -43,7 +43,10 @@ public:
 		//
 		bool tc, int in, QString directory, bool m, QColor mc, bool close, QString pd, QString mo, int mi,
 		QString ic, bool editorToolbars, bool whiteSpaces, int rightMargin, QString docDirectory, QColor textCol,
-		bool ac
+		bool ac,
+		// Divius: word wrap 
+		bool ww
+		//
 		);
 	QFont font();
 	CppHighlighter *syntaxe() { return cppHighLighter; };
