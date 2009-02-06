@@ -135,6 +135,10 @@ public:
 	// Divius: comments autoclose
 	void setAutocomments(bool c) { m_textEdit->setAutocomments(c); };
 	//
+	void setHideFindReplace(int delay) 
+	{
+		m_hideFindReplace = delay;
+	}
 	void setMatch(bool b) { m_textEdit->setMatch(b); };
 	void saveAsTemp() { m_textEdit->saveAsTemp(); };
 	void setHighlightCurrentLine(bool b) { m_textEdit->setHighlightCurrentLine(b); };
@@ -221,6 +225,7 @@ private:
 	InitCompletion *m_completion;
 	QDateTime m_lastModified;
 	QWidget *m_editorToolbar;
+	int m_hideFindReplace;
 	void checkBookmarks();
 	void updateOtherFile(QString currentFile);
 protected:

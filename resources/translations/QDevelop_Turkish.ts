@@ -707,27 +707,27 @@ Compilation of %1...
 <context>
     <name>Editor</name>
     <message>
-        <location filename="../../src/editor.cpp" line="92"/>
+        <location filename="../../src/editor.cpp" line="93"/>
         <source>Refresh classes and methods lists</source>
         <translation>Sınıf ve metod listelerini yenile</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="253"/>
+        <location filename="../../src/editor.cpp" line="254"/>
         <source>What do you want to do?</source>
         <translation>Ne yapmak istiyorsunuz?</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="254"/>
+        <location filename="../../src/editor.cpp" line="255"/>
         <source>Overwrite</source>
         <translation>Üzerine Yaz</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="254"/>
+        <location filename="../../src/editor.cpp" line="255"/>
         <source>Reload File</source>
         <translation>Dosyayı Yeniden Yükle</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="252"/>
+        <location filename="../../src/editor.cpp" line="253"/>
         <source>The file &quot;%1&quot;
 was modified outside editor.
 
@@ -736,12 +736,12 @@ was modified outside editor.
 editör dışında bir yerde değiştirilmiş.</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="187"/>
+        <location filename="../../src/editor.cpp" line="188"/>
         <source>Open %1</source>
         <translation>%1 dosyasını aç</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="404"/>
+        <location filename="../../src/editor.cpp" line="409"/>
         <source>%1 replacement(s) made.</source>
         <translation>%1 değiştirme yapıldı.</translation>
     </message>
@@ -1871,7 +1871,7 @@ editör dışında bir yerde değiştirilmiş.</translation>
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1192"/>
+        <location filename="../../src/mainimpl.cpp" line="1199"/>
         <source>Choose the file to create</source>
         <translation>Oluşturulacak dosyayı seçin</translation>
     </message>
@@ -1881,147 +1881,147 @@ editör dışında bir yerde değiştirilmiş.</translation>
         <translation>Dosyalar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2272"/>
+        <location filename="../../src/mainimpl.cpp" line="2280"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="987"/>
+        <location filename="../../src/mainimpl.cpp" line="994"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>QDevelop&apos;tan çıkmak istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1861"/>
+        <location filename="../../src/mainimpl.cpp" line="1869"/>
         <source>Yes</source>
         <translation>Evet</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1861"/>
+        <location filename="../../src/mainimpl.cpp" line="1869"/>
         <source>No</source>
         <translation>Hayır</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1035"/>
+        <location filename="../../src/mainimpl.cpp" line="1042"/>
         <source>Choose a file to open</source>
         <translation>Açmak için bir dosya seçin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1037"/>
+        <location filename="../../src/mainimpl.cpp" line="1044"/>
         <source>Sources</source>
         <translation>Kaynaklar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1066"/>
+        <location filename="../../src/mainimpl.cpp" line="1073"/>
         <source>Projects</source>
         <translation>Projeler</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1039"/>
+        <location filename="../../src/mainimpl.cpp" line="1046"/>
         <source>Texts</source>
         <translation>Metinler</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1040"/>
+        <location filename="../../src/mainimpl.cpp" line="1047"/>
         <source>All Files</source>
         <translation>Tüm Dosyalar</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1064"/>
+        <location filename="../../src/mainimpl.cpp" line="1071"/>
         <source>Choose a project to open</source>
         <translation>Açmak için bir proje seçin</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1194"/>
+        <location filename="../../src/mainimpl.cpp" line="1201"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>Dosyalar (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1886"/>
+        <location filename="../../src/mainimpl.cpp" line="1894"/>
         <source>Stop</source>
         <translation>Dur</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1661"/>
+        <location filename="../../src/mainimpl.cpp" line="1669"/>
         <source>Build finished without error</source>
         <translation>İnşa hatasız bitti</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1663"/>
+        <location filename="../../src/mainimpl.cpp" line="1671"/>
         <source>Build finished with</source>
         <translation>İnşa sonuçları</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1665"/>
+        <location filename="../../src/mainimpl.cpp" line="1673"/>
         <source>error(s)</source>
         <translation>hata</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1665"/>
+        <location filename="../../src/mainimpl.cpp" line="1673"/>
         <source>and</source>
         <translation>ve</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1667"/>
+        <location filename="../../src/mainimpl.cpp" line="1675"/>
         <source>warning(s)</source>
         <translation>uyarı</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1965"/>
+        <location filename="../../src/mainimpl.cpp" line="1973"/>
         <source>Start</source>
         <translation>Başla</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1844"/>
+        <location filename="../../src/mainimpl.cpp" line="1852"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Proje değiştirildi. Değişiklikleri kaydetmek istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1860"/>
+        <location filename="../../src/mainimpl.cpp" line="1868"/>
         <source>Stop debugging ?</source>
         <translation>Hata ayıklama sonlansın mı?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1873"/>
+        <location filename="../../src/mainimpl.cpp" line="1881"/>
         <source>run Build.</source>
         <translation>İnşayı başlat.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1873"/>
+        <location filename="../../src/mainimpl.cpp" line="1881"/>
         <source>Ok</source>
         <translation>Tamam</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1888"/>
+        <location filename="../../src/mainimpl.cpp" line="1896"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1966"/>
+        <location filename="../../src/mainimpl.cpp" line="1974"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2034"/>
+        <location filename="../../src/mainimpl.cpp" line="2042"/>
         <source>Abort</source>
         <translation>Durdur</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2027"/>
+        <location filename="../../src/mainimpl.cpp" line="2035"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Windows altında durdurmak mümkün değil. Kesme noktaları koyun.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2069"/>
+        <location filename="../../src/mainimpl.cpp" line="2077"/>
         <source>Continue</source>
         <translation>Devam</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2127"/>
+        <location filename="../../src/mainimpl.cpp" line="2135"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2262"/>
+        <location filename="../../src/mainimpl.cpp" line="2270"/>
         <source>New Variable:</source>
         <translation>Yeni Değişken:</translation>
     </message>
@@ -2038,46 +2038,46 @@ editör dışında bir yerde değiştirilmiş.</translation>
         <translation>%1 oluşturulamadı</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1087"/>
+        <location filename="../../src/mainimpl.cpp" line="1094"/>
         <source>The project %1 doesn&apos;t exist.</source>
         <translation>%1 projesi mevcut değil.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1173"/>
+        <location filename="../../src/mainimpl.cpp" line="1180"/>
         <source>Properties of %1...</source>
         <translation>%1 Özellikleri...</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1872"/>
+        <location filename="../../src/mainimpl.cpp" line="1880"/>
         <source>The program doesn&apos;t exist,</source>
         <translation>Program mevcut değil,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2271"/>
+        <location filename="../../src/mainimpl.cpp" line="2279"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation>&quot;%1&quot; değişkeni 
  zaten mevcut.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="897"/>
+        <location filename="../../src/mainimpl.cpp" line="904"/>
         <source>The Qt include directory doesn&apos;t exist,
 You can change in Options dialog.</source>
         <translation>Qt include dizini mevcut değil. 
 Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2427"/>
+        <location filename="../../src/mainimpl.cpp" line="2435"/>
         <source>The Qt database building is already in progress.</source>
         <translation>Qt veritabanı şu an zaten oluşturulmakta.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2471"/>
+        <location filename="../../src/mainimpl.cpp" line="2479"/>
         <source>The Qt classes database build is ended.</source>
         <translation>Qt veritabanı oluşturma işlemi bitti.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2255"/>
+        <location filename="../../src/mainimpl.cpp" line="2263"/>
         <source>Version %1</source>
         <translation>Sürüm %1</translation>
     </message>
@@ -2455,7 +2455,7 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation>Kullanıcı eklentileri dizini: </translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="861"/>
+        <location filename="../../ui/options.ui" line="920"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -2490,7 +2490,7 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation>Satır numaraları</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="719"/>
+        <location filename="../../ui/options.ui" line="778"/>
         <source>Syntax highlighting</source>
         <translation>Söz dizimi renklendirmesi</translation>
     </message>
@@ -2505,82 +2505,82 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation>Oto-Parantezler</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="500"/>
+        <location filename="../../ui/options.ui" line="559"/>
         <source>Font:</source>
         <translation>Yazı tipi:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="507"/>
+        <location filename="../../ui/options.ui" line="566"/>
         <source>End of line</source>
         <translation>Satır sonu</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="514"/>
+        <location filename="../../ui/options.ui" line="573"/>
         <source>Tab size</source>
         <translation>Sekme boyutu</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="528"/>
+        <location filename="../../ui/options.ui" line="587"/>
         <source>Current line background</source>
         <translation>Geçerli satır arkaplanı</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="535"/>
+        <location filename="../../ui/options.ui" line="594"/>
         <source>Text background</source>
         <translation>Metin arkaplanı</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="583"/>
+        <location filename="../../ui/options.ui" line="642"/>
         <source>Default</source>
         <translation>Öntanımlı</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="588"/>
+        <location filename="../../ui/options.ui" line="647"/>
         <source>Unix</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="593"/>
+        <location filename="../../ui/options.ui" line="652"/>
         <source>Dos/Windows</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="612"/>
+        <location filename="../../ui/options.ui" line="671"/>
         <source>Replace Tab by spaces</source>
         <translation>Sekmeleri boşlukla değiştir</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="760"/>
+        <location filename="../../ui/options.ui" line="819"/>
         <source>Function/method names :</source>
         <translation>İşlev/metod adları :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="767"/>
+        <location filename="../../ui/options.ui" line="826"/>
         <source>Preprocessor :</source>
         <translation>Önişlemci :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="774"/>
+        <location filename="../../ui/options.ui" line="833"/>
         <source>Qt words :</source>
         <translation>Qt sözcükleri :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="781"/>
+        <location filename="../../ui/options.ui" line="840"/>
         <source>Keywords :</source>
         <translation>Anahtar sözcükler :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="788"/>
+        <location filename="../../ui/options.ui" line="847"/>
         <source>Single comments :</source>
         <translation>Tek satırlık yorumlar :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="795"/>
+        <location filename="../../ui/options.ui" line="854"/>
         <source>Multiline comments :</source>
         <translation>Çok satırlı yorumlar :</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="802"/>
+        <location filename="../../ui/options.ui" line="861"/>
         <source>Quotation strings :</source>
         <translation>Tırnakla kapalı dizgiler :</translation>
     </message>
@@ -2630,12 +2630,12 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation>Görünmez karakterleri belirt</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="521"/>
+        <location filename="../../ui/options.ui" line="580"/>
         <source>Files encoding:</source>
         <translation>Dosya kodlaması:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="542"/>
+        <location filename="../../ui/options.ui" line="601"/>
         <source>Text color</source>
         <translation>Metin rengi</translation>
     </message>
@@ -2655,7 +2655,7 @@ Seçenekler penceresinden dizin yolunu değiştirebilirsiniz.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="889"/>
+        <location filename="../../ui/options.ui" line="948"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -2678,15 +2678,25 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="461"/>
+        <location filename="../../ui/options.ui" line="508"/>
         <source>Word wrap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="463"/>
+        <source>Hide Find/Replace panels after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="486"/>
+        <source>sec.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/optionsimpl.cpp" line="380"/>
+        <location filename="../../src/optionsimpl.cpp" line="384"/>
         <source>Choose the project directory</source>
         <translation>Proje dizinini seçin</translation>
     </message>
@@ -3537,6 +3547,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/subclassingimpl.cpp" line="487"/>
         <source>Choose the file location</source>
         <translation>Dosya konumunu seçin</translation>
+    </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="50"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

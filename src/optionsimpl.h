@@ -45,8 +45,9 @@ public:
 		QString ic, bool editorToolbars, bool whiteSpaces, int rightMargin, QString docDirectory, QColor textCol,
 		bool ac,
 		// Divius: word wrap 
-		bool ww
-		//
+		bool ww,
+		// Divius: autohide find/replace
+		int findReplace
 		);
 	QFont font();
 	CppHighlighter *syntaxe() { return cppHighLighter; };

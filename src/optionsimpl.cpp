@@ -39,7 +39,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
     QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool comm, bool tc, int in, QString directory,
     bool m, QColor mc, bool close, QString pd, QString mo, int mi, QString ic, 
     bool editorToolbars, bool whiteSpaces, int rightMargin, QString docDirectory, QColor textCol, 
-    bool ac, bool ww )
+    bool ac, bool ww, int findReplace )
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -79,6 +79,8 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	rightMarginLine->setChecked( rightMargin > 0 );
 	rightMarginPos->setValue( rightMargin > 0 ? rightMargin : 80 );
 	wordwrap->setChecked( ww );
+	hideFindReplace->setChecked( findReplace > 0 );
+	findReplaceDelay->setValue( findReplace > 0 ? findReplace : 10 );
 	//
 	QPixmap pix(25, 25);
 	pix.fill( pre.foreground().color() );
@@ -311,6 +313,8 @@ void OptionsImpl::slotDefault()
 	tabStopWidth->setValue( 4 );
 	tabSpaces->setChecked( false );
 	wordwrap->setChecked( false );
+	hideFindReplace->setChecked( true );
+	findReplaceDelay->setValue( 10 );
 #ifdef WIN32
     comboFont->setCurrentIndex( comboFont->findText( "Courier New" ) );
 #else
