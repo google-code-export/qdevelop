@@ -34,5 +34,10 @@ QAction *variantToAction( QVariant variant );
 bool connectDB(QString const& dbName);
 QString getQDevelopPath(void);
 
+#ifdef Q_OS_UNIX
+#define SETTINGS_FILE_NAME ".qdevelop"
+#else
+#define SETTINGS_FILE_NAME "qdevelop-settings.db"
+#endif
 
 #endif
