@@ -123,7 +123,7 @@ void ProjectManager::parseTreeClasses(bool force)
         return;
     m_treeClasses->clear();
     QString directory = projectDirectory( m_treeFiles->topLevelItem( 0 ) );
-    if ( QFile::exists( directory+"/qdevelop-settings.db" ) && !force)
+    if ( QFile::exists( directory + "/" + SETTINGS_FILE_NAME ) && !force)
     {
         m_treeClasses->fromDB( directory );
     }
@@ -264,9 +264,9 @@ void ProjectManager::saveProjectSettings()
 {
     // Save opened files
     QString directory = projectDirectory(m_treeFiles->topLevelItem(0));
-    if ( !connectDB( directory + "/qdevelop-settings.db" ) )
+    if ( !connectDB( directory + "/" + SETTINGS_FILE_NAME ) )
         return;
-    QSqlQuery query(QSqlDatabase::database( directory + "/qdevelop-settings.db") );
+    QSqlQuery query(QSqlDatabase::database( directory + "/" + SETTINGS_FILE_NAME) );
     QString queryString = "delete from editors where 1";
     if (!query.exec(queryString))
     {
@@ -303,7 +303,7 @@ void ProjectManager::saveProjectSettings()
         if ( editor )
         {
             QString filename = QDir( directory ).relativeFilePath( editor->filename() );
-            QSqlQuery query( QSqlDatabase::database( directory + "/qdevelop-settings.db" ));
+            QSqlQuery query( QSqlDatabase::database( directory + "/" + SETTINGS_FILE_NAME ));
             query.prepare("INSERT INTO editors (filename, scrollbar, numline) "
                           "VALUES (:filename, :scrollbar, :numline)");
             query.bindValue(":filename", filename);
@@ -314,7 +314,7 @@ void ProjectManager::saveProjectSettings()
             foreach(int line, editor->bookmarksList())
             {
                 filename = QDir( directory ).relativeFilePath( editor->filename() );
-	            QSqlQuery query( QSqlDatabase::database( directory + "/qdevelop-settings.db" ));
+	            QSqlQuery query( QSqlDatabase::database( directory + "/" + SETTINGS_FILE_NAME ));
                 query.prepare("INSERT INTO bookmarks (filename, numline) "
                               "VALUES (:filename, :numline)");
                 query.bindValue(":filename", filename);
@@ -326,7 +326,7 @@ void ProjectManager::saveProjectSettings()
             {
 		        BlockUserData *blockUserData = (BlockUserData*)block.userData();
                 filename = QDir( directory ).relativeFilePath( editor->filename() );
-	            QSqlQuery query( QSqlDatabase::database( directory + "/qdevelop-settings.db" ));
+	            QSqlQuery query( QSqlDatabase::database( directory + "/" + SETTINGS_FILE_NAME ));
                 query.prepare("INSERT INTO breakpoints (filename, numline, breakpointCondition, isTrue) "
                               "VALUES (:filename, :numline, :breakpointCondition, :isTrue)");
                 query.bindValue(":filename", filename);
@@ -349,7 +349,7 @@ void ProjectManager::saveProjectSettings()
         srcDir = QDir( projectDir ).relativeFilePath( srcDir );
         QString uiDir = uiDirectory( itemProject(projectName) );
         uiDir = QDir( projectDir ).relativeFilePath( uiDir );
-        QSqlQuery query( QSqlDatabase::database( directory + "/qdevelop-settings.db" ));
+        QSqlQuery query( QSqlDatabase::database( directory + "/" + SETTINGS_FILE_NAME ));
         query.prepare("INSERT INTO projectsDirectories (projectName, srcDirectory, uiDirectory) "
                       "VALUES (:projectName, :srcDirectory, :uiDirectory)");
         query.bindValue(":projectName", projectName);
@@ -378,9 +378,9 @@ void ProjectManager::loadProjectSettings()
 {
     // Save opened files
     QString directory = projectDirectory(m_treeFiles->topLevelItem(0));
-    if ( !connectDB( directory + "/qdevelop-settings.db" ) )
+    if ( !connectDB( directory + "/" + SETTINGS_FILE_NAME ) )
         return;
-    QSqlQuery query( QSqlDatabase::database( directory + "/qdevelop-settings.db" ));
+    QSqlQuery query( QSqlDatabase::database( directory + "/" + SETTINGS_FILE_NAME ));
     query.prepare("select * from editors where 1");
     query.exec();
     while (query.next())
