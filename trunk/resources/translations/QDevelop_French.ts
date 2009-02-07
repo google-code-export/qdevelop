@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fr_FR">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -38,7 +39,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;diegoiast@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {8p?} {10p?} {2006-2008&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?}</translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;diegoiast@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {8p?} {10p?} {2006-2008&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?}</translation>
     </message>
 </context>
 <context>
@@ -119,7 +120,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addexistantimpl.cpp" line="109"/>
         <source>Files (*.cpp *.h *.hpp *.ui *.qrc *.ts)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -699,7 +700,7 @@ Compilation of %1...
     <message>
         <location filename="../../src/debug.cpp" line="86"/>
         <source>Exited with error code %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminé avec le code erreur %1</translation>
     </message>
 </context>
 <context>
@@ -836,12 +837,12 @@ was modified outside editor.
     <message>
         <location filename="../../ui/findfiles.ui" line="199"/>
         <source>Replace found text</source>
-        <translation type="unfinished"></translation>
+        <translation>Remplacer le texte trouvé</translation>
     </message>
     <message>
         <location filename="../../ui/findfiles.ui" line="214"/>
         <source>Replace with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Remplacer par:</translation>
     </message>
 </context>
 <context>
@@ -874,7 +875,7 @@ was modified outside editor.
     <message>
         <location filename="../../src/findfileimpl.cpp" line="173"/>
         <source>Cannot open temporary file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;ouvrir le fichier temporaire %1</translation>
     </message>
 </context>
 <context>
@@ -967,13 +968,31 @@ was modified outside editor.
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/logbuild.cpp" line="101"/>
+        <location filename="../../src/editor.cpp" line="899"/>
         <source>error</source>
         <translation>erreur</translation>
     </message>
     <message>
-        <location filename="../../src/logbuild.cpp" line="110"/>
+        <location filename="../../src/editor.cpp" line="909"/>
         <source>warning</source>
+        <translation>attention</translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="101"/>
+        <source>error</source>
+        <comment>Compiler message</comment>
+        <translation>erreur</translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="101"/>
+        <source>undefined reference to</source>
+        <comment>Linker message</comment>
+        <translation>référence indéfinie vers</translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="114"/>
+        <source>warning</source>
+        <comment>Compiler message</comment>
         <translation>attention</translation>
     </message>
 </context>
@@ -2328,12 +2347,12 @@ Vous pouvez le modifier dans le dialogue Options.</translation>
     <message>
         <location filename="../../src/newprojectimpl.cpp" line="122"/>
         <source>Project file &quot;%1&quot; already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier projet &quot;%1&quot; existe déjà</translation>
     </message>
     <message>
         <location filename="../../src/newprojectimpl.cpp" line="127"/>
         <source>The directory &quot;%1&quot; already exists. Do you want to create project anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Le répertoire &quot;%1&quot; existe déjà. Désirez-vous créer le projet quand même?</translation>
     </message>
 </context>
 <context>
@@ -2652,17 +2671,17 @@ Vous pouvez le modifier dans le dialogue Options.</translation>
     <message>
         <location filename="../../ui/options.ui" line="402"/>
         <source>Right margin line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligne de marge droite</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="411"/>
         <source>Column:</source>
-        <translation type="unfinished"></translation>
+        <translation>Colonne:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="454"/>
         <source>Auto-Comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Commentaires automatiques</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="948"/>
@@ -2685,22 +2704,22 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="508"/>
         <source>Word wrap</source>
-        <translation type="unfinished"></translation>
+        <translation>Retour à la ligne</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="463"/>
         <source>Hide Find/Replace panels after</source>
-        <translation type="unfinished"></translation>
+        <translation>Cacher la panneau Chercher/Remplacer après</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="486"/>
         <source>sec.</source>
-        <translation type="unfinished"></translation>
+        <translation>sec.</translation>
     </message>
 </context>
 <context>
@@ -2805,144 +2824,149 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1193"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1193"/>
         <source>Save project changes ?</source>
         <translation>Enregistrer les modifications du projet ?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1366"/>
         <source>Yes</source>
         <translation>Oui</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1366"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1343"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1343"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="768"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="768"/>
         <source>Forms:</source>
         <translation>Type de dialogue:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="828"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="828"/>
         <source>Unable to create file.</source>
         <translation>Impossible de créer le fichier.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1358"/>
         <source>Ok</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="950"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="950"/>
         <source>Sub-project creation</source>
         <translation>Création d&apos;un sous-projet</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="986"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="986"/>
         <source>Sub-Projects</source>
         <translation>Sous-projets</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1511"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1511"/>
         <source>Sub-projects</source>
         <translation>Sous-projets</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1617"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1617"/>
         <source>Headers</source>
         <translation>Entêtes</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1622"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1622"/>
         <source>Sources</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1627"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1627"/>
         <source>Dialogs</source>
         <translation>Dialogues</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1632"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1632"/>
         <source>Translations</source>
         <translation>Traductions</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1637"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1637"/>
         <source>Resources</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="159"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="159"/>
         <source>Project parsing</source>
         <translation>Analyse du projet</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1309"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1309"/>
         <source>New name:</source>
         <translation>Nouveau nom:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1315"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1315"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Le genre du nouveau et de l&apos;ancien fichier sont différents !</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1316"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1316"/>
         <source>Rename</source>
         <translation>Renommer</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="755"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="755"/>
         <source>The file already exists in directory.</source>
         <translation>Le fichier exite déjà dans le répertoire.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="876"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="876"/>
         <source>The file already exists.</source>
         <translation>Le fichier existe déjà.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="887"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="887"/>
         <source>This file is not permitted.</source>
         <translation>Le fichier n&apos;est pas autorisé.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1343"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1343"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Impossible de renommer le fichier pour &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2037"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="2037"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>La seule version disponible pour &quot;%1&quot; est %2</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2038"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="2038"/>
         <source>Run on %1</source>
         <translation>Lancer sur %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1357"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1357"/>
         <source>Cannot remove the main project.</source>
         <translation>Impossible de supprimer le projet principal.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1365"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1365"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>Voulez-vous supprimer &quot;%1&quot; du projet ?</translation>
     </message>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1267"/>
         <source>File not found: &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier &quot;%1&quot; non trouvé</translation>
+    </message>
+    <message>
+        <location filename="../../src/projectmanager.cpp.orig" line="1267"/>
+        <source>The file  &quot;%1&quot; </source>
+        <translation>Le fichier &quot;%1&quot;</translation>
     </message>
 </context>
 <context>
@@ -3275,7 +3299,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/projectpropertie.ui" line="853"/>
         <source>link_pkgconfig</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3369,7 +3393,7 @@ p, li { white-space: pre-wrap; }
         <translation>QDevelop a besoin du support de SQLite. Lisez la documentation traitant du pilote Qt SQL afin d&apos;obtenir des informations sur la manière de le construire.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="191"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="191"/>
         <source>Current project parsing</source>
         <translation>Analyse du projet courant</translation>
     </message>
@@ -3557,11 +3581,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../../src/subclassingimpl.cpp" line="411"/>
         <source>(.h and .cpp)</source>
         <translation>(.h et .cpp)</translation>
-    </message>
-    <message>
-        <location filename="../../src/subclassingimpl.cpp" line="50"/>
-        <source></source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3770,7 +3789,7 @@ Lancez la complétion ultérieurement.</translation>
     <message>
         <location filename="../../src/toolscontrolimpl.cpp" line="104"/>
         <source>Please select the program</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez le programme svp</translation>
     </message>
 </context>
 <context>
