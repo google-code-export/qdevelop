@@ -885,16 +885,10 @@ void Editor::slotMessagesBuild(QString list, QString directory)
         {
         	bool error = false;
             message.remove( "\r" );
-		    QString filename = message.section(":", 0, 0).replace("\\", "/").replace("//", "/");
-		    int numLine = message.section(":", 1, 1).toInt();
-		    if ( numLine == 0 )
-		        continue;
-		    QString absoluteName = QDir(directory+"/"+filename).absolutePath();
-		    if( absoluteName.endsWith("-qdeveloptmp.cpp") )
-		    	absoluteName = absoluteName.section("-qdeveloptmp.cpp", 0, 0) + ".cpp";
-		    if( absoluteName != m_filename )
-		    	continue;
-            if ( LogBuild::containsError(message) )
+		    QString filename;
+		    uint numLine;
+		    
+		    if ( LogBuild::containsError(message, filename, numLine) )
             {
                 // Error
                 error = true;
@@ -904,7 +898,7 @@ void Editor::slotMessagesBuild(QString list, QString directory)
 		        else if( message.toLower().contains( LogBuild::tr("error").toLower() ) )
 		            message = message.section(LogBuild::tr("error"), 1).simplified();
             }
-            else if ( LogBuild::containsWarning(message) )
+            else if ( LogBuild::containsWarning(message, filename, numLine) )
             {
                 // Warning
                 error = false;
@@ -914,9 +908,15 @@ void Editor::slotMessagesBuild(QString list, QString directory)
 		        else if( message.toLower().contains( LogBuild::tr("warning").toLower() ) )
 		            message = message.section(LogBuild::tr("warning"), 1).simplified();
             }
+            QString absoluteName = QDir(directory).absoluteFilePath(filename);
+		    if( absoluteName.endsWith("-qdeveloptmp.cpp") )
+		    	absoluteName = absoluteName.section("-qdeveloptmp.cpp", 0, 0) + ".cpp";
+		    if( absoluteName != m_filename )
+		    	continue;
+		    
             if( message.startsWith(":") )
             	message = message.section(":", 1).simplified();
-		    int line = 1;
+		    uint line = 1;
 		    for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next(), line++ )
 		    {
 		    	if( line != numLine )
