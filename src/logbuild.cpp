@@ -44,13 +44,13 @@ void LogBuild::mouseDoubleClickEvent( QMouseEvent * /*event*/ )
         return;
     QString projectDirectory = blockUserData->directory();
     QString text = cursor.block().text();
-    if ( !containsError(text) && !containsWarning(text) )
+    QString filename;
+    uint numLine;
+    if ( !containsError(text, filename, numLine) && !containsWarning(text, filename, numLine) )
         return;
-    QString filename = text.section(":", 0, 0).replace("\\", "/").replace("//", "/");
-    int numLine = text.section(":", 1, 1).toInt();
     if ( numLine == 0 )
         return;
-    QString absoluteName = QDir(projectDirectory+"/"+filename).absolutePath();
+    QString absoluteName = QDir(projectDirectory).absoluteFilePath(filename);
     m_mainImpl->openFile( QStringList( absoluteName ), numLine);
 }
 //
@@ -62,14 +62,16 @@ void LogBuild::slotMessagesBuild(QString list, QString directory)
         {
             message.remove( "\r" );
             setTextColor( Qt::black );
-            if ( containsError(message) )
+            QString fileName;
+            uint line;
+            if ( containsError(message,fileName,line) )
             {
                 setTextColor( Qt::red );
                 m_mainImpl->resetProjectsDirectoriesList();
                 m_mainImpl->resetDebugAfterBuild();
                 emit incErrors();
             }
-            else if ( containsWarning(message) )
+            else if ( containsWarning(message,fileName,line) )
             {
                 setTextColor( Qt::blue );
                 emit incWarnings();
@@ -90,23 +92,33 @@ void LogBuild::slotMessagesBuild(QString list, QString directory)
     setTextCursor( cursor );
 }
 //
+#define ERR_EXP "^(.+):\\s*(\\d+)\\s*:\\s*(error|%1|undefined reference to|%2)"
+#define WARN_EXP "^(.+):\\s*(\\d+)\\s*:\\s*(warning|%1)"
 /*  If your language is not translated in QDevelop and if g++ display the errors and warnings in your language, 
 modify the two strings below "error" and "warning" to adapt in your language. Also have a look at editor.cpp*/
-bool LogBuild::containsError(QString message)
+bool LogBuild::containsError(QString message, QString & file, uint & line)
 {
-	/*return ( (message.toLower().contains("error") || message.toLower().contains( tr("error").toLower() ))
-            	&& !message.contains("------") && !message.startsWith("make:"));*/
-    return !message.startsWith("make") && !message.contains("------") &&
-    	(QRegExp("^.+:\\s*\\d+\\s*:\\s*error\\s*:").indexIn(message) > -1 ||
-    	QRegExp("^.+:\\s*\\d+\\s*:\\s*"+tr("error").toLower()+"\\s*:").indexIn(message) > -1);
+	QRegExp exp( QString(ERR_EXP).arg(tr("error", "Compiler message").toLower()).arg(tr("undefined reference to", "Linker message").toLower()) );
+    bool result = !message.startsWith("make") && !message.contains("------") && exp.indexIn(message) > -1;
+    if (result)
+    {
+    	Q_ASSERT(exp.capturedTexts().size() > 3);
+    	file = exp.cap(1);
+    	line = exp.cap(2).toUInt();
+   	}
+   	return result;
 }
 
-bool LogBuild::containsWarning(QString message)
+bool LogBuild::containsWarning(QString message, QString & file, uint & line)
 {
-	/*return ( (message.toLower().contains( "warning") || message.toLower().contains( tr("warning").toLower() ))
-			  && !message.startsWith("make:"));*/
-	return !message.startsWith("make") && !message.contains("------") &&
-    	(QRegExp("^.+:\\s*\\d+\\s*:\\s*warning\\s*:").indexIn(message) > -1 ||
-    	QRegExp("^.+:\\s*\\d+\\s*:\\s*"+tr("warning").toLower()+"\\s*:").indexIn(message) > -1);
+	QRegExp exp( QString(WARN_EXP).arg(tr("warning", "Compiler message").toLower()) );
+    bool result = !message.startsWith("make") && !message.contains("------") && exp.indexIn(message) > -1;
+    if (result)
+    {
+    	Q_ASSERT(exp.capturedTexts().size() > 3);
+    	file = exp.cap(1);
+    	line = exp.cap(2).toUInt();
+   	}
+   	return result;
 }
 //
