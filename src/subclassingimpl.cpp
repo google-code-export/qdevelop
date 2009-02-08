@@ -159,6 +159,9 @@ QString SubclassingImpl::className()
     file.open(QFile::ReadOnly);
     QWidget *dial = loader.load(&file, this);
     file.close();
+    // FIXME: Potential bug here:
+    Q_ASSERT_X(dial != NULL, "SubclassingImpl::className()", "FIXME: Ui file not exists => failure");
+    // Previous line will probably fail if ui file not exists
     QString className = dial->metaObject()->className();
     delete dial;
     return className;
