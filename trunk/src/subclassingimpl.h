@@ -37,6 +37,9 @@ Q_OBJECT
 public:
 	SubclassingImpl(ProjectManager * parent, MainImpl *mainImpl, QString srcDirectory, QString uiName, QStringList headers);
 	QString newFile();
+	inline bool isValid() {
+		return !objectName().isEmpty();
+	}
 private:	
 	void		implementations(QStringList);
 	static		QStringList signatures(QString header);
