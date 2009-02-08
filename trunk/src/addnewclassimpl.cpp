@@ -35,6 +35,8 @@ AddNewClassImpl::AddNewClassImpl(ProjectManager * parent)
         : QDialog(0), m_projectManager(parent)
 {
     setupUi(this);
+    scope->addItems(QStringList() << "public" << "protected" << "private");
+    scope->setCurrentIndex(0);
 }
 //
 
