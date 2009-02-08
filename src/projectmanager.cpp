@@ -1281,6 +1281,13 @@ void ProjectManager::slotSubclassing(QTreeWidgetItem *it)
     QStringList listeHeaders;
     headers( itemProject(projectName), listeHeaders);
     SubclassingImpl *dialog = new SubclassingImpl(0, m_parent, srcDir, uiName, listeHeaders);
+    if (!dialog->isValid())
+    {
+    	QString error = tr("File not found: \"%1\"").arg(uiName);
+        QMessageBox::warning(0, "QDevelop", error, tr("Cancel") );
+    	delete dialog;
+    	return;
+   	}
     if ( dialog->exec() == QDialog::Accepted )
     {
         while ( toKey( it->data(0, Qt::UserRole) ) != "PROJECT" )

@@ -33,6 +33,7 @@
 #include <QDebug>
 #include <QSortFilterProxyModel>
 #include <QTreeWidget>
+#include <QMessageBox>
 
 SubclassingImpl::SubclassingImpl(ProjectManager * parent, MainImpl *mainImpl, QString srcDirectory, QString uiName, QStringList headers)
         : QDialog(0)
@@ -115,6 +116,10 @@ QStringList SubclassingImpl::signatures(QString header)
 void SubclassingImpl::implementations(QStringList headers)
 {
     QString name = objectName();
+    if (name.isEmpty())
+    {
+    	return;
+   	}
 
     foreach(QString header, headers)
     {
@@ -147,6 +152,10 @@ QString SubclassingImpl::objectName()
     file.open(QFile::ReadOnly);
     QWidget *dial = loader.load(&file, this);
     file.close();
+    if (!dial)
+    {
+        return QString();
+   	}
     QString name = dial->objectName();
     delete dial;
     return name;
@@ -159,9 +168,10 @@ QString SubclassingImpl::className()
     file.open(QFile::ReadOnly);
     QWidget *dial = loader.load(&file, this);
     file.close();
-    // FIXME: Potential bug here:
-    Q_ASSERT_X(dial != NULL, "SubclassingImpl::className()", "FIXME: Ui file not exists => failure");
-    // Previous line will probably fail if ui file not exists
+    if (!dial)
+    {
+        return QString();
+   	}
     QString className = dial->metaObject()->className();
     delete dial;
     return className;
@@ -431,6 +441,11 @@ void SubclassingImpl::slotParseForm()
     file.open(QFile::ReadOnly);
     dial = loader.load(&file, this);
     file.close();
+    
+    if (!dial)
+    {
+        return;
+   	}
 
     QList<QWidget *> widgets = dial->findChildren<QWidget *>();
     QList<QAction *> actions = dial->findChildren<QAction *>();
