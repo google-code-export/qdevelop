@@ -215,80 +215,80 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclass.ui" line="89"/>
         <source>public</source>
-        <translation>public</translation>
+        <translation type="obsolete">public</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="94"/>
         <source>protected</source>
-        <translation>protected</translation>
+        <translation type="obsolete">protected</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="99"/>
         <source>private</source>
-        <translation>private</translation>
+        <translation type="obsolete">private</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="122"/>
+        <location filename="../../ui/addnewclass.ui" line="107"/>
         <source>Inherits another class</source>
         <translation>継承した別のクラス</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="129"/>
+        <location filename="../../ui/addnewclass.ui" line="114"/>
         <source>Ancestor:</source>
         <translation>祖先:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="150"/>
+        <location filename="../../ui/addnewclass.ui" line="135"/>
         <source>Ancestor&apos;s include filename:</source>
         <translation>祖先のインクルードファイル名:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="157"/>
+        <location filename="../../ui/addnewclass.ui" line="142"/>
         <source>Scope:</source>
         <translation>スコープ:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="167"/>
+        <location filename="../../ui/addnewclass.ui" line="152"/>
         <source>Filenames</source>
         <translation>ファイル名</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="195"/>
+        <location filename="../../ui/addnewclass.ui" line="180"/>
         <source>Header filename:</source>
         <translation>ヘッダファイル名:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="205"/>
+        <location filename="../../ui/addnewclass.ui" line="190"/>
         <source>Implementation filename:</source>
         <translation>実装ファイル名:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="215"/>
+        <location filename="../../ui/addnewclass.ui" line="200"/>
         <source>Location :</source>
         <translation>場所:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="266"/>
+        <location filename="../../ui/addnewclass.ui" line="251"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="298"/>
+        <location filename="../../ui/addnewclass.ui" line="283"/>
         <source>Project or Scope:</source>
         <translation>プロジェクトまたはスコープ:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="308"/>
+        <location filename="../../ui/addnewclass.ui" line="293"/>
         <source>Class name:</source>
         <translation>クラス名:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="315"/>
+        <location filename="../../ui/addnewclass.ui" line="300"/>
         <source>Constructor arguments:</source>
         <translation>コンストラクタ引数:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="348"/>
+        <location filename="../../ui/addnewclass.ui" line="333"/>
         <source>Virtual destructor</source>
         <translation>Virtual デストラクタ</translation>
     </message>
@@ -301,22 +301,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddNewClassImpl</name>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="54"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="56"/>
         <source>Choose the file location</source>
         <translation>ファイルの場所を選択してください</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="139"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="141"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="138"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="140"/>
         <source>Unable to create file.</source>
         <translation>ファイルを作成できません。</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="131"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="133"/>
         <source>The file &quot;%1&quot;
  already exists.</source>
         <translation>ファイル &quot;%1&quot;
@@ -972,14 +972,32 @@ was modified outside editor.
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/logbuild.cpp" line="101"/>
+        <location filename="../../src/editor.cpp" line="899"/>
         <source>error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../../src/logbuild.cpp" line="110"/>
+        <location filename="../../src/editor.cpp" line="909"/>
         <source>warning</source>
         <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="101"/>
+        <source>error</source>
+        <comment>Compiler message</comment>
+        <translation type="unfinished">エラー</translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="101"/>
+        <source>undefined reference to</source>
+        <comment>Linker message</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="114"/>
+        <source>warning</source>
+        <comment>Compiler message</comment>
+        <translation type="unfinished">警告</translation>
     </message>
 </context>
 <context>
@@ -2817,17 +2835,17 @@ p, li { white-space: pre-wrap; }
         <translation>プロジェクトの変更を保存しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>Yes</source>
         <translation>はい</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>No</source>
         <translation>いいえ</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1343"/>
+        <location filename="../../src/projectmanager.cpp" line="1350"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
@@ -2842,7 +2860,7 @@ p, li { white-space: pre-wrap; }
         <translation>ファイルを作成できません。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1365"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -2857,32 +2875,32 @@ p, li { white-space: pre-wrap; }
         <translation>サブプロジェクト</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1511"/>
+        <location filename="../../src/projectmanager.cpp" line="1518"/>
         <source>Sub-projects</source>
         <translation>サブプロジェクト</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1617"/>
+        <location filename="../../src/projectmanager.cpp" line="1624"/>
         <source>Headers</source>
         <translation>ヘッダファイル</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1622"/>
+        <location filename="../../src/projectmanager.cpp" line="1629"/>
         <source>Sources</source>
         <translation>ソースファイル</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1627"/>
+        <location filename="../../src/projectmanager.cpp" line="1634"/>
         <source>Dialogs</source>
         <translation>ダイアログ</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1632"/>
+        <location filename="../../src/projectmanager.cpp" line="1639"/>
         <source>Translations</source>
         <translation>翻訳</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1637"/>
+        <location filename="../../src/projectmanager.cpp" line="1644"/>
         <source>Resources</source>
         <translation>リソース</translation>
     </message>
@@ -2892,17 +2910,17 @@ p, li { white-space: pre-wrap; }
         <translation>プロジェクト解析</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1309"/>
+        <location filename="../../src/projectmanager.cpp" line="1316"/>
         <source>New name:</source>
         <translation>新しい名前:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1315"/>
+        <location filename="../../src/projectmanager.cpp" line="1322"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>新しいファイルと古いファイルの種類が違います!</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1316"/>
+        <location filename="../../src/projectmanager.cpp" line="1323"/>
         <source>Rename</source>
         <translation>名前の変更</translation>
     </message>
@@ -2922,32 +2940,32 @@ p, li { white-space: pre-wrap; }
         <translation>ファイルは許可されていません。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1343"/>
+        <location filename="../../src/projectmanager.cpp" line="1350"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>&quot;%1&quot; へのファイル名の変更ができません</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2037"/>
+        <location filename="../../src/projectmanager.cpp" line="2044"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>利用可能な &quot;%1&quot; のバージョンは %2 です</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2038"/>
+        <location filename="../../src/projectmanager.cpp" line="2045"/>
         <source>Run on %1</source>
         <translation>%1 を実行</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1357"/>
+        <location filename="../../src/projectmanager.cpp" line="1364"/>
         <source>Cannot remove the main project.</source>
         <translation>メインプロジェクトは削除できません。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1365"/>
+        <location filename="../../src/projectmanager.cpp" line="1372"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>プロジェクトから &quot;%1&quot; を削除しますか ?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1267"/>
+        <location filename="../../src/projectmanager.cpp" line="1286"/>
         <source>File not found: &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3546,29 +3564,24 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>SubclassingImpl</name>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="487"/>
+        <location filename="../../src/subclassingimpl.cpp" line="505"/>
         <source>Choose the file location</source>
         <translation>ファイルの場所を選択してください</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="403"/>
+        <location filename="../../src/subclassingimpl.cpp" line="416"/>
         <source>&amp;Update</source>
         <translation>更新(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="407"/>
+        <location filename="../../src/subclassingimpl.cpp" line="420"/>
         <source>C&amp;reate</source>
         <translation>作成(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="411"/>
+        <location filename="../../src/subclassingimpl.cpp" line="424"/>
         <source>(.h and .cpp)</source>
         <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/subclassingimpl.cpp" line="50"/>
-        <source></source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
