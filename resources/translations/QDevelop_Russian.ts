@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ru_RU">
-<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -216,80 +215,80 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclass.ui" line="89"/>
         <source>public</source>
-        <translation>public</translation>
+        <translation type="obsolete">public</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="94"/>
         <source>protected</source>
-        <translation>protected</translation>
+        <translation type="obsolete">protected</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="99"/>
         <source>private</source>
-        <translation>private</translation>
+        <translation type="obsolete">private</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="122"/>
+        <location filename="../../ui/addnewclass.ui" line="107"/>
         <source>Inherits another class</source>
         <translation>Наследование другого класса</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="129"/>
+        <location filename="../../ui/addnewclass.ui" line="114"/>
         <source>Ancestor:</source>
         <translation>Родительский класс:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="150"/>
+        <location filename="../../ui/addnewclass.ui" line="135"/>
         <source>Ancestor&apos;s include filename:</source>
         <translation>Имя файла родительского класса:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="157"/>
+        <location filename="../../ui/addnewclass.ui" line="142"/>
         <source>Scope:</source>
         <translation>Тип наследования:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="167"/>
+        <location filename="../../ui/addnewclass.ui" line="152"/>
         <source>Filenames</source>
         <translation>Имена файлов</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="195"/>
+        <location filename="../../ui/addnewclass.ui" line="180"/>
         <source>Header filename:</source>
         <translation>Имя файла заголовка:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="205"/>
+        <location filename="../../ui/addnewclass.ui" line="190"/>
         <source>Implementation filename:</source>
         <translation>Имя файла реализации:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="215"/>
+        <location filename="../../ui/addnewclass.ui" line="200"/>
         <source>Location :</source>
         <translation>Путь:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="266"/>
+        <location filename="../../ui/addnewclass.ui" line="251"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="298"/>
+        <location filename="../../ui/addnewclass.ui" line="283"/>
         <source>Project or Scope:</source>
         <translation>Проект или Папка:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="308"/>
+        <location filename="../../ui/addnewclass.ui" line="293"/>
         <source>Class name:</source>
         <translation>Имя класса:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="315"/>
+        <location filename="../../ui/addnewclass.ui" line="300"/>
         <source>Constructor arguments:</source>
         <translation>Параметры конструктора:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="348"/>
+        <location filename="../../ui/addnewclass.ui" line="333"/>
         <source>Virtual destructor</source>
         <translation>Виртуальный деструктор</translation>
     </message>
@@ -302,22 +301,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddNewClassImpl</name>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="54"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="56"/>
         <source>Choose the file location</source>
         <translation>Укажите расположение файла</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="139"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="141"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="138"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="140"/>
         <source>Unable to create file.</source>
         <translation>Не могу создать файл.</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="131"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="133"/>
         <source>The file &quot;%1&quot;
  already exists.</source>
         <translation>Файл &quot;%1&quot;  уже существует.</translation>
@@ -2834,17 +2833,17 @@ p, li { white-space: pre-wrap; }
         <translation>Сохранить изменения в проекте?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>No</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1343"/>
+        <location filename="../../src/projectmanager.cpp" line="1350"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
@@ -2859,7 +2858,7 @@ p, li { white-space: pre-wrap; }
         <translation>Не могу создать файл.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1365"/>
         <source>Ok</source>
         <translation>ОК</translation>
     </message>
@@ -2874,32 +2873,32 @@ p, li { white-space: pre-wrap; }
         <translation>Подпроект</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1511"/>
+        <location filename="../../src/projectmanager.cpp" line="1518"/>
         <source>Sub-projects</source>
         <translation>Подпроекты</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1617"/>
+        <location filename="../../src/projectmanager.cpp" line="1624"/>
         <source>Headers</source>
         <translation>Заголовки</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1622"/>
+        <location filename="../../src/projectmanager.cpp" line="1629"/>
         <source>Sources</source>
         <translation>Исходники</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1627"/>
+        <location filename="../../src/projectmanager.cpp" line="1634"/>
         <source>Dialogs</source>
         <translation>Диалоги</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1632"/>
+        <location filename="../../src/projectmanager.cpp" line="1639"/>
         <source>Translations</source>
         <translation>Переводы</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1637"/>
+        <location filename="../../src/projectmanager.cpp" line="1644"/>
         <source>Resources</source>
         <translation>Ресурсы</translation>
     </message>
@@ -2909,17 +2908,17 @@ p, li { white-space: pre-wrap; }
         <translation>Разбор проекта</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1309"/>
+        <location filename="../../src/projectmanager.cpp" line="1316"/>
         <source>New name:</source>
         <translation>Новое имя:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1315"/>
+        <location filename="../../src/projectmanager.cpp" line="1322"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Типы нового и старого имени файла разные!</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1316"/>
+        <location filename="../../src/projectmanager.cpp" line="1323"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
     </message>
@@ -2939,32 +2938,32 @@ p, li { white-space: pre-wrap; }
         <translation>Этот файл не разрешен.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1343"/>
+        <location filename="../../src/projectmanager.cpp" line="1350"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Не могу переименовать файл в &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2037"/>
+        <location filename="../../src/projectmanager.cpp" line="2044"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>Единственная версия, доступная для &quot;%1&quot; - %2</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2038"/>
+        <location filename="../../src/projectmanager.cpp" line="2045"/>
         <source>Run on %1</source>
         <translation>Запустить %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1357"/>
+        <location filename="../../src/projectmanager.cpp" line="1364"/>
         <source>Cannot remove the main project.</source>
         <translation>Нельзя удалить главный проект.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1365"/>
+        <location filename="../../src/projectmanager.cpp" line="1372"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>Вы действительно хотите удалить &quot;%1&quot; из проекта?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1267"/>
+        <location filename="../../src/projectmanager.cpp" line="1286"/>
         <source>File not found: &quot;%1&quot;</source>
         <translation>Файл не найден: %1</translation>
     </message>
@@ -3563,24 +3562,29 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>SubclassingImpl</name>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="487"/>
+        <location filename="../../src/subclassingimpl.cpp" line="505"/>
         <source>Choose the file location</source>
         <translation>Укажите расположение файла</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="403"/>
+        <location filename="../../src/subclassingimpl.cpp" line="416"/>
         <source>&amp;Update</source>
         <translation>&amp;Обновить</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="407"/>
+        <location filename="../../src/subclassingimpl.cpp" line="420"/>
         <source>C&amp;reate</source>
         <translation>&amp;Создать</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="411"/>
+        <location filename="../../src/subclassingimpl.cpp" line="424"/>
         <source>(.h and .cpp)</source>
         <translation>(.h и .cpp)</translation>
+    </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="51"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

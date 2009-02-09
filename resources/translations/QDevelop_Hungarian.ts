@@ -220,80 +220,80 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../ui/addnewclass.ui" line="89"/>
         <source>public</source>
-        <translation>public</translation>
+        <translation type="obsolete">public</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="94"/>
         <source>protected</source>
-        <translation>protected</translation>
+        <translation type="obsolete">protected</translation>
     </message>
     <message>
         <location filename="../../ui/addnewclass.ui" line="99"/>
         <source>private</source>
-        <translation>private</translation>
+        <translation type="obsolete">private</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="122"/>
+        <location filename="../../ui/addnewclass.ui" line="107"/>
         <source>Inherits another class</source>
         <translation>Inheritál egy másik osztályt</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="129"/>
+        <location filename="../../ui/addnewclass.ui" line="114"/>
         <source>Ancestor:</source>
         <translation>Előd:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="150"/>
+        <location filename="../../ui/addnewclass.ui" line="135"/>
         <source>Ancestor&apos;s include filename:</source>
         <translation>Előd fejléc fájlja:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="157"/>
+        <location filename="../../ui/addnewclass.ui" line="142"/>
         <source>Scope:</source>
         <translation>Fordítási feladat:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="167"/>
+        <location filename="../../ui/addnewclass.ui" line="152"/>
         <source>Filenames</source>
         <translation>Fájlnevek</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="195"/>
+        <location filename="../../ui/addnewclass.ui" line="180"/>
         <source>Header filename:</source>
         <translation>Fejéc fájlneve:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="205"/>
+        <location filename="../../ui/addnewclass.ui" line="190"/>
         <source>Implementation filename:</source>
         <translation>Implementáció fájlneve:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="215"/>
+        <location filename="../../ui/addnewclass.ui" line="200"/>
         <source>Location :</source>
         <translation>Elérési út:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="266"/>
+        <location filename="../../ui/addnewclass.ui" line="251"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="298"/>
+        <location filename="../../ui/addnewclass.ui" line="283"/>
         <source>Project or Scope:</source>
         <translation>Projekt vagy feladat:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="308"/>
+        <location filename="../../ui/addnewclass.ui" line="293"/>
         <source>Class name:</source>
         <translation>Osztály név:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="315"/>
+        <location filename="../../ui/addnewclass.ui" line="300"/>
         <source>Constructor arguments:</source>
         <translation>Konstruktor argumentumai:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="348"/>
+        <location filename="../../ui/addnewclass.ui" line="333"/>
         <source>Virtual destructor</source>
         <translation>Virtuális destruktor</translation>
     </message>
@@ -301,23 +301,23 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddNewClassImpl</name>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="54"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="56"/>
         <source>Choose the file location</source>
         <translation>Vállaszd ki a fájlt</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="131"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="133"/>
         <source>The file &quot;%1&quot;
  already exists.</source>
         <translation>A %1 fájl már létezik.</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="139"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="141"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="138"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="140"/>
         <source>Unable to create file.</source>
         <translation>Nem lehet a fájlt létrehozni.</translation>
     </message>
@@ -972,14 +972,32 @@ módosult a programon kívül.
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/logbuild.cpp" line="101"/>
+        <location filename="../../src/editor.cpp" line="899"/>
         <source>error</source>
         <translation>hiba</translation>
     </message>
     <message>
-        <location filename="../../src/logbuild.cpp" line="110"/>
+        <location filename="../../src/editor.cpp" line="909"/>
         <source>warning</source>
         <translation>igyelmeztetés</translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="101"/>
+        <source>error</source>
+        <comment>Compiler message</comment>
+        <translation type="unfinished">hiba</translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="101"/>
+        <source>undefined reference to</source>
+        <comment>Linker message</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="114"/>
+        <source>warning</source>
+        <comment>Compiler message</comment>
+        <translation type="unfinished">igyelmeztetés</translation>
     </message>
 </context>
 <context>
@@ -2821,17 +2839,17 @@ p, li { white-space: pre-wrap; }
         <translation>Mented a projekt változásait?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>Yes</source>
         <translation>Igen</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>No</source>
         <translation>Nem</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1343"/>
+        <location filename="../../src/projectmanager.cpp" line="1350"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
     </message>
@@ -2861,7 +2879,7 @@ p, li { white-space: pre-wrap; }
         <translation>Nincs jogod a fájl megnyitásához.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1365"/>
         <source>Ok</source>
         <translation>Rendben</translation>
     </message>
@@ -2876,77 +2894,77 @@ p, li { white-space: pre-wrap; }
         <translation>Al-projektek</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1309"/>
+        <location filename="../../src/projectmanager.cpp" line="1316"/>
         <source>New name:</source>
         <translation>Új név: </translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1315"/>
+        <location filename="../../src/projectmanager.cpp" line="1322"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Az új és a régi  fájl kiterjesztése különbözik !</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1316"/>
+        <location filename="../../src/projectmanager.cpp" line="1323"/>
         <source>Rename</source>
         <translation>Átnevezés</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1343"/>
+        <location filename="../../src/projectmanager.cpp" line="1350"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Nem lehet a fájlt átnevezni &quot;%1&quot; -re</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1357"/>
+        <location filename="../../src/projectmanager.cpp" line="1364"/>
         <source>Cannot remove the main project.</source>
         <translation>A főprojektet nem lehet eltávolítani.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1365"/>
+        <location filename="../../src/projectmanager.cpp" line="1372"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>Valóban el akarod távolítani a &quot;%1&quot; -t a projektből?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1511"/>
+        <location filename="../../src/projectmanager.cpp" line="1518"/>
         <source>Sub-projects</source>
         <translation>Al-projektek</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1617"/>
+        <location filename="../../src/projectmanager.cpp" line="1624"/>
         <source>Headers</source>
         <translation>Fejlécek</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1622"/>
+        <location filename="../../src/projectmanager.cpp" line="1629"/>
         <source>Sources</source>
         <translation>Források</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1627"/>
+        <location filename="../../src/projectmanager.cpp" line="1634"/>
         <source>Dialogs</source>
         <translation>Dialógusok</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1632"/>
+        <location filename="../../src/projectmanager.cpp" line="1639"/>
         <source>Translations</source>
         <translation>Fordítások</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1637"/>
+        <location filename="../../src/projectmanager.cpp" line="1644"/>
         <source>Resources</source>
         <translation>Erőforrások</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2037"/>
+        <location filename="../../src/projectmanager.cpp" line="2044"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>Az %2 elérhető verziója %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2038"/>
+        <location filename="../../src/projectmanager.cpp" line="2045"/>
         <source>Run on %1</source>
         <translation>Futtatás %1-en</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1267"/>
+        <location filename="../../src/projectmanager.cpp" line="1286"/>
         <source>File not found: &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3545,29 +3563,24 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>SubclassingImpl</name>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="403"/>
+        <location filename="../../src/subclassingimpl.cpp" line="416"/>
         <source>&amp;Update</source>
         <translation>&amp;Frissítés</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="407"/>
+        <location filename="../../src/subclassingimpl.cpp" line="420"/>
         <source>C&amp;reate</source>
         <translation>&amp;Létrehozás</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="411"/>
+        <location filename="../../src/subclassingimpl.cpp" line="424"/>
         <source>(.h and .cpp)</source>
         <translation>(.h és .cpp)</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="487"/>
+        <location filename="../../src/subclassingimpl.cpp" line="505"/>
         <source>Choose the file location</source>
         <translation>Vállaszd ki a fájlt</translation>
-    </message>
-    <message>
-        <location filename="../../src/subclassingimpl.cpp" line="50"/>
-        <source></source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

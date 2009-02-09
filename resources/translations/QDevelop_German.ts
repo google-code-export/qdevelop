@@ -224,82 +224,67 @@ p, li { white-space: pre-wrap; }
         <translation>Vererbung</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="89"/>
-        <source>public</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclass.ui" line="94"/>
-        <source>protected</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclass.ui" line="99"/>
-        <source>private</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclass.ui" line="122"/>
+        <location filename="../../ui/addnewclass.ui" line="107"/>
         <source>Inherits another class</source>
         <translation>Beerbt eine andere Klasse</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="129"/>
+        <location filename="../../ui/addnewclass.ui" line="114"/>
         <source>Ancestor:</source>
         <translation>Vorfahr:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="150"/>
+        <location filename="../../ui/addnewclass.ui" line="135"/>
         <source>Ancestor&apos;s include filename:</source>
         <translation>Include-Datei des Vorfahrs:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="157"/>
+        <location filename="../../ui/addnewclass.ui" line="142"/>
         <source>Scope:</source>
         <translation>Gültigkeitsbereich:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="167"/>
+        <location filename="../../ui/addnewclass.ui" line="152"/>
         <source>Filenames</source>
         <translation>Dateinamen</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="195"/>
+        <location filename="../../ui/addnewclass.ui" line="180"/>
         <source>Header filename:</source>
         <translation>Dateiname des Headers:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="205"/>
+        <location filename="../../ui/addnewclass.ui" line="190"/>
         <source>Implementation filename:</source>
         <translation>Dateiname der Implementierung:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="215"/>
+        <location filename="../../ui/addnewclass.ui" line="200"/>
         <source>Location :</source>
         <translation>Ort:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="266"/>
+        <location filename="../../ui/addnewclass.ui" line="251"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="298"/>
+        <location filename="../../ui/addnewclass.ui" line="283"/>
         <source>Project or Scope:</source>
         <translation>Projekt oder Gültigkeitsbereich:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="308"/>
+        <location filename="../../ui/addnewclass.ui" line="293"/>
         <source>Class name:</source>
         <translation>Name der Klasse:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="315"/>
+        <location filename="../../ui/addnewclass.ui" line="300"/>
         <source>Constructor arguments:</source>
         <translation>Argumente des Konstruktors:</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="348"/>
+        <location filename="../../ui/addnewclass.ui" line="333"/>
         <source>Virtual destructor</source>
         <translation>Virtueller Destructor</translation>
     </message>
@@ -312,22 +297,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AddNewClassImpl</name>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="54"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="56"/>
         <source>Choose the file location</source>
         <translation>Wählen Sie einen Speicherort aus</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="139"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="141"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="138"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="140"/>
         <source>Unable to create file.</source>
         <translation>Datei kann nicht erzeugt werden.</translation>
     </message>
     <message>
-        <location filename="../../src/addnewclassimpl.cpp" line="131"/>
+        <location filename="../../src/addnewclassimpl.cpp" line="133"/>
         <source>The file &quot;%1&quot;
  already exists.</source>
         <translation>Die Datei &quot;%1&quot;
@@ -984,13 +969,31 @@ wurde außerhalb des Editor verändert.
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/logbuild.cpp" line="101"/>
+        <location filename="../../src/editor.cpp" line="899"/>
         <source>error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../../src/logbuild.cpp" line="110"/>
+        <location filename="../../src/editor.cpp" line="909"/>
         <source>warning</source>
+        <translation>Warnung</translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="101"/>
+        <source>error</source>
+        <comment>Compiler message</comment>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="101"/>
+        <source>undefined reference to</source>
+        <comment>Linker message</comment>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../src/logbuild.cpp" line="114"/>
+        <source>warning</source>
+        <comment>Compiler message</comment>
         <translation>Warnung</translation>
     </message>
 </context>
@@ -2847,17 +2850,17 @@ p, li { white-space: pre-wrap; }
         <translation>Projektänderungen speichern?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1366"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>No</source>
         <translation>Nein</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1343"/>
+        <location filename="../../src/projectmanager.cpp" line="1350"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -2872,7 +2875,7 @@ p, li { white-space: pre-wrap; }
         <translation>Datei kann nicht erzeugt werden.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1365"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
@@ -2887,32 +2890,32 @@ p, li { white-space: pre-wrap; }
         <translation>Unterprojekte</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1511"/>
+        <location filename="../../src/projectmanager.cpp" line="1518"/>
         <source>Sub-projects</source>
         <translation>Unterprojekte</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1617"/>
+        <location filename="../../src/projectmanager.cpp" line="1624"/>
         <source>Headers</source>
         <translation>Header-Dateien</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1622"/>
+        <location filename="../../src/projectmanager.cpp" line="1629"/>
         <source>Sources</source>
         <translation>Quell-Dateien</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1627"/>
+        <location filename="../../src/projectmanager.cpp" line="1634"/>
         <source>Dialogs</source>
         <translation>Dialoge</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1632"/>
+        <location filename="../../src/projectmanager.cpp" line="1639"/>
         <source>Translations</source>
         <translation>Übersetzungen</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1637"/>
+        <location filename="../../src/projectmanager.cpp" line="1644"/>
         <source>Resources</source>
         <translation>Ressourcen</translation>
     </message>
@@ -2922,17 +2925,17 @@ p, li { white-space: pre-wrap; }
         <translation>Projekt analysieren</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1309"/>
+        <location filename="../../src/projectmanager.cpp" line="1316"/>
         <source>New name:</source>
         <translation>Neuer Name:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1315"/>
+        <location filename="../../src/projectmanager.cpp" line="1322"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Die Endung von dem alten und dem neuen Dateinamen ist verschieden!</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1316"/>
+        <location filename="../../src/projectmanager.cpp" line="1323"/>
         <source>Rename</source>
         <translation>Umbennen</translation>
     </message>
@@ -2952,32 +2955,32 @@ p, li { white-space: pre-wrap; }
         <translation>Diese Datei ist nicht erlaubt.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1343"/>
+        <location filename="../../src/projectmanager.cpp" line="1350"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Kann die Datei &quot;%1&quot; nicht umbenennen</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2037"/>
+        <location filename="../../src/projectmanager.cpp" line="2044"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>Die einzige verfügbare Version von &quot;%1&quot; ist %2</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2038"/>
+        <location filename="../../src/projectmanager.cpp" line="2045"/>
         <source>Run on %1</source>
         <translation>Starte als %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1357"/>
+        <location filename="../../src/projectmanager.cpp" line="1364"/>
         <source>Cannot remove the main project.</source>
         <translation>Das Hauptprojekt kann nicht entfernt werden.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1365"/>
+        <location filename="../../src/projectmanager.cpp" line="1372"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>Willst du &quot;%1&quot; aus dem Projekt entfernen?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1267"/>
+        <location filename="../../src/projectmanager.cpp" line="1286"/>
         <source>File not found: &quot;%1&quot;</source>
         <translation>Datei nicht gefunden: &quot;%1&quot;</translation>
     </message>
@@ -3576,24 +3579,29 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>SubclassingImpl</name>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="487"/>
+        <location filename="../../src/subclassingimpl.cpp" line="505"/>
         <source>Choose the file location</source>
         <translation>Wählen Sie einen Speicherort aus</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="403"/>
+        <location filename="../../src/subclassingimpl.cpp" line="416"/>
         <source>&amp;Update</source>
         <translation>&amp;Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="407"/>
+        <location filename="../../src/subclassingimpl.cpp" line="420"/>
         <source>C&amp;reate</source>
         <translation>&amp;Erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/subclassingimpl.cpp" line="411"/>
+        <location filename="../../src/subclassingimpl.cpp" line="424"/>
         <source>(.h and .cpp)</source>
         <translation>(.h und .cpp)</translation>
+    </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="51"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>
