@@ -434,14 +434,14 @@
         <item>
          <widget class="QLineEdit" name="uiObjectName" >
           <property name="text" >
-           <string>Dialog</string>
+           <string/>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QLineEdit" name="subclassObjectName" >
           <property name="text" >
-           <string>DialogImpl</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -488,14 +488,14 @@
         <item>
          <widget class="QLineEdit" name="uiFilename" >
           <property name="text" >
-           <string>dialog</string>
+           <string/>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QLineEdit" name="subclassFilename" >
           <property name="text" >
-           <string>dialogimpl</string>
+           <string/>
           </property>
          </widget>
         </item>

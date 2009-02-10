@@ -36,6 +36,12 @@ NewProjectImpl::NewProjectImpl(QWidget * parent, QString s)
     connect(projectName, SIGNAL(textChanged(QString)), this, SLOT(slotLabel()) );
     connect(location, SIGNAL(textChanged(QString)), this, SLOT(slotLabel()) );
     location->setText( s );
+    
+    on_dialog_clicked(true);
+    srcDirectory->setText("src");
+    buildDirectory->setText("build");
+    uiDirectory->setText("ui");
+    binDirectory->setText("bin");
 }
 //
 void NewProjectImpl::slotChooseDirectory()
