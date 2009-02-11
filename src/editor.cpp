@@ -468,6 +468,7 @@ void Editor::findPrevious()
 void Editor::slotFindWidget_textChanged(QString text, bool fromButton)
 {
     int options = 0;
+    autoHideTimer->stop();
     if ( m_backward )
         options |= QTextDocument::FindBackward;
     if ( uiFind.checkWholeWords->isChecked() )
@@ -479,7 +480,11 @@ void Editor::slotFindWidget_textChanged(QString text, bool fromButton)
     	uiReplace.replace->setVisible( true );
     else
     	uiReplace.replace->setVisible( false );
-    autoHideTimer->start();
+    if (m_hideFindReplace > 0)
+    {
+    	autoHideTimer->setInterval(m_hideFindReplace*1000);
+    	autoHideTimer->start();
+   	}
 }
 //
 QStringList Editor::classes()
