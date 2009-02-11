@@ -47,7 +47,9 @@ public:
 		// Divius: word wrap 
 		bool ww,
 		// Divius: autohide find/replace
-		int findReplace
+		int findReplace,
+		// Divius: smart click
+		bool sc
 		);
 	QFont font();
 	CppHighlighter *syntaxe() { return cppHighLighter; };

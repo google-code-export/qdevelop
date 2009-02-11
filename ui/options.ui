@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>527</width>
-    <height>548</height>
+    <width>578</width>
+    <height>563</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -276,254 +276,6 @@
        <property name="spacing" >
         <number>6</number>
        </property>
-       <item row="1" column="0" >
-        <widget class="QGroupBox" name="groupBox_6" >
-         <property name="title" >
-          <string>options</string>
-         </property>
-         <layout class="QGridLayout" >
-          <property name="margin" >
-           <number>9</number>
-          </property>
-          <property name="spacing" >
-           <number>6</number>
-          </property>
-          <item row="1" column="0" >
-           <widget class="QCheckBox" name="selectionBorder" >
-            <property name="text" >
-             <string>Selection border</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1" >
-           <widget class="QCheckBox" name="brackets" >
-            <property name="text" >
-             <string>Auto-Brackets</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0" >
-           <layout class="QHBoxLayout" >
-            <property name="spacing" >
-             <number>6</number>
-            </property>
-            <property name="margin" >
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QCheckBox" name="match" >
-              <property name="text" >
-               <string>Matching ( and {</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" >
-              <property name="spacing" >
-               <number>6</number>
-              </property>
-              <property name="margin" >
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QToolButton" name="matching" >
-                <property name="text" >
-                 <string>...</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <spacer>
-                <property name="orientation" >
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0" >
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-          <item row="3" column="0" >
-           <widget class="QCheckBox" name="completion" >
-            <property name="text" >
-             <string>Complete Code</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1" >
-           <widget class="QCheckBox" name="indent" >
-            <property name="text" >
-             <string>Autoindent</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0" >
-           <widget class="QCheckBox" name="numbers" >
-            <property name="text" >
-             <string>Line numbers</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1" >
-           <widget class="QCheckBox" name="highlight" >
-            <property name="text" >
-             <string>Syntax highlighting</string>
-            </property>
-            <property name="checked" >
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1" >
-           <widget class="QCheckBox" name="showEditorToolbars" >
-            <property name="text" >
-             <string>Display editor toolbars</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1" >
-           <widget class="QCheckBox" name="displayWhiteSpaces" >
-            <property name="text" >
-             <string>Display white spaces</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="0" >
-           <layout class="QHBoxLayout" name="horizontalLayout" >
-            <item>
-             <widget class="QCheckBox" name="rightMarginLine" >
-              <property name="text" >
-               <string>Right margin line</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_2" >
-              <item>
-               <widget class="QLabel" name="label_18" >
-                <property name="text" >
-                 <string>Column:</string>
-                </property>
-                <property name="buddy" >
-                 <cstring>rightMarginPos</cstring>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QSpinBox" name="rightMarginPos" >
-                <property name="enabled" >
-                 <bool>false</bool>
-                </property>
-                <property name="minimum" >
-                 <number>1</number>
-                </property>
-                <property name="maximum" >
-                 <number>200</number>
-                </property>
-                <property name="value" >
-                 <number>80</number>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <spacer name="horizontalSpacer" >
-                <property name="orientation" >
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0" >
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-          <item row="2" column="1" >
-           <widget class="QCheckBox" name="comments" >
-            <property name="text" >
-             <string>Auto-Comments</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="0" >
-           <layout class="QHBoxLayout" name="horizontalLayout_3" >
-            <item>
-             <widget class="QCheckBox" name="hideFindReplace" >
-              <property name="text" >
-               <string>Hide Find/Replace panels after</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QSpinBox" name="findReplaceDelay" >
-              <property name="enabled" >
-               <bool>false</bool>
-              </property>
-              <property name="minimum" >
-               <number>1</number>
-              </property>
-              <property name="maximum" >
-               <number>60</number>
-              </property>
-              <property name="value" >
-               <number>10</number>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_19" >
-              <property name="text" >
-               <string>sec.</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_2" >
-              <property name="orientation" >
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0" >
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
-          <item row="2" column="0" >
-           <widget class="QCheckBox" name="wordwrap" >
-            <property name="text" >
-             <string>Word wrap</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-         <zorder>selectionBorder</zorder>
-         <zorder>brackets</zorder>
-         <zorder>completion</zorder>
-         <zorder>indent</zorder>
-         <zorder>numbers</zorder>
-         <zorder>highlight</zorder>
-         <zorder>showEditorToolbars</zorder>
-         <zorder>displayWhiteSpaces</zorder>
-         <zorder>comments</zorder>
-         <zorder>horizontalLayoutWidget</zorder>
-         <zorder>checkBox</zorder>
-         <zorder>wordwrap</zorder>
-        </widget>
-       </item>
        <item row="2" column="0" >
         <spacer>
          <property name="orientation" >
@@ -771,7 +523,252 @@
          </item>
         </layout>
        </item>
+       <item row="1" column="0" >
+        <widget class="QGroupBox" name="groupBox_6" >
+         <property name="title" >
+          <string>options</string>
+         </property>
+         <layout class="QGridLayout" >
+          <property name="margin" >
+           <number>9</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item row="4" column="0" >
+           <layout class="QHBoxLayout" >
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QCheckBox" name="match" >
+              <property name="text" >
+               <string>Matching ( and {</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" >
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QToolButton" name="matching" >
+                <property name="text" >
+                 <string>...</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0" >
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="5" column="0" >
+           <layout class="QHBoxLayout" name="horizontalLayout" >
+            <item>
+             <widget class="QCheckBox" name="rightMarginLine" >
+              <property name="text" >
+               <string>Right margin line</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2" >
+              <item>
+               <widget class="QLabel" name="label_18" >
+                <property name="text" >
+                 <string>Column:</string>
+                </property>
+                <property name="buddy" >
+                 <cstring>rightMarginPos</cstring>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="rightMarginPos" >
+                <property name="enabled" >
+                 <bool>false</bool>
+                </property>
+                <property name="minimum" >
+                 <number>1</number>
+                </property>
+                <property name="maximum" >
+                 <number>200</number>
+                </property>
+                <property name="value" >
+                 <number>80</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer" >
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0" >
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="6" column="0" >
+           <layout class="QHBoxLayout" name="horizontalLayout_3" >
+            <item>
+             <widget class="QCheckBox" name="hideFindReplace" >
+              <property name="text" >
+               <string>Hide Find/Replace panels after</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="findReplaceDelay" >
+              <property name="enabled" >
+               <bool>false</bool>
+              </property>
+              <property name="minimum" >
+               <number>1</number>
+              </property>
+              <property name="maximum" >
+               <number>60</number>
+              </property>
+              <property name="value" >
+               <number>10</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_19" >
+              <property name="text" >
+               <string>sec.</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2" >
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0" >
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0" >
+           <widget class="QCheckBox" name="selectionBorder" >
+            <property name="text" >
+             <string>Selection border</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" >
+           <widget class="QCheckBox" name="brackets" >
+            <property name="text" >
+             <string>Auto-Brackets</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" >
+           <widget class="QCheckBox" name="completion" >
+            <property name="text" >
+             <string>Complete Code</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" >
+           <widget class="QCheckBox" name="indent" >
+            <property name="text" >
+             <string>Autoindent</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" >
+           <widget class="QCheckBox" name="numbers" >
+            <property name="text" >
+             <string>Line numbers</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" >
+           <widget class="QCheckBox" name="highlight" >
+            <property name="text" >
+             <string>Syntax highlighting</string>
+            </property>
+            <property name="checked" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1" >
+           <widget class="QCheckBox" name="showEditorToolbars" >
+            <property name="text" >
+             <string>Display editor toolbars</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1" >
+           <widget class="QCheckBox" name="displayWhiteSpaces" >
+            <property name="text" >
+             <string>Display white spaces</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" >
+           <widget class="QCheckBox" name="comments" >
+            <property name="text" >
+             <string>Auto-Comments</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1" >
+           <widget class="QCheckBox" name="wordwrap" >
+            <property name="text" >
+             <string>Word wrap</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" >
+           <widget class="QCheckBox" name="smartClick" >
+            <property name="text" >
+             <string>Ctrl+click = Go to implementation,
+Meta+click = Go to declaration</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
       </layout>
+      <zorder>groupBox_6</zorder>
      </widget>
      <widget class="QWidget" name="tab" >
       <attribute name="title" >
