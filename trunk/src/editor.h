@@ -159,7 +159,7 @@ public:
 	void methodsList();
 	//void keyPress(QKeyEvent * event);
 	//
-	
+	bool smartClick;
 	inline QString getOtherFileToolTip() { return m_otherFileButton->toolTip(); }
 	inline QString getOtherFileIcon() { return m_otherFileIcon; }
 	inline bool hasOtherFile() { return !m_nameOtherFile.isEmpty(); }

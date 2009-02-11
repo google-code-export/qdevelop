@@ -396,6 +396,17 @@ void TextEdit::mousePressEvent ( QMouseEvent * event )
 {
     m_completionList->hide();
     QTextEdit::mousePressEvent ( event );
+    if (m_editor->smartClick)
+    {
+    	if (event->modifiers() == Qt::ControlModifier)
+	    {
+	    	slotGotoImplementation();
+	   	}
+	   	else if (event->modifiers() == Qt::MetaModifier)
+	   	{
+	   		slotGotoDeclaration();
+	  	}
+   	}
 }
 //
 TextEdit::~TextEdit()

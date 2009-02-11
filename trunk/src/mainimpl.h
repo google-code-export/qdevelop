@@ -169,6 +169,7 @@ private:
 	InitCompletion *m_buildQtDatabase;
 	QAction *actionActiveBookmark;
 	int m_mibCodec;
+	bool m_smartClick;
 	//QList<Editor *> m_maximizedEditors;
 	QAction *separatorOtherFile, *actionOtherFile;
 	QHash<QWidget*,bool> toolbarStatus;
