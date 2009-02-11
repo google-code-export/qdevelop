@@ -1015,7 +1015,7 @@ void TextEdit::match()
     int pos = cursor.position();
    	m_matchingBegin = -1;
    	m_matchingEnd = -1;
-    if( pos==-1 || !QString("({[]})").contains( m_plainText.at( pos ) ) )
+    if( pos==-1 || pos >= m_plainText.size() || !QString("({[]})").contains( m_plainText.at( pos ) ) )
     	return;
     QChar car;
     if ( pos != -1 )
