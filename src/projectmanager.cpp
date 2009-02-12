@@ -2198,9 +2198,10 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
     QFile makefile(projectDirectory+"/"+"Makefile");
     if (!makefile.open(QIODevice::ReadOnly | QIODevice::Text))
         return QString();
-    while (!makefile.atEnd())
+    QTextStream makefileText(&makefile);
+    while (!makefileText.atEnd())
     {
-        line = QString( makefile.readLine() );
+        line = QString( makefileText.readLine() );
         // Partie concernant le file Makefile appelant sous Windows Makefile.Debug ou Makefile.Release.
         // Sans objet sous Linux
         if ( line.contains(" ") && line.section(" ", 0, 0).simplified() == "first:" && (line.section(" ", 1, 1).simplified()=="all" ))
@@ -2217,6 +2218,7 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
             if (!makefile.open(QIODevice::ReadOnly | QIODevice::Text))
                 return QString();
             cible = QString();
+            makefileText.setDevice(&makefile);
             continue;
         }
         // Partie commune Win et Linux
