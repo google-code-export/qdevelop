@@ -83,7 +83,7 @@ void ParametersImpl::on_defaults_clicked()
         QTableWidgetItem *itemCol0 = new QTableWidgetItem( s.section("=", 0, 0) );
 		itemCol0->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled );
         tableVariables->setItem(row, 0, itemCol0);
-        tableVariables->setItem(row++, 1, new QTableWidgetItem( s.section("=", 1, 1)));
+        tableVariables->setItem(row++, 1, new QTableWidgetItem( s.section("=", 1)));
 	}
 }
 //
