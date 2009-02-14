@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fr_FR">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -55,7 +56,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Dmitrij &quot;Divius&quot; Tantsur &amp;lt;&lt;a href=&quot;mailto:divius.inside@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;divius.inside@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;mailto:divius.inside@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1902,22 +1903,22 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="145"/>
         <source>En&amp;force qmake mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Appliquer le mode qmake</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1655"/>
         <source>&amp;Debug mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode &amp;Debug</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1663"/>
         <source>&amp;Release mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode &amp;Release</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1668"/>
         <source>&amp;Forget last used mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Oubliez le dernier mode utilisé</translation>
     </message>
 </context>
 <context>
@@ -2726,7 +2727,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../../ui/options.ui" line="762"/>
         <source>Ctrl+click = Go to implementation,
 Meta+click = Go to declaration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+click = Aller à l&apos;implémentation,
+Meta+click = Aller à la déclaration</translation>
     </message>
 </context>
 <context>
@@ -2831,137 +2833,137 @@ Meta+click = Go to declaration</source>
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1201"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1193"/>
         <source>Save project changes ?</source>
         <translation>Enregistrer les modifications du projet ?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1381"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1366"/>
         <source>Yes</source>
         <translation>Oui</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1381"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1366"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1343"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="776"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="768"/>
         <source>Forms:</source>
         <translation>Type de dialogue:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="836"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="828"/>
         <source>Unable to create file.</source>
         <translation>Impossible de créer le fichier.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1373"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1358"/>
         <source>Ok</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="958"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="950"/>
         <source>Sub-project creation</source>
         <translation>Création d&apos;un sous-projet</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="994"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="986"/>
         <source>Sub-Projects</source>
         <translation>Sous-projets</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1526"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1511"/>
         <source>Sub-projects</source>
         <translation>Sous-projets</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1632"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1617"/>
         <source>Headers</source>
         <translation>Entêtes</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1637"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1622"/>
         <source>Sources</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1642"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1627"/>
         <source>Dialogs</source>
         <translation>Dialogues</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1647"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1632"/>
         <source>Translations</source>
         <translation>Traductions</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1652"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1637"/>
         <source>Resources</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="159"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="159"/>
         <source>Project parsing</source>
         <translation>Analyse du projet</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1324"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1309"/>
         <source>New name:</source>
         <translation>Nouveau nom:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1330"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1315"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Le genre du nouveau et de l&apos;ancien fichier sont différents !</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1331"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1316"/>
         <source>Rename</source>
         <translation>Renommer</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="763"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="755"/>
         <source>The file already exists in directory.</source>
         <translation>Le fichier exite déjà dans le répertoire.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="884"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="876"/>
         <source>The file already exists.</source>
         <translation>Le fichier existe déjà.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="895"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="887"/>
         <source>This file is not permitted.</source>
         <translation>Le fichier n&apos;est pas autorisé.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1343"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Impossible de renommer le fichier pour &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2056"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="2037"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>La seule version disponible pour &quot;%1&quot; est %2</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2057"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="2038"/>
         <source>Run on %1</source>
         <translation>Lancer sur %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1372"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1357"/>
         <source>Cannot remove the main project.</source>
         <translation>Impossible de supprimer le projet principal.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1380"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="1365"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>Voulez-vous supprimer &quot;%1&quot; du projet ?</translation>
     </message>
@@ -2973,7 +2975,7 @@ Meta+click = Go to declaration</source>
     <message>
         <location filename="../../src/projectmanager.cpp.orig" line="1267"/>
         <source>The file  &quot;%1&quot; </source>
-        <translation type="obsolete">Le fichier &quot;%1&quot;</translation>
+        <translation>Le fichier &quot;%1&quot;</translation>
     </message>
 </context>
 <context>
@@ -3390,17 +3392,17 @@ Meta+click = Go to declaration</source>
         <translation>Création de la fenêtre principale</translation>
     </message>
     <message>
-        <location filename="../../src/misc.cpp" line="80"/>
+        <location filename="../../src/misc.cpp" line="82"/>
         <source>Unable to establish a database connection.</source>
         <translation>Impossible d&apos;établir la connexion à la base de données.</translation>
     </message>
     <message>
-        <location filename="../../src/misc.cpp" line="83"/>
+        <location filename="../../src/misc.cpp" line="85"/>
         <source>QDevelop needs SQLite support. Please read the Qt SQL driver documentation for information how to build it.</source>
         <translation>QDevelop a besoin du support de SQLite. Lisez la documentation traitant du pilote Qt SQL afin d&apos;obtenir des informations sur la manière de le construire.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="191"/>
+        <location filename="../../src/projectmanager.cpp.orig" line="191"/>
         <source>Current project parsing</source>
         <translation>Analyse du projet courant</translation>
     </message>
@@ -3588,6 +3590,11 @@ Meta+click = Go to declaration</source>
         <location filename="../../src/subclassingimpl.cpp" line="424"/>
         <source>(.h and .cpp)</source>
         <translation>(.h et .cpp)</translation>
+    </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="51"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>
