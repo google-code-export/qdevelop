@@ -1918,7 +1918,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="1668"/>
         <source>&amp;Forget last used mode</source>
-        <translation>&amp;Oubliez le dernier mode utilisé</translation>
+        <translation>&amp;Ne pas utiliser de mode qmake</translation>
     </message>
 </context>
 <context>
