@@ -8,17 +8,17 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/about.ui" line="156"/>
+        <location filename="../../ui/about.ui" line="157"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Version&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;/head&gt;&lt;body style=&quot; white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg 2; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;バージョン&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/about.ui" line="191"/>
+        <location filename="../../ui/about.ui" line="192"/>
         <source>OK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui/about.ui" line="107"/>
+        <location filename="../../ui/about.ui" line="106"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;
@@ -38,7 +38,24 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;diegoiast@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {8p?} {10p?} {2006-2008&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?}</translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2007&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;diegoiast@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {8p?} {10p?} {2006-2008&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {000000;?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?} {000000;?} {0000f?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2&apos;?} {10p?} {0000f?}</translation>
+    </message>
+    <message>
+        <location filename="../../ui/about.ui" line="132"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2009&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Main Developer: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Code completion: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Dmitrij &quot;Divius&quot; Tantsur &amp;lt;&lt;a href=&quot;mailto:divius.inside@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;divius.inside@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;mailto:divius.inside@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -643,27 +660,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Build</name>
     <message>
-        <location filename="../../src/build.cpp" line="72"/>
+        <location filename="../../src/build.cpp" line="74"/>
         <source>Update project</source>
         <translation>プロジェクトの更新</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="88"/>
+        <location filename="../../src/build.cpp" line="95"/>
         <source>Clean Project</source>
         <translation>プロジェクトのクリーン</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="107"/>
+        <location filename="../../src/build.cpp" line="114"/>
         <source>Build</source>
         <translation>ビルド</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="144"/>
+        <location filename="../../src/build.cpp" line="151"/>
         <source>Build stopped</source>
         <translation>ビルドの停止</translation>
     </message>
     <message>
-        <location filename="../../src/build.cpp" line="103"/>
+        <location filename="../../src/build.cpp" line="110"/>
         <source>
 Compilation of %1...
 </source>
@@ -972,12 +989,12 @@ was modified outside editor.
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/editor.cpp" line="899"/>
+        <location filename="../../src/editor.cpp" line="904"/>
         <source>error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="909"/>
+        <location filename="../../src/editor.cpp" line="914"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
@@ -1008,1111 +1025,1131 @@ was modified outside editor.
         <translation>QDevelop</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="105"/>
+        <location filename="../../ui/main.ui" line="106"/>
         <source>&amp;?</source>
         <translation>&amp;?</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="117"/>
+        <location filename="../../ui/main.ui" line="118"/>
         <source>&amp;Project</source>
         <translation>プロジェクト(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="178"/>
+        <location filename="../../ui/main.ui" line="189"/>
         <source>&amp;View</source>
         <translation>表示(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1358"/>
+        <location filename="../../ui/main.ui" line="1283"/>
         <source>&amp;Debug</source>
         <translation>デバッグ(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1366"/>
+        <location filename="../../ui/main.ui" line="1292"/>
         <source>&amp;Build</source>
         <translation>ビルド(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="154"/>
+        <location filename="../../ui/main.ui" line="165"/>
         <source>&amp;File</source>
         <translation>ファイル(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="45"/>
+        <location filename="../../ui/main.ui" line="46"/>
         <source>&amp;Edit</source>
         <translation>編集(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1345"/>
+        <location filename="../../ui/main.ui" line="1269"/>
         <source>Outputs</source>
         <translation>出力</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="433"/>
+        <location filename="../../ui/main.ui" line="411"/>
         <source>Build</source>
         <translation>ビルド</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="718"/>
+        <location filename="../../ui/main.ui" line="644"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="723"/>
+        <location filename="../../ui/main.ui" line="649"/>
         <source>Type</source>
         <translation>型</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="728"/>
+        <location filename="../../ui/main.ui" line="654"/>
         <source>Address</source>
         <translation>アドレス</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="733"/>
+        <location filename="../../ui/main.ui" line="659"/>
         <source>Value</source>
         <translation>値</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="686"/>
+        <location filename="../../ui/main.ui" line="611"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1340"/>
+        <location filename="../../ui/main.ui" line="1264"/>
         <source>Project Explorer</source>
         <translation>プロジェクト一覧</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1350"/>
+        <location filename="../../ui/main.ui" line="1274"/>
         <source>Files</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="857"/>
+        <location filename="../../ui/main.ui" line="765"/>
         <source>Classes</source>
         <translation>クラス</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="263"/>
+        <location filename="../../ui/main.ui" line="274"/>
         <source>Files toolbar</source>
         <translation>ファイルのツールバー</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="290"/>
+        <location filename="../../ui/main.ui" line="301"/>
         <source>Edit Toolbar</source>
         <translation>編集のツールバー</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="896"/>
+        <location filename="../../ui/main.ui" line="796"/>
         <source>&amp;New Project...</source>
         <translation>新しいプロジェクト(&amp;N)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="904"/>
+        <location filename="../../ui/main.ui" line="805"/>
         <source>&amp;New File...</source>
         <translation>新しいファイル(&amp;N)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="910"/>
+        <location filename="../../ui/main.ui" line="811"/>
         <source>New File</source>
         <translation>新しいファイル</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="915"/>
+        <location filename="../../ui/main.ui" line="816"/>
         <source>&amp;File...</source>
         <translation>ファイル(&amp;F)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="931"/>
+        <location filename="../../ui/main.ui" line="834"/>
         <source>&amp;Close All Files</source>
         <translation>すべてのファイルを閉じる(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="939"/>
+        <location filename="../../ui/main.ui" line="843"/>
         <source>&amp;Save File</source>
         <translation>ファイルを保存(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="942"/>
+        <location filename="../../ui/main.ui" line="846"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="969"/>
+        <location filename="../../ui/main.ui" line="876"/>
         <source>&amp;Quit</source>
         <translation>閉じる(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="983"/>
+        <location filename="../../ui/main.ui" line="891"/>
         <source>Undo</source>
         <translation>元に戻す</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="986"/>
+        <location filename="../../ui/main.ui" line="894"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1000"/>
+        <location filename="../../ui/main.ui" line="909"/>
         <source>Redo</source>
         <translation>やり直す</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1003"/>
+        <location filename="../../ui/main.ui" line="912"/>
         <source>Ctrl+Shift+Z</source>
         <translation>Ctrl+Shift+Z</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1014"/>
+        <location filename="../../ui/main.ui" line="924"/>
         <source>Ctrl+X</source>
         <translation>Ctrl+X</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1025"/>
+        <location filename="../../ui/main.ui" line="936"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1036"/>
+        <location filename="../../ui/main.ui" line="948"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1041"/>
+        <location filename="../../ui/main.ui" line="953"/>
         <source>Select All</source>
         <translation>すべて選択</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1044"/>
+        <location filename="../../ui/main.ui" line="956"/>
         <source>Ctrl+A</source>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1055"/>
+        <location filename="../../ui/main.ui" line="968"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1063"/>
+        <location filename="../../ui/main.ui" line="976"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1082"/>
+        <location filename="../../ui/main.ui" line="995"/>
         <source>Add New Item</source>
         <translation>新しいアイテムの追加</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1096"/>
+        <location filename="../../ui/main.ui" line="1009"/>
         <source>Add Existing Files</source>
         <translation>既存ファイルの追加</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1101"/>
+        <location filename="../../ui/main.ui" line="1014"/>
         <source>New Folder</source>
         <translation>新しいフォルダ</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1115"/>
+        <location filename="../../ui/main.ui" line="1028"/>
         <source>Project Properties</source>
         <translation>プロジェクトのプロパティ</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1126"/>
+        <location filename="../../ui/main.ui" line="1039"/>
         <source>Clean</source>
         <translation>クリーン</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1140"/>
+        <location filename="../../ui/main.ui" line="1054"/>
         <source>Rebuild</source>
         <translation>リビルド</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1154"/>
+        <location filename="../../ui/main.ui" line="1069"/>
         <source>Compile File</source>
         <translation>ファイルのコンパイル</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1157"/>
+        <location filename="../../ui/main.ui" line="1072"/>
         <source>Shift+F7</source>
         <translation>Shift+F7</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1171"/>
+        <location filename="../../ui/main.ui" line="1087"/>
         <source>Start Program</source>
         <translation>プログラム開始</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1174"/>
+        <location filename="../../ui/main.ui" line="1090"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1188"/>
+        <location filename="../../ui/main.ui" line="1105"/>
         <source>Step Into</source>
         <translation>ステップイン</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1191"/>
+        <location filename="../../ui/main.ui" line="1108"/>
         <source>F11</source>
         <translation>F11</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1205"/>
+        <location filename="../../ui/main.ui" line="1123"/>
         <source>Step Over</source>
         <translation>ステップオーバー</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1208"/>
+        <location filename="../../ui/main.ui" line="1126"/>
         <source>F10</source>
         <translation>F10</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1219"/>
+        <location filename="../../ui/main.ui" line="1137"/>
         <source>Calls Stack</source>
         <translation>コールスタック</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1247"/>
+        <location filename="../../ui/main.ui" line="1166"/>
         <source>&amp;Open...</source>
         <translation>開く(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1250"/>
+        <location filename="../../ui/main.ui" line="1169"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1258"/>
+        <location filename="../../ui/main.ui" line="1177"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1275"/>
+        <location filename="../../ui/main.ui" line="1195"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1278"/>
+        <location filename="../../ui/main.ui" line="1198"/>
         <source>F6</source>
         <translation>F6</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1283"/>
+        <location filename="../../ui/main.ui" line="1203"/>
         <source>Breakpoints...</source>
         <translation>ブレークポイント...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1299"/>
+        <location filename="../../ui/main.ui" line="1221"/>
         <source>Indent selection</source>
         <translation>選択範囲のインデント設定</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1302"/>
+        <location filename="../../ui/main.ui" line="1224"/>
         <source>Tab</source>
         <translation>Tab</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1310"/>
+        <location filename="../../ui/main.ui" line="1233"/>
         <source>Unindent selection</source>
         <translation>選択範囲のインデント解除</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1313"/>
+        <location filename="../../ui/main.ui" line="1236"/>
         <source>Shift+Tab</source>
         <translation>Shift+Tab</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1324"/>
+        <location filename="../../ui/main.ui" line="1248"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1382"/>
+        <location filename="../../ui/main.ui" line="1309"/>
         <source>Save Project As...</source>
         <translation>名前を付けてプロジェクトを保存...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1406"/>
+        <location filename="../../ui/main.ui" line="1335"/>
         <source>Shift+F11</source>
         <translation>Shift+F11</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1414"/>
+        <location filename="../../ui/main.ui" line="1343"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1425"/>
+        <location filename="../../ui/main.ui" line="1354"/>
         <source>Alt+Right</source>
         <translation>Alt+Right</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1436"/>
+        <location filename="../../ui/main.ui" line="1365"/>
         <source>Alt+Left</source>
         <translation>Alt+Left</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1447"/>
+        <location filename="../../ui/main.ui" line="1376"/>
         <source>Shift+F12</source>
         <translation>Shift+F12</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1455"/>
+        <location filename="../../ui/main.ui" line="1384"/>
         <source>Esc</source>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1466"/>
+        <location filename="../../ui/main.ui" line="1396"/>
         <source>F9</source>
         <translation>F9</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1484"/>
+        <location filename="../../ui/main.ui" line="1414"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1492"/>
+        <location filename="../../ui/main.ui" line="1422"/>
         <source>Ctrl+D</source>
         <translation>Ctrl+D</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1497"/>
+        <location filename="../../ui/main.ui" line="1427"/>
         <source>Comment</source>
         <translation>コメント設定</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1502"/>
+        <location filename="../../ui/main.ui" line="1432"/>
         <source>Uncomment</source>
         <translation>コメント解除</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1507"/>
+        <location filename="../../ui/main.ui" line="1437"/>
         <source>Complete Code</source>
         <translation>完全コード</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1510"/>
+        <location filename="../../ui/main.ui" line="1440"/>
         <source>Ctrl+Space</source>
         <translation>Ctrl+Space</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1518"/>
+        <location filename="../../ui/main.ui" line="1449"/>
         <source>Toggle &amp;Bookmark</source>
         <translation>ブックマークの設定/解除(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1524"/>
+        <location filename="../../ui/main.ui" line="1455"/>
         <source>Toggle Bookmark</source>
         <translation>ブックマークの設定/解除</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1527"/>
+        <location filename="../../ui/main.ui" line="1458"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1535"/>
+        <location filename="../../ui/main.ui" line="1467"/>
         <source>Clear &amp;All Bookmarks</source>
         <translation>すべてのブックマークをクリア(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="923"/>
+        <location filename="../../ui/main.ui" line="825"/>
         <source>&amp;Open Project...</source>
         <translation>プロジェクトを開く(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1538"/>
+        <location filename="../../ui/main.ui" line="1470"/>
         <source>Ctrl+F2</source>
         <translation>Ctrl+F2</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1554"/>
+        <location filename="../../ui/main.ui" line="1487"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1565"/>
+        <location filename="../../ui/main.ui" line="1499"/>
         <source>Shift+F2</source>
         <translation>Shift+F2</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1573"/>
+        <location filename="../../ui/main.ui" line="1507"/>
         <source>Shift+F3</source>
         <translation>Shift+F3</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1085"/>
+        <location filename="../../ui/main.ui" line="998"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1584"/>
+        <location filename="../../ui/main.ui" line="1518"/>
         <source>Goto matching bracket</source>
         <translation>対応する括弧へジャンプ</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1587"/>
+        <location filename="../../ui/main.ui" line="1521"/>
         <source>Ctrl+[</source>
         <translation>Ctrl+[</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="229"/>
+        <location filename="../../ui/main.ui" line="240"/>
         <source>Plugins</source>
         <translation>プラグイン</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1369"/>
+        <location filename="../../ui/main.ui" line="1295"/>
         <source>F7</source>
         <translation>F7</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1592"/>
+        <location filename="../../ui/main.ui" line="1526"/>
         <source>Foo</source>
         <translation>Foo</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1605"/>
+        <location filename="../../ui/main.ui" line="1540"/>
         <source>&amp;Print...</source>
         <translation>印刷(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1071"/>
+        <location filename="../../ui/main.ui" line="984"/>
         <source>Ctrl+Shift+F</source>
         <translation>Ctrl+Shift+F</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1613"/>
+        <location filename="../../ui/main.ui" line="1548"/>
         <source>Alt+Shift+O</source>
         <translation>Alt+Shift+O</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="78"/>
+        <location filename="../../ui/main.ui" line="79"/>
         <source>&amp;Bookmarks</source>
         <translation>ブックマーク(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="121"/>
+        <location filename="../../ui/main.ui" line="122"/>
         <source>&amp;Last Projects</source>
         <translation>最近開いたプロジェクト(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="140"/>
+        <location filename="../../ui/main.ui" line="141"/>
         <source>B&amp;uild</source>
         <translation>ビルド(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="158"/>
+        <location filename="../../ui/main.ui" line="169"/>
         <source>Las&amp;t Files</source>
         <translation>最近開いたファイル(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="211"/>
+        <location filename="../../ui/main.ui" line="222"/>
         <source>&amp;Tools</source>
         <translation>ツール(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="215"/>
+        <location filename="../../ui/main.ui" line="226"/>
         <source>&amp;Plugins settings</source>
         <translation>プラグイン設定(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="234"/>
+        <location filename="../../ui/main.ui" line="245"/>
         <source>Ed&amp;itors</source>
         <translation>エディタ(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="883"/>
+        <location filename="../../ui/main.ui" line="782"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="317"/>
+        <location filename="../../ui/main.ui" line="328"/>
         <source>Build and Debug Toolbar</source>
         <translation>ビルドとデバッグのツールバー</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="343"/>
+        <location filename="../../ui/main.ui" line="354"/>
         <source>Call Stacks</source>
         <translation>コールスタック</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="376"/>
+        <location filename="../../ui/main.ui" line="375"/>
         <source>Registers</source>
         <translation>レジスタ</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="950"/>
+        <location filename="../../ui/main.ui" line="855"/>
         <source>Save File &amp;as...</source>
         <translation>名前を付けてファイルを保存(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="961"/>
+        <location filename="../../ui/main.ui" line="867"/>
         <source>Save A&amp;ll</source>
         <translation>すべてを保存(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="977"/>
+        <location filename="../../ui/main.ui" line="885"/>
         <source>&amp;Undo</source>
         <translation>元に戻す(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="994"/>
+        <location filename="../../ui/main.ui" line="903"/>
         <source>&amp;Redo</source>
         <translation>元に戻す(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1011"/>
+        <location filename="../../ui/main.ui" line="921"/>
         <source>Cu&amp;t</source>
         <translation>切り取り(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1022"/>
+        <location filename="../../ui/main.ui" line="933"/>
         <source>&amp;Copy</source>
         <translation>コピー(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1033"/>
+        <location filename="../../ui/main.ui" line="945"/>
         <source>&amp;Paste</source>
         <translation>貼り付け(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1052"/>
+        <location filename="../../ui/main.ui" line="965"/>
         <source>&amp;Find...</source>
         <translation>検索(&amp;F)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1060"/>
+        <location filename="../../ui/main.ui" line="973"/>
         <source>&amp;Replace...</source>
         <translation>置換(&amp;R)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1068"/>
+        <location filename="../../ui/main.ui" line="981"/>
         <source>&amp;Find in Files...</source>
         <translation>ファイルから検索(&amp;F)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1076"/>
+        <location filename="../../ui/main.ui" line="989"/>
         <source>Add New &amp;Item...</source>
         <translation>新しいアイテムの追加(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1090"/>
+        <location filename="../../ui/main.ui" line="1003"/>
         <source>Add Existing &amp;Files...</source>
         <translation>既存ファイルの追加(&amp;F)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1109"/>
+        <location filename="../../ui/main.ui" line="1022"/>
         <source>Project &amp;Properties...</source>
         <translation>プロジェクトのプロパティ(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1120"/>
+        <location filename="../../ui/main.ui" line="1033"/>
         <source>&amp;Clean</source>
         <translation>クリーン(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1134"/>
+        <location filename="../../ui/main.ui" line="1048"/>
         <source>&amp;Rebuild</source>
         <translation>リビルド(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1165"/>
+        <location filename="../../ui/main.ui" line="1081"/>
         <source>S&amp;tart Program</source>
         <translation>プログラム開始(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1182"/>
+        <location filename="../../ui/main.ui" line="1099"/>
         <source>Step &amp;Into</source>
         <translation>ステップイン(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1199"/>
+        <location filename="../../ui/main.ui" line="1117"/>
         <source>Step O&amp;ver</source>
         <translation>ステップオーバー(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1213"/>
+        <location filename="../../ui/main.ui" line="1131"/>
         <source>&amp;Calls Stack</source>
         <translation>コールスタック(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1224"/>
+        <location filename="../../ui/main.ui" line="1142"/>
         <source>&amp;Options...</source>
         <translation>オプション(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1229"/>
+        <location filename="../../ui/main.ui" line="1147"/>
         <source>&amp;Parameters...</source>
         <translation>引数(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1234"/>
+        <location filename="../../ui/main.ui" line="1152"/>
         <source>&amp;About...</source>
         <translation>QDevelop について(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1239"/>
+        <location filename="../../ui/main.ui" line="1157"/>
         <source>About &amp;Qt...</source>
         <translation>Qt について(&amp;Q)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1255"/>
+        <location filename="../../ui/main.ui" line="1174"/>
         <source>Find &amp;Next</source>
         <translation>次を検索(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1269"/>
+        <location filename="../../ui/main.ui" line="1189"/>
         <source>&amp;Stop</source>
         <translation>停止(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1291"/>
+        <location filename="../../ui/main.ui" line="1212"/>
         <source>&amp;Stop Build</source>
         <translation>ビルドの停止(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1321"/>
+        <location filename="../../ui/main.ui" line="1245"/>
         <source>&amp;Help Current Qt Word</source>
         <translation>カレント Qt ワードのヘルプ(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1329"/>
+        <location filename="../../ui/main.ui" line="1253"/>
         <source>&amp;Reset Executables List</source>
         <translation>実行可能リストのリセット(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1377"/>
+        <location filename="../../ui/main.ui" line="1304"/>
         <source>&amp;Save Project</source>
         <translation>プロジェクトを保存(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1390"/>
+        <location filename="../../ui/main.ui" line="1318"/>
         <source>C&amp;lose Project</source>
         <translation>プロジェクトを閉じる(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1395"/>
+        <location filename="../../ui/main.ui" line="1323"/>
         <source>Add &amp;Scope...</source>
         <translation>スコープの追加(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1403"/>
+        <location filename="../../ui/main.ui" line="1332"/>
         <source>Step &amp;Out</source>
         <translation>ステップアウト(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1411"/>
+        <location filename="../../ui/main.ui" line="1340"/>
         <source>&amp;Close Current Editor</source>
         <translation>カレントエディタを閉じる(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1422"/>
+        <location filename="../../ui/main.ui" line="1351"/>
         <source>&amp;Next Tab</source>
         <translation>次のタブ(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1433"/>
+        <location filename="../../ui/main.ui" line="1362"/>
         <source>&amp;Previous Tab</source>
         <translation>前のタブ(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1444"/>
+        <location filename="../../ui/main.ui" line="1373"/>
         <source>&amp;Switch to Header/Sources</source>
         <translation>ヘッダ/ソースファイルの切り替え(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1452"/>
+        <location filename="../../ui/main.ui" line="1381"/>
         <source>Set &amp;Focus to Editor</source>
         <translation>エディタにフォーカスを設定(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1463"/>
+        <location filename="../../ui/main.ui" line="1393"/>
         <source>Toggle &amp;breakpoint</source>
         <translation>ブレークポイントの設定/解除(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1471"/>
+        <location filename="../../ui/main.ui" line="1401"/>
         <source>Goto &amp;Methods List</source>
         <translation>メソッドリストへジャンプ(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1476"/>
+        <location filename="../../ui/main.ui" line="1406"/>
         <source>Configure &amp;Shortcuts...</source>
         <translation>ショートカットの割り当て(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1481"/>
+        <location filename="../../ui/main.ui" line="1411"/>
         <source>&amp;Goto Line...</source>
         <translation>行へジャンプ(&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1489"/>
+        <location filename="../../ui/main.ui" line="1419"/>
         <source>Toggle Co&amp;mments</source>
         <translation>コメントの設定/解除(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1543"/>
+        <location filename="../../ui/main.ui" line="1475"/>
         <source>E&amp;xternal Tools...</source>
         <translation>外部ツール(&amp;X)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1551"/>
+        <location filename="../../ui/main.ui" line="1484"/>
         <source>&amp;Next Bookmark</source>
         <translation>次のブックマーク(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1562"/>
+        <location filename="../../ui/main.ui" line="1496"/>
         <source>&amp;Previous Bookmark</source>
         <translation>前のブックマーク(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1570"/>
+        <location filename="../../ui/main.ui" line="1504"/>
         <source>Find Pr&amp;evious</source>
         <translation>前を検索(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1578"/>
+        <location filename="../../ui/main.ui" line="1512"/>
         <source>Goto matching &amp;bracket</source>
         <translation>対応する括弧へジャンプ(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1597"/>
+        <location filename="../../ui/main.ui" line="1531"/>
         <source>Add New &amp;Class...</source>
         <translation>新しいクラスの追加(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1610"/>
+        <location filename="../../ui/main.ui" line="1545"/>
         <source>Open F&amp;ile in project...</source>
         <translation>プロジェクトのファイルを開く(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1621"/>
+        <location filename="../../ui/main.ui" line="1557"/>
         <source>Goto &amp;Implementation</source>
         <translation>実装へジャンプ(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1629"/>
+        <location filename="../../ui/main.ui" line="1566"/>
         <source>Goto &amp;Declaration</source>
         <translation>宣言へジャンプ(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1634"/>
+        <location filename="../../ui/main.ui" line="1571"/>
         <source>&amp;Rebuild Qt classes database</source>
         <translation>クラスデータベースのリビルド(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1639"/>
+        <location filename="../../ui/main.ui" line="1576"/>
         <source>Execute &amp;qmake</source>
         <translation>qmake の実行(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1647"/>
+        <location filename="../../ui/main.ui" line="1585"/>
         <source>Show Maximized</source>
         <translation>最大化で表示</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1655"/>
+        <location filename="../../ui/main.ui" line="1593"/>
         <source>&amp;Editor mode</source>
         <translation>エディタモード(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1658"/>
+        <location filename="../../ui/main.ui" line="1596"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1663"/>
+        <location filename="../../ui/main.ui" line="1601"/>
         <source>Next Warning/Error</source>
         <translation>次の警告/エラー</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1666"/>
+        <location filename="../../ui/main.ui" line="1604"/>
         <source>F4</source>
         <translation>F4</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1671"/>
+        <location filename="../../ui/main.ui" line="1609"/>
         <source>Previous Warning/Error</source>
         <translation>前の警告/エラー</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1674"/>
+        <location filename="../../ui/main.ui" line="1612"/>
         <source>Shift+F4</source>
         <translation>Shift+F4</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1679"/>
+        <location filename="../../ui/main.ui" line="1617"/>
         <source>Clear all Warnings/Errors</source>
         <translation>すべての警告/エラーのクリア</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="185"/>
+        <location filename="../../ui/main.ui" line="196"/>
         <source>&amp;Toolbars</source>
         <translation>ツールバー(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="196"/>
+        <location filename="../../ui/main.ui" line="207"/>
         <source>Dock windows</source>
         <translation>ドックウィンドウ</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="538"/>
+        <location filename="../../ui/main.ui" line="498"/>
         <source>Local Variables</source>
         <translation>ローカル変数</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="601"/>
+        <location filename="../../ui/main.ui" line="552"/>
         <source>Other Variables</source>
         <translation>他の変数</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="748"/>
+        <location filename="../../ui/main.ui" line="674"/>
         <source>Find in files</source>
         <translation>ファイルから検索</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1684"/>
+        <location filename="../../ui/main.ui" line="1622"/>
         <source>Full view</source>
         <translation>すべてのウィンドウを表示</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1689"/>
+        <location filename="../../ui/main.ui" line="1627"/>
         <source>Minimal view</source>
         <translation>最小限のウィンドウで表示</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1694"/>
+        <location filename="../../ui/main.ui" line="1632"/>
         <source>DocksWindow</source>
         <translation>ドックウィンドウ</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1699"/>
+        <location filename="../../ui/main.ui" line="1637"/>
         <source>Dock Windows</source>
         <translation>ドックウィンドウ</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1704"/>
+        <location filename="../../ui/main.ui" line="1642"/>
         <source>New submenu &gt;</source>
         <translation>新しいサブメニュー &gt;</translation>
     </message>
     <message>
-        <location filename="../../ui/main.ui" line="1709"/>
+        <location filename="../../ui/main.ui" line="1647"/>
         <source>a</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="145"/>
+        <source>En&amp;force qmake mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1655"/>
+        <source>&amp;Debug mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1663"/>
+        <source>&amp;Release mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/main.ui" line="1668"/>
+        <source>&amp;Forget last used mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1199"/>
+        <location filename="../../src/mainimpl.cpp" line="1210"/>
         <source>Choose the file to create</source>
         <translation>ファイルを選択してください</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="442"/>
+        <location filename="../../src/mainimpl.cpp" line="449"/>
         <source>Files</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2280"/>
+        <location filename="../../src/mainimpl.cpp" line="2330"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="994"/>
+        <location filename="../../src/mainimpl.cpp" line="1005"/>
         <source>Do you want to quit QDevelop ?</source>
         <translation>QDevelop を終了しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1869"/>
+        <location filename="../../src/mainimpl.cpp" line="1919"/>
         <source>Yes</source>
         <translation>はい</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1869"/>
+        <location filename="../../src/mainimpl.cpp" line="1919"/>
         <source>No</source>
         <translation>いいえ</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1042"/>
+        <location filename="../../src/mainimpl.cpp" line="1053"/>
         <source>Choose a file to open</source>
         <translation>ファイルを選択してください</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1044"/>
+        <location filename="../../src/mainimpl.cpp" line="1055"/>
         <source>Sources</source>
         <translation>ソースファイル</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1073"/>
+        <location filename="../../src/mainimpl.cpp" line="1084"/>
         <source>Projects</source>
         <translation>プロジェクト</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1046"/>
+        <location filename="../../src/mainimpl.cpp" line="1057"/>
         <source>Texts</source>
         <translation>テキスト</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1047"/>
+        <location filename="../../src/mainimpl.cpp" line="1058"/>
         <source>All Files</source>
         <translation>すべてのファイル</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1201"/>
+        <location filename="../../src/mainimpl.cpp" line="1212"/>
         <source>Files (*.cpp *.h *.txt *.* *)</source>
         <translation>ファイル (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1894"/>
+        <location filename="../../src/mainimpl.cpp" line="1944"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1973"/>
+        <location filename="../../src/mainimpl.cpp" line="2023"/>
         <source>Start</source>
         <translation>開始</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1852"/>
+        <location filename="../../src/mainimpl.cpp" line="1902"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>プロジェクトが更新されています。更新を保存しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1868"/>
+        <location filename="../../src/mainimpl.cpp" line="1918"/>
         <source>Stop debugging ?</source>
         <translation>デバッグを停止しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1881"/>
+        <location filename="../../src/mainimpl.cpp" line="1931"/>
         <source>run Build.</source>
         <translation>ビルドを開始します。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1881"/>
+        <location filename="../../src/mainimpl.cpp" line="1931"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1896"/>
+        <location filename="../../src/mainimpl.cpp" line="1946"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1974"/>
+        <location filename="../../src/mainimpl.cpp" line="2024"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2042"/>
+        <location filename="../../src/mainimpl.cpp" line="2092"/>
         <source>Abort</source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2035"/>
+        <location filename="../../src/mainimpl.cpp" line="2085"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Windows では停止できません。ブレークポイントを解除してください。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2077"/>
+        <location filename="../../src/mainimpl.cpp" line="2127"/>
         <source>Continue</source>
         <translation>継続</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2135"/>
+        <location filename="../../src/mainimpl.cpp" line="2185"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2270"/>
+        <location filename="../../src/mainimpl.cpp" line="2320"/>
         <source>New Variable:</source>
         <translation>新しい変数:</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1071"/>
+        <location filename="../../src/mainimpl.cpp" line="1082"/>
         <source>Choose a project to open</source>
         <translation>プロジェクトを選択してください</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1669"/>
+        <location filename="../../src/mainimpl.cpp" line="1719"/>
         <source>Build finished without error</source>
         <translation>エラー無しでビルド終了</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1671"/>
+        <location filename="../../src/mainimpl.cpp" line="1721"/>
         <source>Build finished with</source>
         <translation>でビルド終了</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1673"/>
+        <location filename="../../src/mainimpl.cpp" line="1723"/>
         <source>error(s)</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1673"/>
+        <location filename="../../src/mainimpl.cpp" line="1723"/>
         <source>and</source>
         <translation>と</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1675"/>
+        <location filename="../../src/mainimpl.cpp" line="1725"/>
         <source>warning(s)</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="452"/>
+        <location filename="../../src/mainimpl.cpp" line="459"/>
         <source>The file &quot;%1&quot;
  already exists in directory.</source>
         <translation>ファイル &quot;%1&quot;
  は既にディレクトリに存在します。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="458"/>
+        <location filename="../../src/mainimpl.cpp" line="465"/>
         <source>Unable to create %1</source>
         <translation>%1 を作成できません</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1094"/>
+        <location filename="../../src/mainimpl.cpp" line="1105"/>
         <source>The project %1 doesn&apos;t exist.</source>
         <translation>プロジェクト %1 は存在しません。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1180"/>
+        <location filename="../../src/mainimpl.cpp" line="1191"/>
         <source>Properties of %1...</source>
         <translation>%1 のプロパティ...</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1880"/>
+        <location filename="../../src/mainimpl.cpp" line="1930"/>
         <source>The program doesn&apos;t exist,</source>
         <translation>プログラムは存在しません。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2279"/>
+        <location filename="../../src/mainimpl.cpp" line="2329"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation>変数 &quot;%1&quot;
  は既に存在します。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="904"/>
+        <location filename="../../src/mainimpl.cpp" line="915"/>
         <source>The Qt include directory doesn&apos;t exist,
 You can change in Options dialog.</source>
         <translation>Qt インクルードディレクトリが存在しません。
 オプションダイアログで変更することができます。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2435"/>
+        <location filename="../../src/mainimpl.cpp" line="2485"/>
         <source>The Qt database building is already in progress.</source>
         <translation>Qt データベースのビルドは既に処理中です。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2479"/>
+        <location filename="../../src/mainimpl.cpp" line="2529"/>
         <source>The Qt classes database build is ended.</source>
         <translation>Qt クラスデータベースのビルドが終了しました。</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2263"/>
+        <location filename="../../src/mainimpl.cpp" line="2313"/>
         <source>Version %1</source>
         <translation></translation>
     </message>
@@ -2285,12 +2322,12 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/newproject.ui" line="437"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="obsolete">Dialog</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="444"/>
         <source>DialogImpl</source>
-        <translation>DialogImpl</translation>
+        <translation type="obsolete">DialogImpl</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="471"/>
@@ -2300,12 +2337,12 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/newproject.ui" line="491"/>
         <source>dialog</source>
-        <translation>dialog</translation>
+        <translation type="obsolete">dialog</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="498"/>
         <source>dialogimpl</source>
-        <translation>dialogimpl</translation>
+        <translation type="obsolete">dialogimpl</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="525"/>
@@ -2331,32 +2368,32 @@ You can change in Options dialog.</source>
 <context>
     <name>NewProjectImpl</name>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="45"/>
+        <location filename="../../src/newprojectimpl.cpp" line="51"/>
         <source>Choose the project directory</source>
         <translation>プロジェクトディレクトリを選択してください</translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="136"/>
+        <location filename="../../src/newprojectimpl.cpp" line="142"/>
         <source>The directory &quot;%1&quot; cannot be created</source>
         <translation>ディレクトリ &quot;%1&quot; は作成できません</translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="145"/>
+        <location filename="../../src/newprojectimpl.cpp" line="151"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="144"/>
+        <location filename="../../src/newprojectimpl.cpp" line="150"/>
         <source>The project cannot be created</source>
         <translation>プロジェクトは作成できません</translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="122"/>
+        <location filename="../../src/newprojectimpl.cpp" line="128"/>
         <source>Project file &quot;%1&quot; already exists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/newprojectimpl.cpp" line="127"/>
+        <location filename="../../src/newprojectimpl.cpp" line="133"/>
         <source>The directory &quot;%1&quot; already exists. Do you want to create project anyway?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2485,122 +2522,122 @@ You can change in Options dialog.</source>
         <translation>エディタ</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="559"/>
+        <location filename="../../ui/options.ui" line="311"/>
         <source>Font:</source>
         <translation>フォント:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="566"/>
+        <location filename="../../ui/options.ui" line="318"/>
         <source>End of line</source>
         <translation>改行コード</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="573"/>
+        <location filename="../../ui/options.ui" line="325"/>
         <source>Tab size</source>
         <translation>タブのサイズ</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="587"/>
+        <location filename="../../ui/options.ui" line="339"/>
         <source>Current line background</source>
         <translation>カレント行の背景色</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="594"/>
+        <location filename="../../ui/options.ui" line="346"/>
         <source>Text background</source>
         <translation>背景色</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="642"/>
+        <location filename="../../ui/options.ui" line="394"/>
         <source>Default</source>
         <translation>デフォルト</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="647"/>
+        <location filename="../../ui/options.ui" line="399"/>
         <source>Unix</source>
         <translation>Unix</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="652"/>
+        <location filename="../../ui/options.ui" line="404"/>
         <source>Dos/Windows</source>
         <translation>Dos/Windows</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="671"/>
+        <location filename="../../ui/options.ui" line="423"/>
         <source>Replace Tab by spaces</source>
         <translation>タブをスペースに置き換える</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="920"/>
+        <location filename="../../ui/options.ui" line="917"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="282"/>
+        <location filename="../../ui/options.ui" line="529"/>
         <source>options</source>
         <translation>オプション</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="369"/>
+        <location filename="../../ui/options.ui" line="717"/>
         <source>Line numbers</source>
         <translation>行番号</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="778"/>
+        <location filename="../../ui/options.ui" line="775"/>
         <source>Syntax highlighting</source>
         <translation>文法ハイライト</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="301"/>
+        <location filename="../../ui/options.ui" line="696"/>
         <source>Auto-Brackets</source>
         <translation>自動括弧</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="294"/>
+        <location filename="../../ui/options.ui" line="689"/>
         <source>Selection border</source>
         <translation>選択境界</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="355"/>
+        <location filename="../../ui/options.ui" line="703"/>
         <source>Complete Code</source>
         <translation>完全コード</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="362"/>
+        <location filename="../../ui/options.ui" line="710"/>
         <source>Autoindent</source>
         <translation>オートインデント</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="819"/>
+        <location filename="../../ui/options.ui" line="816"/>
         <source>Function/method names :</source>
         <translation>関数/メソッド名:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="826"/>
+        <location filename="../../ui/options.ui" line="823"/>
         <source>Preprocessor :</source>
         <translation>プリプロセッサ:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="833"/>
+        <location filename="../../ui/options.ui" line="830"/>
         <source>Qt words :</source>
         <translation>Qt ワード:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="840"/>
+        <location filename="../../ui/options.ui" line="837"/>
         <source>Keywords :</source>
         <translation>キーワード:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="847"/>
+        <location filename="../../ui/options.ui" line="844"/>
         <source>Single comments :</source>
         <translation>シングル行コメント:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="854"/>
+        <location filename="../../ui/options.ui" line="851"/>
         <source>Multiline comments :</source>
         <translation>マルチ行コメント:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="861"/>
+        <location filename="../../ui/options.ui" line="858"/>
         <source>Quotation strings :</source>
         <translation>引用文字列:</translation>
     </message>
@@ -2610,7 +2647,7 @@ You can change in Options dialog.</source>
         <translation>デフォルトプロジェクトディレクトリ: </translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="316"/>
+        <location filename="../../ui/options.ui" line="549"/>
         <source>Matching ( and {</source>
         <translation>( と { のマッチング</translation>
     </message>
@@ -2655,42 +2692,42 @@ You can change in Options dialog.</source>
         <translation>タブ毎にボタンを閉じる (すべてのスタイルで動作する訳ではない)</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="386"/>
+        <location filename="../../ui/options.ui" line="734"/>
         <source>Display editor toolbars</source>
         <translation>エディタツールバーの表示</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="393"/>
+        <location filename="../../ui/options.ui" line="741"/>
         <source>Display white spaces</source>
         <translation>空白文字を表示</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="580"/>
+        <location filename="../../ui/options.ui" line="332"/>
         <source>Files encoding:</source>
         <translation>エンコーディング:</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="601"/>
+        <location filename="../../ui/options.ui" line="353"/>
         <source>Text color</source>
         <translation>文字色</translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="402"/>
+        <location filename="../../ui/options.ui" line="590"/>
         <source>Right margin line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="411"/>
+        <location filename="../../ui/options.ui" line="599"/>
         <source>Column:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="454"/>
+        <location filename="../../ui/options.ui" line="748"/>
         <source>Auto-Comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="948"/>
+        <location filename="../../ui/options.ui" line="945"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -2713,25 +2750,31 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="508"/>
+        <location filename="../../ui/options.ui" line="755"/>
         <source>Word wrap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="463"/>
+        <location filename="../../ui/options.ui" line="644"/>
         <source>Hide Find/Replace panels after</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../ui/options.ui" line="486"/>
+        <location filename="../../ui/options.ui" line="667"/>
         <source>sec.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../ui/options.ui" line="762"/>
+        <source>Ctrl+click = Go to implementation,
+Meta+click = Go to declaration</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>OptionsImpl</name>
     <message>
-        <location filename="../../src/optionsimpl.cpp" line="384"/>
+        <location filename="../../src/optionsimpl.cpp" line="386"/>
         <source>Choose the project directory</source>
         <translation>プロジェクトディレクトリを選択してください</translation>
     </message>
@@ -2830,77 +2873,77 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1193"/>
+        <location filename="../../src/projectmanager.cpp" line="1201"/>
         <source>Save project changes ?</source>
         <translation>プロジェクトの変更を保存しますか?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1373"/>
+        <location filename="../../src/projectmanager.cpp" line="1381"/>
         <source>Yes</source>
         <translation>はい</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1373"/>
+        <location filename="../../src/projectmanager.cpp" line="1381"/>
         <source>No</source>
         <translation>いいえ</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1350"/>
+        <location filename="../../src/projectmanager.cpp" line="1358"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="768"/>
+        <location filename="../../src/projectmanager.cpp" line="776"/>
         <source>Forms:</source>
         <translation>フォーム:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="828"/>
+        <location filename="../../src/projectmanager.cpp" line="836"/>
         <source>Unable to create file.</source>
         <translation>ファイルを作成できません。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1365"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="950"/>
+        <location filename="../../src/projectmanager.cpp" line="958"/>
         <source>Sub-project creation</source>
         <translation>サブプロジェクトの作成</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="986"/>
+        <location filename="../../src/projectmanager.cpp" line="994"/>
         <source>Sub-Projects</source>
         <translation>サブプロジェクト</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1518"/>
+        <location filename="../../src/projectmanager.cpp" line="1526"/>
         <source>Sub-projects</source>
         <translation>サブプロジェクト</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1624"/>
+        <location filename="../../src/projectmanager.cpp" line="1632"/>
         <source>Headers</source>
         <translation>ヘッダファイル</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1629"/>
+        <location filename="../../src/projectmanager.cpp" line="1637"/>
         <source>Sources</source>
         <translation>ソースファイル</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1634"/>
+        <location filename="../../src/projectmanager.cpp" line="1642"/>
         <source>Dialogs</source>
         <translation>ダイアログ</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1639"/>
+        <location filename="../../src/projectmanager.cpp" line="1647"/>
         <source>Translations</source>
         <translation>翻訳</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1644"/>
+        <location filename="../../src/projectmanager.cpp" line="1652"/>
         <source>Resources</source>
         <translation>リソース</translation>
     </message>
@@ -2910,62 +2953,62 @@ p, li { white-space: pre-wrap; }
         <translation>プロジェクト解析</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1316"/>
+        <location filename="../../src/projectmanager.cpp" line="1324"/>
         <source>New name:</source>
         <translation>新しい名前:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1322"/>
+        <location filename="../../src/projectmanager.cpp" line="1330"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>新しいファイルと古いファイルの種類が違います!</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1323"/>
+        <location filename="../../src/projectmanager.cpp" line="1331"/>
         <source>Rename</source>
         <translation>名前の変更</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="755"/>
+        <location filename="../../src/projectmanager.cpp" line="763"/>
         <source>The file already exists in directory.</source>
         <translation>ファイルは既にディレクトリに存在します。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="876"/>
+        <location filename="../../src/projectmanager.cpp" line="884"/>
         <source>The file already exists.</source>
         <translation>ファイルは既に存在します。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="887"/>
+        <location filename="../../src/projectmanager.cpp" line="895"/>
         <source>This file is not permitted.</source>
         <translation>ファイルは許可されていません。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1350"/>
+        <location filename="../../src/projectmanager.cpp" line="1358"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>&quot;%1&quot; へのファイル名の変更ができません</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2044"/>
+        <location filename="../../src/projectmanager.cpp" line="2056"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>利用可能な &quot;%1&quot; のバージョンは %2 です</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2045"/>
+        <location filename="../../src/projectmanager.cpp" line="2057"/>
         <source>Run on %1</source>
         <translation>%1 を実行</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1364"/>
+        <location filename="../../src/projectmanager.cpp" line="1372"/>
         <source>Cannot remove the main project.</source>
         <translation>メインプロジェクトは削除できません。</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1372"/>
+        <location filename="../../src/projectmanager.cpp" line="1380"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>プロジェクトから &quot;%1&quot; を削除しますか ?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1286"/>
+        <location filename="../../src/projectmanager.cpp" line="1294"/>
         <source>File not found: &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3583,6 +3626,11 @@ p, li { white-space: pre-wrap; }
         <source>(.h and .cpp)</source>
         <translation></translation>
     </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="51"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TabWidget</name>
@@ -3605,87 +3653,87 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TextEdit</name>
     <message>
-        <location filename="../../src/textEdit.cpp" line="681"/>
+        <location filename="../../src/textEdit.cpp" line="692"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="681"/>
+        <location filename="../../src/textEdit.cpp" line="692"/>
         <source>Yes</source>
         <translation>はい</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="681"/>
+        <location filename="../../src/textEdit.cpp" line="692"/>
         <source>No</source>
         <translation>いいえ</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1490"/>
+        <location filename="../../src/textEdit.cpp" line="1501"/>
         <source>Cut</source>
         <translation>切り取り</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1491"/>
+        <location filename="../../src/textEdit.cpp" line="1502"/>
         <source>Copy</source>
         <translation>コピー</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1492"/>
+        <location filename="../../src/textEdit.cpp" line="1503"/>
         <source>Paste</source>
         <translation>貼り付け</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1494"/>
+        <location filename="../../src/textEdit.cpp" line="1505"/>
         <source>Selection Indent</source>
         <translation>選択範囲のインデント設定</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1495"/>
+        <location filename="../../src/textEdit.cpp" line="1506"/>
         <source>Selection Unindent</source>
         <translation>選択範囲のインデント解除</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1498"/>
+        <location filename="../../src/textEdit.cpp" line="1509"/>
         <source>Select All</source>
         <translation>すべて選択</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1500"/>
+        <location filename="../../src/textEdit.cpp" line="1511"/>
         <source>Find...</source>
         <translation>検索...</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1502"/>
+        <location filename="../../src/textEdit.cpp" line="1513"/>
         <source>Toggle Bookmark</source>
         <translation>ブックマークの設定/解除</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1503"/>
+        <location filename="../../src/textEdit.cpp" line="1514"/>
         <source>Toggle Breakpoint</source>
         <translation>ブレークポイントの設定/解除</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="427"/>
+        <location filename="../../src/textEdit.cpp" line="438"/>
         <source>The file &quot;%1&quot; could not be loaded.</source>
         <translation>ファイル &quot;%1&quot; はロードできません。</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="681"/>
+        <location filename="../../src/textEdit.cpp" line="692"/>
         <source>Save &quot;%1&quot;</source>
         <translation>&quot;%1&quot; を保存しますか？</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="700"/>
+        <location filename="../../src/textEdit.cpp" line="711"/>
         <source>Unable to save %1</source>
         <translation>%1 を保存できません</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1485"/>
+        <location filename="../../src/textEdit.cpp" line="1496"/>
         <source>Goto Implementation</source>
         <translation>実装へジャンプ</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="1486"/>
+        <location filename="../../src/textEdit.cpp" line="1497"/>
         <source>Goto Declaration</source>
         <translation>宣言へジャンプ</translation>
     </message>
@@ -3697,7 +3745,7 @@ Try to complete code later.</source>
 後から完全コードで試してください。</translation>
     </message>
     <message>
-        <location filename="../../src/textEdit.cpp" line="950"/>
+        <location filename="../../src/textEdit.cpp" line="961"/>
         <source>Reached end of page, continued from top</source>
         <translation>ページ末尾に到達したので、先頭から継続しました</translation>
     </message>
