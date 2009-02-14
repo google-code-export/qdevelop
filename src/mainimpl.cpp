@@ -320,6 +320,9 @@ void MainImpl::createConnections()
     connect(actionSaveFileAs, SIGNAL(triggered()), this, SLOT(slotSaveFileAs()) );
     connect(actionCompile, SIGNAL(triggered()), this, SLOT(slotCompile()) );
     connect(actionBuild, SIGNAL(triggered()), this, SLOT(slotBuild()) );
+    connect(actionRelease_mode, SIGNAL(triggered()), this, SLOT(slotBuildRelease()) );
+    connect(actionDebug_mode, SIGNAL(triggered()), this, SLOT(slotBuildDebug()) );
+    connect(action_Forget_last_used_mode, SIGNAL(triggered()), this, SLOT(slotForgetBuildMode()) );
     connect(actionRebuild, SIGNAL(triggered()), this, SLOT(slotRebuild()) );
     connect(actionQmake, SIGNAL(triggered()), this, SLOT(slotQmake()) );
     connect(actionStopBuild, SIGNAL(triggered()), this, SLOT(slotStopBuild()) );
@@ -425,6 +428,9 @@ void MainImpl::createConnections()
     m_buildingGroup->addAction( actionStepInto );
     m_buildingGroup->addAction( actionStepOver );
     m_buildingGroup->addAction( actionStepOut );
+    m_buildingGroup->addAction( actionDebug_mode );
+    m_buildingGroup->addAction( actionRelease_mode );
+    m_buildingGroup->addAction( action_Forget_last_used_mode );
 }
 //
 void MainImpl::slotShortcuts()
@@ -1597,7 +1603,7 @@ void MainImpl::slotCompile(bool automaticCompilation)
     }
 }
 //
-void MainImpl::slotBuild(bool clean, bool build, bool forceQmake)
+void MainImpl::slotBuild(bool clean, bool build, bool forceQmake, QString forceMode)
 {
     bool qmakeNeeded = false;
     if (!m_projectManager)
@@ -1612,6 +1618,7 @@ void MainImpl::slotBuild(bool clean, bool build, bool forceQmake)
     if ( actionDebug->text() == tr("Stop") && !slotDebug())
         return;
     m_buildAfterDebug = false;
+    if (forceMode.isEmpty()) forceMode = m_lastForcedMode;
     qmakeNeeded = m_projectManager->isModifiedProject();
     if ( m_projectsDirectoriesList.count() == 0 )
     {
@@ -1639,7 +1646,8 @@ void MainImpl::slotBuild(bool clean, bool build, bool forceQmake)
     {
         m_configureCompletionNeeded = true;
     }
-    m_builder = new Build(this, m_qmakeName, m_makeName, m_makeOptions, projectDirectory+"/"+projectName, qmakeNeeded|m_clean, m_clean, m_build);
+    m_builder = new Build(this, m_qmakeName, m_makeName, m_makeOptions, projectDirectory+"/"+projectName, 
+    	qmakeNeeded|m_clean, m_clean, m_build, QString(), forceMode);
 
     connect(logBuild, SIGNAL(incErrors()), m_builder, SLOT(slotIncErrors()) );
     connect(logBuild, SIGNAL(incWarnings()), m_builder, SLOT(slotIncWarnings()) );
@@ -1651,6 +1659,41 @@ void MainImpl::slotBuild(bool clean, bool build, bool forceQmake)
     	connect(m_builder, SIGNAL(message(QString, QString)), editor, SLOT(slotMessagesBuild(QString, QString)) );
    	}
     m_builder->start();
+}
+
+void MainImpl::slotBuildRelease()
+{
+	if (actionRelease_mode->isChecked())
+	{
+		setQmakeForcedMode("release");
+		slotBuild(true, false, true, "release");
+	}
+	else
+	{
+		slotForgetBuildMode();
+	}
+}
+
+void MainImpl::slotBuildDebug()
+{
+	if (actionDebug_mode->isChecked())
+	{
+		setQmakeForcedMode("debug");
+		slotBuild(true, false, true, "debug");
+	}
+	else
+	{
+		slotForgetBuildMode();
+	}
+}
+
+void MainImpl::slotForgetBuildMode()
+{
+	if (!m_lastForcedMode.isEmpty())
+	{
+		setQmakeForcedMode("");
+		slotBuild(true, false, true);
+	}
 }
 //
 void MainImpl::slotStopBuild()
@@ -1664,7 +1707,8 @@ void MainImpl::slotEndBuild()
 {
     if ( m_configureCompletionNeeded )
         configureCompletion(m_projectsDirectoriesList.first());
-    m_projectsDirectoriesList.removeFirst();
+    if ( m_projectsDirectoriesList.count() ) 
+        m_projectsDirectoriesList.removeFirst();
     if ( m_projectsDirectoriesList.count() )
         slotBuild();
     else
