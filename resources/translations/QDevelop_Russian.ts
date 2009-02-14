@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ru_RU">
-<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -3575,11 +3574,6 @@ Meta+нажатие мышью = перейти к объявлению</transla
         <location filename="../../src/subclassingimpl.cpp" line="424"/>
         <source>(.h and .cpp)</source>
         <translation>(.h и .cpp)</translation>
-    </message>
-    <message>
-        <location filename="../../src/subclassingimpl.cpp" line="51"/>
-        <source></source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
