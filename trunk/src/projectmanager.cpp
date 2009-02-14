@@ -372,6 +372,10 @@ void ProjectManager::saveProjectSettings()
     query.bindValue(":value", QString::number( m_treeFiles->showAsKrawek() ) );
     if ( !query.exec() )
         qDebug()<<"config" << query.lastError();
+    query.bindValue(":key", "forceQmakeMode");
+    query.bindValue(":value", m_parent->qmakeForcedMode() );
+    if ( !query.exec() )
+        qDebug()<<"config" << query.lastError();
 }
 //
 void ProjectManager::loadProjectSettings()
@@ -441,6 +445,10 @@ void ProjectManager::loadProjectSettings()
         	if( showAsKrawek )
         		m_treeFiles->slotShowAsKrawek();
        	}
+       	else if ( key == "forceQmakeMode" )
+       	{
+       		m_parent->setQmakeForcedMode(query.value( 1 ).toString());
+      	}
     }
     //
     query.prepare("select * from projectsDirectories where 1");
@@ -2038,7 +2046,11 @@ QString ProjectManager::executableName(QString preferedVersion)
             QString realVersion = projectVersion( it );
             if ( realVersion.toLower() == "debug_and_release" )
                 realVersion = preferedVersion;
-            else if ( realVersion != preferedVersion && realVersion.length() )
+            else if (!m_parent->qmakeForcedMode().isEmpty())
+            {
+            	realVersion = m_parent->qmakeForcedMode();
+           	}
+            if ( realVersion != preferedVersion && realVersion.length() )
             {
                 QMessageBox::warning(0,
                                      "QDevelop", tr("The only available version for \"%1\" is %2").arg(projectName, realVersion),

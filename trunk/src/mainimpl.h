@@ -84,6 +84,23 @@ public:
 	int mibCodec() { return m_mibCodec;	}
 	void checkQtDatabase();
 	InitCompletion* buildQtDatabase() { return m_buildQtDatabase; }
+	inline void setQmakeForcedMode(const QString & mode) {
+		actionDebug_mode->setChecked(false);
+		actionRelease_mode->setChecked(false);
+		if (mode == "debug")
+		{
+			actionDebug_mode->setChecked(true);
+		}
+		else if (mode == "release")
+		{
+			actionRelease_mode->setChecked(true);
+		}
+			
+		m_lastForcedMode = mode;
+	}
+	inline QString qmakeForcedMode() const {
+		return m_lastForcedMode;
+	}
 private:
 	// Functions
 	void createConnections();
@@ -173,6 +190,7 @@ private:
 	//QList<Editor *> m_maximizedEditors;
 	QAction *separatorOtherFile, *actionOtherFile;
 	QHash<QWidget*,bool> toolbarStatus;
+	QString m_lastForcedMode;
 protected:
 	void closeEvent( QCloseEvent * event );
 private slots:
@@ -186,7 +204,10 @@ private slots:
 	void slotCompleteCode();
 	void slotSaveFileAs();
 	bool slotSaveAll();
-	void slotBuild(bool clean=false, bool build=true, bool forceQmake=false);
+	void slotBuild(bool clean=false, bool build=true, bool forceQmake=false, QString forceMode = QString());
+	void slotBuildRelease();
+	void slotBuildDebug();
+	void slotForgetBuildMode();
 	void slotNewProject();
 	void slotRebuild();
 	void slotStopBuild();

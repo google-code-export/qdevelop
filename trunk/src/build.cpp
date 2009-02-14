@@ -31,7 +31,8 @@
 #include <QTextCodec>
 #define QD qDebug() << __FILE__ << __LINE__ << ":"
 //
-Build::Build(QObject * parent, QString qmakeName, QString makeName, QString makeOptions, QString absoluteProjectName, bool qmake, bool n, bool g, QString compileFile)
+Build::Build(QObject * parent, QString qmakeName, QString makeName, QString makeOptions, QString absoluteProjectName, 
+	bool qmake, bool n, bool g, QString compileFile, QString forceMode)
 
 	: QThread(parent)
 {
@@ -48,6 +49,7 @@ Build::Build(QObject * parent, QString qmakeName, QString makeName, QString make
 	m_compileFile = compileFile;
 	m_errors = 0;
 	m_warnings = 0;
+	m_forceMode = forceMode;
 }
 //
 void Build::slotIncErrors() 
@@ -67,13 +69,18 @@ void Build::run()
 	connect(m_buildProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(slotBuildMessages()) );
 	connect(m_buildProcess, SIGNAL(readyReadStandardError()), this, SLOT(slotBuildMessages()) );
 	m_buildProcess->setWorkingDirectory( m_projectDirectory );
-	if( m_qmake )
+	if( m_qmake || !m_forceMode.isEmpty() )
 	{
 		emit message( QString(tr("Update project"))+" (qmake "+m_projectName+")..." );
+		QStringList forceDebugList;
+		if (!m_forceMode.isEmpty())
+		{
+			forceDebugList << "-after" << "CONFIG+="+m_forceMode;
+		}
 #ifdef Q_WS_MAC
-		m_buildProcess->start(m_qmakeName, QStringList() <<"-spec"<< "macx-g++" << m_projectName);
+		m_buildProcess->start(m_qmakeName, QStringList() <<"-spec"<< "macx-g++" << m_projectName << forceDebugList);
 #else
-		m_buildProcess->start(m_qmakeName, QStringList() << m_projectName);
+		m_buildProcess->start(m_qmakeName, QStringList() << m_projectName << forceDebugList);
 #endif
     	if (!m_buildProcess->waitForFinished(800000))
 		{
