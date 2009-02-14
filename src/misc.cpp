@@ -62,6 +62,7 @@ QAction* variantToAction( QVariant variant )
 //
 bool connectDB(QString const& dbName)
 {
+	static bool errorAlreadyReported = false;
 	QSqlDatabase database;
 	if( QSqlDatabase::database(dbName).databaseName() != dbName )
 	{
@@ -76,12 +77,14 @@ bool connectDB(QString const& dbName)
 	}
 	//
     if (!database.open()) {
-        QMessageBox::critical(0, "QDevelop",
-            QObject::tr("Unable to establish a database connection.")+"\n"+
+    	if (!errorAlreadyReported)
+        	QMessageBox::critical(0, "QDevelop",
+            	QObject::tr("Unable to establish a database connection.")+"\n"+
                      QObject::tr("QDevelop needs SQLite support. Please read "
                      "the Qt SQL driver documentation for information how "
                      "to build it."), QMessageBox::Cancel,
                      QMessageBox::NoButton);
+        errorAlreadyReported = true;
         return false;
     }
 	else
