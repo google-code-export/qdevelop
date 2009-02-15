@@ -220,7 +220,8 @@ void TreeProject::mousePressEvent( QMouseEvent * event )
 		{
 			connect(menu->addAction(QIcon(), tr("Add New Item...")), SIGNAL(triggered()), this, SLOT(slotAddNewItem()) );
 		}
-		connect(menu->addAction(QIcon(), tr("Sort")), SIGNAL(triggered()), this, SLOT(slotSort()) );
+		// TODO: Divius: Temporary disabled for 0.27.1. may brake complex project files
+		//connect(menu->addAction(QIcon(), tr("Sort")), SIGNAL(triggered()), this, SLOT(slotSort()) );
 		connect(menu->addAction(QIcon(":/toolbar/images/editdelete.png"), tr("Remove from project")), SIGNAL(triggered()), this, SLOT(slotDeleteItem()) );
 		menu->addSeparator();
 		QTreeWidgetItem *tmp = m_itemClicked;
