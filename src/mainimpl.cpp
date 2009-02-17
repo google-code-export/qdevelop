@@ -145,7 +145,7 @@ MainImpl::MainImpl(QWidget * parent)
     m_font = QFont("Courier New", 10);
 #elif defined Q_WS_MACX
     m_font = QFont("Monaco", 12);
-    setUnifiedTitleAndToolBarOnMac(true);
+    setUnifiedTitleAndToolBarOnMac(false);
 #else
     m_font = QFont("Monospace", 10);
 #endif
