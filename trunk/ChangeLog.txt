@@ -1,3 +1,23 @@
+February 17 2009 Version 0.27:
+  - Fixed a lot of issues (among them several segfaults, incorrect work with relative paths, some translation issues)
+  - Several editor improvements: word wrap, right margin line
+  - Changable autohide delay for find and replace widgets
+  - Updated English, French, Russian, German, Polish and Portuguese translations
+  - Option for autoclosing comment blocks in editor
+  - Better interaction with Qt Assistant >= 4.4.0
+  - Menu item for forcing qmake debug or release mode without changing project file
+  - The "Find in Files" function now supports simple replacing as well
+  - Smart click feature: ctrl+left click on some keyword in editor for "Goto implementation" command, meta(super,win)+left click - for "Goto declaration"
+  - QDevelop settings file is hidden on *NIX (renamed to .qdevelop)
+  - Partly fixed multiple error messages when unable to connect to SqLite database
+  - Better error and warning detection in make output, detection of linker errors
+  - Compiling QDevelop via CMake now supports install feature
+  - Plugins path is no longer hardcoded to be /usr/lib/qdevelop/plugins but is relative to executable path
+  - Fixed 'Add new item': on right-clicking on 'Headers' etc subtrees it misdetected project to which new file should belong
+  - Fixed problem with spaces in executable name
+  - Following keywords are now highlighted: emit, qobject_cast, forever
+  - Added link_pkgconfig to project properties
+
 November 05 2008 Version 0.26:
   - Fix many issues
   - The Replace widget is now embeded in editors as the Find widget.
