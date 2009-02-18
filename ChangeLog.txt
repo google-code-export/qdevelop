@@ -1,4 +1,4 @@
-February 17 2009 Version 0.27:
+February 18 2009 Version 0.27:
   - Fixed a lot of issues (among them several segfaults, incorrect work with relative paths, some translation issues)
   - Several editor improvements: word wrap, right margin line
   - Changable autohide delay for find and replace widgets
@@ -16,7 +16,8 @@ February 17 2009 Version 0.27:
   - Fixed 'Add new item': on right-clicking on 'Headers' etc subtrees it misdetected project to which new file should belong
   - Fixed problem with spaces in executable name
   - Following keywords are now highlighted: emit, qobject_cast, forever
-  - Added link_pkgconfig to project properties
+  - Added link_pkgconfig to project properties (CONFIG qmake variable)
+  - "Sort" feature was temporary dropped because it would brake any complicated project file - will return in 0.28
 
 November 05 2008 Version 0.26:
   - Fix many issues
