@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ru_RU">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -1480,7 +1481,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="245"/>
         <source>Ed&amp;itors</source>
-        <translation>П&amp;равка</translation>
+        <translation>&amp;Редактор</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="222"/>
