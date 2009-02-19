@@ -1328,7 +1328,17 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     }
     else if ( Editor::shortFilename(s).section(".", -1, -1).toLower() == "ts" )
     {
-        QProcess::startDetached (m_linguistName, QStringList(s));
+        if (!QProcess::startDetached (m_linguistName, QStringList(s)))
+        {
+        	#ifdef Q_OS_MACX
+        	if (!QProcess::startDetached (m_linguistName + "/Contents/MacOS/Linguist", QStringList(s)))
+        	{
+        		// TODO: Error handling here
+       		}
+        	#else
+        	// TODO: Error handling here
+        	#endif
+       	}
         QApplication::restoreOverrideCursor();
         return 0;
     }
