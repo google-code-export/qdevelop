@@ -59,7 +59,7 @@ ToolsControlImpl::ToolsControlImpl( QWidget * parent, Qt::WFlags f)
     lupdate->setText ( settings.value("m_lupdateName" , bindir+"lupdate" +suffix).toString() );
     lrelease->setText( settings.value("m_lreleaseName", bindir+"lrelease"+suffix).toString() );
 #ifdef Q_OS_MACX
-    linguist->setText( settings.value("m_linguistName", bindir+"linguist.app").toString() );
+    linguist->setText( settings.value("m_linguistName", bindir+"Linguist.app").toString() );
     designer->setText( settings.value("m_designerName", bindir+"Designer.app").toString() );
     assistant->setText( settings.value("m_assistantName", bindir+"Assistant.app").toString() );
 #else
