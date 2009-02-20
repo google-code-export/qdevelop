@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="hu_HU">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -55,7 +56,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Dmitrij &quot;Divius&quot; Tantsur &amp;lt;&lt;a href=&quot;mailto:divius.inside@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;divius.inside@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;mailto:divius.inside@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;QDevelop&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Open Source Edition - Copyright (C)2006-2009&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;&gt;Fő fejlesztő: Jean-Luc Biord &amp;lt;&lt;a href=&quot;mailto:jl.biord@free.fr&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;jl.biord@free.fr&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; color:#000000;&quot;Kódkiegészítés: Frederic Julian &amp;lt;&lt;a href=&quot;mailto:fred.julian@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;fred.julian@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Fejlesztő: Diego Iastrubni &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:diegoiast@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;elcuco@kde.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Fejlesztő: Trent Zhou &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:trent.zhou@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;trent.zhou@gmail.com&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Fejlesztő: Daniel Kacer &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:kacer@aceslovakia.sk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;kacer@aceslovakia.sk&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Fejlesztő: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Fejlesztő: Dmitrij &quot;Divius&quot; Tantsur &amp;lt;&lt;a href=&quot;mailto:divius.inside@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;divius.inside@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;mailto:divius.inside@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Csomagkészítő: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -136,7 +137,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addexistantimpl.cpp" line="109"/>
         <source>Files (*.cpp *.h *.hpp *.ui *.qrc *.ts)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fájlok  (*.cpp *.h *.hpp *.ui *.qrc *.ts)</translation>
     </message>
 </context>
 <context>
@@ -718,7 +719,7 @@ Compilation of %1...
     <message>
         <location filename="../../src/debug.cpp" line="86"/>
         <source>Exited with error code %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kilépett a következő hibakóddal %1</translation>
     </message>
 </context>
 <context>
@@ -858,12 +859,12 @@ módosult a programon kívül.
     <message>
         <location filename="../../ui/findfiles.ui" line="199"/>
         <source>Replace found text</source>
-        <translation type="unfinished"></translation>
+        <translation>A csere megfelelő szöveget talált</translation>
     </message>
     <message>
         <location filename="../../ui/findfiles.ui" line="214"/>
         <source>Replace with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Csere erre:</translation>
     </message>
 </context>
 <context>
@@ -896,7 +897,7 @@ módosult a programon kívül.
     <message>
         <location filename="../../src/findfileimpl.cpp" line="173"/>
         <source>Cannot open temporary file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem tudom megnyitni az átmeneti fájlt %1</translation>
     </message>
 </context>
 <context>
@@ -1002,19 +1003,19 @@ módosult a programon kívül.
         <location filename="../../src/logbuild.cpp" line="101"/>
         <source>error</source>
         <comment>Compiler message</comment>
-        <translation type="unfinished">hiba</translation>
+        <translation>hiba</translation>
     </message>
     <message>
         <location filename="../../src/logbuild.cpp" line="101"/>
         <source>undefined reference to</source>
         <comment>Linker message</comment>
-        <translation type="unfinished"></translation>
+        <translation>undefined reference to</translation>
     </message>
     <message>
         <location filename="../../src/logbuild.cpp" line="114"/>
         <source>warning</source>
         <comment>Compiler message</comment>
-        <translation type="unfinished">igyelmeztetés</translation>
+        <translation>figyelmeztetés</translation>
     </message>
 </context>
 <context>
@@ -1922,22 +1923,22 @@ módosult a programon kívül.
     <message>
         <location filename="../../ui/main.ui" line="145"/>
         <source>En&amp;force qmake mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Erőltetett q&amp;make mód</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1655"/>
         <source>&amp;Debug mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Debug mód</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1663"/>
         <source>&amp;Release mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kiadási mód</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1668"/>
         <source>&amp;Forget last used mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Felejtsd el a legutóbb használt módot</translation>
     </message>
 </context>
 <context>
@@ -2389,12 +2390,12 @@ már létezik.</translation>
     <message>
         <location filename="../../src/newprojectimpl.cpp" line="128"/>
         <source>Project file &quot;%1&quot; already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>A %1 projektfájl már létezik</translation>
     </message>
     <message>
         <location filename="../../src/newprojectimpl.cpp" line="133"/>
         <source>The directory &quot;%1&quot; already exists. Do you want to create project anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>A %1 mappa már létezik. Valóban létre kívánod hozni a projektet?</translation>
     </message>
 </context>
 <context>
@@ -2713,17 +2714,17 @@ már létezik.</translation>
     <message>
         <location filename="../../ui/options.ui" line="590"/>
         <source>Right margin line</source>
-        <translation type="unfinished"></translation>
+        <translation>Jobb margó vonal</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="599"/>
         <source>Column:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mező:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="748"/>
         <source>Auto-Comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Automata komment</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="945"/>
@@ -2746,28 +2747,29 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:8pt;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;/*&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* Multi-line&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;* comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;*/&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;#include &amp;lt;QApplication&amp;gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;// Single line comments &lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;int main(int argc, char *argv[])&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;{&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QApplication app(argc, argv);&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QString chaine = &quot;between quotations&quot;;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       QDialog *main = new QDialog;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="755"/>
         <source>Word wrap</source>
-        <translation type="unfinished"></translation>
+        <translation>Hosszú sorok tördelése</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="644"/>
         <source>Hide Find/Replace panels after</source>
-        <translation type="unfinished"></translation>
+        <translation>Rejtsd el a keresés/csere panelt a művelet után</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="667"/>
         <source>sec.</source>
-        <translation type="unfinished"></translation>
+        <translation>mp.</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="762"/>
         <source>Ctrl+click = Go to implementation,
 Meta+click = Go to declaration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+balklikk = ugrás az implementációhoz
+Meta+balklikk = ugrás a deklarációhoz</translation>
     </message>
 </context>
 <context>
@@ -3009,7 +3011,7 @@ Meta+click = Go to declaration</source>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1294"/>
         <source>File not found: &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>A %1 fájl nem található</translation>
     </message>
 </context>
 <context>
@@ -3327,22 +3329,22 @@ Meta+click = Go to declaration</source>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="436"/>
         <source>script</source>
-        <translation type="unfinished"></translation>
+        <translation>script</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="481"/>
         <source>phonon</source>
-        <translation type="unfinished"></translation>
+        <translation>phonon</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="488"/>
         <source>xmlpatterns</source>
-        <translation type="unfinished"></translation>
+        <translation>xmlpatterns</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="853"/>
         <source>link_pkgconfig</source>
-        <translation type="unfinished"></translation>
+        <translation>link_pkgconfig</translation>
     </message>
 </context>
 <context>
@@ -3390,7 +3392,7 @@ Meta+click = Go to declaration</source>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="430"/>
         <source>A new variable can not be &quot;QT&quot;, &quot;CONFIG&quot; or &quot;TEMPLATE&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Az új változó nem lehet  &quot;QT&quot;, &quot;CONFIG&quot; vagy &quot;TEMPLATE&quot;</translation>
     </message>
 </context>
 <context>
@@ -3628,7 +3630,7 @@ Meta+click = Go to declaration</source>
     <message>
         <location filename="../../src/subclassingimpl.cpp" line="51"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3837,7 +3839,7 @@ Várj a kódkiegészítéssel amíg befejeződik.</translation>
     <message>
         <location filename="../../src/toolscontrolimpl.cpp" line="104"/>
         <source>Please select the program</source>
-        <translation type="unfinished"></translation>
+        <translation>Válaszd ki a programot</translation>
     </message>
 </context>
 <context>
