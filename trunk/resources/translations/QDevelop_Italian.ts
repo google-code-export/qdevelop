@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="it_IT">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -55,7 +56,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Ralf Jung &amp;lt;&lt;a href=&quot;mailto:ralfjung-e@gmx.de&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;ralfjung-e@gmx.de&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;Developer: Dmitrij &quot;Divius&quot; Tantsur &amp;lt;&lt;a href=&quot;mailto:divius.inside@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;divius.inside@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;mailto:divius.inside@gmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#000000;&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Packager: Daniel Rocher &lt;/span&gt;&amp;lt;&lt;a href=&quot;mailto:daniel.rocher@adella.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;daniel.rocher@adella.org&lt;/span&gt;&lt;/a&gt;&amp;gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt;&quot;&gt;&lt;a href=&quot;http://qdevelop.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://qdevelop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -136,7 +137,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../src/addexistantimpl.cpp" line="109"/>
         <source>Files (*.cpp *.h *.hpp *.ui *.qrc *.ts)</source>
-        <translation type="unfinished"></translation>
+        <translation>Files (*.cpp *.h *.hpp *.ui *.qrc *.ts)</translation>
     </message>
 </context>
 <context>
@@ -527,7 +528,7 @@ esiste già.</translation>
     <message>
         <location filename="../../src/addnewimpl.cpp" line="128"/>
         <source>source</source>
-        <translation type="unfinished"></translation>
+        <translation>sorgente</translation>
     </message>
 </context>
 <context>
@@ -719,7 +720,7 @@ Compilazione di %1...
     <message>
         <location filename="../../src/debug.cpp" line="86"/>
         <source>Exited with error code %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Uscita con codice errore %1</translation>
     </message>
 </context>
 <context>
@@ -763,7 +764,7 @@ was modified outside editor.
     <message>
         <location filename="../../src/editor.cpp" line="409"/>
         <source>%1 replacement(s) made.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 sostituzione(i) fatta.</translation>
     </message>
 </context>
 <context>
@@ -859,12 +860,12 @@ was modified outside editor.
     <message>
         <location filename="../../ui/findfiles.ui" line="199"/>
         <source>Replace found text</source>
-        <translation type="unfinished"></translation>
+        <translation>Sostituisci testo trovato</translation>
     </message>
     <message>
         <location filename="../../ui/findfiles.ui" line="214"/>
         <source>Replace with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sostituisci con:</translation>
     </message>
 </context>
 <context>
@@ -897,7 +898,7 @@ was modified outside editor.
     <message>
         <location filename="../../src/findfileimpl.cpp" line="173"/>
         <source>Cannot open temporary file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile aprire file temporaneo %1</translation>
     </message>
 </context>
 <context>
@@ -1003,19 +1004,19 @@ was modified outside editor.
         <location filename="../../src/logbuild.cpp" line="101"/>
         <source>error</source>
         <comment>Compiler message</comment>
-        <translation type="unfinished">errore</translation>
+        <translation>errore</translation>
     </message>
     <message>
         <location filename="../../src/logbuild.cpp" line="101"/>
         <source>undefined reference to</source>
         <comment>Linker message</comment>
-        <translation type="unfinished"></translation>
+        <translation>Collegamento indefinito</translation>
     </message>
     <message>
         <location filename="../../src/logbuild.cpp" line="114"/>
         <source>warning</source>
         <comment>Compiler message</comment>
-        <translation type="unfinished">avvertimento</translation>
+        <translation>avvertimento</translation>
     </message>
 </context>
 <context>
@@ -1868,77 +1869,77 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="196"/>
         <source>&amp;Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Barra degli strumenti</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="207"/>
         <source>Dock windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="498"/>
         <source>Local Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabili locali</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="552"/>
         <source>Other Variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Altre variabili</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="674"/>
         <source>Find in files</source>
-        <translation type="unfinished"></translation>
+        <translation>Trova nei files</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1622"/>
         <source>Full view</source>
-        <translation type="unfinished"></translation>
+        <translation>Massimizza</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1627"/>
         <source>Minimal view</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimizza</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1632"/>
         <source>DocksWindow</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1637"/>
         <source>Dock Windows</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1642"/>
         <source>New submenu &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuovo sottomenu &gt;</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1647"/>
         <source>a</source>
-        <translation type="unfinished"></translation>
+        <translation>a</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="145"/>
         <source>En&amp;force qmake mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Forza modo qmake</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1655"/>
         <source>&amp;Debug mode</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1663"/>
         <source>&amp;Release mode</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="1668"/>
         <source>&amp;Forget last used mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dimentica utimo modo utilizzato</translation>
     </message>
 </context>
 <context>
@@ -2151,7 +2152,7 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../src/mainimpl.cpp" line="2313"/>
         <source>Version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Versione %1</translation>
     </message>
 </context>
 <context>
@@ -2370,12 +2371,12 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../src/newprojectimpl.cpp" line="128"/>
         <source>Project file &quot;%1&quot; already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Il file di progetto &quot;%1&quot; esiste già</translation>
     </message>
     <message>
         <location filename="../../src/newprojectimpl.cpp" line="133"/>
         <source>The directory &quot;%1&quot; already exists. Do you want to create project anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>La directory &quot;%1&quot; esiste già. Vuoi creare un progetto comunque?</translation>
     </message>
 </context>
 <context>
@@ -2694,17 +2695,17 @@ You can change in Options dialog.</source>
     <message>
         <location filename="../../ui/options.ui" line="590"/>
         <source>Right margin line</source>
-        <translation type="unfinished"></translation>
+        <translation>Margine destro</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="599"/>
         <source>Column:</source>
-        <translation type="unfinished"></translation>
+        <translation>Colonna:</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="748"/>
         <source>Auto-Comments</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="945"/>
@@ -2727,28 +2728,28 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       main-&amp;gt;show();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;       return app.exec();&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS&apos;; font-size:10pt;&quot;&gt;}&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="755"/>
         <source>Word wrap</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="644"/>
         <source>Hide Find/Replace panels after</source>
-        <translation type="unfinished"></translation>
+        <translation>Nascondi il pannello Trova/sostituisci dopo</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="667"/>
         <source>sec.</source>
-        <translation type="unfinished"></translation>
+        <translation>sec.</translation>
     </message>
     <message>
         <location filename="../../ui/options.ui" line="762"/>
         <source>Ctrl+click = Go to implementation,
 Meta+click = Go to declaration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+click = Vai all&apos;implementazione,Meta+click = Vai alla dichiarazione</translation>
     </message>
 </context>
 <context>
@@ -2990,7 +2991,7 @@ Meta+click = Go to declaration</source>
     <message>
         <location filename="../../src/projectmanager.cpp" line="1294"/>
         <source>File not found: &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>File non trovato: &quot;%1&quot;</translation>
     </message>
 </context>
 <context>
@@ -3303,27 +3304,27 @@ Meta+click = Go to declaration</source>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="436"/>
         <source>script</source>
-        <translation type="unfinished"></translation>
+        <translation>script</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="474"/>
         <source>webkit</source>
-        <translation type="unfinished"></translation>
+        <translation>webkit</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="481"/>
         <source>phonon</source>
-        <translation type="unfinished"></translation>
+        <translation>phonon</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="488"/>
         <source>xmlpatterns</source>
-        <translation type="unfinished"></translation>
+        <translation>xmlpatterns</translation>
     </message>
     <message>
         <location filename="../../ui/projectpropertie.ui" line="853"/>
         <source>link_pkgconfig</source>
-        <translation type="unfinished"></translation>
+        <translation>link_pkgconfig</translation>
     </message>
 </context>
 <context>
@@ -3371,7 +3372,7 @@ Meta+click = Go to declaration</source>
     <message>
         <location filename="../../src/projectpropertieimpl.cpp" line="430"/>
         <source>A new variable can not be &quot;QT&quot;, &quot;CONFIG&quot; or &quot;TEMPLATE&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Una nuova variabile non può essere &quot;QT&quot;, &quot;CONFIG&quot; o &quot;TEMPLATE&quot;</translation>
     </message>
 </context>
 <context>
@@ -3460,52 +3461,52 @@ Meta+click = Go to declaration</source>
     <message>
         <location filename="../../ui/replacewidget.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished">Finestra</translation>
+        <translation>Finestra</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="41"/>
         <source>find:</source>
-        <translation type="unfinished"></translation>
+        <translation>trova:</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="70"/>
         <source>Replacement:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sostituzione:</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="99"/>
         <source>&amp;Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sostituisci</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="106"/>
         <source>Previous</source>
-        <translation type="unfinished">Precedente</translation>
+        <translation>Precedente</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="129"/>
         <source>Next</source>
-        <translation type="unfinished">Successivo</translation>
+        <translation>Successivo</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="153"/>
         <source>Case Sensitive</source>
-        <translation type="unfinished"></translation>
+        <translation>Sensibile alle maiuscole</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="163"/>
         <source>Whole words</source>
-        <translation type="unfinished">Parole intere</translation>
+        <translation>Parole intere</translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="170"/>
         <source>Prompt</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui/replacewidget.ui" line="229"/>
         <source>Reached end of page, continued from top</source>
-        <translation type="unfinished">Raggiunta la fine della pagina, continua dall&apos;inizio</translation>
+        <translation>Raggiunta la fine della pagina, continua dall&apos;inizio</translation>
     </message>
 </context>
 <context>
@@ -3722,7 +3723,7 @@ Cerca di completare il codice più tardi.</translation>
     <message>
         <location filename="../../src/textEdit.cpp" line="961"/>
         <source>Reached end of page, continued from top</source>
-        <translation type="unfinished">Raggiunta la fine della pagina, continua dall&apos;inizio</translation>
+        <translation>Raggiunta la fine della pagina, continua dall&apos;inizio</translation>
     </message>
 </context>
 <context>
@@ -3813,7 +3814,7 @@ Cerca di completare il codice più tardi.</translation>
     <message>
         <location filename="../../src/toolscontrolimpl.cpp" line="104"/>
         <source>Please select the program</source>
-        <translation type="unfinished"></translation>
+        <translation>Prego seleziona il programma</translation>
     </message>
 </context>
 <context>
