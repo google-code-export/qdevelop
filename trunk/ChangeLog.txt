@@ -1,8 +1,8 @@
-February 18 2009 Version 0.27:
+February 20 2009 Version 0.27:
   - Fixed a lot of issues (among them several segfaults, incorrect work with relative paths, some translation issues)
   - Several editor improvements: word wrap, right margin line
   - Changable autohide delay for find and replace widgets
-  - Updated English, French, Russian, German, Polish and Portuguese translations
+  - Updated English, French, Russian, German, Polish, Portuguese, Czech, Hungarian and Italian translations
   - Option for autoclosing comment blocks in editor
   - Better interaction with Qt Assistant >= 4.4.0
   - Menu item for forcing qmake debug or release mode without changing project file
@@ -18,6 +18,7 @@ February 18 2009 Version 0.27:
   - Following keywords are now highlighted: emit, qobject_cast, forever
   - Added link_pkgconfig to project properties (CONFIG qmake variable)
   - "Sort" feature was temporary dropped because it would brake any complicated project file - will return in 0.28
+  - Several important fixes for Mac OS X
 
 November 05 2008 Version 0.26:
   - Fix many issues
