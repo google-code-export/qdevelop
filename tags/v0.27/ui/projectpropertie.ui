@@ -1,0 +1,1132 @@
+<ui version="4.0" >
+ <class>ProjectPropertie</class>
+ <widget class="QDialog" name="ProjectPropertie" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>573</width>
+    <height>554</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Maximum" hsizetype="Maximum" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/resources.qrc" >
+    <normaloff>:/divers/images/logo.png</normaloff>:/divers/images/logo.png</iconset>
+  </property>
+  <property name="sizeGripEnabled" >
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item row="0" column="0" >
+    <layout class="QHBoxLayout" >
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QGroupBox" name="projectTemplate" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title" >
+        <string>Project Template</string>
+       </property>
+       <layout class="QGridLayout" >
+        <property name="margin" >
+         <number>9</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <item row="0" column="0" >
+         <widget class="QRadioButton" name="app" >
+          <property name="text" >
+           <string>app</string>
+          </property>
+          <property name="checked" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" >
+         <widget class="QRadioButton" name="lib" >
+          <property name="text" >
+           <string>lib</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" >
+         <widget class="QRadioButton" name="subdirs" >
+          <property name="text" >
+           <string>subdirs</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" >
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelPortee" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Maximum" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text" >
+          <string>Project or Scope :</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboScope" />
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0" >
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title" >
+      <string>Default directories</string>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="label_3" >
+        <property name="text" >
+         <string>Dialogs:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QLineEdit" name="uiDirectory" />
+      </item>
+      <item row="1" column="2" >
+       <widget class="QToolButton" name="uiDirectoryButton" >
+        <property name="text" >
+         <string>...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" >
+       <widget class="QToolButton" name="srcDirectoryButton" >
+        <property name="text" >
+         <string>...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QLineEdit" name="srcDirectory" />
+      </item>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="label_6" >
+        <property name="text" >
+         <string>Sources:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0" >
+    <widget class="QTabWidget" name="tab" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Maximum" hsizetype="Maximum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="currentIndex" >
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabConfig" >
+      <attribute name="title" >
+       <string>Configuration</string>
+      </attribute>
+      <layout class="QGridLayout" >
+       <property name="margin" >
+        <number>9</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item row="0" column="0" >
+        <layout class="QVBoxLayout" >
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" >
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <property name="margin" >
+            <number>0</number>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" >
+             <property name="spacing" >
+              <number>6</number>
+             </property>
+             <property name="margin" >
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_5" >
+               <property name="text" >
+                <string>General :</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" >
+               <property name="spacing" >
+                <number>6</number>
+               </property>
+               <property name="margin" >
+                <number>0</number>
+               </property>
+               <item>
+                <layout class="QVBoxLayout" >
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <property name="margin" >
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QGroupBox" name="groupeDebug" >
+                   <property name="title" >
+                    <string>Version</string>
+                   </property>
+                   <layout class="QGridLayout" >
+                    <property name="margin" >
+                     <number>9</number>
+                    </property>
+                    <property name="spacing" >
+                     <number>6</number>
+                    </property>
+                    <item row="3" column="0" >
+                     <widget class="QCheckBox" name="build_all" >
+                      <property name="text" >
+                       <string>build_all</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0" >
+                     <widget class="QRadioButton" name="debug" >
+                      <property name="text" >
+                       <string>debug</string>
+                      </property>
+                      <property name="checked" >
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0" >
+                     <widget class="QRadioButton" name="release" >
+                      <property name="text" >
+                       <string>release</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0" >
+                     <widget class="QRadioButton" name="debug_and_release" >
+                      <property name="text" >
+                       <string>debug_and_release</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer>
+                   <property name="orientation" >
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeType" >
+                    <enum>QSizePolicy::Maximum</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0" >
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" >
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <property name="margin" >
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QGroupBox" name="groupeWarn" >
+                   <property name="title" >
+                    <string>Warnings</string>
+                   </property>
+                   <layout class="QGridLayout" >
+                    <property name="margin" >
+                     <number>9</number>
+                    </property>
+                    <property name="spacing" >
+                     <number>6</number>
+                    </property>
+                    <item row="1" column="0" >
+                     <widget class="QRadioButton" name="warn_off" >
+                      <property name="text" >
+                       <string>warn_off</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0" >
+                     <widget class="QRadioButton" name="warn_on" >
+                      <property name="text" >
+                       <string>warn_on</string>
+                      </property>
+                      <property name="checked" >
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer>
+                   <property name="orientation" >
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0" >
+                    <size>
+                     <width>101</width>
+                     <height>21</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" >
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <property name="margin" >
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QGroupBox" name="groupeBibliotheques" >
+                   <property name="title" >
+                    <string>Qt Libraries</string>
+                   </property>
+                   <layout class="QGridLayout" >
+                    <property name="margin" >
+                     <number>9</number>
+                    </property>
+                    <property name="spacing" >
+                     <number>6</number>
+                    </property>
+                    <item row="0" column="0" >
+                     <layout class="QHBoxLayout" >
+                      <property name="spacing" >
+                       <number>6</number>
+                      </property>
+                      <property name="margin" >
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <layout class="QVBoxLayout" >
+                        <property name="spacing" >
+                         <number>6</number>
+                        </property>
+                        <property name="margin" >
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QCheckBox" name="core" >
+                          <property name="text" >
+                           <string>core</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="network" >
+                          <property name="text" >
+                           <string>network</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="sql" >
+                          <property name="text" >
+                           <string>sql</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="xml" >
+                          <property name="text" >
+                           <string>xml</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="gui" >
+                          <property name="text" >
+                           <string>gui</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="script" >
+                          <property name="text" >
+                           <string>script</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" >
+                        <property name="spacing" >
+                         <number>6</number>
+                        </property>
+                        <property name="margin" >
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QCheckBox" name="libopengl" >
+                          <property name="text" >
+                           <string>opengl</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="svg" >
+                          <property name="text" >
+                           <string>svg</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="qt3support" >
+                          <property name="text" >
+                           <string>qt3support</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="webkit" >
+                          <property name="text" >
+                           <string>webkit</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="phonon" >
+                          <property name="text" >
+                           <string>phonon</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="xmlpatterns" >
+                          <property name="text" >
+                           <string>xmlpatterns</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer>
+                   <property name="orientation" >
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0" >
+                    <size>
+                     <width>20</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer>
+             <property name="orientation" >
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0" >
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0" >
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabVariables" >
+      <attribute name="title" >
+       <string>Variables</string>
+      </attribute>
+      <layout class="QGridLayout" >
+       <property name="margin" >
+        <number>9</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item row="0" column="0" >
+        <layout class="QVBoxLayout" >
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" >
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <property name="margin" >
+            <number>0</number>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" >
+             <property name="spacing" >
+              <number>6</number>
+             </property>
+             <property name="margin" >
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="labelVariables" >
+               <property name="sizePolicy" >
+                <sizepolicy vsizetype="Maximum" hsizetype="Preferred" >
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text" >
+                <string>Variable :</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="variablesList" >
+               <property name="sizePolicy" >
+                <sizepolicy vsizetype="Minimum" hsizetype="Maximum" >
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" >
+               <property name="spacing" >
+                <number>6</number>
+               </property>
+               <property name="margin" >
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QToolButton" name="addVariable" >
+                 <property name="text" >
+                  <string>...</string>
+                 </property>
+                 <property name="icon" >
+                  <iconset resource="../resources/resources.qrc" >
+                   <normaloff>:/divers/images/ajouter.png</normaloff>:/divers/images/ajouter.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="deleteVariable" >
+                 <property name="text" >
+                  <string>...</string>
+                 </property>
+                 <property name="icon" >
+                  <iconset resource="../resources/resources.qrc" >
+                   <normaloff>:/divers/images/supprimer.png</normaloff>:/divers/images/supprimer.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer>
+                 <property name="orientation" >
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0" >
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" >
+             <property name="spacing" >
+              <number>6</number>
+             </property>
+             <property name="margin" >
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="labelValeurs" >
+               <property name="sizePolicy" >
+                <sizepolicy vsizetype="Maximum" hsizetype="Preferred" >
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text" >
+                <string>Values :</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="valuesList" >
+               <property name="sizePolicy" >
+                <sizepolicy vsizetype="Preferred" hsizetype="Maximum" >
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" >
+               <property name="spacing" >
+                <number>6</number>
+               </property>
+               <property name="margin" >
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QToolButton" name="addValue" >
+                 <property name="text" >
+                  <string>...</string>
+                 </property>
+                 <property name="icon" >
+                  <iconset resource="../resources/resources.qrc" >
+                   <normaloff>:/divers/images/ajouter.png</normaloff>:/divers/images/ajouter.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="deleteValue" >
+                 <property name="text" >
+                  <string>...</string>
+                 </property>
+                 <property name="icon" >
+                  <iconset resource="../resources/resources.qrc" >
+                   <normaloff>:/divers/images/supprimer.png</normaloff>:/divers/images/supprimer.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="modifyValue" >
+                 <property name="text" >
+                  <string>...</string>
+                 </property>
+                 <property name="icon" >
+                  <iconset resource="../resources/resources.qrc" >
+                   <normaloff>:/toolbar/images/edit.png</normaloff>:/toolbar/images/edit.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer>
+                 <property name="orientation" >
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0" >
+                  <size>
+                   <width>131</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2" >
+      <attribute name="title" >
+       <string>Advanced options</string>
+      </attribute>
+      <layout class="QVBoxLayout" >
+       <item>
+        <widget class="QGroupBox" name="groupeAvancees" >
+         <property name="title" >
+          <string>Advanced Options</string>
+         </property>
+         <layout class="QGridLayout" >
+          <property name="margin" >
+           <number>9</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item row="0" column="0" >
+           <layout class="QVBoxLayout" >
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" >
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" >
+                <property name="spacing" >
+                 <number>6</number>
+                </property>
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QCheckBox" name="app_bundle" >
+                  <property name="text" >
+                   <string>app_bundle</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="assistant" >
+                  <property name="text" >
+                   <string>assistant</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="console" >
+                  <property name="text" >
+                   <string>console</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="designer" >
+                  <property name="text" >
+                   <string>designer</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="dll" >
+                  <property name="text" >
+                   <string>dll</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" >
+                <property name="spacing" >
+                 <number>6</number>
+                </property>
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QCheckBox" name="exceptions" >
+                  <property name="text" >
+                   <string>exceptions</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="lib_bundle" >
+                  <property name="text" >
+                   <string>lib_bundle</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="link_pkgconfig" >
+                  <property name="text" >
+                   <string>link_pkgconfig</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="no_lflags_merge" >
+                  <property name="text" >
+                   <string>no_lflags_merge</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="opengl" >
+                  <property name="text" >
+                   <string>opengl</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" >
+                <property name="spacing" >
+                 <number>6</number>
+                </property>
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QCheckBox" name="plugin" >
+                  <property name="text" >
+                   <string>plugin</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="ppc" >
+                  <property name="text" >
+                   <string>ppc</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="qaxcontainer" >
+                  <property name="text" >
+                   <string>qaxcontainer</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="qaxserver" >
+                  <property name="text" >
+                   <string>qaxserver</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="qt" >
+                  <property name="text" >
+                   <string>qt</string>
+                  </property>
+                  <property name="checked" >
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" >
+                <property name="spacing" >
+                 <number>6</number>
+                </property>
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QCheckBox" name="qtestlib" >
+                  <property name="text" >
+                   <string>qtestlib</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="resources" >
+                  <property name="text" >
+                   <string>resources</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="rtti" >
+                  <property name="text" >
+                   <string>rtti</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="staticlib" >
+                  <property name="text" >
+                   <string>staticlib</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="stl" >
+                  <property name="text" >
+                   <string>stl</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" >
+                <property name="spacing" >
+                 <number>6</number>
+                </property>
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QCheckBox" name="Thread" >
+                  <property name="text" >
+                   <string>thread</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="uic3" >
+                  <property name="text" >
+                   <string>uic3</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="uitools" >
+                  <property name="text" >
+                   <string>uitools</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="windows" >
+                  <property name="text" >
+                   <string>windows</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="x11" >
+                  <property name="text" >
+                   <string>x11</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="x86" >
+                  <property name="text" >
+                   <string>x86</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0" >
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" >
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_4" >
+                <property name="text" >
+                 <string>Free CONFIG variables :</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="supplement" />
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="4" column="0" >
+    <layout class="QHBoxLayout" >
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" >
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0" >
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="okButton" >
+         <property name="text" >
+          <string>OK</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="cancelButton" >
+         <property name="text" >
+          <string>Cancel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources/resources.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>ProjectPropertie</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>496</x>
+     <y>617</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>475</x>
+     <y>267</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
