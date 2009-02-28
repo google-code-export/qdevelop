@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=QDevelop
+GenericName=QDevelop
+Comment=A development environment dedicated to Qt4
+Exec=qdevelop
+Icon=qdevelop
+Terminal=false
+Type=Application
+Categories=Qt;Development;IDE;
+
