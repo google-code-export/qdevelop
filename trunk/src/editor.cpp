@@ -246,7 +246,35 @@ void Editor::slotTimerUpdateClasses()
 void Editor::slotTimerCheckIfModifiedOutside()
 {
     QFile file(m_filename);
-    if ( m_lastModified != QFileInfo( file ).lastModified() )
+    if ( !file.exists() )
+    {
+    	m_timerCheckLastModified.stop();
+    	int rep = QMessageBox::question(this, "QDevelop",
+                                        tr("The file \"%1\"\ndisappeared from fisk.\n\n").arg(m_filename)+
+                                        tr("What do you want to do?"),
+                                        tr("Recreate"), tr("Close") );
+        if ( rep == 0 ) // Recreate
+        {
+            m_textEdit->document()->setModified( true );
+            save();
+            m_timerCheckLastModified.start( 5000 );
+        }
+        else if ( rep == 1 ) // Closing
+        {
+            QList<Editor *> editors = m_mainimpl->allEditors();
+            for (int i = 0; i < editors.count(); i++)
+            {
+            	qDebug() << editors[i]->filename() << filename(); 
+            	if (editors[i]->filename() == filename())
+            	{
+            		// TODO: Not very good idea to delete object during it's event handler!
+            		m_mainimpl->closeTab(i);
+            		return;
+           		}
+           	}
+        }
+   	}
+   	else if ( m_lastModified != QFileInfo( file ).lastModified() )
     {
         m_timerCheckLastModified.stop();
         int rep = QMessageBox::question(this, "QDevelop",
