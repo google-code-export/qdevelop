@@ -767,7 +767,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/findfiles.ui" line="13"/>
         <source>Find in Files</source>
-        <translation>Поиск в файле</translation>
+        <translation>Поиск в файлах</translation>
     </message>
     <message>
         <location filename="../../ui/findfiles.ui" line="27"/>
@@ -1561,7 +1561,7 @@ was modified outside editor.
     <message>
         <location filename="../../ui/main.ui" line="981"/>
         <source>&amp;Find in Files...</source>
-        <translation>П&amp;оиск в файле...</translation>
+        <translation>П&amp;оиск в файлах...</translation>
     </message>
     <message>
         <location filename="../../ui/main.ui" line="989"/>
@@ -1922,17 +1922,17 @@ was modified outside editor.
         <translation>Файлы</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2330"/>
+        <location filename="../../src/mainimpl.cpp" line="2340"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1919"/>
+        <location filename="../../src/mainimpl.cpp" line="1929"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1919"/>
+        <location filename="../../src/mainimpl.cpp" line="1929"/>
         <source>No</source>
         <translation>Нет</translation>
     </message>
@@ -1967,62 +1967,62 @@ was modified outside editor.
         <translation>Файлы (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1944"/>
+        <location filename="../../src/mainimpl.cpp" line="1954"/>
         <source>Stop</source>
         <translation>Стоп</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2023"/>
+        <location filename="../../src/mainimpl.cpp" line="2033"/>
         <source>Start</source>
         <translation>Старт</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1902"/>
+        <location filename="../../src/mainimpl.cpp" line="1912"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Проект был изменен, сохранить изменения?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1918"/>
+        <location filename="../../src/mainimpl.cpp" line="1928"/>
         <source>Stop debugging ?</source>
         <translation>Остановить отладку?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1931"/>
+        <location filename="../../src/mainimpl.cpp" line="1941"/>
         <source>run Build.</source>
         <translation>запустите Сборку.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1931"/>
+        <location filename="../../src/mainimpl.cpp" line="1941"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1946"/>
+        <location filename="../../src/mainimpl.cpp" line="1956"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2024"/>
+        <location filename="../../src/mainimpl.cpp" line="2034"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2092"/>
+        <location filename="../../src/mainimpl.cpp" line="2102"/>
         <source>Abort</source>
         <translation>Прервать</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2085"/>
+        <location filename="../../src/mainimpl.cpp" line="2095"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Останов невозможен из-под Windows. Установите брейкпойнты.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2127"/>
+        <location filename="../../src/mainimpl.cpp" line="2137"/>
         <source>Continue</source>
         <translation>Продолжить</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2185"/>
+        <location filename="../../src/mainimpl.cpp" line="2195"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
@@ -2032,7 +2032,7 @@ was modified outside editor.
         <translation>Вы действительно хотите выйти из QDevelop?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2320"/>
+        <location filename="../../src/mainimpl.cpp" line="2330"/>
         <source>New Variable:</source>
         <translation>Новая переменная:</translation>
     </message>
@@ -2042,27 +2042,27 @@ was modified outside editor.
         <translation>Выберите проект для открытия</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1719"/>
+        <location filename="../../src/mainimpl.cpp" line="1729"/>
         <source>Build finished without error</source>
         <translation>Сборка завершена без ошибок</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1721"/>
+        <location filename="../../src/mainimpl.cpp" line="1731"/>
         <source>Build finished with</source>
         <translation>Сборка завершена с</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1723"/>
+        <location filename="../../src/mainimpl.cpp" line="1733"/>
         <source>error(s)</source>
         <translation> ошибками</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1723"/>
+        <location filename="../../src/mainimpl.cpp" line="1733"/>
         <source>and</source>
         <translation>и</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1725"/>
+        <location filename="../../src/mainimpl.cpp" line="1735"/>
         <source>warning(s)</source>
         <translation>предупреждениями</translation>
     </message>
@@ -2089,24 +2089,24 @@ was modified outside editor.
         <translation>Свойства %1...</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1930"/>
+        <location filename="../../src/mainimpl.cpp" line="1940"/>
         <source>The program doesn&apos;t exist,</source>
         <translation>Программа не существует,</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2329"/>
+        <location filename="../../src/mainimpl.cpp" line="2339"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation>Переменная &quot;%1&quot;
  уже существует.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2485"/>
+        <location filename="../../src/mainimpl.cpp" line="2495"/>
         <source>The Qt database building is already in progress.</source>
         <translation>Поcтроение базы Qt уже в процессе.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2529"/>
+        <location filename="../../src/mainimpl.cpp" line="2539"/>
         <source>The Qt classes database build is ended.</source>
         <translation>Поcтроение базы классов Qt закончено.</translation>
     </message>
@@ -2118,9 +2118,14 @@ You can change in Options dialog.</source>
 Вы можете изменить её в окне &quot;опции&quot;.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2313"/>
+        <location filename="../../src/mainimpl.cpp" line="2323"/>
         <source>Version %1</source>
         <translation>Версия %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1339"/>
+        <source>Cannot launch Linguist</source>
+        <translation>Не удалось запустить Linguist</translation>
     </message>
 </context>
 <context>
@@ -3377,12 +3382,12 @@ Meta+нажатие мышью = перейти к объявлению</transla
         <translation>Не могу запустить Assistant!</translation>
     </message>
     <message>
-        <location filename="../../src/misc.cpp" line="80"/>
+        <location filename="../../src/misc.cpp" line="82"/>
         <source>Unable to establish a database connection.</source>
         <translation>Невозможно подключиться к базе данных.</translation>
     </message>
     <message>
-        <location filename="../../src/misc.cpp" line="83"/>
+        <location filename="../../src/misc.cpp" line="85"/>
         <source>QDevelop needs SQLite support. Please read the Qt SQL driver documentation for information how to build it.</source>
         <translation>QDevelop необходима поддержка SQLite. Пожалуйста, прочитайте документацию Qt SQL driver для сборки.</translation>
     </message>
@@ -3575,6 +3580,11 @@ Meta+нажатие мышью = перейти к объявлению</transla
         <location filename="../../src/subclassingimpl.cpp" line="424"/>
         <source>(.h and .cpp)</source>
         <translation>(.h и .cpp)</translation>
+    </message>
+    <message>
+        <location filename="../../src/subclassingimpl.cpp" line="51"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3877,22 +3887,17 @@ Try to complete code later.</source>
         <translation>Открыть</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="223"/>
-        <source>Sort</source>
-        <translation>Сортировать</translation>
-    </message>
-    <message>
-        <location filename="../../src/treeproject.cpp" line="233"/>
+        <location filename="../../src/treeproject.cpp" line="234"/>
         <source>Show As</source>
         <translation>Показать как</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="234"/>
+        <location filename="../../src/treeproject.cpp" line="235"/>
         <source>Normal</source>
         <translation>Нормальный</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="235"/>
+        <location filename="../../src/treeproject.cpp" line="236"/>
         <source>Krawek</source>
         <translation>Krawek</translation>
     </message>
@@ -3907,12 +3912,12 @@ Try to complete code later.</source>
         <translation>Переименовать...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="230"/>
+        <location filename="../../src/treeproject.cpp" line="231"/>
         <source>Properties of %1...</source>
         <translation>Свойства %1...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="224"/>
+        <location filename="../../src/treeproject.cpp" line="225"/>
         <source>Remove from project</source>
         <translation>Удалить из проекта</translation>
     </message>
