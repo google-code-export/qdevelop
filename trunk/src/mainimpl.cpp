@@ -1333,10 +1333,10 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
         	#ifdef Q_OS_MACX
         	if (!QProcess::startDetached (m_linguistName + "/Contents/MacOS/Linguist", QStringList(s)))
         	{
-        		// TODO: Error handling here
+        		QMessageBox::critical(this, "QDevelop", tr("Cannot launch Linguist"));
        		}
         	#else
-        	// TODO: Error handling here
+        	QMessageBox::critical(this, "QDevelop", tr("Cannot launch Linguist"));
         	#endif
        	}
         QApplication::restoreOverrideCursor();
