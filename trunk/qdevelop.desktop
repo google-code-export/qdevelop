@@ -4,6 +4,7 @@ GenericName=QDevelop
 Comment=A development environment dedicated to Qt4
 Comment[ru]=Среда разработки для Qt4
 Comment[fr]=Un environnement de développement intégré pour Qt4. 
+Comment[de]=Eine Entwicklungsumgebung für Qt4
 Exec=qdevelop
 Icon=qdevelop
 Terminal=false
