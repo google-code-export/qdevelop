@@ -53,6 +53,7 @@
 #include <QProgressBar>
 #include <QPlastiqueStyle>
 #include <QSplashScreen>
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
 //
 ProjectManager::ProjectManager(MainImpl * parent, TreeProject *treeFiles, TreeClasses *treeClasses)
         : m_parent(parent), m_treeFiles(treeFiles), m_treeClasses(treeClasses)
@@ -2070,6 +2071,7 @@ QString ProjectManager::executableName(QString preferedVersion)
     }
     if ( m_executablesList.count() == 1 )
     {
+QD;
         QString choice = m_executablesList.first();
         m_executablesList.clear();
         m_projectDirectoryOfExecutable = m_projectDirectoryOfExecutableList.first();
@@ -2210,15 +2212,14 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
     QFile makefile(projectDirectory+"/"+"Makefile");
     if (!makefile.open(QIODevice::ReadOnly | QIODevice::Text))
         return QString();
-    QTextStream makefileText(&makefile);
-    while (!makefileText.atEnd())
+    while (!makefile.atEnd())
     {
-        line = QString( makefileText.readLine() );
-        // Partie concernant le file Makefile appelant sous Windows Makefile.Debug ou Makefile.Release.
-        // Sans objet sous Linux
+        line = makefile.readLine();
+        // Here the file Makefile call under Windows (only) Makefile.Debug or Makefile.Release.
         if ( line.contains(" ") && line.section(" ", 0, 0).simplified() == "first:" && (line.section(" ", 1, 1).simplified()=="all" ))
             cible = preferedVersion+"-all";
-        else if ( line.contains(" ") && line.section(" ", 0, 0).simplified() == "first:" && (line.section(" ", 1, 1).simplified()=="debug" || line.section(" ", 1, 1).simplified()=="release"))
+        else if ( line.contains(" ") && line.section(" ", 0, 0).simplified() == "first:" 
+        	&& (line.section(" ", 1, 1).simplified()=="debug" || line.section(" ", 1, 1).simplified()=="release"))
             cible = line.section(" ", 1, 1).simplified();
         if ( line.contains("=") && line.section("=", 0, 0).simplified() == "MAKEFILE" )
             fichierMakefile = line.section("=", 1, 1).simplified();
@@ -2230,10 +2231,9 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
             if (!makefile.open(QIODevice::ReadOnly | QIODevice::Text))
                 return QString();
             cible = QString();
-            makefileText.setDevice(&makefile);
             continue;
         }
-        // Partie commune Win et Linux
+        // Part for Win and Linux
         // TARGET is the good variable to find exe on Linux
         if ( line.contains("=") && line.section("=", 0, 0).simplified() == "TARGET" )
         {
