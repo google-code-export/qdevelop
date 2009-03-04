@@ -2211,9 +2211,10 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
     QFile makefile(projectDirectory+"/"+"Makefile");
     if (!makefile.open(QIODevice::ReadOnly | QIODevice::Text))
         return QString();
-    while (!makefile.atEnd())
+	QTextStream *makefileText = new QTextStream(&makefile);
+    while (!makefileText->atEnd())
     {
-        line = makefile.readLine();
+        line = QString( makefileText->readLine() );
         // Here the file Makefile call under Windows (only) Makefile.Debug or Makefile.Release.
         if ( line.contains(" ") && line.section(" ", 0, 0).simplified() == "first:" && (line.section(" ", 1, 1).simplified()=="all" ))
             cible = preferedVersion+"-all";
@@ -2227,9 +2228,11 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
             fichierMakefile = line.section(" ", 1, 1).simplified().replace("$(MAKEFILE)", fichierMakefile);
             makefile.close();
             makefile.setFileName( projectDirectory+"/"+fichierMakefile );
+			delete makefileText;
             if (!makefile.open(QIODevice::ReadOnly | QIODevice::Text))
                 return QString();
             cible = QString();
+			makefileText = new QTextStream(&makefile);
             continue;
         }
         // Part for Win and Linux
@@ -2241,7 +2244,7 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
             if ( pos > -1 )
                 exe = exe.left(pos);
             exe = exe.replace("\\ ", " ");
-            exe = QDir::cleanPath(projectDirectory + "/" + exe );
+            exe = QDir::cleanPath(projectDirectory + "/" + exe ).remove("\"");
             if ( !QString("so:dll:a").contains(exe.section(".", -1, -1).toLower() ) && QDir().exists(exe) )
                 exeName = exe;
         }
@@ -2253,12 +2256,13 @@ QString ProjectManager::findExecutable( QString projectDirectory, QString prefer
             if ( pos > -1 )
                 exe = exe.left(pos);
             exe = exe.replace("\\ ", " ");
-            exe = QDir::cleanPath(projectDirectory + "/" + exe );
+            exe = QDir::cleanPath(projectDirectory + "/" + exe ).remove("\"");
             if ( !QString("so:dll:a").contains(exe.section(".", -1, -1).toLower() ) && QDir().exists(exe) )
                 exeName = exe;
         }
     }
     makefile.close();
+	delete makefileText;
     return exeName;
 }
 //
