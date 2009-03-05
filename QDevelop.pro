@@ -1,4 +1,4 @@
-CONFIG += qt uitools warn_on debug
+CONFIG += qt uitools warn_on release
 DESTDIR += bin
 FORMS += ui/about.ui \
  ui/addexistant.ui \
