@@ -706,7 +706,8 @@ void Editor::toggleBookmark(int line)
     m_mainimpl->toggleBookmark(this, s, activate, cursor.block());
     m_textEdit->setTextCursor( save );
     setVerticalScrollBar( scroll );
-    m_textEdit->lineNumbers()->update();
+    if( m_textEdit->lineNumbers() )
+	    m_textEdit->lineNumbers()->update();
 }
 //
 QList<int> Editor::bookmarksList()
@@ -763,7 +764,8 @@ void Editor::toggleBreakpoint(int line, QString breakpointCondition, bool isTrue
     m_textEdit->setTextCursor( save );
     setVerticalScrollBar( scroll );
     emit breakpoint(shortFilename(), line, blockUserData);
-    m_textEdit->lineNumbers()->update();
+    if( m_textEdit->lineNumbers() )
+	    m_textEdit->lineNumbers()->update();
 }
 //
 void Editor::emitListBreakpoints()
@@ -971,7 +973,8 @@ void Editor::slotMessagesBuild(QString list, QString directory)
 		    }
         }
     }
-    m_textEdit->lineNumbers()->update();
+    if( m_textEdit->lineNumbers() )
+	    m_textEdit->lineNumbers()->update();
 	int state = 0;
     for ( QTextBlock block = m_textEdit->document()->begin(); block.isValid(); block = block.next() )
     {
@@ -1008,7 +1011,8 @@ void Editor::clearErrorsAndWarnings()
 		    block.setUserData( blockUserData );
        	}
     }
-    m_textEdit->lineNumbers()->update();
+    if( m_textEdit->lineNumbers() )
+    	m_textEdit->lineNumbers()->update();
 }
 
 
