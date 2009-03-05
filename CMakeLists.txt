@@ -150,6 +150,25 @@ SET( qdevelop_RESOURCES
 	resources/resources.qrc
 )
 
+SET( qdevelop_TS
+	resources/translations/QDevelop_Chinese.ts
+	resources/translations/QDevelop_Czech.ts
+	resources/translations/QDevelop_Dutch.ts
+	resources/translations/QDevelop_French.ts
+	resources/translations/QDevelop_German.ts
+	resources/translations/QDevelop_Hungarian.ts
+	resources/translations/QDevelop_Italian.ts
+	resources/translations/QDevelop_Japanese.ts
+	resources/translations/QDevelop_Polish.ts
+	resources/translations/QDevelop_Portuguese.ts
+	resources/translations/QDevelop_Russian.ts
+	resources/translations/QDevelop_Spanish.ts
+	resources/translations/QDevelop_Turkish.ts
+	resources/translations/QDevelop_Ukrainian.ts
+	resources/translations/QDevelop_Vietnamese.ts
+
+)
+
 
 FIND_PACKAGE( Qt4 REQUIRED )
 INCLUDE(${QT_USE_FILE})
@@ -166,6 +185,7 @@ QT4_WRAP_UI       ( qdevelop_UIS_H        ${qdevelop_UIS}       )
 QT4_WRAP_CPP      ( qdevelop_MOC_SRCS     ${qdevelop_MOC_HDRS}  )
 QT4_ADD_RESOURCES ( qdevelop_RESOURCES    ${qdevelop_RESOURCES} )
 QT4_AUTOMOC       ( ${qdevelop_SRCS}                            )
+QT4_ADD_TRANSLATION ( qdevelop_QM         ${qdevelop_TS}        )
 
 # definitions for the project
 ADD_DEFINITIONS(
@@ -203,6 +223,7 @@ ADD_EXECUTABLE( ${QDEV}
 	${qdevelop_MOC_SRCS} 
 	${qdevelop_UIS} 
 	${qdevelop_RESOURCES} 
+	${qdevelop_QM}
 )
 
 IF( MINGW )
@@ -218,3 +239,8 @@ TARGET_LINK_LIBRARIES( ${QDEV}
 )
 
 INSTALL (TARGETS ${QDEV} RUNTIME DESTINATION bin)
+IF (WIN32)
+	INSTALL (FILES ${qdevelop_QM} DESTINATION translations)
+ELSE (NOT WIN32)
+	INSTALL (FILES ${qdevelop_QM} DESTINATION lib/qdevelop/translations)
+ENDIF (WIN32)

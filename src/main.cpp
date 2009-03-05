@@ -75,11 +75,29 @@ int main(int argc, char *argv[])
 	//
 	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Interface translation"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
 	qApp->processEvents();
+	#ifdef Q_OS_WIN32
+	QString defaultTranslationsPath = "/../translations";
+	#else
+	QString defaultTranslationsPath = "/../lib/qdevelop/translations";
+	#endif
+	QDir translationsDir(QCoreApplication::applicationDirPath() + defaultTranslationsPath);
 	// load & install QDevelop translation
-	translatorQDevelop.load( ":/translations/translations/QDevelop_"+language+".qm" );
-	app.installTranslator( &translatorQDevelop );
+	translatorQDevelop.load(translationsDir.absoluteFilePath("QDevelop_"+language+".qm"));
+	if (translatorQDevelop.isEmpty())
+	{
+		// Cmake workaround
+		translatorQDevelop.load(QCoreApplication::applicationDirPath() + "/QDevelop_"+language+".qm");
+		if (translatorQDevelop.isEmpty())
+		{
+			// Qmake workaround
+			translatorQDevelop.load(QCoreApplication::applicationDirPath() 
+				+ "/../resources/translations/QDevelop_"+language+".qm");
+		}
+	}
+	if (!translatorQDevelop.isEmpty())
+		app.installTranslator( &translatorQDevelop );
 	// search, load & install Qt translation
-	translatorQt.load( ":/translations/translations/Qt_"+language+".qm" );
+	translatorQt.load(translationsDir.absoluteFilePath("qt_"+language+".qm"));
 	if (translatorQt.isEmpty())
 		translatorQt.load( QLibraryInfo::location( QLibraryInfo::TranslationsPath) + "/qt_"+QLocale::system().name()+".qm" );
 	if (!translatorQt.isEmpty())

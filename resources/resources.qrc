@@ -110,23 +110,6 @@
         <file>images/view_tree.png</file>
         <file>images/print.png</file>
     </qresource>
-    <qresource prefix="/translations" >
-        <file>translations/QDevelop_Chinese.qm</file>
-        <file>translations/QDevelop_Dutch.qm</file>
-        <file>translations/QDevelop_French.qm</file>
-        <file>translations/QDevelop_German.qm</file>
-        <file>translations/QDevelop_Polish.qm</file>
-        <file>translations/QDevelop_Spanish.qm</file>
-        <file>translations/QDevelop_Russian.qm</file>
-        <file>translations/QDevelop_Italian.qm</file>
-        <file>translations/QDevelop_Ukrainian.qm</file>
-        <file>translations/QDevelop_Czech.qm</file>
-        <file>translations/QDevelop_Portuguese.qm</file>
-        <file>translations/QDevelop_Vietnamese.qm</file>
-        <file>translations/QDevelop_Turkish.qm</file>
-        <file>translations/QDevelop_Hungarian.qm</file>
-        <file>translations/QDevelop_Japanese.qm</file>
-   </qresource>
     <qresource prefix="/treeview" >
         <file>images/cpp.png</file>
         <file>images/designer.png</file>
