@@ -56,7 +56,7 @@ private slots:
     void on_checkBox6_toggled(bool checked);
     void on_gnu_toggled(bool checked);
     void on_ansi_toggled(bool checked);
-    void on_linux_toggled(bool checked);
+    void on_Linux_toggled(bool checked);
     void on_java_toggled(bool checked);
     void on_kr_toggled(bool checked);
     void on_okButton_clicked();

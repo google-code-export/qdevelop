@@ -87,7 +87,7 @@ QString AStylePlugin::text(QString text, QString selectedText, QTextCodec *codec
 	delete argv;
 	// Read results
 	file.open( QIODevice::ReadOnly | QIODevice::Text );
-	QString formattedContent = file.readAll();
+	QString formattedContent = QString::fromLocal8Bit(file.readAll());
 	file.close();
 	QFile( f ).remove();
 	QFile( f+".orig" ).remove();
@@ -95,6 +95,8 @@ QString AStylePlugin::text(QString text, QString selectedText, QTextCodec *codec
 		return formattedContent;
 	else
 		return QString();
+	Q_UNUSED(codec);
+	Q_UNUSED(selectedText);
 }
 //
 bool AStylePlugin::hasConfigDialog() const

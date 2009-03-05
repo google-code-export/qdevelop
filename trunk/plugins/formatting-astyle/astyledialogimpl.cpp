@@ -190,7 +190,7 @@ void AStyleDialogImpl::on_ansi_toggled(bool checked)
 	sample();
 }
 //
-void AStyleDialogImpl::on_linux_toggled(bool checked)
+void AStyleDialogImpl::on_Linux_toggled(bool checked)
 {
 	if( !checked )
 		return;
