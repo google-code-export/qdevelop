@@ -1683,14 +1683,16 @@ int TextEdit::lineNumber(QPoint point)
 void TextEdit::slotToggleBookmark()
 {
     m_editor->toggleBookmark( m_lineNumber );
-    m_lineNumbers->update();
+    if( m_lineNumbers )
+	    m_lineNumbers->update();
 }
 //
 //
 void TextEdit::slotToggleBreakpoint()
 {
     m_editor->toggleBreakpoint( m_lineNumber, QString(), true );
-    m_lineNumbers->update();
+    if( m_lineNumbers )
+    	m_lineNumbers->update();
 }
 void TextEdit::insertText(QString text, int insertAfterLine)
 {
