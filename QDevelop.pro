@@ -147,5 +147,5 @@ win32 {
  CONFIG -=  debug_and_release
 }
 !exists(resources/translations/QDevelop_Russian.qm) {
- error(Please run "lrelease QDevelop.pro" before building the project)
+ error(Please run \"lrelease QDevelop.pro\" before building the project)
 }
