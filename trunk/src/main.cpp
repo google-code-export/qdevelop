@@ -32,6 +32,7 @@
 #include <QProgressBar>
 #include <QDebug>
 #include <QLibraryInfo>
+#include <QFile>
 #include "mainimpl.h"
 //
 QSplashScreen *splash = 0;
@@ -86,7 +87,10 @@ int main(int argc, char *argv[])
 	if (translatorQDevelop.isEmpty())
 	{
 		// Cmake workaround
-		translatorQDevelop.load(QCoreApplication::applicationDirPath() + "/QDevelop_"+language+".qm");
+		// (checking file existance is necessary as it will try loading other files, including "qdevelop" which might actually exist since
+		//  it is the name of the Linux binary)
+		if (QFile::exists(QCoreApplication::applicationDirPath() + "/QDevelop_"+language+".qm"))
+			translatorQDevelop.load(QCoreApplication::applicationDirPath() + "/QDevelop_"+language+".qm");
 		if (translatorQDevelop.isEmpty())
 		{
 			// Qmake workaround
