@@ -31,7 +31,27 @@ int AStyle_plugin_main(int argc, char *argv[]);
 //
 QString AStylePlugin::menuName() const
 {
-	return "Artistic Style Formatter Plugin";
+	if (!translator)
+	{
+		QString language = QLocale::languageToString( QLocale::system().language() );
+		#ifdef Q_OS_WIN32
+		QString defaultTranslationsPath = "/../translations/formatting-astyle";
+		#else
+		QString defaultTranslationsPath = "/../lib/qdevelop/translations/formatting-astyle";
+		#endif
+		QDir translationsDir(QCoreApplication::applicationDirPath() + defaultTranslationsPath);
+		
+		translator = new QTranslator;
+		translator->load(translationsDir.absoluteFilePath("AStyle_"+language+".qm"));
+		if (translator->isEmpty())
+		{
+			// CMake workaround
+			if (QFile::exists(QCoreApplication::applicationDirPath() + "/AStyle_"+language+".qm"))
+				translator->load(QCoreApplication::applicationDirPath() + "/AStyle_"+language+".qm");
+		}
+		QCoreApplication::installTranslator(translator);
+	}
+	return tr("Artistic Style Formatter Plugin");
 }
 //
 TextEditInterface::Action AStylePlugin::action() const

@@ -11,6 +11,7 @@ SOURCES =   ASBeautifier.cpp \
   astyle_main.cpp \
   astyleplugin.cpp \
   astyledialogimpl.cpp
+TRANSLATIONS = translations/AStyle_Russian.ts translations/AStyle_French.ts translations/AStyle_German.ts
 CONFIG +=   release \
   plugin
 FORMS =   astyle.ui
