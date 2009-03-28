@@ -164,7 +164,13 @@ void CppHighlighter::setupRegexTable()
              << "volatile" << "wchar_t" << "while"
              // BK - Added Qt keywords
              << "slots" << "signals" << "SIGNAL" << "SLOT" << "connect" << "disconnect"
-             << "emit" << "qobject_cast" << "forever";
+             << "emit" << "qobject_cast" << "forever" << "foreach"
+             // Divius: Qt types from QtGlobal
+             << "qint8" << "qint16" << "qint32" << "qint64"
+             << "qlonglong" << "qulonglong" << "qreal"
+             << "quint8" << "quint16" << "quint32" << "quint64"
+             << "qptrdiff" << "quintptr"
+             << "uchar" << "uint" << "ulong" << "ushort";
 
    	//functions and methods
 	item.regex = QRegExp("\\b[a-zA-Z_][a-zA-Z0-9_]+\\s*(?=\\()");
@@ -180,7 +186,6 @@ void CppHighlighter::setupRegexTable()
     
     // user keywords
     QStringList userKeywords;
-    userKeywords << "foreach";
     
     m_userKeywords = QSet<QString>::fromList(userKeywords);    
 }
