@@ -1,6 +1,4 @@
 TARGET = formatting-astyle
-DEPENDPATH =   .
-INCLUDEPATH =   . ../../src
 HEADERS =   astyle.h \
   astyleplugin.h \
   astyledialogimpl.h
@@ -12,9 +10,12 @@ SOURCES =   ASBeautifier.cpp \
   astyleplugin.cpp \
   astyledialogimpl.cpp
 TRANSLATIONS = translations/AStyle_Russian.ts translations/AStyle_French.ts translations/AStyle_German.ts
+FORMS =   astyle.ui
+
 CONFIG +=   release \
   plugin
-FORMS =   astyle.ui
+DEPENDPATH =   .
+INCLUDEPATH =   . ../../src
 TEMPLATE =   lib
 DESTDIR =   ../../bin/plugins
 MOC_DIR =   ../../build/moc
