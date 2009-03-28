@@ -2437,6 +2437,20 @@ void MainImpl::loadPlugins()
         QObject *plugin = loader.instance();
         if (plugin)
         {
+        	SimplePluginInterface *iSimple = qobject_cast<SimplePluginInterface *>(plugin);
+        	if (iSimple)
+        	{
+                QAction *action = new QAction(iSimple->menuName(), plugin);
+                connect(action, SIGNAL(triggered()), this, SLOT(slotSimplePlugin()));
+                menuPlugins->addAction(action);
+                if ( iSimple->hasConfigDialog() )
+                {
+                    QAction *action = new QAction(iSimple->menuName(), plugin);
+                    connect(action, SIGNAL(triggered()), this, SLOT(slotConfigPlugin()));
+                    menuPluginsSettings->addAction(action);
+                }
+       		}
+       		
             TextEditInterface *iTextEdit = qobject_cast<TextEditInterface *>(plugin);
             if (iTextEdit)
             {
@@ -2459,6 +2473,13 @@ void MainImpl::loadPlugins()
     }
 }
 //
+void MainImpl::slotSimplePlugin()
+{
+	QAction *action = qobject_cast<QAction *>(sender());
+	SimplePluginInterface * iSimple = qobject_cast<SimplePluginInterface *>(action->parent());
+	iSimple->start(this);
+}
+//
 void MainImpl::slotTextEditPlugin()
 {
     Editor *editor = currentEditor();
@@ -2475,6 +2496,9 @@ void MainImpl::slotConfigPlugin()
     TextEditInterface *iTextEdit = qobject_cast<TextEditInterface *>(action->parent());
     if ( iTextEdit )
         iTextEdit->config();
+    SimplePluginInterface * iSimple = qobject_cast<SimplePluginInterface *>(action->parent());
+    if ( iSimple )
+        iSimple->config();
 }
 //
 void MainImpl::resetProjectsDirectoriesList()

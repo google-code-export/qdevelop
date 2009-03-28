@@ -268,6 +268,7 @@ private slots:
 	void slotNextBookmark();
 	void slotClearAllBookmarks();
 	void slotGotoMatchingBracket();
+	void slotSimplePlugin();
 	void slotTextEditPlugin();
 	void slotConfigPlugin();
 	void slotPrint();
