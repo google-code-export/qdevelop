@@ -23,10 +23,35 @@
 #include "qpjregexpplannerdialog.h"
 #include "replugin.h"
 
+#include <QDir>
+#include <QFile>
+#include <QCoreApplication>
+#include <QLocale>
+
 //
 QString RePlugin::menuName() const
 {
-	return "RegExp Planner";
+	if (!translator)
+	{
+		QString language = QLocale::languageToString( QLocale::system().language() );
+		#ifdef Q_OS_WIN32
+		QString defaultTranslationsPath = "/../translations/tools-regexp-planner";
+		#else
+		QString defaultTranslationsPath = "/../lib/qdevelop/translations/tools-regexp-planner";
+		#endif
+		QDir translationsDir(QCoreApplication::applicationDirPath() + defaultTranslationsPath);
+		
+		translator = new QTranslator;
+		translator->load(translationsDir.absoluteFilePath("RePlanner_"+language+".qm"));
+		if (translator->isEmpty())
+		{
+			// CMake workaround
+			if (QFile::exists(QCoreApplication::applicationDirPath() + "/RePlanner_"+language+".qm"))
+				translator->load(QCoreApplication::applicationDirPath() + "/RePlanner_"+language+".qm");
+		}
+		QCoreApplication::installTranslator(translator);
+	}
+	return tr("RegExp Planner");
 }
 //
 void RePlugin::start(QWidget * owner)
