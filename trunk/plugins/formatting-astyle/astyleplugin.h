@@ -26,6 +26,7 @@
 #include <QObject>
 #include <QStringList>
 #include <QImage>
+#include <QTranslator>
 
 #include <pluginsinterfaces.h>
 
@@ -35,12 +36,14 @@ class AStylePlugin : public QObject, public TextEditInterface
     Q_INTERFACES(TextEditInterface)
 
 public:
+    AStylePlugin() : translator(0) {}
     QString menuName() const;
     QString text(QString text, QString selectedText, QTextCodec *codec); 
     TextEditInterface::Action action() const;
     bool hasConfigDialog() const;
     void config();
 private:
+    mutable QTranslator * translator;
 };
 
 #endif

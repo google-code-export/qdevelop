@@ -31,7 +31,14 @@ AStyleDialogImpl::AStyleDialogImpl( QWidget * parent, Qt::WFlags f)
 	: QDialog(parent, f)
 {
 	setupUi(this);
-	m_textSample = textEdit->toPlainText();
+	comboBox->clear();
+	// No translation!
+	comboBox->addItems(QStringList() << "none" << "break" << "attach" << "linux");
+	m_textSample = "namespace foospace\n{\nint Foo()\n{\nif (isBar)\n{\nbar();\nreturn 1;\n}\n"
+		"else if(isNone)\n{\nswitch (foo){\ncase 1:\na+=1;\nbreak;\n"
+		"case 2:\n{\na+=2;\nbreak;\n}\n}\n}\n}\n}";
+	//
+	textEdit->setPlainText(m_textSample);
 	indentation->setDisabled( true );
 	formatting->setDisabled( true );
 #ifdef Q_OS_WIN32
@@ -241,7 +248,7 @@ void AStyleDialogImpl::sample()
 	QFile file( f );
 	if (!file.open(QIODevice::WriteOnly | QIODevice::Text ) ) 
 	{
-		textEdit->setPlainText( "problem" );
+		textEdit->setPlainText( m_textSample );
 		return;
 	}
 	file.write( textEdit->toPlainText().toLocal8Bit() );
@@ -278,7 +285,7 @@ void AStyleDialogImpl::sample()
 	if( !formattedContent.isEmpty() )
 		textEdit->setPlainText( formattedContent );
 	else
-		textEdit->setPlainText( "problem" );
+		textEdit->setPlainText( m_textSample );
      textArgs->setText( "astyle "+args().join(" ") );
 }
 //
@@ -390,13 +397,13 @@ void AStyleDialogImpl::on_checkBox6_toggled(bool checked)
 
 void AStyleDialogImpl::on_aboutButton_clicked()
 {
-	QMessageBox::about(0, "Artistic Style Formatter Plugin", 
-		"              AStyle plugin for QDevelop\n"
+	QMessageBox::about(0, tr("Artistic Style Formatter Plugin"), 
+		tr("              AStyle plugin for QDevelop\n"
 		"           Copyright (c) 2006 Jean-Luc Biord\n\n"
 		"                   jlbiord@qtfr.org\n\n"
 		"Part of this plugin is Artistic Style - an indentation and\n"
 		" reformatting tool for C, C++, C# and Java source files.\n"
-		"             http://astyle.sourceforge.net\n\n"
+		"             http://astyle.sourceforge.net\n\n")
 		);
 }
 //
