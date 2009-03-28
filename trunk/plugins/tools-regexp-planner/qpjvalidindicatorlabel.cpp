@@ -28,7 +28,13 @@
 
 /********************** IMPLEMENTATION *****************************/
 QpjValidIndicatorLabel::QpjValidIndicatorLabel(const QString& text, QWidget* parent) 
-	: QLabel(text, parent) {}
+	: QLabel(text, parent) 
+{
+	if (text.isEmpty())
+	{
+		setText("<font color=red>" + tr("Invalid") + "</font>");
+	}
+}
 
 void QpjValidIndicatorLabel::setView(const QString& pattern) 
 {
@@ -37,7 +43,7 @@ void QpjValidIndicatorLabel::setView(const QString& pattern)
 		setText("<font color=green>" + tr("Valid") + "</font>");
 	}
 	else {
-		setText(RED_TEXT_QPJVIALIDINDICATORLABEL);
+		setText("<font color=red>" + tr("Invalid") + "</font>");
 	}
 }
 // END OF IMPLEMENTATION

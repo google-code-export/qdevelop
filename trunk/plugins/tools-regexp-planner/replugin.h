@@ -25,6 +25,7 @@
 
 #include <QObject>
 #include <QtPlugin>
+#include <QTranslator>
 
 #include <pluginsinterfaces.h>
 
@@ -34,11 +35,13 @@ class RePlugin : public QObject, public SimplePluginInterface
     Q_INTERFACES(SimplePluginInterface)
 
 public:
+    RePlugin() : translator(0) {}
     QString menuName() const;
     void start(QWidget * owner = 0);
     bool hasConfigDialog() const;
     void config();
 private:
+    mutable QTranslator * translator;
 };
 
 #endif

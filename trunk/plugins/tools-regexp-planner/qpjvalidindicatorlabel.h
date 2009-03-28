@@ -25,8 +25,6 @@
 #ifndef MY_QPJVIALIDINDICATORLABEL_H
 #define MY_QPJVIALIDINDICATORLABEL_H
 
-#define RED_TEXT_QPJVIALIDINDICATORLABEL "<font color=red>" + tr("Invalid") + "</font>"
-
 #include <QLabel>
 
 /********************** CLASS DECLARATION **************************/
@@ -35,7 +33,7 @@ class QpjValidIndicatorLabel : public QLabel
 		Q_OBJECT
 	public:
 		QpjValidIndicatorLabel(
-			const QString& text = RED_TEXT_QPJVIALIDINDICATORLABEL, 
+			const QString& text = QString(), 
 			QWidget* parent = 0
 		);
 	public slots:
