@@ -1,3 +1,9 @@
+???????? ?? ???? Version 0.28:
+  - Localization support for plugins
+  - Added formating-astyle plugin (former AStyle-Plugin) for formatting and indenting source code
+  - Added tools-regexp-planner (based on "RegExp Planner" project) for testing regular expressions
+  - CMake build system now supports building and installing of plugins
+
 February 20 2009 Version 0.27:
   - Fixed a lot of issues (among them several segfaults, incorrect work with relative paths, some translation issues)
   - Several editor improvements: word wrap, right margin line
