@@ -48,6 +48,12 @@ QString RePlugin::menuName() const
 			// CMake workaround
 			if (QFile::exists(QCoreApplication::applicationDirPath() + "/RePlanner_"+language+".qm"))
 				translator->load(QCoreApplication::applicationDirPath() + "/RePlanner_"+language+".qm");
+			if (translator->isEmpty())
+			{
+				// Qmake workaround
+				translator->load(QCoreApplication::applicationDirPath() 
+					+ "/../plugins/tools-regexp-planner/translations/RePlanner_"+language+".qm");
+			}
 		}
 		QCoreApplication::installTranslator(translator);
 	}
