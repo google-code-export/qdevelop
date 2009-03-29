@@ -48,6 +48,12 @@ QString AStylePlugin::menuName() const
 			// CMake workaround
 			if (QFile::exists(QCoreApplication::applicationDirPath() + "/AStyle_"+language+".qm"))
 				translator->load(QCoreApplication::applicationDirPath() + "/AStyle_"+language+".qm");
+			if (translator->isEmpty())
+			{
+				// Qmake workaround
+				translator->load(QCoreApplication::applicationDirPath() 
+					+ "/../plugins/formatting-astyle/translations/AStyle_"+language+".qm");
+			}
 		}
 		QCoreApplication::installTranslator(translator);
 	}
