@@ -51,6 +51,8 @@ class QpjRegExpPlannerDialog : public QDialog
 		QLabel* labelGreen;
 		QLabel* labelBlue;
 		QLabel* labelRed;
+	private slots:
+		void aboutBox();
 }; // END OF CLASS DECLARATION
 
 #endif  // END OF ifndef...
