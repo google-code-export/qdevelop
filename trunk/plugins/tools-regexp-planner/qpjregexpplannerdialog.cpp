@@ -49,6 +49,8 @@ QpjRegExpPlannerDialog::QpjRegExpPlannerDialog(QWidget* parent)
 	// by Divius [for QDevelop]
 	QPushButton * buttonClose = new QPushButton(tr("Close"));
 	connect(buttonClose, SIGNAL(clicked()), SLOT(close()));
+	QPushButton * buttonAbout = new QPushButton(tr("About plugin"));
+	connect(buttonAbout, SIGNAL(clicked()), SLOT(aboutBox()));
 	// ! by Divius
 
 	// making tha layout:
@@ -62,6 +64,7 @@ QpjRegExpPlannerDialog::QpjRegExpPlannerDialog(QWidget* parent)
 	v1Layout->addWidget(labelBlue);
 	v1Layout->addWidget(labelRed);
 	v1Layout->addStretch();
+	v1Layout->addWidget(buttonAbout);
 	v1Layout->addWidget(buttonClose);
 	QHBoxLayout* h2Layout = new QHBoxLayout;
 	h2Layout->addWidget(checker);
@@ -86,4 +89,16 @@ QpjRegExpPlannerDialog::QpjRegExpPlannerDialog(QWidget* parent)
 		checker,      SLOT  (setPatternString(const QString&))
 	);
 }
+
+void QpjRegExpPlannerDialog::aboutBox()
+{
+	QMessageBox::about(this, tr("About plugin"), trUtf8
+	(
+		"    RegExp Planner plugin for QDevelop\n"
+		"Original work: Copyright (C) 2008 by Prém József\n"
+		"    Adapted for using with QDevelop by\n"
+		"Dmitrij \"Divius\" Tantsur <divius.inside@gmail.com>"
+	)+"\n\n"+tr("Plugin license: GPLv2"));
+}
 // END OF IMPLEMENTATION
+

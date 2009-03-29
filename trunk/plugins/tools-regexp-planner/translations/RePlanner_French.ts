@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
-<context>
-    <name></name>
-</context>
+<!DOCTYPE TS>
+<TS version="2.0">
 <context>
     <name>QpjRegExpPlannerDialog</name>
     <message>
-        <location filename="../qpjregexpplannerdialog.cpp" line="41"/>
+        <location filename="../qpjregexpplannerdialog.cpp" line="39"/>
         <source>Regular Expression Editor   e.g.  [A-Za-z][1-9][0-9]{0,2}</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41,8 +39,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qpjregexpplannerdialog.cpp" line="77"/>
+        <location filename="../qpjregexpplannerdialog.cpp" line="52"/>
+        <location filename="../qpjregexpplannerdialog.cpp" line="95"/>
+        <source>About plugin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qpjregexpplannerdialog.cpp" line="80"/>
         <source>RegExp Planner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="../qpjregexpplannerdialog.cpp" line="95"/>
+        <source>    RegExp Planner plugin for QDevelop
+Original work: Copyright (C) 2008 by Prém József
+    Adapted for using with QDevelop by
+Dmitrij &quot;Divius&quot; Tantsur &lt;divius.inside@gmail.com&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qpjregexpplannerdialog.cpp" line="101"/>
+        <source>Plugin license: GPLv2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -54,6 +71,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qpjvalidindicatorlabel.cpp" line="35"/>
         <location filename="../qpjvalidindicatorlabel.cpp" line="46"/>
         <source>Invalid</source>
         <translation type="unfinished"></translation>
