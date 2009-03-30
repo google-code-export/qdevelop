@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="de_DE">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -753,17 +754,18 @@ wurde außerhalb des Editor verändert.
 disappeared from fisk.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei &quot;%1&quot;
+wurde von der Festplatte entfernt.</translation>
     </message>
     <message>
         <location filename="../../src/editor.cpp" line="255"/>
         <source>Recreate</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiederherstellen</translation>
     </message>
     <message>
         <location filename="../../src/editor.cpp" line="255"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -2157,7 +2159,7 @@ du kannst es in den Optionen ändern.</translation>
     <message>
         <location filename="../../src/mainimpl.cpp" line="1339"/>
         <source>Cannot launch Linguist</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann Linguist nicht starten</translation>
     </message>
 </context>
 <context>
