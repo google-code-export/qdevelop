@@ -698,22 +698,22 @@ Compilation of %1...
         <translation>Обновить списки классов и методов</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="254"/>
+        <location filename="../../src/editor.cpp" line="282"/>
         <source>What do you want to do?</source>
         <translation>Что вы хотите сделать?</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="255"/>
+        <location filename="../../src/editor.cpp" line="283"/>
         <source>Overwrite</source>
         <translation>Перезаписать</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="255"/>
+        <location filename="../../src/editor.cpp" line="283"/>
         <source>Reload File</source>
         <translation>Перезагрузить файл</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="253"/>
+        <location filename="../../src/editor.cpp" line="281"/>
         <source>The file &quot;%1&quot;
 was modified outside editor.
 
@@ -729,9 +729,30 @@ was modified outside editor.
         <translation>Открыть %1</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="409"/>
+        <location filename="../../src/editor.cpp" line="437"/>
         <source>%1 replacement(s) made.</source>
         <translation>%1 замен(а/ы) сделано.</translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="253"/>
+        <source>The file &quot;%1&quot;
+disappeared from fisk.
+
+</source>
+        <translation>Файл &quot;%1&quot;
+больше не присутствует на диске.
+
+</translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="255"/>
+        <source>Recreate</source>
+        <translation>Создать заново</translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="255"/>
+        <source>Close</source>
+        <translation>Закрыть</translation>
     </message>
 </context>
 <context>
@@ -958,12 +979,12 @@ was modified outside editor.
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/editor.cpp" line="904"/>
+        <location filename="../../src/editor.cpp" line="934"/>
         <source>error</source>
         <translation>ошибка</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="914"/>
+        <location filename="../../src/editor.cpp" line="944"/>
         <source>warning</source>
         <translation>предупреждение</translation>
     </message>
@@ -2101,12 +2122,12 @@ was modified outside editor.
  уже существует.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2495"/>
+        <location filename="../../src/mainimpl.cpp" line="2519"/>
         <source>The Qt database building is already in progress.</source>
         <translation>Поcтроение базы Qt уже в процессе.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2539"/>
+        <location filename="../../src/mainimpl.cpp" line="2563"/>
         <source>The Qt classes database build is ended.</source>
         <translation>Поcтроение базы классов Qt закончено.</translation>
     </message>
@@ -2828,142 +2849,142 @@ Meta+нажатие мышью = перейти к объявлению</transla
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1201"/>
+        <location filename="../../src/projectmanager.cpp" line="1202"/>
         <source>Save project changes ?</source>
         <translation>Сохранить изменения в проекте?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1381"/>
+        <location filename="../../src/projectmanager.cpp" line="1382"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1381"/>
+        <location filename="../../src/projectmanager.cpp" line="1382"/>
         <source>No</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1359"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="776"/>
+        <location filename="../../src/projectmanager.cpp" line="777"/>
         <source>Forms:</source>
         <translation>Формы:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="836"/>
+        <location filename="../../src/projectmanager.cpp" line="837"/>
         <source>Unable to create file.</source>
         <translation>Не могу создать файл.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1373"/>
+        <location filename="../../src/projectmanager.cpp" line="1374"/>
         <source>Ok</source>
         <translation>ОК</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="958"/>
+        <location filename="../../src/projectmanager.cpp" line="959"/>
         <source>Sub-project creation</source>
         <translation>Создание подпроекта</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="994"/>
+        <location filename="../../src/projectmanager.cpp" line="995"/>
         <source>Sub-Projects</source>
         <translation>Подпроект</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1526"/>
+        <location filename="../../src/projectmanager.cpp" line="1527"/>
         <source>Sub-projects</source>
         <translation>Подпроекты</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1632"/>
+        <location filename="../../src/projectmanager.cpp" line="1633"/>
         <source>Headers</source>
         <translation>Заголовки</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1637"/>
+        <location filename="../../src/projectmanager.cpp" line="1638"/>
         <source>Sources</source>
         <translation>Исходники</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1642"/>
+        <location filename="../../src/projectmanager.cpp" line="1643"/>
         <source>Dialogs</source>
         <translation>Диалоги</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1647"/>
+        <location filename="../../src/projectmanager.cpp" line="1648"/>
         <source>Translations</source>
         <translation>Переводы</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1652"/>
+        <location filename="../../src/projectmanager.cpp" line="1653"/>
         <source>Resources</source>
         <translation>Ресурсы</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="159"/>
+        <location filename="../../src/projectmanager.cpp" line="160"/>
         <source>Project parsing</source>
         <translation>Разбор проекта</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1324"/>
+        <location filename="../../src/projectmanager.cpp" line="1325"/>
         <source>New name:</source>
         <translation>Новое имя:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1330"/>
+        <location filename="../../src/projectmanager.cpp" line="1331"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation>Типы нового и старого имени файла разные!</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1331"/>
+        <location filename="../../src/projectmanager.cpp" line="1332"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="763"/>
+        <location filename="../../src/projectmanager.cpp" line="764"/>
         <source>The file already exists in directory.</source>
         <translation>Файл уже существует в директории.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="884"/>
+        <location filename="../../src/projectmanager.cpp" line="885"/>
         <source>The file already exists.</source>
         <translation>Файл уже существует.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="895"/>
+        <location filename="../../src/projectmanager.cpp" line="896"/>
         <source>This file is not permitted.</source>
         <translation>Этот файл не разрешен.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1359"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation>Не могу переименовать файл в &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2056"/>
+        <location filename="../../src/projectmanager.cpp" line="2057"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation>Единственная версия, доступная для &quot;%1&quot; - %2</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2057"/>
+        <location filename="../../src/projectmanager.cpp" line="2058"/>
         <source>Run on %1</source>
         <translation>Запустить %1</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1372"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>Cannot remove the main project.</source>
         <translation>Нельзя удалить главный проект.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1380"/>
+        <location filename="../../src/projectmanager.cpp" line="1381"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation>Вы действительно хотите удалить &quot;%1&quot; из проекта?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1294"/>
+        <location filename="../../src/projectmanager.cpp" line="1295"/>
         <source>File not found: &quot;%1&quot;</source>
         <translation>Файл не найден: %1</translation>
     </message>
@@ -3352,27 +3373,27 @@ Meta+нажатие мышью = перейти к объявлению</transla
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/main.cpp" line="116"/>
+        <location filename="../../src/main.cpp" line="138"/>
         <source>Loading:</source>
         <translation>Загрузка:</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="76"/>
+        <location filename="../../src/main.cpp" line="77"/>
         <source>Interface translation</source>
         <translation>Перевод интерфейса</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="93"/>
+        <location filename="../../src/main.cpp" line="115"/>
         <source>Environment control</source>
         <translation>Управление окружением</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="97"/>
+        <location filename="../../src/main.cpp" line="119"/>
         <source>Files on editor</source>
         <translation>Файлы в редакторе</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="120"/>
+        <location filename="../../src/main.cpp" line="142"/>
         <source>Main Window creation</source>
         <translation>Создание главного окна</translation>
     </message>
@@ -3392,12 +3413,12 @@ Meta+нажатие мышью = перейти к объявлению</transla
         <translation>QDevelop необходима поддержка SQLite. Пожалуйста, прочитайте документацию Qt SQL driver для сборки.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="191"/>
+        <location filename="../../src/projectmanager.cpp" line="192"/>
         <source>Current project parsing</source>
         <translation>Разбор текущего проекта</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="116"/>
+        <location filename="../../src/main.cpp" line="138"/>
         <source>Plugins</source>
         <translation>Плагины</translation>
     </message>
