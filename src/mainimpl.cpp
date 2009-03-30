@@ -828,6 +828,15 @@ void MainImpl::saveINI()
         settings.endGroup();
     }
     //
+    // HACK to prevent the compiler toolbar from being moved to the right more and more: Hide otherFilesAction button before saving state
+    if (actionOtherFile->isVisible()) {
+        separatorOtherFile->setVisible(false);
+        actionOtherFile->setVisible(false);
+        // yes, we have to call it twice to really update the other toolbars' positions
+        QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
+        QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
+    }
+    //
     settings.beginGroup("mainwindowstate");
     if (!isMinimized() && !isMaximized() && !isFullScreen())
     {
@@ -845,6 +854,10 @@ void MainImpl::saveINI()
 	foreach( QWidget *w, dockWidgets )
 		settings.setValue( w->objectName(), toolbarStatus[w] );;
 	settings.endGroup();
+    //
+    // HACK to prevent the compiler toolbar from being moved to the right more and more: Hide otherFilesAction button before saving state
+    // and restore it when we are done
+    slotUpdateOtherFileActions();
 }
 //
 void MainImpl::slotNewProject()
