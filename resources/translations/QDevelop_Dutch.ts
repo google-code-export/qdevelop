@@ -697,22 +697,22 @@ Compilation of %1...
         <translation>Vernieuw klassen en methoden lijst</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="254"/>
+        <location filename="../../src/editor.cpp" line="282"/>
         <source>What do you want to do?</source>
         <translation>Wat wilt u doen?</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="255"/>
+        <location filename="../../src/editor.cpp" line="283"/>
         <source>Overwrite</source>
         <translation>Overschrijven</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="255"/>
+        <location filename="../../src/editor.cpp" line="283"/>
         <source>Reload File</source>
         <translation>Bestand Herladen</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="253"/>
+        <location filename="../../src/editor.cpp" line="281"/>
         <source>The file &quot;%1&quot;
 was modified outside editor.
 
@@ -725,8 +725,26 @@ was modified outside editor.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="409"/>
+        <location filename="../../src/editor.cpp" line="437"/>
         <source>%1 replacement(s) made.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="253"/>
+        <source>The file &quot;%1&quot;
+disappeared from fisk.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="255"/>
+        <source>Recreate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="255"/>
+        <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -955,12 +973,12 @@ was modified outside editor.
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/editor.cpp" line="904"/>
+        <location filename="../../src/editor.cpp" line="934"/>
         <source>error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="914"/>
+        <location filename="../../src/editor.cpp" line="944"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1909,7 +1927,7 @@ was modified outside editor.
 <context>
     <name>MainImpl</name>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2330"/>
+        <location filename="../../src/mainimpl.cpp" line="2340"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
@@ -1919,12 +1937,12 @@ was modified outside editor.
         <translation>Wilt u QDevelop afsluiten?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1919"/>
+        <location filename="../../src/mainimpl.cpp" line="1929"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1919"/>
+        <location filename="../../src/mainimpl.cpp" line="1929"/>
         <source>No</source>
         <translation>Nee</translation>
     </message>
@@ -1944,57 +1962,57 @@ was modified outside editor.
         <translation>Bestanden (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1944"/>
+        <location filename="../../src/mainimpl.cpp" line="1954"/>
         <source>Stop</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2023"/>
+        <location filename="../../src/mainimpl.cpp" line="2033"/>
         <source>Start</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1902"/>
+        <location filename="../../src/mainimpl.cpp" line="1912"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation>Het project is gewijzigd, de wijziginen opslaan?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1918"/>
+        <location filename="../../src/mainimpl.cpp" line="1928"/>
         <source>Stop debugging ?</source>
         <translation>Stop debuggen?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1931"/>
+        <location filename="../../src/mainimpl.cpp" line="1941"/>
         <source>run Build.</source>
         <translation>start Compileren.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1931"/>
+        <location filename="../../src/mainimpl.cpp" line="1941"/>
         <source>Ok</source>
         <translation>Akkoord</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1946"/>
+        <location filename="../../src/mainimpl.cpp" line="1956"/>
         <source>Shift+F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2024"/>
+        <location filename="../../src/mainimpl.cpp" line="2034"/>
         <source>F5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2092"/>
+        <location filename="../../src/mainimpl.cpp" line="2102"/>
         <source>Abort</source>
         <translation>Afbreken</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2127"/>
+        <location filename="../../src/mainimpl.cpp" line="2137"/>
         <source>Continue</source>
         <translation>Doorgaan</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2185"/>
+        <location filename="../../src/mainimpl.cpp" line="2195"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
@@ -2024,12 +2042,12 @@ was modified outside editor.
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2085"/>
+        <location filename="../../src/mainimpl.cpp" line="2095"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation>Stopping is not possible under Windows. Put breakpoints.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2320"/>
+        <location filename="../../src/mainimpl.cpp" line="2330"/>
         <source>New Variable:</source>
         <translation>Nieuwe Variabele:</translation>
     </message>
@@ -2039,27 +2057,27 @@ was modified outside editor.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1719"/>
+        <location filename="../../src/mainimpl.cpp" line="1729"/>
         <source>Build finished without error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1721"/>
+        <location filename="../../src/mainimpl.cpp" line="1731"/>
         <source>Build finished with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1723"/>
+        <location filename="../../src/mainimpl.cpp" line="1733"/>
         <source>error(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1723"/>
+        <location filename="../../src/mainimpl.cpp" line="1733"/>
         <source>and</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1725"/>
+        <location filename="../../src/mainimpl.cpp" line="1735"/>
         <source>warning(s)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2085,12 +2103,12 @@ was modified outside editor.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1930"/>
+        <location filename="../../src/mainimpl.cpp" line="1940"/>
         <source>The program doesn&apos;t exist,</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2329"/>
+        <location filename="../../src/mainimpl.cpp" line="2339"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation type="unfinished"></translation>
@@ -2102,18 +2120,23 @@ You can change in Options dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2485"/>
+        <location filename="../../src/mainimpl.cpp" line="2519"/>
         <source>The Qt database building is already in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2529"/>
+        <location filename="../../src/mainimpl.cpp" line="2563"/>
         <source>The Qt classes database build is ended.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2313"/>
+        <location filename="../../src/mainimpl.cpp" line="2323"/>
         <source>Version %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1339"/>
+        <source>Cannot launch Linguist</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2281,16 +2304,6 @@ You can change in Options dialog.</source>
         <location filename="../../ui/newproject.ui" line="417"/>
         <source>Inheritance subclassing</source>
         <translation>Overervende subklassering</translation>
-    </message>
-    <message>
-        <location filename="../../ui/newproject.ui" line="437"/>
-        <source>Dialog</source>
-        <translation type="obsolete">Venster</translation>
-    </message>
-    <message>
-        <location filename="../../ui/newproject.ui" line="444"/>
-        <source>DialogImpl</source>
-        <translation type="obsolete">VensterImpl</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="471"/>
@@ -2826,142 +2839,142 @@ Meta+click = Go to declaration</source>
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1201"/>
+        <location filename="../../src/projectmanager.cpp" line="1202"/>
         <source>Save project changes ?</source>
         <translation>Wijzigingen in project opslaan?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1381"/>
+        <location filename="../../src/projectmanager.cpp" line="1382"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1381"/>
+        <location filename="../../src/projectmanager.cpp" line="1382"/>
         <source>No</source>
         <translation>Nee</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1359"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="776"/>
+        <location filename="../../src/projectmanager.cpp" line="777"/>
         <source>Forms:</source>
         <translation>Schermen:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="836"/>
+        <location filename="../../src/projectmanager.cpp" line="837"/>
         <source>Unable to create file.</source>
         <translation>Onmogelijk bestand te creëeren.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1373"/>
+        <location filename="../../src/projectmanager.cpp" line="1374"/>
         <source>Ok</source>
         <translation>Akkoord</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="958"/>
+        <location filename="../../src/projectmanager.cpp" line="959"/>
         <source>Sub-project creation</source>
         <translation>Sub-project creatie</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="994"/>
+        <location filename="../../src/projectmanager.cpp" line="995"/>
         <source>Sub-Projects</source>
         <translation>Sub-Projecten</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1526"/>
+        <location filename="../../src/projectmanager.cpp" line="1527"/>
         <source>Sub-projects</source>
         <translation>Sub-projecten</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1632"/>
+        <location filename="../../src/projectmanager.cpp" line="1633"/>
         <source>Headers</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1637"/>
+        <location filename="../../src/projectmanager.cpp" line="1638"/>
         <source>Sources</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1642"/>
+        <location filename="../../src/projectmanager.cpp" line="1643"/>
         <source>Dialogs</source>
         <translation>Vensters</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1647"/>
+        <location filename="../../src/projectmanager.cpp" line="1648"/>
         <source>Translations</source>
         <translation>Vertalingen</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1652"/>
+        <location filename="../../src/projectmanager.cpp" line="1653"/>
         <source>Resources</source>
         <translation>Bronnen</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="159"/>
+        <location filename="../../src/projectmanager.cpp" line="160"/>
         <source>Project parsing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1324"/>
+        <location filename="../../src/projectmanager.cpp" line="1325"/>
         <source>New name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1330"/>
+        <location filename="../../src/projectmanager.cpp" line="1331"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1331"/>
+        <location filename="../../src/projectmanager.cpp" line="1332"/>
         <source>Rename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="763"/>
+        <location filename="../../src/projectmanager.cpp" line="764"/>
         <source>The file already exists in directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="884"/>
+        <location filename="../../src/projectmanager.cpp" line="885"/>
         <source>The file already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="895"/>
+        <location filename="../../src/projectmanager.cpp" line="896"/>
         <source>This file is not permitted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1359"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2056"/>
+        <location filename="../../src/projectmanager.cpp" line="2057"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2057"/>
+        <location filename="../../src/projectmanager.cpp" line="2058"/>
         <source>Run on %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1372"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>Cannot remove the main project.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1380"/>
+        <location filename="../../src/projectmanager.cpp" line="1381"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1294"/>
+        <location filename="../../src/projectmanager.cpp" line="1295"/>
         <source>File not found: &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3355,47 +3368,47 @@ Meta+click = Go to declaration</source>
         <translation>Onmogelijk Assitant te starten !</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="116"/>
+        <location filename="../../src/main.cpp" line="138"/>
         <source>Loading:</source>
         <translation>Loading:</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="76"/>
+        <location filename="../../src/main.cpp" line="77"/>
         <source>Interface translation</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="93"/>
+        <location filename="../../src/main.cpp" line="115"/>
         <source>Environment control</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="97"/>
+        <location filename="../../src/main.cpp" line="119"/>
         <source>Files on editor</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="120"/>
+        <location filename="../../src/main.cpp" line="142"/>
         <source>Main Window creation</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/misc.cpp" line="80"/>
+        <location filename="../../src/misc.cpp" line="82"/>
         <source>Unable to establish a database connection.</source>
         <translation>Onmogelijk een database connectie te maken.</translation>
     </message>
     <message>
-        <location filename="../../src/misc.cpp" line="83"/>
+        <location filename="../../src/misc.cpp" line="85"/>
         <source>QDevelop needs SQLite support. Please read the Qt SQL driver documentation for information how to build it.</source>
         <translation>QDeveleop heeft SQLite nodig. Lees alstublieft de Qt SQL driver documentatie voor informatie hoe deze te compileren.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="191"/>
+        <location filename="../../src/projectmanager.cpp" line="192"/>
         <source>Current project parsing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="116"/>
+        <location filename="../../src/main.cpp" line="138"/>
         <source>Plugins</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3879,22 +3892,17 @@ Try to complete code later.</source>
         <translation> Openen</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="223"/>
-        <source>Sort</source>
-        <translation>Sorteren</translation>
-    </message>
-    <message>
-        <location filename="../../src/treeproject.cpp" line="233"/>
+        <location filename="../../src/treeproject.cpp" line="234"/>
         <source>Show As</source>
         <translation>Toon als</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="234"/>
+        <location filename="../../src/treeproject.cpp" line="235"/>
         <source>Normal</source>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="235"/>
+        <location filename="../../src/treeproject.cpp" line="236"/>
         <source>Krawek</source>
         <translation></translation>
     </message>
@@ -3909,12 +3917,12 @@ Try to complete code later.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="230"/>
+        <location filename="../../src/treeproject.cpp" line="231"/>
         <source>Properties of %1...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="224"/>
+        <location filename="../../src/treeproject.cpp" line="225"/>
         <source>Remove from project</source>
         <translation type="unfinished"></translation>
     </message>

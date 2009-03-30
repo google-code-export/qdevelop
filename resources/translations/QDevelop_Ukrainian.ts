@@ -215,21 +215,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Наслідування</translation>
     </message>
     <message>
-        <location filename="../../ui/addnewclass.ui" line="89"/>
-        <source>public</source>
-        <translation type="obsolete">public</translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclass.ui" line="94"/>
-        <source>protected</source>
-        <translation type="obsolete">protected</translation>
-    </message>
-    <message>
-        <location filename="../../ui/addnewclass.ui" line="99"/>
-        <source>private</source>
-        <translation type="obsolete">private</translation>
-    </message>
-    <message>
         <location filename="../../ui/addnewclass.ui" line="107"/>
         <source>Inherits another class</source>
         <translation type="unfinished">Наслідування іншого класу</translation>
@@ -712,22 +697,22 @@ Compilation of %1...
         <translation type="unfinished">Оновити списки класів і методів</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="254"/>
+        <location filename="../../src/editor.cpp" line="282"/>
         <source>What do you want to do?</source>
         <translation type="unfinished">Що Ви хочете зробити?</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="255"/>
+        <location filename="../../src/editor.cpp" line="283"/>
         <source>Overwrite</source>
         <translation type="unfinished">Перезаписати</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="255"/>
+        <location filename="../../src/editor.cpp" line="283"/>
         <source>Reload File</source>
         <translation type="unfinished">Перезагрузити файл</translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="253"/>
+        <location filename="../../src/editor.cpp" line="281"/>
         <source>The file &quot;%1&quot;
 was modified outside editor.
 
@@ -740,8 +725,26 @@ was modified outside editor.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="409"/>
+        <location filename="../../src/editor.cpp" line="437"/>
         <source>%1 replacement(s) made.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="253"/>
+        <source>The file &quot;%1&quot;
+disappeared from fisk.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="255"/>
+        <source>Recreate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/editor.cpp" line="255"/>
+        <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -969,12 +972,12 @@ was modified outside editor.
 <context>
     <name>LogBuild</name>
     <message>
-        <location filename="../../src/editor.cpp" line="904"/>
+        <location filename="../../src/editor.cpp" line="934"/>
         <source>error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/editor.cpp" line="914"/>
+        <location filename="../../src/editor.cpp" line="944"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1933,17 +1936,17 @@ was modified outside editor.
         <translation type="unfinished">Файли</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2330"/>
+        <location filename="../../src/mainimpl.cpp" line="2340"/>
         <source>Cancel</source>
         <translation type="unfinished">Відмінити</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1919"/>
+        <location filename="../../src/mainimpl.cpp" line="1929"/>
         <source>Yes</source>
         <translation type="unfinished">Так</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1919"/>
+        <location filename="../../src/mainimpl.cpp" line="1929"/>
         <source>No</source>
         <translation type="unfinished">Ні</translation>
     </message>
@@ -1978,62 +1981,62 @@ was modified outside editor.
         <translation type="unfinished">Файли (*.cpp *.h *.txt *.* *)</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1944"/>
+        <location filename="../../src/mainimpl.cpp" line="1954"/>
         <source>Stop</source>
         <translation>Стоп</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2023"/>
+        <location filename="../../src/mainimpl.cpp" line="2033"/>
         <source>Start</source>
         <translation>Старт</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1902"/>
+        <location filename="../../src/mainimpl.cpp" line="1912"/>
         <source>The project has been modified, do you want to save your changes ?</source>
         <translation type="unfinished">Проект був змінений, зберегти зміни?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1918"/>
+        <location filename="../../src/mainimpl.cpp" line="1928"/>
         <source>Stop debugging ?</source>
         <translation type="unfinished">Зупинити відладку?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1931"/>
+        <location filename="../../src/mainimpl.cpp" line="1941"/>
         <source>run Build.</source>
         <translation type="unfinished">запустіть Збирання.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1931"/>
+        <location filename="../../src/mainimpl.cpp" line="1941"/>
         <source>Ok</source>
         <translation type="unfinished">Угу</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1946"/>
+        <location filename="../../src/mainimpl.cpp" line="1956"/>
         <source>Shift+F5</source>
         <translation>Shift+F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2024"/>
+        <location filename="../../src/mainimpl.cpp" line="2034"/>
         <source>F5</source>
         <translation>F5</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2092"/>
+        <location filename="../../src/mainimpl.cpp" line="2102"/>
         <source>Abort</source>
         <translation type="unfinished">Перервати</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2085"/>
+        <location filename="../../src/mainimpl.cpp" line="2095"/>
         <source>Stopping is not possible under Windows. Put breakpoints.</source>
         <translation type="unfinished">Зупинка неможлива у Windows. Встановіть точки зупинки.</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2127"/>
+        <location filename="../../src/mainimpl.cpp" line="2137"/>
         <source>Continue</source>
         <translation type="unfinished">Продовжити</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2185"/>
+        <location filename="../../src/mainimpl.cpp" line="2195"/>
         <source>&amp;%1 %2</source>
         <translation>&amp;%1 %2</translation>
     </message>
@@ -2043,7 +2046,7 @@ was modified outside editor.
         <translation type="unfinished">Ви дійсно хочете вийти з QDevelop?</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2320"/>
+        <location filename="../../src/mainimpl.cpp" line="2330"/>
         <source>New Variable:</source>
         <translation type="unfinished">Нова змінна:</translation>
     </message>
@@ -2053,27 +2056,27 @@ was modified outside editor.
         <translation type="unfinished">Виберіть проект для відкриття</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1719"/>
+        <location filename="../../src/mainimpl.cpp" line="1729"/>
         <source>Build finished without error</source>
         <translation type="unfinished">Збір завершений без помилок</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1721"/>
+        <location filename="../../src/mainimpl.cpp" line="1731"/>
         <source>Build finished with</source>
         <translation type="unfinished">Збір завершений з</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1723"/>
+        <location filename="../../src/mainimpl.cpp" line="1733"/>
         <source>error(s)</source>
         <translation type="unfinished">помилками</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1723"/>
+        <location filename="../../src/mainimpl.cpp" line="1733"/>
         <source>and</source>
         <translation type="unfinished">і</translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1725"/>
+        <location filename="../../src/mainimpl.cpp" line="1735"/>
         <source>warning(s)</source>
         <translation type="unfinished">попередження</translation>
     </message>
@@ -2099,12 +2102,12 @@ was modified outside editor.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="1930"/>
+        <location filename="../../src/mainimpl.cpp" line="1940"/>
         <source>The program doesn&apos;t exist,</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2329"/>
+        <location filename="../../src/mainimpl.cpp" line="2339"/>
         <source>The variable &quot;%1&quot;
  already exists.</source>
         <translation type="unfinished"></translation>
@@ -2116,18 +2119,23 @@ You can change in Options dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2485"/>
+        <location filename="../../src/mainimpl.cpp" line="2519"/>
         <source>The Qt database building is already in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2529"/>
+        <location filename="../../src/mainimpl.cpp" line="2563"/>
         <source>The Qt classes database build is ended.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/mainimpl.cpp" line="2313"/>
+        <location filename="../../src/mainimpl.cpp" line="2323"/>
         <source>Version %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/mainimpl.cpp" line="1339"/>
+        <source>Cannot launch Linguist</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2297,29 +2305,9 @@ You can change in Options dialog.</source>
         <translation type="unfinished">Наслідування форм</translation>
     </message>
     <message>
-        <location filename="../../ui/newproject.ui" line="437"/>
-        <source>Dialog</source>
-        <translation type="obsolete">Dialog</translation>
-    </message>
-    <message>
-        <location filename="../../ui/newproject.ui" line="444"/>
-        <source>DialogImpl</source>
-        <translation type="obsolete">DialogImpl</translation>
-    </message>
-    <message>
         <location filename="../../ui/newproject.ui" line="471"/>
         <source>Object name:</source>
         <translation type="unfinished">Ім’я об’єкту:</translation>
-    </message>
-    <message>
-        <location filename="../../ui/newproject.ui" line="491"/>
-        <source>dialog</source>
-        <translation type="obsolete">dialog</translation>
-    </message>
-    <message>
-        <location filename="../../ui/newproject.ui" line="498"/>
-        <source>dialogimpl</source>
-        <translation type="obsolete">dialogimpl</translation>
     </message>
     <message>
         <location filename="../../ui/newproject.ui" line="525"/>
@@ -2850,142 +2838,142 @@ Meta+click = Go to declaration</source>
 <context>
     <name>ProjectManager</name>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1201"/>
+        <location filename="../../src/projectmanager.cpp" line="1202"/>
         <source>Save project changes ?</source>
         <translation type="unfinished">Зберегти зміни в проекті?</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1381"/>
+        <location filename="../../src/projectmanager.cpp" line="1382"/>
         <source>Yes</source>
         <translation type="unfinished">Так</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1381"/>
+        <location filename="../../src/projectmanager.cpp" line="1382"/>
         <source>No</source>
         <translation type="unfinished">Ні</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1359"/>
         <source>Cancel</source>
         <translation type="unfinished">Відмінити</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="776"/>
+        <location filename="../../src/projectmanager.cpp" line="777"/>
         <source>Forms:</source>
         <translation type="unfinished">Форми:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="836"/>
+        <location filename="../../src/projectmanager.cpp" line="837"/>
         <source>Unable to create file.</source>
         <translation type="unfinished">Не можу створити файл.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1373"/>
+        <location filename="../../src/projectmanager.cpp" line="1374"/>
         <source>Ok</source>
         <translation type="unfinished">Угу</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="958"/>
+        <location filename="../../src/projectmanager.cpp" line="959"/>
         <source>Sub-project creation</source>
         <translation type="unfinished">Створення підпроекту</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="994"/>
+        <location filename="../../src/projectmanager.cpp" line="995"/>
         <source>Sub-Projects</source>
         <translation type="unfinished">Підпроект</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1526"/>
+        <location filename="../../src/projectmanager.cpp" line="1527"/>
         <source>Sub-projects</source>
         <translation type="unfinished">Підпроекти</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1632"/>
+        <location filename="../../src/projectmanager.cpp" line="1633"/>
         <source>Headers</source>
         <translation>Заголовки</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1637"/>
+        <location filename="../../src/projectmanager.cpp" line="1638"/>
         <source>Sources</source>
         <translation type="unfinished">Вихідні коди</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1642"/>
+        <location filename="../../src/projectmanager.cpp" line="1643"/>
         <source>Dialogs</source>
         <translation type="unfinished">Діалоги</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1647"/>
+        <location filename="../../src/projectmanager.cpp" line="1648"/>
         <source>Translations</source>
         <translation type="unfinished">Переклади</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1652"/>
+        <location filename="../../src/projectmanager.cpp" line="1653"/>
         <source>Resources</source>
         <translation type="unfinished">Ресурси</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="159"/>
+        <location filename="../../src/projectmanager.cpp" line="160"/>
         <source>Project parsing</source>
         <translation type="unfinished">Розбір проекту</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1324"/>
+        <location filename="../../src/projectmanager.cpp" line="1325"/>
         <source>New name:</source>
         <translation type="unfinished">Нове ім’я:</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1330"/>
+        <location filename="../../src/projectmanager.cpp" line="1331"/>
         <source>The kind of the new and the old filename is different !</source>
         <translation type="unfinished">Типи нового і старого імені файлу різні!</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1331"/>
+        <location filename="../../src/projectmanager.cpp" line="1332"/>
         <source>Rename</source>
         <translation type="unfinished">Переіменувати</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="763"/>
+        <location filename="../../src/projectmanager.cpp" line="764"/>
         <source>The file already exists in directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="884"/>
+        <location filename="../../src/projectmanager.cpp" line="885"/>
         <source>The file already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="895"/>
+        <location filename="../../src/projectmanager.cpp" line="896"/>
         <source>This file is not permitted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1358"/>
+        <location filename="../../src/projectmanager.cpp" line="1359"/>
         <source>Unable to rename the file to &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2056"/>
+        <location filename="../../src/projectmanager.cpp" line="2057"/>
         <source>The only available version for &quot;%1&quot; is %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="2057"/>
+        <location filename="../../src/projectmanager.cpp" line="2058"/>
         <source>Run on %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1372"/>
+        <location filename="../../src/projectmanager.cpp" line="1373"/>
         <source>Cannot remove the main project.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1380"/>
+        <location filename="../../src/projectmanager.cpp" line="1381"/>
         <source>Do you want to remove &quot;%1&quot; from the project ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="1294"/>
+        <location filename="../../src/projectmanager.cpp" line="1295"/>
         <source>File not found: &quot;%1&quot;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3374,27 +3362,27 @@ Meta+click = Go to declaration</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/main.cpp" line="116"/>
+        <location filename="../../src/main.cpp" line="138"/>
         <source>Loading:</source>
         <translation type="unfinished">Завантаження:</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="76"/>
+        <location filename="../../src/main.cpp" line="77"/>
         <source>Interface translation</source>
         <translation type="unfinished">Переклад інтерфейсу</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="93"/>
+        <location filename="../../src/main.cpp" line="115"/>
         <source>Environment control</source>
         <translation type="unfinished">Керування оточенням</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="97"/>
+        <location filename="../../src/main.cpp" line="119"/>
         <source>Files on editor</source>
         <translation type="unfinished">Файли в редакторі</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="120"/>
+        <location filename="../../src/main.cpp" line="142"/>
         <source>Main Window creation</source>
         <translation type="unfinished">Створення головного вікна</translation>
     </message>
@@ -3404,22 +3392,22 @@ Meta+click = Go to declaration</source>
         <translation type="unfinished">Не можу запустити Assistant!</translation>
     </message>
     <message>
-        <location filename="../../src/misc.cpp" line="80"/>
+        <location filename="../../src/misc.cpp" line="82"/>
         <source>Unable to establish a database connection.</source>
         <translation type="unfinished">Неможливо підключитися до бази даних.</translation>
     </message>
     <message>
-        <location filename="../../src/misc.cpp" line="83"/>
+        <location filename="../../src/misc.cpp" line="85"/>
         <source>QDevelop needs SQLite support. Please read the Qt SQL driver documentation for information how to build it.</source>
         <translation type="unfinished">QDevelop вимагає підтримки SQLite. Будьласка, прочитайте документацію Qt SQL driver для збору.</translation>
     </message>
     <message>
-        <location filename="../../src/projectmanager.cpp" line="191"/>
+        <location filename="../../src/projectmanager.cpp" line="192"/>
         <source>Current project parsing</source>
         <translation type="unfinished">Розбір даного проекту</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="116"/>
+        <location filename="../../src/main.cpp" line="138"/>
         <source>Plugins</source>
         <translation type="unfinished">Додатки</translation>
     </message>
@@ -3908,22 +3896,17 @@ Try to complete code later.</source>
         <translation type="unfinished">Відкрити</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="223"/>
-        <source>Sort</source>
-        <translation type="unfinished">Сортувати</translation>
-    </message>
-    <message>
-        <location filename="../../src/treeproject.cpp" line="233"/>
+        <location filename="../../src/treeproject.cpp" line="234"/>
         <source>Show As</source>
         <translation type="unfinished">Показати як</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="234"/>
+        <location filename="../../src/treeproject.cpp" line="235"/>
         <source>Normal</source>
         <translation type="unfinished">Нормальний</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="235"/>
+        <location filename="../../src/treeproject.cpp" line="236"/>
         <source>Krawek</source>
         <translation>Krawek</translation>
     </message>
@@ -3938,12 +3921,12 @@ Try to complete code later.</source>
         <translation type="unfinished">Перейменувати...</translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="230"/>
+        <location filename="../../src/treeproject.cpp" line="231"/>
         <source>Properties of %1...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/treeproject.cpp" line="224"/>
+        <location filename="../../src/treeproject.cpp" line="225"/>
         <source>Remove from project</source>
         <translation type="unfinished"></translation>
     </message>
