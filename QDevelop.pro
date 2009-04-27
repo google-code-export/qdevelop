@@ -68,60 +68,63 @@ HEADERS += src/InitCompletion.h \
  src/treeproject.h \
  src/registersimpl.h \
  src/Qsci/Accessor.h \
-src/Qsci/AutoComplete.h \
-src/Qsci/CallTip.h \
-src/Qsci/CellBuffer.h \
-src/Qsci/CharacterSet.h \
-src/Qsci/CharClassify.h \
-src/Qsci/ContractionState.h \
-src/Qsci/Decoration.h \
-src/Qsci/DocumentAccessor.h \
-src/Qsci/Document.h \
-src/Qsci/Editor.h \
-src/Qsci/Indicator.h \
-src/Qsci/KeyMap.h \
-src/Qsci/KeyWords.h \
-src/Qsci/LineMarker.h \
-src/Qsci/ListBoxQt.h \
-src/Qsci/Partitioning.h \
-src/Qsci/Platform.h \
-src/Qsci/PositionCache.h \
-src/Qsci/PropSet.h \
-src/Qsci/qsciabstractapis.h \
-src/Qsci/qsciapis.h \
-src/Qsci/qscicommand.h \
-src/Qsci/qscicommandset.h \
-src/Qsci/qscidocument.h \
-src/Qsci/qsciglobal.h \
-src/Qsci/qscilexerbash.h \
-src/Qsci/qscilexercmake.h \
-src/Qsci/qscilexercpp.h \
-src/Qsci/qscilexerdiff.h \
-src/Qsci/qscilexer.h \
-src/Qsci/qscilexermakefile.h \
-src/Qsci/qscilexersql.h \
-src/Qsci/qscimacro.h \
-src/Qsci/qsciprinter.h \
-src/Qsci/qsciscintillabase.h \
-src/Qsci/qsciscintilla.h \
-src/Qsci/RESearch.h \
-src/Qsci/RunStyles.h \
-src/Qsci/SciClasses.h \
-src/Qsci/SciLexer.h \
-src/Qsci/ScintillaBase.h \
-src/Qsci/Scintilla.h \
-src/Qsci/ScintillaQt.h \
-src/Qsci/ScintillaWidget.h \
-src/Qsci/SplitVector.h \
-src/Qsci/SString.h \
-src/Qsci/StyleContext.h \
-src/Qsci/Style.h \
-src/Qsci/SVector.h \
-src/Qsci/UniConversion.h \
-src/Qsci/ViewStyle.h \
-src/Qsci/WindowAccessor.h \
-src/Qsci/XPM.h
-INCLUDEPATH += . src src/ui
+ src/Qsci/AutoComplete.h \
+ src/Qsci/CallTip.h \
+ src/Qsci/CellBuffer.h \
+ src/Qsci/CharacterSet.h \
+ src/Qsci/CharClassify.h \
+ src/Qsci/ContractionState.h \
+ src/Qsci/Decoration.h \
+ src/Qsci/DocumentAccessor.h \
+ src/Qsci/Document.h \
+ src/Qsci/Editor.h \
+ src/Qsci/Indicator.h \
+ src/Qsci/KeyMap.h \
+ src/Qsci/KeyWords.h \
+ src/Qsci/LineMarker.h \
+ src/Qsci/ListBoxQt.h \
+ src/Qsci/Partitioning.h \
+ src/Qsci/Platform.h \
+ src/Qsci/PositionCache.h \
+ src/Qsci/PropSet.h \
+ src/Qsci/qsciabstractapis.h \
+ src/Qsci/qsciapis.h \
+ src/Qsci/qscicommand.h \
+ src/Qsci/qscicommandset.h \
+ src/Qsci/qscidocument.h \
+ src/Qsci/qsciglobal.h \
+ src/Qsci/qscilexerbash.h \
+ src/Qsci/qscilexercmake.h \
+ src/Qsci/qscilexercpp.h \
+ src/Qsci/qscilexerdiff.h \
+ src/Qsci/qscilexer.h \
+ src/Qsci/qscilexermakefile.h \
+ src/Qsci/qscilexersql.h \
+ src/Qsci/qscimacro.h \
+ src/Qsci/qsciprinter.h \
+ src/Qsci/qsciscintillabase.h \
+ src/Qsci/qsciscintilla.h \
+ src/Qsci/RESearch.h \
+ src/Qsci/RunStyles.h \
+ src/Qsci/SciClasses.h \
+ src/Qsci/SciLexer.h \
+ src/Qsci/ScintillaBase.h \
+ src/Qsci/Scintilla.h \
+ src/Qsci/ScintillaQt.h \
+ src/Qsci/ScintillaWidget.h \
+ src/Qsci/SplitVector.h \
+ src/Qsci/SString.h \
+ src/Qsci/StyleContext.h \
+ src/Qsci/Style.h \
+ src/Qsci/SVector.h \
+ src/Qsci/UniConversion.h \
+ src/Qsci/ViewStyle.h \
+ src/Qsci/WindowAccessor.h \
+ src/Qsci/XPM.h \
+ include/iproject.h \
+ include/imainwindow.h \
+ include/ieditor.h
+INCLUDEPATH += . src src/ui include
 MOC_DIR += build/moc
 QT += core gui network sql
 RCC_DIR += build/rcc
@@ -168,55 +171,55 @@ SOURCES += src/InitCompletion.cpp \
  src/treeproject.cpp \
  src/registersimpl.cpp \
  src/Qsci/src/AutoComplete.cpp \
-	src/Qsci/src/CallTip.cpp \
-	src/Qsci/src/CellBuffer.cpp \
-	src/Qsci/src/CharClassify.cpp \
-	src/Qsci/src/ContractionState.cpp \
-	src/Qsci/src/Decoration.cpp \
-	src/Qsci/src/DocumentAccessor.cpp \
-	src/Qsci/src/Document.cpp \
-	src/Qsci/src/Editor.cpp \
-	src/Qsci/src/Indicator.cpp \
-	src/Qsci/src/KeyMap.cpp \
-	src/Qsci/src/KeyWords.cpp \
-	src/Qsci/src/LexBash.cpp \
-	src/Qsci/src/LexCmake.cpp \
-	src/Qsci/src/LexCPP.cpp \
-	src/Qsci/src/LexInno.cpp \
-	src/Qsci/src/LexOthers.cpp \
-	src/Qsci/src/LexSQL.cpp \
-	src/Qsci/src/LineMarker.cpp \
-	src/Qsci/src/PositionCache.cpp \
-	src/Qsci/src/PropSet.cpp \
-	src/Qsci/src/RESearch.cpp \
-	src/Qsci/src/RunStyles.cpp \
-	src/Qsci/src/ScintillaBase.cpp \
-	src/Qsci/src/StyleContext.cpp \
-	src/Qsci/src/Style.cpp \
-	src/Qsci/src/UniConversion.cpp \
-	src/Qsci/src/ViewStyle.cpp \
-	src/Qsci/src/WindowAccessor.cpp \
-	src/Qsci/src/XPM.cpp \
-	src/Qsci/Qt4/ListBoxQt.cpp \
-	src/Qsci/Qt4/PlatQt.cpp \
-	src/Qsci/Qt4/qsciabstractapis.cpp \
-	src/Qsci/Qt4/qsciapis.cpp \
-	src/Qsci/Qt4/qscicommand.cpp \
-	src/Qsci/Qt4/qscicommandset.cpp \
-	src/Qsci/Qt4/qscidocument.cpp \
-	src/Qsci/Qt4/qscilexerbash.cpp \
-	src/Qsci/Qt4/qscilexercmake.cpp \
-	src/Qsci/Qt4/qscilexer.cpp \
-	src/Qsci/Qt4/qscilexercpp.cpp \
-	src/Qsci/Qt4/qscilexerdiff.cpp \
-	src/Qsci/Qt4/qscilexermakefile.cpp \
-	src/Qsci/Qt4/qscilexersql.cpp \
-	src/Qsci/Qt4/qscimacro.cpp \
-	src/Qsci/Qt4/qsciprinter.cpp \
-	src/Qsci/Qt4/qsciscintillabase.cpp \
-	src/Qsci/Qt4/qsciscintilla.cpp \
-	src/Qsci/Qt4/SciClasses.cpp \
-	src/Qsci/Qt4/ScintillaQt.cpp
+ src/Qsci/src/CallTip.cpp \
+ src/Qsci/src/CellBuffer.cpp \
+ src/Qsci/src/CharClassify.cpp \
+ src/Qsci/src/ContractionState.cpp \
+ src/Qsci/src/Decoration.cpp \
+ src/Qsci/src/DocumentAccessor.cpp \
+ src/Qsci/src/Document.cpp \
+ src/Qsci/src/Editor.cpp \
+ src/Qsci/src/Indicator.cpp \
+ src/Qsci/src/KeyMap.cpp \
+ src/Qsci/src/KeyWords.cpp \
+ src/Qsci/src/LexBash.cpp \
+ src/Qsci/src/LexCmake.cpp \
+ src/Qsci/src/LexCPP.cpp \
+ src/Qsci/src/LexInno.cpp \
+ src/Qsci/src/LexOthers.cpp \
+ src/Qsci/src/LexSQL.cpp \
+ src/Qsci/src/LineMarker.cpp \
+ src/Qsci/src/PositionCache.cpp \
+ src/Qsci/src/PropSet.cpp \
+ src/Qsci/src/RESearch.cpp \
+ src/Qsci/src/RunStyles.cpp \
+ src/Qsci/src/ScintillaBase.cpp \
+ src/Qsci/src/StyleContext.cpp \
+ src/Qsci/src/Style.cpp \
+ src/Qsci/src/UniConversion.cpp \
+ src/Qsci/src/ViewStyle.cpp \
+ src/Qsci/src/WindowAccessor.cpp \
+ src/Qsci/src/XPM.cpp \
+ src/Qsci/Qt4/ListBoxQt.cpp \
+ src/Qsci/Qt4/PlatQt.cpp \
+ src/Qsci/Qt4/qsciabstractapis.cpp \
+ src/Qsci/Qt4/qsciapis.cpp \
+ src/Qsci/Qt4/qscicommand.cpp \
+ src/Qsci/Qt4/qscicommandset.cpp \
+ src/Qsci/Qt4/qscidocument.cpp \
+ src/Qsci/Qt4/qscilexerbash.cpp \
+ src/Qsci/Qt4/qscilexercmake.cpp \
+ src/Qsci/Qt4/qscilexer.cpp \
+ src/Qsci/Qt4/qscilexercpp.cpp \
+ src/Qsci/Qt4/qscilexerdiff.cpp \
+ src/Qsci/Qt4/qscilexermakefile.cpp \
+ src/Qsci/Qt4/qscilexersql.cpp \
+ src/Qsci/Qt4/qscimacro.cpp \
+ src/Qsci/Qt4/qsciprinter.cpp \
+ src/Qsci/Qt4/qsciscintillabase.cpp \
+ src/Qsci/Qt4/qsciscintilla.cpp \
+ src/Qsci/Qt4/SciClasses.cpp \
+ src/Qsci/Qt4/ScintillaQt.cpp
 TEMPLATE = app
 TRANSLATIONS += resources/translations/QDevelop_Chinese.ts \
  resources/translations/QDevelop_Czech.ts \
@@ -250,6 +253,5 @@ win32 {
  OBJECTS_DIR +=  build/o/win32
  CONFIG -=  debug_and_release
 }
-!exists(resources/translations/QDevelop_Russian.qm) {
- error(Please run \"lrelease QDevelop.pro\" before building the project)
-}
+!exists(resources/translations/QDevelop_Russian.qm) { \
+error(Please run \"lrelease QDevelop.pro\" before building the project)

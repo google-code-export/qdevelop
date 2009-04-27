@@ -308,6 +308,7 @@ INCLUDE_DIRECTORIES(
 	${QT_INCLUDE_DIR}/QtUiTools
 	${CMAKE_BINARY_DIR}
 	.
+	${QDevelop_SOURCE_DIR}/include
 	${QDevelop_SOURCE_DIR}/src
 	${QDevelop_SOURCE_DIR}/src/Qsci
 )
