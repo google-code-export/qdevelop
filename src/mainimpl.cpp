@@ -431,6 +431,7 @@ void MainImpl::createConnections()
     m_buildingGroup->addAction( actionDebug_mode );
     m_buildingGroup->addAction( actionRelease_mode );
     m_buildingGroup->addAction( action_Forget_last_used_mode );
+    m_buildingGroup->setEnabled( false );
 }
 //
 void MainImpl::slotShortcuts()
@@ -1146,6 +1147,7 @@ bool MainImpl::openProject(QString s)
     setWindowTitle( s );
     setCurrentProject( s );
     m_projectGroup->setEnabled( true );
+    m_buildingGroup->setEnabled( true );
     slotClickTreeFiles( treeFiles->topLevelItem ( 0 ), 0);
     return true;
 }
@@ -1178,6 +1180,7 @@ bool MainImpl::slotCloseProject(bool /*hide*/)
     m_projectManager = 0;
     setWindowTitle( "QDevelop" );
     m_projectGroup->setEnabled( false );
+    m_buildingGroup->setEnabled( false );
     delete m_findInFiles;
     m_findInFiles = 0;
     return true;
