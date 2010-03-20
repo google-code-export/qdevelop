@@ -1,11 +1,11 @@
     QDevelop - A Development Environment for Qt4
 
-    (C) 2006-2008 Jean-Luc Biord <jl.biord@free.fr>
+    (C) 2006-2010 Jean-Luc Biord <jlbiord@gmail.com>
 
 Installation
 ~~~~~~~~~~~~
 
-Download is available from http://qdevelop.org, the official website.
+Download is available from http://biord-software.org/qdevelop, the official website.
 
 You need Qt (from Trolltech) at least version 4.3 to be able to compile
 QDevelop. Most Linux distributions normally already package the latest
@@ -22,7 +22,7 @@ The simplest way to compile QDevelop package is:
 4. The executable file QDevelop (QDevelop.exe under Windows) is built on bin/ directory.
 
 If you want to have code completion, install the package ctags. Under Linux,
-ctags is normally installed with development packages. For Windows, ctags is accessible here : http://prdownloads.sourceforge.net/ctags/ec554w32.zip?download 
+ctags is normally installed with development packages. For Windows, ctags is accessible here : http://freefr.dl.sourceforge.net/project/ctags/ctags/5.8/ctags58.zip 
 If you want to have debugging functionalities, you must install gdb. Like ctags, gdb is normally installed 
 with development packages under Linux. gdb for Windows is available here : http://www.mingw.org/download.shtml/
 
@@ -48,12 +48,12 @@ Documentation
 ~~~~~~~~~~~~~
 
 Up to date documentation can be found at:
-http://qdevelop.org
+http://biord-software.org/qdevelop
 
 License
 ~~~~~~~~~~~~~
 
-Copyright (C) 2006-2008 Jean-Luc Biord <jl.biord@free.fr>
+Copyright (C) 2006-2010 Jean-Luc Biord <jlbiord@gmail.com>
 
 QDevelop is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
