@@ -1,9 +1,14 @@
-???????? ?? ???? Version 0.28:
+March 20 2010 Version 0.28:
   - Localization support for plugins
   - Added formating-astyle plugin (former AStyle-Plugin) for formatting and indenting source code
   - Added tools-regexp-planner (based on "RegExp Planner" project) for testing regular expressions
   - CMake build system now supports building and installing of plugins
-
+  - Fix issue 352, 353, 361, 365, 374, 
+  - Add qdevelop.desktop, which will be used by the Linux packagers
+  - Show quotes in error message
+  - Plugins building support in the main CMakeLists.txt. If enabled, CMake will try to detect and build plugins in the "plugins" subdirectory. It will also prepare them to be installed via "make install". The feature is disabled by default, to enable it use something like:
+ $ cmake ../ -DAUTOPLUGINS=1
+  
 February 20 2009 Version 0.27:
   - Fixed a lot of issues (among them several segfaults, incorrect work with relative paths, some translation issues)
   - Several editor improvements: word wrap, right margin line

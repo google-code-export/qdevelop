@@ -3,7 +3,7 @@
 * Copyright (C) 2007  Branimir Karadzic
 *
 * This file is part of QDevelop, an open-source cross-platform IDE
-* Copyright (C) 2006  Jean-Luc Biord
+* Copyright (C) 2006 - 2010 Jean-Luc Biord
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License
@@ -19,8 +19,8 @@
 * along with this program; if not, write to the Free Software
 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 *
-* Contact e-mail: Jean-Luc Biord <jl.biord@free.fr>
-* Program URL   : http://qdevelop.org
+* Contact e-mail: Jean-Luc Biord <jlbiord@gmail.com>
+* Program URL   : http://biord-software.org/qdevelop/
 *
 */
 
