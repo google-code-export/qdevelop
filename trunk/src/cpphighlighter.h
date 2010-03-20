@@ -1,6 +1,6 @@
 /*
 * This file is part of QDevelop, an open-source cross-platform IDE
-* Copyright (C) 2006  Jean-Luc Biord
+* Copyright (C) 2006 - 2010 Jean-Luc Biord
 *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 *
 * Contact e-mail: Trent Zhou <trent.zhou@gmail.com>
-* Program URL   : http://qdevelop.org
+* Program URL   : http://biord-software.org/qdevelop/
 *
 */
 #ifndef CPP_HIGHLIGHTER_H
