@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 	splash->showMessage(QObject::tr("Loading:")+" "+QObject::tr("Interface translation"), Qt::AlignRight | Qt::AlignTop,  Qt::white);
 	qApp->processEvents();
 	#ifdef Q_OS_WIN32
-	QString defaultTranslationsPath = "/../translations";
+	QString defaultTranslationsPath = "/translations";
 	#else
 	QString defaultTranslationsPath = "/../lib/qdevelop/translations";
 	#endif
