@@ -97,10 +97,12 @@ public:
 	void toggleBookmark(int line);
 	void clearAllBookmarks();
 	void deleteBreakpoint(int line);
+	void setExtraSelectionColor( QColor c ){ m_textEdit->setExtraSelectionColor(c); };
 	void setBackgroundColor( QColor c ){ m_textEdit->setBackgroundColor(c); };
 	void setCurrentLineColor( QColor c ){ m_textEdit->setCurrentLineColor(c); };
 	void setMatchingColor( QColor c ){ m_textEdit->setMatchingColor(c); };
 	void setShowWhiteSpaces( bool b ){ m_textEdit->setShowWhiteSpaces( b ); }
+	void setExtraSelection( bool b ){ m_textEdit->setExtraSelection( b ); }
 	void setRightMargin( int c ){ m_textEdit->setRightMarginColumn( c ); }
 	void gotoMatchingBracket(){ m_textEdit->gotoMatchingBracket(); };
 	QString tempFilename(){ return m_textEdit->tempFilename(); };

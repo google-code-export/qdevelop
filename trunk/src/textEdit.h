@@ -115,6 +115,14 @@ public:
     {
         m_showWhiteSpaces = b;
     }
+    void setExtraSelection( bool b )
+    {
+        m_extraSelection = b;
+    }
+    void setExtraSelectionColor( QColor extraSelectionColor )
+    {
+        m_extraSelectionColor = extraSelectionColor;
+    }
     void setRightMarginColumn( int c )
     {
         m_rightMarginColumn = c;
@@ -157,10 +165,12 @@ private slots:
     void slotToggleBreakpoint();
     void slotToggleBookmark();
 private:
+	QColor m_extraSelectionColor;
     void completionHelp();
     QString m_plainText;
     long m_matchingBegin;
     long m_matchingEnd;
+    bool m_extraSelection;
     QPointer<LineNumbers> m_lineNumbers;
     QPointer<SelectionBorder> m_selectionBorder;
     CppHighlighter *cpphighlighter;
@@ -205,6 +215,7 @@ private:
     bool m_mouseHidden;
 	QPixmap	m_tabPixmap;
 	QPixmap m_spacePixmap;
+	QList<QTextEdit::ExtraSelection> m_extraSelectionsList;
 protected:
     void resizeEvent( QResizeEvent* );
     void keyPressEvent ( QKeyEvent * event );

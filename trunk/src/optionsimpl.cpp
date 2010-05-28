@@ -39,7 +39,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
     QColor back, bool prompt, bool hcl, QColor lc, bool bk, bool comm, bool tc, int in, QString directory,
     bool m, QColor mc, bool close, QString pd, QString mo, int mi, QString ic, 
     bool editorToolbars, bool whiteSpaces, int rightMargin, QString docDirectory, QColor textCol, 
-    bool ac, bool ww, int findReplace, bool sc )
+    bool ac, bool ww, int findReplace, bool sc, bool es, QColor _extraSelectionColor )
 	: QDialog(parent)
 {
 	setupUi(this); 
@@ -68,6 +68,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	interval->setEnabled( tc );
 	match->setChecked( m );
 	groupHighlightCurrentLine->setChecked( hcl );
+	groupExtraSelection->setChecked( es );
 	closeButton->setChecked( close );
 	projectsDirectory->setText( directory );
 	pluginsDirectory->setText( pd );
@@ -110,6 +111,9 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	pix.fill( lc );
 	lineColor->setIcon( pix );
 	m_colorCurrentLine = lc;
+	pix.fill( _extraSelectionColor );
+	extraSelection->setIcon( pix );
+	m_extraSelectionColor = _extraSelectionColor;
 	//
 	cppHighLighter = new CppHighlighter( 0 );
 	cppHighLighter->setPreprocessorFormat( pre );
@@ -135,6 +139,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	connect(background, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(text, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(lineColor, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
+	connect(extraSelection, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect(matching, SIGNAL(clicked()), this, SLOT(slotChangeColor()));
 	connect((QObject *)buttonBox->button(QDialogButtonBox::RestoreDefaults), SIGNAL(clicked()), this, SLOT(slotDefault())); // I don't know why the cast to QObject * is necessary, but gcc doesn't compile without it
 	connect(chooseProjectsDirectory, SIGNAL(clicked()), this, SLOT(slotChooseProjectsDirectory()));
@@ -160,6 +165,11 @@ QColor OptionsImpl::backgroundColor()
 QColor OptionsImpl::textColor() 
 {
 	return m_textColor;
+}
+//
+QColor OptionsImpl::extraSelectionColor() 
+{
+	return m_extraSelectionColor;
 }
 //
 QColor OptionsImpl::currentLineColor() 
@@ -193,6 +203,8 @@ void OptionsImpl::slotChangeColor()
 		color = cppHighLighter->keywordFormat().foreground().color();
 	else if( button == background )
 		color = m_backgroundColor;
+	else if( button == extraSelection )
+		color = m_extraSelectionColor;
 	else if( button == text )
 		color = m_textColor;
 	else if( button == lineColor )
@@ -222,6 +234,8 @@ void OptionsImpl::slotChangeColor()
 			cppHighLighter->setKeywordFormat( format );
 		else if( button == background )
 			m_backgroundColor = color;
+		else if( button == extraSelection )
+			m_extraSelectionColor = color;
 		else if( button == text )
 			m_textColor = color;
 		else if( button == lineColor )

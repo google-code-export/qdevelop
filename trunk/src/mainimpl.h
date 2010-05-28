@@ -161,6 +161,8 @@ private:
 	bool m_highlightCurrentLine;
 	bool m_ctagsIsPresent;
 	bool m_configureCompletionNeeded;
+	bool m_extraSelection;
+	QColor m_extraSelectionColor;
 	QColor m_backgroundColor;
 	QColor m_currentLineColor;
 	QColor m_matchingColor;

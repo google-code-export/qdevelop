@@ -49,7 +49,7 @@ public:
 		// Divius: autohide find/replace
 		int findReplace,
 		// Divius: smart click
-		bool sc
+		bool sc, bool es, QColor _extraSelectionColor
 		);
 	QFont font();
 	CppHighlighter *syntaxe() { return cppHighLighter; };
@@ -57,6 +57,7 @@ public:
 	QColor currentLineColor();
 	QColor matchingColor();
 	QColor textColor();
+	QColor extraSelectionColor();
 	int mib();
 private:
 	CppHighlighter *cppHighLighter;
@@ -64,6 +65,7 @@ private:
 	QColor m_textColor;
     QColor m_colorCurrentLine;
     QColor m_matchingColor;
+	QColor m_extraSelectionColor;
 	void findCodecs();
 	void setCodecList(const QList<QTextCodec *> &list, int m);
     QList<QTextCodec *> codecs;
