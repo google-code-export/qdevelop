@@ -82,7 +82,7 @@ OptionsImpl::OptionsImpl(QWidget * parent, QFont f, bool num, bool marge, bool i
 	wordwrap->setChecked( ww );
 	hideFindReplace->setChecked( findReplace > 0 );
 	findReplaceDelay->setValue( findReplace > 0 ? findReplace : 10 );
-	smartClick->setChecked( sc );
+	smartClick->setChecked( sc ); 
 	//
 	QPixmap pix(25, 25);
 	pix.fill( pre.foreground().color() );
