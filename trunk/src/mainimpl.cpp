@@ -1994,7 +1994,7 @@ bool MainImpl::slotDebug(bool executeOnly)
     if ( parameters.workingDirectory.isEmpty() )
         parameters.workingDirectory = m_projectManager->projectDirectoryOfExecutable();
     m_stack->setDirectory( m_projectManager->projectDirectoryOfExecutable() );
-    m_debug = new Debug(this, registersImpl, m_gdbName, parameters, exeName, executeOnly);
+    m_debug = new Debug(this, registersImpl, m_gdbName, parameters, exeName, QFileInfo(m_makeName).absoluteDir().absolutePath(), QFileInfo(m_qmakeName).absoluteDir().absolutePath(), executeOnly);
     if ( !executeOnly )
     {
         foreach(Editor *editor, allEditors() )

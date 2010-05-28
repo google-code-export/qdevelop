@@ -36,13 +36,15 @@
 //
 #define QD qDebug() << __FILE__ << __LINE__ << ":"
 //
-Debug::Debug(QObject * parent, RegistersImpl *registersImpl, QString gdbName, Parameters p, QString exe, bool exeOnly)
+Debug::Debug(QObject * parent, RegistersImpl *registersImpl, QString gdbName, Parameters p, QString exe, QString makePath, QString qmakePath, bool exeOnly)
 	: QThread(parent)
 {
 	m_parent = parent;
 	m_registersImpl = registersImpl;
 	m_gdbName = gdbName;
 	executableName = exe;
+    m_qmakePath = qmakePath;
+    m_makePath = makePath;
 	m_executeWithoutDebug = exeOnly;
 	m_parameters = p;
 }
@@ -62,6 +64,7 @@ void Debug::run()
 		launchDebug();
 }
 //
+#include <QMessageBox>
 void Debug::executeWithoutDebug()
 {
 	emit message( tr("Running...") );
@@ -110,6 +113,9 @@ void Debug::launchDebug()
 void Debug::setEnvironment(QProcess *process)
 {
 	process->setWorkingDirectory( m_parameters.workingDirectory );
+#ifdef Q_OS_WIN32
+    m_parameters.env.replaceInStrings(QRegExp("^PATH=(.*)", Qt::CaseInsensitive), "PATH=\\1;"+m_makePath+";"+m_qmakePath);
+#endif
 	process->setEnvironment( m_parameters.env );
 }
 //

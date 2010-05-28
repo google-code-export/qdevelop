@@ -37,7 +37,7 @@ class Debug : public QThread
 {
 Q_OBJECT
 public:
-	Debug(QObject * parent, RegistersImpl *registersImpl, QString gdbName, Parameters p, QString exe, bool exeOnly=false);
+	Debug(QObject * parent, RegistersImpl *registersImpl, QString gdbName, Parameters p, QString exe, QString makePath, QString qmakePath, bool exeOnly=false);
     void run();
 	enum Request { None, Registers, InfoSources, InfoScope, Local, OtherArgs, Whatis, Address, Length, Value};
 private:
@@ -48,6 +48,8 @@ private:
 	void configureGdb();
 	void setEnvironment(QProcess *process);
 	// Variables
+    QString m_makePath;
+    QString m_qmakePath;
 	QString executableName;
 	QString m_gdbName;
 	QStringList messagesToDebugger;
