@@ -57,43 +57,43 @@
 
 extern QString simplifiedText( QString );
 //
-static const char * tabPixmap_img[] = 
-{
-/* width height ncolors cpp [x_hot y_hot] */
-	"8 8 3 2 0 0",
-/* colors */
-	"  s none       m none  c none",
-	"O s iconColor1 m black c black",
-	"X s iconColor2 m black c #D0D0D0",
-/* pixels */
-	"  X     X       ",
-	"    X     X     ",
-	"      X     X   ",
-	"        X     X ",
-	"      X     X   ",
-	"    X     X     ",
-	"  X     X       ",
-	"                ",
-};
+static const char * tabPixmap_img[] =
+    {
+        /* width height ncolors cpp [x_hot y_hot] */
+        "8 8 3 2 0 0",
+        /* colors */
+        "  s none       m none  c none",
+        "O s iconColor1 m black c black",
+        "X s iconColor2 m black c #D0D0D0",
+        /* pixels */
+        "  X     X       ",
+        "    X     X     ",
+        "      X     X   ",
+        "        X     X ",
+        "      X     X   ",
+        "    X     X     ",
+        "  X     X       ",
+        "                ",
+    };
 
-static const char * spacePixmap_img[] = 
-{
-/* width height ncolors cpp [x_hot y_hot] */
-	"8 8 3 2 0 0",
-/* colors */
-	"  s none       m none  c none",
-	"O s iconColor1 m black c black",
-	"X s iconColor2 m black c #D0D0D0",
-/* pixels */
-	"                ",
-	"                ",
- 	"                ",
-	"                ",
-	"                ",
-	"      X         ",
-	"      X X       ",
-	"                ",
-};
+static const char * spacePixmap_img[] =
+    {
+        /* width height ncolors cpp [x_hot y_hot] */
+        "8 8 3 2 0 0",
+        /* colors */
+        "  s none       m none  c none",
+        "O s iconColor1 m black c black",
+        "X s iconColor2 m black c #D0D0D0",
+        /* pixels */
+        "                ",
+        "                ",
+        "                ",
+        "                ",
+        "                ",
+        "      X         ",
+        "      X X       ",
+        "                ",
+    };
 
 TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completion)
         : QTextEdit(parent), m_editor(parent), m_mainImpl(mainimpl), m_completion(completion), m_mouseHidden(false)
@@ -115,12 +115,12 @@ TextEdit::TextEdit(Editor * parent, MainImpl *mainimpl, InitCompletion *completi
     m_matchingBegin = -1;
     m_matchingEnd = -1;
     m_endLine = MainImpl::Default;
-    m_tabPixmap		= QPixmap( tabPixmap_img ); 
-	m_spacePixmap		= QPixmap( spacePixmap_img ); 
-	m_showWhiteSpaces	= true;
-	m_rightMarginColumn	= 80;
-	m_autocomments = false;
-    
+    m_tabPixmap		= QPixmap( tabPixmap_img );
+    m_spacePixmap		= QPixmap( spacePixmap_img );
+    m_showWhiteSpaces	= true;
+    m_rightMarginColumn	= 80;
+    m_autocomments = false;
+
     connect(document(), SIGNAL(modificationChanged(bool)), this, SIGNAL(editorModified(bool)));
     connect( this, SIGNAL( cursorPositionChanged() ), this, SLOT( slotCursorPositionChanged()));
     connect(this, SIGNAL(initParse(InitCompletion::Request, QString, QString, bool, bool, bool, QString)), m_completion, SLOT(slotInitParse(InitCompletion::Request, QString, QString, bool, bool, bool, QString)) );
@@ -174,61 +174,61 @@ void TextEdit::print()
 }
 
 void TextEdit::printWhiteSpacesAndMatching( QPainter &p )
-{		
-	const int contentsY = verticalScrollBar()->value();
-	const qreal pageBottom = contentsY + viewport()->height();
-	const QFontMetrics fm = QFontMetrics( currentFont() );
-	
-	for ( QTextBlock block = document()->begin(); block.isValid(); block = block.next() )
-	{
-		QTextLayout* layout = block.layout();
-		const QRectF boundingRect = layout->boundingRect();
-		QPointF position = layout->position();
-		
-		if ( position.y() +boundingRect.height() < contentsY )
-			continue;
-		if ( position.y() > pageBottom )
-			break;
-		
-		const QString txt = block.text();
-		const int len = txt.length();
-		
-		for ( int i=0; i<len; i++)
-		{
-			QTextCursor cursor = textCursor();
-			cursor.setPosition( block.position() + i, QTextCursor::MoveAnchor);
-			
-			QRect r = cursorRect( cursor );
-			if( block.position() + i == m_matchingBegin || block.position() + i == m_matchingEnd )
-			{
-				QTextCursor cursor = textCursor();
-				cursor.setPosition( block.position() + i, QTextCursor::MoveAnchor);
-				QRect r1 = cursorRect( cursor );
-				cursor.movePosition( QTextCursor::Right, QTextCursor::MoveAnchor, 1);
-				QRect r2 = cursorRect( cursor );
-				p.setPen( QPen(m_matchingColor, 2) );
-				p.drawLine( r1.x()+r1.width()/2, r1.y()+r1.height()-2, r2.x()+r2.width()/2, r2.y()+r2.height()-2);
-			}
-			
-			if( m_showWhiteSpaces )
-			{
-				// pixmaps are of size 8x8 pixels
-				QPixmap *p1 = 0;
-				
-				if (txt[i] == ' ' )
-					p1 = &m_spacePixmap;
-				else if (txt[i] == '\t' )
-					p1 = &m_tabPixmap;
-				else 
-					continue;
-				
-				int x = r.x() + 4;
-				int y = r.y() + fm.height() / 2 - 5;
-				p.drawPixmap( x, y, *p1 );
-					
-			}
-		}
-	}
+{
+    const int contentsY = verticalScrollBar()->value();
+    const qreal pageBottom = contentsY + viewport()->height();
+    const QFontMetrics fm = QFontMetrics( currentFont() );
+
+    for ( QTextBlock block = document()->begin(); block.isValid(); block = block.next() )
+    {
+        QTextLayout* layout = block.layout();
+        const QRectF boundingRect = layout->boundingRect();
+        QPointF position = layout->position();
+
+        if ( position.y() +boundingRect.height() < contentsY )
+            continue;
+        if ( position.y() > pageBottom )
+            break;
+
+        const QString txt = block.text();
+        const int len = txt.length();
+
+        for ( int i=0; i<len; i++)
+        {
+            QTextCursor cursor = textCursor();
+            cursor.setPosition( block.position() + i, QTextCursor::MoveAnchor);
+
+            QRect r = cursorRect( cursor );
+            if ( block.position() + i == m_matchingBegin || block.position() + i == m_matchingEnd )
+            {
+                QTextCursor cursor = textCursor();
+                cursor.setPosition( block.position() + i, QTextCursor::MoveAnchor);
+                QRect r1 = cursorRect( cursor );
+                cursor.movePosition( QTextCursor::Right, QTextCursor::MoveAnchor, 1);
+                QRect r2 = cursorRect( cursor );
+                p.setPen( QPen(m_matchingColor, 2) );
+                p.drawLine( r1.x()+r1.width()/2, r1.y()+r1.height()-2, r2.x()+r2.width()/2, r2.y()+r2.height()-2);
+            }
+
+            if ( m_showWhiteSpaces )
+            {
+                // pixmaps are of size 8x8 pixels
+                QPixmap *p1 = 0;
+
+                if (txt[i] == ' ' )
+                    p1 = &m_spacePixmap;
+                else if (txt[i] == '\t' )
+                    p1 = &m_tabPixmap;
+                else
+                    continue;
+
+                int x = r.x() + 4;
+                int y = r.y() + fm.height() / 2 - 5;
+                p.drawPixmap( x, y, *p1 );
+
+            }
+        }
+    }
 }
 
 //
@@ -236,36 +236,36 @@ void TextEdit::completeCode()
 {
     if ( m_mainImpl->buildQtDatabase() )
     {
-    	QMessageBox::warning(m_mainImpl, "QDevelop", tr("The Qt database building is in progress.\nTry to complete code later."));
+        QMessageBox::warning(m_mainImpl, "QDevelop", tr("The Qt database building is in progress.\nTry to complete code later."));
         return;
-   	}
+    }
     if ( !m_completion )
         return;
     QString c = m_plainText.left(textCursor().position());
-    if( c.simplified().right(1) == "(" )
+    if ( c.simplified().right(1) == "(" )
     {
-    	completionHelp();
-    	return;
-   	}
-	bool addThis = true;
-	QString word;
-	int i;
-	for(i = c.length()-1; i>0; i--)
-	{
-		if( c.at(i) == QChar('\n') || c.at(i) == QChar(';') )
-		{
-			i++;
-			word = c.mid( i );
-			c = c.left( i );
-			break;
-		}
-		if( QString(":.>(").contains( c.at(i) ) )
-		{
-			addThis = false;
-			break;
-		}
-	}
-    if( addThis )
+        completionHelp();
+        return;
+    }
+    bool addThis = true;
+    QString word;
+    int i;
+    for (i = c.length()-1; i>0; i--)
+    {
+        if ( c.at(i) == QChar('\n') || c.at(i) == QChar(';') )
+        {
+            i++;
+            word = c.mid( i );
+            c = c.left( i );
+            break;
+        }
+        if ( QString(":.>(").contains( c.at(i) ) )
+        {
+            addThis = false;
+            break;
+        }
+    }
+    if ( addThis )
     {
         c += "this->" + word;
     }
@@ -289,8 +289,8 @@ void TextEdit::slotCompletionList(TagList tagList )
             v.setValue( tag );
             item->setData(Qt::UserRole, v );
             //item->setData(Qt::UserRole, QVariant(tag.name) );
-			if( tag.access.isEmpty() )
-				tag.access = "public";
+            if ( tag.access.isEmpty() )
+                tag.access = "public";
             if ( tag.kind == "function" || tag.kind == "prototype")
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_meth.png"));
             else if ( tag.kind == "member" )
@@ -310,7 +310,7 @@ void TextEdit::slotCompletionList(TagList tagList )
         w = qMax(w, 150);
         int posX = qMax(cursorRect().x(), 80);
         //if ( posX+w > width() )
-            //posX = width()-220;
+        //posX = width()-220;
         if ( cursorRect().y() > viewport()->height()/2 )
         {
             h = qMin( qMin(h+20, cursorRect().y()), 500);
@@ -350,8 +350,8 @@ void TextEdit::slotCompletionHelpList(TagList tagList)
             QListWidgetItem *item = new QListWidgetItem( m_completionList );
             item->setText( tag.name+tag.parameters );
             h += 15;
-			if( tag.access.isEmpty() )
-				tag.access = "public";
+            if ( tag.access.isEmpty() )
+                tag.access = "public";
             if ( tag.kind == "function" || tag.kind == "prototype")
                 item->setIcon(QIcon(":/CV/images/CV"+tag.access+"_meth.png"));
             else if ( tag.kind == "member" )
@@ -395,18 +395,19 @@ void TextEdit::setFocus(Qt::FocusReason reason)
 void TextEdit::mousePressEvent ( QMouseEvent * event )
 {
     m_completionList->hide();
+    setExtraSelections( QList<QTextEdit::ExtraSelection>() );
     QTextEdit::mousePressEvent ( event );
     if (m_editor->smartClick)
     {
-    	if (event->modifiers() == Qt::ControlModifier)
-	    {
-	    	slotGotoImplementation();
-	   	}
-	   	else if (event->modifiers() == Qt::MetaModifier)
-	   	{
-	   		slotGotoDeclaration();
-	  	}
-   	}
+        if (event->modifiers() == Qt::ControlModifier)
+        {
+            slotGotoImplementation();
+        }
+        else if (event->modifiers() == Qt::MetaModifier)
+        {
+            slotGotoDeclaration();
+        }
+    }
 }
 //
 TextEdit::~TextEdit()
@@ -490,19 +491,19 @@ void TextEdit::autobrackets()
 // Divius: comments autoclose
 void TextEdit::autocomments(bool start)
 {
-	if (start)
-	{
-		textCursor().insertText( " * \n */" );
-		
-		setTextCursor( getLineCursor(currentLineNumber()-1) );
-		QTextCursor cursor = textCursor();
-		cursor.movePosition(QTextCursor::EndOfLine );
-		setTextCursor( cursor );
-	}
-	else
-	{
-		textCursor().insertText( "* " );
-	}
+    if (start)
+    {
+        textCursor().insertText( " * \n */" );
+
+        setTextCursor( getLineCursor(currentLineNumber()-1) );
+        QTextCursor cursor = textCursor();
+        cursor.movePosition(QTextCursor::EndOfLine );
+        setTextCursor( cursor );
+    }
+    else
+    {
+        textCursor().insertText( "* " );
+    }
 }
 //
 void TextEdit::autoIndent()
@@ -537,10 +538,10 @@ void TextEdit::autoIndent()
             break;
     }
     if ( simple.simplified().length() && ((simple.contains("(") && simple.contains(")")
-            && QString("if:while:do:switch:foreach").contains( simple.section("(", 0, 0).simplified() )
-            && (simple.contains('{') || simple.right(1) != ";" ) )
-           || QString("else:case:default").indexOf( simple.simplified() ) == 0
-           || simple.simplified().at(0) == '{' || simple.simplified().at( simple.simplified().length()-1 ) == '{' ))
+                                           && QString("if:while:do:switch:foreach").contains( simple.section("(", 0, 0).simplified() )
+                                           && (simple.contains('{') || simple.right(1) != ";" ) )
+                                          || QString("else:case:default").indexOf( simple.simplified() ) == 0
+                                          || simple.simplified().at(0) == '{' || simple.simplified().at( simple.simplified().length()-1 ) == '{' ))
     {
         if ( m_tabSpaces )
         {
@@ -559,62 +560,65 @@ void TextEdit::comment(ActionComment action)
 {
     // Trent's implementation
     QTextCursor cursor = textCursor();
-	
-	//when there is no selection startPos and endPos are equal to position()
+
+    //when there is no selection startPos and endPos are equal to position()
     int startPos = cursor.selectionStart();
     int endPos = cursor.selectionEnd();
-	QTextBlock startBlock = document()->findBlock(startPos);
+    QTextBlock startBlock = document()->findBlock(startPos);
     QTextBlock endBlock = document()->findBlock(endPos);
-    
-	//special case : the end of the selection is at the beginning of a line
-	if ( startPos != endPos && cursor.atBlockStart()) {
-		endBlock = document()->findBlock(endPos).previous();
-	}
 
-	int firstLine = lineNumber( startBlock );
+    //special case : the end of the selection is at the beginning of a line
+    if ( startPos != endPos && cursor.atBlockStart())
+    {
+        endBlock = document()->findBlock(endPos).previous();
+    }
+
+    int firstLine = lineNumber( startBlock );
     int lastLine = lineNumber( endBlock );
     QTextBlock block = startBlock;
     cursor.beginEditBlock();
     cursor.setPosition(startPos);
-	while (!(endBlock < block))
+    while (!(endBlock < block))
     {
         QString text = block.text();
-        if (!text.isEmpty()) {
-	        int i = 0;
-	        while (i < text.length() && (text.at(i).isSpace()))
-	            i++;
+        if (!text.isEmpty())
+        {
+            int i = 0;
+            while (i < text.length() && (text.at(i).isSpace()))
+                i++;
 
-	        if (action == Comment)
-	        {
-	            if (text.mid(i, 2) != "//")
-	                text.insert(i, "//");
-	        }
-	        else if (action == Uncomment)
-	        {
-	            if (text.mid(i, 2) == "//")
-	                text.remove(i, 2);
-	        }
-	        else if (action == Toggle)
-	        {
-	            if (text.mid(i, 2) == "//")
-	                text.remove(i, 2);
-	            else
-	                text.insert(i, "//");
-	        }
-	        cursor.movePosition(QTextCursor::StartOfBlock, QTextCursor::MoveAnchor);
-	        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-	        cursor.select(QTextCursor::BlockUnderCursor);
-	        qWarning() << cursor.selectedText();
-	        cursor.removeSelectedText();
-	        text.prepend("\n");
-	        cursor.insertText(text);
-		}
-		if( !cursor.movePosition(QTextCursor::NextBlock) ) {
-			break;
-		}
+            if (action == Comment)
+            {
+                if (text.mid(i, 2) != "//")
+                    text.insert(i, "//");
+            }
+            else if (action == Uncomment)
+            {
+                if (text.mid(i, 2) == "//")
+                    text.remove(i, 2);
+            }
+            else if (action == Toggle)
+            {
+                if (text.mid(i, 2) == "//")
+                    text.remove(i, 2);
+                else
+                    text.insert(i, "//");
+            }
+            cursor.movePosition(QTextCursor::StartOfBlock, QTextCursor::MoveAnchor);
+            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+            cursor.select(QTextCursor::BlockUnderCursor);
+            qWarning() << cursor.selectedText();
+            cursor.removeSelectedText();
+            text.prepend("\n");
+            cursor.insertText(text);
+        }
+        if ( !cursor.movePosition(QTextCursor::NextBlock) )
+        {
+            break;
+        }
         block = cursor.block();
     }
-	cursor.endEditBlock();
+    cursor.endEditBlock();
     // Reselect blocks
     selectLines(firstLine, lastLine);
 }
@@ -734,11 +738,11 @@ bool TextEdit::save(QString filename, QDateTime &lastModified)
 //
 void TextEdit::setMouseHidden( bool hidden )
 {
-	if ( hidden == m_mouseHidden )
-		return;
-	viewport()->setCursor( hidden ? Qt::BlankCursor : Qt::IBeamCursor );
-	setMouseTracking( hidden );
-	m_mouseHidden = hidden;
+    if ( hidden == m_mouseHidden )
+        return;
+    viewport()->setCursor( hidden ? Qt::BlankCursor : Qt::IBeamCursor );
+    setMouseTracking( hidden );
+    m_mouseHidden = hidden;
 }
 //
 void TextEdit::resizeEvent( QResizeEvent* e )
@@ -960,7 +964,7 @@ void TextEdit::slotFind(Ui::FindWidget uiFind, Ui::ReplaceWidget uiReplace, QStr
                 uiFind.labelWrapped->show();
                 uiReplace.reached->setText(tr("Reached end of page, continued from top"));
                 uiReplace.labelWrapped->show();
-           	}
+            }
         }
     }
     setTextCursor(newCursor);
@@ -977,20 +981,18 @@ void TextEdit::paintEvent ( QPaintEvent * event )
         r.setWidth( viewport()->width() );
         painter.fillRect( r, QBrush( m_currentLineColor ) );
     }
+    if (m_showWhiteSpaces || m_matchingBegin != -1)
+        printWhiteSpacesAndMatching( painter );
 
-	if (m_showWhiteSpaces || m_matchingBegin != -1)
-		printWhiteSpacesAndMatching( painter );
-
-	if (m_rightMarginColumn > 0)
-	{
-		int x = m_rightMarginColumn * painter.fontMetrics().maxWidth()
-		  - horizontalScrollBar()->value();
-		QLine l = QLine( x, 0, x, viewport()->height() );
-		painter.setPen( Qt::black );
-		painter.drawLine( l );
-	}
-
-	painter.end();
+    if (m_rightMarginColumn > 0)
+    {
+        int x = m_rightMarginColumn * painter.fontMetrics().maxWidth()
+                - horizontalScrollBar()->value();
+        QLine l = QLine( x, 0, x, viewport()->height() );
+        painter.setPen( Qt::black );
+        painter.drawLine( l );
+    }
+    painter.end();
     QTextEdit::paintEvent( event );
 }
 //
@@ -1021,13 +1023,13 @@ void TextEdit::clearMatch()
 //
 void TextEdit::match()
 {
-	QString matchText =  simplifiedText( m_plainText );
+    QString matchText =  simplifiedText( m_plainText );
     QTextCursor cursor = textCursor();
     int pos = cursor.position();
-   	m_matchingBegin = -1;
-   	m_matchingEnd = -1;
-    if( pos==-1 || pos >= m_plainText.size() || !QString("({[]})").contains( m_plainText.at( pos ) ) )
-    	return;
+    m_matchingBegin = -1;
+    m_matchingEnd = -1;
+    if ( pos==-1 || pos >= m_plainText.size() || !QString("({[]})").contains( m_plainText.at( pos ) ) )
+        return;
     QChar car;
     if ( pos != -1 )
     {
@@ -1042,51 +1044,51 @@ void TextEdit::match()
     }
     QChar matchCar;
     long inc = 1;
-    if( car == '(' )
-    	matchCar = ')';
-    else if( car == '{' )
-    	matchCar = '}';
-    else if( car == '[' )
-    	matchCar = ']';
-    else if( car == ')' )
+    if ( car == '(' )
+        matchCar = ')';
+    else if ( car == '{' )
+        matchCar = '}';
+    else if ( car == '[' )
+        matchCar = ']';
+    else if ( car == ')' )
     {
-    	matchCar = '(';
-    	inc = -1;
-   	}
-    else if( car == '}' )
+        matchCar = '(';
+        inc = -1;
+    }
+    else if ( car == '}' )
     {
-    	matchCar = '{';
-    	inc = -1;
-   	}
-    else if( car == ']' )
+        matchCar = '{';
+        inc = -1;
+    }
+    else if ( car == ']' )
     {
-    	matchCar = '[';
-    	inc = -1;
-   	}
+        matchCar = '[';
+        inc = -1;
+    }
     else
     {
-    	return;
-   	}
+        return;
+    }
     m_matchingBegin = pos;
     int nb = 0;
     do
     {
-    	if( matchText.at( pos ) == car )
-    		nb++;
-    	else if( matchText.at( pos ) == matchCar )
-    	{
-    		nb--;
-    		if( nb == 0 )
-    		{
-    			m_matchingEnd = pos;
-    			break;
-   			}
-   		}
-   		pos += inc;
-   	}
-    while( pos >= 0 && pos < matchText.length() );
-    if( m_matchingBegin > m_matchingEnd )
-    	qSwap(m_matchingBegin, m_matchingEnd );
+        if ( matchText.at( pos ) == car )
+            nb++;
+        else if ( matchText.at( pos ) == matchCar )
+        {
+            nb--;
+            if ( nb == 0 )
+            {
+                m_matchingEnd = pos;
+                break;
+            }
+        }
+        pos += inc;
+    }
+    while ( pos >= 0 && pos < matchText.length() );
+    if ( m_matchingBegin > m_matchingEnd )
+        qSwap(m_matchingBegin, m_matchingEnd );
     return;
 }
 //
@@ -1125,7 +1127,7 @@ void TextEdit::slotWordCompletion(QListWidgetItem *item)
 //
 void TextEdit::keyPressEvent ( QKeyEvent * event )
 {
-	//m_editor->keyPress( event );
+    //m_editor->keyPress( event );
     QTextCursor cursor = textCursor();
     clearMatch();
     setMouseHidden( true );
@@ -1169,7 +1171,7 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
         {
             m_completionList->hide();
             QTextEdit::keyPressEvent ( event );
-       	}
+        }
         else
         {
             QTextEdit::keyPressEvent ( event );
@@ -1211,31 +1213,31 @@ void TextEdit::keyPressEvent ( QKeyEvent * event )
         // Divius: comments autoclose
         if (m_autocomments)
         {
-	        QTextBlock commentBlock = getLineCursor(currentLineNumber()-1).block();
-	        QString prevLine = commentBlock.text();
-	        if (prevLine.endsWith("/*") || prevLine.endsWith("/**") || prevLine.endsWith("/*!"))
-	        {
-	            autocomments(true);
-	       	}
-	       	else if (prevLine.simplified().startsWith("*") && !prevLine.simplified().startsWith("*/")) 
-	       		while (commentBlock.isValid())
-		       	{
-		       		prevLine = commentBlock.text();
-		       		if (prevLine.simplified().startsWith("/*"))
-		       		{
-		       			autocomments(false);
-		       			break;
-		      		}
-		      		else if (prevLine.simplified().startsWith("*") && !prevLine.simplified().startsWith("*/"))
-		      		{
-		      			commentBlock = commentBlock.previous();
-	      			}
-	      			else
-	      			{
-	      				break;
-	     			}
-		      	}
-       	}
+            QTextBlock commentBlock = getLineCursor(currentLineNumber()-1).block();
+            QString prevLine = commentBlock.text();
+            if (prevLine.endsWith("/*") || prevLine.endsWith("/**") || prevLine.endsWith("/*!"))
+            {
+                autocomments(true);
+            }
+            else if (prevLine.simplified().startsWith("*") && !prevLine.simplified().startsWith("*/"))
+                while (commentBlock.isValid())
+                {
+                    prevLine = commentBlock.text();
+                    if (prevLine.simplified().startsWith("/*"))
+                    {
+                        autocomments(false);
+                        break;
+                    }
+                    else if (prevLine.simplified().startsWith("*") && !prevLine.simplified().startsWith("*/"))
+                    {
+                        commentBlock = commentBlock.previous();
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+        }
         //
     }
     else if ( event->key() == Qt::Key_Home && ( !event->modifiers() || event->modifiers() == Qt::ShiftModifier ) )
@@ -1288,9 +1290,10 @@ void TextEdit::key_home(bool shift)
     int firstWord = 0, oldPos = cursor.columnNumber(); // save the old position, it's used later
 
     cursor.movePosition( QTextCursor::StartOfLine, moveMode );
-    while ( s.at(firstWord) == ' ' || s.at(firstWord) == '\t' ) { // while determining the first word, move the cursor to the right - if we encounter that it already was in front of the first word, it'll be moved back later
-         ++firstWord;
-         cursor.movePosition( QTextCursor::NextCharacter, moveMode );
+    while ( s.at(firstWord) == ' ' || s.at(firstWord) == '\t' )
+    { // while determining the first word, move the cursor to the right - if we encounter that it already was in front of the first word, it'll be moved back later
+        ++firstWord;
+        cursor.movePosition( QTextCursor::NextCharacter, moveMode );
     }
 
     if (oldPos <= firstWord && oldPos > 0) // if the cursor was in front of the first word, move it to the beginning. However, if it was at the beginning of the line, let it where it is (first character)
@@ -1308,9 +1311,10 @@ void TextEdit::key_end(bool shift)
 
     cursor.movePosition( QTextCursor::EndOfLine, moveMode );
     lastWord = endOfLine = cursor.columnNumber()-1;
-    while ( s.at(lastWord) == ' ' || s.at(lastWord) == '\t' ) { // while determining the last word, move the cursor to the right - if we encounter that it already was in front of the first word, it'll be moved back later
-         --lastWord;
-         cursor.movePosition( QTextCursor::PreviousCharacter, moveMode );
+    while ( s.at(lastWord) == ' ' || s.at(lastWord) == '\t' )
+    { // while determining the last word, move the cursor to the right - if we encounter that it already was in front of the first word, it'll be moved back later
+        --lastWord;
+        cursor.movePosition( QTextCursor::PreviousCharacter, moveMode );
     }
 
     if (oldPos >= lastWord && oldPos < endOfLine) // if the cursor was after the last word, move it to the end. However, if it was at the end of the line, let it where it is (last character)
@@ -1377,50 +1381,57 @@ void TextEdit::dropEvent( QDropEvent * event )
 void TextEdit::slotIndent(bool indenter)
 {
     setMouseHidden( true );
-	//string used to indent text
-	QString indentString;
-	if ( m_tabSpaces )
-	{
-		int nbSpaces = tabStopWidth() / fontMetrics().width( " " );
-		indentString.fill(' ', nbSpaces);
-	} else {
-		indentString = QString("\t");
-	}
+    //string used to indent text
+    QString indentString;
+    if ( m_tabSpaces )
+    {
+        int nbSpaces = tabStopWidth() / fontMetrics().width( " " );
+        indentString.fill(' ', nbSpaces);
+    }
+    else
+    {
+        indentString = QString("\t");
+    }
 
     QTextCursor curseurActuel = textCursor();
     QTextCursor c = textCursor();
     c.beginEditBlock();
-    
-	if ( !c.hasSelection() )
+
+    if ( !c.hasSelection() )
     {
-		if(indenter)
-		{
-			c.insertText( indentString );
-		} else {
-			//delete the previous character if it's a space or a tab
-			int p = textCursor().position() - 1;
-			if( p>0 && p< m_plainText.length() ) {
-				QChar s = m_plainText.at( p );
-				if ( s == '\t' || s == ' ') {
-					c.deletePreviousChar();
-				}
-			}
-		}
-		
-		c.endEditBlock();
+        if (indenter)
+        {
+            c.insertText( indentString );
+        }
+        else
+        {
+            //delete the previous character if it's a space or a tab
+            int p = textCursor().position() - 1;
+            if ( p>0 && p< m_plainText.length() )
+            {
+                QChar s = m_plainText.at( p );
+                if ( s == '\t' || s == ' ')
+                {
+                    c.deletePreviousChar();
+                }
+            }
+        }
+
+        c.endEditBlock();
         return;
     }
 
     int debut = c.selectionStart();
     int fin = c.selectionEnd();
     //
-	QTextBlock blocDebut = document()->findBlock(debut);
+    QTextBlock blocDebut = document()->findBlock(debut);
     QTextBlock blocFin = document()->findBlock(fin);
 
     //special case
-    if ( c.atBlockStart()) {
-		blocFin = document()->findBlock(fin).previous();
-	}
+    if ( c.atBlockStart())
+    {
+        blocFin = document()->findBlock(fin).previous();
+    }
 
     c.clearSelection();
 
@@ -1431,7 +1442,7 @@ void TextEdit::slotIndent(bool indenter)
         c.endEditBlock();
         return;
     }
-    
+
     QTextBlock block = blocDebut;
     while (  block.isValid() && !(blocFin < block) )
     {
@@ -1452,7 +1463,7 @@ void TextEdit::slotIndent(bool indenter)
     int ligneDebut = lineNumber(blocDebut);
     int ligneFin = lineNumber(blocFin);
     selectLines(ligneDebut, ligneFin);
-	c.endEditBlock();   
+    c.endEditBlock();
 }
 //
 void TextEdit::slotUnindent()
@@ -1477,6 +1488,29 @@ void TextEdit::mouseDoubleClickEvent( QMouseEvent * event )
     setTextCursor( cursor );
 #endif
     QTextEdit::mouseDoubleClickEvent(event);
+    if ( m_extraSelection )
+    {
+        const int contentsY = verticalScrollBar()->value();
+        QTextCursor save = textCursor();
+        QTextCursor c = textCursor();
+        QString text = textCursor().selectedText();
+        QRect rect = cursorRect();
+        c.movePosition(QTextCursor::Start );
+        setTextCursor( c );
+        m_extraSelectionsList.clear();
+        while ( find(text, QTextDocument::FindWholeWords) )
+        {
+            QTextEdit::ExtraSelection highlight;
+            highlight.cursor = textCursor();
+            highlight.cursor.movePosition( QTextCursor::PreviousWord );
+            highlight.cursor.movePosition( QTextCursor::EndOfWord, QTextCursor::KeepAnchor );
+            highlight.format.setBackground( m_extraSelectionColor );
+            m_extraSelectionsList << highlight;
+        }
+        setExtraSelections( m_extraSelectionsList );
+        setTextCursor( save );
+        verticalScrollBar()->setValue( contentsY );
+    }
 }
 //
 void TextEdit::setExecutedLine(int line)
@@ -1601,24 +1635,24 @@ QString TextEdit::classNameUnderCursor(const QPoint & pos, bool addThis)
     else
         cursor = cursorForPosition ( pos );
     QString c = m_plainText.left(cursor.position());
-    for(int i=c.length()-1; i>=0; i--)
+    for (int i=c.length()-1; i>=0; i--)
     {
-    	if( c.at(i) == '.' )
-    	{
-    		c = c.left(i) + "." + m_editor->wordUnderCursor();
-    		break;
-   		}
-    	else if( c.mid(i, 2) == "->" )
-    	{
-    		c = c.left(i) + "->" + m_editor->wordUnderCursor();
-    		break;
-   		}
-    	else if( c.mid(i, 2) == "::" )
-    	{
-    		c = c.left(i) + "::";
-    		break;
-   		}
-   	}
+        if ( c.at(i) == '.' )
+        {
+            c = c.left(i) + "." + m_editor->wordUnderCursor();
+            break;
+        }
+        else if ( c.mid(i, 2) == "->" )
+        {
+            c = c.left(i) + "->" + m_editor->wordUnderCursor();
+            break;
+        }
+        else if ( c.mid(i, 2) == "::" )
+        {
+            c = c.left(i) + "::";
+            break;
+        }
+    }
     QString classname = m_completion->className(c);
     if ( classname.isEmpty() && addThis )
     {
@@ -1630,10 +1664,10 @@ QString TextEdit::classNameUnderCursor(const QPoint & pos, bool addThis)
 //
 int TextEdit::currentLineNumber(QTextCursor cursor)
 {
-	if( cursor.isNull() )
-    	return lineNumber( textCursor() );
+    if ( cursor.isNull() )
+        return lineNumber( textCursor() );
     else
-    	return lineNumber( cursor );
+        return lineNumber( cursor );
 }
 //
 int TextEdit::currentLineNumber(QTextBlock block)
@@ -1683,16 +1717,16 @@ int TextEdit::lineNumber(QPoint point)
 void TextEdit::slotToggleBookmark()
 {
     m_editor->toggleBookmark( m_lineNumber );
-    if( m_lineNumbers )
-	    m_lineNumbers->update();
+    if ( m_lineNumbers )
+        m_lineNumbers->update();
 }
 //
 //
 void TextEdit::slotToggleBreakpoint()
 {
     m_editor->toggleBreakpoint( m_lineNumber, QString(), true );
-    if( m_lineNumbers )
-    	m_lineNumbers->update();
+    if ( m_lineNumbers )
+        m_lineNumbers->update();
 }
 void TextEdit::insertText(QString text, int insertAfterLine)
 {
@@ -1836,27 +1870,27 @@ void TextEdit::completionHelp()
     if ( !m_completion )
         return;
     QString c = m_plainText.left( textCursor().position() );
-    if( c.right(1) == "(" )
-    	c = c.left( c.count()-1 );
+    if ( c.right(1) == "(" )
+        c = c.left( c.count()-1 );
     QString name = wordUnderCursor(c);
-	if( QString(":if:else:for:return:connect:while:do:").contains( name ) )
-		return;
+    if ( QString(":if:else:for:return:connect:while:do:").contains( name ) )
+        return;
     c = c.section(name, 0, 0);
     emit initParse(InitCompletion::Completion, m_editor->filename(), c, true, true, true, name);
 }
 
 void TextEdit::setTextColor(QColor c)
 {
-	QPalette p = palette();
-	p.setColor( QPalette::Text, c );
-	setPalette(p);     
-	viewport()->update();
+    QPalette p = palette();
+    p.setColor( QPalette::Text, c );
+    setPalette(p);
+    viewport()->update();
 }
 
 
 void TextEdit::saveAsTemp()
 {
-	QString filename = m_editor->filename().section(".cpp", 0, 0) + "-qdeveloptmp.cpp";
+    QString filename = m_editor->filename().section(".cpp", 0, 0) + "-qdeveloptmp.cpp";
     QFile file( filename );
     if (!file.open(QIODevice::WriteOnly))
     {
@@ -1869,7 +1903,7 @@ void TextEdit::saveAsTemp()
 
 QString TextEdit::tempFilename()
 {
-	return m_editor->filename().section(".cpp", 0, 0) + "-qdeveloptmp.cpp";
+    return m_editor->filename().section(".cpp", 0, 0) + "-qdeveloptmp.cpp";
 }
 
 

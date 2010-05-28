@@ -94,7 +94,9 @@ MainImpl::MainImpl(QWidget * parent)
     m_autocomments = true;
     m_match = true;
     m_highlightCurrentLine = true;
+    m_extraSelection = true;
     m_backgroundColor = Qt::white;
+    m_extraSelectionColor = Qt::green;
     m_textColor = Qt::black;
     m_promptBeforeQuit = false;
     m_currentLineColor = QColor(215,252,255);
@@ -626,7 +628,7 @@ void MainImpl::slotOptions()
                                            m_showTreeClasses, m_intervalUpdatingClasses, m_projectsDirectory, m_match, m_matchingColor,
                                            m_closeButtonInTabs, m_pluginsDirectory, m_makeOptions, m_mibCodec,
                                            m_includeDirectory, m_displayEditorToolbars, m_displayWhiteSpaces, m_rightMarginLine, m_documentationDirectory,
-                                           m_textColor, m_automaticCompilation, m_wordWrap, m_hideFindReplace, m_smartClick
+                                           m_textColor, m_automaticCompilation, m_wordWrap, m_hideFindReplace, m_smartClick, m_extraSelection, m_extraSelectionColor
      );
 
     if ( options->exec() == QDialog::Accepted )
@@ -652,6 +654,7 @@ void MainImpl::slotOptions()
         //
         m_match = options->match->isChecked();
         m_highlightCurrentLine = options->groupHighlightCurrentLine->isChecked();
+        m_extraSelection = options->groupExtraSelection->isChecked();
         m_promptBeforeQuit = options->promptBeforeQuit->isChecked();
         m_projectsDirectory = options->projectsDirectory->text();
         m_pluginsDirectory = options->pluginsDirectory->text();
@@ -669,6 +672,7 @@ void MainImpl::slotOptions()
         m_formatMethods = options->syntaxe()->functionFormat();
         m_formatKeywords = options->syntaxe()->keywordFormat();
         m_backgroundColor = options->backgroundColor();
+        m_extraSelectionColor = options->extraSelectionColor();
         m_textColor = options->textColor();
         m_currentLineColor = options->currentLineColor();
         m_matchingColor = options->matchingColor();
@@ -698,12 +702,15 @@ void MainImpl::slotOptions()
             editor->setAutoIndent( m_autoIndent );
             editor->setMatch( m_match );
             editor->setHighlightCurrentLine( m_highlightCurrentLine );
+            editor->setExtraSelection( m_extraSelection );
             editor->setSelectionBorder( m_selectionBorder );
             editor->setAutoCompletion( m_autoCompletion );
             editor->setEndLine( m_endLine );
             editor->setTabSpaces( m_tabSpaces );
             editor->setBackgroundColor( m_backgroundColor );
-            editor->setTextColor( m_textColor );
+            editor->setExtraSelectionColor( m_extraSelectionColor );
+            editor->setTextColor( m_textColor );       
+            editor->setExtraSelection( m_extraSelection );
             editor->setCurrentLineColor( m_currentLineColor );
             editor->setMatchingColor( m_matchingColor );
             editor->setAutobrackets( m_autobrackets );
@@ -768,6 +775,8 @@ void MainImpl::saveINI()
     settings.setValue("m_endLine", m_endLine);
     settings.setValue("m_tabSpaces", m_tabSpaces);
     settings.setValue("m_backgroundColor", m_backgroundColor.name());
+    settings.setValue("m_extraSelection", m_extraSelection);
+    settings.setValue("m_extraSelectionColor", m_extraSelectionColor.name());
     settings.setValue("m_textColor", m_textColor.name());
     settings.setValue("m_currentLineColor", m_currentLineColor.name());
     settings.setValue("m_matchingColor", m_matchingColor.name());
@@ -886,6 +895,7 @@ QString MainImpl::loadINI()
     m_font.fromString(s);
     m_tabStopWidth = settings.value("m_tabStopWidth", m_tabStopWidth).toInt();
     m_cppHighlighter = settings.value("m_cppHighlighter", m_cppHighlighter).toBool();
+    m_extraSelection = settings.value("m_extraSelection", m_extraSelection).toBool();
     m_automaticCompilation = settings.value("m_automaticCompilation", m_automaticCompilation).toBool();
     m_lineNumbers = settings.value("m_lineNumbers", m_lineNumbers).toBool();
     m_autoIndent = settings.value("m_autoIndent", m_autoIndent).toBool();
@@ -905,6 +915,8 @@ QString MainImpl::loadINI()
     m_match = settings.value("m_match", m_match).toBool();
     m_highlightCurrentLine = settings.value("m_highlightCurrentLine", m_highlightCurrentLine).toBool();
     m_backgroundColor = QColor(settings.value("m_backgroundColor", m_backgroundColor).toString());
+    m_extraSelection = settings.value("m_extraSelection", m_extraSelection).toBool();
+    m_extraSelectionColor = QColor(settings.value("m_extraSelectionColor", m_extraSelectionColor).toString());
     m_textColor = QColor(settings.value("m_textColor", m_textColor).toString());
     m_currentLineColor = QColor(settings.value("m_currentLineColor", m_currentLineColor).toString());
     m_matchingColor = QColor(settings.value("m_matchingColor", m_matchingColor).toString());
@@ -1395,9 +1407,11 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
     editor->setAutobrackets( m_autobrackets );
     editor->setAutocomments( m_autocomments );
     editor->setBackgroundColor( m_backgroundColor );
+    editor->setExtraSelectionColor( m_extraSelectionColor );
     editor->setTextColor( m_textColor );
     editor->setMatch( m_match );
     editor->setHighlightCurrentLine( m_highlightCurrentLine );
+    editor->setExtraSelection( m_extraSelection );
     editor->setMatchingColor( m_matchingColor );
     editor->setCurrentLineColor( m_currentLineColor );
     editor->setShowWhiteSpaces( m_displayWhiteSpaces );
