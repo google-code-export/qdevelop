@@ -56,7 +56,7 @@ private:
 	int m_warnings;
 	QString m_forceMode;
 signals:
-	void message(QString, QString=0);
+	void message(QString, QString=QString());
 protected slots:
 	void slotBuildMessages();
 	void slotStopBuild();
