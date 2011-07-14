@@ -25,6 +25,7 @@
 #include "mainimpl.h"
 #include <QDir>
 #include <QDebug>
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
 //
 LogBuild::LogBuild( QWidget * parent )
         : QTextEdit(parent)
@@ -51,6 +52,7 @@ void LogBuild::mouseDoubleClickEvent( QMouseEvent * /*event*/ )
     if ( numLine == 0 )
         return;
     QString absoluteName = QDir(projectDirectory).absoluteFilePath(filename);
+QD<<absoluteName<<numLine;
     m_mainImpl->openFile( QStringList( absoluteName ), numLine);
 }
 //
@@ -92,8 +94,8 @@ void LogBuild::slotMessagesBuild(QString list, QString directory)
     setTextCursor( cursor );
 }
 //
-#define ERR_EXP "^(.+):\\s*(\\d+)\\s*:\\s*(error|%1|undefined reference to|%2)"
-#define WARN_EXP "^(.+):\\s*(\\d+)\\s*:\\s*(warning|%1)"
+#define ERR_EXP "^(.+):\\s*(\\d+):\\s*(\\d+)\\s*:\\s*(error|%1|undefined reference to|%2)"
+#define WARN_EXP "^(.+):\\s*(\\d+):\\s*(\\d+)\\s*:\\s*(warning|%1)"
 /*  If your language is not translated in QDevelop and if g++ display the errors and warnings in your language, 
 modify the two strings below "error" and "warning" to adapt in your language. Also have a look at editor.cpp*/
 bool LogBuild::containsError(QString message, QString & file, uint & line)

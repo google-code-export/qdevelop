@@ -1384,6 +1384,7 @@ Editor * MainImpl::openFile(QStringList locationsList, int numLine, bool silentM
 		    }
             if ( numLine != -1 )
             {
+QD;
                 editor->setFocus();
                 editor->gotoLine( numLine, moveTop );
                 slotCurrentTabChanged( 0 );
