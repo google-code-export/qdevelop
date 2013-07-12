@@ -36,6 +36,7 @@ Q_OBJECT
 public:
 	Build(QObject * parent, QString qmakeName, QString makename, QString makeOptions, QString absoluteProjectName, bool qmake, 
 		bool n, bool g, QString compileFile=0, QString forceMode = QString());
+    ~Build();
     void run();
     int nbErrors() { return m_errors; }
     int nbWarnings() { return m_warnings; }
