@@ -51,6 +51,11 @@ Build::Build(QObject * parent, QString qmakeName, QString makeName, QString make
     m_warnings = 0;
     m_forceMode = forceMode;
 }
+Build::~Build() {
+    QD << "destructeur Build";
+    m_buildProcess->deleteLater();
+}
+
 //
 void Build::slotIncErrors()
 {
@@ -91,7 +96,6 @@ void Build::run()
 #endif
         if (!m_buildProcess->waitForFinished(800000))
         {
-            m_buildProcess->deleteLater();
             return;
         }
         emit message( QString(m_buildProcess->readAll()) );
@@ -103,7 +107,6 @@ void Build::run()
         m_buildProcess->start(m_makeName, QStringList("clean"));
         if (!m_buildProcess->waitForFinished(800000))
         {
-            m_buildProcess->deleteLater();
             return;
         }
         emit message( QString(m_buildProcess->readAll()) );
@@ -123,12 +126,10 @@ void Build::run()
         }
         if (!m_buildProcess->waitForFinished(800000))
         {
-            m_buildProcess->deleteLater();
             return;
         }
     }
     emit message( QString(m_buildProcess->readAll()), m_projectDirectory);
-    m_buildProcess->deleteLater();
 }
 //
 void Build::slotBuildMessages()
@@ -157,7 +158,6 @@ void Build::slotStopBuild()
     m_isStopped = true;
     emit message( QString("\n---------------------- "+tr("Build stopped")+"  ----------------------\n") );
     m_buildProcess->kill();
-    m_buildProcess->deleteLater();
 }
 //
 QString Build::buildOnly( QString sourceFile )
