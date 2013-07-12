@@ -52,7 +52,6 @@ Build::Build(QObject * parent, QString qmakeName, QString makeName, QString make
     m_forceMode = forceMode;
 }
 Build::~Build() {
-    QD << "destructeur Build";
     m_buildProcess->deleteLater();
 }
 
