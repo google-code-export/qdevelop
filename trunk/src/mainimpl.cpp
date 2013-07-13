@@ -2629,9 +2629,13 @@ void MainImpl::slotUpdateOtherFileActions()
     }
 }
 
-void MainImpl::on_actionEditor_mode_triggered()
+void MainImpl::on_actionEditor_mode_triggered(bool fromDblClickOnTab)
 {
 	QWidget *w;
+	if( fromDblClickOnTab ) 
+	{
+		actionEditor_mode->setChecked(true);
+	}
 	bool editMode = actionEditor_mode->isChecked();
 	QList<QDockWidget*> dockWidgets = findChildren<QDockWidget*>();
 	

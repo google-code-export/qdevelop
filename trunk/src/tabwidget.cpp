@@ -29,6 +29,7 @@
 #include "tabwidget.h"
 #include "mainimpl.h"
 #include "editor.h"
+#define QD qDebug() << __FILE__ << __LINE__ << ":"
 //
 TabWidget::TabWidget(MainImpl *parent)
         : QTabWidget(parent), m_mainImpl( parent )
@@ -82,7 +83,7 @@ bool TabWidget::eventFilter(QObject *obj, QEvent *event)
         {
             qApp->restoreOverrideCursor();
         }
-        else if (event->type() == QEvent::MouseButtonPress )
+        else if (event->type() == QEvent::MouseButtonPress || event->type() == QEvent::MouseButtonDblClick)
         {
             QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
             for (int i=0; i<tabBar()->count(); i++)
@@ -93,8 +94,13 @@ bool TabWidget::eventFilter(QObject *obj, QEvent *event)
                     break;
                 }
             }
-            if ( mouseEvent->button() == Qt::LeftButton )
-                qApp->setOverrideCursor( Qt::OpenHandCursor );
+            if ( mouseEvent->button() == Qt::LeftButton ) {
+				qApp->setOverrideCursor( Qt::OpenHandCursor );
+				if (event->type() == QEvent::MouseButtonDblClick) 
+				{
+					m_mainImpl->on_actionEditor_mode_triggered(true);
+				}
+            }
             if ( mouseEvent->button() == Qt::RightButton )
             {
                 QMenu *menu = new QMenu(this);

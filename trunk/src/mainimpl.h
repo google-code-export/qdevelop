@@ -283,9 +283,8 @@ private slots:
 	void slotMethodsList();
 	void slotNewQtVersion();
 	void slotUpdateOtherFileActions();
-	void on_actionEditor_mode_triggered();
-	void on_actionFullDocksView_triggered();
 	void on_actionMinimalDocksView_triggered();
+	void on_actionFullDocksView_triggered();
 public slots:
 	void slotCompile(bool automaticCompilation=false);
 	void slotBuildQtDatabaseEnded();
@@ -295,7 +294,7 @@ public slots:
 	void slotToolsControl(bool show=true);
 	void slotUpdateClasses(QString filename, QString buffer);
 	bool slotCloseProject(bool hide=false);
-	//void slotShowMaximized(Editor *editor=0);
+	void on_actionEditor_mode_triggered(bool fromDblClickOnTab=false);
 signals:
 	void debugCommand(QString);
 	void stopBuild();
