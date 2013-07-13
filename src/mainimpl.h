@@ -43,6 +43,8 @@ class TabWidget;
 class FindFileImpl;
 class StackImpl;
 class InitCompletion;
+class GetLastVersion;
+
 //
 typedef QPair<Editor *, QTextBlock> Bookmark;
 Q_DECLARE_METATYPE(Bookmark)
@@ -69,6 +71,7 @@ public:
 	bool ctagsIsPresent() { return m_ctagsIsPresent; };
 	void closeTab(int numTab);
 	void closeOtherTab(int numTab);
+	GetLastVersion *m_httpVersion;
 	bool showTreeClasses() { return m_showTreeClasses; };
 	void toggleBookmark(Editor *editor, QString text, bool activate, QTextBlock block);
 	QMenu *bookmarksMenu() { return menuBookmarks; };

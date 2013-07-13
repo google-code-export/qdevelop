@@ -44,6 +44,7 @@
 #include "InitCompletion.h"
 #include "pluginsinterfaces.h"
 #include "misc.h"
+#include "getlastversion.h"
 //
 #include <QFileDialog>
 #include <QGridLayout>
@@ -212,6 +213,17 @@ MainImpl::MainImpl(QWidget * parent)
     logBuild->setMainImpl( this );
     
     on_actionFullDocksView_triggered();
+#ifdef Q_OS_WIN32
+    QUrl urlVersion("http://biord-software.org/qdevelop/releaseversionwin.php");
+#else
+#ifdef Q_OS_LINUX
+    QUrl urlVersion("http://biord-software.org/qdevelop/releaseversionlinux.php");
+#else
+    QUrl urlVersion("http://biord-software.org/qdevelop/releaseversionother.php");
+#endif
+#endif
+    m_httpVersion = new GetLastVersion(this, urlVersion);
+
 }
 //
 MainImpl::~MainImpl()

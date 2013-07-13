@@ -66,6 +66,7 @@ HEADERS += src/InitCompletion.h \
  src/toolscontrolimpl.h \
  src/treeclasses.h \
  src/treeproject.h \
+ src/getlastversion.h \
  src/registersimpl.h
 INCLUDEPATH += . src src/ui
 MOC_DIR += build/moc
@@ -112,6 +113,7 @@ SOURCES += src/InitCompletion.cpp \
  src/toolscontrolimpl.cpp \
  src/treeclasses.cpp \
  src/treeproject.cpp \
+ src/getlastversion.cpp \
  src/registersimpl.cpp
 TEMPLATE = app
 TRANSLATIONS += resources/translations/QDevelop_Chinese.ts \
