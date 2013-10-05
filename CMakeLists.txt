@@ -106,6 +106,7 @@ SET( qdevelop_SRCS
 	src/treeclasses.cpp
 	src/treeproject.cpp
 	src/toolscontrolimpl.cpp
+	src/getlastversion.cpp
 )
 
 SET( qdevelop_MOC_HDRS	
@@ -140,6 +141,7 @@ SET( qdevelop_MOC_HDRS
 	src/treeclasses.h
 	src/treeproject.h
 	src/toolscontrolimpl.h
+	src/getlastversion.h
 )
 
 SET( qdevelop_RCS
